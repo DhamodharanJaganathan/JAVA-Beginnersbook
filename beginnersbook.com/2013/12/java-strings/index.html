@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/12/java-strings/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:35:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java - String Class and its methods explained with examples</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Java String explained with the examples of Java String Class methods such as concat, compareTo, length, intern, equals, split, replace, trim, substring etc."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Java - String Class and its methods explained with examples" />
+<meta property="og:description" content="Java String explained with the examples of Java String Class methods such as concat, compareTo, length, intern, equals, split, replace, trim, substring etc." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="class" />
+<meta property="article:tag" content="java" />
+<meta property="article:tag" content="String" />
+<meta property="article:section" content="String handling" />
+<meta property="article:published_time" content="2013-12-25T16:12:36+00:00" />
+<meta property="article:modified_time" content="2017-10-14T13:50:25+00:00" />
+<meta property="og:updated_time" content="2017-10-14T13:50:25+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Java String explained with the examples of Java String Class methods such as concat, compareTo, length, intern, equals, split, replace, trim, substring etc." />
+<meta name="twitter:title" content="Java - String Class and its methods explained with examples" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Java &#8211; String Class and its methods explained with examples Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexe9a7.html?p=4535' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed8cbf.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F12%2Fjava-strings%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedbfb1?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F12%2Fjava-strings%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-4535 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-4535 post type-post status-publish format-standard category-string-handling tag-class tag-java tag-string entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Java &#8211; String Class and its methods explained with examples</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/string-handling/index.html" rel="category tag">String handling</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p><strong>String</strong> is a sequence of characters, for e.g. &#8220;Hello&#8221; is a string of 5 characters. In java, string is an immutable object which means it is constant and can cannot be changed once it has been created. In this tutorial we will learn about String class and String methods in detail along with many other Java String tutorials.</p>
+<h2 id="CreateString">Creating a String</h2>
+<p>There are two ways to create a String in Java</p>
+<ol>
+<li>String literal</li>
+<li>Using new keyword</li>
+</ol>
+<h3>String literal</h3>
+<p>In java, Strings can be created like this: Assigning a String literal to a String instance:</p>
+<pre>String str1 = "Welcome";
+String str2 = "Welcome";</pre>
+<p><strong>The problem with this approach</strong>: As I stated in the beginning that String is an object in Java. However we have not created any string object using new keyword above. The compiler does that task for us it creates a string object having the string literal (that we have provided , in this case it is &#8220;Welcome&#8221;) and assigns it to the provided string instances.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><strong>But</strong> if the object already exist in the memory it does not create a new Object rather it assigns the same old object to the new instance, that means even though we have two string instances above(str1 and str2) compiler only created on string object (having the value &#8220;Welcome&#8221;) and assigned the same to both the instances. For example there are 10 string instances that have same value, it means that in memory there is only one object having the value and all the 10 string instances would be pointing to the same object.</p>
+<p>What if we want to have two different object with the same string? For that we would need to create strings using <strong>new keyword</strong>.</p>
+<h3>Using New Keyword</h3>
+<p>As we saw above that when we tried to assign the same string object to two different literals, compiler only created one object and made both of the literals to point the same object. To overcome that approach we can create strings like this:</p>
+<pre>String str1 = new String("Welcome");
+String str2 = new String("Welcome");</pre>
+<p>In this case compiler would create two different object in memory having the same string.</p>
+<h2>A Simple Java String Example</h2>
+<pre>public class Example{  
+   public static void main(String args[]){  
+	//creating a string by java string literal 
+	String str = "Beginnersbook"; 
+	char arrch[]={'h','e','l','l','o'}; 
+	//converting char array arrch[] to string str2
+	String str2 = new String(arrch); 
+		
+	//creating another java string str3 by using new keyword 
+	String str3 = new String("Java String Example"); 
+		
+	//Displaying all the three strings
+	System.out.println(str);  
+	System.out.println(str2);  
+	System.out.println(str3);  
+   }
+}</pre>
+<p>Output:</p>
+<pre>Beginnersbook
+hello
+Java String Example</pre>
+<h2 id="StringMethods">Java String Methods</h2>
+<p>Here are the list of the methods available in the Java String class. These methods are explained in the separate tutorials with the help of examples. Links to the tutorials are provided below:</p>
+<ol>
+<li><a title="CharAt" href="../java-string-charat-method-example/index.html" target="_blank" rel="noopener">char charAt(int index)</a>: It returns the character at the specified index. Specified index value should be between 0 to length() -1 both inclusive. It throws IndexOutOfBoundsException if index&lt;0||&gt;= length of String.</li>
+<li><a href="../java-string-equals-and-equalsignorecase-methods-example/index.html" target="_blank" rel="noopener">boolean equals(Object obj)</a>: Compares the string with the specified string and returns true if both matches else false.</li>
+<li><a href="../java-string-equals-and-equalsignorecase-methods-example/index.html" target="_blank" rel="noopener">boolean equalsIgnoreCase(String string)</a>: It works same as equals method but it doesn&#8217;t consider the case while comparing strings. It does a case insensitive comparison.</li>
+<li><a title="CompareTo" href="../java-string-compareto-method-example/index.html" target="_blank" rel="noopener">int compareTo(String string)</a>: This method compares the two strings based on the Unicode value of each character in the strings.</li>
+<li><a href="../java-string-comparetoignorecase-method-example/index.html" target="_blank" rel="noopener">int compareToIgnoreCase(String string)</a>: Same as CompareTo method however it ignores the case during comparison.</li>
+<li><a href="../java-string-startswith-method-example/index.html" target="_blank" rel="noopener">boolean startsWith(String prefix, int offset)</a>: It checks whether the substring (starting from the specified offset index) is having the specified prefix or not.</li>
+<li><a href="../java-string-startswith-method-example/index.html" target="_blank" rel="noopener">boolean startsWith(String prefix)</a>: It tests whether the string is having specified prefix, if yes then it returns true else false.</li>
+<li><a title="endsWith" href="../java-string-endswith-method-example/index.html" target="_blank" rel="noopener">boolean endsWith(String suffix)</a>: Checks whether the string ends with the specified suffix.</li>
+<li><a href="../java-string-trim-and-hashcode-methods/index.html" target="_blank" rel="noopener">int hashCode()</a>: It returns the hash code of the string.</li>
+<li><a href="../java-string-indexof-method-example/index.html" target="_blank" rel="noopener">int indexOf(int ch)</a>: Returns the index of first occurrence of the specified character ch in the string.</li>
+<li><a href="../java-string-indexof-method-example/index.html" target="_blank" rel="noopener">int indexOf(int ch, int fromIndex)</a>: Same as indexOf method however it starts searching in the string from the specified fromIndex.</li>
+<li><a href="../java-string-lastindexof-method-example/index.html" target="_blank" rel="noopener">int lastIndexOf(int ch)</a>: It returns the last occurrence of the character ch in the string.</li>
+<li><a href="../java-string-lastindexof-method-example/index.html" target="_blank" rel="noopener">int lastIndexOf(int ch, int fromIndex)</a>: Same as lastIndexOf(int ch) method, it starts search from fromIndex.</li>
+<li><a href="../java-string-indexof-method-example/index.html" target="_blank" rel="noopener">int indexOf(String str)</a>: This method returns the index of first occurrence of specified substring str.</li>
+<li><a href="../java-string-lastindexof-method-example/index.html" target="_blank" rel="noopener">int lastindexOf(String str)</a>: Returns the index of last occurrence of string str.</li>
+<li><a href="../java-string-substring-method-example/index.html" target="_blank" rel="noopener">String substring(int beginIndex)</a>: It returns the substring of the string. The substring starts with the character at the specified index.</li>
+<li><a href="../java-string-substring-method-example/index.html" target="_blank" rel="noopener">String substring(int beginIndex, int endIndex)</a>: Returns the substring. The substring starts with character at beginIndex and ends with the character at endIndex.</li>
+<li><a title="concat" href="../java-string-concat-method-example/index.html" target="_blank" rel="noopener">String concat(String str)</a>: Concatenates the specified string &#8220;str&#8221; at the end of the string.</li>
+<li><a href="../java-string-replace-replacefirst-replaceall-method-examples/index.html" target="_blank" rel="noopener">String replace(char oldChar, char newChar)</a>: It returns the new updated string after changing all the occurrences of oldChar with the newChar.</li>
+<li><a href="../../../2017/10/java-string-contains-method/index.html" target="_blank" rel="noopener">boolean contains(CharSequence s)</a>: It checks whether the string contains the specified sequence of char values. If yes then it returns true else false. It throws NullPointerException of &#8216;s&#8217; is null.</li>
+<li><a href="../java-string-tolowercase-method-example/index.html" target="_blank" rel="noopener">String toUpperCase(Locale locale)</a>: Converts the string to upper case string using the rules defined by specified locale.</li>
+<li><a href="../java-string-tolowercase-method-example/index.html" target="_blank" rel="noopener">String toUpperCase()</a>: Equivalent to toUpperCase(Locale.getDefault()).</li>
+<li><a href="../../../2017/10/java-string-intern-method/index.html" target="_blank" rel="noopener">public String intern()</a>: This method searches the specified string in the memory pool and if it is found then it returns the reference of it, else it allocates the memory space to the specified string and assign the reference to it.</li>
+<li><a href="../../../2017/10/java-string-isempty-method-with-example/index.html" target="_blank" rel="noopener">public boolean isEmpty()</a>: This method returns true if the given string has 0 length. If the length of the specified Java String is non-zero then it returns false.</li>
+<li><a href="../../../2017/10/java-string-join-method/index.html" target="_blank" rel="noopener">public static String join()</a>: This method joins the given strings using the specified delimiter and returns the concatenated Java String</li>
+<li><a href="../java-string-replace-replacefirst-replaceall-method-examples/index.html" target="_blank" rel="noopener">String replaceFirst(String regex, String replacement)</a>: It replaces the first occurrence of substring that fits the given regular expression &#8220;regex&#8221; with the specified replacement string.</li>
+<li><a href="../java-string-replace-replacefirst-replaceall-method-examples/index.html" target="_blank" rel="noopener">String replaceAll(String regex, String replacement)</a>: It replaces all the occurrences of substrings that fits the <a title="Java Regular Expressions (java regex) Tutorial with examples" href="../../../2014/08/java-regex-tutorial/index.html" target="_blank" rel="noopener">regular expression regex</a> with the replacement string.</li>
+<li><a href="../java-string-split-method-example/index.html" target="_blank" rel="noopener">String[] split(String regex, int limit)</a>: It splits the string and returns the array of substrings that matches the given regular expression. limit is a result threshold here.</li>
+<li><a href="../java-string-split-method-example/index.html" target="_blank" rel="noopener">String[] split(String regex)</a>: Same as split(String regex, int limit) method however it does not have any threshold limit.</li>
+<li><a href="../java-string-tolowercase-method-example/index.html" target="_blank" rel="noopener">String toLowerCase(Locale locale)</a>: It converts the string to lower case string using the rules defined by given locale.</li>
+<li><a href="../../../2017/10/java-string-format-method/index.html" target="_blank" rel="noopener">public static String format()</a>: This method returns a formatted java String</li>
+<li><a href="../java-string-tolowercase-method-example/index.html" target="_blank" rel="noopener">String toLowerCase()</a>: Equivalent to toLowerCase(Locale. getDefault()).</li>
+<li><a href="../java-string-trim-and-hashcode-methods/index.html" target="_blank" rel="noopener">String trim()</a>: Returns the substring after omitting leading and trailing white spaces from the original string.</li>
+<li><a href="../java-string-tochararray-method-example/index.html" target="_blank" rel="noopener">char[] toCharArray()</a>: Converts the string to a character array.</li>
+<li><a href="../java-string-copyvalueof-method-example/index.html" target="_blank" rel="noopener">static String copyValueOf(char[] data)</a>: It returns a string that contains the characters of the specified character array.</li>
+<li><a href="../java-string-copyvalueof-method-example/index.html" target="_blank" rel="noopener">static String copyValueOf(char[] data, int offset, int count)</a>: Same as above method with two extra arguments &#8211; initial offset of subarray and length of subarray.</li>
+<li><a href="../java-string-getchars-method-example/index.html" target="_blank" rel="noopener">void getChars(int srcBegin, int srcEnd, char[] dest, int destBegin)</a>: It copies the characters of <strong>src</strong> array to the <strong>dest</strong> array. Only the specified range is being copied(srcBegin to srcEnd) to the dest subarray(starting fromdestBegin).</li>
+<li><a href="../../../2017/10/java-string-valueof-method/index.html">static String valueOf()</a>: This method returns a string representation of passed arguments such as int, long, float, double, char and char array.</li>
+<li><a title="contentEquals" href="../java-string-contentequals-method-example/index.html" target="_blank" rel="noopener">boolean contentEquals(StringBuffer sb)</a>: It compares the string to the specified string buffer.</li>
+<li><a href="../java-string-regionmatches-method-example/index.html" target="_blank" rel="noopener">boolean regionMatches(int srcoffset, String dest, int destoffset, int len)</a>: It compares the substring of input to the substring of specified string.</li>
+<li><a href="../java-string-regionmatches-method-example/index.html" target="_blank" rel="noopener">boolean regionMatches(boolean ignoreCase, int srcoffset, String dest, int destoffset, int len)</a>: Another variation of regionMatches method with the extra boolean argument to specify whether the comparison is case sensitive or case insensitive.</li>
+<li><a href="../java-string-getbytes-method-example/index.html" target="_blank" rel="noopener">byte[] getBytes(String charsetName)</a>: It converts the String into sequence of bytes using the specified charset encoding and returns the array of resulted bytes.</li>
+<li><a href="../java-string-getbytes-method-example/index.html" target="_blank" rel="noopener">byte[] getBytes()</a>: This method is similar to the above method it just uses the default charset encoding for converting the string into sequence of bytes.</li>
+<li><a href="../java-string-length-method-example/index.html" target="_blank" rel="noopener">int length()</a>: It returns the length of a String.</li>
+<li><a href="../java-string-matches-method-example/index.html" target="_blank" rel="noopener">boolean matches(String regex)</a>: It checks whether the String is matching with the specified <a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum" target="_blank" rel="noopener">regular expression</a> regex.</li>
+<li>int codePointAt(int index):It is similar to the charAt method however it returns the Unicode code point value of specified index rather than the character itself.</li>
+</ol>
+<h2 id="StringTutorials">Popular Java String tutorials</h2>
+<p>I have shared several tutorials on the String in java. Here are the links to the popular Java String tutorials.</p>
+<ol>
+<li><a href="../how-to-convert-string-to-int-in-java/index.html" target="_blank" rel="noopener">Convert String to int in Java</a></li>
+<li><a href="../../../2015/05/java-int-to-string/index.html" target="_blank" rel="noopener">Convert int to String</a></li>
+<li><a href="../how-to-convert-string-to-double-in-java/index.html" target="_blank" rel="noopener">Convert String to Double in Java</a></li>
+<li><a href="../../../2015/05/java-double-to-string/index.html" target="_blank" rel="noopener">Double to String conversion</a></li>
+<li><a href="../how-to-convert-string-to-long-in-java/index.html" target="_blank" rel="noopener">Convert String to Long</a></li>
+<li><a href="../../../2015/05/java-long-to-string/index.html" target="_blank" rel="noopener">Long to String conversion</a></li>
+<li><a href="../how-to-convert-inputstream-to-string-in-java/index.html" target="_blank" rel="noopener">InputStream to String Conversion &#8211; example</a></li>
+<li><a href="../../../2014/08/string-vs-stringbuffer/index.html" target="_blank" rel="noopener">String vs StringBuffer</a></li>
+<li><a href="../../../2014/07/convert-string-to-boolean-primitive-in-java/index.html" target="_blank" rel="noopener">Convert String to boolean primitive</a></li>
+<li><a href="../../../2015/05/java-boolean-to-string/index.html" target="_blank" rel="noopener">boolean to String conversion</a></li>
+<li><a href="../../../2014/07/convert-string-object-to-boolean-object-in-java/index.html" target="_blank" rel="noopener">Convert String object to Boolean object</a></li>
+<li><a href="../../../2014/07/how-to-remove-only-trailing-spaces-of-a-string-in-java/index.html" target="_blank" rel="noopener">Remove trailing spaces of a String</a></li>
+<li><a href="../../../2014/07/java-left-padding-a-string-with-spaces-and-zeros/index.html" target="_blank" rel="noopener">Left pad a String with zeros/spaces</a></li>
+<li><a href="../../../2014/07/java-right-padding-a-string-with-spaces-and-zeros/index.html" target="_blank" rel="noopener">Right pad a String with zeros/spaces</a></li>
+<li><a href="../../../2014/07/java-program-to-find-duplicate-characters-in-a-string/index.html" target="_blank" rel="noopener">Program to find duplicate characters in a String</a></li>
+<li><a href="../../../2014/06/how-to-convert-char-to-string-and-a-string-to-char-in-java/index.html" target="_blank" rel="noopener">Convert char to String and vice versa</a></li>
+<li><a href="../../../2014/06/how-to-convert-a-char-array-to-a-string-in-java/index.html" target="_blank" rel="noopener">Convert a char array to String</a></li>
+<li><a href="../../04/java-string-to-date-conversion/index.html" target="_blank" rel="noopener">String to Date conversion</a></li>
+<li><a href="../../05/java-date-string-conversion/index.html" target="_blank" rel="noopener">Date to String conversion</a></li>
+<li><a href="../../../2015/05/java-ascii-to-string-conversion/index.html" target="_blank" rel="noopener">ASCII to String conversion</a></li>
+<li><a href="../../../2015/05/java-float-to-string/index.html" target="_blank" rel="noopener">float to String conversion</a></li>
+<li><a href="../../../2015/05/java-stacktrace-to-string-conversion/index.html" target="_blank" rel="noopener">StackTrace to String conversion</a></li>
+<li><a href="../../../2015/05/java-writer-to-string-conversion/index.html" target="_blank" rel="noopener">Writer to String conversion</a></li>
+<li><a href="../../../2015/05/java-string-to-arraylist-conversion/index.html" target="_blank" rel="noopener">Convert String to ArrayList</a></li>
+<li><a href="../../../2017/10/java-8-stringjoiner/index.html">Java 8 &#8211; StringJoiner Example</a></li>
+<li><a href="../../../2017/09/java-program-to-reverse-words-in-a-string/index.html">Program to reverse words of a String in Java</a></li>
+<li><a href="../../../2017/09/java-program-to-reverse-a-string-using-recursion/index.html">Program to reverse a String in Java using Recursion</a></li>
+</ol>
+<h4>References:</h4>
+<ul>
+<li><a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html" target="_blank" rel="noopener">String Javadoc</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html" target="_blank" rel="noopener">Java 8 &#8211; String JavaDoc</a></li>
+</ul>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-35148">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3dec9f19c2f3560c8769db95ee5a3f53?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3dec9f19c2f3560c8769db95ee5a3f53?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Philip John</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-10T08:39:33+00:00" itemprop="datePublished"><a href="index.html#comment-35148" class="comment-time-link" itemprop="url">September 10, 2015 at 8:39 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks for the list of methods! I was looking for that a long time!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-35148' onclick='return addComment.moveForm( "comment-35148", "35148", "respond", "4535" )' aria-label='Reply to Philip John'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-53037">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6530501e74f5389a6672fdda1c29dd21?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6530501e74f5389a6672fdda1c29dd21?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Roshan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-27T13:06:58+00:00" itemprop="datePublished"><a href="index.html#comment-53037" class="comment-time-link" itemprop="url">March 27, 2016 at 1:06 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Really nice website&#8230; It has all about Strings any beginner should be familier with</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53037' onclick='return addComment.moveForm( "comment-53037", "53037", "respond", "4535" )' aria-label='Reply to Roshan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-53432">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1683aba4c322ff113fb252249c698947?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1683aba4c322ff113fb252249c698947?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tobe</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-08T09:40:53+00:00" itemprop="datePublished"><a href="index.html#comment-53432" class="comment-time-link" itemprop="url">April 8, 2016 at 9:40 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Pls can I have all this information in pdf&#8230;Thank you so much.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53432' onclick='return addComment.moveForm( "comment-53432", "53432", "respond", "4535" )' aria-label='Reply to Tobe'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-59938">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b49666e9fc3a573c8960a8827d2eda88?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b49666e9fc3a573c8960a8827d2eda88?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ktam</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-28T20:46:59+00:00" itemprop="datePublished"><a href="index.html#comment-59938" class="comment-time-link" itemprop="url">August 28, 2016 at 8:46 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The way you explained the String literals nd the concept of the creation of object is appreciable&#8230;.  Excellent job.<br />
+It&#8217;s very rare to be found in such an easy way as you done.<br />
+Although it was already known  to. Me.  But as u explained i was unable to restrict myself to give a feedback.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-59938' onclick='return addComment.moveForm( "comment-59938", "59938", "respond", "4535" )' aria-label='Reply to Ktam'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-60324">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7be95ba9a8f8494c61819de0914d4de0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7be95ba9a8f8494c61819de0914d4de0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">vijay</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-10T02:41:35+00:00" itemprop="datePublished"><a href="index.html#comment-60324" class="comment-time-link" itemprop="url">September 10, 2016 at 2:41 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>please send pdf file of java because the information which your providing is very good every one can understand quickly</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-60324' onclick='return addComment.moveForm( "comment-60324", "60324", "respond", "4535" )' aria-label='Reply to vijay'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-63990">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d2af2ed58712d828d7b7be4cd828ebc3?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d2af2ed58712d828d7b7be4cd828ebc3?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Gabe</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-28T15:18:11+00:00" itemprop="datePublished"><a href="index.html#comment-63990" class="comment-time-link" itemprop="url">November 28, 2016 at 3:18 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>If only you wrote my text books! Thank you so much for sharing your skills with us! The layout is very easy to follow and zoom in for what  you are looking for. I even used your search and found exactly what I was looking for. I concept that most websites seem to struggle with. </p>
+<p>Keep up the great work Chaitanya!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63990' onclick='return addComment.moveForm( "comment-63990", "63990", "respond", "4535" )' aria-label='Reply to Gabe'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-73574">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4b485d322fe26d8d406a5c02afe1c245?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/4b485d322fe26d8d406a5c02afe1c245?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">William</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-08-22T22:05:52+00:00" itemprop="datePublished"><a href="index.html#comment-73574" class="comment-time-link" itemprop="url">August 22, 2017 at 10:05 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I appreciate the effort and precision that was put into this!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-73574' onclick='return addComment.moveForm( "comment-73574", "73574", "respond", "4535" )' aria-label='Reply to William'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4535' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="433261f934" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="79"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/12/java-strings/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:35:59 GMT -->
+</html>

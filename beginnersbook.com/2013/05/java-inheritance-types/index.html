@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/05/java-inheritance-types/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:39:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Types of inheritance in Java: Single,Multiple,Multilevel &amp; Hybrid</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Below are Various types of inheritance in Java. We will see each one of them one by one with the help of examples and flow diagrams. 1) Single Inheritance Single inheritance is damn easy to understand. When a class extends another one class only then we  call it a single inheritance. The below flow diagram shows that"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Types of inheritance in Java: Single,Multiple,Multilevel &amp; Hybrid" />
+<meta property="og:description" content="Below are Various types of inheritance in Java. We will see each one of them one by one with the help of examples and flow diagrams. 1) Single Inheritance Single inheritance is damn easy to understand. When a class extends another one class only then we  call it a single inheritance. The below flow diagram shows that" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="hybrid" />
+<meta property="article:tag" content="inheritance" />
+<meta property="article:tag" content="multilevel" />
+<meta property="article:tag" content="single" />
+<meta property="article:section" content="OOPs Concept" />
+<meta property="article:published_time" content="2013-05-01T23:36:04+00:00" />
+<meta property="article:modified_time" content="2013-12-06T12:49:01+00:00" />
+<meta property="og:updated_time" content="2013-12-06T12:49:01+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/Single-Inheritance.png" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/Single-Inheritance.png" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/Multiple-Inheritance.png" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/Multiple-Inheritance.png" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/Multilevel-Inheritance.png" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/Multilevel-Inheritance.png" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/Hierarchical-Inheritance.png" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/Hierarchical-Inheritance.png" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/Hybrid-inheritance.png" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/Hybrid-inheritance.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Below are Various types of inheritance in Java. We will see each one of them one by one with the help of examples and flow diagrams. 1) Single Inheritance Single inheritance is damn easy to understand. When a class extends another one class only then we  call it a single inheritance. The below flow diagram shows that" />
+<meta name="twitter:title" content="Types of inheritance in Java: Single,Multiple,Multilevel &amp; Hybrid" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2013/05/Single-Inheritance.png" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Types of inheritance in Java: Single,Multiple,Multilevel &#038; Hybrid Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index64dc.html?p=2274' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed314e.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fjava-inheritance-types%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedc7c1?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fjava-inheritance-types%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2274 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2274 post type-post status-publish format-standard category-oops-concept tag-hybrid tag-inheritance tag-multilevel tag-single entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Types of inheritance in Java: Single,Multiple,Multilevel &#038; Hybrid</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/oops-concept/index.html" rel="category tag">OOPs Concept</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Below are Various types of inheritance in Java. We will see each one of them one by one with the help of examples and flow diagrams.</p>
+<h3><span style="color: #008000;"> 1) Single Inheritance</span></h3>
+<p><strong>Single inheritance</strong> is damn easy to understand. When a class extends another one class only then we  call it a single inheritance. The below flow diagram shows that class B extends only one class which is A. Here A is a <strong>parent class</strong> of B and B would be  a <strong>child class</strong> of A.</p>
+<h3><a href="../../../wp-content/uploads/2013/05/Single-Inheritance.png"><img class="aligncenter size-full wp-image-2279" alt="Single Inheritance" src="../../../wp-content/uploads/2013/05/Single-Inheritance.png" width="126" height="148" /></a></h3>
+<p><strong>Single Inheritance example program in Java</strong></p>
+<pre>Class A
+{
+   public void methodA()
+   {
+     System.out.println("Base class method");
+   }
+}
+
+Class B extends A
+{
+   public void methodB()
+   {
+     System.out.println("Child class method");
+   }
+   public static void main(String args[])
+   {
+     B obj = new B();
+     obj.methodA(); //calling super class method
+     obj.methodB(); //calling local method
+  }
+}</pre>
+<h3><span style="color: #008000;">2) Multiple Inheritance</span></h3>
+<p>&#8220;<strong>Multiple Inheritance</strong>” refers to the concept of one class extending (Or inherits) more than one base class. The inheritance we learnt earlier had the concept of one base class or parent. The problem with “multiple inheritance” is that the derived class will have to manage the dependency on two base classes.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><a href="../../../wp-content/uploads/2013/05/Multiple-Inheritance.png"><img class="aligncenter size-full wp-image-2278" alt="Multiple-Inheritance" src="../../../wp-content/uploads/2013/05/Multiple-Inheritance.png" width="180" height="148" /></a></p>
+<p>Note 1: Multiple Inheritance is very rarely used in software projects. Using Multiple inheritance often leads to problems in the hierarchy. This results in unwanted complexity when further extending the class.</p>
+<p>Note 2: Most of the new OO languages like <strong>Small Talk, Java, C# do not support Multiple inheritance</strong>. Multiple Inheritance is supported in C++.</p>
+<h3><span style="color: #008000;">3) Multilevel Inheritance</span></h3>
+<p><strong>Multilevel inheritance</strong> refers to a mechanism in OO technology where one can inherit from a derived class, thereby making this derived class the base class for the new class. As you can see in below flow diagram C is subclass or child class of B and B is a child class of A. For more details and example refer &#8211; <a title="Multilevel" href="../../12/multilevel-inheritance-in-java-with-example/index.html" target="_blank">Multilevel inheritance in Java</a>.</p>
+<p><a href="../../../wp-content/uploads/2013/05/Multilevel-Inheritance.png"><img class="aligncenter size-full wp-image-2277" alt="Multilevel-Inheritance" src="../../../wp-content/uploads/2013/05/Multilevel-Inheritance.png" width="150" height="203" /></a></p>
+<p><strong>Multilevel Inheritance example program in Java</strong></p>
+<pre>Class X
+{
+   public void methodX()
+   {
+     System.out.println("Class X method");
+   }
+}
+Class Y extends X
+{
+public void methodY()
+{
+System.out.println("class Y method");
+}
+}
+Class Z extends Y
+{
+   public void methodZ()
+   {
+     System.out.println("class Z method");
+   }
+   public static void main(String args[])
+   {
+     Z obj = new Z();
+     obj.methodX(); //calling grand parent class method
+     obj.methodY(); //calling parent class method
+     obj.methodZ(); //calling local method
+  }
+}</pre>
+<h3><span style="color: #008000;">4) Hierarchical Inheritance</span></h3>
+<p>In such kind of inheritance one class is inherited by many<strong> sub classes</strong>. In below example class B,C and D <strong>inherits</strong> the same class A. A is <strong>parent class (or base class)</strong> of B,C &amp; D. Read More at &#8211; <a title="Hierarchical" href="../../10/hierarchical-inheritance-java-program/index.html" target="_blank">Hierarchical Inheritance in java with example program</a>.</p>
+<p><a href="../../../wp-content/uploads/2013/05/Hierarchical-Inheritance.png"><img class="aligncenter size-full wp-image-2275" alt="Hierarchical-Inheritance" src="../../../wp-content/uploads/2013/05/Hierarchical-Inheritance.png" width="234" height="160" /></a></p>
+<h3><span style="color: #008000;">5) Hybrid Inheritance</span></h3>
+<p>In simple terms you can say that Hybrid inheritance is a combination of<strong> Single</strong> and <strong>Multiple </strong><b>inheritance.</b> A typical flow diagram would look like below. A hybrid inheritance can be achieved in the java in a same way as multiple inheritance can be!! Using interfaces. yes you heard it right. By using <strong>interfaces</strong> you can have multiple as well as <strong>hybrid inheritance</strong> in Java.</p>
+<p>Read the full article here &#8211; <a title="Hybrid" href="../../10/hybrid-inheritance-java-program/index.html" target="_blank">hybrid inheritance in java with example program</a>.</p>
+<p><a href="../../../wp-content/uploads/2013/05/Hybrid-inheritance.png"><img class="aligncenter size-full wp-image-2276" alt="Hybrid-inheritance" src="../../../wp-content/uploads/2013/05/Hybrid-inheritance.png" width="287" height="226" /></a></p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../static-constructor/index.html" rel="bookmark" title="Link to Java static constructor &#8211; Is it really Possible to have them in Java?">Java static constructor &#8211; Is it really Possible to have them in Java?</a></li><li><a href="../../04/runtime-compile-time-polymorphism/index.html" rel="bookmark" title="Link to Types of polymorphism in java- Runtime and Compile time polymorphism">Types of polymorphism in java- Runtime and Compile time polymorphism</a></li><li><a href="../../../2014/01/method-overriding-in-java-with-example/index.html" rel="bookmark" title="Link to Method overriding in java with example">Method overriding in java with example</a></li><li><a href="../../12/java-constructor-in-interface/index.html" rel="bookmark" title="Link to Java &#8211; Constructor in Interface?">Java &#8211; Constructor in Interface?</a></li><li><a href="../../../2014/01/exception-handling-in-method-overriding-with-example/index.html" rel="bookmark" title="Link to Exception handling in Method overriding with example">Exception handling in Method overriding with example</a></li><li><a href="../../12/java-constructor-chaining-with-example/index.html" rel="bookmark" title="Link to Java &#8211;  Constructor Chaining with example">Java &#8211;  Constructor Chaining with example</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-3020">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b6e0a5cd71d16bb2ed9424b0714040ba?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b6e0a5cd71d16bb2ed9424b0714040ba?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sami</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-21T17:56:40+00:00" itemprop="datePublished"><a href="index.html#comment-3020" class="comment-time-link" itemprop="url">April 21, 2014 at 5:56 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>it is one of the most beautiful notes. i easily understand. Thanks for this&#8230;&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3020' onclick='return addComment.moveForm( "comment-3020", "3020", "respond", "2274" )' aria-label='Reply to sami'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3784">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9a3a5805e7cabf4716b35232dbafc85d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9a3a5805e7cabf4716b35232dbafc85d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">yuvraj patil</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-05-22T18:06:17+00:00" itemprop="datePublished"><a href="index.html#comment-3784" class="comment-time-link" itemprop="url">May 22, 2014 at 6:06 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>explain the  Hybrid Inheritance with example in details ?<br />
+ thnx</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3784' onclick='return addComment.moveForm( "comment-3784", "3784", "respond", "2274" )' aria-label='Reply to yuvraj patil'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-3926">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e08b83a1b180acb34dc4c35f4a288201?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e08b83a1b180acb34dc4c35f4a288201?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Kultaran singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-05-29T02:13:33+00:00" itemprop="datePublished"><a href="index.html#comment-3926" class="comment-time-link" itemprop="url">May 29, 2014 at 2:13 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>good example in easy way</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3926' onclick='return addComment.moveForm( "comment-3926", "3926", "respond", "2274" )' aria-label='Reply to Kultaran singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5778">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/744f3e0577da0cb26d75375451efab01?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/744f3e0577da0cb26d75375451efab01?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">joshy</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-01T11:21:30+00:00" itemprop="datePublished"><a href="index.html#comment-5778" class="comment-time-link" itemprop="url">August 1, 2014 at 11:21 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>i did&#8217;t  understand multiple inheritence in java concept &#8230;<br />
+plz give me brief information of multiple inheritance in java&#8230;&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5778' onclick='return addComment.moveForm( "comment-5778", "5778", "respond", "2274" )' aria-label='Reply to joshy'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-2" id="comment-16178">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-15T08:40:40+00:00" itemprop="datePublished"><a href="index.html#comment-16178" class="comment-time-link" itemprop="url">November 15, 2014 at 8:40 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Refer this article: <a href="../java-multiple-inheritance/index.html" rel="nofollow">https://beginnersbook.com/2013/05/java-multiple-inheritance/</a></p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-16178' onclick='return addComment.moveForm( "comment-16178", "16178", "respond", "2274" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-53162">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/00c922a08b1b38aa572779278265d5d7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/00c922a08b1b38aa572779278265d5d7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">nishant khari</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-30T18:04:50+00:00" itemprop="datePublished"><a href="index.html#comment-53162" class="comment-time-link" itemprop="url">March 30, 2016 at 6:04 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>multiple-inheritance supported in java through interface ,so go through interface topic.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53162' onclick='return addComment.moveForm( "comment-53162", "53162", "respond", "2274" )' aria-label='Reply to nishant khari'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-66546">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2b8f3538d76cde4a5df303a1c7329953?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2b8f3538d76cde4a5df303a1c7329953?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">mani</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-26T09:22:16+00:00" itemprop="datePublished"><a href="index.html#comment-66546" class="comment-time-link" itemprop="url">January 26, 2017 at 9:22 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>java does not support multiple inheritence</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-66546' onclick='return addComment.moveForm( "comment-66546", "66546", "respond", "2274" )' aria-label='Reply to mani'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-6925">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bbe9750cf8a865b49dfd1f960afe9be6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bbe9750cf8a865b49dfd1f960afe9be6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">aslamraza</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-09-04T07:31:39+00:00" itemprop="datePublished"><a href="index.html#comment-6925" class="comment-time-link" itemprop="url">September 4, 2014 at 7:31 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>please list out the programming languages that support different inheritances<br />
+thank you !!!!!!!!!!!!!!!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6925' onclick='return addComment.moveForm( "comment-6925", "6925", "respond", "2274" )' aria-label='Reply to aslamraza'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-7163">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/837fbbc520ade2ebdcceae659053d19e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/837fbbc520ade2ebdcceae659053d19e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sanjay thakor</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-09-11T18:34:09+00:00" itemprop="datePublished"><a href="index.html#comment-7163" class="comment-time-link" itemprop="url">September 11, 2014 at 6:34 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>good material for easy self learning</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7163' onclick='return addComment.moveForm( "comment-7163", "7163", "respond", "2274" )' aria-label='Reply to sanjay thakor'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-31686">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/836f09191f90eb77dd62dd54a3cac2d9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/836f09191f90eb77dd62dd54a3cac2d9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">yogini</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-05T03:26:11+00:00" itemprop="datePublished"><a href="index.html#comment-31686" class="comment-time-link" itemprop="url">August 5, 2015 at 3:26 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>finally what is the answer? does java supports multiple inheritance?????????????????????? because i cant understand ..on the top its written that java does support but on the otherhand it says that it doesnt.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-31686' onclick='return addComment.moveForm( "comment-31686", "31686", "respond", "2274" )' aria-label='Reply to yogini'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-40813">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/90781f57860c1aa4e4d74dd5bb550507?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/90781f57860c1aa4e4d74dd5bb550507?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Shubham Sikarwar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-31T00:18:30+00:00" itemprop="datePublished"><a href="index.html#comment-40813" class="comment-time-link" itemprop="url">October 31, 2015 at 12:18 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Java does not support Multiple inheritance or Hybrid inheritance directly!!!!<br />
+BUT&#8230;&#8230;it can be implemented using Interfaces as described above in the article!!!(Jugaad)!!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-40813' onclick='return addComment.moveForm( "comment-40813", "40813", "respond", "2274" )' aria-label='Reply to Shubham Sikarwar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-51169">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1aedb8d9dc4751e229a335e371db8058?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1aedb8d9dc4751e229a335e371db8058?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mark</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-16T10:37:22+00:00" itemprop="datePublished"><a href="index.html#comment-51169" class="comment-time-link" itemprop="url">February 16, 2016 at 10:37 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>There is no multiple inheritance in java, even with interface. we are indirectly just achieving it because in interface we are just extending only the empty methods, not the body.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51169' onclick='return addComment.moveForm( "comment-51169", "51169", "respond", "2274" )' aria-label='Reply to Mark'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-33096">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9be25b7d4af6a2c3cc29ec47bb134434?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9be25b7d4af6a2c3cc29ec47bb134434?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tushar Jadhav</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-21T09:55:38+00:00" itemprop="datePublished"><a href="index.html#comment-33096" class="comment-time-link" itemprop="url">August 21, 2015 at 9:55 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>java does not support Multiple Inheritance</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-33096' onclick='return addComment.moveForm( "comment-33096", "33096", "respond", "2274" )' aria-label='Reply to Tushar Jadhav'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-35989">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/48aef2bafdfb8f4672e061c2e9f0bf83?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/48aef2bafdfb8f4672e061c2e9f0bf83?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Lenin</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-17T07:02:07+00:00" itemprop="datePublished"><a href="index.html#comment-35989" class="comment-time-link" itemprop="url">September 17, 2015 at 7:02 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I need the multiple, hybrid, hierarchical inheritance example programs&#8230;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-35989' onclick='return addComment.moveForm( "comment-35989", "35989", "respond", "2274" )' aria-label='Reply to Lenin'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-2" id="comment-36016">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-17T12:01:02+00:00" itemprop="datePublished"><a href="index.html#comment-36016" class="comment-time-link" itemprop="url">September 17, 2015 at 12:01 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hey Lenin, Please refer the links provided in the post for the examples of each type of inheritance.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-36016' onclick='return addComment.moveForm( "comment-36016", "36016", "respond", "2274" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-36728">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/cfe6d44ebc83e6c8ea52c115bdd76a28?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/cfe6d44ebc83e6c8ea52c115bdd76a28?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Brian</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-23T22:16:56+00:00" itemprop="datePublished"><a href="index.html#comment-36728" class="comment-time-link" itemprop="url">September 23, 2015 at 10:16 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>You DO NOT inherit from interfaces!! Nothing is defined in an interface therefore you have nothing to inherit. You IMPLEMENT an interface, and yes you can implement multiple interfaces in Java. Java DOES NOT allow for multiple inheritance or hybrid inheritance (diamond inheritance).</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-36728' onclick='return addComment.moveForm( "comment-36728", "36728", "respond", "2274" )' aria-label='Reply to Brian'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-60554">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ae571e0dd07f5310aee14324af2424aa?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ae571e0dd07f5310aee14324af2424aa?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Arti Priya</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-14T15:38:00+00:00" itemprop="datePublished"><a href="index.html#comment-60554" class="comment-time-link" itemprop="url">September 14, 2016 at 3:38 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>ONE OF THE BEST SITE,<br />
+KEEP IT UP GUYS!!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-60554' onclick='return addComment.moveForm( "comment-60554", "60554", "respond", "2274" )' aria-label='Reply to Arti Priya'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-63071">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4cc40ccfd3adc5856276fd4b0b9fd362?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/4cc40ccfd3adc5856276fd4b0b9fd362?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">gayathri</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-04T11:24:02+00:00" itemprop="datePublished"><a href="index.html#comment-63071" class="comment-time-link" itemprop="url">November 4, 2016 at 11:24 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I need hierarchical example program</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63071' onclick='return addComment.moveForm( "comment-63071", "63071", "respond", "2274" )' aria-label='Reply to gayathri'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-68782">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/44b020e291e6d706747d3e3b7aa1755f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/44b020e291e6d706747d3e3b7aa1755f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sabina</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-23T10:26:23+00:00" itemprop="datePublished"><a href="index.html#comment-68782" class="comment-time-link" itemprop="url">March 23, 2017 at 10:26 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Amazing notes!Thank you! Simple and easy to understand with examples :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-68782' onclick='return addComment.moveForm( "comment-68782", "68782", "respond", "2274" )' aria-label='Reply to Sabina'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-71390">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/eba7d996df537852cff00f5800ceb344?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/eba7d996df537852cff00f5800ceb344?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Jay</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-06-17T12:35:08+00:00" itemprop="datePublished"><a href="index.html#comment-71390" class="comment-time-link" itemprop="url">June 17, 2017 at 12:35 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Nice and helpful brief explanation, even for beginner or for some one who just wants to brush up the knowledge.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-71390' onclick='return addComment.moveForm( "comment-71390", "71390", "respond", "2274" )' aria-label='Reply to Jay'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2274' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="a88d492006" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="157"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../../04/oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../../04/java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="index.html">Types of inheritance</a></li>
+<li><a href="../aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../association/index.html">Association</a></li>
+<li><a href="../../../2014/07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="../method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="../../../2014/01/method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="../../../2014/01/difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../../04/runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../../04/java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="../java-interface/index.html">Interface</a></li>
+ 	<li><a href="../abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../../04/java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../inner-class/index.html">Inner classes</a></li>
+<li><a href="../java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/05/java-inheritance-types/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:39:35 GMT -->
+</html>

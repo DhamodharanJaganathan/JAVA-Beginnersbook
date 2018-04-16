@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Java ArrayList of Object Sort Example (Comparable And Comparator)</title>
+	<atom:link href="https://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/feed/" rel="self" type="application/rss+xml" />
+	<link>https://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/</link>
+	<description></description>
+	<lastBuildDate>Fri, 06 Apr 2018 04:50:05 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.5</generator>
+	<item>
+		<title>By: Saby</title>
+		<link>https://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/#comment-69214</link>
+		<dc:creator><![CDATA[Saby]]></dc:creator>
+		<pubDate>Mon, 03 Apr 2017 23:17:46 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4282#comment-69214</guid>
+		<description><![CDATA[yeah and once the type is mentioned, he doesn&#039;t need to typecase inside the compareTo method coz he&#039;s already getting the argument as Student.]]></description>
+		<content:encoded><![CDATA[<p>yeah and once the type is mentioned, he doesn&#8217;t need to typecase inside the compareTo method coz he&#8217;s already getting the argument as Student.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chandra Mauli Singh</title>
+		<link>https://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/#comment-69001</link>
+		<dc:creator><![CDATA[Chandra Mauli Singh]]></dc:creator>
+		<pubDate>Tue, 28 Mar 2017 15:09:01 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4282#comment-69001</guid>
+		<description><![CDATA[Thanks for explaining the topic. Just a little correction, As you highlighted, Using Comparable we can sort custom object only based on integer type. This is not correct, We can sort custom object on String  base also, Like you shared Student Object above, having roll no, name and age, Let me show compareTo method performing sort based on String:
+
+	public int compareTo(Student compareStudent) {
+		return this.name.compareTo(compareStudent.name);
+	}
+
+Above piece of code will sort Student object based on name (String Type).]]></description>
+		<content:encoded><![CDATA[<p>Thanks for explaining the topic. Just a little correction, As you highlighted, Using Comparable we can sort custom object only based on integer type. This is not correct, We can sort custom object on String  base also, Like you shared Student Object above, having roll no, name and age, Let me show compareTo method performing sort based on String:</p>
+<p>	public int compareTo(Student compareStudent) {<br />
+		return this.name.compareTo(compareStudent.name);<br />
+	}</p>
+<p>Above piece of code will sort Student object based on name (String Type).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ratik Singha;</title>
+		<link>https://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/#comment-66927</link>
+		<dc:creator><![CDATA[Ratik Singha;]]></dc:creator>
+		<pubDate>Fri, 03 Feb 2017 18:05:34 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4282#comment-66927</guid>
+		<description><![CDATA[By Using Comparable interface .. You can sort on any field like name or tag etc... other than integer.
+
+Just change the implementation of compareTo method like
+
+@Override
+	public int compareTo(Student  st) {
+		Student  student = st;
+		return studentname.compareTo(student.getStudentName());
+	}
+
+and from main method you can call
+
+Collections.sort(Student);
+
+..
+
+So what is main requirement of Comparator interface...]]></description>
+		<content:encoded><![CDATA[<p>By Using Comparable interface .. You can sort on any field like name or tag etc&#8230; other than integer.</p>
+<p>Just change the implementation of compareTo method like</p>
+<p>@Override<br />
+	public int compareTo(Student  st) {<br />
+		Student  student = st;<br />
+		return studentname.compareTo(student.getStudentName());<br />
+	}</p>
+<p>and from main method you can call</p>
+<p>Collections.sort(Student);</p>
+<p>..</p>
+<p>So what is main requirement of Comparator interface&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: iCommentr</title>
+		<link>https://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/#comment-60202</link>
+		<dc:creator><![CDATA[iCommentr]]></dc:creator>
+		<pubDate>Tue, 06 Sep 2016 15:18:28 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4282#comment-60202</guid>
+		<description><![CDATA[You can also sort String type using Comparable.
+
+public int compareTo(Student st) {
+	return this.name.compareTo(st.name);
+}]]></description>
+		<content:encoded><![CDATA[<p>You can also sort String type using Comparable.</p>
+<p>public int compareTo(Student st) {<br />
+	return this.name.compareTo(st.name);<br />
+}</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Amit</title>
+		<link>https://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/#comment-55242</link>
+		<dc:creator><![CDATA[Amit]]></dc:creator>
+		<pubDate>Sun, 15 May 2016 19:56:54 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4282#comment-55242</guid>
+		<description><![CDATA[I am also facing the same error, even after i copy paste this same syntax. There is some problem with the way we are overriding the method.]]></description>
+		<content:encoded><![CDATA[<p>I am also facing the same error, even after i copy paste this same syntax. There is some problem with the way we are overriding the method.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: sunilj</title>
+		<link>https://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/#comment-53450</link>
+		<dc:creator><![CDATA[sunilj]]></dc:creator>
+		<pubDate>Sat, 09 Apr 2016 04:01:50 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4282#comment-53450</guid>
+		<description><![CDATA[Thanks for sharing good tutorial.]]></description>
+		<content:encoded><![CDATA[<p>Thanks for sharing good tutorial.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Akaash Trivedi</title>
+		<link>https://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/#comment-53195</link>
+		<dc:creator><![CDATA[Akaash Trivedi]]></dc:creator>
+		<pubDate>Thu, 31 Mar 2016 20:18:21 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4282#comment-53195</guid>
+		<description><![CDATA[Thank you so much.
+I was trying to solve same problem since many day finally I did change accordingly your then it got executed.]]></description>
+		<content:encoded><![CDATA[<p>Thank you so much.<br />
+I was trying to solve same problem since many day finally I did change accordingly your then it got executed.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Gaurav</title>
+		<link>https://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/#comment-51962</link>
+		<dc:creator><![CDATA[Gaurav]]></dc:creator>
+		<pubDate>Tue, 01 Mar 2016 09:39:23 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4282#comment-51962</guid>
+		<description><![CDATA[still the program ArrayListSorting will give an error :-
+Student is not abstract and does not override the abstract method compareTo(Object) in Comparable.
+so to remove this error change the line
+public int compareTo(Student comparestu) {
+ from the Comparable program as :-
+public int compareTo(Object comparestu) {
+
+this will make program execute. and output will come.
+[ rollno=245, name=Rahul, age=24]
+[ rollno=223, name=Chaitanya, age=26]
+[ rollno=209, name=Ajeet, age=32]]]></description>
+		<content:encoded><![CDATA[<p>still the program ArrayListSorting will give an error :-<br />
+Student is not abstract and does not override the abstract method compareTo(Object) in Comparable.<br />
+so to remove this error change the line<br />
+public int compareTo(Student comparestu) {<br />
+ from the Comparable program as :-<br />
+public int compareTo(Object comparestu) {</p>
+<p>this will make program execute. and output will come.<br />
+[ rollno=245, name=Rahul, age=24]<br />
+[ rollno=223, name=Chaitanya, age=26]<br />
+[ rollno=209, name=Ajeet, age=32]</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

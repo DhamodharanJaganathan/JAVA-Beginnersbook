@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/04/java-finally-block/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:40:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java Finally block - Exception handling</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="In the previous tutorials I have covered try-catch block and nested try block. In this guide, we will see finally block which is used along with try-catch. A finally block contains all the crucial statements that must be executed whether exception occurs or not. The statements present in this block will always"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Java Finally block - Exception handling" />
+<meta property="og:description" content="In the previous tutorials I have covered try-catch block and nested try block. In this guide, we will see finally block which is used along with try-catch. A finally block contains all the crucial statements that must be executed whether exception occurs or not. The statements present in this block will always" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="Exception Handling" />
+<meta property="article:published_time" content="2013-04-08T20:31:32+00:00" />
+<meta property="article:modified_time" content="2017-09-06T06:37:52+00:00" />
+<meta property="og:updated_time" content="2017-09-06T06:37:52+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="In the previous tutorials I have covered try-catch block and nested try block. In this guide, we will see finally block which is used along with try-catch. A finally block contains all the crucial statements that must be executed whether exception occurs or not. The statements present in this block will always" />
+<meta name="twitter:title" content="Java Finally block - Exception handling" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Java Finally block &#8211; Exception handling Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index46b2.html?p=1925' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed53b7.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F04%2Fjava-finally-block%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed68c6?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F04%2Fjava-finally-block%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-1925 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-1925 post type-post status-publish format-standard category-exception-handling entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Java Finally block &#8211; Exception handling</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/technology/java-guide/exception-handling/index.html" rel="category tag">Exception Handling</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>In the previous tutorials I have covered <a href="../try-catch-in-java/index.html">try-catch block</a> and <a href="../nested-try-catch/index.html">nested try block</a>. In this guide, we will see finally block which is used along with try-catch.<br />
+A <strong>finally block</strong> contains all the crucial statements that must be executed whether exception occurs or not. The statements present in this block will always execute regardless of whether exception occurs in try block or not such as closing a connection, stream etc.</p>
+<h2>Syntax of Finally block</h2>
+<pre>try {
+    //Statements that may cause an exception
+}
+catch {
+   //Handling exception
+}
+finally {
+   //Statements to be executed
+}</pre>
+<h2>A Simple Example of finally block</h2>
+<p>Here you can see that the exception occurred in try block which has been handled in catch block, after that finally block got executed.</p>
+<pre>class Example
+{
+   public static void main(String args[]) {
+      try{  
+	 int num=121/0;  
+	 System.out.println(num);  
+      }  
+      catch(ArithmeticException e){
+         System.out.println("Number should not be divided by zero");
+      }  
+      /* Finally block will always execute
+       * even if there is no exception in try block
+       */
+      finally{
+	 System.out.println("This is finally block");
+      }  
+      System.out.println("Out of try-catch-finally");  
+   }   
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Number should not be divided by zero
+This is finally block
+Out of try-catch-finally</pre>
+<h2>Few Important points regarding finally block</h2>
+<p>1. A finally block must be associated with a try block, you cannot use finally without a try block. You should place those statements in this block that must be executed always.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>2. Finally block is optional, as we have seen in previous tutorials that a try-catch block is sufficient for <a href="../java-exception-handling/index.html">exception handling</a>, however if you place a finally block then it will always run after the execution of try block.</p>
+<p>3. In normal case when there is no exception in try block then the finally block is executed after try block. However if an exception occurs then the catch block is executed before finally block.</p>
+<p>4. An exception in the finally block, behaves exactly like any other exception.</p>
+<p>5. The statements present in the <strong>finally block</strong> execute even if the try block contains control transfer statements like return, break or continue.<br />
+Lets see an example to see how finally works when return statement is present in try block:</p>
+<h3>Another example of finally block and return statement</h3>
+<p>You can see that even though we have return statement in the method, the finally block still runs.</p>
+<pre>class JavaFinally
+{
+   public static void main(String args[])
+   {
+      System.out.println(JavaFinally.myMethod());  
+   }
+   public static int myMethod()
+   {
+      try {
+        return 112;
+      }
+      finally {
+        System.out.println("This is Finally block");
+        System.out.println("Finally block ran even after return statement");
+      }
+   }
+}</pre>
+<p><strong>Output of above program:</strong></p>
+<pre>This is Finally block
+Finally block ran even after return statement
+112</pre>
+<p>To see more examples of finally and return refer: <a href="../../05/java-finally-return/index.html">Java finally block and return statement</a><br />
+.</p>
+<h2>Cases when the finally block doesn&#8217;t execute</h2>
+<p>The circumstances that prevent execution of the code in a finally block are:<br />
+– The death of a Thread<br />
+– Using of the System. exit() method.<br />
+– Due to an exception arising in the finally block.</p>
+<h2>Finally and Close()</h2>
+<p><strong>close()</strong> statement is used to close all the open streams in a program. Its a good practice to use close() inside finally block. Since finally block executes even if exception occurs so you can be sure that all input and output streams are closed properly regardless of whether the exception occurs or not.</p>
+<p>For example:</p>
+<pre>....
+try{ 
+    OutputStream osf = new FileOutputStream( "filename" );
+    OutputStream osb = new BufferedOutputStream(opf);
+    ObjectOutput op = new ObjectOutputStream(osb);
+    try{
+       output.writeObject(writableObject);
+    }
+    finally{
+       op.close();
+    }
+}
+catch(IOException e1){
+     System.out.println(e1);
+}
+...</pre>
+<h2>Finally block without catch</h2>
+<p>A try-finally block is possible without catch block. Which means a try block can be used with finally without having a catch block.</p>
+<pre>...
+InputStream input = null;
+try {
+    input = new FileInputStream("inputfile.txt");
+} 
+finally {
+    if (input != null) {
+       try {
+         in.close();
+       }catch (IOException exp) {
+           System.out.println(exp);
+        }
+    }
+}
+...</pre>
+<h2>Finally block and System.exit()</h2>
+<p><strong>System.exit()</strong> statement behaves differently than<strong> return statement</strong>. Unlike return statement whenever System.exit() gets called in try block then <strong>Finally block</strong> doesn&#8217;t execute. Here is a code snippet that demonstrate the same:</p>
+<pre>....
+try {
+   //try block
+   System.out.println("Inside try block");
+   System.exit(0)
+}
+catch (Exception exp) {
+   System.out.println(exp);
+}
+finally {
+   System.out.println("Java finally block");
+}
+....</pre>
+<p>In the above example if the<strong> System.exit(0)</strong> gets called without any exception then finally won&#8217;t execute. However if any exception occurs while calling <strong>System.exit(0)</strong> then finally block will be executed.</p>
+<h2>try-catch-finally block</h2>
+<ul>
+<li>Either a try statement should be associated with a catch block or with finally.</li>
+<li>Since catch performs exception handling and finally performs the cleanup, the best approach is to use both of them.</li>
+</ul>
+<p><strong>Syntax:</strong></p>
+<pre>try {
+     //statements that may cause an exception
+}
+catch (…)‏ {
+     //error handling code
+}
+finally {
+    //statements to be executed
+}</pre>
+<h3>Examples of Try catch finally blocks</h3>
+<p><strong>Example 1:</strong> The following example demonstrate the working of finally block when no exception occurs in try block</p>
+<pre>class Example1{
+  public static void main(String args[]){
+    try{
+       System.out.println("First statement of try block");
+       int num=45/3;
+       System.out.println(num);
+    }
+    catch(ArrayIndexOutOfBoundsException e){
+       System.out.println("ArrayIndexOutOfBoundsException");
+    }
+    finally{
+       System.out.println("finally block");
+    }
+    System.out.println("Out of try-catch-finally block");
+  }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>First statement of try block
+15
+finally block
+Out of try-catch-finally block</pre>
+<p><strong>Example 2:</strong> This example shows the working of finally block when an exception occurs in try block but is not handled in the catch block:</p>
+<pre>class Example2{
+   public static void main(String args[]){
+     try{
+        System.out.println("First statement of try block");
+        int num=45/0;
+        System.out.println(num);
+     }
+     catch(ArrayIndexOutOfBoundsException e){
+        System.out.println("ArrayIndexOutOfBoundsException");
+     }
+     finally{
+        System.out.println("finally block");
+     }
+     System.out.println("Out of try-catch-finally block");
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>First statement of try block
+finally block
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+at beginnersbook.com.Example2.main(Details.java:6)</pre>
+<p>As you can see that the system generated exception message is shown but before that the finally block successfully executed.</p>
+<p><strong>Example 3</strong>: When exception occurs in try block and handled properly in catch block</p>
+<pre>class Example3{
+   public static void main(String args[]){
+      try{
+         System.out.println("First statement of try block");
+         int num=45/0;
+         System.out.println(num);
+      }
+      catch(ArithmeticException e){
+         System.out.println("ArithmeticException");
+      }
+      finally{
+         System.out.println("finally block");
+      }
+      System.out.println("Out of try-catch-finally block");
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>First statement of try block
+ArithmeticException
+finally block
+Out of try-catch-finally block</pre>
+<div class="bb-nav"><a class="pretut" href="../nested-try-catch/index.html">❮ Previous</a><a class="nexttut" href="../throw-in-java/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-24920">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2a4e89253ce4ad51d0cfdf3b71950af5?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2a4e89253ce4ad51d0cfdf3b71950af5?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sachit</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-28T11:58:24+00:00" itemprop="datePublished"><a href="index.html#comment-24920" class="comment-time-link" itemprop="url">March 28, 2015 at 11:58 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Output of Example1 is<br />
+First statement of try block<br />
+15<br />
+finally block<br />
+Out of try-catch-finally block</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24920' onclick='return addComment.moveForm( "comment-24920", "24920", "respond", "1925" )' aria-label='Reply to Sachit'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-74388">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-09-06T06:32:09+00:00" itemprop="datePublished"><a href="index.html#comment-74388" class="comment-time-link" itemprop="url">September 6, 2017 at 6:32 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks Sachit for pointing it out. I have fixed it.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-74388' onclick='return addComment.moveForm( "comment-74388", "74388", "respond", "1925" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1925' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="d3c7c6a44b" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="126"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-17" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Exception Handling</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../java-exception-handling/index.html">Exception handling</a></li> 
+<li><a href="../try-catch-in-java/index.html">try-catch block</a></li>
+<li><a href="../../05/catch-multiple-exceptions/index.html">Multiple catch blocks</a></li>
+<li><a href="../nested-try-catch/index.html">nested try-catch</a></li> 
+<li><a href="index.html">finally block</a></li> 
+<li><a href="../../05/flow-in-try-catch-finally/index.html">Flow Control in try-catch-finally</a></li>
+<li><a href="../throw-in-java/index.html">throw keyword</a></li> 
+<li><a href="../java-throws/index.html">throws clause</a></li> 
+<li><a href="../difference-between-throw-and-throws-in-java/index.html">throw vs throws</a></li>  
+ <li><a href="../user-defined-exception-in-java/index.html">Custom Exception</a></li> 
+<li><a href="../java-checked-unchecked-exceptions-with-examples/index.html">Checked and Unchecked Exceptions</a></li> 
+<li><a href="../exception-handling-examples/index.html">Exception Examples</a></li> 
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+<li><a href="../../../java-tutorial-for-beginners-with-examples/index.html">Java Tutorial</a></li>
+<li><a href="../oops-concepts/index.html">OOPs Concepts</a></li>
+ 	<li><a href="../../12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/04/java-finally-block/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:40:54 GMT -->
+</html>

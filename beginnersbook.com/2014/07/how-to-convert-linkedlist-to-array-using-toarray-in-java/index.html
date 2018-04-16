@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2014/07/how-to-convert-linkedlist-to-array-using-toarray-in-java/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:50:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to convert LinkedList to array using toArray() in Java</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Converting LinkedList to array is very easy. You can convert a LinkedList of any type (such as double, String, int etc) to an array of same type. In this tutorial we will see an example of such type of conversion. Example Here we are converting a LinkedList of strings to String Array (LinkedList to String[]). At the"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to convert LinkedList to array using toArray() in Java" />
+<meta property="og:description" content="Converting LinkedList to array is very easy. You can convert a LinkedList of any type (such as double, String, int etc) to an array of same type. In this tutorial we will see an example of such type of conversion. Example Here we are converting a LinkedList of strings to String Array (LinkedList to String[]). At the" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="array" />
+<meta property="article:tag" content="LinkedList" />
+<meta property="article:section" content="Java Collections" />
+<meta property="article:published_time" content="2014-07-05T03:01:45+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Converting LinkedList to array is very easy. You can convert a LinkedList of any type (such as double, String, int etc) to an array of same type. In this tutorial we will see an example of such type of conversion. Example Here we are converting a LinkedList of strings to String Array (LinkedList to String[]). At the" />
+<meta name="twitter:title" content="How to convert LinkedList to array using toArray() in Java" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; How to convert LinkedList to array using toArray() in Java Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index249f.html?p=5331' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed2205.json?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F07%2Fhow-to-convert-linkedlist-to-array-using-toarray-in-java%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed862f?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F07%2Fhow-to-convert-linkedlist-to-array-using-toarray-in-java%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-5331 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-5331 post type-post status-publish format-standard category-java-collections tag-array tag-linkedlist entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">How to convert LinkedList to array using toArray() in Java</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/java-collections/index.html" rel="category tag">Java Collections</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Converting <a title="LinkedList in Java with Example" href="../../../2013/12/linkedlist-in-java-with-example/index.html" target="_blank">LinkedList</a> to array is very easy. You can convert a LinkedList of any type (such as double, String, int etc) to an array of same type. In this tutorial we will see an example of such type of conversion.</p>
+<h4>Example</h4>
+<p>Here we are converting a LinkedList of strings to String Array (LinkedList to String[]). At the end of the program we have mentioned how to convert a list of any other type such as double, int etc to corresponding array type.</p>
+<pre>import java.util.LinkedList;
+
+public class ConvertExample {
+ public static void main(String[] args) {
+ 
+    //Creating and populating LinkedList
+    LinkedList&lt;String&gt; linkedlist = new LinkedList&lt;String&gt;();
+    linkedlist.add("Harry");
+    linkedlist.add("Maddy");
+    linkedlist.add("Chetan");
+    linkedlist.add("Chauhan");
+    linkedlist.add("Singh");
+
+    //Converting LinkedList to Array
+    String[] array = linkedlist.toArray(new String[linkedlist.size()]);
+
+    //Displaying Array content
+    System.out.println("Array Elements:");
+    for (int i = 0; i &lt; array.length; i++)
+    {
+       System.out.println(array[i]);
+    }
+ }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Array Elements:
+Harry
+Maddy
+Chetan
+Chauhan
+Singh</pre>
+<p>As you can see we are having the same elements in array that we had in the LinkedList.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><strong>Note:</strong><br />
+In the above example we have taken a LinkedList of Strings, however if you have a LinkedList of different type then you can just change the conversion logic like this.</p>
+<p>For LinkedList conversion logic would be:<br />
+<code>Double[] array = linkedlist.toArray(new Double[linkedlist.size()]);</code></p>
+<p>Similarly for LinkedList conversion logic would be:<br />
+<code>Integer[] array = linkedlist.toArray(new Integer[linkedlist.size()]);</code></p>
+<p>More about <a href="http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html#toArray(T[])" target="_blank">toArray() method from Javadoc:</a></p>
+<p><code>public T[] toArray(T[] a)</code>: It returns an array containing all of the elements in this list in proper sequence (from first to last element); the runtime type of the returned array is that of the specified array. If the list fits in the specified array, it is returned therein. Otherwise, a new array is allocated with the runtime type of the specified array and the size of this list.</p>
+<p>If the list fits in the specified array with room to spare (i.e., the array has more elements than the list), the element in the array immediately following the end of the list is set to null. (This is useful in determining the length of the list only if the caller knows that the list does not contain any null elements.)</p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../06/listiterator-in-java-with-examples/index.html" rel="bookmark" title="Link to ListIterator in Java with examples">ListIterator in Java with examples</a></li><li><a href="../how-to-sort-a-treemap-by-value-in-java/index.html" rel="bookmark" title="Link to How to sort a TreeMap by value in java">How to sort a TreeMap by value in java</a></li><li><a href="../how-to-get-the-sub-map-from-treemap-example-java/index.html" rel="bookmark" title="Link to How to get the Sub Map from TreeMap example &#8211; Java">How to get the Sub Map from TreeMap example &#8211; Java</a></li><li><a href="../../../2013/12/difference-between-arraylist-and-linkedlist-in-java/index.html" rel="bookmark" title="Link to Difference between ArrayList and LinkedList in Java">Difference between ArrayList and LinkedList in Java</a></li><li><a href="../../../2013/12/java-arraylist-set-method-example/index.html" rel="bookmark" title="Link to Java ArrayList set() Method example">Java ArrayList set() Method example</a></li><li><a href="../java-hashmap-iterator-example/index.html" rel="bookmark" title="Link to Java &#8211; HashMap Iterator example">Java &#8211; HashMap Iterator example</a></li></ol></div><footer class="entry-footer"></footer></article>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='5331' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="4145cb8903" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="97"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-4" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../../../java-tutorial-for-beginners-with-examples/index.html">Java Tutorial</a></li>
+<li><a href="../../../2013/04/oops-concepts/index.html">OOPs Concepts</a></li>
+</ul>
+<h2 class="widget-title">Java Collections</h2>
+<ul>
+<li><a href="../../../2013/12/java-arraylist/index.html">ArrayList</a></li>
+<li><a href="../../../2013/12/linkedlist-in-java-with-example/index.html">LinkedList</a></li>
+<li><a href="../../../2013/12/difference-between-arraylist-and-linkedlist-in-java/index.html">ArrayList vs LinkedList</a></li>
+<li><a href="../../../2013/12/vector-in-java/index.html">Vector</a></li>
+<li><a href="../../../2013/12/difference-between-arraylist-and-vector-in-java/index.html">ArrayList vs Vector</a></li>
+<li><a href="../../../2013/12/hashmap-in-java-with-example/index.html">HashMap</a></li>
+<li><a href="../../../2013/12/treemap-in-java-with-example/index.html">TreeMap</a></li>
+<li><a href="../../../2013/12/linkedhashmap-in-java/index.html">LinkedHashMap</a></li>
+<li><a href="../../../2013/12/hashset-class-in-java-with-example/index.html">HashSet</a></li>
+<li><a href="../../../2013/12/treeset-class-in-java-with-example/index.html">TreeSet</a></li>
+<li><a href="../../../2013/12/linkedhashset-class-in-java-with-example/index.html">LinkedHashSet</a></li>
+<li><a href="../hashtable-in-java-with-example/index.html">Hashtable</a></li>
+<li><a href="../../06/difference-between-hashmap-and-hashtable/index.html">HashMap vs Hashtable</a></li>
+<li><a href="../../../2017/08/queue-interface-in-java-collections/index.html">Queue</a></li>
+<li><a href="../../../2017/08/java-collections-priorityqueue-interface/index.html">PriorityQueue</a></li>
+<li><a href="../../../2017/08/java-collections-deque-interface/index.html">Deque & ArrayDeque</a></li>
+<li><a href="../../06/java-iterator-with-examples/index.html">Iterator</a></li>
+<li><a href="../../06/listiterator-in-java-with-examples/index.html">ListIterator</a></li>
+<li><a href="../../../2017/08/comparable-interface-in-java-with-example/index.html">Comparable Interface</a></li>
+<li><a href="../../../2017/08/comparator-interface-in-java/index.html">Comparator Interface</a></li>
+<li><a href="../../../2015/03/java-collections-interview-questions-and-answers/index.html">Java Collections Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../../2013/12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../../2013/04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../../2013/03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../java-serialization/index.html">Java Serialization</a></li>
+	<li><a href="../../08/java-regex-tutorial/index.html">Java Regex</a></li>
+	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+<li><a href="../../09/java-enum-examples/index.html">Java Enum</a></li>
+<li><a href="../../09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2014/07/how-to-convert-linkedlist-to-array-using-toarray-in-java/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:50:24 GMT -->
+</html>

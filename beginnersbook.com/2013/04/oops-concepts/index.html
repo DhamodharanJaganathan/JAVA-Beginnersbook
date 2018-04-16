@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/04/oops-concepts/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:37:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OOPs concepts in Java</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Java OOPs concepts - In this guide, we will discuss features of Object Oriented Programming System(OOPs) and how they are used in java with examples."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="OOPs concepts in Java" />
+<meta property="og:description" content="Java OOPs concepts - In this guide, we will discuss features of Object Oriented Programming System(OOPs) and how they are used in java with examples." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="OOPs Concept" />
+<meta property="article:published_time" content="2013-04-20T18:25:20+00:00" />
+<meta property="article:modified_time" content="2017-09-10T13:56:01+00:00" />
+<meta property="og:updated_time" content="2017-09-10T13:56:01+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/04/OOPs-Concepts-Object-Class.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/04/OOPs-Concepts-Object-Class.jpg" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/04/OOPs-Concepts-Message-Passing.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/04/OOPs-Concepts-Message-Passing.jpg" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/04/Object-oriented-programming-features.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/04/Object-oriented-programming-features.jpg" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/04/multilevel-multiple-inheritance.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/04/multilevel-multiple-inheritance.jpg" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/04/Interface-example.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/04/Interface-example.jpg" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Java OOPs concepts - In this guide, we will discuss features of Object Oriented Programming System(OOPs) and how they are used in java with examples." />
+<meta name="twitter:title" content="OOPs concepts in Java" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2013/04/OOPs-Concepts-Object-Class.jpg" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; OOPs concepts in Java Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexee0c.html?p=2132' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed5f5f.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F04%2Foops-concepts%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed583a?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F04%2Foops-concepts%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2132 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-5682"><a href="index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2132 post type-post status-publish format-standard category-oops-concept entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">OOPs concepts in Java</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/oops-concept/index.html" rel="category tag">OOPs Concept</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Object-oriented programming System(OOPs) is a programming paradigm based on the concept of &#8220;objects&#8221; that contain data and methods. The primary purpose of object-oriented programming is to increase the flexibility and maintainability of programs. Object oriented programming brings together data and its behaviour(methods) in a single location(object) makes it easier to understand how a program works. We will cover each and every feature of OOPs in detail so that you won&#8217;t face any difficultly understanding <strong>OOPs Concepts</strong>.</p>
+<h2>OOPs Concepts &#8211; Table of Contents</h2>
+<ol>
+<li><a href="#1">What is an Object</a></li>
+<li><a href="#2">What is a class</a></li>
+<li><a href="#3">Constructor in Java</a></li>
+<li><a href="#4">Object Oriented Programming Features</a>
+<ul>
+<li><a href="#5">Abstraction</a></li>
+<li><a href="#6">Encapsulation</a></li>
+<li><a href="#7">Inheritance</a></li>
+<li><a href="#8">Polymorphism</a></li>
+</ul>
+</li>
+<li><a href="#9">Abstract Class and Methods</a></li>
+<li><a href="#10">Interfaces in Java</a></li>
+</ol>
+<h2 id="1">What is an Object</h2>
+<p><img class="aligncenter size-full wp-image-6562" src="../../../wp-content/uploads/2013/04/OOPs-Concepts-Object-Class.jpg" alt="OOPs Concepts Object Class" width="550" height="120" srcset="https://beginnersbook.com/wp-content/uploads/2013/04/OOPs-Concepts-Object-Class.jpg 550w, https://beginnersbook.com/wp-content/uploads/2013/04/OOPs-Concepts-Object-Class-300x65.jpg 300w" sizes="(max-width: 550px) 100vw, 550px" /><br />
+<strong>Object:</strong> is a bundle of data and its behaviour(often known as methods).</p>
+<p>Objects have two characteristics: They have <strong>states</strong> and <strong>behaviors</strong>.</p>
+<p><strong>Examples of states and behaviors</strong><br />
+<strong>Example 1:</strong><br />
+<strong>Object</strong>: House<br />
+<strong>State</strong>: Address, Color, Area<br />
+<strong>Behavior</strong>: Open door, close door</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>So if I had to write a class based on states and behaviours of House. I can do it like this: States can be represented as instance variables and behaviours as methods of the class. We will see how to create classes in the next section of this guide.</p>
+<pre>class House {
+   String address;
+   String color;
+   double are;
+   void openDoor() {
+      //Write code here
+   }
+   void closeDoor() {
+      //Write code here
+   }
+ ...
+ ...
+}</pre>
+<p><strong>Example 2:</strong><br />
+Let&#8217;s take another example.<br />
+<strong>Object</strong>: Car<br />
+<strong>State</strong>: Color, Brand, Weight, Model<br />
+<strong>Behavior</strong>: Break, Accelerate, Slow Down, Gear change.</p>
+<p><strong>Note:</strong> As we have seen above, the states and behaviors of an object, can be represented by variables and methods in the class respectively.</p>
+<h3>Characteristics of Objects:</h3>
+<p>If you find it hard to understand Abstraction and Encapsulation, do not worry as I have covered these topics in detail with examples in the next section of this guide.</p>
+<ol>
+<li>Abstraction</li>
+<li>Encapsulation</li>
+<li>Message passing</li>
+</ol>
+<p><strong>Abstraction</strong>: Abstraction is a process where you show only &#8220;relevant&#8221; data and &#8220;hide&#8221; unnecessary details of an object from the user.</p>
+<p><strong>Encapsulation</strong>: Encapsulation simply means binding object state(fields) and behaviour(methods) together. If you are creating class, you are doing encapsulation.</p>
+<p><strong>Message passing</strong><br />
+A single object by itself may not be very useful. An application contains many objects. One object interacts with another object by invoking methods on that object. It is also referred to as <strong>Method Invocation</strong>. See the diagram below.</p>
+<p><img class="aligncenter size-full wp-image-6563" src="../../../wp-content/uploads/2013/04/OOPs-Concepts-Message-Passing.jpg" alt="OOPs concepts, Message passing" width="400" height="300" srcset="https://beginnersbook.com/wp-content/uploads/2013/04/OOPs-Concepts-Message-Passing.jpg 400w, https://beginnersbook.com/wp-content/uploads/2013/04/OOPs-Concepts-Message-Passing-300x225.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<h2 id="2">What is a Class in OOPs Concepts</h2>
+<p>A class can be considered as a blueprint using which you can create as many objects as you like. For example, here we have a class <code>Website</code> that has two data members (also known as fields, instance variables and object states). This is just a blueprint, it does not represent any website, however using this we can create Website objects (or instances) that represents the websites. We have created two objects, while creating objects we provided separate properties to the objects using constructor.</p>
+<pre>public class Website {
+   //fields (or instance variable)
+   String webName;
+   int webAge;
+
+   // constructor
+   Website(String name, int age){
+      this.webName = name;
+      this.webAge = age;
+   }
+   public static void main(String args[]){
+      //Creating objects
+      Website obj1 = new Website("beginnersbook", 5);
+      Website obj2 = new Website("google", 18);
+
+     //Accessing object data through reference
+     System.out.println(obj1.webName+" "+obj1.webAge);
+     System.out.println(obj2.webName+" "+obj2.webAge);
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>beginnersbook 5
+google 18</pre>
+<h2 id="3">What is a Constructor</h2>
+<p><a href="../../03/constructors-in-java/index.html">Constructor</a> looks like a method but it is in fact not a method. It&#8217;s name is same as class name and it does not return any value. You must have seen this statement in almost all the programs I have shared above:</p>
+<pre>MyClass obj = new MyClass();</pre>
+<p>If you look at the right side of this statement, we are calling the default constructor of class <code>myClass</code> to create a new object (or instance).</p>
+<p>We can also have parameters in the constructor, such constructors are known as <a href="../../../2014/01/parameterized-constructor-in-java-example/index.html">parametrized constructors</a>.</p>
+<h4>Example of constructor</h4>
+<pre>public class ConstructorExample {
+
+   int age;
+   String name;
+	
+   //Default constructor
+   ConstructorExample(){
+	this.name="Chaitanya";
+	this.age=30;
+   }
+	
+   //Parameterized constructor
+   ConstructorExample(String n,int a){
+	this.name=n;
+	this.age=a;
+   }
+   public static void main(String args[]){
+	ConstructorExample obj1 = new ConstructorExample();
+	ConstructorExample obj2 = 
+		       new ConstructorExample("Steve", 56);
+	System.out.println(obj1.name+" "+obj1.age);
+	System.out.println(obj2.name+" "+obj2.age);
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Chaitanya 30
+Steve 56</pre>
+<h2 id="4">Object Oriented Programming features</h2>
+<p><img class="aligncenter size-full wp-image-6564" src="../../../wp-content/uploads/2013/04/Object-oriented-programming-features.jpg" alt="OOPs features, Object-oriented-programming-features" width="600" height="350" srcset="https://beginnersbook.com/wp-content/uploads/2013/04/Object-oriented-programming-features.jpg 600w, https://beginnersbook.com/wp-content/uploads/2013/04/Object-oriented-programming-features-300x175.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /><br />
+These four features are the main OOPs Concepts that you must learn to understand the Object Oriented Programming in Java</p>
+<h3 id="5">Abstraction</h3>
+<p>Abstraction is a process where you show only &#8220;relevant&#8221; data and &#8220;hide&#8221; unnecessary details of an object from the user. For example, when you login to your bank account online, you enter your user_id and password and press login, what happens when you press login, how the input data sent to server, how it gets verified is all abstracted away from the you. Read more about it here: <a href="../../03/oops-in-java-encapsulation-inheritance-polymorphism-abstraction/index.html">Abstraction in Java</a>.</p>
+<h3 id="6">Encapsulation</h3>
+<p>Encapsulation simply means binding object state(fields) and behavior(methods) together. If you are creating class, you are doing encapsulation.</p>
+<h4>Encapsulation example in Java</h4>
+<p>How to<br />
+1) Make the instance variables private so that they cannot be accessed directly from outside the class. You can only set and get values of these variables through the methods of the class.<br />
+2) Have getter and setter methods in the class to set and get the values of the fields.</p>
+<pre>class EmployeeCount
+{
+   private int numOfEmployees = 0;
+   public void setNoOfEmployees (int count)
+   {
+       numOfEmployees = count;
+   }
+   public double getNoOfEmployees () 
+   {
+       return numOfEmployees;
+   }
+}
+public class EncapsulationExample
+{
+   public static void main(String args[])
+   {
+      EmployeeCount obj = new EmployeeCount ();
+      obj.setNoOfEmployees(5613);
+      System.out.println("No Of Employees: "+(int)obj.getNoOfEmployees());
+    }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>No Of Employees: 5613</pre>
+<p>The class <code>EncapsulationExample</code> that is using the Object of class <code>EmployeeCount</code> will not able to get the NoOfEmployees directly. It has to use the setter and getter methods of the same class to set and get the value.<br />
+<strong>So what is the benefit of encapsulation in java programming</strong><br />
+Well, at some point of time, if you want to change the implementation details of the class EmployeeCount, you can freely do so without affecting the classes that are using it.</p>
+<h3 id="7">Inheritance</h3>
+<p>The process by which one class acquires the properties and functionalities of another class is called <a href="../../03/inheritance-in-java/index.html">inheritance</a>. Inheritance provides the idea of reusability of code and each sub class defines only those features that are unique to it, rest of the features can be inherited from the parent class.</p>
+<ol>
+<li>Inheritance is a process of defining a new class based on an existing class by extending its common data members and methods.</li>
+<li>Inheritance allows us to reuse of code, it improves reusability in your java application.</li>
+<li>The parent class is called the <strong>base class</strong> or <strong>super class</strong>. The child class that extends the base class is called the derived class or <strong>sub class</strong> or <strong>child class</strong>.</li>
+</ol>
+<p><strong>Note:</strong> The biggest advantage of Inheritance is that the code in base class need not be rewritten in the child class.<br />
+The <strong>variables</strong> and <strong>methods</strong> of the base class can be used in the <strong>child class</strong> as well.</p>
+<h4>Syntax: Inheritance in Java</h4>
+<p>To inherit a class we use extends keyword. Here class A is child class and class B is parent class.</p>
+<pre>class A extends B
+{
+}</pre>
+<h4>Inheritance Example</h4>
+<p>In this example, we have a parent class <code>Teacher</code> and a child class <code>MathTeacher</code>. In the <code>MathTeacher</code> class we need not to write the same code which is already present in the present class. Here we have college name, designation and does() method that is common for all the teachers, thus MathTeacher class does not need to write this code, the common data members and methods can inherited from the <code>Teacher</code> class.</p>
+<pre>class Teacher {
+   String designation = "Teacher";
+   String college = "Beginnersbook";
+   void does(){
+	System.out.println("Teaching");
+   }
+}
+public class MathTeacher extends Teacher{
+   String mainSubject = "Maths";
+   public static void main(String args[]){
+      MathTeacher obj = new MathTeacher();
+      System.out.println(obj.college);
+      System.out.println(obj.designation);
+      System.out.println(obj.mainSubject);
+      obj.does();
+   }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>Beginnersbook
+Teacher
+Maths
+Teaching</pre>
+<p><strong>Note: Multi-level inheritance</strong> is allowed in Java but <strong>not multiple inheritance</strong><br />
+<img class="aligncenter size-full wp-image-6565" src="../../../wp-content/uploads/2013/04/multilevel-multiple-inheritance.jpg" alt="multilevel and multiple inheritance diagram representation, Object oriented programming concepts" width="600" height="180" srcset="https://beginnersbook.com/wp-content/uploads/2013/04/multilevel-multiple-inheritance.jpg 600w, https://beginnersbook.com/wp-content/uploads/2013/04/multilevel-multiple-inheritance-300x90.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /></p>
+<p><a href="../../05/java-inheritance-types/index.html">Types of Inheritance</a>:<br />
+<strong>Single Inheritance</strong>: refers to a child and parent class relationship where a class extends the another class.</p>
+<p><strong>Multilevel inheritance</strong>: refers to a child and parent class relationship where a class extends the child class. For example class A extends class B and class B extends class C.</p>
+<p><strong>Hierarchical inheritance</strong>: refers to a child and parent class relationship where more than one classes extends the same class. For example, class B extends class A and class C extends class A.</p>
+<p><b>Multiple Inheritance</b>: refers to the concept of one class extending more than one classes, which means a child class has two parent classes. Java doesn&#8217;t support multiple inheritance, read more about it <a href="../../05/java-multiple-inheritance/index.html">here</a>.</p>
+<blockquote><p>Most of the new <strong>OO</strong> <strong>languages</strong> like Small Talk, Java, C# do not support Multiple inheritance. Multiple Inheritance is supported in C++.</p></blockquote>
+<h3 id="8">Polymorphism</h3>
+<p><a href="../../03/polymorphism-in-java/index.html">Polymorphism</a> is a object oriented programming feature that allows us to perform a single action in different ways. For example, lets say we have a class <code>Animal</code> that has a method <code>animalSound()</code>, here we cannot give implementation to this method as we do not know which Animal class would extend <code>Animal</code> class. So, we make this method abstract like this:</p>
+<pre>public abstract class Animal{
+   ...
+   public abstract void animalSound();
+}</pre>
+<p>Now suppose we have two Animal classes <code>Dog</code> and <code>Lion</code> that extends <code>Animal</code> class. We can provide the implementation detail there.</p>
+<pre>public class Lion extends Animal{
+...
+    @Override
+    public void animalSound(){
+        System.out.println("Roar");
+    }
+}</pre>
+<p>and</p>
+<pre>public class Dog extends Animal{
+...
+    @Override
+    public void animalSound(){
+        System.out.println("Woof");
+    }
+}</pre>
+<p>As you can see that although we had the common action for all subclasses <code>animalSound()</code> but there were different ways to do the same action. This is a perfect example of polymorphism (feature that allows us to perform a single action in different ways).</p>
+<p><a href="../runtime-compile-time-polymorphism/index.html">Types of Polymorphism</a><br />
+1) Static Polymorphism<br />
+2) Dynamic Polymorphism</p>
+<h4>Static Polymorphism:</h4>
+<p>Polymorphism that is resolved during compiler time is known as static polymorphism. Method overloading can be considered as static polymorphism example.<br />
+<strong>Method Overloading</strong>: This allows us to have more than one methods with same name in a class that differs in signature.</p>
+<pre>class DisplayOverloading
+{
+    public void disp(char c)
+    {
+         System.out.println(c);
+    }
+    public void disp(char c, int num)  
+    {
+         System.out.println(c + " "+num);
+    }
+}
+public class ExampleOverloading
+{
+   public static void main(String args[])
+   {
+       DisplayOverloading obj = new DisplayOverloading();
+       obj.disp('a');
+       obj.disp('a',10);
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>a
+a 10</pre>
+<blockquote><p>When I say method signature I am not talking about return type of the method, for example if two methods have same name, same parameters and have different return type, then this is not a valid method overloading example. This will throw compilation error.</p></blockquote>
+<h4>Dynamic Polymorphism</h4>
+<p>It is also known as Dynamic Method Dispatch. Dynamic polymorphism is a process in which a call to an overridden method is resolved at runtime rather, thats why it is called runtime polymorphism.</p>
+<p><strong>Example</strong></p>
+<pre>class Animal{
+   public void animalSound(){
+	System.out.println("Default Sound");
+   }
+}
+public class Dog extends Animal{
+
+   public void animalSound(){
+	System.out.println("Woof");
+   }
+   public static void main(String args[]){
+	Animal obj = new Dog();
+	obj.animalSound();
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Woof</pre>
+<p>Since both the classes, child class and parent class have the same method <code>animalSound</code>. Which of the method will be called is determined at runtime by JVM.</p>
+<p><strong>Few more overriding examples:</strong></p>
+<pre>Animal obj = new Animal();
+obj.animalSound();
+// This would call the Animal class method
+
+Dog obj = new Dog();
+obj.animalSound();
+// This would call the Dog class method
+
+Animal obj = new Dog();
+obj.animalSound();
+// This would call the Dog class method
+</pre>
+<h4>IS-A &amp; HAS-A Relationships</h4>
+<p>A Car <strong>IS-A</strong> Vehicle and <strong>HAS-A</strong> License then the code would look like this:</p>
+<pre>public class Vehicle{ }
+public class Car extends Vehicle{
+   private License myCarLicense;
+}</pre>
+<h2 id="9">Abstract Class and methods in OOPs Concepts</h2>
+<p><strong>Abstract method:</strong><br />
+1) A method that is declared but not defined. Only method signature no body.<br />
+2) Declared using the abstract keyword<br />
+3) Example :</p>
+<pre>abstract public void playInstrument();</pre>
+<p>5) Used to put some kind of compulsion on the class who inherits the class has abstract methods. The class that inherits must provide the implementation of all the abstract methods of parent class else declare the subclass as abstract.<br />
+6) These cannot be abstract</p>
+<ul>
+<li>Constructors</li>
+<li>Static methods</li>
+<li>Private methods</li>
+<li>Methods that are declared &#8220;final&#8221;</li>
+</ul>
+<p><b>Abstract Class</b><br />
+An abstract class outlines the methods but not necessarily implements all the methods.</p>
+<pre>abstract class A{
+   abstract void myMethod();
+   void anotherMethod(){
+      //Does something
+   }
+}</pre>
+<p><strong>Note 1:</strong> There can be some scenarios where it is difficult to implement all the methods in the base class. In such scenarios one can define the base class as an abstract class which signifies that this base class is a special kind of class which is not complete on its own.</p>
+<p>A class derived from the abstract base class must implement those methods that are not implemented(means they are abstract) in the abstract class.</p>
+<p><strong>Note 2:</strong> Abstract class cannot be instantiated which means you cannot create the object of abstract class. To use this class, you need to create another class that extends this abstract class provides the implementation of abstract methods, then you can use the object of that child class to call non-abstract parent class methods as well as implemented methods(those that were abstract in parent but implemented in child class).</p>
+<p><strong>Note 3:</strong> If a child does not implement all the abstract methods of parent class(the abstract class), then the child class must need to be declared abstract.</p>
+<h3>Example of Abstract class and Methods</h3>
+<p>Here we have an abstract class Animal that has an abstract method animalSound(), since the animal sound differs from one animal to another, there is no point in giving the implementation to this method as every child class must override this method to give its own implementation details. That&#8217;s why we made it abstract.<br />
+Now each animal must have a sound, by making this method abstract we made it compulsory to the child class to give implementation details to this method. This way we ensures that every animal has a sound.</p>
+<pre>//abstract class
+abstract class Animal{
+   //abstract method
+   public abstract void animalSound();
+}
+public class Dog extends Animal{
+
+   public void animalSound(){
+	System.out.println("Woof");
+   }
+   public static void main(String args[]){
+	Animal obj = new Dog();
+	obj.animalSound();
+   }
+}</pre>
+<p>Output:</p>
+<pre>Woof</pre>
+<h2 id="10">Interfaces in Java</h2>
+<p>An interface is a blueprint of a class, which can be declared by using <strong>interface</strong> keyword. Interfaces can contain only constants and abstract methods (methods with only signatures no body).Like abstract classes, Interfaces cannot be instantiated, they can only be implemented by classes or extended by other interfaces. Interface is a common way to achieve full abstraction in Java.</p>
+<p><strong>Note:</strong></p>
+<ol>
+<li>Java does not support Multiple Inheritance, however a class can implement more than one interfaces</li>
+<li>Interface is similar to an abstract class but it contains only abstract methods.</li>
+<li>Interfaces are created by using interface keyword instead of the keyword class</li>
+<li>We use <code>implements</code> keyword while implementing an interface(similar to extending a class with extends keyword)</li>
+</ol>
+<p><strong>Interface: Syntax</strong></p>
+<pre>class ClassName extends Superclass implements Interface1, Interface2, ....</pre>
+<h3>Example of Interface:</h3>
+<p><img class="aligncenter size-full wp-image-6567" src="../../../wp-content/uploads/2013/04/Interface-example.jpg" alt="Interface example diagram" width="600" height="300" srcset="https://beginnersbook.com/wp-content/uploads/2013/04/Interface-example.jpg 600w, https://beginnersbook.com/wp-content/uploads/2013/04/Interface-example-300x150.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /></p>
+<p><strong>Note</strong>:</p>
+<ol>
+<li>All <strong>methods in an interface</strong> are implicitly public and abstract. Using the keyword <code>abstract</code> before each method is optional.</li>
+<li>An <strong>interface</strong> may contain final variables.</li>
+<li>A class can <strong>extend only one other class</strong>, but it can <strong>implement any number of interfaces.</strong></li>
+<li>When a class implements an interface it has to give the definition of all the abstract methods of interface, else it can be declared as abstract class</li>
+<li>An interface reference can point to <strong>objects</strong> of its implementing classes.</li>
+</ol>
+<p><strong>Generalization and Specialization:</strong><br />
+In order to implement the concept of inheritance in an OOPs, one has to first identify the similarities among different classes so as to come up with the base class.</p>
+<p>This process of identifying the similarities among different classes is called <strong>Generalization</strong>. Generalization is the process of extracting shared characteristics from two or more classes, and combining them into a generalized superclass. Shared characteristics can be attributes or methods.</p>
+<p>In contrast to generalization, specialization means creating new subclasses from an existing class. If it turns out that certain attributes or methods only apply to some of the objects of the class, a subclass can be created.</p>
+<h4>Access Specifiers</h4>
+<p>Well, you must have seen public, private keyword in the examples I have shared above. They are called <a href="../../05/java-access-modifiers/index.html">access specifiers</a> as they decide the scope of a data member, method or class.</p>
+<p>There are <strong>four types</strong> of access specifiers in java:<br />
+<strong>public:</strong> Accessible to all. Other objects can also access this member variable or function.<br />
+<strong>private:</strong> Not accessible by other objects. Private members can be accessed only by the methods in the same class. <strong>Object accessible only in class in which they are declared.</strong><br />
+<strong>protected:</strong> The scope of a protected variable is within the class which declares it and in the class which inherits from the class (Scope is class and subclass).<br />
+<strong>Default:</strong> Scope is Package Level. We do not need to explicitly mention default as when we do not mention any access specifier it is considered as default.</p>
+<h2>What will we learn in the next tutorials on OOPs Concepts</h2>
+<p>Although we have covered almost all the OOPs concepts here, but whatever we have learned in this guide is in brief, these topics are wide and there is so much scope to learn these topics in detail with the help of examples. Thats why I have covered each and every topic in detail along with examples and diagrams in the next tutorials.<br />
+<strong>How can you read the next tutorials in a sequential manner?</strong> There are couple of ways to do it &#8211; 1) Tutorial links are provided in the left sidebar, go though them in the given sequence.<br />
+2) Go to the main <a href="../../../java-tutorial-for-beginners-with-examples/index.html">java tutorial</a> page that has all the links to the tutorials in the sequential manner.<br />
+If you find any difficulty understanding these OOPs Concepts then drop a comment below and I will get back to you as soon as possible.</p>
+<div class="bb-nav"><a class="pretut" href="../../../2017/08/java-break-statement/index.html">❮ Previous</a><a class="nexttut" href="../../03/constructors-in-java/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-95">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b5ce5c568ecacc4aeb2cfebf446c8819?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b5ce5c568ecacc4aeb2cfebf446c8819?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sasikumar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2013-07-23T12:31:27+00:00" itemprop="datePublished"><a href="index.html#comment-95" class="comment-time-link" itemprop="url">July 23, 2013 at 12:31 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>your article so good and simple to understand.Thanks for post these valuable article.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-95' onclick='return addComment.moveForm( "comment-95", "95", "respond", "2132" )' aria-label='Reply to sasikumar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2706">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3cd1524860a9dfe5f0d77fd9f60a5ce2?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3cd1524860a9dfe5f0d77fd9f60a5ce2?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Savita Shinde</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-10T08:06:39+00:00" itemprop="datePublished"><a href="index.html#comment-2706" class="comment-time-link" itemprop="url">April 10, 2014 at 8:06 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>One of the best website for beginners..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2706' onclick='return addComment.moveForm( "comment-2706", "2706", "respond", "2132" )' aria-label='Reply to Savita Shinde'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-3051">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8ad373d38bbbd570de49e5eac8fa7ba0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8ad373d38bbbd570de49e5eac8fa7ba0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">utkal samal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-22T16:37:52+00:00" itemprop="datePublished"><a href="index.html#comment-3051" class="comment-time-link" itemprop="url">April 22, 2014 at 4:37 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The Article which is posted , it is so so so helpful to me as well as who are visiting the site,<br />
+Thanks a lot to you.</p>
+<p>I got to clear about lot of concept in java from this Article.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3051' onclick='return addComment.moveForm( "comment-3051", "3051", "respond", "2132" )' aria-label='Reply to utkal samal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4371">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9e989c78ff67dbc61d408d7e75f49dab?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9e989c78ff67dbc61d408d7e75f49dab?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">venkat shiva</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-06-18T11:40:44+00:00" itemprop="datePublished"><a href="index.html#comment-4371" class="comment-time-link" itemprop="url">June 18, 2014 at 11:40 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>simply understand this site helpful of b tech students&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;.thnq&#8230;&#8230;i love this site</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-4371' onclick='return addComment.moveForm( "comment-4371", "4371", "respond", "2132" )' aria-label='Reply to venkat shiva'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-4898">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d46242a5213958604b9d260d5bd9cba4?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d46242a5213958604b9d260d5bd9cba4?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sandhu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-07-06T15:58:06+00:00" itemprop="datePublished"><a href="index.html#comment-4898" class="comment-time-link" itemprop="url">July 6, 2014 at 3:58 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>best concepts&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-4898' onclick='return addComment.moveForm( "comment-4898", "4898", "respond", "2132" )' aria-label='Reply to sandhu'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5937">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/cdbf131dd97bbcf0bdce0b09deff7d68?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/cdbf131dd97bbcf0bdce0b09deff7d68?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">savi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-06T06:45:51+00:00" itemprop="datePublished"><a href="index.html#comment-5937" class="comment-time-link" itemprop="url">August 6, 2014 at 6:45 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>good</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5937' onclick='return addComment.moveForm( "comment-5937", "5937", "respond", "2132" )' aria-label='Reply to savi'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-20233">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/cda4c1e742b0c4f7d62ebb7aca339210?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/cda4c1e742b0c4f7d62ebb7aca339210?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">murugan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-15T04:23:42+00:00" itemprop="datePublished"><a href="index.html#comment-20233" class="comment-time-link" itemprop="url">December 15, 2014 at 4:23 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>your site so good and simple to understand.Thanks for post.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-20233' onclick='return addComment.moveForm( "comment-20233", "20233", "respond", "2132" )' aria-label='Reply to murugan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-20237">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d6a71dcc96835ca6377156e7a038a0e4?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d6a71dcc96835ca6377156e7a038a0e4?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Raju</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-15T07:26:29+00:00" itemprop="datePublished"><a href="index.html#comment-20237" class="comment-time-link" itemprop="url">December 15, 2014 at 7:26 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Your explanation is very good.<br />
+In java there no access specifiers. We have only Access Modifiers.In C++ we have both specifiers and modifiers.<br />
+While creating class in Eclipse or in any IDE check it</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-20237' onclick='return addComment.moveForm( "comment-20237", "20237", "respond", "2132" )' aria-label='Reply to Raju'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-20467">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7e47116d50f3865c2eb6e549db184260?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7e47116d50f3865c2eb6e549db184260?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Manoj</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-19T19:56:34+00:00" itemprop="datePublished"><a href="index.html#comment-20467" class="comment-time-link" itemprop="url">December 19, 2014 at 7:56 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Really can&#8217;t appreciate enough the effort you put to explain the concepts and examples so clearly. Hats off..Great job indeed!!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-20467' onclick='return addComment.moveForm( "comment-20467", "20467", "respond", "2132" )' aria-label='Reply to Manoj'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-21171">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/95f9b4bf42551fffb7afc62478fefd87?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/95f9b4bf42551fffb7afc62478fefd87?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">shankar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-30T16:04:18+00:00" itemprop="datePublished"><a href="index.html#comment-21171" class="comment-time-link" itemprop="url">December 30, 2014 at 4:04 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>i left all my books by seeing this website too good for beginners<br />
+way of examples and explanations were too good that everyone can understand it<br />
+mean while fix bugs at index sheet maintenance</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-21171' onclick='return addComment.moveForm( "comment-21171", "21171", "respond", "2132" )' aria-label='Reply to shankar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-24461">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e9c07693129510e5890531292d4ff276?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e9c07693129510e5890531292d4ff276?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">arun kumar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-16T14:31:30+00:00" itemprop="datePublished"><a href="index.html#comment-24461" class="comment-time-link" itemprop="url">March 16, 2015 at 2:31 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>i really appreciate the people who made this website&#8230;i learnt a lot from this website..and came to know that this is very helpful for me to clear the doubts in java..!!<br />
+thank you..!!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24461' onclick='return addComment.moveForm( "comment-24461", "24461", "respond", "2132" )' aria-label='Reply to arun kumar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-28358">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/5f5bcdf72f5460ef48ead6461f2f9565?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/5f5bcdf72f5460ef48ead6461f2f9565?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rojalin Bhutia</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-17T19:06:05+00:00" itemprop="datePublished"><a href="index.html#comment-28358" class="comment-time-link" itemprop="url">June 17, 2015 at 7:06 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Its a GOOD website for Interview preparation.i can say it is a BEST website for freshers.Thank you..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-28358' onclick='return addComment.moveForm( "comment-28358", "28358", "respond", "2132" )' aria-label='Reply to Rojalin Bhutia'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-28527">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f3033b0553e494529898a777fbd5517e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f3033b0553e494529898a777fbd5517e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">devon</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-22T09:50:53+00:00" itemprop="datePublished"><a href="index.html#comment-28527" class="comment-time-link" itemprop="url">June 22, 2015 at 9:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Good for beginners !!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-28527' onclick='return addComment.moveForm( "comment-28527", "28527", "respond", "2132" )' aria-label='Reply to devon'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29670">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8d9baffeb58bf2175adcc77edb630afa?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8d9baffeb58bf2175adcc77edb630afa?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">prajwal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-16T10:06:18+00:00" itemprop="datePublished"><a href="index.html#comment-29670" class="comment-time-link" itemprop="url">July 16, 2015 at 10:06 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>So simple and so beautifully explained. Thanks a lot. I really appreciate your work.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-29670' onclick='return addComment.moveForm( "comment-29670", "29670", "respond", "2132" )' aria-label='Reply to prajwal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-32006">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/0f26639bc39b7413a4036f2cdb2315ea?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/0f26639bc39b7413a4036f2cdb2315ea?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tushar Budhlani</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-08T09:25:36+00:00" itemprop="datePublished"><a href="index.html#comment-32006" class="comment-time-link" itemprop="url">August 8, 2015 at 9:25 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This article is really very helpful.<br />
+Easy to understand.<br />
+Systematic Explanation.<br />
+I really appreciate those people who have worked on this.<br />
+Great job!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-32006' onclick='return addComment.moveForm( "comment-32006", "32006", "respond", "2132" )' aria-label='Reply to Tushar Budhlani'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-32473">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3a09329687f0021c65d68997e941496c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3a09329687f0021c65d68997e941496c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">shubham thakur</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-14T04:50:59+00:00" itemprop="datePublished"><a href="index.html#comment-32473" class="comment-time-link" itemprop="url">August 14, 2015 at 4:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>this site is very helpful 4 learning the basic concepts of java&#8230;.the language is so simple dat anyone can easily understand this&#8230; seriously respect for the man behind this (Y)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-32473' onclick='return addComment.moveForm( "comment-32473", "32473", "respond", "2132" )' aria-label='Reply to shubham thakur'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-32902">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ad6239be323148e1db24d618f34e6c1e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ad6239be323148e1db24d618f34e6c1e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rahul Soni</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-19T10:06:10+00:00" itemprop="datePublished"><a href="index.html#comment-32902" class="comment-time-link" itemprop="url">August 19, 2015 at 10:06 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This is really stunning site for getting knowledge of core fundamental of Java but you should come with Java Frameworks and ORM technology. Thanks</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-32902' onclick='return addComment.moveForm( "comment-32902", "32902", "respond", "2132" )' aria-label='Reply to Rahul Soni'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-40122">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2e0db074fdfc07e022287589835b155a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2e0db074fdfc07e022287589835b155a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Shahan Shaffi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-27T01:00:08+00:00" itemprop="datePublished"><a href="index.html#comment-40122" class="comment-time-link" itemprop="url">October 27, 2015 at 1:00 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>this site provides very helpful knowledge about the basic concepts of java</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-40122' onclick='return addComment.moveForm( "comment-40122", "40122", "respond", "2132" )' aria-label='Reply to Shahan Shaffi'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-46300">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/99243969118b92e7aa02e54335959814?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/99243969118b92e7aa02e54335959814?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rose</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-17T00:15:09+00:00" itemprop="datePublished"><a href="index.html#comment-46300" class="comment-time-link" itemprop="url">December 17, 2015 at 12:15 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks a lot<br />
+It was really helpful to me for my exam<br />
+Thank you so much</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-46300' onclick='return addComment.moveForm( "comment-46300", "46300", "respond", "2132" )' aria-label='Reply to Rose'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-48982">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a5363783836b09b32de17220d2e8e95c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a5363783836b09b32de17220d2e8e95c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">jafz</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-01-17T06:21:50+00:00" itemprop="datePublished"><a href="index.html#comment-48982" class="comment-time-link" itemprop="url">January 17, 2016 at 6:21 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>OOP concept needs be learnt like at ease   like you have done. it&#8217;s indeed a good article to visulize a OOP properly.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-48982' onclick='return addComment.moveForm( "comment-48982", "48982", "respond", "2132" )' aria-label='Reply to jafz'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-51089">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/df71b24cec63130869ce9db972485043?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/df71b24cec63130869ce9db972485043?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tonny Kirwa</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-15T08:35:32+00:00" itemprop="datePublished"><a href="index.html#comment-51089" class="comment-time-link" itemprop="url">February 15, 2016 at 8:35 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I always refer to this website when I want to understand a given concept&#8230; Your work will live forever!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51089' onclick='return addComment.moveForm( "comment-51089", "51089", "respond", "2132" )' aria-label='Reply to Tonny Kirwa'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-51325">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1ba55d9789c02cbf83ee5d8f80b6ea85?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1ba55d9789c02cbf83ee5d8f80b6ea85?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Smit</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-18T17:43:14+00:00" itemprop="datePublished"><a href="index.html#comment-51325" class="comment-time-link" itemprop="url">February 18, 2016 at 5:43 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello Mr. Singh,<br />
+I really fond of your deeds for beginners&#8217;. Your efforts and love been really appreciate. I have a small suggestion that it would be so good if you add pictures like stuff to explain the topics. Thank You.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51325' onclick='return addComment.moveForm( "comment-51325", "51325", "respond", "2132" )' aria-label='Reply to Smit'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-52033">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f7fbf721a6f29de9760f2975549a2b7e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f7fbf721a6f29de9760f2975549a2b7e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nitha</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-02T17:55:43+00:00" itemprop="datePublished"><a href="index.html#comment-52033" class="comment-time-link" itemprop="url">March 2, 2016 at 5:55 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I have a question regarding protected access specifier.In this article it&#8217;s given that &#8220;protected: The scope of a protected variable is within the class which declares it and in the class which inherits from the class (Scope is Class and subclass)&#8221;. To my knowledge, Protected means Package level and Subclass level access(in Java). Could you please comment on this..<br />
+Your articles are simple and very much helpful. Really appreciate your effort&#8230;<br />
+Thank you</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52033' onclick='return addComment.moveForm( "comment-52033", "52033", "respond", "2132" )' aria-label='Reply to Nitha'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-53994">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7ed9f629087167f5d2f1a73d1f1d1620?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7ed9f629087167f5d2f1a73d1f1d1620?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Peter</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-22T08:45:26+00:00" itemprop="datePublished"><a href="index.html#comment-53994" class="comment-time-link" itemprop="url">April 22, 2016 at 8:45 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>When I started learning Java Programming Language, I saw it as a very very complex thing. But this post has really helped me. I am enjoying learning Java. Do you have post for other programming languages like C, C++, Python, Pascal?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53994' onclick='return addComment.moveForm( "comment-53994", "53994", "respond", "2132" )' aria-label='Reply to Peter'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-56438">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b08bef6000dc53d2324358d4a66fe7f0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b08bef6000dc53d2324358d4a66fe7f0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">shubham</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-08T11:57:55+00:00" itemprop="datePublished"><a href="index.html#comment-56438" class="comment-time-link" itemprop="url">June 8, 2016 at 11:57 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Can We Downlode PDF file of this OOP Concept, Please forward the Link if possible</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-56438' onclick='return addComment.moveForm( "comment-56438", "56438", "respond", "2132" )' aria-label='Reply to shubham'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58845">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/201caf1c5d07e85bea013fe5aa8b5691?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/201caf1c5d07e85bea013fe5aa8b5691?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Jeya Prakash</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-07-31T13:06:31+00:00" itemprop="datePublished"><a href="index.html#comment-58845" class="comment-time-link" itemprop="url">July 31, 2016 at 1:06 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Super post for university assignment!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-58845' onclick='return addComment.moveForm( "comment-58845", "58845", "respond", "2132" )' aria-label='Reply to Jeya Prakash'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-63984">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/fe5548e8ffa5e20577d5612a59c05eae?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/fe5548e8ffa5e20577d5612a59c05eae?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rahul Jain</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-28T07:48:52+00:00" itemprop="datePublished"><a href="index.html#comment-63984" class="comment-time-link" itemprop="url">November 28, 2016 at 7:48 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>It is a best site to learn oops concept in very simple forms with suitable examples.And the content of this sites is easy to understand for learners.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63984' onclick='return addComment.moveForm( "comment-63984", "63984", "respond", "2132" )' aria-label='Reply to Rahul Jain'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-65959">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/96487c3d10d1d2a6f06a8695110a5251?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/96487c3d10d1d2a6f06a8695110a5251?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Precious</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-14T21:47:27+00:00" itemprop="datePublished"><a href="index.html#comment-65959" class="comment-time-link" itemprop="url">January 14, 2017 at 9:47 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This is a very explanatory article, it really helped. Thanks.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-65959' onclick='return addComment.moveForm( "comment-65959", "65959", "respond", "2132" )' aria-label='Reply to Precious'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-71946">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9784e2fa6b20f11eb051844a893ffe9b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9784e2fa6b20f11eb051844a893ffe9b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">pavan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-07-02T18:30:12+00:00" itemprop="datePublished"><a href="index.html#comment-71946" class="comment-time-link" itemprop="url">July 2, 2017 at 6:30 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>very useful artical for clearing basic concepts in our mind for interview ,<br />
+thank you so much&#8230;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-71946' onclick='return addComment.moveForm( "comment-71946", "71946", "respond", "2132" )' aria-label='Reply to pavan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-72025">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/05625bcac29835a7442005a51cfd2613?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/05625bcac29835a7442005a51cfd2613?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Lakshman</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-07-05T12:17:19+00:00" itemprop="datePublished"><a href="index.html#comment-72025" class="comment-time-link" itemprop="url">July 5, 2017 at 12:17 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Chaitanya,<br />
+I liked the way of explanation you have given to all the topics with examples and I understood very well. I feel that this is the best site/blog I went through for Java.Thanks for that<br />
+I have one suggestion that If there is a way to align the topics in an order to learn then it will be useful for new learners of Java.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-72025' onclick='return addComment.moveForm( "comment-72025", "72025", "respond", "2132" )' aria-label='Reply to Lakshman'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2132' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="0d33ebdfce" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="141"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../../05/java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../../05/jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../../05/first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="index.html">OOPs Concepts</a></li>
+<li><a href="../../03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../../05/java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../../05/aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../../05/association/index.html">Association</a></li>
+<li><a href="../../../2014/07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="../../05/method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="../../../2014/01/method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="../../../2014/01/difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../../05/java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="../../05/java-interface/index.html">Interface</a></li>
+ 	<li><a href="../../05/abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../../05/encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../../05/java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../../05/inner-class/index.html">Inner classes</a></li>
+<li><a href="../../05/java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../../05/static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../../05/java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/04/oops-concepts/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:37:25 GMT -->
+</html>

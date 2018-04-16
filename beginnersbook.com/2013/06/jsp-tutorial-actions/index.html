@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/06/jsp-tutorial-actions/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:54:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JSP Actions - Java Server Pages</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="JSP Actions lets you perform some action. Directives vs Actions Directives are used during translation phase while actions are used during request processing phase. Unlike Directives Actions are re-evaluated each time the page is accessed. The following are the action elements used in JSP: 1. &lt;jsp:include&gt;"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="JSP Actions - Java Server Pages" />
+<meta property="og:description" content="JSP Actions lets you perform some action. Directives vs Actions Directives are used during translation phase while actions are used during request processing phase. Unlike Directives Actions are re-evaluated each time the page is accessed. The following are the action elements used in JSP: 1. &lt;jsp:include&gt;" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="actions" />
+<meta property="article:tag" content="JSP" />
+<meta property="article:tag" content="jsp action tag" />
+<meta property="article:tag" content="jsp tutorial" />
+<meta property="article:tag" content="tutorial" />
+<meta property="article:section" content="JSP tutorial" />
+<meta property="article:published_time" content="2013-06-01T13:04:41+00:00" />
+<meta property="article:modified_time" content="2013-11-29T16:57:21+00:00" />
+<meta property="og:updated_time" content="2013-11-29T16:57:21+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="JSP Actions lets you perform some action. Directives vs Actions Directives are used during translation phase while actions are used during request processing phase. Unlike Directives Actions are re-evaluated each time the page is accessed. The following are the action elements used in JSP: 1. &lt;jsp:include&gt;" />
+<meta name="twitter:title" content="JSP Actions - Java Server Pages" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; JSP Actions &#8211; Java Server Pages Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index2cf7.html?p=2771' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed6347.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F06%2Fjsp-tutorial-actions%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed1a03?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F06%2Fjsp-tutorial-actions%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2771 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2771 post type-post status-publish format-standard category-jsp-tutorial tag-actions tag-jsp tag-jsp-action-tag tag-jsp-tutorial-2 tag-tutorial entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">JSP Actions &#8211; Java Server Pages</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/jsp-tutorial/index.html" rel="category tag">JSP tutorial</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p style="text-align: left;">JSP Actions lets you perform some action.</p>
+<h2><span style="color: #008000;">Directives vs Actions</span></h2>
+<ol>
+<li>Directives are used during translation phase while actions are used during request processing phase.</li>
+<li>Unlike Directives Actions are re-evaluated each time the page is accessed.</li>
+</ol>
+<p>The following are the action elements used in JSP:</p>
+<h2><span style="color: #008000;">1. &lt;jsp:include&gt; Action</span></h2>
+<p>Like <strong>include page directive </strong>this action is also used to insert a JSP file in another file.</p>
+<p><strong>&lt;jsp:include&gt; vs include directive :</strong></p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>It has the same difference which I mentioned at the beginning of the article (directive vs action). In &lt;jsp:include&gt; the file is being included during request processing while in case of include directive it has been included at translation phase.</p>
+<p><strong>Syntax of &lt;jsp:include&gt; :</strong></p>
+<pre>&lt;jsp:include page="page URL"  flush="Boolean Value" /&gt;</pre>
+<p>Here page URL is: the location of the page needs to be included &amp; flush value can be either true or false (Boolean value).</p>
+<p><strong>Example:</strong></p>
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Demo of JSP include Action Tag&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h3&gt;JSP page: Demo Include&lt;/h3&gt;
+&lt;jsp:include page="sample.jsp" flush="false" /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p><strong>page</strong>: Page value is sample.jsp which means this is the page needs to be included in the current file. Just the file name mentioned which shows that the sample.jsp is in the same directory.<br />
+<strong>flush</strong>: Its value is false, which means resource buffer has not been flushed out before including to the current page.</p>
+<p>Read more: <a href="../../11/jsp-include-action-tag/index.html" target="_blank">jsp include action tag</a>.</p>
+<h2><span style="color: #008000;">2. &lt;jsp:forward&gt; Action</span></h2>
+<p>&lt;jsp:forward&gt; is used for redirecting the request. When this action is encountered on a JSP page the control gets transferred to the page mentioned in this action.</p>
+<p><strong>Syntax of &lt;jsp:forward&gt; :</strong></p>
+<pre>&lt;jsp:forward page="URL of the another static, JSP OR Servlet page" /&gt;</pre>
+<p><strong>Example:</strong><br />
+<strong>first.jsp</strong></p>
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Demo of JSP Forward Action Tag&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h3&gt;JSP page: Demo forward&lt;/h3&gt;
+&lt;jsp:forward page="second.jsp" /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>Now when JSP engine would execute first.jsp (the above code) then after action tag, the request would be transferred to another JSP page (second.jsp).<br />
+<strong>Note</strong>: first.jsp and second.jsp should be in the same directory otherwise you have to specify the complete path of second.jsp.</p>
+<p>Read more: <a href="../../11/jsp-forward-action-tag/index.html" target="_blank">JSP forward action tag</a>.</p>
+<h2><span style="color: #008000;">3. &lt;jsp:param&gt; Action</span></h2>
+<p>This action is useful for passing the parameters to Other JSP action tags such as JSP include &amp; JSP forward tag. This way new JSP pages can have access to those parameters using request object itself.</p>
+<p><strong>Syntax of &lt;jsp:param&gt;:</strong></p>
+<pre>&lt;jsp: param name="param_name_here" value="value_of_parameter_here" /&gt;</pre>
+<p>Now considers the same above example &#8211;</p>
+<p><strong>first.jsp</strong></p>
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Demo of JSP Param Action Tag&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h3&gt;JSP page: Demo Param along with forward&lt;/h3&gt;
+&lt;jsp:forward page="second.jsp"&gt;
+    &lt;jsp:param name ="date" value="20-05-2012" /&gt;
+    &lt;jsp:param name ="time" value="10:15AM" /&gt;
+    &lt;jsp:param name ="data" value="ABC" /&gt;
+&lt;/jsp:forward&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>In the above example first.jsp is passing three parameters (data, time &amp; data) to second.jsp and second.jsp can access these parameters using the below code &#8211;</p>
+<pre>Date:&lt;%= request.getParameter("date") %&gt;
+Time:&lt;%= request.getParameter("time") %&gt;
+My Data:&lt;%= request.getParameter("data") %&gt;</pre>
+<h2><span style="color: #008000;">4. &lt;jsp:useBean&gt; Action</span></h2>
+<p>Read more here &#8211; <a href="../../11/jsp-usebean-setproperty-getproperty-action-tags/index.html" target="_blank">&lt;jsp:useBean&gt;, &lt;jsp:setProperty&gt; and &lt;jsp:getProperty&gt; in detail</a>.</p>
+<p>This action is useful when you want to use Beans in a JSP page, through this tag you can easily invoke a bean.</p>
+<p><strong>Syntax of &lt;jsp:useBean&gt;:</strong></p>
+<pre>&lt;jsp: useBean id="unique_name_to_identify_bean"  class="package_name.class_name" /&gt;</pre>
+<p><strong>Example of &lt;jsp:useBean&gt;, &lt;jsp:setProperty&gt; &amp; &lt;jsp:getProperty&gt;:</strong></p>
+<p>Once Bean class is instantiated using above statement, you have to use <strong>jsp:setProperty</strong> and <strong>jsp:getProperty</strong> actions to use the bean&#8217;s parameters. we will see both <strong>setProperty</strong> and <strong>getProperty</strong> after this action tag.</p>
+<p><strong>EmployeeBeanTest.jsp</strong></p>
+<pre>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JSP Page to show use of useBean action&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+       &lt;h1&gt;Demo: Action&lt;/h1&gt;
+       &lt;jsp:useBean id="student" class="javabeansample.StuBean"/&gt;
+       &lt;jsp:setProperty name="student" property="*"/&gt;
+       &lt;h1&gt;
+          name:&lt;jsp:getProperty name="student" property="name"/&gt;&lt;br&gt;
+          empno:&lt;jsp:getProperty name="student" property="rollno"/&gt;&lt;br&gt;
+       &lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+<p><strong>StudentBean.java</strong></p>
+<pre>package javabeansample;
+public class StuBean {
+    public StuBean() {
+    }
+    private String name;
+    private int rollno;
+    public void setName(String name)
+    {
+       this.name=name;
+     }
+    public String getName()
+    {
+       return name;
+     }
+    public void setRollno(int rollno)
+    {
+       this.rollno=rollno;
+     }
+    public int getRollno()
+    {
+        return rollno;
+    }
+}</pre>
+<h2><span style="color: #008000;">5. &lt;jsp:setProperty&gt; Action</span></h2>
+<p>This action tag is used to set the property of a Bean, while using this action tag, you may need to specify the Bean&#8217;s unique name (it is nothing but the id value of useBean action tag).</p>
+<p><strong>syntax of &lt;jsp:setProperty&gt;</strong></p>
+<pre>&lt;jsp: useBean id="unique_name_to_identify_bean"  class="package_name.class_name" /&gt;
+....
+....
+&lt;jsp:setProperty name="unique_name_to_identify_bean" property="property_name" /&gt;</pre>
+<p>OR</p>
+<pre>&lt;jsp: useBean id="unique_name_to_identify_bean"  class="package_name.class_name"&gt;
+....
+....
+&lt;jsp:setProperty name="unique_name_to_identify_bean" property="property_name" /&gt;
+&lt;/jsp:useBean&gt;</pre>
+<p>In property_name, you can also use &#8216;*&#8217;, which means any request parameter which matches to the Bean&#8217;s property will be passed to the corresponding setter method.</p>
+<h2><span style="color: #008000;">6. &lt;jsp:getProperty&gt; Action</span></h2>
+<p>It is used to retrieve or fetch the value of Bean&#8217;s property.</p>
+<p><strong>syntax of &lt;jsp:getProperty&gt;</strong></p>
+<pre>&lt;jsp: useBean id="unique_name_to_identify_bean"  class="package_name.class_name" /&gt;
+....
+....
+&lt;jsp:getProperty name="unique_name_to_identify_bean" property="property_name" /&gt;</pre>
+<p>OR</p>
+<pre>&lt;jsp: useBean id="unique_name_to_identify_bean"  class="package_name.class_name"&gt;
+....
+....
+&lt;jsp:getProperty name="unique_name_to_identify_bean" property="property_name" /&gt;
+&lt;/jsp:useBean&gt;</pre>
+<h2><span style="color: #008000;">Other Action Tags</span></h2>
+<p>The below action tags are not frequently used so I haven&#8217;t covered them in detail.</p>
+<h3><span style="color: #008000;">7. &lt;jsp:plugin&gt; Action</span></h3>
+<p>This tag is used when there is a need of a plugin to run a Bean class or an Applet.</p>
+<p><a href="http://docs.oracle.com/javase/7/docs/technotes/guides/plugin/developer_guide/jsp.html">http://docs.oracle.com/javase/7/docs/technotes/guides/plugin/developer_guide/jsp.html</a></p>
+<h3><span style="color: #008000;">8. &lt;jsp:body&gt; Action</span></h3>
+<h3><span style="color: #008000;">9. &lt;jsp:element&gt; Action</span></h3>
+<h3><span style="color: #008000;">10. &lt;jsp:text&gt; Action</span></h3>
+<h3><span style="color: #008000;">11. &lt;jsp:attribute&gt; Action</span></h3>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../05/jsp-tutorial-directives/index.html" rel="bookmark" title="Link to JSP Directives &#8211; Page, Include and TagLib">JSP Directives &#8211; Page, Include and TagLib</a></li><li><a href="../../05/jsp-tutorial-scriptlets/index.html" rel="bookmark" title="Link to JSP Scriptlets">JSP Scriptlets</a></li><li><a href="../../11/jsp-implicit-object-request-with-examples/index.html" rel="bookmark" title="Link to Request Implicit Object in JSP with examples">Request Implicit Object in JSP with examples</a></li><li><a href="../../../2017/06/superclass-javax-servlet-http-httpservlet-was-not-found-eclipse-ide/index.html" rel="bookmark" title="Link to Solution &#8211; The superclass “javax.servlet.http.HttpServlet” was not found on the Java Build Path">Solution &#8211; The superclass “javax.servlet.http.HttpServlet” was not found on the Java Build Path</a></li><li><a href="../../11/jsp-implicit-object-application-with-examples/index.html" rel="bookmark" title="Link to Application Implicit Object in JSP with examples">Application Implicit Object in JSP with examples</a></li><li><a href="../../../2017/06/how-to-fix-dynamic-web-project-missing-in-eclipse-issue/index.html" rel="bookmark" title="Link to How to fix Dynamic Web Project missing in Eclipse issue">How to fix Dynamic Web Project missing in Eclipse issue</a></li></ol></div><footer class="entry-footer"></footer></article>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2771' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8848e04337" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="151"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-12" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">JSP Tutorial</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../05/jsp-tutorial-introduction/index.html">Basics of JSP</a></li>
+<li><a href="../../05/jsp-tutorial-life-cycle/index.html">Life cycle of JSP</a></li>
+<li><a href="../../../2017/06/jsp-in-eclipse-ide-apache-tomcat-server/index.html">JSP in Eclipse IDE</a></li>
+<li><a href="../../11/jsp-declaration-tag/index.html">Declaration tag</a></li>
+<li><a href="../../11/jsp-expression-tag/index.html">Expression tag</a></li>
+<li><a href="../../05/jsp-tutorial-scriptlets/index.html">Scriptlets</a></li>
+<li><a href="../../05/jsp-tutorial-directives/index.html">Directives</a></li>
+<li><a href="../../11/jsp-include-directive/index.html">Include Directive</a></li>
+<li><a href="../../12/jsp-include-directive-with-parameters-example/index.html">Param Directive</a></li>
+<li><a href="../../11/jsp-exception-handling/index.html">Exception handling</a></li>
+<li><a href="index.html">Action tags</a></li>
+<li><a href="../../11/jsp-include-action-tag/index.html">Include action </a></li>
+<li><a href="../../11/jsp-forward-action-tag/index.html">Forward action</a></li>
+<li><a href="../../11/jsp-usebean-setproperty-getproperty-action-tags/index.html">useBean, setProperty & getProperty</a></li>
+<li><a href="../../11/jsp-implicit-objects/index.html">Implicit Objects</a></li>
+<li><a href="../../11/jsp-implicit-object-session-with-examples/index.html">Session implicit object</a></li>
+<li><a href="../../12/how-to-validate-and-invalidate-session-in-jsp/index.html">Validate session</a></li>
+<li><a href="../../11/jsp-implicit-object-request-with-examples/index.html">Request implicit object</a></li>
+<li><a href="../../11/jsp-implicit-object-response-with-examples/index.html">Response implicit object</a></li>
+<li><a href="../../11/jsp-implicit-object-out-with-examples/index.html">Out implicit object</a></li>
+<li><a href="../../11/jsp-implicit-object-application-with-examples/index.html">Application implicit object</a></li>
+<li><a href="../../11/jsp-implicit-object-config-with-examples/index.html">Config implicit object</a></li>
+<li><a href="../../11/jsp-implicit-object-pagecontext-with-examples/index.html">pageContext implicit object</a></li>
+<li><a href="../../11/jsp-implicit-object-exception-with-examples/index.html">Exception implicit object</a></li>
+<li><a href="../../11/jsp-expression-language-el/index.html">Expression language</a></li>
+<li><a href="../../../2014/01/jsp-custom-tags-with-example-jsp-tutorial/index.html">Custom Tags</a></li>
+<li><a href="../../../2014/01/how-to-access-body-of-custom-tags-in-jsp-tutorial/index.html">Custom tag example</a></li>
+<li><a href="../../../2015/03/jsp-interview-questions-and-answers/index.html">JSP Interview Q</a></li>
+</ul></div>
+		</div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/06/jsp-tutorial-actions/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:54:57 GMT -->
+</html>

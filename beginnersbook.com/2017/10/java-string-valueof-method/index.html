@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2017/10/java-string-valueof-method/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:00:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java String valueOf() method explained with examples</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Java String valueOf() method returns the String representation of the boolean, char, char array, int, long, float and double arguments."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Java String valueOf() method explained with examples" />
+<meta property="og:description" content="Java String valueOf() method returns the String representation of the boolean, char, char array, int, long, float and double arguments." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="method" />
+<meta property="article:section" content="String handling" />
+<meta property="article:published_time" content="2017-10-14T13:47:29+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Java String valueOf() method returns the String representation of the boolean, char, char array, int, long, float and double arguments." />
+<meta name="twitter:title" content="Java String valueOf() method explained with examples" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Java String valueOf() method explained with examples Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index3b50.html?p=7911' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed550f.json?url=https%3A%2F%2Fbeginnersbook.com%2F2017%2F10%2Fjava-string-valueof-method%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed0715?url=https%3A%2F%2Fbeginnersbook.com%2F2017%2F10%2Fjava-string-valueof-method%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-7911 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-7911 post type-post status-publish format-standard category-string-handling tag-method entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Java String valueOf() method explained with examples</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/string-handling/index.html" rel="category tag">String handling</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p><strong>Java String valueOf()</strong> method returns the String representation of the boolean, char, char array, int, long, float and double arguments. We have different versions of this method for each type of arguments. The signature of this method is as follows:</p>
+<p><strong>Method valueOf() signature:</strong></p>
+<pre>public static String valueOf(boolean b): Used for converting boolean value to a String
+public static String valueOf(char c): char to String
+public static String valueOf(int i): int to String
+public static String valueOf(long l): long to String
+public static String valueOf(float f): float to String
+public static String valueOf(double d): double to String</pre>
+<h2>Java String valueOf() Example</h2>
+<p>In example we are using Java String valueOf() method to convert the integer, float, long, double, char and char array to the String.</p>
+<pre>public class Example{  
+   public static void main(String args[]){  
+	int i = 10; //int value
+	float f = 10.10f; //float value
+	long l = 111L; //long value
+	double d = 2222.22; //double value
+	char ch = 'A'; //char value
+	char array[] = {'a', 'b', 'c'}; //char array
+		
+	//converting int to String
+	String str1 = String.valueOf(i); 
+		
+	//converting float to String
+	String str2 = String.valueOf(f); 
+		
+	//converting long to String
+	String str3 = String.valueOf(l);
+		
+	//converting double to String
+	String str4 = String.valueOf(d);
+		
+	//converting char to String
+	String str5 = String.valueOf(ch);
+		
+	//converting char array to String
+	String str6 = String.valueOf(array);
+	System.out.println(str1);
+	System.out.println(str2);
+	System.out.println(str3);
+	System.out.println(str4);
+	System.out.println(str5);
+	System.out.println(str6);
+   }
+}</pre>
+<p>Output:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>10
+10.1
+111
+2222.22
+A
+abc</pre>
+<h4>Related Posts:</h4>
+<ol>
+<li><a href="../../../2015/05/java-int-to-string/index.html">Java &#8211; Convert int to String</a></li>
+<li><a href="../../../2015/05/java-double-to-string/index.html">Java &#8211; Convert double to String</a></li>
+<li><a href="../../../2015/05/java-long-to-string/index.html">Java &#8211; Convert long to String </a></li>
+<li><a href="../../../2015/05/java-float-to-string/index.html">Java &#8211; Convert float to String</a></li>
+<li><a href="../../../2014/06/how-to-convert-a-char-array-to-a-string-in-java/index.html">Java &#8211; Convert char array to String</a></li>
+</ol>
+<h4>Reference:</h4>
+<p><a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#valueOf(boolean)" target="_blank" rel="noopener">String valueOf() method &#8211; JavaDoc</a></p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='7911' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="a3ab3b224c" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="141"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-25" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java String</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../../../2013/12/java-strings/index.html">Java String</a></li>
+</ul>
+<h4 class="widget-title">Java String Methods</h4>
+<ul>
+<li><a href="../../../2013/12/java-string-charat-method-example/index.html">String charAt()</a></li>
+<li><a href="../java-string-contains-method/index.html">String contains()</a></li>
+<li><a href="../../../2013/12/java-string-compareto-method-example/index.html">String compareTo()</a></li>
+<li><a href="../../../2013/12/java-string-concat-method-example/index.html">String concat()</a></li>
+<li><a href="../../../2013/12/java-string-substring-method-example/index.html">substring</a></li>
+<li><a href="index.html">String valueOf()</a></li>
+<li><a href="../../../2013/12/java-string-comparetoignorecase-method-example/index.html" >String compareToIgnoreCase()</a></li>
+<li><a href="../../../2013/12/java-string-startswith-method-example/index.html">String startsWith()</a></li>
+<li><a href="../../../2013/12/java-string-equals-and-equalsignorecase-methods-example/index.html" >String equals()</a></li>
+<li><a href="../java-string-format-method/index.html">String format()</a></li>
+<li><a href="../../../2013/12/java-string-endswith-method-example/index.html">String endsWith()</a></li>
+<li><a href="../../../2013/12/java-string-indexof-method-example/index.html">String indexOf()</a></li>
+<li><a href="../../../2013/12/java-string-lastindexof-method-example/index.html">String lastIndexOf()</a></li>
+<li><a href="../../../2013/12/java-string-length-method-example/index.html">String length()</a></li>
+<li><a href="../../../2013/12/java-string-replace-replacefirst-replaceall-method-examples/index.html" >String replace()</a></li>
+<li><a href="../../../2013/12/java-string-split-method-example/index.html">String split()</a></li>
+<li><a href="../../../2013/12/java-string-trim-and-hashcode-methods/index.html">String trim()</a></li>
+<li><a href="../java-string-intern-method/index.html">String intern()</a></li>
+<li><a href="../java-string-isempty-method-with-example/index.html">String isEmpty()</a></li>
+<li><a href="../../../2013/12/java-string-matches-method-example/index.html">String matches()</a></li>
+<li><a href="../../../2013/12/java-string-regionmatches-method-example/index.html">String regionMatches()</a></li>
+<li><a href="../../../2013/12/java-string-contentequals-method-example/index.html">String contentEquals()</a></li>
+<li><a href="../../../2013/12/java-string-tochararray-method-example/index.html">String toCharArray()</a></li>
+<li><a href="../../../2013/12/java-string-getbytes-method-example/index.html">String getBytes()</a></li>
+<li><a href="../java-string-join-method/index.html">String join()</a></li>
+<li><a href="../../../2013/12/java-string-getchars-method-example/index.html">String getChars()</a></li>
+<li><a href="../../../2013/12/java-string-copyvalueof-method-example/index.html">String copyValueOf()</a></li>
+</ul></div></div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2017/10/java-string-valueof-method/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:00:22 GMT -->
+</html>

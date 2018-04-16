@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/05/method-overloading/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:39:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Method Overloading in Java with examples</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Method Overloading is a feature that allows a class to have more than one method having the same name, if their argument lists are different. It is similar to constructor overloading in Java, that allows a class to have more than one constructor having different argument lists. let&#039;s get back to the point, when I say"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Method Overloading in Java with examples" />
+<meta property="og:description" content="Method Overloading is a feature that allows a class to have more than one method having the same name, if their argument lists are different. It is similar to constructor overloading in Java, that allows a class to have more than one constructor having different argument lists. let&#039;s get back to the point, when I say" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="OOPs Concept" />
+<meta property="article:published_time" content="2013-05-28T19:43:16+00:00" />
+<meta property="article:modified_time" content="2017-09-12T13:32:59+00:00" />
+<meta property="og:updated_time" content="2017-09-12T13:32:59+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Method Overloading is a feature that allows a class to have more than one method having the same name, if their argument lists are different. It is similar to constructor overloading in Java, that allows a class to have more than one constructor having different argument lists. let&#039;s get back to the point, when I say" />
+<meta name="twitter:title" content="Method Overloading in Java with examples" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Method Overloading in Java with examples Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index83ab.html?p=2780' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embedc64f.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fmethod-overloading%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed7257?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fmethod-overloading%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2780 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2780 post type-post status-publish format-standard category-oops-concept entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Method Overloading in Java with examples</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/oops-concept/index.html" rel="category tag">OOPs Concept</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Method Overloading is a feature that allows a class to have more than one method having the same name, if their argument lists are different. It is similar to <a href="../constructor-overloading/index.html">constructor overloading</a> in Java, that allows a class to have more than one constructor having different argument lists.</p>
+<p>let&#8217;s get back to the point, when I say argument list it means the parameters that a method has: For example the argument list of a method add(int a, int b) having two parameters is different from the argument list of the method add(int a, int b, int c) having three parameters.</p>
+<h2>Three ways to overload a method</h2>
+<p>In order to overload a method, the argument lists of the methods must differ in either of these:<br />
+1. Number of parameters.<br />
+For example: This is a valid case of overloading</p>
+<pre>add(int, int)
+add(int, int, int)</pre>
+<p>2. Data type of parameters.<br />
+For example:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>add(int, int)
+add(int, float)</pre>
+<p>3. Sequence of Data type of parameters.<br />
+For example:</p>
+<pre>add(int, float)
+add(float, int)</pre>
+<p><strong>Invalid case of method overloading:</strong><br />
+When I say argument list, I am not talking about return type of the method, for example if two methods have same name, same parameters and have different return type, then this is not a valid method overloading example. This will throw compilation error.</p>
+<pre>int add(int, int)
+float add(int, int)</pre>
+<p><strong>Method overloading</strong> is an example of <a href="../../04/runtime-compile-time-polymorphism/index.html">Static Polymorphism</a>. We will discuss <a href="../../03/polymorphism-in-java/index.html">polymorphism</a> and types of it in a separate tutorial.</p>
+<p><strong>Points to Note:</strong><br />
+1. Static Polymorphism is also known as compile time binding or early binding.<br />
+2. <a href="../../04/java-static-dynamic-binding/index.html">Static binding</a> happens at compile time. Method overloading is an example of static binding where binding of method call to its definition happens at Compile time.</p>
+<h2>Method Overloading examples</h2>
+<p>As discussed in the beginning of this guide, method overloading is done by declaring same method with different parameters. The parameters must be different in either of these: number, sequence or types of parameters (or arguments). Lets see examples of each of these cases.</p>
+<blockquote><p>Argument list is also known as parameter list</p></blockquote>
+<h3>Example 1: Overloading – Different Number of parameters in argument list</h3>
+<p>This example shows how method overloading is done by having different number of parameters</p>
+<pre>class DisplayOverloading
+{
+    public void disp(char c)
+    {
+         System.out.println(c);
+    }
+    public void disp(char c, int num)  
+    {
+         System.out.println(c + " "+num);
+    }
+}
+class Sample
+{
+   public static void main(String args[])
+   {
+       DisplayOverloading obj = new DisplayOverloading();
+       obj.disp('a');
+       obj.disp('a',10);
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>a
+a 10</pre>
+<p>In the above example – method <code>disp()</code> is overloaded based on the number of parameters – We have two methods with the name <code>disp</code> but the parameters they have are different. Both are having different number of parameters.</p>
+<h3>Example 2: Overloading – Difference in data type of parameters</h3>
+<p>In this example, method disp() is overloaded based on the data type of parameters – We have two methods with the name disp(), one with parameter of char type and another method with the parameter of int type.</p>
+<pre>class DisplayOverloading2
+{
+    public void disp(char c)
+    {
+        System.out.println(c);
+    }
+    public void disp(int c)
+    {
+       System.out.println(c );
+    }
+}
+
+class Sample2
+{
+    public static void main(String args[])
+    {
+        DisplayOverloading2 obj = new DisplayOverloading2();
+        obj.disp('a');
+        obj.disp(5);
+    }
+}</pre>
+<p>Output:</p>
+<pre>a
+5</pre>
+<h3>Example3: Overloading – Sequence of data type of arguments</h3>
+<p>Here method <code>disp()</code> is overloaded based on sequence of data type of parameters – Both the methods have different sequence of data type in argument list. First method is having argument list as (char, int) and second is having (int, char). Since the sequence is different, the method can be overloaded without any issues.</p>
+<pre>class DisplayOverloading3
+{
+   public void disp(char c, int num)
+   {
+       System.out.println("I’m the first definition of method disp");
+   }
+   public void disp(int num, char c)
+   {
+       System.out.println("I’m the second definition of method disp" );
+   }
+}
+class Sample3
+{
+   public static void main(String args[])
+   {
+       DisplayOverloading3 obj = new DisplayOverloading3();
+       obj.disp('x', 51 );
+       obj.disp(52, 'y');
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>I’m the first definition of method disp
+I’m the second definition of method disp</pre>
+<h2>Method Overloading and Type Promotion</h2>
+<p>When a data type of smaller size is promoted to the data type of bigger size than this is called type promotion, for example: byte data type can be promoted to short, a short data type can be promoted to int, long, double etc.</p>
+<p><strong>What it has to do with method overloading?</strong><br />
+Well, it is very important to understand type promotion else you will think that the program will throw compilation error but in fact that program will run fine because of type promotion.<br />
+Lets take an example to see what I am talking here:</p>
+<pre>class Demo{
+   void disp(int a, double b){
+	System.out.println("Method A");
+   }
+   void disp(int a, double b, double c){
+	System.out.println("Method B");
+   }
+   public static void main(String args[]){
+	Demo obj = new Demo();
+	/* I am passing float value as a second argument but
+	 * it got promoted to the type double, because there
+	 * wasn't any method having arg list as (int, float)
+	 */
+	obj.disp(100, 20.67f);
+   }
+}</pre>
+<p>Output:</p>
+<pre>Method A</pre>
+<p>As you can see that I have passed the float value while calling the disp() method but it got promoted to the double type as there wasn&#8217;t any method with argument list as (int, float)</p>
+<p>But this type promotion doesn&#8217;t always happen, lets see another example:</p>
+<pre>class Demo{
+   void disp(int a, double b){
+	System.out.println("Method A");
+   }
+   void disp(int a, double b, double c){
+	System.out.println("Method B");
+   }
+   void disp(int a, float b){
+	System.out.println("Method C");
+   }
+   public static void main(String args[]){
+	Demo obj = new Demo();
+	/* This time promotion won't happen as there is
+	 * a method with arg list as (int, float)
+	 */
+	obj.disp(100, 20.67f);
+   }
+}</pre>
+<p>Output:</p>
+<pre>Method C</pre>
+<p>As you see that this time type promotion didn&#8217;t happen because there was a method with matching argument type.<br />
+<strong>Type Promotion table: </strong><br />
+The data type on the left side can be promoted to the any of the data type present in the right side of it.</p>
+<pre>byte → short → int → long
+short → int → long
+int → long → float → double
+float → double
+long → float → double
+</pre>
+<h2>Lets see few Valid/invalid cases of method overloading</h2>
+<p>Case 1:</p>
+<pre>int mymethod(int a, int b, float c)
+int mymethod(int var1, int var2, float var3)</pre>
+<p>Result: Compile time error. Argument lists are exactly same. Both methods are having same number, data types and same sequence of data types.</p>
+<p>Case 2:</p>
+<pre>int mymethod(int a, int b)
+int mymethod(float var1, float var2)</pre>
+<p>Result: Perfectly fine. Valid case of overloading. Here data types of arguments are different.</p>
+<p>Case 3:</p>
+<pre>int mymethod(int a, int b)
+int mymethod(int num)</pre>
+<p>Result: Perfectly fine. Valid case of overloading. Here number of arguments are different.</p>
+<p>Case 4:</p>
+<pre>float mymethod(int a, float b)
+float mymethod(float var1, int var2)</pre>
+<p>Result: Perfectly fine. Valid case of overloading. Sequence of the data types of parameters are different, first method is having (int, float) and second is having (float, int).</p>
+<p>Case 5:</p>
+<pre>int mymethod(int a, int b)
+float mymethod(int var1, int var2)</pre>
+<p>Result: Compile time error. Argument lists are exactly same. Even though return type of methods are different, it is not a valid case. Since return type of method doesn&#8217;t matter while overloading a method.</p>
+<p>Guess the answers before checking it at the end of programs:<br />
+<strong>Question 1 – return type, method name and argument list same.</strong></p>
+<pre>class Demo
+{
+   public int myMethod(int num1, int num2)
+   { 
+       System.out.println("First myMethod of class Demo");
+       return num1+num2;
+   }
+   public int myMethod(int var1, int var2)
+   {
+       System.out.println("Second myMethod of class Demo");
+       return var1-var2;
+   }
+}
+class Sample4
+{
+   public static void main(String args[])
+   {
+       Demo obj1= new Demo();
+       obj1.myMethod(10,10);
+       obj1.myMethod(20,12);
+   }
+}</pre>
+<p><strong>Answer:</strong><br />
+It will throw a compilation error: More than one method with same name and argument list cannot be defined in a same class.</p>
+<p><strong>Question 2 – return type is different. Method name &amp; argument list same.</strong></p>
+<pre>class Demo2
+{
+   public double myMethod(int num1, int num2)
+   {
+      System.out.println("First myMethod of class Demo");
+      return num1+num2;
+   }
+   public int myMethod(int var1, int var2)
+   {
+      System.out.println("Second myMethod of class Demo");
+      return var1-var2;
+   }
+}
+class Sample5
+{
+   public static void main(String args[])
+   {
+      Demo2 obj2= new Demo2();
+      obj2.myMethod(10,10);
+      obj2.myMethod(20,12);
+   }
+}</pre>
+<p><strong>Answer:</strong><br />
+It will throw a compilation error: More than one method with same name and argument list cannot be given in a class even though their return type is different. <strong>Method return type doesn&#8217;t matter in case of overloading.</strong></p>
+<div class="bb-nav"><a class="pretut" href="../../../2014/07/super-keyword-in-java-with-example/index.html">❮ Previous</a><a class="nexttut" href="../../../2014/01/method-overriding-in-java-with-example/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-6605">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/77a1d889830ff4ac6d1d7bee2176e30a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/77a1d889830ff4ac6d1d7bee2176e30a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sirisha</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-27T15:56:21+00:00" itemprop="datePublished"><a href="index.html#comment-6605" class="comment-time-link" itemprop="url">August 27, 2014 at 3:56 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Very clear. Excellent examples. Thanks a lot</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6605' onclick='return addComment.moveForm( "comment-6605", "6605", "respond", "2780" )' aria-label='Reply to sirisha'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-8386">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7dcd2fc327c592b0b843a34ff3452564?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7dcd2fc327c592b0b843a34ff3452564?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sweety</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-10-13T18:38:26+00:00" itemprop="datePublished"><a href="index.html#comment-8386" class="comment-time-link" itemprop="url">October 13, 2014 at 6:38 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks..  very good and easy to understand</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-8386' onclick='return addComment.moveForm( "comment-8386", "8386", "respond", "2780" )' aria-label='Reply to sweety'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-10084">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d147b9945c75d3c5ccd9d4c0d67edd37?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d147b9945c75d3c5ccd9d4c0d67edd37?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Syed Munir Uddin</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-10-23T13:42:42+00:00" itemprop="datePublished"><a href="index.html#comment-10084" class="comment-time-link" itemprop="url">October 23, 2014 at 1:42 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Excellent Example keep it up and thanks :-)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-10084' onclick='return addComment.moveForm( "comment-10084", "10084", "respond", "2780" )' aria-label='Reply to Syed Munir Uddin'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-15248">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1ba617466b218bfe32ced943b572c427?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1ba617466b218bfe32ced943b572c427?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">vishal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-13T15:45:32+00:00" itemprop="datePublished"><a href="index.html#comment-15248" class="comment-time-link" itemprop="url">November 13, 2014 at 3:45 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>very clear&#8230;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-15248' onclick='return addComment.moveForm( "comment-15248", "15248", "respond", "2780" )' aria-label='Reply to vishal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-15384">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ed7109e70a4e74c7905cb076d96bab16?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ed7109e70a4e74c7905cb076d96bab16?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">prerana</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-13T21:40:44+00:00" itemprop="datePublished"><a href="index.html#comment-15384" class="comment-time-link" itemprop="url">November 13, 2014 at 9:40 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The examples helped very much. The examples were clear, and to the point. Great explanation. :D</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-15384' onclick='return addComment.moveForm( "comment-15384", "15384", "respond", "2780" )' aria-label='Reply to prerana'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-21370">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2b638122a620fe8addcf20afe9ce8929?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2b638122a620fe8addcf20afe9ce8929?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mayur</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-04T09:12:16+00:00" itemprop="datePublished"><a href="index.html#comment-21370" class="comment-time-link" itemprop="url">January 4, 2015 at 9:12 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Very well presentation. Thanks a lot.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-21370' onclick='return addComment.moveForm( "comment-21370", "21370", "respond", "2780" )' aria-label='Reply to Mayur'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-22359">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e1424fffcd288c6bd60969f4ad6e116b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e1424fffcd288c6bd60969f4ad6e116b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Leesa</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-28T15:56:30+00:00" itemprop="datePublished"><a href="index.html#comment-22359" class="comment-time-link" itemprop="url">January 28, 2015 at 3:56 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The case 4-<br />
+float mymethod(int a, float b)<br />
+float mymethod(float var1, int var2)<br />
+causes a compilation error due to implicit method invocation datatype conversion. Please check ..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-22359' onclick='return addComment.moveForm( "comment-22359", "22359", "respond", "2780" )' aria-label='Reply to Leesa'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-56929">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6bdbcb0595035b27a7c4a4e746693a6d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6bdbcb0595035b27a7c4a4e746693a6d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Shipra</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-15T11:27:06+00:00" itemprop="datePublished"><a href="index.html#comment-56929" class="comment-time-link" itemprop="url">June 15, 2016 at 11:27 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>that&#8217;s right</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-56929' onclick='return addComment.moveForm( "comment-56929", "56929", "respond", "2780" )' aria-label='Reply to Shipra'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-63759">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3d2827ef07827b422aa7b250a3af4974?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3d2827ef07827b422aa7b250a3af4974?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">hayenadeblue</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-23T12:30:06+00:00" itemprop="datePublished"><a href="index.html#comment-63759" class="comment-time-link" itemprop="url">November 23, 2016 at 12:30 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I think what is written in the article is correct. Don&#8217;t understand why Shipra agrees.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63759' onclick='return addComment.moveForm( "comment-63759", "63759", "respond", "2780" )' aria-label='Reply to hayenadeblue'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-3" id="comment-67176">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ac3afefa8fe9404ee103bad62d6136d0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ac3afefa8fe9404ee103bad62d6136d0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rajan Gupta</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-08T19:05:05+00:00" itemprop="datePublished"><a href="index.html#comment-67176" class="comment-time-link" itemprop="url">February 8, 2017 at 7:05 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This is throwing compilation error because you might be passing integer values in both the methods&#8230;if you specifically pass float then this will not throw compilation error<br />
+Something like this:<br />
+mymethod(1.0f, 10);<br />
+mymethod(1, 10.0f);<br />
+I hope this helps.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-67176' onclick='return addComment.moveForm( "comment-67176", "67176", "respond", "2780" )' aria-label='Reply to Rajan Gupta'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-23979">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c6b5aee0037205c42a533443cdcdade1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c6b5aee0037205c42a533443cdcdade1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Noah</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-06T19:52:13+00:00" itemprop="datePublished"><a href="index.html#comment-23979" class="comment-time-link" itemprop="url">March 6, 2015 at 7:52 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>There couldn&#8217;t be a more detailed and useful explanation of method overloading than this.</p>
+<p>Thank you!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-23979' onclick='return addComment.moveForm( "comment-23979", "23979", "respond", "2780" )' aria-label='Reply to Noah'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-24145">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/885ad68e6c4651cd481560a861a5bc07?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/885ad68e6c4651cd481560a861a5bc07?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">chetan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-10T05:41:06+00:00" itemprop="datePublished"><a href="index.html#comment-24145" class="comment-time-link" itemprop="url">March 10, 2015 at 5:41 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>You have described in well manner i like that your presentation way&#8230;&#8230;&#8230;&#8230;.Please post more on same way&#8230;&#8230;&#8230;:)Thanks</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24145' onclick='return addComment.moveForm( "comment-24145", "24145", "respond", "2780" )' aria-label='Reply to chetan'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-57188">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b8e978df4bce8624195c62d96ae03d3d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b8e978df4bce8624195c62d96ae03d3d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">ANKUSH PAWAR</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-20T11:25:51+00:00" itemprop="datePublished"><a href="index.html#comment-57188" class="comment-time-link" itemprop="url">June 20, 2016 at 11:25 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you so much…simple and useful explanation</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57188' onclick='return addComment.moveForm( "comment-57188", "57188", "respond", "2780" )' aria-label='Reply to ANKUSH PAWAR'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-24468">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2207ccc1d39be0842d2941641d177680?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2207ccc1d39be0842d2941641d177680?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Kalhan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-16T16:58:44+00:00" itemprop="datePublished"><a href="index.html#comment-24468" class="comment-time-link" itemprop="url">March 16, 2015 at 4:58 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you so much&#8230;simple and useful explanation</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24468' onclick='return addComment.moveForm( "comment-24468", "24468", "respond", "2780" )' aria-label='Reply to Kalhan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-24922">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/04c46d40555ab5a62998682beadee78c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/04c46d40555ab5a62998682beadee78c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Suresh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-28T17:43:59+00:00" itemprop="datePublished"><a href="index.html#comment-24922" class="comment-time-link" itemprop="url">March 28, 2015 at 5:43 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Nice Example</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24922' onclick='return addComment.moveForm( "comment-24922", "24922", "respond", "2780" )' aria-label='Reply to Suresh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-25479">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2aa368607f191fa5a0f54ec03bb14cfb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2aa368607f191fa5a0f54ec03bb14cfb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Arpitha</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-04-09T06:38:34+00:00" itemprop="datePublished"><a href="index.html#comment-25479" class="comment-time-link" itemprop="url">April 9, 2015 at 6:38 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Good Explanation :) </p>
+<p>Thank you</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-25479' onclick='return addComment.moveForm( "comment-25479", "25479", "respond", "2780" )' aria-label='Reply to Arpitha'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-29636">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/aacc13350136a61f68861b5de8e77fa0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/aacc13350136a61f68861b5de8e77fa0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">surekha</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-15T09:48:57+00:00" itemprop="datePublished"><a href="index.html#comment-29636" class="comment-time-link" itemprop="url">July 15, 2015 at 9:48 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>When should use dynamic binding..Please explain clearly..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-29636' onclick='return addComment.moveForm( "comment-29636", "29636", "respond", "2780" )' aria-label='Reply to surekha'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29673">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b89279668efb988ef4b656585a1020e0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b89279668efb988ef4b656585a1020e0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sam</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-16T10:32:21+00:00" itemprop="datePublished"><a href="index.html#comment-29673" class="comment-time-link" itemprop="url">July 16, 2015 at 10:32 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>HI,<br />
+In the below<br />
+Case 4:</p>
+<p>float mymethod(int a, float b)<br />
+float mymethod(float var1, int var2)<br />
+Result: Perfectly fine. Valid case for overloading. Sequence of the data types are different, first method is having (int, float) and second is having (float, int).<br />
+It will get ambiguity.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-29673' onclick='return addComment.moveForm( "comment-29673", "29673", "respond", "2780" )' aria-label='Reply to sam'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-44980">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/94a877a054ce365e4289e3a74f198bea?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/94a877a054ce365e4289e3a74f198bea?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Aravind Reddy</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-02T04:12:34+00:00" itemprop="datePublished"><a href="index.html#comment-44980" class="comment-time-link" itemprop="url">December 2, 2015 at 4:12 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Yes there is an ambiguity in case:4<br />
+Because int can be implicitly converted into float.<br />
+So the compiler is in a confused state to which method it should bind to</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-44980' onclick='return addComment.moveForm( "comment-44980", "44980", "respond", "2780" )' aria-label='Reply to Aravind Reddy'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-31482">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4e97f8b2f42f3ab33e3e7ae23ece56a6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/4e97f8b2f42f3ab33e3e7ae23ece56a6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ganesh NB</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-03T11:24:39+00:00" itemprop="datePublished"><a href="index.html#comment-31482" class="comment-time-link" itemprop="url">August 3, 2015 at 11:24 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Great Explanation. Can u make it clear wheather java supports pass by reference.I know its no. still the value are updated in the calling function. can you explain how it occurs&#8230;?</p>
+<p>Thank you in advance for the answer</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-31482' onclick='return addComment.moveForm( "comment-31482", "31482", "respond", "2780" )' aria-label='Reply to Ganesh NB'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-51756">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/808d22ee935ffc0cca9c0aa70a2ff772?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/808d22ee935ffc0cca9c0aa70a2ff772?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">saad ismail</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-26T19:27:11+00:00" itemprop="datePublished"><a href="index.html#comment-51756" class="comment-time-link" itemprop="url">February 26, 2016 at 7:27 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>perfectly explain i,m loving it my all concepts are clear &#8230;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51756' onclick='return addComment.moveForm( "comment-51756", "51756", "respond", "2780" )' aria-label='Reply to saad ismail'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-51948">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/308aa6eef11f08bcfc8cb9c29c1d43cf?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/308aa6eef11f08bcfc8cb9c29c1d43cf?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Kemoji</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-01T06:08:37+00:00" itemprop="datePublished"><a href="index.html#comment-51948" class="comment-time-link" itemprop="url">March 1, 2016 at 6:08 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Wonderful&#8230;  Super cool stuff, made things easy&#8230;Thanks a Ton</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51948' onclick='return addComment.moveForm( "comment-51948", "51948", "respond", "2780" )' aria-label='Reply to Kemoji'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-52185">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b81afd0348ed96426468717e918c921d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b81afd0348ed96426468717e918c921d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Md Nehaluddin Haider</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-06T05:16:03+00:00" itemprop="datePublished"><a href="index.html#comment-52185" class="comment-time-link" itemprop="url">March 6, 2016 at 5:16 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I tried reading many tutorials for OOPs and now I can say this is the best. Thank you so much buddy for this wonderful tutorial.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52185' onclick='return addComment.moveForm( "comment-52185", "52185", "respond", "2780" )' aria-label='Reply to Md Nehaluddin Haider'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-53615">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b59758170b54d61dc840365fc106c6b8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b59758170b54d61dc840365fc106c6b8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ankit</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-13T09:57:22+00:00" itemprop="datePublished"><a href="index.html#comment-53615" class="comment-time-link" itemprop="url">April 13, 2016 at 9:57 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Best Example everything is clear..<br />
+Good Job </p>
+<p>Thanks</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53615' onclick='return addComment.moveForm( "comment-53615", "53615", "respond", "2780" )' aria-label='Reply to Ankit'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-54740">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f0830c1c420b75796dfb7beaa7d10da7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f0830c1c420b75796dfb7beaa7d10da7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Jeremiah Nji</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-05T13:11:37+00:00" itemprop="datePublished"><a href="index.html#comment-54740" class="comment-time-link" itemprop="url">May 5, 2016 at 1:11 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This was perfect! You explained it so clearly. Overloading is something I comprehend completely now!</p>
+<p>Thank you!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-54740' onclick='return addComment.moveForm( "comment-54740", "54740", "respond", "2780" )' aria-label='Reply to Jeremiah Nji'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-56467">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/244a14034e68627f40dd8c8d9c325a69?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/244a14034e68627f40dd8c8d9c325a69?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">akshay</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-08T18:20:16+00:00" itemprop="datePublished"><a href="index.html#comment-56467" class="comment-time-link" itemprop="url">June 8, 2016 at 6:20 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>no one in our class taught me  like this,<br />
+Its simply awesome&#8230;.  just now started my course,<br />
+only by using your website only,<br />
+i planned to go through daily,<br />
+please help me for queries,</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-56467' onclick='return addComment.moveForm( "comment-56467", "56467", "respond", "2780" )' aria-label='Reply to akshay'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-57096">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6cf6779e2fc8c6bd62b3e92edce2a02a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6cf6779e2fc8c6bd62b3e92edce2a02a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Luke</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-18T13:50:03+00:00" itemprop="datePublished"><a href="index.html#comment-57096" class="comment-time-link" itemprop="url">June 18, 2016 at 1:50 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Very nice and uncomplicated way of explaining!  Good job!!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57096' onclick='return addComment.moveForm( "comment-57096", "57096", "respond", "2780" )' aria-label='Reply to Luke'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-57192">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/0ebfde052019358cef84450b993c29f5?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/0ebfde052019358cef84450b993c29f5?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Pankaj</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-20T14:52:47+00:00" itemprop="datePublished"><a href="index.html#comment-57192" class="comment-time-link" itemprop="url">June 20, 2016 at 2:52 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>your case 4 is not valid,</p>
+<p>float mymethod(int a, float b)<br />
+float mymethod(float var1, int var2)</p>
+<p>when we call them with values, it will throw an error like error: reference to print is ambiguous h.print(10, 20);<br />
+cause both are taking int value, that&#8217;s why reference variable is getting confused while selecting/calling them,</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57192' onclick='return addComment.moveForm( "comment-57192", "57192", "respond", "2780" )' aria-label='Reply to Pankaj'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-57942">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/292f3942df0d2a31ed9a5b1ef78cf1fa?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/292f3942df0d2a31ed9a5b1ef78cf1fa?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Kd</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-07-06T19:29:56+00:00" itemprop="datePublished"><a href="index.html#comment-57942" class="comment-time-link" itemprop="url">July 6, 2016 at 7:29 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Excellent notes on method overloading! Kudos!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57942' onclick='return addComment.moveForm( "comment-57942", "57942", "respond", "2780" )' aria-label='Reply to Kd'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-60428">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/67a52e19687efe5252bde6c0af5616d8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/67a52e19687efe5252bde6c0af5616d8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">pooja</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-12T15:21:10+00:00" itemprop="datePublished"><a href="index.html#comment-60428" class="comment-time-link" itemprop="url">September 12, 2016 at 3:21 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The concepts are clear and easy to understand. thank you</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-60428' onclick='return addComment.moveForm( "comment-60428", "60428", "respond", "2780" )' aria-label='Reply to pooja'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-61290">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a5686ad119d10177932b7b591e3bbe6d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a5686ad119d10177932b7b591e3bbe6d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">venkat</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-10-02T22:01:55+00:00" itemprop="datePublished"><a href="index.html#comment-61290" class="comment-time-link" itemprop="url">October 2, 2016 at 10:01 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>F:javaprograms&gt;javac TestOverloading3.java<br />
+F:javaprograms&gt;java TestOverloading3<br />
+Error: Could not find or load main class TestOverloading3<br />
+its compiling successfully ,but its showing error like this while run.<br />
+may i know why i am getting like this error</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-61290' onclick='return addComment.moveForm( "comment-61290", "61290", "respond", "2780" )' aria-label='Reply to venkat'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-63406">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/5e96bee3f6bb778260480e3df501db47?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/5e96bee3f6bb778260480e3df501db47?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Shiva</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-13T19:07:47+00:00" itemprop="datePublished"><a href="index.html#comment-63406" class="comment-time-link" itemprop="url">November 13, 2016 at 7:07 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Method Overloading Concepts are very clearly understood and got registered in my mind. Thanks a lot.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63406' onclick='return addComment.moveForm( "comment-63406", "63406", "respond", "2780" )' aria-label='Reply to Shiva'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-63754">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c38444188dabf93719336f306feba6c0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c38444188dabf93719336f306feba6c0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Deepanshu Jain</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-23T10:13:45+00:00" itemprop="datePublished"><a href="index.html#comment-63754" class="comment-time-link" itemprop="url">November 23, 2016 at 10:13 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Just wanted to add one more case :<br />
+If just return type is different !!</p>
+<p> public double myMethod(int num1, int num2)<br />
+   {<br />
+      System.out.println(&#8220;First myMethod of class Demo&#8221;);<br />
+      return num1+num2;<br />
+   }<br />
+   public float myMethod(int var1, int var2)<br />
+   {<br />
+      System.out.println(&#8220;Second myMethod of class Demo&#8221;);<br />
+      return var1-var2;<br />
+   } </p>
+<p>throw an error.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63754' onclick='return addComment.moveForm( "comment-63754", "63754", "respond", "2780" )' aria-label='Reply to Deepanshu Jain'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-67072">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c66dbe3286b16bc4ee010aabc9ebf684?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c66dbe3286b16bc4ee010aabc9ebf684?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rakesh Ranjan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-06T11:33:03+00:00" itemprop="datePublished"><a href="index.html#comment-67072" class="comment-time-link" itemprop="url">February 6, 2017 at 11:33 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Already there in Question 2</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-67072' onclick='return addComment.moveForm( "comment-67072", "67072", "respond", "2780" )' aria-label='Reply to Rakesh Ranjan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-65853">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8df6ec38c865e366e25f4a303e09995e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8df6ec38c865e366e25f4a303e09995e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rajneesh Kaundal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-12T13:04:14+00:00" itemprop="datePublished"><a href="index.html#comment-65853" class="comment-time-link" itemprop="url">January 12, 2017 at 1:04 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Explained very well, Anyone can understand :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-65853' onclick='return addComment.moveForm( "comment-65853", "65853", "respond", "2780" )' aria-label='Reply to Rajneesh Kaundal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-69129">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c8f7a23ad70af8de35ec12c854ff1f97?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c8f7a23ad70af8de35ec12c854ff1f97?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">EDISON MUALA</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-01T09:38:37+00:00" itemprop="datePublished"><a href="index.html#comment-69129" class="comment-time-link" itemprop="url">April 1, 2017 at 9:38 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you so much.the notes are  clear and easy to follow.please keep up doing the good job, you have assisted me so much</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69129' onclick='return addComment.moveForm( "comment-69129", "69129", "respond", "2780" )' aria-label='Reply to EDISON MUALA'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-71869">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f3628b5473b3814adde8e2b9aa3a080b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f3628b5473b3814adde8e2b9aa3a080b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sanad alteggaz</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-06-28T23:41:38+00:00" itemprop="datePublished"><a href="index.html#comment-71869" class="comment-time-link" itemprop="url">June 28, 2017 at 11:41 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>System.out.println(&#8221; thank you pro !!!&#8221;);</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-71869' onclick='return addComment.moveForm( "comment-71869", "71869", "respond", "2780" )' aria-label='Reply to sanad alteggaz'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-72167">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/eccc1cbb1c90234017d6ff308cd4e7c1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/eccc1cbb1c90234017d6ff308cd4e7c1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Himanshu Yadav</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-07-12T05:59:45+00:00" itemprop="datePublished"><a href="index.html#comment-72167" class="comment-time-link" itemprop="url">July 12, 2017 at 5:59 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Can we take input at compile time in case of method overloading •••••?With the help of keyboard???</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-72167' onclick='return addComment.moveForm( "comment-72167", "72167", "respond", "2780" )' aria-label='Reply to Himanshu Yadav'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2780' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="e9a6854ae7" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="130"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../../04/oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../../04/java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../association/index.html">Association</a></li>
+<li><a href="../../../2014/07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="index.html">Method overloading</a></li>
+ 	<li><a href="../../../2014/01/method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="../../../2014/01/difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../../04/runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../../04/java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="../java-interface/index.html">Interface</a></li>
+ 	<li><a href="../abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../../04/java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../inner-class/index.html">Inner classes</a></li>
+<li><a href="../java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/05/method-overloading/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:39:56 GMT -->
+</html>

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2014/01/difference-between-method-overloading-and-overriding-in-java/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:40:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Difference between method Overloading and Overriding in java</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="In this tutorial we will discuss the difference between overloading and overriding in Java. If you are new to these terms then refer the following posts: Method overloading in java Method overriding in java Overloading vs Overriding in Java Overloading happens at compile-time while Overriding happens at runtime: The"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Difference between method Overloading and Overriding in java" />
+<meta property="og:description" content="In this tutorial we will discuss the difference between overloading and overriding in Java. If you are new to these terms then refer the following posts: Method overloading in java Method overriding in java Overloading vs Overriding in Java Overloading happens at compile-time while Overriding happens at runtime: The" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="java" />
+<meta property="article:tag" content="method overloading" />
+<meta property="article:tag" content="method overriding" />
+<meta property="article:tag" content="overloading" />
+<meta property="article:tag" content="overriding" />
+<meta property="article:section" content="OOPs Concept" />
+<meta property="article:published_time" content="2014-01-05T14:13:18+00:00" />
+<meta property="article:modified_time" content="2015-04-29T11:49:33+00:00" />
+<meta property="og:updated_time" content="2015-04-29T11:49:33+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="In this tutorial we will discuss the difference between overloading and overriding in Java. If you are new to these terms then refer the following posts: Method overloading in java Method overriding in java Overloading vs Overriding in Java Overloading happens at compile-time while Overriding happens at runtime: The" />
+<meta name="twitter:title" content="Difference between method Overloading and Overriding in java" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Difference between method Overloading and Overriding in java Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index007d.html?p=4722' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed7e21.json?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fdifference-between-method-overloading-and-overriding-in-java%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embeda976?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fdifference-between-method-overloading-and-overriding-in-java%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-4722 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-4722 post type-post status-publish format-standard category-oops-concept tag-java tag-method-overloading tag-method-overriding tag-overloading tag-overriding entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Difference between method Overloading and Overriding in java</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/oops-concept/index.html" rel="category tag">OOPs Concept</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>In this tutorial we will discuss the difference between overloading and overriding in Java. If you are new to these terms then refer the following posts:</p>
+<ol>
+<li><a href="../../../2013/05/method-overloading/index.html" target="_blank">Method overloading in java</a></li>
+<li><a href="../method-overriding-in-java-with-example/index.html" target="_blank">Method overriding in java</a></li>
+</ol>
+<h2>Overloading vs Overriding in Java</h2>
+<ol>
+<li>Overloading happens at <a href="../../../2013/04/runtime-compile-time-polymorphism/index.html" target="_blank">compile-time</a> while Overriding happens at <a href="../../../2013/04/runtime-compile-time-polymorphism/index.html" target="_blank">runtime</a>: The binding of overloaded method call to its definition has happens at compile-time however binding of overridden method call to its definition happens at runtime.</li>
+<li>Static methods can be overloaded which means a class can have more than one static method of same name. Static methods cannot be overridden, even if you declare a same static method in child class it has nothing to do with the same method of parent class.</li>
+<li>The most basic difference is that overloading is being done in the same class while for overriding base and child classes are required. Overriding is all about giving a specific implementation to the inherited method of parent class.</li>
+<li><a href="../../../2013/04/java-static-dynamic-binding/index.html" target="_blank">Static binding</a> is being used for overloaded methods and <a href="../../../2013/04/java-static-dynamic-binding/index.html" target="_blank">dynamic binding</a> is being used for overridden/overriding methods.</li>
+<li>Performance: Overloading gives better performance compared to overriding. The reason is that the binding of overridden methods is being done at runtime.</li>
+<li>private and final methods can be overloaded but they cannot be overridden. It means a class can have more than one private/final methods of same name but a child class cannot override the private/final methods of their base class.</li>
+<li>Return type of method does not matter in case of method overloading, it can be same or different. However in case of method overriding the overriding method can have more specific return type (<a href="https://stackoverflow.com/questions/14694852/can-overridden-methods-differ-in-return-type" target="_blank">refer this</a>).</li>
+<li>Argument list should be different while doing method overloading. Argument list should be same in method Overriding.</li>
+</ol>
+<h3>Overloading example</h3>
+<pre>//A class for adding upto 5 numbers
+class Sum
+{
+    int add(int n1, int n2) 
+    {
+        return n1+n2;
+    }
+    int add(int n1, int n2, int n3) 
+    {
+        return n1+n2+n3;
+    }
+    int add(int n1, int n2, int n3, int n4) 
+    {
+        return n1+n2+n3+n4;
+    }
+    int add(int n1, int n2, int n3, int n4, int n5) 
+    {
+        return n1+n2+n3+n4+n5;
+    }
+    public static void main(String args[])
+    {
+    	Sum obj = new Sum();
+    	System.out.println("Sum of two numbers: "+obj.add(20, 21));
+    	System.out.println("Sum of three numbers: "+obj.add(20, 21, 22));
+    	System.out.println("Sum of four numbers: "+obj.add(20, 21, 22, 23));
+    	System.out.println("Sum of five numbers: "+obj.add(20, 21, 22, 23, 24));
+    }
+}</pre>
+<p>Output:</p>
+<pre>Sum of two numbers: 41
+Sum of three numbers: 63
+Sum of four numbers: 86
+Sum of five numbers: 110</pre>
+<p>Here we have 4 versions of same method <code>add</code>. We are overloading the method <code>add()</code> here.</p>
+<h3>Overriding example</h3>
+<pre>package beginnersbook.com;
+class CarClass
+{
+    public int speedLimit() 
+    {
+        return 100;
+    }
+}
+class Ford extends CarClass
+{
+    public int speedLimit()
+    {
+        return 150;
+    }
+    public static void main(String args[])
+    {
+    	CarClass obj = new Ford();
+    	int num= obj.speedLimit();
+    	System.out.println("Speed Limit is: "+num);
+    }
+}</pre>
+<p>Output:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>Speed Limit is: 150</pre>
+<p>Here <code>speedLimit()</code> method of class <code>Ford</code> is overriding the <code>speedLimit()</code> method of class <code>CarClass</code>.</p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../../2013/05/java-interface/index.html" rel="bookmark" title="Link to Interface in java with example programs">Interface in java with example programs</a></li><li><a href="../../07/super-keyword-in-java-with-example/index.html" rel="bookmark" title="Link to Super keyword in java with example">Super keyword in java with example</a></li><li><a href="../../../2013/12/java-private-constructor-example/index.html" rel="bookmark" title="Link to Java &#8211; private constructor example">Java &#8211; private constructor example</a></li><li><a href="../../07/final-method-parameters-in-java/index.html" rel="bookmark" title="Link to Final method parameters in java">Final method parameters in java</a></li><li><a href="../../../2013/05/java-access-modifiers/index.html" rel="bookmark" title="Link to Java Access Modifiers &#8211; Public, Private, Protected &#038; Default">Java Access Modifiers &#8211; Public, Private, Protected &#038; Default</a></li><li><a href="../../../2013/05/method-overloading/index.html" rel="bookmark" title="Link to Method Overloading in Java with examples">Method Overloading in Java with examples</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-7783">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/40b092b91a069f79a62a5ab9ee9a6664?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/40b092b91a069f79a62a5ab9ee9a6664?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">siva devara</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-09-27T20:05:20+00:00" itemprop="datePublished"><a href="index.html#comment-7783" class="comment-time-link" itemprop="url">September 27, 2014 at 8:05 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you sir</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7783' onclick='return addComment.moveForm( "comment-7783", "7783", "respond", "4722" )' aria-label='Reply to siva devara'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-16120">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/92f164f67ccad03315999e07c28ca697?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/92f164f67ccad03315999e07c28ca697?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sujitha</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-15T05:50:08+00:00" itemprop="datePublished"><a href="index.html#comment-16120" class="comment-time-link" itemprop="url">November 15, 2014 at 5:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you!!!!!!!!Easy to Understand</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-16120' onclick='return addComment.moveForm( "comment-16120", "16120", "respond", "4722" )' aria-label='Reply to Sujitha'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-13939">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c402e6f332243b597f7c26271d1cb0df?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c402e6f332243b597f7c26271d1cb0df?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mariyappa</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-07T08:11:49+00:00" itemprop="datePublished"><a href="index.html#comment-13939" class="comment-time-link" itemprop="url">November 7, 2014 at 8:11 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Is 7th point is correct?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-13939' onclick='return addComment.moveForm( "comment-13939", "13939", "respond", "4722" )' aria-label='Reply to Mariyappa'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-19312">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-28T04:47:43+00:00" itemprop="datePublished"><a href="index.html#comment-19312" class="comment-time-link" itemprop="url">November 28, 2014 at 4:47 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Yes It is.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19312' onclick='return addComment.moveForm( "comment-19312", "19312", "respond", "4722" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-19192">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/fee0fecd46807aaf07d3f97f4eecadd3?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/fee0fecd46807aaf07d3f97f4eecadd3?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">jemima</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-26T15:45:12+00:00" itemprop="datePublished"><a href="index.html#comment-19192" class="comment-time-link" itemprop="url">November 26, 2014 at 3:45 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>hi sir,<br />
+I&#8217;m not sure whether I&#8217;m correct i studied both method overloading and overridding then I&#8217;m studying there difference..i think the 7th point is incorrect.. it states &#8220;Return type of overloaded method should be same as the other methods of the same name however return type of overriding method can be different from overridden method.&#8221; and i think it must be &#8221; the return type of overloading methods can differ but the return type of overriding methods should be the same..&#8221;&#8230; if im wrong plz help me to identify my mistake .<br />
+thank u so much</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19192' onclick='return addComment.moveForm( "comment-19192", "19192", "respond", "4722" )' aria-label='Reply to jemima'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-19311">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-28T04:43:08+00:00" itemprop="datePublished"><a href="index.html#comment-19311" class="comment-time-link" itemprop="url">November 28, 2014 at 4:43 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello Jemima,</p>
+<p>Point#7 is correct, overridden methods can have different return types. You can refer <a href="https://stackoverflow.com/questions/14694852/can-overridden-methods-differ-in-return-type" rel="nofollow">http://stackoverflow.com/questions/14694852/can-overridden-methods-differ-in-return-type</a>.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19311' onclick='return addComment.moveForm( "comment-19311", "19311", "respond", "4722" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-19448">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6ee8cd728dfe6fe251cfd28cf6a0ef1f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6ee8cd728dfe6fe251cfd28cf6a0ef1f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Kelele</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-30T08:04:20+00:00" itemprop="datePublished"><a href="index.html#comment-19448" class="comment-time-link" itemprop="url">November 30, 2014 at 8:04 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>i think overridden must have the return type</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19448' onclick='return addComment.moveForm( "comment-19448", "19448", "respond", "4722" )' aria-label='Reply to Kelele'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-20357">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f2dee467ac21f9b717b0ac613910269f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f2dee467ac21f9b717b0ac613910269f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">RAJ</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-17T12:31:36+00:00" itemprop="datePublished"><a href="index.html#comment-20357" class="comment-time-link" itemprop="url">December 17, 2014 at 12:31 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>For the 7th point `Return type of overloaded methods should be same`. Is it always necessary for methods to be overloaded?<br />
+What about this example?</p>
+<p>	public String getData(){<br />
+		return &#8220;Employe from Manager&#8221;;<br />
+	}<br />
+	public int getData(String val){<br />
+		return 0;<br />
+	}</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-20357' onclick='return addComment.moveForm( "comment-20357", "20357", "respond", "4722" )' aria-label='Reply to RAJ'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-21166">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6f7f6a203520c79ca9a12dc0e8495309?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6f7f6a203520c79ca9a12dc0e8495309?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">vishal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-30T12:09:09+00:00" itemprop="datePublished"><a href="index.html#comment-21166" class="comment-time-link" itemprop="url">December 30, 2014 at 12:09 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>what is the use of super keyword while we are overiding a function can you please explain..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-21166' onclick='return addComment.moveForm( "comment-21166", "21166", "respond", "4722" )' aria-label='Reply to vishal'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-48117">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d3cde2b1be245e9624dca54a9d379bb3?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d3cde2b1be245e9624dca54a9d379bb3?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ramesh Kumar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-01-05T17:05:28+00:00" itemprop="datePublished"><a href="index.html#comment-48117" class="comment-time-link" itemprop="url">January 5, 2016 at 5:05 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>super keyword calls the parent class method</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-48117' onclick='return addComment.moveForm( "comment-48117", "48117", "respond", "4722" )' aria-label='Reply to Ramesh Kumar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-21784">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/170e3ad8fcea6a912f18ba89e0c8d8a0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/170e3ad8fcea6a912f18ba89e0c8d8a0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Yogesh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-14T08:19:41+00:00" itemprop="datePublished"><a href="index.html#comment-21784" class="comment-time-link" itemprop="url">January 14, 2015 at 8:19 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I like ur explanation &#8230;&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-21784' onclick='return addComment.moveForm( "comment-21784", "21784", "respond", "4722" )' aria-label='Reply to Yogesh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-23882">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/184e6a9030d51d0dc57629144905e7ef?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/184e6a9030d51d0dc57629144905e7ef?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">pragati</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-04T13:31:15+00:00" itemprop="datePublished"><a href="index.html#comment-23882" class="comment-time-link" itemprop="url">March 4, 2015 at 1:31 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>thanks sir</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-23882' onclick='return addComment.moveForm( "comment-23882", "23882", "respond", "4722" )' aria-label='Reply to pragati'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-25484">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2aa368607f191fa5a0f54ec03bb14cfb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2aa368607f191fa5a0f54ec03bb14cfb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Arpitha</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-04-09T10:26:42+00:00" itemprop="datePublished"><a href="index.html#comment-25484" class="comment-time-link" itemprop="url">April 9, 2015 at 10:26 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Can u please explain me 7th point ? I think it is wrong right? return type doesn’t matter in case of overloading and return type should be same for method overriding.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-25484' onclick='return addComment.moveForm( "comment-25484", "25484", "respond", "4722" )' aria-label='Reply to Arpitha'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-40608">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f058839d85306b5880a802eda6c72a19?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f058839d85306b5880a802eda6c72a19?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Abiola</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-29T14:09:52+00:00" itemprop="datePublished"><a href="index.html#comment-40608" class="comment-time-link" itemprop="url">October 29, 2015 at 2:09 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>nice way of teaching cant believe it. am learning java just like that.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-40608' onclick='return addComment.moveForm( "comment-40608", "40608", "respond", "4722" )' aria-label='Reply to Abiola'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-56569">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/244a14034e68627f40dd8c8d9c325a69?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/244a14034e68627f40dd8c8d9c325a69?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Akshay pattar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-09T17:20:18+00:00" itemprop="datePublished"><a href="index.html#comment-56569" class="comment-time-link" itemprop="url">June 9, 2016 at 5:20 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>CarClass obj = new Ford();</p>
+<p>plz answer<br />
+y cant we write it as<br />
+carclass obj = new car ();</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-56569' onclick='return addComment.moveForm( "comment-56569", "56569", "respond", "4722" )' aria-label='Reply to Akshay pattar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4722' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="85efb698e2" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="8"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../../../2013/05/java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../../../2013/05/jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../../../2013/05/first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../../../2013/04/oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../../2013/03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../../../2013/04/java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../../2013/03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../../../2013/05/java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../../../2013/05/aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../../../2013/05/association/index.html">Association</a></li>
+<li><a href="../../07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="../../../2013/05/method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="../method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../../2013/03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../../../2013/04/runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../../../2013/04/java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../../../2013/05/java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="../../../2013/05/java-interface/index.html">Interface</a></li>
+ 	<li><a href="../../../2013/05/abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../../../2013/05/encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../../2013/03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../../../2013/05/java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../../../2013/04/java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../../../2013/05/inner-class/index.html">Inner classes</a></li>
+<li><a href="../../../2013/05/java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../../../2013/05/static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../../../2013/05/java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../../2013/12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../../2013/04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../../2013/03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2014/01/difference-between-method-overloading-and-overriding-in-java/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:40:04 GMT -->
+</html>

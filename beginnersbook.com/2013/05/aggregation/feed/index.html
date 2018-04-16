@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: OOPs concepts &#8211; What is Aggregation in java?</title>
+	<atom:link href="https://beginnersbook.com/2013/05/aggregation/feed/" rel="self" type="application/rss+xml" />
+	<link>https://beginnersbook.com/2013/05/aggregation/</link>
+	<description></description>
+	<lastBuildDate>Fri, 06 Apr 2018 04:50:05 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.5</generator>
+	<item>
+		<title>By: abhi</title>
+		<link>https://beginnersbook.com/2013/05/aggregation/#comment-68768</link>
+		<dc:creator><![CDATA[abhi]]></dc:creator>
+		<pubDate>Thu, 23 Mar 2017 02:58:30 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2456#comment-68768</guid>
+		<description><![CDATA[Hi,
+Lets say an Interface and a Class.
+
+interface I {
+}
+
+class C {
+}
+Is it possible to have a Has-A relation between these two ? Please reply.]]></description>
+		<content:encoded><![CDATA[<p>Hi,<br />
+Lets say an Interface and a Class.</p>
+<p>interface I {<br />
+}</p>
+<p>class C {<br />
+}<br />
+Is it possible to have a Has-A relation between these two ? Please reply.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Anurag</title>
+		<link>https://beginnersbook.com/2013/05/aggregation/#comment-67764</link>
+		<dc:creator><![CDATA[Anurag]]></dc:creator>
+		<pubDate>Thu, 23 Feb 2017 11:15:25 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2456#comment-67764</guid>
+		<description><![CDATA[Does It means that aggregation is closely related to inheritance and it has much to do with access specifier?]]></description>
+		<content:encoded><![CDATA[<p>Does It means that aggregation is closely related to inheritance and it has much to do with access specifier?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Gautam</title>
+		<link>https://beginnersbook.com/2013/05/aggregation/#comment-59457</link>
+		<dc:creator><![CDATA[Gautam]]></dc:creator>
+		<pubDate>Wed, 17 Aug 2016 07:11:55 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2456#comment-59457</guid>
+		<description><![CDATA[Here is a simple example program on aggregation
+class HardDisk
+{
+	public void writedata()
+	{
+		System.out.println(&quot;data is being written&quot;);
+	}
+}
+class Dell
+{
+	public static void main(String[]args)
+	{
+		HardDisk segate= new HardDisk(); 
+		segate.writedata();
+	}
+	
+}
+*** class A is in HAS-A relationship with Class B  if Class A holds the reference of class B
+HERE segate is a reference of HardDisk in class Dell
+so, Dell HAS-A HardDisk]]></description>
+		<content:encoded><![CDATA[<p>Here is a simple example program on aggregation<br />
+class HardDisk<br />
+{<br />
+	public void writedata()<br />
+	{<br />
+		System.out.println(&#8220;data is being written&#8221;);<br />
+	}<br />
+}<br />
+class Dell<br />
+{<br />
+	public static void main(String[]args)<br />
+	{<br />
+		HardDisk segate= new HardDisk();<br />
+		segate.writedata();<br />
+	}</p>
+<p>}<br />
+*** class A is in HAS-A relationship with Class B  if Class A holds the reference of class B<br />
+HERE segate is a reference of HardDisk in class Dell<br />
+so, Dell HAS-A HardDisk</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: AmanG</title>
+		<link>https://beginnersbook.com/2013/05/aggregation/#comment-53237</link>
+		<dc:creator><![CDATA[AmanG]]></dc:creator>
+		<pubDate>Sat, 02 Apr 2016 04:30:04 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2456#comment-53237</guid>
+		<description><![CDATA[hello, please tell me some important less known points about aggregation which i must know while explaining it to anyone.]]></description>
+		<content:encoded><![CDATA[<p>hello, please tell me some important less known points about aggregation which i must know while explaining it to anyone.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Nisha</title>
+		<link>https://beginnersbook.com/2013/05/aggregation/#comment-4069</link>
+		<dc:creator><![CDATA[Nisha]]></dc:creator>
+		<pubDate>Thu, 05 Jun 2014 14:11:40 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2456#comment-4069</guid>
+		<description><![CDATA[Hi Arun,
+         
+                It seems like you didnt understood the purpose of aggregation. You havent used it in your program. I have made some changes in your program. Hope it helps..
+public class Aggregation_Example {
+
+
+	String name;
+	int age;
+	String addre;
+
+	public Aggregation(String name,int age,String addre)
+	{
+		this.name=name;
+		this.age=age;
+		this.addre=addre;//this you should use cos this makes a relationship with your another class
+	}
+	public static void main(String x[])throws Exception// specify main method in your main class
+	{
+		Aggregation_Example btn=new Aggregation_Example (&quot;arun&quot;,23,&quot;Chennai&quot;);
+          // you should pass btn object which contains address which you can access in Student class
+		Student stud=new Student(&quot;10th&quot;,&#039;A&#039;,btn);
+		   System.out.println(stud.agrn.age);
+		   System.out.println(stud.agrn.name);
+		   System.out.println(stud.agrn.addre);
+	}
+}
+class Student 
+{
+	Aggregation_Example agrn;
+	String nameClass;
+	char c;
+Student(String classWhich,char section,Aggregation_Example address)
+{
+	this.nameClass=classWhich;
+	this.c=section;
+	this.agrn=address;	// you havent used in your example which raised a nullpointer exception
+}
+}]]></description>
+		<content:encoded><![CDATA[<p>Hi Arun,</p>
+<p>                It seems like you didnt understood the purpose of aggregation. You havent used it in your program. I have made some changes in your program. Hope it helps..<br />
+public class Aggregation_Example {</p>
+<p>	String name;<br />
+	int age;<br />
+	String addre;</p>
+<p>	public Aggregation(String name,int age,String addre)<br />
+	{<br />
+		this.name=name;<br />
+		this.age=age;<br />
+		this.addre=addre;//this you should use cos this makes a relationship with your another class<br />
+	}<br />
+	public static void main(String x[])throws Exception// specify main method in your main class<br />
+	{<br />
+		Aggregation_Example btn=new Aggregation_Example (&#8220;arun&#8221;,23,&#8221;Chennai&#8221;);<br />
+          // you should pass btn object which contains address which you can access in Student class<br />
+		Student stud=new Student(&#8220;10th&#8221;,&#8217;A&#8217;,btn);<br />
+		   System.out.println(stud.agrn.age);<br />
+		   System.out.println(stud.agrn.name);<br />
+		   System.out.println(stud.agrn.addre);<br />
+	}<br />
+}<br />
+class Student<br />
+{<br />
+	Aggregation_Example agrn;<br />
+	String nameClass;<br />
+	char c;<br />
+Student(String classWhich,char section,Aggregation_Example address)<br />
+{<br />
+	this.nameClass=classWhich;<br />
+	this.c=section;<br />
+	this.agrn=address;	// you havent used in your example which raised a nullpointer exception<br />
+}<br />
+}</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ilir</title>
+		<link>https://beginnersbook.com/2013/05/aggregation/#comment-3899</link>
+		<dc:creator><![CDATA[Ilir]]></dc:creator>
+		<pubDate>Tue, 27 May 2014 17:34:55 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2456#comment-3899</guid>
+		<description><![CDATA[Thanks for the explanation. I am taking the OCA Java SE7 Programmer I exam, and needed to understand aggregation. Now I have an understanding of aggregation. Good example. I didn&#039;t try it out, but I came for understanding the mean of  aggregation, which I understand now.]]></description>
+		<content:encoded><![CDATA[<p>Thanks for the explanation. I am taking the OCA Java SE7 Programmer I exam, and needed to understand aggregation. Now I have an understanding of aggregation. Good example. I didn&#8217;t try it out, but I came for understanding the mean of  aggregation, which I understand now.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chaitanya Singh</title>
+		<link>https://beginnersbook.com/2013/05/aggregation/#comment-1341</link>
+		<dc:creator><![CDATA[Chaitanya Singh]]></dc:creator>
+		<pubDate>Fri, 07 Feb 2014 12:54:17 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2456#comment-1341</guid>
+		<description><![CDATA[Hi ArunKumar,
+
+Did you copy the code correctly? Please verify it once. The code given in the tutorial is already tested and it is not throwing any error.]]></description>
+		<content:encoded><![CDATA[<p>Hi ArunKumar,</p>
+<p>Did you copy the code correctly? Please verify it once. The code given in the tutorial is already tested and it is not throwing any error.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Arunkumar</title>
+		<link>https://beginnersbook.com/2013/05/aggregation/#comment-1340</link>
+		<dc:creator><![CDATA[Arunkumar]]></dc:creator>
+		<pubDate>Fri, 07 Feb 2014 09:36:34 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2456#comment-1340</guid>
+		<description><![CDATA[This is my program and it shows 
+
+&lt;pre&gt;package Second_Java;
+
+ class Aggregation_Example {
+	
+	String name;
+	int age;
+
+	public Aggregation_Example(String name,int age)
+	{
+		this.name=name;
+		this.age=age;
+	}
+}
+class Student 
+{
+	Aggregation_Example agrn;
+	String address;
+Student(String address)
+{
+	this.address=address;
+	
+	
+}
+public static void main(String x[])throws Exception
+{
+	Aggregation_Example btn=new Aggregation_Example(&quot;arun&quot;,23);
+	Student stud=new Student(&quot;Chennai&quot;);
+	   System.out.println(stud.address);
+	   System.out.println(stud.agrn.age);
+	   System.out.println(stud.agrn.name);
+	
+
+}
+
+}&lt;/pre&gt;]]></description>
+		<content:encoded><![CDATA[<p>This is my program and it shows </p>
+<pre>package Second_Java;
+
+ class Aggregation_Example {
+	
+	String name;
+	int age;
+
+	public Aggregation_Example(String name,int age)
+	{
+		this.name=name;
+		this.age=age;
+	}
+}
+class Student 
+{
+	Aggregation_Example agrn;
+	String address;
+Student(String address)
+{
+	this.address=address;
+	
+	
+}
+public static void main(String x[])throws Exception
+{
+	Aggregation_Example btn=new Aggregation_Example("arun",23);
+	Student stud=new Student("Chennai");
+	   System.out.println(stud.address);
+	   System.out.println(stud.agrn.age);
+	   System.out.println(stud.agrn.name);
+	
+
+}
+
+}</pre>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

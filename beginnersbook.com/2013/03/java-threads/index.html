@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/03/java-threads/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:23:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Basics: All about Java threads</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="What are Java Threads? A thread is a: Facility to allow multiple activities within a single process Referred as lightweight process A thread is a series of executed statements Each thread has its own program counter, stack and local variables A thread is a nested sequence of method calls Its shares memory, files and"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Basics: All about Java threads" />
+<meta property="og:description" content="What are Java Threads? A thread is a: Facility to allow multiple activities within a single process Referred as lightweight process A thread is a series of executed statements Each thread has its own program counter, stack and local variables A thread is a nested sequence of method calls Its shares memory, files and" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="Java Basics" />
+<meta property="article:tag" content="runnable" />
+<meta property="article:tag" content="thread" />
+<meta property="article:section" content="Multithreading" />
+<meta property="article:published_time" content="2013-03-28T23:54:42+00:00" />
+<meta property="article:modified_time" content="2014-04-22T16:02:41+00:00" />
+<meta property="og:updated_time" content="2014-04-22T16:02:41+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="What are Java Threads? A thread is a: Facility to allow multiple activities within a single process Referred as lightweight process A thread is a series of executed statements Each thread has its own program counter, stack and local variables A thread is a nested sequence of method calls Its shares memory, files and" />
+<meta name="twitter:title" content="Basics: All about Java threads" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Basics: All about Java threads Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexb4f0.html?p=1769' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed6820.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F03%2Fjava-threads%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed9dd2?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F03%2Fjava-threads%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-1769 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-1769 post type-post status-publish format-standard category-multithreading tag-java-basics tag-runnable tag-thread entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Basics: All about Java threads</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/technology/java-guide/multithreading/index.html" rel="category tag">Multithreading</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><h2>What are Java Threads?</h2>
+<p>A thread is a:</p>
+<ul>
+<li>Facility to allow multiple activities within a single process</li>
+<li>Referred as lightweight process</li>
+<li>A thread is a series of executed statements</li>
+<li>Each thread has its own program counter, stack and local variables</li>
+<li>A thread is a nested sequence of method calls</li>
+<li>Its shares memory, files and per-process state</li>
+</ul>
+<p>Read: <a href="../multithreading-in-java/index.html" target="_blank">Multithreading in Java</a></p>
+<h4>Whats the need of a thread or why we use Threads?</h4>
+<ul>
+<li>To perform asynchronous or background processing</li>
+<li>Increases the responsiveness of GUI applications</li>
+<li>Take advantage of multiprocessor systems</li>
+<li>Simplify program logic when there are multiple independent entities</li>
+</ul>
+<h4>What happens when a thread is invoked?</h4>
+<p>When a thread is invoked, there will be two paths of execution. One path will execute the thread and the other path will follow the statement after the thread invocation. There will be a separate stack and memory space for each thread.</p>
+<h4>Risk Factor</h4>
+<ul>
+<li>Proper co-ordination is required between threads accessing common variables [use of synchronized and volatile] for consistence view of data</li>
+<li>overuse of java threads can be hazardous to program&#8217;s performance and its maintainability.</li>
+</ul>
+<h3>Threads in Java</h3>
+<p>Java threads facility and API is deceptively simple:<br />
+Every java program creates at least one thread [ main() thread ]. Additional threads are created through the Thread constructor or by instantiating classes that extend the Thread class.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<h4>Thread creation in Java</h4>
+<p>Thread implementation in java can be achieved in two ways:</p>
+<ol>
+<li>Extending the java.lang.Thread class</li>
+<li>Implementing the java.lang.Runnable Interface</li>
+</ol>
+<p>Note: The Thread and Runnable are available in the   java.lang.* package</p>
+<h4>1) By extending thread class</h4>
+<ul>
+<li>The class should extend Java Thread class.</li>
+<li>The class should override the run() method.</li>
+<li>The functionality that is expected by the Thread to be executed is written in the run() method.</li>
+</ul>
+<p>void start(): Creates a new thread and makes it runnable.<br />
+void run(): The new thread begins its life inside this method.</p>
+<p>Example:</p>
+<pre>public class MyThread extends Thread {
+   public void run(){  
+    System.out.println("thread is running...");  
+  } 
+   public static void main(String[] args) {
+     MyThread obj = new MyThread();
+     obj.start();
+}</pre>
+<h4>2) By Implementing Runnable interface</h4>
+<ul>
+<li>The class should implement the Runnable interface</li>
+<li>The class should implement the run() method in the Runnable interface</li>
+<li>The functionality that is expected by the Thread to be executed is put in the run() method</li>
+</ul>
+<p>Example:</p>
+<pre>public class MyThread implements Runnable {
+   public void run(){  
+     System.out.println("thread is running..");  
+   }  
+   public static void main(String[] args) {
+     Thread t = new Thread(new MyThread());
+     t.start();
+}</pre>
+<h3>Extends Thread class vs Implements Runnable Interface?</h3>
+<ul>
+<li>Extending the Thread class will make your class unable to extend other classes, because of the single inheritance feature in  JAVA. However, this will give you a simpler code structure. If you implement Runnable, you can gain better object-oriented design and consistency and also avoid the single inheritance problems.</li>
+<li>If you just want to achieve basic functionality of a thread you can simply implement Runnable interface and override run() method. But if you want to do something serious with thread object as it has other methods like suspend(), resume(), ..etc which are not available in Runnable interface then you may prefer to extend the Thread class.</li>
+</ul>
+<h4>Thread life cycle in java</h4>
+<p>Read full article at: <a title="Life cycle of a java thread" href="../thread-life-cycle-in-java/index.html" target="_blank">Thread life cycle in java</a></p>
+<h4>Ending Thread</h4>
+<p>A Thread ends due to the following reasons:</p>
+<ul>
+<li>The thread ends when it comes when the run() method finishes its execution.</li>
+<li>When the thread throws an Exception or Error that is not being caught in the program.</li>
+<li>Java program completes or ends.</li>
+<li>Another thread calls stop() methods.</li>
+</ul>
+<h4>Synchronization of Threads</h4>
+<ul>
+<li>In many cases concurrently running threads share data and two threads try to do operations on the same variables at the same time. This often results in corrupt data as two threads try to operate on the same data.</li>
+<li>A popular solution is to provide some kind of lock primitive.  Only one thread can acquire a particular lock at any particular time. This can be achieved by using a keyword “synchronized” .</li>
+<li>By using the synchronize only one thread can access the method at a time and a second call will be blocked until the first call returns or wait() is called inside the synchronized method.</li>
+</ul>
+<h3>Deadlock</h3>
+<p>Whenever there is multiple processes contending for exclusive access to multiple locks, there is the possibility of deadlock. A set of processes or threads is said to be deadlocked when each is waiting for an action that only one of the others can perform.<br />
+In Order to avoid deadlock, one should ensure that when you acquire multiple locks, you always acquire the locks in the same order in all threads.</p>
+<h4>Guidelines for synchronization</h4>
+<ul>
+<li>Keep blocks short. Synchronized blocks should be short &#8212; as short as possible while still protecting the integrity of related data operations.</li>
+<li>Don&#8217;t block. Don&#8217;t ever call a method that might block, such as InputStream.read(), inside a synchronized block or method.</li>
+<li>Don&#8217;t invoke methods on other objects while holding a lock. This may sound extreme, but it eliminates the most common source of deadlock.</li>
+</ul>
+<p>Target keywords: <strong>Java threads, javathread example, create thread java, java Runnable</strong></p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../../2015/03/why-dont-we-call-run-method-directly-why-call-start-method/index.html" rel="bookmark" title="Link to Why don’t we call run() method directly, why call start() method?">Why don’t we call run() method directly, why call start() method?</a></li><li><a href="../../../2015/01/what-is-the-difference-between-a-process-and-a-thread-in-java/index.html" rel="bookmark" title="Link to What is the difference between a process and a thread in Java?">What is the difference between a process and a thread in Java?</a></li><li><a href="../multithreading-in-java/index.html" rel="bookmark" title="Link to Multithreading in java with examples">Multithreading in java with examples</a></li><li><a href="../../../2015/03/thread-join-method-in-java-with-example/index.html" rel="bookmark" title="Link to Thread join() method in Java with example">Thread join() method in Java with example</a></li><li><a href="../../../2015/03/can-we-start-a-thread-twice-in-java/index.html" rel="bookmark" title="Link to Can we start a Thread twice in Java?">Can we start a Thread twice in Java?</a></li><li><a href="../../../2015/01/daemon-thread-in-java-with-example/index.html" rel="bookmark" title="Link to Daemon thread in Java with example">Daemon thread in Java with example</a></li></ol></div><footer class="entry-footer"></footer></article>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1769' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="4b956155d1" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="127"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-70" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Multithreading</h4>
+			<div class="textwidget"><ul>
+<li><a href="../multithreading-in-java/index.html">Multithreading</a></li>
+<li><a href="../../../2015/01/what-is-the-difference-between-a-process-and-a-thread-in-java/index.html">Process vs Thread</a></li>
+<li><a href="../thread-life-cycle-in-java/index.html">Thread Life Cycle</a></li>
+<li><a href="../../../2015/01/daemon-thread-in-java-with-example/index.html">Daemon thread</a></li>
+<li><a href="../../../2015/03/thread-join-method-in-java-with-example/index.html">thread join()</a></li>
+<li><a href="../../../2015/03/why-dont-we-call-run-method-directly-why-call-start-method/index.html">Why call start()</a></li>
+<li><a href="../../../2015/03/can-we-start-a-thread-twice-in-java/index.html">Thread starting twice?</a></li>
+<li><a href="../../../2015/03/java-multithreading-interview-questions-and-answers/index.html">Multithreading Interview Q</a></li>
+</ul></div>
+		</div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/03/java-threads/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:23:59 GMT -->
+</html>

@@ -1,0 +1,62 @@
+.tutorials {margin-right: auto;margin-left: auto;padding-left: 15px;padding-right: 15px;width:100%;max-width:none;}
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+.row:after {clear: both;}
+.tcolumn {width: 25%;position: relative;float:left;text-align:center;}
+.text-center {text-align: center;}
+.box-font {font-family: 'Josefin Sans', sans-serif;font-size: 16px !important;display:block;padding-top: 15px;font-weight: normal !important;}
+h1 {font-family: 'Josefin Sans' !important;text-align:center;margin: 15px auto;font-size:36px !important;}
+.quote-font {font-family: 'Josefin Sans', sans-serif;font-size: 20px !important;margin-bottom: 0px !important;color:#999;}
+.pad-15 {padding: 15px;}
+.pad-20 {padding: 20px;}
+.white {color: #ffffff !important;}
+.box-shadow {box-shadow: 0 1px 2px rgba(0,0,0,0.20), 0 1px 2px rgba(0,0,0,0.44);transition: all 0.1s ease-in-out;height: 130px;}
+.box-shadow:hover {box-shadow: 0 10px 20px rgba(0,0,0,0.25), 0 6px 6px rgba(0,0,0,0.60);height: 130px;}
+.lightgreen-box {background: #197D63;display:block;}
+.social {margin:0 auto;display:inline-block;text-align:center;width:100%;}
+.social_icon {width:100%;margin:0 auto;text-align:center;}
+.social_icon a {padding:2.2%;display:block;text-align:center;display:inline-block;}
+.social_icon a .socialcount {color:#e53935;display:block;font-weight:900;font-size:16px;}
+.social_icon a .desc {color:#999;display:block;font-size:11px;font-family: 'Josefin Sans', sans-serif;}
+@media (max-width:1023px) {
+h1 {
+text-align:center;
+margin: 10px auto !important;
+font-size:26px !important;
+}
+.quote-font {
+	font-size: 16px !important;
+}
+.tutorials {
+       width:100%;
+}
+.row {
+  width: 100%;
+  *zoom: 1;
+  margin-left:0px;
+}
+.row:before,
+.row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.row:after {
+  clear: both;
+}
+.row .tcolumn {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 0;
+  margin-bottom:10px;
+  padding:0px 5px 0px 5px;
+}
+}

@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/java-tutorial-for-beginners-with-examples/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:35:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java tutorial: Learn Java Programming with examples</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Core Java tutorial: This tutorial will help you learn Java Programming in a simple and effective manner so you won&#039;t face any difficulty learning Java."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Java tutorial: Learn Java Programming with examples" />
+<meta property="og:description" content="Core Java tutorial: This tutorial will help you learn Java Programming in a simple and effective manner so you won&#039;t face any difficulty learning Java." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Core Java tutorial: This tutorial will help you learn Java Programming in a simple and effective manner so you won&#039;t face any difficulty learning Java." />
+<meta name="twitter:title" content="Java tutorial: Learn Java Programming with examples" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Java tutorial: Learn Java Programming with examples Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../index11b5.html?p=5211' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embed9098.json?url=https%3A%2F%2Fbeginnersbook.com%2Fjava-tutorial-for-beginners-with-examples%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed3423?url=https%3A%2F%2Fbeginnersbook.com%2Fjava-tutorial-for-beginners-with-examples%2F&amp;format=xml" />
+<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="page-template-default page page-id-5211 custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-5211 current_page_item menu-item-5678"><a href="index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-5211 page type-page status-publish entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Java tutorial: Learn Java Programming with examples</h1>
+<style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>This tutorial would help you learn Java like a pro. I have shared 500+ tutorials on various topics of Java including tutorials on core java and advanced Java concepts and Java programming examples. This core Java Tutorial contains the links of all the tutorials in a systematic order starting from beginner&#8217;s level to the advanced topics. Whether you are a college student looking for learn Java programming or a company employee learning advanced Java topics for building an application in Java, this Java tutorial would definitely be useful for you. Let&#8217;s start learning.</p>
+<h2>Java Tutorial</h2>
+<p>To learn Java programming, refer these tutorials in the given order. These tutorials are written for beginners so even if you have no prior knowledge in Java, you won&#8217;t face any difficulty understanding these tutorials(this page includes core Java tutorial and advanced Java tutorial).</p>
+<h3>Tutorials on Java basics</h3>
+<p>Start from here. An <strong>introduction to java</strong> and java basics with examples.<br />
+1. <a href="../2013/05/java-introduction/index.html">Introduction to Java</a><br />
+2. <a href="../2013/05/jvm/index.html">Java Virtual Machine(JVM) Basics</a><br />
+3. <a href="../2013/05/first-java-program/index.html">First Java Program</a><br />
+4. <a href="../2017/08/variables-in-java/index.html">Variables in Java</a><br />
+5. <a href="../2017/08/data-types-in-java/index.html">Java Data Types</a><br />
+6. <a href="../2017/08/operators-in-java/index.html">Java Operators</a><br />
+7. <a href="../2017/08/if-else-statement-in-java/index.html">If-else in Java</a><br />
+8. <a href="../2017/08/java-switch-case/index.html">Switch-Case in Java</a><br />
+9. <a href="../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a><br />
+10. <a href="../2015/03/while-loop-in-java-with-examples/index.html">Java While loop</a><br />
+11. <a href="../2015/03/do-while-loop-in-java-with-example/index.html">do-while loop in Java</a><br />
+12. <a href="../2017/08/java-continue-statement/index.html">Java Continue statement</a><br />
+13. <a href="../2017/08/java-break-statement/index.html">Java Break statement</a></p>
+<h3>Java OOPs tutorial</h3>
+<p>14. <a href="../2013/03/constructors-in-java/index.html">Constructor in Java</a><br />
+15. <a href="../2013/04/java-static-class-block-methods-variables/index.html">Static keyword in Java</a><br />
+16. <a href="../2013/03/inheritance-in-java/index.html">Java Inheritance with example</a><br />
+17. <a href="../2013/05/java-inheritance-types/index.html">Types of inheritance in Java</a><br />
+18. <a href="../2013/05/aggregation/index.html">Aggregation in Java</a><br />
+19. <a href="../2013/05/association/index.html">Association in Java</a><br />
+20. <a href="../2014/07/super-keyword-in-java-with-example/index.html">Super Keyword in Java</a><br />
+21. <a href="../2013/05/method-overloading/index.html">Method overloading in Java</a><br />
+22. <a href="../2014/01/method-overriding-in-java-with-example/index.html">Method overriding in Java</a><br />
+23. <a href="../2014/01/difference-between-method-overloading-and-overriding-in-java/index.html">Java &#8211; Method Overloading vs Method Overriding</a><br />
+24. <a href="../2013/03/polymorphism-in-java/index.html">Polymorphism in Java</a><br />
+25. <a href="../2013/04/runtime-compile-time-polymorphism/index.html">Types of polymorphism in Java</a><br />
+26. <a href="../2013/04/java-static-dynamic-binding/index.html">Static and dynamic binding</a><br />
+27. <a href="../2013/05/java-abstract-class-method/index.html">Abstract class in Java</a><br />
+28. <a href="../2014/01/abstract-method-with-examples-in-java/index.html">Java Abstract method with example</a><br />
+29. <a href="../2013/05/java-interface/index.html">Interface in Java</a><br />
+30. <a href="../2013/05/abstract-class-vs-interface-in-java/index.html">Java &#8211; Abstract class vs interface</a><br />
+31. <a href="../2013/05/encapsulation-in-java/index.html">Java Encapsulation with example</a><br />
+32. <a href="../2013/03/packages-in-java/index.html">Java Packages with examples</a><br />
+33. <a href="../2013/05/java-access-modifiers/index.html">Access modifiers in Java</a><br />
+33. <a href="../2013/04/java-garbage-collection/index.html">Garbage Collection in Java</a><br />
+34. <a href="../2014/07/final-keyword-java-final-variable-method-class/index.html">final keyword</a></p>
+<h3>Java Exception Handling Tutorial</h3>
+<p>35. <a href="../2013/04/java-exception-handling/index.html">Java Exception handling</a><br />
+36. <a href="../2013/04/try-catch-in-java/index.html">Java try-catch block</a><br />
+37. <a href="../2013/04/java-finally-block/index.html">Java finally block</a><br />
+38. <a href="../2013/04/throw-in-java/index.html">How to throw exception in Java</a><br />
+39. <a href="../2013/04/user-defined-exception-in-java/index.html">Custom Exception in Java</a><br />
+40. <a href="../2013/04/exception-handling-examples/index.html">Exception Examples</a></p>
+<h3>Java Collections Tutorial</h3>
+<p>41. <a href="../2013/12/java-arraylist/index.html">Java ArrayList</a><br />
+42. <a href="../2013/12/linkedlist-in-java-with-example/index.html">Java LinkedList</a><br />
+43. <a href="../2013/12/vector-in-java/index.html">Vector in Java</a><br />
+44. <a href="../2013/12/hashmap-in-java-with-example/index.html">HashMap in Java</a><br />
+45. <a href="../2013/12/treemap-in-java-with-example/index.html">Java TreeMap</a><br />
+46. <a href="../2013/12/linkedhashmap-in-java/index.html">Java LinkedHashMap</a><br />
+47. <a href="../2013/12/hashset-class-in-java-with-example/index.html">Java HashSet</a><br />
+48. <a href="../2013/12/treeset-class-in-java-with-example/index.html">TreeSet in Java</a><br />
+49. <a href="../2013/12/linkedhashset-class-in-java-with-example/index.html">LinkedHashSet</a><br />
+50. <a href="../2014/07/hashtable-in-java-with-example/index.html">Hashtable in Java</a><br />
+51. <a href="../2017/08/queue-interface-in-java-collections/index.html">Queue</a><br />
+52. <a href="../2017/08/java-collections-priorityqueue-interface/index.html">PriorityQueue</a><br />
+53. <a href="../2017/08/java-collections-deque-interface/index.html">Deque &amp; ArrayDeque</a><br />
+54. <a href="../2017/08/comparable-interface-in-java-with-example/index.html">Comparable Interface</a><br />
+55. <a href="../2017/08/comparator-interface-in-java/index.html">Comparator Interface</a></p>
+<h3>Java Tutorial on Annotation, Enum and Regex</h3>
+<p>56. <a href="../2014/09/java-enum-examples/index.html">Java Enum</a><br />
+57. <a href="../2014/09/java-annotations/index.html">Java Annotations</a><br />
+58. <a href="../2014/08/java-regex-tutorial/index.html">Java Regex</a></p>
+<h3>Miscellaneous Core Java tutorial</h3>
+<p>59. <a href="../2013/12/java-strings/index.html">String in Java</a><br />
+60. <a href="../2013/03/multithreading-in-java/index.html">Java Multithreading</a><br />
+61. <a href="../2014/07/java-serialization/index.html">Java Serialization</a><br />
+62. <a href="../2015/06/java-awt-tutorial/index.html">Java AWT Tutorial</a><br />
+63. <a href="../2015/07/java-swing-tutorial/index.html">Java Swing Tutorial</a><br />
+64. <a href="../2014/09/java-autoboxing-and-unboxing-with-examples/index.html">Java autoboxing and unboxing</a><br />
+65. <a href="../2017/09/wrapper-class-in-java/index.html">Wrapper Class in Java</a></p>
+<h3>Java 8 Tutorial</h3>
+<p>There are several new features introduced in Java 8. I have covered all the <a href="../2017/10/java-8-features-with-examples/index.html">Java 8 Features</a> in the separate tutorials, here are the links:<br />
+66. <a href="../2017/10/java-lambda-expressions-tutorial-with-examples/index.html">Java Lambda Expressions</a><br />
+67. <a href="../2017/10/method-references-in-java-8/index.html">Java Method References</a><br />
+68. <a href="../2017/10/java-functional-interfaces/index.html">Java Functional Interfaces</a><br />
+69. <a href="../2017/10/java-8-stream-tutorial/index.html">Java Stream Tutorial</a><br />
+70. <a href="../2017/10/java-8-stream-filter/index.html">Java Stream Filter Tutorial</a><br />
+71. <a href="../2017/10/java-8-interface-changes-default-method-and-static-method/index.html">Java Interface changes &#8211; introduction of default and static methods</a><br />
+72. <a href="../2017/10/java-8-foreach/index.html">Java forEach</a><br />
+73. <a href="../2017/10/java-8-stream-collectors-class-with-examples/index.html">Java Stream Collectors class</a><br />
+74. <a href="../2017/10/java-8-stringjoiner/index.html">Java StringJoiner class</a><br />
+75. <a href="../2017/10/java-8-optional-class/index.html">Java Optional class</a><br />
+76. <a href="../2017/10/java-8-arrays-parallel-sort-with-example/index.html">Java Arrays Parallel Sort</a></p>
+<h3>Java Input/Output Tutorials</h3>
+<p>77. <a href="../2014/01/how-to-create-a-file-in-java/index.html">Create a file in java</a><br />
+78. <a href="../2014/01/how-to-read-file-in-java-bufferedinputstream/index.html">Read a file in java</a><br />
+79. <a href="../2014/01/how-to-write-to-a-file-in-java-using-fileoutputstream/index.html">Write a file</a><br />
+80. <a href="../2014/01/how-to-append-to-a-file-in-java/index.html">Append to a file in java</a><br />
+81. <a href="../2014/01/how-to-delete-file-in-java-delete-method/index.html">How to delete file in Java</a><br />
+82. <a href="../2014/07/how-to-compress-a-file-in-gzip-format/index.html">How to compress a File in GZip format</a><br />
+83. <a href="../2014/05/how-to-copy-a-file-to-another-file-in-java/index.html">How to Copy a File to another File in Java</a><br />
+84. <a href="../2014/05/how-to-get-the-last-modified-date-of-a-file-in-java/index.html">How to get the last modified date of a file in java</a><br />
+85. <a href="../2014/05/how-to-make-a-file-read-only-in-java/index.html">How to make a File Read Only in Java</a><br />
+86. <a href="../2015/01/how-to-check-if-a-file-is-hidden-in-java/index.html">How to check if a File is hidden</a><br />
+For more Java I/O tutorials, refer this: <a href="../java-io-tutorial-with-examples/index.html">Java I/O</a></p>
+<h3>Java Programs</h3>
+<p>I have shared 50+ programs of Java programming language, links for some of the programs are shared below. These programs are especially shared for beginners.</p>
+<blockquote><p>To get the complete list of java programs, refer: <a href="../2017/09/java-examples/index.html">Java Examples</a>.</p></blockquote>
+<p>87. <a href="../2017/09/java-program-to-display-fibonacci-series-using-loops/index.html">Java program to Display Fibonacci Series </a><br />
+88. <a href="../2017/09/java-program-to-find-factorial-using-for-and-while-loop/index.html">Java program to Find Factorial</a><br />
+89. <a href="../2017/09/java-program-to-swap-two-numbers-using-bitwise-xor-operator/index.html">Java program to swap two numbers using bitwise operator</a><br />
+90. <a href="../2017/09/java-program-to-find-largest-of-three-numbers-using-ternary-operator/index.html">Java program to find largest of three numbers using ternary operator</a><br />
+91. <a href="../2017/09/java-program-to-check-leap-year/index.html">Java program to check leap year</a><br />
+92. <a href="../2014/01/java-program-to-reverse-a-number/index.html">Java Program to Reverse an input number</a><br />
+93. <a href="../2014/01/java-program-to-calculate-area-and-circumference-of-circle/index.html">Java Program to Calculate area of circle</a><br />
+94. <a href="../2014/01/java-program-to-calculate-area-of-triangle/index.html">Java Program to Calculate area of triangle</a><br />
+95. <a href="../2014/01/java-program-to-sum-the-elements-of-an-array/index.html">Java Program to Find sum of array elements</a><br />
+96. <a href="../2014/01/java-program-to-check-prime-number/index.html">Program to Check for prime number</a><br />
+97. <a href="../2014/02/java-program-to-check-even-or-odd-number/index.html">Program to Check whether number is even or odd in Java</a><br />
+98. <a href="../2014/04/java-program-for-linear-search-example/index.html">Java Linear Search Program</a><br />
+99. <a href="../2014/04/java-program-to-perform-binary-search/index.html">Java Binary Search Program</a><br />
+100. <a href="../2014/04/java-program-to-generate-random-number-example/index.html">Program to Generate random number in Java</a><br />
+101. <a href="../2014/07/java-program-for-binary-to-decimal-conversion/index.html">Java program for Binary to decimal conversion</a><br />
+102. <a href="../2014/07/java-program-to-get-input-from-user/index.html">Java Program Get input from user</a></p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-4998">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/34a201adf6a3efd7120dd1f8819714be?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/34a201adf6a3efd7120dd1f8819714be?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">malesh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-07-09T14:22:30+00:00" itemprop="datePublished"><a href="index.html#comment-4998" class="comment-time-link" itemprop="url">July 9, 2014 at 2:22 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>hi<br />
+thanks for your website its very helpful for me.<br />
+please send me some examples for oop concepts</p>
+<p>thanks<br />
+malesh<br />
+(<a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="9feff2fef3faecf7f0aedff8f2fef6f3b1fcf0f2">[email&#160;protected]</a>)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-4998' onclick='return addComment.moveForm( "comment-4998", "4998", "respond", "5211" )' aria-label='Reply to malesh'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-5011">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-07-10T05:29:27+00:00" itemprop="datePublished"><a href="index.html#comment-5011" class="comment-time-link" itemprop="url">July 10, 2014 at 5:29 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Refer this: <a href="../2013/04/oops-concepts/index.html" target="_blank" rel="nofollow">https://beginnersbook.com/2013/04/oops-concepts/</a></p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5011' onclick='return addComment.moveForm( "comment-5011", "5011", "respond", "5211" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-52761">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8138f22aeee2aae4ceca20937883ce1e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8138f22aeee2aae4ceca20937883ce1e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">guna</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-22T15:38:00+00:00" itemprop="datePublished"><a href="index.html#comment-52761" class="comment-time-link" itemprop="url">March 22, 2016 at 3:38 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>do  u have any videos related to learn java</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52761' onclick='return addComment.moveForm( "comment-52761", "52761", "respond", "5211" )' aria-label='Reply to guna'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5600">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c6c6796a16e1d4c0e5d4e04f8e247a38?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c6c6796a16e1d4c0e5d4e04f8e247a38?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Revanasiddappa</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-07-27T13:15:20+00:00" itemprop="datePublished"><a href="index.html#comment-5600" class="comment-time-link" itemprop="url">July 27, 2014 at 1:15 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Wrapper Classes Are Not Explained&#8230;&#8230;&#8230;.</p>
+<p>please provide Wrapper Classes Concept in this tutorial</p>
+<p>Thank You so much&#8230;&#8230;&#8230;&#8230;&#8230;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5600' onclick='return addComment.moveForm( "comment-5600", "5600", "respond", "5211" )' aria-label='Reply to Revanasiddappa'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-5601">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c6c6796a16e1d4c0e5d4e04f8e247a38?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c6c6796a16e1d4c0e5d4e04f8e247a38?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Revanasiddappa</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-07-27T13:37:49+00:00" itemprop="datePublished"><a href="index.html#comment-5601" class="comment-time-link" itemprop="url">July 27, 2014 at 1:37 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Java TYPE CASTING also not explained</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5601' onclick='return addComment.moveForm( "comment-5601", "5601", "respond", "5211" )' aria-label='Reply to Revanasiddappa'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-6135">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/60a8f96c9bbf92d704abcb77eada67f2?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/60a8f96c9bbf92d704abcb77eada67f2?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">junaid ahmad</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-12T20:09:56+00:00" itemprop="datePublished"><a href="index.html#comment-6135" class="comment-time-link" itemprop="url">August 12, 2014 at 8:09 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>assalam-o-alaikum Sir!<br />
+i am beginner to JAVA<br />
+my question is, how to pass a loop variable value to textfield in JFrame.<br />
+e.g</p>
+<p>for(int i=0;i&lt;5;i++)<br />
+{<br />
+               textfield.settext(Integer.toString(i));<br />
+               try{ Thread.sleep(1000);}<br />
+               catch(Exception obj){System.err.println(&quot;Exception occured&quot;);}</p>
+<p>}</p>
+<p>it only displays the last value of loop with terminates in textfield.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6135' onclick='return addComment.moveForm( "comment-6135", "6135", "respond", "5211" )' aria-label='Reply to junaid ahmad'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-37933">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9bec2ade016dfb8db5ea4f0ba63d09b7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9bec2ade016dfb8db5ea4f0ba63d09b7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Naveed</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-07T20:29:02+00:00" itemprop="datePublished"><a href="index.html#comment-37933" class="comment-time-link" itemprop="url">October 7, 2015 at 8:29 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>You are using only textfield. so in every iteration of loop, same textfield is updating.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-37933' onclick='return addComment.moveForm( "comment-37933", "37933", "respond", "5211" )' aria-label='Reply to Naveed'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-39027">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/5972097d890d65040d97593c1da229b8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/5972097d890d65040d97593c1da229b8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Heil</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-17T11:56:37+00:00" itemprop="datePublished"><a href="index.html#comment-39027" class="comment-time-link" itemprop="url">October 17, 2015 at 11:56 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>You&#8217;ve written the wrong program dude.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-39027' onclick='return addComment.moveForm( "comment-39027", "39027", "respond", "5211" )' aria-label='Reply to Heil'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-7433">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/dd57b874caf04d604441853244cd23df?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/dd57b874caf04d604441853244cd23df?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">gopal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-09-18T06:39:55+00:00" itemprop="datePublished"><a href="index.html#comment-7433" class="comment-time-link" itemprop="url">September 18, 2014 at 6:39 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you,This tutorial is very nice.<br />
+please provide concept and example of java reflection.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7433' onclick='return addComment.moveForm( "comment-7433", "7433", "respond", "5211" )' aria-label='Reply to gopal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-7530">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3de4289572c7121c49262759f80092fe?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3de4289572c7121c49262759f80092fe?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mahendra</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-09-21T11:06:51+00:00" itemprop="datePublished"><a href="index.html#comment-7530" class="comment-time-link" itemprop="url">September 21, 2014 at 11:06 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>thank for this website.<br />
+it is very useful for the java programmers.<br />
+we need more basic concepts about java.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7530' onclick='return addComment.moveForm( "comment-7530", "7530", "respond", "5211" )' aria-label='Reply to Mahendra'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-26310">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/571c4588a11adfa687cb98457be77f35?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/571c4588a11adfa687cb98457be77f35?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Yakoob Shaik</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-04-28T04:45:25+00:00" itemprop="datePublished"><a href="index.html#comment-26310" class="comment-time-link" itemprop="url">April 28, 2015 at 4:45 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi, thanks for providing such an extraordinary tutorials.</p>
+<p>Can you please provide Socket Programming tutorials.<br />
+If you provide it will be very useful for us.</p>
+<p>Thanking you&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-26310' onclick='return addComment.moveForm( "comment-26310", "26310", "respond", "5211" )' aria-label='Reply to Yakoob Shaik'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29059">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a4b5fff5fb066e07df3f63c2985f0ef5?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a4b5fff5fb066e07df3f63c2985f0ef5?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">AKASHDEEP</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-01T06:53:05+00:00" itemprop="datePublished"><a href="index.html#comment-29059" class="comment-time-link" itemprop="url">July 1, 2015 at 6:53 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>there is no swing tutorial.<br />
+can u plz add swing tutorial.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-29059' onclick='return addComment.moveForm( "comment-29059", "29059", "respond", "5211" )' aria-label='Reply to AKASHDEEP'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-2" id="comment-29189">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-05T04:37:45+00:00" itemprop="datePublished"><a href="index.html#comment-29189" class="comment-time-link" itemprop="url">July 5, 2015 at 4:37 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Akashdeep, I would be adding swing tutorial soon.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-29189' onclick='return addComment.moveForm( "comment-29189", "29189", "respond", "5211" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-30337">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/85bc65ed1732d8fff0ff9ae9d944b47d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/85bc65ed1732d8fff0ff9ae9d944b47d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Shiva raju</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-26T15:50:39+00:00" itemprop="datePublished"><a href="index.html#comment-30337" class="comment-time-link" itemprop="url">July 26, 2015 at 3:50 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>thank u sir ur notes can be understood by any individual<br />
+sir can u plz upload priority queue.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-30337' onclick='return addComment.moveForm( "comment-30337", "30337", "respond", "5211" )' aria-label='Reply to Shiva raju'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-30414">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/581672da5263c5386a9c68d061049c94?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/581672da5263c5386a9c68d061049c94?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mastanvali</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-27T11:23:44+00:00" itemprop="datePublished"><a href="index.html#comment-30414" class="comment-time-link" itemprop="url">July 27, 2015 at 11:23 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>its very good turorial&#8230;&#8230;&#8230;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-30414' onclick='return addComment.moveForm( "comment-30414", "30414", "respond", "5211" )' aria-label='Reply to Mastanvali'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-31866">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/42101a044388af6523828a9c3bff9ab6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/42101a044388af6523828a9c3bff9ab6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mangala</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-06T12:24:31+00:00" itemprop="datePublished"><a href="index.html#comment-31866" class="comment-time-link" itemprop="url">August 6, 2015 at 12:24 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you sir. For wonderful explanation we missing JDBC and SWING also. Please provide these tutorials if possible. Once again thanks.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-31866' onclick='return addComment.moveForm( "comment-31866", "31866", "respond", "5211" )' aria-label='Reply to Mangala'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-32403">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f5cf9da716fccc1859d6810d6768540f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f5cf9da716fccc1859d6810d6768540f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Subash</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-13T06:29:40+00:00" itemprop="datePublished"><a href="index.html#comment-32403" class="comment-time-link" itemprop="url">August 13, 2015 at 6:29 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This tutorial is very useful for beginners,I am a tester but learning quickly&#8230;&#8230;&#8230;&#8230;:)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-32403' onclick='return addComment.moveForm( "comment-32403", "32403", "respond", "5211" )' aria-label='Reply to Subash'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-32665">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/beee2b34867c22849b5b120eb996eef7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/beee2b34867c22849b5b120eb996eef7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">vikram</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-16T12:24:15+00:00" itemprop="datePublished"><a href="index.html#comment-32665" class="comment-time-link" itemprop="url">August 16, 2015 at 12:24 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello Sir</p>
+<p>I&#8217;m IT professional with 7 yrs of exp in Functional Testing. I&#8217;ve never done programming.<br />
+Now I&#8217;m planning to learn Selenium for which I need to learn Core Java.<br />
+Please guide me in learning Java.<br />
+I&#8217;m finding it difficult to start with.</p>
+<p>regards</p>
+<p>Vikram</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-32665' onclick='return addComment.moveForm( "comment-32665", "32665", "respond", "5211" )' aria-label='Reply to vikram'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-32833">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9072f8d50ecd84be4dcca6f66714f439?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9072f8d50ecd84be4dcca6f66714f439?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">veeresh b</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-18T15:48:44+00:00" itemprop="datePublished"><a href="index.html#comment-32833" class="comment-time-link" itemprop="url">August 18, 2015 at 3:48 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I am interested in this web site. so kindly help me. I want learn more &amp; I want improve my self.This is best opportunity to improve my subject knowledge.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-32833' onclick='return addComment.moveForm( "comment-32833", "32833", "respond", "5211" )' aria-label='Reply to veeresh b'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-34623">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e007e7e2f7c605cd39f96605fc64ea0e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e007e7e2f7c605cd39f96605fc64ea0e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">dinesh yadav</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-06T15:11:52+00:00" itemprop="datePublished"><a href="index.html#comment-34623" class="comment-time-link" itemprop="url">September 6, 2015 at 3:11 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>it&#8217;s very useful site for java beginner and we can say awesome and incredible.<br />
+Thanks,<br />
+Dinesh</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-34623' onclick='return addComment.moveForm( "comment-34623", "34623", "respond", "5211" )' aria-label='Reply to dinesh yadav'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-35163">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3967a721f50ebb4edd001e1b6787c56b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3967a721f50ebb4edd001e1b6787c56b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Kiranmai</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-10T10:58:39+00:00" itemprop="datePublished"><a href="index.html#comment-35163" class="comment-time-link" itemprop="url">September 10, 2015 at 10:58 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>can you please tell the difference between variable and reference variable in java</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-35163' onclick='return addComment.moveForm( "comment-35163", "35163", "respond", "5211" )' aria-label='Reply to Kiranmai'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-35295">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b45054e67f0eb017f5567eb02aaa28c8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b45054e67f0eb017f5567eb02aaa28c8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">mayur</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-11T10:15:23+00:00" itemprop="datePublished"><a href="index.html#comment-35295" class="comment-time-link" itemprop="url">September 11, 2015 at 10:15 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>String handling concept, Wrapper Classes,type casting Are Not Explained</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-35295' onclick='return addComment.moveForm( "comment-35295", "35295", "respond", "5211" )' aria-label='Reply to mayur'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-35533">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e2580a1530ca51f90fb364d1d090e8f0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e2580a1530ca51f90fb364d1d090e8f0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">manasa</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-13T16:49:16+00:00" itemprop="datePublished"><a href="index.html#comment-35533" class="comment-time-link" itemprop="url">September 13, 2015 at 4:49 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>how to create a welcome dialog box in java and welcome message as first name and last name?<br />
+plz rpy to my qution. thank you</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-35533' onclick='return addComment.moveForm( "comment-35533", "35533", "respond", "5211" )' aria-label='Reply to manasa'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-38576">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/96776c38ea3f03163c41a4b35937646d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/96776c38ea3f03163c41a4b35937646d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Eswar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-13T06:43:23+00:00" itemprop="datePublished"><a href="index.html#comment-38576" class="comment-time-link" itemprop="url">October 13, 2015 at 6:43 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>superb website for Java Beginners!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-38576' onclick='return addComment.moveForm( "comment-38576", "38576", "respond", "5211" )' aria-label='Reply to Eswar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-42228">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/24ecd1d5251964e54bb0990a5b126c24?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/24ecd1d5251964e54bb0990a5b126c24?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Hemant</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-09T18:55:53+00:00" itemprop="datePublished"><a href="index.html#comment-42228" class="comment-time-link" itemprop="url">November 9, 2015 at 6:55 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>you guys should create an app for this website.offline one&#8230; there will be lot of downloads</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-42228' onclick='return addComment.moveForm( "comment-42228", "42228", "respond", "5211" )' aria-label='Reply to Hemant'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-42584">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/30d63f7ac83251edfb5b09a0eb61c9c2?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/30d63f7ac83251edfb5b09a0eb61c9c2?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Francis</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-12T07:46:51+00:00" itemprop="datePublished"><a href="index.html#comment-42584" class="comment-time-link" itemprop="url">November 12, 2015 at 7:46 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The articles in your website that I&#8217;ve read so far are very unique and easy to understand. I&#8217;m thankful that I found these articles. A great help in time of need.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-42584' onclick='return addComment.moveForm( "comment-42584", "42584", "respond", "5211" )' aria-label='Reply to Francis'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-49142">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bbb423393e70a1da23e1f3b802300c13?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bbb423393e70a1da23e1f3b802300c13?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ankita</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-01-19T10:25:54+00:00" itemprop="datePublished"><a href="index.html#comment-49142" class="comment-time-link" itemprop="url">January 19, 2016 at 10:25 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Please Provide Swing&#8230; I am missing it..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-49142' onclick='return addComment.moveForm( "comment-49142", "49142", "respond", "5211" )' aria-label='Reply to Ankita'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-50429">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a7af291175194d59261ea977daaa5e0c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a7af291175194d59261ea977daaa5e0c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">niranjan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-05T09:50:24+00:00" itemprop="datePublished"><a href="index.html#comment-50429" class="comment-time-link" itemprop="url">February 5, 2016 at 9:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi, your website was really gud , but u missed the OBject class&#8230;can u please update the object class along with their methods&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-50429' onclick='return addComment.moveForm( "comment-50429", "50429", "respond", "5211" )' aria-label='Reply to niranjan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-50855">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/626de163890fdae2cb4d812670c48a26?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/626de163890fdae2cb4d812670c48a26?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Imtiaz ahmad</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-11T19:45:04+00:00" itemprop="datePublished"><a href="index.html#comment-50855" class="comment-time-link" itemprop="url">February 11, 2016 at 7:45 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello ! sir its nice tutorials but plz sir upload new tutorials of awt .</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-50855' onclick='return addComment.moveForm( "comment-50855", "50855", "respond", "5211" )' aria-label='Reply to Imtiaz ahmad'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-51506">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8f701b675018aa16539b4a8ba74365c3?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8f701b675018aa16539b4a8ba74365c3?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Karthick</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-21T14:33:04+00:00" itemprop="datePublished"><a href="index.html#comment-51506" class="comment-time-link" itemprop="url">February 21, 2016 at 2:33 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>your website is really help for beginners.pls upload servlet and jsp tutorials with examples from basic to database connectivity.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51506' onclick='return addComment.moveForm( "comment-51506", "51506", "respond", "5211" )' aria-label='Reply to Karthick'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-51600">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9d380b55cee2ec9da2db1313a6f0bebb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9d380b55cee2ec9da2db1313a6f0bebb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Naresh kumar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-23T09:15:19+00:00" itemprop="datePublished"><a href="index.html#comment-51600" class="comment-time-link" itemprop="url">February 23, 2016 at 9:15 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Sir,<br />
+      Its a awesome tutorial for beginners.<br />
+      Could you please provides the tutorial for selenium.<br />
+      Once again thanks for your hard work and patience.<br />
+Naresh kumar</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51600' onclick='return addComment.moveForm( "comment-51600", "51600", "respond", "5211" )' aria-label='Reply to Naresh kumar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-52050">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a267a0e5cffd43be5bedcc36f3c2fa64?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a267a0e5cffd43be5bedcc36f3c2fa64?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ankit</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-03T02:27:43+00:00" itemprop="datePublished"><a href="index.html#comment-52050" class="comment-time-link" itemprop="url">March 3, 2016 at 2:27 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello Chaitanya,<br />
+I am pretty sure that over a period of time you will upload more concepts and tutorials for different technologies, but at the same time I would suggest or better request you to add a frame where you or anybody can post different questions related to particular concept and a person can try writing a code for it. Like a list of programs or something similar to exercises given in Kathy Serra , which on solving can make person better understand the concepts and have hands on programming experience.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52050' onclick='return addComment.moveForm( "comment-52050", "52050", "respond", "5211" )' aria-label='Reply to Ankit'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-2" id="comment-52216">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-07T08:09:11+00:00" itemprop="datePublished"><a href="index.html#comment-52216" class="comment-time-link" itemprop="url">March 7, 2016 at 8:09 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Seems like a great idea. I would definitely think about it.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52216' onclick='return addComment.moveForm( "comment-52216", "52216", "respond", "5211" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-3" id="comment-55917">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4260de207e762b65f888763031b87c02?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/4260de207e762b65f888763031b87c02?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Gaurav Chauhan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-29T09:08:35+00:00" itemprop="datePublished"><a href="index.html#comment-55917" class="comment-time-link" itemprop="url">May 29, 2016 at 9:08 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi buddy,.I have no prior knowledge of any programming language.Can I learn java directly from here and have you covered all java tutorials</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-55917' onclick='return addComment.moveForm( "comment-55917", "55917", "respond", "5211" )' aria-label='Reply to Gaurav Chauhan'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-4" id="comment-56824">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d1a203fed02dcf3dba7f8b97be67868f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d1a203fed02dcf3dba7f8b97be67868f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Aniruddha</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-13T08:06:30+00:00" itemprop="datePublished"><a href="index.html#comment-56824" class="comment-time-link" itemprop="url">June 13, 2016 at 8:06 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>yes.Its better and easy way &#8230;Go ahead..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-56824' onclick='return addComment.moveForm( "comment-56824", "56824", "respond", "5211" )' aria-label='Reply to Aniruddha'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-53283">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c32376174e776d8957b20d2c44099809?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c32376174e776d8957b20d2c44099809?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Kuntal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-03T04:30:34+00:00" itemprop="datePublished"><a href="index.html#comment-53283" class="comment-time-link" itemprop="url">April 3, 2016 at 4:30 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks a lot Chaitanya.Great website and one stop solution of any java related problems.Please provide more on Database connectivity using oracle 10g/11g and try to provide Asp.net &amp; VB.net tutorials also.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53283' onclick='return addComment.moveForm( "comment-53283", "53283", "respond", "5211" )' aria-label='Reply to Kuntal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-53853">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/db7066ea8e549399888d428fb8e076b3?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/db7066ea8e549399888d428fb8e076b3?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Arjun</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-19T05:52:43+00:00" itemprop="datePublished"><a href="index.html#comment-53853" class="comment-time-link" itemprop="url">April 19, 2016 at 5:52 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Chaitanya &#8211; </p>
+<p>Material is very impressive, Please help me with PDF if you are having for the same.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53853' onclick='return addComment.moveForm( "comment-53853", "53853", "respond", "5211" )' aria-label='Reply to Arjun'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-53856">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ba4408aff1d73bba3a98021d8f476baa?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ba4408aff1d73bba3a98021d8f476baa?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Bhanu ravali</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-19T10:15:25+00:00" itemprop="datePublished"><a href="index.html#comment-53856" class="comment-time-link" itemprop="url">April 19, 2016 at 10:15 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>What are the java frameworks ?which we have to learn as a fresher?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53856' onclick='return addComment.moveForm( "comment-53856", "53856", "respond", "5211" )' aria-label='Reply to Bhanu ravali'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-55819">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/5ca7b32315891849c67833e12549aaf1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/5ca7b32315891849c67833e12549aaf1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Bharat Kumar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-27T17:43:38+00:00" itemprop="datePublished"><a href="index.html#comment-55819" class="comment-time-link" itemprop="url">May 27, 2016 at 5:43 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Why do we use abstract method while we have facility of method-overriding?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-55819' onclick='return addComment.moveForm( "comment-55819", "55819", "respond", "5211" )' aria-label='Reply to Bharat Kumar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-56922">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/afc95e77bcf4c111a9232b3fb52d407b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/afc95e77bcf4c111a9232b3fb52d407b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">bisai lakshmana</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-15T06:49:49+00:00" itemprop="datePublished"><a href="index.html#comment-56922" class="comment-time-link" itemprop="url">June 15, 2016 at 6:49 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This is really helpful for a beginner.It makes us like no need to go for any coaching centers&#8230;just simply sit at home and can learn all java topics &#8230;..thank you a lot</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-56922' onclick='return addComment.moveForm( "comment-56922", "56922", "respond", "5211" )' aria-label='Reply to bisai lakshmana'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58746">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f7402eb287c44e68e374882ad503d69c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f7402eb287c44e68e374882ad503d69c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Maregu Assefa</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-07-28T14:34:05+00:00" itemprop="datePublished"><a href="index.html#comment-58746" class="comment-time-link" itemprop="url">July 28, 2016 at 2:34 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Appreciate for your simple and straightforward explanation&#8230;.!<br />
+But  It would be very good, if you also post about Java Networking and and Crypthography.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-58746' onclick='return addComment.moveForm( "comment-58746", "58746", "respond", "5211" )' aria-label='Reply to Maregu Assefa'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58978">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/274109f853af7a936a7f02843991478f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/274109f853af7a936a7f02843991478f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sumit</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-04T11:08:15+00:00" itemprop="datePublished"><a href="index.html#comment-58978" class="comment-time-link" itemprop="url">August 4, 2016 at 11:08 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>hi Chaitanya Singh,<br />
+really helpful content .please provide material for spring and hibernate .</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-58978' onclick='return addComment.moveForm( "comment-58978", "58978", "respond", "5211" )' aria-label='Reply to Sumit'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-59042">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b5d53c1ba20d7247e495ff686582c550?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b5d53c1ba20d7247e495ff686582c550?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">shubham gupta</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-05T18:11:46+00:00" itemprop="datePublished"><a href="index.html#comment-59042" class="comment-time-link" itemprop="url">August 5, 2016 at 6:11 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>&#8220;factory method&#8221; is not provided. Please explain what is &#8220;factory method&#8221;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-59042' onclick='return addComment.moveForm( "comment-59042", "59042", "respond", "5211" )' aria-label='Reply to shubham gupta'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-60302">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a63f8b73831307fd1f80bd458e491a48?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a63f8b73831307fd1f80bd458e491a48?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">kusum</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-09T10:34:35+00:00" itemprop="datePublished"><a href="index.html#comment-60302" class="comment-time-link" itemprop="url">September 9, 2016 at 10:34 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>how can i download this tutorials<br />
+i want to keep it<br />
+send me link of download plz</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-60302' onclick='return addComment.moveForm( "comment-60302", "60302", "respond", "5211" )' aria-label='Reply to kusum'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-60519">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a4093083359b54412c79dace57cfbf78?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a4093083359b54412c79dace57cfbf78?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">mathura</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-13T14:03:36+00:00" itemprop="datePublished"><a href="index.html#comment-60519" class="comment-time-link" itemprop="url">September 13, 2016 at 2:03 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This website is useful for beginners</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-60519' onclick='return addComment.moveForm( "comment-60519", "60519", "respond", "5211" )' aria-label='Reply to mathura'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-62596">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9b15c16b2039d807caa007ce4f85048c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9b15c16b2039d807caa007ce4f85048c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Gauri</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-10-25T13:28:34+00:00" itemprop="datePublished"><a href="index.html#comment-62596" class="comment-time-link" itemprop="url">October 25, 2016 at 1:28 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Chaitanya<br />
+Nice tutorials, Can you put them as a series, So that I don&#8217;t have to come back to the  homepage to view the second tutorial in the list. It is too much back and forth. Also, the series will act as a roadmap for learning java.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-62596' onclick='return addComment.moveForm( "comment-62596", "62596", "respond", "5211" )' aria-label='Reply to Gauri'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-67217">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1c578bb68bf2344e270ed628696c8b04?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1c578bb68bf2344e270ed628696c8b04?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Gath</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-09T16:50:29+00:00" itemprop="datePublished"><a href="index.html#comment-67217" class="comment-time-link" itemprop="url">February 9, 2017 at 4:50 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hey! Big thanks to the person that thought about making this website. Very helpful for newbie programmers like myself. :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-67217' onclick='return addComment.moveForm( "comment-67217", "67217", "respond", "5211" )' aria-label='Reply to Gath'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-67516">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/69e8800d2342f2452f3192b9b127f413?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/69e8800d2342f2452f3192b9b127f413?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Dawn Staples</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-16T15:25:20+00:00" itemprop="datePublished"><a href="index.html#comment-67516" class="comment-time-link" itemprop="url">February 16, 2017 at 3:25 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I am very thankful for this website. You have put together a very good selection of material that is covered in learning Java. A very big thanks to you!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-67516' onclick='return addComment.moveForm( "comment-67516", "67516", "respond", "5211" )' aria-label='Reply to Dawn Staples'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-67766">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9aa396ba124dceb85bc15bc4598facec?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9aa396ba124dceb85bc15bc4598facec?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sagar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-23T12:17:30+00:00" itemprop="datePublished"><a href="index.html#comment-67766" class="comment-time-link" itemprop="url">February 23, 2017 at 12:17 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hey! Big thanks to the person that thought about making this website. Very helpful for newbie programmers like myself. :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-67766' onclick='return addComment.moveForm( "comment-67766", "67766", "respond", "5211" )' aria-label='Reply to sagar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-68781">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1a1f1a5dd3da4ac23d94d624ae73f433?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1a1f1a5dd3da4ac23d94d624ae73f433?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nish</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-23T10:20:43+00:00" itemprop="datePublished"><a href="index.html#comment-68781" class="comment-time-link" itemprop="url">March 23, 2017 at 10:20 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Can u add JVM full concept to get to know about memory allocation</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-68781' onclick='return addComment.moveForm( "comment-68781", "68781", "respond", "5211" )' aria-label='Reply to Nish'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-69014">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/cbb4a2bfabb5b408a9256e42e0afc78e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/cbb4a2bfabb5b408a9256e42e0afc78e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">vengatesh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-29T02:26:28+00:00" itemprop="datePublished"><a href="index.html#comment-69014" class="comment-time-link" itemprop="url">March 29, 2017 at 2:26 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Post AngularJs Tutorial with Detailed Examples</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69014' onclick='return addComment.moveForm( "comment-69014", "69014", "respond", "5211" )' aria-label='Reply to vengatesh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-69536">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4e8378a09084e7ba2662a00cbfd553b8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/4e8378a09084e7ba2662a00cbfd553b8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">steve</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-13T04:06:05+00:00" itemprop="datePublished"><a href="index.html#comment-69536" class="comment-time-link" itemprop="url">April 13, 2017 at 4:06 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Excellent site. Good job, and thank you. It had been a while since I wrote thread applications and you got me up to speed quickly. Appreciate that. Any input on sockets in java.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69536' onclick='return addComment.moveForm( "comment-69536", "69536", "respond", "5211" )' aria-label='Reply to steve'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-71078">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ec8e1140c7b77d90adc9b0c46f3738e2?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ec8e1140c7b77d90adc9b0c46f3738e2?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Daivansh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-06-07T02:14:46+00:00" itemprop="datePublished"><a href="index.html#comment-71078" class="comment-time-link" itemprop="url">June 7, 2017 at 2:14 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Best Tutorial.. Please can you add Spring and Hibernate?.. Thanks</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-71078' onclick='return addComment.moveForm( "comment-71078", "71078", "respond", "5211" )' aria-label='Reply to Daivansh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-71455">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3c473024e77c76b955ede034063b073b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3c473024e77c76b955ede034063b073b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nimesh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-06-19T14:41:16+00:00" itemprop="datePublished"><a href="index.html#comment-71455" class="comment-time-link" itemprop="url">June 19, 2017 at 2:41 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>send me some basic java codes<br />
+___I am a beginner and I have installed eclipse yesterday and I want to learn java</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-71455' onclick='return addComment.moveForm( "comment-71455", "71455", "respond", "5211" )' aria-label='Reply to Nimesh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-72133">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f60d24cba5dc203182fbb5ea42ab2c9f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f60d24cba5dc203182fbb5ea42ab2c9f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Yuliya</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-07-10T11:20:48+00:00" itemprop="datePublished"><a href="index.html#comment-72133" class="comment-time-link" itemprop="url">July 10, 2017 at 11:20 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Chaitanya, thanks a lot for such a useful website for those of us who are just starting to learn Java! The basic programs are very helpful.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-72133' onclick='return addComment.moveForm( "comment-72133", "72133", "respond", "5211" )' aria-label='Reply to Yuliya'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-73360">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/02629664d74dcb28435d321d6c96beea?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/02629664d74dcb28435d321d6c96beea?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Naveen</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-08-18T05:17:18+00:00" itemprop="datePublished"><a href="index.html#comment-73360" class="comment-time-link" itemprop="url">August 18, 2017 at 5:17 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Sir please provide programming techniques how to code any programs in java</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-73360' onclick='return addComment.moveForm( "comment-73360", "73360", "respond", "5211" )' aria-label='Reply to Naveen'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-73921">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/17e650f803e90e94c0ac4179eebc10fe?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/17e650f803e90e94c0ac4179eebc10fe?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Doreck</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-08-31T09:46:57+00:00" itemprop="datePublished"><a href="index.html#comment-73921" class="comment-time-link" itemprop="url">August 31, 2017 at 9:46 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>thank you for your great information<br />
+However, i would like to know  about Parsing in Java;What does it mean and how does it work?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-73921' onclick='return addComment.moveForm( "comment-73921", "73921", "respond", "5211" )' aria-label='Reply to Doreck'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='5211' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="37048862b1" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="193"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script data-cfasync="false" src="../cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script><script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/java-tutorial-for-beginners-with-examples/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:35:14 GMT -->
+</html>

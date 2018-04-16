@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/09/add-facebook-likebox-fanbox-wordpress-website/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:30:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to Add Facebook Like Box / Fan Box to a WordPress WebSite</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Earlier, we shared tutorials for adding Facebook open graph, Facebook like button and Facebook comments to WordPress. In this post, we are gonna see how to add a Facebook like box to a WordPress site. Related post: How to add Google+ badge to WordPress Before I walk you though the steps of adding it into your theme&#039;s"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to Add Facebook Like Box / Fan Box to a WordPress WebSite" />
+<meta property="og:description" content="Earlier, we shared tutorials for adding Facebook open graph, Facebook like button and Facebook comments to WordPress. In this post, we are gonna see how to add a Facebook like box to a WordPress site. Related post: How to add Google+ badge to WordPress Before I walk you though the steps of adding it into your theme&#039;s" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="Facebook" />
+<meta property="article:tag" content="Facebook like box" />
+<meta property="article:tag" content="Fan box" />
+<meta property="article:tag" content="WordPress" />
+<meta property="article:section" content="Social Media" />
+<meta property="article:published_time" content="2013-09-28T20:23:34+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/09/fan-box.png" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/09/fan-box.png" />
+<meta property="og:image:width" content="296" />
+<meta property="og:image:height" content="268" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Earlier, we shared tutorials for adding Facebook open graph, Facebook like button and Facebook comments to WordPress. In this post, we are gonna see how to add a Facebook like box to a WordPress site. Related post: How to add Google+ badge to WordPress Before I walk you though the steps of adding it into your theme&#039;s" />
+<meta name="twitter:title" content="How to Add Facebook Like Box / Fan Box to a WordPress WebSite" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2013/09/fan-box.png" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; How to Add Facebook Like Box / Fan Box to a WordPress WebSite Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexd8c9.html?p=3328' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed6ed7.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F09%2Fadd-facebook-likebox-fanbox-wordpress-website%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed90b5?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F09%2Fadd-facebook-likebox-fanbox-wordpress-website%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-3328 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-3328 post type-post status-publish format-standard has-post-thumbnail category-social-media category-wordpress tag-facebook tag-facebook-like-box tag-fan-box tag-wordpress entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">How to Add Facebook Like Box / Fan Box to a WordPress WebSite</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/social-media/index.html" rel="category tag">Social Media</a>, <a href="../../../category/wordpress/index.html" rel="category tag">WordPress</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Earlier, we shared tutorials for adding <a title="Add Facebook open graph to WordPress" href="../add-facebook-open-graph-meta-data-wordpress-themes/index.html" target="_blank">Facebook open graph</a>, <a title="How to Add Facebook like button in WordPress" href="../add-facebook-like-button-website/index.html" target="_blank">Facebook like button</a> and <a title="Facebook Comments for WordPress" href="../add-facebook-comments-wordpress/index.html" target="_blank">Facebook comments to WordPress</a>. In this post, we are gonna see how to add a Facebook like box to a WordPress site.</p>
+<p><strong>Related post: </strong><a title="Add Google+ badge to your WordPress site" href="../add-google-plus-badge-wordpress/index.html" target="_blank">How to add Google+ badge to WordPress</a></p>
+<p>Before I walk you though the steps of adding it into your theme&#8217;s template files, Lets see <strong>how a Facebook like box (also known as Facebook fan box)</strong> looks like &#8211;</p>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-3329" style="border: 1px solid grey;" alt="Facebook Like Box" src="../../../wp-content/uploads/2013/09/fan-box.png" width="296" height="268" /></p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>You can very well find it in our sidebar, it has become very popular that&#8217;s the reason it&#8217;s being used by almost all of the WordPress blogs. Today, we are gonna see step by step guide of adding this like box (or fan box) to a WordPress website.</p>
+<h2>How to add Facebook like box in WordPress themes</h2>
+<p>There are two ways to have the Facebook like box on your WordPress blog.</p>
+<p>1) Manual method<br />
+2) <a href="#plugin">WordPress plugin to add Facebook like box</a></p>
+<h4>1) Manual method</h4>
+<h4>Get the like box code</h4>
+<p>Go to <a href="https://developers.facebook.com/docs/reference/plugins/like-box/" target="_blank">Facebook Like box &#8211; developers </a> Page. Provide the address of Facebook fan page and configure the other options such as height, weight, color scheme. You can also control what all you want to be included in the like box by selecting the check boxes for show header, show stream, show faces and show Border.</p>
+<p style="text-align: center;"><img class="aligncenter  wp-image-3330" style="border: 1px solid grey;" alt="Add Facebook Like Box  to a WordPress Website - Config page" src="../../../wp-content/uploads/2013/09/likebox-fb.png" width="598" height="457" srcset="https://beginnersbook.com/wp-content/uploads/2013/09/likebox-fb.png 748w, https://beginnersbook.com/wp-content/uploads/2013/09/likebox-fb-300x229.png 300w" sizes="(max-width: 598px) 100vw, 598px" /></p>
+<p>Click on &#8220;<strong>Get Code</strong>&#8220;. You would get a pop up screen like this one.</p>
+<p style="text-align: center;"><img class="aligncenter  wp-image-3331" style="border: 1px solid grey;" alt="Code for facebook like box or fan box" src="../../../wp-content/uploads/2013/09/likebox-code.png" width="500" height="326" srcset="https://beginnersbook.com/wp-content/uploads/2013/09/likebox-code.png 715w, https://beginnersbook.com/wp-content/uploads/2013/09/likebox-code-300x195.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></p>
+<p>Actually Facebook provides four types of code for the like box. We will walk you through, how each type of the code can be added to your website, you choose one out of them.</p>
+<h4>Adding Facebook like box to WordPress using HTML 5</h4>
+<p>Paste the below code in either <strong>header.php</strong> or <strong>footer.php</strong> file, we recommend to have this added in footer.php. Code would look like this &#8211;</p>
+<pre>&lt;div id="fb-root"&gt;&lt;/div&gt;
+&lt;script&gt;(function(d, s, id) {
+ var js, fjs = d.getElementsByTagName(s)[0];
+ if (d.getElementById(id)) return;
+ js = d.createElement(s); js.id = id;
+ js.src = "//connect.facebook.net/en_US/all.js
+#xfbml=1&amp;appId=Your-FB-App-ID";
+ fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+&lt;/script&gt;</pre>
+<p>Replace <strong>Your-FB-App-ID</strong> with your actual Facebook App ID, which contains numeric values. If you do not have one then you can refer this guide <a href="../add-facebook-comments-wordpress/index.html" target="_blank">to create a new Facebook App ID</a>.</p>
+<p>And add the below code where you want to display the like box. If you prefer to have it in sidebar then go to Appearance <strong>»</strong> Widgets <strong>»</strong> Text Widget, paste the code. Note: <strong>Replace the address with your Facebook fan page address in the data-href field below</strong>.</p>
+<pre>&lt;div class="fb-like-box"  data-href="https://www.facebook.com/es2bw"
+data-width="292" data-show-faces="true" data-header="true"
+data-stream="false" data-show-border="true"&gt;
+&lt;/div&gt;</pre>
+<h4>Adding Facebook like box to WordPress using XFBML</h4>
+<p><strong>Step 1:</strong> Paste the below code in either the header.php or footer.php same as we did for last one and replace the Your-FB-AppID with actual App ID.</p>
+<pre>&lt;div id="fb-root"&gt;&lt;/div&gt;
+&lt;script&gt;(function(d, s, id) {
+ var js, fjs = d.getElementsByTagName(s)[0];
+ if (d.getElementById(id)) return;
+ js = d.createElement(s); js.id = id;
+ js.src = "//connect.facebook.net/en_US/all.js
+#xfbml=1&amp;appId=Your-FB-AppID";
+ fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+&lt;/script&gt;</pre>
+<p><strong>Step 2:</strong> you need to add the below XML namespace to the &lt;html&gt; tag.</p>
+<pre>&lt;html xmlns:fb="http://ogp.me/ns/fb#"&gt;</pre>
+<p>In order to add this in WordPress you can simply use the below function in your theme&#8217;s functions.php file</p>
+<pre>/*Add an XML namespace to the <code>&lt;html&gt;</code> tag of your document.
+This is necessary for XFBML to work in earlier versions of
+Internet Explorer*/
+function add_XML_Namespace( $output ) {
+      return $output . ' xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#"';
+}
+add_filter('language_attributes', 'add_XML_Namespace');</pre>
+<p><strong>Step 3:</strong> In this step, we are gonna add the code where we want the like box to render. Go to Appearance <strong>»</strong> Widgets drop a Text Widget in sidebar at the desired position for facebook like box and paste the below code &#8211;</p>
+<pre>&lt;fb:like-box href="https://www.facebook.com/es2bw"
+width="292" show_faces="true" header="true" stream="false" show_border="true"&gt;
+&lt;/fb:like-box&gt;</pre>
+<p>Replace the Facebook fan page address with yours.</p>
+<h4>Adding Facebook like box to WordPress using IFRAME</h4>
+<p>This is one of the easiest way to add Facebook like box in WordPress themes. This doesn&#8217;t require editing of theme&#8217;s files, all you need to do is to have the below code in sidebar (Appearance <strong>»</strong> Widgets and the code in Text Widget). Remember, to replace the correct value in appId field of the below code.</p>
+<pre>&lt;iframe src="//www.facebook.com/plugins/likebox.php?
+href=https%3A%2F%2Fwww.facebook.com%2Fes2bw&amp;amp;
+width=292&amp;amp;height=290&amp;amp;colorscheme=light&amp;amp;
+show_faces=true&amp;amp;header=true&amp;amp;stream=false&amp;amp;
+show_border=true&amp;amp;appId=Your-FB-App-ID" scrolling="no"
+frameborder="0" style="border:none; overflow:hidden;
+width:292px; height:290px;" allowTransparency="true"&gt;
+&lt;/iframe&gt;</pre>
+<h4 id="plugin">2) WordPress plugin to add Facebook like box</h4>
+<p>For those, who do not want to manually add the code in their theme can use plugins. All you have to do is install and activate the official <a href="https://wordpress.org/plugins/facebook/" target="_blank">Facebook</a> plugin. Once you have this activated on your blog, it would add few widgets in the Widget section (Path: Appearance <strong>»</strong> Widgets). As you can see in the below screenshot that this plugin itself adds following widgets-</p>
+<ul>
+<li>Facebook follow button widget</li>
+<li><strong>Facebook like box widget</strong></li>
+<li>Facebook Recent activity widget</li>
+<li>Facebook Recommendations widget</li>
+<li>Facebook send button widget</li>
+</ul>
+<p style="text-align: center;"><img class="aligncenter  wp-image-3498" alt="Facebook like box/Fan box widget" src="../../../wp-content/uploads/2013/09/facebook-like-widget.png" width="636" height="305" srcset="https://beginnersbook.com/wp-content/uploads/2013/09/facebook-like-widget.png 909w, https://beginnersbook.com/wp-content/uploads/2013/09/facebook-like-widget-300x143.png 300w" sizes="(max-width: 636px) 100vw, 636px" /></p>
+<p>Since, we need to add like box, drag and drop <span style="text-decoration: underline;">Facebook like box widget</span> into the sidebar and configure the settings. That&#8217;s it you are done with adding like box into your theme.</p>
+<p>If you feel that there is any other easiest way to add the Facebook like box/fan box into WordPress then do let us know through comments.</p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../add-twitter-button-website/index.html" rel="bookmark" title="Link to How to Add Twitter button to website">How to Add Twitter button to website</a></li><li><a href="../setup-verified-google-plus-authorship-wordpress/index.html" rel="bookmark" title="Link to How to Set Up Verified Google+ Authorship markup in WordPress">How to Set Up Verified Google+ Authorship markup in WordPress</a></li><li><a href="../../10/show-excerpt-recent-posts-widget/index.html" rel="bookmark" title="Link to How to show excerpt in Recent Posts Widget">How to show excerpt in Recent Posts Widget</a></li><li><a href="../../../2012/12/how-to-install-wordpress-plugins/index.html" rel="bookmark" title="Link to How to install WordPress plugins">How to install WordPress plugins</a></li><li><a href="../../10/import-facebook-comments-wordpress-disqus/index.html" rel="bookmark" title="Link to How to Import Facebook Comments to WordPress or Disqus">How to Import Facebook Comments to WordPress or Disqus</a></li><li><a href="../set-default-thumbnail-featured-fallback-image-wordpress-automatically/index.html" rel="bookmark" title="Link to Set Default Thumbnail, Featured Image and Fallback Image in WordPress Automatically">Set Default Thumbnail, Featured Image and Fallback Image in WordPress Automatically</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-38226">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f74aa79135953184a075d0d40cff6fd2?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f74aa79135953184a075d0d40cff6fd2?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://wdcb.stcwdc.org/" class="comment-author-link" rel="external nofollow" itemprop="url">Webmaster</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-09T22:32:08+00:00" itemprop="datePublished"><a href="index.html#comment-38226" class="comment-time-link" itemprop="url">October 9, 2015 at 10:32 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Great information but I&#8217;ve discovered that Facebook deprecated their Like Box as of June 23, 2015. They changed the API for it.  <a href="https://developers.facebook.com/docs/plugins/like-box-for-pages" rel="nofollow">https://developers.facebook.com/docs/plugins/like-box-for-pages</a>. Delete the link you have to the old Facebook Like Box as it no longer works. Can you please updated the code for the new Facebook Graph API v2.3?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-38226' onclick='return addComment.moveForm( "comment-38226", "38226", "respond", "3328" )' aria-label='Reply to Webmaster'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='3328' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="29ef33012f" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="42"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-49" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><h4 class="widget-title widgettitle">SEO</h4>
+<ul>
+<li><a href="../../../2012/11/how-to-write-seo-articles-with-keywords/index.html">Write SEO Articles</a></li>
+<li><a href="../../10/add-facebook-open-graph-yoast-wordpress-seo-plugin/index.html">Open Graph Meta Tags</a></li>
+<li><a href="../../01/seo-friendly-images-alt-tag/index.html">SEO Friendly Images</a></li>
+<li><a href="../seopressor-v5-review/index.html">SEOPressor Review</a></li>
+<li><a href="../../08/auto-interlink-posts-wordpress-seo-smart-links-seo-alrp/index.html">Auto Interlink Posts</a></li>
+</ul>
+
+<h4 class="widget-title widgettitle">WordPress</h4>
+<ul>
+<li><a href="../../10/5-free-plugins-adding-facebook-open-graph-meta-tags-wordpress/index.html">Free plugins to add Open Graph Tags</a></li>
+<li><a href="../../10/5-free-plugins-adding-captcha-wordpress-blog-comments/index.html">Free plugins to add Captcha</a></li>
+<li><a href="../set-default-thumbnail-featured-fallback-image-wordpress-automatically/index.html">Set thumbnails automatically</a></li>
+<li><a href="../display-related-posts-thumbnails-wordpress-plugin/index.html">Display related Posts WP</a></li>
+<li><a href="../change-post-excerpt-length-wordpress/index.html">Change Post excerpt length WP</a></li>
+</ul>
+
+<h4 class="widget-title widgettitle">Website</h4>
+<ul>
+<li><a href="../add-facebook-like-button-website/index.html">Add Facebook like button</a></li>
+<li><a href="../add-google-button-website/index.html">Add Google plus button</a></li>
+<li><a href="../add-twitter-button-website/index.html">Add Twitter button</a></li>
+<li><a href="../../10/create-a-free-website-on-blogspot/index.html">Create Free Website on blogspot</a></li>
+</ul></div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/09/add-facebook-likebox-fanbox-wordpress-website/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:30:53 GMT -->
+</html>

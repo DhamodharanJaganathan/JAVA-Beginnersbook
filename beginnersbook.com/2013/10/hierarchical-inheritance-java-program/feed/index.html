@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Hierarchical Inheritance in java with example program</title>
+	<atom:link href="https://beginnersbook.com/2013/10/hierarchical-inheritance-java-program/feed/" rel="self" type="application/rss+xml" />
+	<link>https://beginnersbook.com/2013/10/hierarchical-inheritance-java-program/</link>
+	<description></description>
+	<lastBuildDate>Fri, 06 Apr 2018 04:50:05 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.5</generator>
+	<item>
+		<title>By: Vikki</title>
+		<link>https://beginnersbook.com/2013/10/hierarchical-inheritance-java-program/#comment-56190</link>
+		<dc:creator><![CDATA[Vikki]]></dc:creator>
+		<pubDate>Sat, 04 Jun 2016 12:20:04 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3774#comment-56190</guid>
+		<description><![CDATA[But what is the use of placing Methodb() in myclass when it is not invoked.]]></description>
+		<content:encoded><![CDATA[<p>But what is the use of placing Methodb() in myclass when it is not invoked.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: lovi</title>
+		<link>https://beginnersbook.com/2013/10/hierarchical-inheritance-java-program/#comment-51645</link>
+		<dc:creator><![CDATA[lovi]]></dc:creator>
+		<pubDate>Wed, 24 Feb 2016 12:11:52 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3774#comment-51645</guid>
+		<description><![CDATA[yes , by interface we use &#039;a&#039;]]></description>
+		<content:encoded><![CDATA[<p>yes , by interface we use &#8216;a&#8217;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: eduardo</title>
+		<link>https://beginnersbook.com/2013/10/hierarchical-inheritance-java-program/#comment-47976</link>
+		<dc:creator><![CDATA[eduardo]]></dc:creator>
+		<pubDate>Sun, 03 Jan 2016 23:17:03 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3774#comment-47976</guid>
+		<description><![CDATA[There is no specific reason.... If you call methodA() on myclass object it wont work since it does not have have access to that method but if we extend method B and have the same method within myclass then this would be method overloading...
+
+class A
+{
+  public void methodA()
+  {
+     System.out.println(&quot;method of Class A&quot;);
+  }
+}
+class B extends A
+{
+  public void methodB()
+  {
+     System.out.println(&quot;method of Class B&quot;);
+  }
+}
+class C extends A
+{
+ public void methodC()
+ {
+ System.out.println(&quot;method of Class C&quot;);
+ }
+}
+class D extends A
+{
+  public void methodD()
+  {
+     System.out.println(&quot;method of Class D&quot;);
+  }
+}
+class MyClass extends B
+{
+  public void methodB()
+  {
+     System.out.println(&quot;method of Class B&quot;);
+  }
+  public static void main(String args[])
+  {
+     B obj1 = new B();
+     C obj2 = new C();
+     D obj3 = new D();
+     obj1.methodA();
+     obj2.methodA();
+     obj3.methodA();
+
+     MyClass a = new MyClass();
+     a.methodA();
+     a.methodB();
+  }
+}
+
+Output:
+method of Class A
+method of Class A
+method of Class A
+method of Class A
+method of Class B]]></description>
+		<content:encoded><![CDATA[<p>There is no specific reason&#8230;. If you call methodA() on myclass object it wont work since it does not have have access to that method but if we extend method B and have the same method within myclass then this would be method overloading&#8230;</p>
+<p>class A<br />
+{<br />
+  public void methodA()<br />
+  {<br />
+     System.out.println(&#8220;method of Class A&#8221;);<br />
+  }<br />
+}<br />
+class B extends A<br />
+{<br />
+  public void methodB()<br />
+  {<br />
+     System.out.println(&#8220;method of Class B&#8221;);<br />
+  }<br />
+}<br />
+class C extends A<br />
+{<br />
+ public void methodC()<br />
+ {<br />
+ System.out.println(&#8220;method of Class C&#8221;);<br />
+ }<br />
+}<br />
+class D extends A<br />
+{<br />
+  public void methodD()<br />
+  {<br />
+     System.out.println(&#8220;method of Class D&#8221;);<br />
+  }<br />
+}<br />
+class MyClass extends B<br />
+{<br />
+  public void methodB()<br />
+  {<br />
+     System.out.println(&#8220;method of Class B&#8221;);<br />
+  }<br />
+  public static void main(String args[])<br />
+  {<br />
+     B obj1 = new B();<br />
+     C obj2 = new C();<br />
+     D obj3 = new D();<br />
+     obj1.methodA();<br />
+     obj2.methodA();<br />
+     obj3.methodA();</p>
+<p>     MyClass a = new MyClass();<br />
+     a.methodA();<br />
+     a.methodB();<br />
+  }<br />
+}</p>
+<p>Output:<br />
+method of Class A<br />
+method of Class A<br />
+method of Class A<br />
+method of Class A<br />
+method of Class B</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: ashwin</title>
+		<link>https://beginnersbook.com/2013/10/hierarchical-inheritance-java-program/#comment-43532</link>
+		<dc:creator><![CDATA[ashwin]]></dc:creator>
+		<pubDate>Wed, 18 Nov 2015 14:00:22 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3774#comment-43532</guid>
+		<description><![CDATA[Can u explain me why u method b is used in myclass...plzzz]]></description>
+		<content:encoded><![CDATA[<p>Can u explain me why u method b is used in myclass&#8230;plzzz</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: gokul</title>
+		<link>https://beginnersbook.com/2013/10/hierarchical-inheritance-java-program/#comment-39626</link>
+		<dc:creator><![CDATA[gokul]]></dc:creator>
+		<pubDate>Thu, 22 Oct 2015 08:31:44 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3774#comment-39626</guid>
+		<description><![CDATA[Yes.. 
+
+The methodB()  is  defined in both class B and Myclass but there is no object created for Myclass so method inside this class will never be invoked at all.. Where as method of class A is invoked through objects of class B C and D respectively... Don&#039;t get confused with method overriding..]]></description>
+		<content:encoded><![CDATA[<p>Yes.. </p>
+<p>The methodB()  is  defined in both class B and Myclass but there is no object created for Myclass so method inside this class will never be invoked at all.. Where as method of class A is invoked through objects of class B C and D respectively&#8230; Don&#8217;t get confused with method overriding..</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: namrata</title>
+		<link>https://beginnersbook.com/2013/10/hierarchical-inheritance-java-program/#comment-34086</link>
+		<dc:creator><![CDATA[namrata]]></dc:creator>
+		<pubDate>Tue, 01 Sep 2015 02:59:11 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3774#comment-34086</guid>
+		<description><![CDATA[myclass is the name of the class. u can give any name to the class .
+eg: myprogram , abc, alpha etc.]]></description>
+		<content:encoded><![CDATA[<p>myclass is the name of the class. u can give any name to the class .<br />
+eg: myprogram , abc, alpha etc.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: swetha</title>
+		<link>https://beginnersbook.com/2013/10/hierarchical-inheritance-java-program/#comment-31941</link>
+		<dc:creator><![CDATA[swetha]]></dc:creator>
+		<pubDate>Fri, 07 Aug 2015 11:23:16 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3774#comment-31941</guid>
+		<description><![CDATA[Have you really understood this? if so explain..plz]]></description>
+		<content:encoded><![CDATA[<p>Have you really understood this? if so explain..plz</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Anitha</title>
+		<link>https://beginnersbook.com/2013/10/hierarchical-inheritance-java-program/#comment-31940</link>
+		<dc:creator><![CDATA[Anitha]]></dc:creator>
+		<pubDate>Fri, 07 Aug 2015 11:20:30 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3774#comment-31940</guid>
+		<description><![CDATA[you have used only a...you are not at all inherited methods of b,c ......then how hierarchical exists..]]></description>
+		<content:encoded><![CDATA[<p>you have used only a&#8230;you are not at all inherited methods of b,c &#8230;&#8230;then how hierarchical exists..</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

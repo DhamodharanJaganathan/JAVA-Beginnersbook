@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2015/03/java-multithreading-interview-questions-and-answers/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:24:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java Multithreading Interview Questions and Answers</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Earlier I have shared 100+ core java interview questions based on various topics of core java. In this article I am gonna share interview questions based on multithreading and concurrency only. You would face multithreading questions in almost all the interviews as this is one the frequently asked topic during"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Java Multithreading Interview Questions and Answers" />
+<meta property="og:description" content="Earlier I have shared 100+ core java interview questions based on various topics of core java. In this article I am gonna share interview questions based on multithreading and concurrency only. You would face multithreading questions in almost all the interviews as this is one the frequently asked topic during" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="Java Q&amp;A" />
+<meta property="article:published_time" content="2015-03-27T19:17:31+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Earlier I have shared 100+ core java interview questions based on various topics of core java. In this article I am gonna share interview questions based on multithreading and concurrency only. You would face multithreading questions in almost all the interviews as this is one the frequently asked topic during" />
+<meta name="twitter:title" content="Java Multithreading Interview Questions and Answers" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Java Multithreading Interview Questions and  Answers Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexb8d8.html?p=5745' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed9fac.json?url=https%3A%2F%2Fbeginnersbook.com%2F2015%2F03%2Fjava-multithreading-interview-questions-and-answers%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed26f2?url=https%3A%2F%2Fbeginnersbook.com%2F2015%2F03%2Fjava-multithreading-interview-questions-and-answers%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-5745 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-5745 post type-post status-publish format-standard category-java-qa entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Java Multithreading Interview Questions and  Answers</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/technology/java-guide/java-qa/index.html" rel="category tag">Java Q&amp;A</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Earlier I have shared <a title="100+ Core Java Interview Questions" href="../../../2013/05/java-interview-questions/index.html" target="_blank">100+ core java interview questions</a> based on various topics of core java. In this article I am gonna share interview questions based on multithreading and concurrency only. You would face multithreading questions in almost all the interviews as this is one the frequently asked topic during interviews for java professionals.</p>
+<p>If you are new to this topic, I would recommend you to refer <a title="Multithreading in java with examples" href="../../../2013/03/multithreading-in-java/index.html" target="_blank">this tutorial (java multithreading)</a> before going through the below set of interview questions and answers.</p>
+<h2>Interview Questions on Multithreading</h2>
+<p><strong>Q) What is thread in Java?</strong><br />
+A) A Thread is a concurrent unit of execution. Or in other words you can say that it is part of process that can run concurrently with other parts of the process.</p>
+<p><strong>Q) What is Multithreading?</strong><br />
+A) The process of executing multiple threads simultaneously is known as multithreading. Java supports multithreading. The main advantage of multithreading is reducing CPU idle time and improving the CPU utilization. This makes the job to be completed in less time.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><strong>Q) What is the difference between thread and Process?</strong><br />
+A) Refer this article: <a title="What is the difference between a process and a thread in Java?" href="../../01/what-is-the-difference-between-a-process-and-a-thread-in-java/index.html" target="_blank">Thread vs Process</a></p>
+<p><strong>Q) What are the two ways of creating a thread?</strong><br />
+A) We can create a thread by using any of the two following methods.<br />
+1) By implementing Runnable interface<br />
+2) By extending Thread class</p>
+<p><strong>Q) What is a Daemon thread?</strong><br />
+A) Refer this article: <a title="Daemon thread in Java with example" href="../../01/daemon-thread-in-java-with-example/index.html" target="_blank">Deamon thread in Java</a></p>
+<p><strong>Q) How to make a thread (user thread) to Daemon thread?</strong><br />
+A) By calling setDaemon() method we can make a user thread to daemon thread.<br />
+Syntax:<br />
+thread.setDaemon(true);</p>
+<p><strong>Q) What is difference between user thread and Daemon thread?</strong><br />
+A) By default a thread created in a program is always a user thread, however we can make it daemon by calling setDaemon(true) method, if needed. A daemon thread runs in a background and it doesn’t prevent JVM from being shutdown. Once all the user thread gets completed the JVM shutdowns without being bothered whether a daemon thread is running or not.</p>
+<p><strong>Q) Can we change a user thread to deamon thread by calling setDaemon() method if the thread has already been started?</strong><br />
+No, if the thread has been started then we cannot make it daemon because it would then throw an IllegalThreadStateException</p>
+<p><strong>Q) Can we call run() method of Thread class?</strong><br />
+A) We can call run() method if we want but then it would behave just like a normal method and we would not be able to take the advantage of multithreading. In general run() methods starts execution when we call start() method of a Thread class. For more details on this: <a title="Why don’t we call run() method directly, why call start() method?" href="../why-dont-we-call-run-method-directly-why-call-start-method/index.html" target="_blank">Refer this article</a>.</p>
+<p><strong>Q) What is deadlock?</strong><br />
+A) A deadlock is a condition when two or more threads are in waiting for each other to release the resources that they need. For example Thread A holds a resource X and need resource Y whereas Thread B holds a resource Y and need X, in this case both threads are waiting for each other to release the resource and are in blocked condition.</p>
+<p><strong>Q) What is synchronization?</strong><br />
+A) It is a technique of granting access to the shared resources in multithread environment to avoid inconsistencies in the results.</p>
+<p><strong>Q) What is the difference between notify() and notifyAll()?</strong><br />
+A) notify() wakes up the first thread that called wait() on the same object, whereas the notifyAll() method wakes up all the waiting threads.</p>
+<p><strong>Q) What does join() method do?</strong><br />
+A) The join() method is used to hold the execution of currently running thread until the specified thread is dead(finished execution).<br />
+Read more about <a title="Thread join() method in Java with example" href="../thread-join-method-in-java-with-example/index.html" target="_blank">join() here</a>.</p>
+<p><strong>Q) Can we start a thread twice in Java?</strong><br />
+No, once a thread is started, it can never be started again. Doing so will throw an illegalThreadStateException. For example: <a title="Can we start a Thread twice in Java?" href="../can-we-start-a-thread-twice-in-java/index.html" target="_blank">Refer this article</a>.</p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../java-collections-interview-questions-and-answers/index.html" rel="bookmark" title="Link to Java Collections Interview Questions and Answers">Java Collections Interview Questions and Answers</a></li><li><a href="../../../2013/05/junit-interview-questions/index.html" rel="bookmark" title="Link to JUnit (Java Unit Testing) interview questions">JUnit (Java Unit Testing) interview questions</a></li><li><a href="../../../2013/05/servlet-interview-questions/index.html" rel="bookmark" title="Link to Servlet interview questions and answers">Servlet interview questions and answers</a></li><li><a href="../../../2013/05/java-interview-questions/index.html" rel="bookmark" title="Link to 100+ Core Java Interview Questions">100+ Core Java Interview Questions</a></li><li><a href="../../../2013/05/jdbc-interview-questions/index.html" rel="bookmark" title="Link to JDBC(Java Database Connectivity) interview questions">JDBC(Java Database Connectivity) interview questions</a></li><li><a href="../../../2013/10/junit-interview-questions-answers/index.html" rel="bookmark" title="Link to JUnit (Java Unit Testing) interview questions and answers">JUnit (Java Unit Testing) interview questions and answers</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-55257">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/376e9daeb1b2a3b40dcbe86f489cbbd4?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/376e9daeb1b2a3b40dcbe86f489cbbd4?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">nea</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-16T07:16:37+00:00" itemprop="datePublished"><a href="index.html#comment-55257" class="comment-time-link" itemprop="url">May 16, 2016 at 7:16 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>plz explain runnable interface in thread with example</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-55257' onclick='return addComment.moveForm( "comment-55257", "55257", "respond", "5745" )' aria-label='Reply to nea'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='5745' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="813e1e888c" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="61"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2015/03/java-multithreading-interview-questions-and-answers/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:24:07 GMT -->
+</html>

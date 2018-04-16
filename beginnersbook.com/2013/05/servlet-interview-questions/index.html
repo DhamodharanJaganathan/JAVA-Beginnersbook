@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/05/servlet-interview-questions/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:54:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Servlet interview questions and answers</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Here are the frequently asked questions on Servlets. I have provided the brief and to the point answer of each question which will help you get selected in the the technical interview round. Q 1. What is servlet? Servlet is a server side programming language which is used for generating dynamic web pages. It"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Servlet interview questions and answers" />
+<meta property="og:description" content="Here are the frequently asked questions on Servlets. I have provided the brief and to the point answer of each question which will help you get selected in the the technical interview round. Q 1. What is servlet? Servlet is a server side programming language which is used for generating dynamic web pages. It" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="Interview questions" />
+<meta property="article:tag" content="Java FAQ" />
+<meta property="article:tag" content="servlet" />
+<meta property="article:section" content="Java Q&amp;A" />
+<meta property="article:published_time" content="2013-05-20T19:12:58+00:00" />
+<meta property="article:modified_time" content="2014-01-11T19:37:35+00:00" />
+<meta property="og:updated_time" content="2014-01-11T19:37:35+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Here are the frequently asked questions on Servlets. I have provided the brief and to the point answer of each question which will help you get selected in the the technical interview round. Q 1. What is servlet? Servlet is a server side programming language which is used for generating dynamic web pages. It" />
+<meta name="twitter:title" content="Servlet interview questions and answers" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Servlet interview questions and answers Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index0c81.html?p=2671' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed5b34.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fservlet-interview-questions%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed2f0a?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fservlet-interview-questions%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2671 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2671 post type-post status-publish format-standard category-java-qa tag-interview-questions tag-java-faq tag-servlet entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Servlet interview questions and answers</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/technology/java-guide/java-qa/index.html" rel="category tag">Java Q&amp;A</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Here are the frequently asked questions on Servlets. I have provided the brief and to the point answer of each question which will help you get selected in the the technical interview round.</p>
+<p><strong>Q 1. What is servlet?</strong><br />
+Servlet is a server side programming language which is used for generating dynamic web pages. It generates web-page as a response of the request received from client(browser).</p>
+<p><strong>Q 2. Static webpage vs Dynamic webpage?</strong><br />
+The webpages which are same for all the users are static webpages and the webpages that are dynamically generated based on the user&#8217;s request (that may be different for each user depending on the request) are known as dynamic webpages. Servlet is mainly used for dynamic webpages.</p>
+<p><strong>Q 3. Life cycle of a servlet?</strong><br />
+Following the the stages of servlet life cycle:<br />
+1) Loading of Servlet class: The servlet container finds the servlet class mentioned in web.xml file and loads it.<br />
+2) Servlet instantiation: The object of servlet class gets created in this phase.<br />
+3) Initialization: Servlet initialization by calling <code>init()</code> method.<br />
+4) Servicing the request: In this phase the servlet service the client request by calling the <code>service()</code> method.<br />
+5) Destroy: Last phase of servlet life cycle. The destroy() method free up the servlet instance so that it can be garbage collected.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><strong>Q 4. Why we use Servlets?</strong><br />
+1) To process the input data submitted by user from the screen.<br />
+2) Generate and return the dynamic response to the user based on the request.<br />
+3) Ideal programming language for interacting with database based on the user&#8217;s request.<br />
+4) A servlet can handle multiple request simultaneously which makes them a perfect choice for the high performing applications.</p>
+<p><strong>Q 5. Why Servlet is better than CGI?</strong><br />
+1) Servlet responses faster than CGI because it uses the multithreading concept to service each request. CGI performance is not that good as it creates a new object for each request while servlet allots a new thread for each request.<br />
+2) Learning and implementing servlet is quite easier compared to CGI.<br />
+3) Memory consumption is low in servlet compared to CGI.</p>
+<p><strong>Q 6. When Servlet is loaded?</strong><br />
+1) When servlet container receives the first request from client(browser).<br />
+2) Admin of the application manually loads the servlet.<br />
+3) When the webserver(in which the servlet is deployed) gets started.</p>
+<p><strong>Q 7. What is Servlet interface and what&#8217;s the use of it?</strong><br />
+Servlet interface is an API for servlets. Every Servlet should either implement the servlet interface or extends the class which already implements the interface. <code>javax.servlet.GenericServlet</code> and <code>javax.servlet.http.HttpServlet</code> are the Servlet classes that implements Servlet interface, hence every servlet should either implement Servlet interface directly or by extending any of these classes.</p>
+<p><strong>Q 8. What is ServletConfig?</strong><br />
+<code>ServletConfig</code> interface belongs to the package <code>javax.servlet.ServletConfig</code>. It is used for passing the configuration parameters to the servlet. Servlet container instantiate it implicitly.</p>
+<p><strong>Q 9. What is ServletContext?</strong><br />
+Each web application has a common <code>ServletContext</code>. All the servlets in the web application can access the ServletContext. It has the web-application information &amp; resources which are common and accessible to all the servlets present in the web application.</p>
+<p><strong>Q 10. ServletConfig vs ServletContext?</strong><br />
+Following are the two main differences between <code>ServletConfig</code> and <code>ServletContext</code>:<br />
+1) ServletConfig is used for passing the configuration information to the Servlet while ServletContext provides set of methods which a Servlet class can use to communicate with Servlet container.<br />
+2) Each Servlet has a separate ServletConfig object while ServletContext is common for all the servlets in the web application.<br />
+3) Parameters of ServletConfig are defined under &lt;init-param&gt; tags in web.xml file. Parameters of ServletContext are defined under &lt;context-param&gt; tags in web.xml.</p>
+<p><b>Q 11. Difference between GenericServlet and HTTPServlet?</b><br />
+1) GenericServlet is an abstract class which implements Servlet interface while HTTPServlet abstract class extends the GenericServlet class. In short: GenericServlet class is a parent class for HTTPServlet.<br />
+2) GenericServlet does not support any protocol. HTTPSeervlet support HTTP and HTTPS protocol.<br />
+3) GenericServlet cannot handle cookies and session while HTTPServlet can handle them.</p>
+<p><strong>Q 12. Difference between forward() and sendRedirect()?</strong><br />
+1) In <code>forward()</code> the same request is forwarded to the another resource. In <code>sendRedirect()</code> new request is send to the redirected resource.<br />
+2) forward() is taken care by the Servlet container while sendRedirect() is handled by the browser.<br />
+3) In forward() the URL(uniform resource locator) remains same on web browser. In sendRedirect() the URL changes in the web browser address bar.<br />
+4) forward() is faster compared to sendRedirect().</p>
+<p><strong>Q 13. What is deployment descriptor?</strong><br />
+web.xml file of a web application is known as deployment descriptor. It is usually placed inside WEB-INF folder of application. It has the information like Servlet name, Servlet mapping etc. This file tells the Servlet container which Servlet class needs to be called for the given URL pattern.</p>
+<p><strong>Q 14. doGet() Vs doPost() methods?</strong><br />
+1) In doGet(), the parameters are visible in the address bar, they get appended to the URL. In doPost() parameters are not visible in the address bar.<br />
+2) You can maximum transfer 1024 characters through GET request. doPost() doesn&#8217;t have any limitations.<br />
+3) doGet() is not good for sensitive data as the parameters do not get encrypted. In doPost() the parameters are encrypted hence it is more secure compared to doGet().<br />
+4) Method doGet() allow you to bookmark the resource. doPost() doesn&#8217;t allow bookmarks.<br />
+5) doGet() is faster compared to the doPost() method.</p>
+<p><strong>Q 15. What is the use of &lt;load-on-startup&gt;?</strong><br />
+<code>&lt;load-on-startup&gt;</code> is used for specifying the Servlet files which needs to be loaded during server startup. The servlet files specified in this element are loaded as soon as the server starts, it does not wait for the first request for loading them up. This is how it is specified in web.xml file.</p>
+<pre>&lt;servlet&gt;
+   &lt;servlet-name&gt;MyServletNameHere&lt;/servlet-name&gt;
+   &lt;servlet-class&gt;ServletClassHere-FullyQualified&lt;/servlet-class&gt;
+   &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+&lt;/servlet&gt;</pre>
+<p>If more than one files are specified then the files will be loaded in the same order in which they have been specified in it.</p>
+<p><strong>Q 20. What are the different types of session tracking mechanism supported by Servlets?</strong><br />
+1) URL rewriting<br />
+2) Hidden Form Fields<br />
+3) Cookies<br />
+4) Secure Socket Layer(SSL) Sessions</p>
+<p><strong>Q 21. How URL rewriting maintains session?</strong><br />
+In URL rewriting method, the session tracking data has been appended at the end of the URL to track the session.</p>
+<p><strong>Q 22. Explain Servlet chaining?</strong><br />
+Servlet chaining is a concept where the request is processed in a chain of servlets. First Servlet processes the request partially and passes to the second one, then second servlet process it and passes to third one and so on. The last servlet returns the response to the client (browser).</p>
+<p><strong>Q 23. How to invalidate a session in servlet?</strong><br />
+By calling <code>session.invalidate()</code> method.</p>
+<p><strong>Q 24. What are the main functions of Servlet container?</strong><br />
+1) Servlet life cycle management<br />
+2) Maintains the interaction between servlet and webserver.<br />
+3) Providing multithreading support for processing more than one request simultaneously.<br />
+4) Managing of deployment descriptor web.xml file.</p>
+<p><strong>Q 25. What is &lt;session-timeout&gt; ?</strong><br />
+The element &lt;session-timeout&gt; is used for specifying the timeout of a Session. This is how it is defined in the web.xml file.</p>
+<pre>&lt;session-config&gt;
+       &lt;session-timeout&gt;35&lt;/session-timeout&gt;
+&lt;/session-config&gt;</pre>
+<p>It would set the session timeout to 25 minutes.</p>
+<p><strong>Q 26. What is Servlet lazy loading and how it can be avoided?</strong><br />
+The Servlet container does not initialize the Servlet on server startup by default. It only initializes a servlet when the it receives the request from the client. This is called lazy loading of Servlet.<br />
+By specifying <strong>&lt;load-on-startup&gt; </strong>element for a Servlet we can avoid lazy loading. The servlet files specified in &lt;load-on-startup&gt; are loaded as soon as the web sever starts.</p>
+<p><strong>Q 27. Why do we need constructor in servlet even though we have a init() method?</strong><br />
+<strong>init()</strong> method is used for initializing the servlet however constructor is required in order to instantiate the Servlet class. Servlet container instantiate the Servlet class.</p>
+<p><strong>Q 28. When the Servlet is unloaded?</strong><br />
+1) Admin manually unloads the servlet.<br />
+2) Web server shut down.</p>
+<p><strong>Q 29. How Servlet maintains session using cookies?</strong><br />
+Cookie is a small piece of information, which is sent by a servlet to the Web browser. Cookies gets stored in the browser and returned back to the server when needed. A cookie has a name, a single value, and few other attributes.</p>
+<p><strong>Q 30. Why using cookies for session tracking is a bad practice?</strong><br />
+There are several disadvantages of using cookies for session tracking. Few of them are:<br />
+1) Since cookies are stored on client-side (in the client&#8217;s browser), It will not be available if client browser clears or disables the cookies.<br />
+2) Implementing cookies for session tracking is much more difficult compared to other session management mechanism.<br />
+3) Cookies only work for HTTP protocol.</p>
+<p><strong>Q 31. How do I get the server info in Servlets?</strong><br />
+Use this:</p>
+<pre>getServletContext().getServerInfo()</pre>
+<p><strong>Q 32. How to get the client&#8217;s IP address in Servlets?</strong><br />
+Using this:</p>
+<pre>request.getRemoteAddr()</pre>
+<p><strong>Q 33. Why we use filters in Servlet?</strong><br />
+We use filters for:<br />
+1) Security checks<br />
+2) Modifying the request or response<br />
+3) Data compression<br />
+4) Logging and auditing<br />
+5) Response compression</p>
+<p><strong>Q 34. What all protocols are supported by HTTPServlet?</strong><br />
+HTTP and HTTPS protocols.</p>
+<p><strong>Q 35. What all protocols are supported by GenericServlet?</strong><br />
+GenericServlet abstract class is not specific to any protocol.</p>
+<p><strong>Q 36. What are the new features added to Servlet 3?</strong><br />
+1) Servlet Annotations<br />
+2) Web Fragments<br />
+3) Web components addition dynamically<br />
+4) Asynchronous Processing</p>
+<p><strong>Q 37. Do we override service() method?</strong><br />
+No, we do not override the <strong>service()</strong> method. We generally override the doPost(), doGet() method based on the requirement.</p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../../2015/03/java-multithreading-interview-questions-and-answers/index.html" rel="bookmark" title="Link to Java Multithreading Interview Questions and  Answers">Java Multithreading Interview Questions and  Answers</a></li><li><a href="../junit-interview-questions/index.html" rel="bookmark" title="Link to JUnit (Java Unit Testing) interview questions">JUnit (Java Unit Testing) interview questions</a></li><li><a href="../jdbc-interview-questions/index.html" rel="bookmark" title="Link to JDBC(Java Database Connectivity) interview questions">JDBC(Java Database Connectivity) interview questions</a></li><li><a href="../../../2015/03/java-collections-interview-questions-and-answers/index.html" rel="bookmark" title="Link to Java Collections Interview Questions and Answers">Java Collections Interview Questions and Answers</a></li><li><a href="../../10/junit-interview-questions-answers/index.html" rel="bookmark" title="Link to JUnit (Java Unit Testing) interview questions and answers">JUnit (Java Unit Testing) interview questions and answers</a></li><li><a href="../java-interview-questions/index.html" rel="bookmark" title="Link to 100+ Core Java Interview Questions">100+ Core Java Interview Questions</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-3604">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d74244b17d5917913b8dbc976bb93748?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d74244b17d5917913b8dbc976bb93748?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">hari krishna</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-05-14T10:46:57+00:00" itemprop="datePublished"><a href="index.html#comment-3604" class="comment-time-link" itemprop="url">May 14, 2014 at 10:46 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Nice collection.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3604' onclick='return addComment.moveForm( "comment-3604", "3604", "respond", "2671" )' aria-label='Reply to hari krishna'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5551">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/80c4e84cadfeb3539ed57660b9a2f08d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/80c4e84cadfeb3539ed57660b9a2f08d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Manjunath R Jogar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-07-26T08:43:39+00:00" itemprop="datePublished"><a href="index.html#comment-5551" class="comment-time-link" itemprop="url">July 26, 2014 at 8:43 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>very useful Q &amp; A set you have given&#8230;&#8230;&#8230;&#8230;</p>
+<p>if possible give some more with respect to practical Q&amp;A..</p>
+<p>thank you</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5551' onclick='return addComment.moveForm( "comment-5551", "5551", "respond", "2671" )' aria-label='Reply to Manjunath R Jogar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-13472">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8b42270fbf233f9711b3829e9a212117?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8b42270fbf233f9711b3829e9a212117?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">phanendra</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-05T12:08:47+00:00" itemprop="datePublished"><a href="index.html#comment-13472" class="comment-time-link" itemprop="url">November 5, 2014 at 12:08 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>excellent.very useful</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-13472' onclick='return addComment.moveForm( "comment-13472", "13472", "respond", "2671" )' aria-label='Reply to phanendra'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-16803">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3bf949767c41d94cef70df91082daaed?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3bf949767c41d94cef70df91082daaed?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Vivekanand</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-16T19:55:47+00:00" itemprop="datePublished"><a href="index.html#comment-16803" class="comment-time-link" itemprop="url">November 16, 2014 at 7:55 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Sir,please add some R&amp;D questions and answers(at least 2 years of exp questions).Basically this type of question is very good upto fresher level.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-16803' onclick='return addComment.moveForm( "comment-16803", "16803", "respond", "2671" )' aria-label='Reply to Vivekanand'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-2" id="comment-17396">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-18T04:49:38+00:00" itemprop="datePublished"><a href="index.html#comment-17396" class="comment-time-link" itemprop="url">November 18, 2014 at 4:49 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Ok. I will add them soon. Thanks for the feedback.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-17396' onclick='return addComment.moveForm( "comment-17396", "17396", "respond", "2671" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-49966">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e9e8992bbcaa73a52784864316942f30?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e9e8992bbcaa73a52784864316942f30?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">ERIKALA REDDY</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-01-28T15:34:45+00:00" itemprop="datePublished"><a href="index.html#comment-49966" class="comment-time-link" itemprop="url">January 28, 2016 at 3:34 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The Answers provided for the Questions are Simply Super.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-49966' onclick='return addComment.moveForm( "comment-49966", "49966", "respond", "2671" )' aria-label='Reply to ERIKALA REDDY'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-52362">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7b8363727ccd9af3362d26ea900fb007?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7b8363727ccd9af3362d26ea900fb007?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mamta</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-11T18:46:38+00:00" itemprop="datePublished"><a href="index.html#comment-52362" class="comment-time-link" itemprop="url">March 11, 2016 at 6:46 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Wonderful blog Chaitanya&#8230;. nice and crisp explanation.<br />
+I appreciate your  Advanced java series, its a must go and content wise its self sufficient.</p>
+<p>Thanks for valuable time and postings.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52362' onclick='return addComment.moveForm( "comment-52362", "52362", "respond", "2671" )' aria-label='Reply to Mamta'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-66121">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e2a47b0b63bc40697244671153f14533?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e2a47b0b63bc40697244671153f14533?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chandra Kant</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-17T19:20:33+00:00" itemprop="datePublished"><a href="index.html#comment-66121" class="comment-time-link" itemprop="url">January 17, 2017 at 7:20 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Great Sir!&#8230;&#8230;.!!<br />
+Very much valuable questions and answers for technical interview preparation.</p>
+<p>Thank You&#8230;.!!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-66121' onclick='return addComment.moveForm( "comment-66121", "66121", "respond", "2671" )' aria-label='Reply to Chandra Kant'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2671' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="93c14c63d7" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="134"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/05/servlet-interview-questions/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:54:26 GMT -->
+</html>

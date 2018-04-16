@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/05/first-java-program/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:37:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to Compile and Run your First Java Program</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="In this tutorial, we will see how to write, compile and run a java program. I will also cover java syntax, code conventions and several ways to run a java program. Simple Java Program: public class FirstJavaProgram { public static void main(String[] args){ System.out.println(&quot;This is my first program in java&quot;);"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to Compile and Run your First Java Program" />
+<meta property="og:description" content="In this tutorial, we will see how to write, compile and run a java program. I will also cover java syntax, code conventions and several ways to run a java program. Simple Java Program: public class FirstJavaProgram { public static void main(String[] args){ System.out.println(&quot;This is my first program in java&quot;);" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="Learn Java" />
+<meta property="article:published_time" content="2013-05-18T11:02:03+00:00" />
+<meta property="article:modified_time" content="2017-09-09T07:06:01+00:00" />
+<meta property="og:updated_time" content="2017-09-09T07:06:01+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="In this tutorial, we will see how to write, compile and run a java program. I will also cover java syntax, code conventions and several ways to run a java program. Simple Java Program: public class FirstJavaProgram { public static void main(String[] args){ System.out.println(&quot;This is my first program in java&quot;);" />
+<meta name="twitter:title" content="How to Compile and Run your First Java Program" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; How to Compile and Run your First Java Program Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexac9f.html?p=2636' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embedc922.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Ffirst-java-program%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedd6fe?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Ffirst-java-program%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2636 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2636 post type-post status-publish format-standard category-learn-java entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">How to Compile and Run your First Java Program</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/learn-java/index.html" rel="category tag">Learn Java</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>In this tutorial, we will see how to write, compile and run a java program. I will also cover java syntax, code conventions and several ways to run a java program.</p>
+<h2>Simple Java Program:</h2>
+<pre>public class FirstJavaProgram {
+  public static void main(String[] args){
+    System.out.println("This is my first program in java");
+  }//End of main
+}//End of FirstJavaProgram Class
+</pre>
+<p><b>Output:</b> This is my first program in java</p>
+<h3>How to compile and run the above program</h3>
+<blockquote><p><strong>Prerequisite:</strong> You need to have java installed on your system. You can get the java from <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">here</a>.</p></blockquote>
+<p><strong>Step 1:</strong> Open a text editor, like Notepad on windows and TextEdit on Mac. Copy the above program and paste it in the text editor.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<blockquote><p>You can also use IDE like Eclipse to run the java program but we will cover that part later in the coming tutorials. For the sake of simplicity, I will only use text editor and command prompt (or terminal) for this tutorial</p></blockquote>
+<p><strong>Step 2:</strong> Save the file as <strong>FirstJavaProgram.java</strong>. You may be wondering why we have named the file as FirstJavaProgram, the thing is that we should always name the file same as the <code>public class</code> name. In our program, the <code>public class</code> name is <code>FirstJavaProgram</code>, that&#8217;s why our file name should be <strong>FirstJavaProgram.java</strong>.</p>
+<p><strong>Step 3:</strong> In this step, we will compile the program. For this, open <strong>command prompt (cmd) on Windows</strong>, if you are <strong>Mac OS then open Terminal</strong>.<br />
+To compile the program, type the following command and hit enter.</p>
+<pre>javac FirstJavaProgram.java</pre>
+<blockquote><p>You may get this error when you try to compile the program: &#8220;<strong>javac&#8217; is not recognized as an internal or external command, operable program or batch file</strong>&#8220;. This error occurs when the java path is not set in your system</p></blockquote>
+<p>If you get this error then you first need to set the path before compilation.</p>
+<p><strong>Set Path in Windows:</strong><br />
+Open command prompt (cmd), go to the place where you have installed java on your system and locate the bin directory, copy the complete path and write it in the command like this.</p>
+<pre>set path=C:\Program Files\Java\jdk1.8.0_121\bin</pre>
+<p><strong>Note:</strong> Your jdk version may be different. Since I have java version 1.8.0_121 installed on my system, I mentioned the same while setting up the path.</p>
+<p><strong>Set Path in Mac OS X</strong><br />
+Open Terminal, type the following command and hit return.</p>
+<pre>export JAVA_HOME=/Library/Java/Home</pre>
+<p>Type the following command on terminal to confirm the path.</p>
+<pre>echo $JAVA_HOME</pre>
+<p>That&#8217;s it.</p>
+<blockquote><p>The steps above are for setting up the path temporary which means when you close the command prompt or terminal, the path settings will be lost and you will have to set the path again next time you use it. I will share the permanent path setup guide in the coming tutorial.</p></blockquote>
+<p><strong>Step 4:</strong> After compilation the .java file gets translated into the .class file(byte code). Now we can run the program. To run the program, type the following command and hit enter:</p>
+<pre>java FirstJavaProgram</pre>
+<blockquote><p>Note that you should not append the .java extension to the file name while running the program.</p></blockquote>
+<h2>Closer look to the First Java Program</h2>
+<p>Now that we have understood how to run a java program, let have a closer look at the program we have written above.</p>
+<pre>public class FirstJavaProgram {</pre>
+<p>This is the first line of our java program. Every java application must have at least one class definition that consists of <code>class</code> keyword followed by class name. When I say keyword, it means that it should not be changed, we should use it as it is. However the class name can be anything.</p>
+<p>I have made the class public by using public access modifier, I will cover access modifier in a separate post, all you need to know now that a java file can have any number of classes but it can have only one public class and the file name should be same as public class name.</p>
+<pre>public static void main(String[] args)  {</pre>
+<p>This is our next line in the program, lets break it down to understand it:<br />
+<code>public</code>: This makes the main method public that means that we can call the method from outside the class.</p>
+<p><code>static</code>: We do not need to create object for static methods to run. They can run itself.</p>
+<p><code>void</code>: It does not return anything.</p>
+<p><code>main</code>: It is the method name. This is the entry point method from which the JVM can run your program.</p>
+<p><code>(String[] args)</code>: Used for command line arguments that are passed as strings. We will cover that in a separate post.</p>
+<pre>System.out.println("This is my first program in java");</pre>
+<p>This method prints the contents inside the double quotes into the console and inserts a newline after.</p>
+<p><strong>Checkout these basic <a href="../../../2017/09/java-examples/index.html">java programs</a> before reading next topic:</strong></p>
+<ul>
+<li><a href="../../../2017/09/java-program-to-read-integer-value-from-the-standard-input/index.html">Java Program to read number (entered by user)</a></li>
+<li><a href="../../../2017/09/java-program-to-check-if-number-is-positive-or-negative/index.html">Java Program to check if a number is positive or negative</a></li>
+<li><a href="../../../2017/09/java-program-to-add-two-numbers/index.html">Java Program to add two numbers</a></li>
+</ul>
+<div class="bb-nav"><a class="pretut" href="../jvm/index.html">❮ Previous</a><a class="nexttut" href="../../../2017/08/variables-in-java/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-22872">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/5b4cb7ad837434f672091c9095db4624?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/5b4cb7ad837434f672091c9095db4624?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">as</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-02-10T04:23:01+00:00" itemprop="datePublished"><a href="index.html#comment-22872" class="comment-time-link" itemprop="url">February 10, 2015 at 4:23 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I am new to java. I have a question, shouldn&#8217;t the method printmessage have a return type void as its not a constructor?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-22872' onclick='return addComment.moveForm( "comment-22872", "22872", "respond", "2636" )' aria-label='Reply to as'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-52425">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/62407d95afc65f8d512b6c77ad4b1461?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/62407d95afc65f8d512b6c77ad4b1461?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ram</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-14T06:41:42+00:00" itemprop="datePublished"><a href="index.html#comment-52425" class="comment-time-link" itemprop="url">March 14, 2016 at 6:41 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>yes , it should have a return type &#8230; else it will throw an compilation error.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52425' onclick='return addComment.moveForm( "comment-52425", "52425", "respond", "2636" )' aria-label='Reply to Ram'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-28399">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9447ad22e06b4849bc3d9158678257f9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9447ad22e06b4849bc3d9158678257f9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Aryaa</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-18T20:07:46+00:00" itemprop="datePublished"><a href="index.html#comment-28399" class="comment-time-link" itemprop="url">June 18, 2015 at 8:07 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>What is Stand-alone program?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-28399' onclick='return addComment.moveForm( "comment-28399", "28399", "respond", "2636" )' aria-label='Reply to Aryaa'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-29650">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3f2ddcaec9b094b1ea94c3d51d574bc1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3f2ddcaec9b094b1ea94c3d51d574bc1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">srikanth</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-15T17:49:43+00:00" itemprop="datePublished"><a href="index.html#comment-29650" class="comment-time-link" itemprop="url">July 15, 2015 at 5:49 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>which are not connected to network that application are stand alone<br />
+example in desktop calculator</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-29650' onclick='return addComment.moveForm( "comment-29650", "29650", "respond", "2636" )' aria-label='Reply to srikanth'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-44193">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8408821f1f59599fb15ea24b267e4d82?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8408821f1f59599fb15ea24b267e4d82?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rajan Biswas</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-24T13:34:46+00:00" itemprop="datePublished"><a href="index.html#comment-44193" class="comment-time-link" itemprop="url">November 24, 2015 at 1:34 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>printMessage()<br />
+this method will void: public void printMessage()</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-44193' onclick='return addComment.moveForm( "comment-44193", "44193", "respond", "2636" )' aria-label='Reply to Rajan Biswas'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-45712">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2a3208dfc09029fc53c47ec2325ba0db?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2a3208dfc09029fc53c47ec2325ba0db?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">divya</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-10T07:14:38+00:00" itemprop="datePublished"><a href="index.html#comment-45712" class="comment-time-link" itemprop="url">December 10, 2015 at 7:14 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>where does the Package creates the folder FirstCode ?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-45712' onclick='return addComment.moveForm( "comment-45712", "45712", "respond", "2636" )' aria-label='Reply to divya'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-47289">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e07d9492cfc6601bbf81b511e049df40?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e07d9492cfc6601bbf81b511e049df40?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Yusuf</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-26T16:51:27+00:00" itemprop="datePublished"><a href="index.html#comment-47289" class="comment-time-link" itemprop="url">December 26, 2015 at 4:51 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>At the same location from where you&#8217;re compiling your Java program.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-47289' onclick='return addComment.moveForm( "comment-47289", "47289", "respond", "2636" )' aria-label='Reply to Yusuf'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-50634">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1eb2d3bd95f4cd7034b32f2333b18035?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1eb2d3bd95f4cd7034b32f2333b18035?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Pyrom</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-08T08:34:44+00:00" itemprop="datePublished"><a href="index.html#comment-50634" class="comment-time-link" itemprop="url">February 8, 2016 at 8:34 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>For those of who see errors try this one.</p>
+<p>package //After type your current package name in here, Delete slashes//;<br />
+import java.lang.*;<br />
+class WelcomeMessage<br />
+{<br />
+	public static void printMessage()<br />
+  {<br />
+      System.out.println(&#8220;Hello World&#8221;);<br />
+  }<br />
+}<br />
+class //After type your current class name in here, Delete slashes//<br />
+{<br />
+	public static void main(String[] args)<br />
+	{<br />
+		WelcomeMessage obj = new WelcomeMessage();<br />
+		obj.printMessage();<br />
+	}<br />
+}</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-50634' onclick='return addComment.moveForm( "comment-50634", "50634", "respond", "2636" )' aria-label='Reply to Pyrom'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-57487">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/233b1e70e22ba73742f3fff9605c2107?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/233b1e70e22ba73742f3fff9605c2107?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Gauravendra Pratap Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-26T21:41:47+00:00" itemprop="datePublished"><a href="index.html#comment-57487" class="comment-time-link" itemprop="url">June 26, 2016 at 9:41 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>class WelcomeMessage<br />
+{<br />
+  public static void printMessage()<br />
+  {<br />
+      System.out.println(&#8220;Hello World&#8221;);<br />
+  }<br />
+}<br />
+class Myclass<br />
+{<br />
+   public static void main(String  []args)<br />
+   {<br />
+     // WelcomeMessage obj=new  WelcomeMessage ();<br />
+      printMessage();<br />
+   }<br />
+}</p>
+<p>/* In this program ,you need not to create object because for static method you no need to create object for that class.<br />
+run this program happly..*/</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57487' onclick='return addComment.moveForm( "comment-57487", "57487", "respond", "2636" )' aria-label='Reply to Gauravendra Pratap Singh'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-3" id="comment-67432">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/61d1751c686f76edc62feff4c0732791?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/61d1751c686f76edc62feff4c0732791?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rajani Kanth</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-14T19:15:08+00:00" itemprop="datePublished"><a href="index.html#comment-67432" class="comment-time-link" itemprop="url">February 14, 2017 at 7:15 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Compilation fails, you will have error message MyClass cannot find the pringMessage() method which is in WelcomeMessage and thier is no connection between these two classes:<br />
+error message would be:<br />
+Myclass.java:13: error: cannot find symbol</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-67432' onclick='return addComment.moveForm( "comment-67432", "67432", "respond", "2636" )' aria-label='Reply to Rajani Kanth'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-65602">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/dc50ab65c9697618f62fe9afb39972b2?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/dc50ab65c9697618f62fe9afb39972b2?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">noreen</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-06T06:20:20+00:00" itemprop="datePublished"><a href="index.html#comment-65602" class="comment-time-link" itemprop="url">January 6, 2017 at 6:20 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>i am getting an error that says</p>
+<p>Error: Main method not found in class welcomemessage.WelcomeMessage, please define the main method as:<br />
+   public static void main(String[] args)<br />
+or a JavaFX application class must extend javafx.application.Application</p>
+<p>what should i do</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-65602' onclick='return addComment.moveForm( "comment-65602", "65602", "respond", "2636" )' aria-label='Reply to noreen'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-72907">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2ee0bdfedbc4ef9e4bd5b9f1fc6a0c7f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2ee0bdfedbc4ef9e4bd5b9f1fc6a0c7f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">learner</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-08-04T15:56:46+00:00" itemprop="datePublished"><a href="index.html#comment-72907" class="comment-time-link" itemprop="url">August 4, 2017 at 3:56 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Microsoft Windows [Version 10.0.15063]<br />
+(c) 2017 Microsoft Corporation. All rights reserved.</p>
+<p>C:\Users\asus&gt;set path=C:\Program Files\Java\jdk1.8.0_131\bin</p>
+<p>C:\Users\asus&gt;java FirstJavaProgram<br />
+Error: Could not find or load main class FirstJavaProgram</p>
+<p>C:\Users\asus&gt;</p>
+<p>what did i do wrong?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-72907' onclick='return addComment.moveForm( "comment-72907", "72907", "respond", "2636" )' aria-label='Reply to learner'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-2" id="comment-72921">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-08-05T06:32:53+00:00" itemprop="datePublished"><a href="index.html#comment-72921" class="comment-time-link" itemprop="url">August 5, 2017 at 6:32 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>You have to compile the program first then you can run it. After setting up the path, compile the program by typing &#8220;javac FirstJavaProgram&#8221; without quotes in command prompt and hit enter then type &#8220;java FirstJavaProgram&#8221; without quotes.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-72921' onclick='return addComment.moveForm( "comment-72921", "72921", "respond", "2636" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-3" id="comment-74895">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bf1b0463f63ee8227e1d86b9b8ef34c9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bf1b0463f63ee8227e1d86b9b8ef34c9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Malcolm</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-09-14T14:38:34+00:00" itemprop="datePublished"><a href="index.html#comment-74895" class="comment-time-link" itemprop="url">September 14, 2017 at 2:38 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Microsoft Windows [Version 10.0.15063]<br />
+(c) 2017 Microsoft Corporation. All rights reserved.</p>
+<p>C:\Users\lemzod30&gt;set path=C:\Program Files\Java\jdk1.8.0_144\bin</p>
+<p>C:\Users\lemzod30&gt;javac FirstJavaProgram<br />
+error: Class names are only accepted if annotation processing is explicitly requested<br />
+1 error</p>
+<p>C:\Users\lemzod30&gt;</p>
+<p>What&#8217;s wrong?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-74895' onclick='return addComment.moveForm( "comment-74895", "74895", "respond", "2636" )' aria-label='Reply to Malcolm'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-4" id="comment-74898">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-09-14T15:38:39+00:00" itemprop="datePublished"><a href="index.html#comment-74898" class="comment-time-link" itemprop="url">September 14, 2017 at 3:38 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>You need to include .java extension while compiling the program. Note that the &#8220;j&#8221; in .java is in lowercase, if you use the uppercase then you will get the same error.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-74898' onclick='return addComment.moveForm( "comment-74898", "74898", "respond", "2636" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2636' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8b7f531d8e" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="49"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../../04/oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../../04/java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../association/index.html">Association</a></li>
+<li><a href="../../../2014/07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="../method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="../../../2014/01/method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="../../../2014/01/difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../../04/runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../../04/java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="../java-interface/index.html">Interface</a></li>
+ 	<li><a href="../abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../../04/java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../inner-class/index.html">Inner classes</a></li>
+<li><a href="../java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/05/first-java-program/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:37:45 GMT -->
+</html>

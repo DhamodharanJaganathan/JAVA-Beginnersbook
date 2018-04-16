@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2017/02/perl-operators-complete-guide/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:13:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Perl Operators - Complete guide</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="An operator is a character that represents an action, for example + is an arithmetic operator that represents addition. Operators in perl are categorised as following types: 1) Basic Arithmetic Operators 2) Assignment Operators 3) Auto-increment and Auto-decrement Operators 4) Logical Operators 5) Comparison"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Perl Operators - Complete guide" />
+<meta property="og:description" content="An operator is a character that represents an action, for example + is an arithmetic operator that represents addition. Operators in perl are categorised as following types: 1) Basic Arithmetic Operators 2) Assignment Operators 3) Auto-increment and Auto-decrement Operators 4) Logical Operators 5) Comparison" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="operator" />
+<meta property="article:section" content="Perl" />
+<meta property="article:published_time" content="2017-02-04T06:57:18+00:00" />
+<meta property="article:modified_time" content="2017-05-15T06:51:25+00:00" />
+<meta property="og:updated_time" content="2017-05-15T06:51:25+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="An operator is a character that represents an action, for example + is an arithmetic operator that represents addition. Operators in perl are categorised as following types: 1) Basic Arithmetic Operators 2) Assignment Operators 3) Auto-increment and Auto-decrement Operators 4) Logical Operators 5) Comparison" />
+<meta name="twitter:title" content="Perl Operators - Complete guide" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Perl Operators &#8211; Complete guide Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexcecd.html?p=6230' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed31d7.json?url=https%3A%2F%2Fbeginnersbook.com%2F2017%2F02%2Fperl-operators-complete-guide%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embede97d?url=https%3A%2F%2Fbeginnersbook.com%2F2017%2F02%2Fperl-operators-complete-guide%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-6230 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-6230 post type-post status-publish format-standard category-perl tag-operator entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Perl Operators &#8211; Complete guide</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/perl/index.html" rel="category tag">Perl</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>An operator is a character that represents an action, for example + is an arithmetic operator that represents addition.<br />
+Operators in perl are categorised as following types:<br />
+1) Basic Arithmetic Operators<br />
+2) Assignment Operators<br />
+3) Auto-increment and Auto-decrement Operators<br />
+4) Logical Operators<br />
+5) Comparison operators<br />
+6) Bitwise Operators<br />
+7) Quote and Quote-like Operators</p>
+<h2>1) Basic Arithmetic Operators</h2>
+<p>Basic arithmetic operators are: +, -, *, /, %, **<br />
+<strong>+</strong> is for addition: $x + $y</p>
+<p><strong>&#8211;</strong> is for subtraction: $x &#8211; $y</p>
+<p><strong>*</strong> is for multiplication: $x * $y</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><strong>/</strong> is for division: $x / $y</p>
+<p><strong>%</strong> is for modulo: $x % $y<br />
+<strong>Note:</strong> It returns remainder, for example 10 % 5 would return 0</p>
+<p><strong>**</strong> is for Exponentiation: $x ** $y<br />
+x to the power y</p>
+<h4>Example</h4>
+<pre>#!/usr/local/bin/perl
+$x = -4;
+$y = 2;
+
+$result = $x + $y;
+print '+ Operator output: ' . $result . "\n";
+
+$result = $x - $y;
+print '- Operator output: ' . $result . "\n";
+
+$result = $x * $y;
+print '* Operator output: ' . $result . "\n";
+
+$result = $x / $y;
+print '/ Operator output: ' . $result . "\n";
+
+$result = $x % $y;
+print '% Operator output: ' . $result. "\n";
+
+$result = $x ** $y;
+print '** Operator output: ' . $result . "\n";</pre>
+<p><strong>Output:</strong></p>
+<pre>+ Operator output: -2
+- Operator output: -6
+* Operator output: -8
+/ Operator output: -2
+% Operator output: 0
+** Operator output: 16</pre>
+<h2>2) Assignment Operators</h2>
+<p>Assignments operators in perl are: =, +=, -=, *=, /=, %=, **=</p>
+<p><strong>$x = $y</strong> would assign value of variable y to the variable x<br />
+<strong>$x+=$y</strong> is equal to $x = $x+$y<br />
+<strong>$x-=$y</strong> is equal to $x = $x-$y<br />
+<strong>$x*=$y</strong> is equal to $x = $x*$y<br />
+<strong>$x/=$y</strong> is equal to $x = $x/$y<br />
+<strong>$x%=$y</strong> is equal to $x = $x%$y<br />
+<strong>$x**=$y</strong> is equal to $x = $x**$y</p>
+<h4>Example:</h4>
+<pre>#!/usr/local/bin/perl
+
+$x = 5;
+$result = 10;
+
+print "\$x= $x and \$result=$result\n";
+$result = $x;
+print '= Operator output: ' . $result . "\n";
+
+print "\$x= $x and \$result=$result\n";
+$result += $x;
+print '+= Operator output: ' . $result . "\n";
+
+print "\$x= $x and \$result=$result\n";
+$result -= $x;
+print '-= Operator output: ' . $result . "\n";
+
+print "\$x= $x and \$result=$result\n";
+$result *= $x;
+print '*= Operator output: ' . $result . "\n";
+
+print "\$x= $x and \$result=$result\n";
+$result /= $x;
+print '/= Operator output: ' . $result . "\n";
+
+print "\$x= $x and \$result=$result\n";
+$result %= $x;
+print '%= Operator output: ' . $result . "\n";
+
+#assigning different value to $result for this operator
+$result =2;
+print "\$x= $x and \$result=$result\n";
+$result **= $x;
+print '**= Operator output: ' . $result . "\n";</pre>
+<p><strong>Output:</strong></p>
+<pre>$x= 5 and $result=10
+= Operator output: 5
+$x= 5 and $result=5
++= Operator output: 10
+$x= 5 and $result=10
+-= Operator output: 5
+$x= 5 and $result=5
+*= Operator output: 25
+$x= 5 and $result=25
+/= Operator output: 5
+$x= 5 and $result=5
+%= Operator output: 0
+$x= 5 and $result=2
+**= Operator output: 32</pre>
+<h2>3) Auto-increment and Auto-decrement Operators</h2>
+<p>++ and &#8212;<br />
+<strong>$x++</strong> is equivalent to $x=$x+1;<br />
+<strong>$x&#8211;</strong> is equivalent to $x=$x-1;</p>
+<h4>Example:</h4>
+<pre>#!/usr/local/bin/perl
+
+$x =100;
+$y =200;
+$x++;
+$y--;
+print"Value of \$x++ is: $x\n";
+print"Value of \$y-- is: $y\n";</pre>
+<p><strong>Output:</strong></p>
+<pre>Value of $x++ is: 101
+Value of $y-- is: 199</pre>
+<h2>4) Logical Operators</h2>
+<p>Logical Operators are used with binary variables. They are mainly used in conditional statements and loops for evaluating a condition.<br />
+Logical operators in perl are: &amp;&amp;, and, ||, or, not, !</p>
+<p>&#8220;<strong>&amp;&amp;</strong>&#8221; and &#8220;<strong>and</strong>&#8221; are same<br />
+$x&amp;&amp;y will return true if both x and y are true else it would return false.</p>
+<p>&#8220;<strong>||</strong>&#8221; and &#8220;<strong>or</strong>&#8221; are same.<br />
+$x||$y will return false if both x and y are false else it would return true.</p>
+<p>&#8220;<strong>!</strong>&#8221; and &#8220;<strong>not</strong>&#8221; are same.<br />
+!$x would return the opposite of x, that means it would be true if x is false and it would return false if x is true.</p>
+<h4>Example</h4>
+<pre>#!/usr/local/bin/perl
+
+$x = true;
+$y = false;
+
+$result = ($x and $y);
+print"\$x and \$y: $result\n";
+$result = ($x &amp;&amp; $y);
+print"\$x &amp;&amp; \$y: $result\n";
+
+$result = ($x or $y);
+print"\$x or \$y: $result\n";
+$result = ($x || $y);
+print"\$x || \$y: $result\n";
+
+#point to note is that not operator works
+#with 0 and 1 only.
+$x=0;
+$result = not($x);
+print"not\$x: $result\n";
+$result = !($x);
+print"\!\$x: $result\n";</pre>
+<p><strong>Output:</strong></p>
+<pre>$x and $y: false
+$x &amp;&amp; $y: false
+$x or $y: true
+$x || $y: true
+not$x: 1
+!$x: 1</pre>
+<h2>5) Comparison(Relational) operators</h2>
+<p>They includes: ==, eq, !=, ne, &gt;, gt, &lt;, lt, &gt;=, ge, &lt;=, le<br />
+== and eq returns true if both the left side and right side are equal<br />
+!= and ne returns true if left side is not equal to the right side of operator.<br />
+<strong>&gt;</strong> and <strong>gt</strong> returns true if left side is greater than right.<br />
+<strong>&lt;</strong> and <strong>lt</strong> returns true if left side is less than right side.<br />
+<strong>&gt;=</strong> and <strong>ge</strong> returns true if left side is greater than or equal to right side.<br />
+<strong>&lt;=</strong> and <strong>le</strong> returns true if left side is less than or equal to right side.</p>
+<h4>Example</h4>
+<pre>#!/usr/local/bin/perl
+
+$x = 3;
+$y = 6;
+
+if( $x == $y ){
+  print "\$x and \$y are equal\n";
+}else{
+  print "\$x and \$y are not equal\n";
+}
+
+if( $x != $y ){
+  print "\$x and \$y are not equal\n";
+}else{
+  print "\$x and \$y are equal\n";
+}
+
+if( $x &gt; $y ){
+  print "\$x is greater than \$y\n";
+}else{
+  print "\$x is not greater than \$y\n";
+}
+
+if( $x &gt;= $y ){
+  print "\$x is greater than or equal to \$y\n";
+}else{
+  print "\$x is less than \$y\n";
+}
+
+if( $x &lt; $y ){
+  print "\$x is less than \$y\n";
+}else{
+  print "\$x is not less than \$y\n";
+}
+
+if( $x &lt;= $y){
+  print "\$x is less than or equal to \$y\n";
+}else{
+  print "\$x is greater than \$y\n";
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>$x and $y are not equal
+$x and $y are not equal
+$x is not greater than $y
+$x is less than $y
+$x is less than $y
+$x is less than or equal to $y</pre>
+<h2>6) Bitwise Operators</h2>
+<p>There are six bitwise Operators: &amp;, |, ^, ~, &lt;&lt;, &gt;&gt;<br />
+$x = 11; #00001011<br />
+$y = 22; #00010110</p>
+<p>Bitwise operator performs bit by bit processing.<br />
+<strong>$x &amp; $y</strong> compares corresponding bits of x and y and generates 1 if both bits are equal, else it returns 0.<br />
+In our case it would return: 2 which is 00000010 because in the binary form of x and y only second last bits are matching.</p>
+<p><strong>$x | $y</strong> compares corresponding bits of x and y and generates 1 if either bit is 1, else it returns 0.<br />
+In our case it would return 31 which is 00011111</p>
+<p><strong>$x ^ $y</strong> compares corresponding bits of x and y and generates 1 if they are not equal, else it returns 0.<br />
+In our example it would return 29 which is equivalent to 00011101</p>
+<p><strong>~$x</strong> is a complement operator that just changes the bit from 0 to 1 and 1 to 0<br />
+In our example it would return -12 which is signed 8 bit equivalent to 11110100</p>
+<p><strong>&lt;&lt;</strong> is left shift operator that moves the bits to the left, discards the far left bit, and assigns the rightmost bit a value of 0.<br />
+In out case output is 44 which is equivalent to 00101100</p>
+<p><strong>Note:</strong> In the example below we are providing 2 at the right side of this shift operator that is the reason bits are moving two places to the left side. We can change this number and bits would be moved by the number of bits specified on the right side of the operator. Same applies to the right side operator.</p>
+<p><strong>&gt;&gt;</strong> is right shift operator that moves the bits to the right, discards the far right bit, and assigns the leftmost bit a value of 0.<br />
+in our case output is 2 which is equivalent to 00000010</p>
+<h4>Example:</h4>
+<pre>#!/usr/local/bin/perl
+use integer;
+
+$x = 11; #00001011
+$y = 22; #00010110
+
+$result = $x &amp; $y;
+print "\$x &amp; \$y: $result\n";
+
+$result = $x | $y;
+print "\$x | \$y: $result\n";
+
+$result = $x ^ $y;
+print "\$x ^ \$y: $result\n";
+
+$result = ~$x;
+print "~\$x = $result\n";
+
+$result = $x &lt;&lt; 2;
+print "\$x &lt;&lt; 2 = $result\n";
+
+$result = $x &gt;&gt; 2;
+print "\$x &gt;&gt; 2 = $result\n";</pre>
+<p><strong>Output:</strong></p>
+<pre>$x &amp; $y: 2
+$x | $y: 31
+$x ^ $y: 29
+~$x = -12
+$x &lt;&lt; 2 = 44
+$x &gt;&gt; 2 = 2</pre>
+<h2>7) Quote and Quote-like Operators</h2>
+<p>There are several quote like operators in perl like q{ }, qq{ }, qw{ }, m{ }, qr{ }, s{ }{ }, tr{ }{ }, y{ }{ }.<br />
+However only two of them are frequently used: q{ } is for single quote and qq{ } is for double quote.</p>
+<h4>Example</h4>
+<p>q{Welcome to beginnersbook} would return &#8216;Welcome to beginnersbook&#8217;<br />
+qq{Welcome to beginnersbook} would return &#8220;Welcome to beginnersbook&#8221;</p>
+<div class="bb-nav"><a class="pretut" href="../../05/use-strict-and-use-warnings-in-perl/index.html">❮ Previous</a><a class="nexttut" href="../../05/perl-lists-and-arrays/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../installing-perl-on-windows-mac-linux-and-unix/index.html" rel="bookmark" title="Link to Installing Perl on Windows, Mac, Linux and Unix">Installing Perl on Windows, Mac, Linux and Unix</a></li><li><a href="../first-perl-program/index.html" rel="bookmark" title="Link to First Perl Program">First Perl Program</a></li><li><a href="../for-loop-in-perl-with-example/index.html" rel="bookmark" title="Link to For loop in Perl with example">For loop in Perl with example</a></li><li><a href="../unless-elsif-else-statement-in-perl/index.html" rel="bookmark" title="Link to Unless elsif else statement in Perl">Unless elsif else statement in Perl</a></li><li><a href="../given-when-default-statement-in-perl/index.html" rel="bookmark" title="Link to given-when-default statement in Perl">given-when-default statement in Perl</a></li><li><a href="../if-elsif-else-statement-in-perl/index.html" rel="bookmark" title="Link to if-elsif-else statement in perl">if-elsif-else statement in perl</a></li></ol></div><footer class="entry-footer"></footer></article>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='6230' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="91a235557d" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="99"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-14" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><h2 class="widget-title">Perl Tutorial</h2>
+<ul>
+<li><a href="../perl-tutorial-for-beginners/index.html">Perl Tutorial</a></li>
+<li><a href="../installing-perl-on-windows-mac-linux-and-unix/index.html">Perl Installation</a></li>
+<li><a href="../first-perl-program/index.html">First Perl Program</a></li>
+<li><a href="../perl-syntax/index.html">Perl Syntax</a></li>
+<li><a href="../data-types-in-perl/index.html">Data types in Perl</a></li>
+<li><a href="../perl-variables/index.html">Perl Variables</a></li>
+<li><a href="../../05/my-keyword-local-and-global-variables-in-perl/index.html">my keyword </a></li>
+<li><a href="../../05/scalars-in-perl/index.html">Perl Scalars</a></li>
+<li><a href="../../05/use-strict-and-use-warnings-in-perl/index.html">Use strict and use warnings</a></li>
+<li><a href="../../05/perl-lists-and-arrays/index.html">Perl Arrays</a></li>
+<li><a href="../../05/hashes-in-perl/index.html">Perl Hashes</a></li>
+<li><a href="index.html">Operators in Perl</a></li>
+<li><a href="../conditional-statements-in-perl/index.html">Perl Conditional statements</a></li>
+<li><a href="../if-statement-in-perl/index.html">Perl if</a></li>
+<li><a href="../if-else-statement-in-perl/index.html">Perl if-else</a></li>
+<li><a href="../if-elsif-else-statement-in-perl/index.html">Perl if-elsif-else</a></li>
+<li><a href="../unless-statement-in-perl/index.html">Perl unless</a></li>
+<li><a href="../unless-else-statement-in-perl/index.html">Perl unless-else</a></li>
+<li><a href="../unless-elsif-else-statement-in-perl/index.html">Perl unless-elsif-else</a></li>
+<li><a href="../switch-case-in-perl/index.html">Perl switch case</a></li>
+<li><a href="../given-when-default-statement-in-perl/index.html">Perl given-when-default</a></li>
+<li><a href="../loops-and-loop-control-statements-in-perl/index.html">Perl loops</a></li>
+<li><a href="../subroutines-and-functions-in-perl/index.html">Perl subroutines</a></li>
+<li><a href="../../../2018/03/perl-strings/index.html">Perl Strings</a></li>
+<li><a href="../../../2018/03/perl-string-escape-sequences/index.html">Perl Escape Sequences</a></li>
+</ul></div></div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2017/02/perl-operators-complete-guide/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:13:22 GMT -->
+</html>

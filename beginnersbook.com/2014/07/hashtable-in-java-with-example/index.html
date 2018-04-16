@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2014/07/hashtable-in-java-with-example/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:41:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hashtable in java with example</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="This class implements a hash table, which maps keys to values. Any non-null object can be used as a key or as a value. Hashtable is similar to HashMap except it is synchronized. There are few more differences between HashMap and Hashtable class, you can read them in detail at: Difference between HashMap and"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Hashtable in java with example" />
+<meta property="og:description" content="This class implements a hash table, which maps keys to values. Any non-null object can be used as a key or as a value. Hashtable is similar to HashMap except it is synchronized. There are few more differences between HashMap and Hashtable class, you can read them in detail at: Difference between HashMap and" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="Hashtable" />
+<meta property="article:section" content="Java Collections" />
+<meta property="article:published_time" content="2014-07-08T10:44:34+00:00" />
+<meta property="article:modified_time" content="2014-09-06T10:29:53+00:00" />
+<meta property="og:updated_time" content="2014-09-06T10:29:53+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="This class implements a hash table, which maps keys to values. Any non-null object can be used as a key or as a value. Hashtable is similar to HashMap except it is synchronized. There are few more differences between HashMap and Hashtable class, you can read them in detail at: Difference between HashMap and" />
+<meta name="twitter:title" content="Hashtable in java with example" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Hashtable in java with example Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexea66.html?p=5356' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed1226.json?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F07%2Fhashtable-in-java-with-example%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed794d?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F07%2Fhashtable-in-java-with-example%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-5356 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-5356 post type-post status-publish format-standard category-java-collections tag-hashtable entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Hashtable in java with example</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/java-collections/index.html" rel="category tag">Java Collections</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>This class implements a hash table, which maps keys to values. Any non-null object can be used as a key or as a value. Hashtable is similar to <a title="HashMap in Java with Example" href="../../../2013/12/hashmap-in-java-with-example/index.html" target="_blank">HashMap</a> except it is synchronized. There are few more differences between HashMap and Hashtable class, you can read them in detail at: <a title="Difference between HashMap and Hashtable" href="../../06/difference-between-hashmap-and-hashtable/index.html" target="_blank">Difference between HashMap and Hashtable</a>.</p>
+<p>In this tutorial we will see how to create a Hashtable, how to populate its entries and then we will learn how to display its key-value pairs using Enumeration. At the end of this article we will see Hashtable tutorials and methods of Hashtable class.</p>
+<h4>Example</h4>
+<pre>import java.util.Hashtable;
+import java.util.Enumeration;
+
+public class HashtableExample {
+ 
+ public static void main(String[] args) {
+ 
+   Enumeration names;
+   String key;
+ 
+   // Creating a Hashtable
+   Hashtable&lt;String, String&gt; hashtable = 
+              new Hashtable&lt;String, String&gt;();
+ 
+   // Adding Key and Value pairs to Hashtable
+   hashtable.put("Key1","Chaitanya");
+   hashtable.put("Key2","Ajeet");
+   hashtable.put("Key3","Peter");
+   hashtable.put("Key4","Ricky");
+   hashtable.put("Key5","Mona");
+ 
+   names = hashtable.keys();
+   while(names.hasMoreElements()) {
+      key = (String) names.nextElement();
+      System.out.println("Key: " +key+ " &amp; Value: " +
+      hashtable.get(key));
+   }
+ }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Key: Key4 &amp; Value: Ricky
+Key: Key3 &amp; Value: Peter
+Key: Key2 &amp; Value: Ajeet
+Key: Key1 &amp; Value: Chaitanya
+Key: Key5 &amp; Value: Mona</pre>
+<h4>Hashtable tutorials</h4>
+<ul>
+<li><a title="Hashtable in java with example" href="index.html" target="_blank">Hashtable example</a></li>
+<li><a title="How to sort Hashtable in java" href="../../06/how-to-sort-hashtable-in-java/index.html" target="_blank">Sort Hashtable</a></li>
+<li><a title="Hashtable Iterator example – Java" href="../hashtable-iterator-example-java/index.html" target="_blank">Hashtable Iterator example</a></li>
+<li><a title="Check key &amp; Value existence in Hashtable example – Java" href="../check-key-value-existence-in-hashtable-example-java/index.html" target="_blank">Check key-value existence in Hashtable</a></li>
+<li><a title="Remove mapping from Hashtable example – Java" href="../remove-mapping-from-hashtable-example-java/index.html" target="_blank">Remove mapping from Hashtable</a></li>
+<li><a title="Remove all mappings from Hashtable example – Java" href="../remove-all-mappings-from-hashtable-example-java/index.html" target="_blank">Remove all mappings from Hashtable</a></li>
+<li><a title="Get size of Hashtable example in Java" href="../get-size-of-hashtable-example-in-java/index.html" target="_blank">Get size of Hashtable</a></li>
+<li><a title="Difference between HashMap and Hashtable" href="../../06/difference-between-hashmap-and-hashtable/index.html" target="_blank">Hashtable vs HashMap</a></li>
+</ul>
+<h4>Methods of Hashtable class:</h4>
+<p>1) <code>void clear()</code>: Removes all the key-value mappings from Hashtable and makes it empty. Clears this hashtable so that it contains no keys..</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>2) <code>Object clone()</code>: Creates a shallow copy of this hashtable. All the structure of the hashtable itself is copied, but the keys and values are not cloned. This is a relatively expensive operation.</p>
+<p>3) <code>boolean contains(Object value)</code>: Tests if some key maps into the specified value in this hashtable. This operation is more expensive than the containsKey method.<br />
+Note that this method is identical in functionality to containsValue, (which is part of the Map interface in the collections framework).</p>
+<p>4) <code>boolean isEmpty()</code>: Tests if this hashtable maps no keys to values.</p>
+<p>5) <code>Enumeration keys()</code>: Returns an enumeration of the keys contained in the hash table.</p>
+<p>6) <code>Object put(Object key, Object value)</code>: Maps the specified key to the specified value in this hashtable.</p>
+<p>7) <code>void rehash()</code>: Increases the size of the hash table and rehashes all of its keys.</p>
+<p>8) <code>Object remove(Object key)</code>: Removes the key (and its corresponding value) from this hashtable.</p>
+<p>9) <code>int size()</code>: Returns the number of key-value mappings present in Hashtable.</p>
+<p>10) <code>String toString()</code>: Returns the string equivalent of a hash table.</p>
+<p>11) <code>boolean containsKey(Object key)</code>: Tests if the specified object is a key in this hashtable.</p>
+<p>12) boolean containsValue(Object value): Tests if the specified object is a value in this hashtable. Returns true if some value equal to value exists within the hash table. Returns false if the value isn&#8217;t found.</p>
+<p>13) <code>Enumeration elements()</code>: Returns an enumeration of the values contained in the hash table.</p>
+<p>14) <code>Object get(Object key)</code>: Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.</p>
+<h4>References:</h4>
+<ol>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Hashtable.html" target="_blank">Hashtable javadoc</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Enumeration.html" target="_blank">Enumeration javadoc</a></li>
+</ol>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-36714">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d88a978a7658d5480c4b1339f33f96e5?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d88a978a7658d5480c4b1339f33f96e5?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Raj</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-23T20:22:56+00:00" itemprop="datePublished"><a href="index.html#comment-36714" class="comment-time-link" itemprop="url">September 23, 2015 at 8:22 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I tried Hashtable &#8211; it allows to put null keys as well as null values ??<br />
+Could you please look the code</p>
+<p>Hashtable hashtable =  new Hashtable();<br />
+hashtable.put(&#8220;&#8221;, &#8220;ram&#8221;);<br />
+hashtable.put(&#8220;K&#8221;, &#8220;kan&#8221;);<br />
+hashtable.put(&#8220;S&#8221;, &#8220;&#8221;);<br />
+System.out.println(&#8221; &#8221; + hashtable);</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-36714' onclick='return addComment.moveForm( "comment-36714", "36714", "respond", "5356" )' aria-label='Reply to Raj'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-42738">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/0b24e0a3f24bf735ca6c99cd9fb832c9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/0b24e0a3f24bf735ca6c99cd9fb832c9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Binoy</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-13T05:21:32+00:00" itemprop="datePublished"><a href="index.html#comment-42738" class="comment-time-link" itemprop="url">November 13, 2015 at 5:21 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>FYI, &#8220;&#8221; is different than null. And you are using &#8220;&#8221; but not null. That&#8217;s why you were good to use &#8220;&#8221; as key and value. Hope it helps you.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-42738' onclick='return addComment.moveForm( "comment-42738", "42738", "respond", "5356" )' aria-label='Reply to Binoy'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-64783">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/357cda1f2eba1de9247b28a340de66fc?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/357cda1f2eba1de9247b28a340de66fc?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Grijan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-12-20T10:17:16+00:00" itemprop="datePublished"><a href="index.html#comment-64783" class="comment-time-link" itemprop="url">December 20, 2016 at 10:17 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Why is it not printing in 1,2,3,4,5, order but in 4,3,2,1,5?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-64783' onclick='return addComment.moveForm( "comment-64783", "64783", "respond", "5356" )' aria-label='Reply to Grijan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='5356' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="2521dc1236" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="77"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-4" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../../../java-tutorial-for-beginners-with-examples/index.html">Java Tutorial</a></li>
+<li><a href="../../../2013/04/oops-concepts/index.html">OOPs Concepts</a></li>
+</ul>
+<h2 class="widget-title">Java Collections</h2>
+<ul>
+<li><a href="../../../2013/12/java-arraylist/index.html">ArrayList</a></li>
+<li><a href="../../../2013/12/linkedlist-in-java-with-example/index.html">LinkedList</a></li>
+<li><a href="../../../2013/12/difference-between-arraylist-and-linkedlist-in-java/index.html">ArrayList vs LinkedList</a></li>
+<li><a href="../../../2013/12/vector-in-java/index.html">Vector</a></li>
+<li><a href="../../../2013/12/difference-between-arraylist-and-vector-in-java/index.html">ArrayList vs Vector</a></li>
+<li><a href="../../../2013/12/hashmap-in-java-with-example/index.html">HashMap</a></li>
+<li><a href="../../../2013/12/treemap-in-java-with-example/index.html">TreeMap</a></li>
+<li><a href="../../../2013/12/linkedhashmap-in-java/index.html">LinkedHashMap</a></li>
+<li><a href="../../../2013/12/hashset-class-in-java-with-example/index.html">HashSet</a></li>
+<li><a href="../../../2013/12/treeset-class-in-java-with-example/index.html">TreeSet</a></li>
+<li><a href="../../../2013/12/linkedhashset-class-in-java-with-example/index.html">LinkedHashSet</a></li>
+<li><a href="index.html">Hashtable</a></li>
+<li><a href="../../06/difference-between-hashmap-and-hashtable/index.html">HashMap vs Hashtable</a></li>
+<li><a href="../../../2017/08/queue-interface-in-java-collections/index.html">Queue</a></li>
+<li><a href="../../../2017/08/java-collections-priorityqueue-interface/index.html">PriorityQueue</a></li>
+<li><a href="../../../2017/08/java-collections-deque-interface/index.html">Deque & ArrayDeque</a></li>
+<li><a href="../../06/java-iterator-with-examples/index.html">Iterator</a></li>
+<li><a href="../../06/listiterator-in-java-with-examples/index.html">ListIterator</a></li>
+<li><a href="../../../2017/08/comparable-interface-in-java-with-example/index.html">Comparable Interface</a></li>
+<li><a href="../../../2017/08/comparator-interface-in-java/index.html">Comparator Interface</a></li>
+<li><a href="../../../2015/03/java-collections-interview-questions-and-answers/index.html">Java Collections Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../../2013/12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../../2013/04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../../2013/03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../java-serialization/index.html">Java Serialization</a></li>
+	<li><a href="../../08/java-regex-tutorial/index.html">Java Regex</a></li>
+	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+<li><a href="../../09/java-enum-examples/index.html">Java Enum</a></li>
+<li><a href="../../09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2014/07/hashtable-in-java-with-example/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:41:39 GMT -->
+</html>

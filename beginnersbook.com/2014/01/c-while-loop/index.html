@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2014/01/c-while-loop/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:02:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>C - while loop in C programming with example</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="While loop in C programming with example: Learn how to use while loop in C programs with the help of flow diagram and examples."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="C - while loop in C programming with example" />
+<meta property="og:description" content="While loop in C programming with example: Learn how to use while loop in C programs with the help of flow diagram and examples." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="c-programming" />
+<meta property="article:published_time" content="2014-01-14T08:25:41+00:00" />
+<meta property="article:modified_time" content="2017-09-23T17:37:10+00:00" />
+<meta property="og:updated_time" content="2017-09-23T17:37:10+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2017/09/while_loop_C.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2017/09/while_loop_C.jpg" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="While loop in C programming with example: Learn how to use while loop in C programs with the help of flow diagram and examples." />
+<meta name="twitter:title" content="C - while loop in C programming with example" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2017/09/while_loop_C.jpg" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; C &#8211; while loop in C programming with example Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index8526.html?p=4868' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embedd27c.json?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fc-while-loop%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedc429?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fc-while-loop%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-4868 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-4868 post type-post status-publish format-standard category-c-programming entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">C &#8211; while loop in C programming with example</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/c-programming/index.html" rel="category tag">c-programming</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>A loop is used for executing a block of statements repeatedly until a given condition returns false. In the previous tutorial we learned <a href="../c-for-loop/index.html">for loop</a>. In this guide we will learn while loop in C.</p>
+<h2>C &#8211; while loop</h2>
+<p>Syntax of while loop:</p>
+<pre>while (condition test)
+{
+      //Statements to be executed repeatedly 
+      // Increment (++) or Decrement (--) Operation
+}</pre>
+<h3>Flow Diagram of while loop</h3>
+<p><img class="aligncenter size-full wp-image-7594" src="../../../wp-content/uploads/2017/09/while_loop_C.jpg" alt="C while loop" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/09/while_loop_C.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/09/while_loop_C-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2017/09/while_loop_C-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<h3>Example of while loop</h3>
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+   int count=1;
+   while (count &lt;= 4)
+   {
+	printf("%d ", count);
+	count++;
+   }
+   return 0;
+}
+</pre>
+<p>Output:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>1 2 3 4</pre>
+<p><strong>step1:</strong> The variable count is initialized with value 1 and then it has been tested for the condition.<br />
+<strong>step2:</strong> If the condition returns true then the statements inside the body of while loop are executed else control comes out of the loop.<br />
+<strong>step3:</strong> The value of count is incremented using ++ operator then it has been tested again for the loop condition.</p>
+<p><strong>Guess the output of this while loop</strong></p>
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+     int var=1;
+     while (var &lt;=2)
+     {
+        printf("%d ", var);
+     }
+}</pre>
+<p>The program is an example of <strong>infinite while loop</strong>. Since the value of the variable var is same (there is no ++ or – operator used on this variable, inside the body of loop) the condition var&lt;=2 will be true forever and the loop would never terminate.</p>
+<h3>Examples of infinite while loop</h3>
+<p><strong>Example 1:</strong></p>
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+     int var = 6;
+     while (var &gt;=5)
+     {
+        printf("%d", var);
+        var++;
+     }
+   return 0;
+}</pre>
+<p><strong>Infinite loop:</strong> var will always have value &gt;=5 so the loop would never end.</p>
+<p><strong>Example 2:</strong></p>
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+    int var =5;
+    while (var &lt;=10)
+    {
+       printf("%d", var);
+       var--;
+    }
+    return 0;
+}</pre>
+<p><strong>Infinite loop:</strong> var value will keep decreasing because of –- operator, hence it will always be &lt;= 10.</p>
+<h2>Use of Logical operators in while loop</h2>
+<p>Just like relational operators (&lt;, &gt;, &gt;=, &lt;=, ! =, ==), we can also use logical operators in while loop. The following scenarios are valid :</p>
+<pre>while(num1&lt;=10 &amp;&amp; num2&lt;=10)</pre>
+<p>-using AND(&amp;&amp;) operator, which means both the conditions should be true.</p>
+<pre>while(num1&lt;=10||num2&lt;=10)</pre>
+<p>– OR(||) operator, this loop will run until both conditions return false.</p>
+<pre>while(num1!=num2 &amp;&amp;num1 &lt;=num2)</pre>
+<p>– Here we are using two logical operators NOT (!) and AND(&amp;&amp;).</p>
+<pre>while(num1!=10 ||num2&gt;=num1)</pre>
+<h3>Example of while loop using logical operator</h3>
+<p>In this example we are testing multiple conditions using logical operator inside while loop.</p>
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+   int i=1, j=1;
+   while (i &lt;= 4 || j &lt;= 3)
+   {
+	printf("%d %d\n",i, j);
+	i++;
+	j++;
+   }
+   return 0;
+}</pre>
+<p>Output:</p>
+<pre>1 1
+2 2
+3 3
+4 4</pre>
+<div class="bb-nav"><a class="pretut" href="../c-for-loop/index.html">❮ Previous</a><a class="nexttut" href="../c-dowhile-loop/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-41083">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b4788199a79bf5959b2ec43c06375574?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b4788199a79bf5959b2ec43c06375574?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Muhammad Rehan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-01T19:05:19+00:00" itemprop="datePublished"><a href="index.html#comment-41083" class="comment-time-link" itemprop="url">November 1, 2015 at 7:05 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>How any language is created?<br />
+Is it created in Low level language like Machine Language (Binary or OS,DOS) or SOMETHING else?????????</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-41083' onclick='return addComment.moveForm( "comment-41083", "41083", "respond", "4868" )' aria-label='Reply to Muhammad Rehan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-45335">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d85ecaa72099450e90a6dc421fd71739?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d85ecaa72099450e90a6dc421fd71739?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Elham</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-05T20:57:22+00:00" itemprop="datePublished"><a href="index.html#comment-45335" class="comment-time-link" itemprop="url">December 5, 2015 at 8:57 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi<br />
+please write an axamplee with  both while and if<br />
+tnx</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-45335' onclick='return addComment.moveForm( "comment-45335", "45335", "respond", "4868" )' aria-label='Reply to Elham'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-49387">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/48b002351efbfb462e262207702746be?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/48b002351efbfb462e262207702746be?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">shreyansh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-01-22T06:38:30+00:00" itemprop="datePublished"><a href="index.html#comment-49387" class="comment-time-link" itemprop="url">January 22, 2016 at 6:38 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>if statement is use to define condition , if condition holds true the statement will be executed otherwise not.<br />
+e.g.<br />
+if(age&gt;18)<br />
+{<br />
+printf(&#8220;you can vote&#8221;);<br />
+}</p>
+<p>on the other hand while statement is being used for loop operation for example<br />
+printing numbers form 1 to 10.<br />
+i=1;<br />
+while(i&lt;=10)<br />
+{<br />
+printf(&quot;%d&quot;,i);<br />
+i++<br />
+}</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-49387' onclick='return addComment.moveForm( "comment-49387", "49387", "respond", "4868" )' aria-label='Reply to shreyansh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-69239">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e9c74cb6e783f29c739c07effebff5c4?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e9c74cb6e783f29c739c07effebff5c4?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Yadav_S</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-04T12:25:10+00:00" itemprop="datePublished"><a href="index.html#comment-69239" class="comment-time-link" itemprop="url">April 4, 2017 at 12:25 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Can we use while continue break and for in one program can you give an example?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69239' onclick='return addComment.moveForm( "comment-69239", "69239", "respond", "4868" )' aria-label='Reply to Yadav_S'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4868' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="7704e51e15" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="114"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-21" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">C Programming Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../install-turbo-c/index.html">Turbo C++  installation</a></li>
+<li><a href="../c-program-structure/index.html">First C Program</a></li>
+<li><a href="../c-keywords-reserved-words/index.html">C - Keywords</a></li>
+<li><a href="../c-operator-precedence-table/index.html">Operator precedence</a></li>
+<li><a href="../c-if-statement/index.html">C - if statement</a></li>
+<li><a href="../c-if-else-statement-example/index.html">C - if..else</a></li>
+<li><a href="../c-for-loop/index.html">C - for loop</a></li>
+<li><a href="index.html">C - while loop</a></li>
+<li><a href="../c-dowhile-loop/index.html">C - do while loop</a></li>
+
+<li><a href="../c-continue-statement/index.html">C - continue</a></li>
+<li><a href="../c-break-statement/index.html">C - break statement</a></li>
+<li><a href="../switch-case-statements-in-c/index.html">C - switch..case</a></li>
+<li><a href="../c-goto-statement/index.html">C - goto statement</a></li>
+<li><a href="../c-arrays-example/index.html">C - Arrays</a></li>
+<li><a href="../2d-arrays-in-c-example/index.html">2 D array</a></li>
+<li><a href="../c-strings-string-functions/index.html">C - String</a></li>
+<li><a href="../c-functions-examples/index.html">C - functions</a></li>
+<li><a href="../c-function-call-by-reference-example/index.html">Function call by reference</a></li>
+<li><a href="../c-function-call-by-value-example/index.html">Function call by value</a></li>
+<li><a href="../c-passing-array-to-function-example/index.html">Array to function</a></li>
+<li><a href="../c-structures-examples/index.html">C - Structures</a></li>
+<li><a href="../c-pointers/index.html">C - Pointers</a></li>
+<li><a href="../c-pointer-to-pointer/index.html">Pointer to Pointer</a></li>
+<li><a href="../c-passing-pointers-to-functions/index.html">Pointers to functions</a></li>
+<li><a href="../c-function-pointers/index.html">C - function pointers</a></li>
+<li><a href="../c-pointer-to-array-example/index.html">Pointer & Array</a></li>
+<li><a href="../c-file-io/index.html">C - File I/O</a></li>
+<li><a href="../../../2015/02/simple-c-programs/index.html">C Programming Examples</a></li>
+</ul></div></div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2014/01/c-while-loop/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:03:03 GMT -->
+</html>

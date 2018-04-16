@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Abstract method in Java with examples</title>
+	<atom:link href="https://beginnersbook.com/2014/01/abstract-method-with-examples-in-java/feed/" rel="self" type="application/rss+xml" />
+	<link>https://beginnersbook.com/2014/01/abstract-method-with-examples-in-java/</link>
+	<description></description>
+	<lastBuildDate>Fri, 06 Apr 2018 04:50:05 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.5</generator>
+	<item>
+		<title>By: Chaitanya Singh</title>
+		<link>https://beginnersbook.com/2014/01/abstract-method-with-examples-in-java/#comment-74870</link>
+		<dc:creator><![CDATA[Chaitanya Singh]]></dc:creator>
+		<pubDate>Thu, 14 Sep 2017 06:50:15 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4834#comment-74870</guid>
+		<description><![CDATA[They help you define a template for the sub classes. Abstract method is always in abstract class and when you extend the abstract class, you have to implement that method in your sub class else you will get compilation error. Which means you are defining a template for the sub classes. For example:
+You want your sub classes to have a method disp() but at the same time, you want it to be different for each class. Then you declare this method abstract in parent class. This way all the sub classes will have to implement this method and give their own implementation.
+I recommend you to read the abstract class tutorial (link provide in the above guide).]]></description>
+		<content:encoded><![CDATA[<p>They help you define a template for the sub classes. Abstract method is always in abstract class and when you extend the abstract class, you have to implement that method in your sub class else you will get compilation error. Which means you are defining a template for the sub classes. For example:<br />
+You want your sub classes to have a method disp() but at the same time, you want it to be different for each class. Then you declare this method abstract in parent class. This way all the sub classes will have to implement this method and give their own implementation.<br />
+I recommend you to read the abstract class tutorial (link provide in the above guide).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Lauro Campos</title>
+		<link>https://beginnersbook.com/2014/01/abstract-method-with-examples-in-java/#comment-74868</link>
+		<dc:creator><![CDATA[Lauro Campos]]></dc:creator>
+		<pubDate>Thu, 14 Sep 2017 05:27:24 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4834#comment-74868</guid>
+		<description><![CDATA[This might be very old, but I&#039;m trying to understand the necessity of the abstracts methods, there are more ways to get the same result, like deleting the interface, not implementing it, changing both methods to static and just printing the methods for example 1, like this:
+
+class Demo{
+
+   public static int sumOfTwo(int num1, int num2){
+	return num1+num2;
+   }
+   public static int sumOfThree(int num1, int num2, int num3){
+	return num1+num2+num3;
+   }
+   public static void main(String args[]){
+	System.out.println(sumOfTwo(3, 7));
+	System.out.println(sumOfThree(4, 3, 19));
+   }
+}
+
+So, my question is why and when do you really need abstract methods? What is it that they can do that no other nonaccess modifier can do?]]></description>
+		<content:encoded><![CDATA[<p>This might be very old, but I&#8217;m trying to understand the necessity of the abstracts methods, there are more ways to get the same result, like deleting the interface, not implementing it, changing both methods to static and just printing the methods for example 1, like this:</p>
+<p>class Demo{</p>
+<p>   public static int sumOfTwo(int num1, int num2){<br />
+	return num1+num2;<br />
+   }<br />
+   public static int sumOfThree(int num1, int num2, int num3){<br />
+	return num1+num2+num3;<br />
+   }<br />
+   public static void main(String args[]){<br />
+	System.out.println(sumOfTwo(3, 7));<br />
+	System.out.println(sumOfThree(4, 3, 19));<br />
+   }<br />
+}</p>
+<p>So, my question is why and when do you really need abstract methods? What is it that they can do that no other nonaccess modifier can do?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

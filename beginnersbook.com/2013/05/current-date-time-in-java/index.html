@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/05/current-date-time-in-java/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:28:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to get current date and time in java</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Java - get current date and time in java: A complete guide for getting the current date and current time in local or different timezone with examples."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to get current date and time in java" />
+<meta property="og:description" content="Java - get current date and time in java: A complete guide for getting the current date and current time in local or different timezone with examples." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="Java Date" />
+<meta property="article:published_time" content="2013-05-09T22:06:43+00:00" />
+<meta property="article:modified_time" content="2017-10-21T18:18:17+00:00" />
+<meta property="og:updated_time" content="2017-10-21T18:18:17+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Java - get current date and time in java: A complete guide for getting the current date and current time in local or different timezone with examples." />
+<meta name="twitter:title" content="How to get current date and time in java" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; How to get current date and time in java Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexf3fb.html?p=2495' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed66e1.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fcurrent-date-time-in-java%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed5f72?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fcurrent-date-time-in-java%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2495 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2495 post type-post status-publish format-standard category-java-date entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">How to get current date and time in java</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/technology/java-guide/java-date/index.html" rel="category tag">Java Date</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>By using <a href="../simple-date-format-java/index.html">SimpleDateFormat</a> and <code>Date/Calendar</code> class, we can easily get <strong>current date and time</strong> in Java. In this tutorial we will see how to get the current date and time using Date and Calendar class and how to get it in the desired format using SimpleDateFormat class.</p>
+<h3>Current date and time in Java &#8211; Two ways to get it</h3>
+<h4>1) Using Date class</h4>
+<ul>
+<li>Specify the desired pattern while creating the instance of <code>SimpleDateFormat</code>.</li>
+<li>Create an object of Date class.</li>
+<li>Call the <a href="https://docs.oracle.com/javase/7/docs/api/java/text/DateFormat.html#format(java.util.Date)" target="_blank" rel="noopener">format() method of DateFormat class</a> and pass the date object as a parameter to the method.</li>
+</ul>
+<pre>/* This will display the date and time in the format of 
+ * 12/09/2017 24:12:35. See the complete program below
+ */
+DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+Date dateobj = new Date();
+System.out.println(df.format(dateobj));</pre>
+<h4>2) Using Calendar class</h4>
+<ul>
+<li>Specify the desired pattern for the date and time. Similar to the step 1 of above method.</li>
+<li>Create an object of <code>Calendar</code> class by calling <code>getInstance()</code> method of it.</li>
+<li>Call the <code>format()</code> method of DateFormat and pass the <code>Calendar.getTime()</code> as a parameter to the method.</li>
+</ul>
+<pre>DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+Calendar calobj = Calendar.getInstance();
+System.out.println(df.format(calobj.getTime()));</pre>
+<h2>Complete java code for getting current date and time</h2>
+<pre>import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+public class GettingCurrentDate {
+   public static void main(String[] args) {
+       //getting current date and time using Date class
+       DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+       Date dateobj = new Date();
+       System.out.println(df.format(dateobj));
+
+       /*getting current date time using calendar class 
+        * An Alternative of above*/
+       Calendar calobj = Calendar.getInstance();
+       System.out.println(df.format(calobj.getTime()));
+    }
+}</pre>
+<p>Output:</p>
+<pre>21/10/17 22:13:06
+21/10/17 22:13:06
+</pre>
+<p>Every time I run the above code it would fetch the current date and time.</p>
+<p><strong>Note:</strong> In order to get the output in above format I have specified the date/time pattern in the program (Note the first statement of the program <code>DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");</code>.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>However if you want the output in any other <a href="../../04/java-date-format/index.html">date format</a>, just modify the pattern accordingly. For e.g. To get the date only, the pattern would be dd-MM-yyyy: replace the statement with this one: <code>DateFormat df = new SimpleDateFormat("dd-MM-yyyy");</code></p>
+<p>While specifying the pattern be careful with the case. For e.g. &#8216;s&#8217; (small s) represents second while &#8216;S'(Capital s) represents Millisecond.</p>
+<blockquote><p>At the end of this guide, I have shared the complete chart of symbols that we can use in patterns to get the date and time in desired format</p></blockquote>
+<h2>Java &#8211; Getting current date and time in other timezone</h2>
+<p>The example we have seen above shows the date and time in local timezone. However we can get the date and time in different time zone as well such as UTC/GMT etc. In the following example we are displaying the time in GMT time zone.</p>
+<pre>import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
+public class Example {
+   public static void main(String[] args) {
+	//"hh" in pattern is for 12 hour time format and "aa" is for AM/PM
+	SimpleDateFormat dateTimeInGMT = new SimpleDateFormat("yyyy-MMM-dd hh:mm:ss aa");
+	//Setting the time zone
+	dateTimeInGMT.setTimeZone(TimeZone.getTimeZone("GMT"));
+	System.out.println(dateTimeInGMT.format(new Date()));
+   }
+}</pre>
+<p>Output:</p>
+<pre>2017-Oct-21 06:03:42 PM</pre>
+<blockquote><p><strong>Update:</strong> To get the current date and time in Java 8 refer <a href="../../../2017/09/java-8-get-current-date-and-time/index.html">this guide</a>.</p></blockquote>
+<p>Here is the complete chart which will help you to define the pattern in <code>SimpleDateFormat</code>.</p>
+<table border="1" summary="Chart shows pattern letters, date/time component, presentation, and examples." cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th align="left">Letter</th>
+<th align="left">Date or Time Component</th>
+<th align="left">Presentation</th>
+<th align="left">Examples</th>
+</tr>
+<tr>
+<td><code>G</code></td>
+<td>Era designator</td>
+<td>Text</td>
+<td><code>AD</code></td>
+</tr>
+<tr>
+<td><code>y</code></td>
+<td>Year</td>
+<td>Year</td>
+<td><code>1996</code>; <code>96</code></td>
+</tr>
+<tr>
+<td><code>Y</code></td>
+<td>Week year</td>
+<td>Year</td>
+<td><code>2009</code>; <code>09</code></td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>Month in year</td>
+<td>Month</td>
+<td><code>July</code>; <code>Jul</code>; <code>07</code></td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>Week in year</td>
+<td>Number</td>
+<td><code>27</code></td>
+</tr>
+<tr>
+<td><code>W</code></td>
+<td>Week in month</td>
+<td>Number</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>Day in year</td>
+<td>Number</td>
+<td><code>189</code></td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>Day in month</td>
+<td>Number</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>Day of week in month</td>
+<td>Number</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><code>E</code></td>
+<td>Day name in week</td>
+<td>Text</td>
+<td><code>Tuesday</code>; <code>Tue</code></td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>Day number of week (1 = Monday, &#8230;, 7 = Sunday)</td>
+<td>Number</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td>Am/pm marker</td>
+<td>Text</td>
+<td><code>PM</code></td>
+</tr>
+<tr>
+<td><code>H</code></td>
+<td>Hour in day (0-23)</td>
+<td>Number</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>k</code></td>
+<td>Hour in day (1-24)</td>
+<td>Number</td>
+<td><code>24</code></td>
+</tr>
+<tr>
+<td><code>K</code></td>
+<td>Hour in am/pm (0-11)</td>
+<td>Number</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>h</code></td>
+<td>Hour in am/pm (1-12)</td>
+<td>Number</td>
+<td><code>12</code></td>
+</tr>
+<tr>
+<td><code>m</code></td>
+<td>Minute in hour</td>
+<td>Number</td>
+<td><code>30</code></td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>Second in minute</td>
+<td>Number</td>
+<td><code>55</code></td>
+</tr>
+<tr>
+<td><code>S</code></td>
+<td>Millisecond</td>
+<td>Number</td>
+<td><code>978</code></td>
+</tr>
+<tr>
+<td><code>z</code></td>
+<td>Time zone</td>
+<td>General time zone</td>
+<td><code>Pacific Standard Time</code>; <code>PST</code>; <code>GMT-08:00</code></td>
+</tr>
+<tr>
+<td><code>Z</code></td>
+<td>Time zone</td>
+<td>RFC 822 time zone</td>
+<td><code>-0800</code></td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>Time zone</td>
+<td>ISO 8601 time zone</td>
+<td><code>-08</code>; <code>-0800</code>; <code>-08:00</code></td>
+</tr>
+</tbody>
+</table>
+<h4>References:</h4>
+<ul>
+<li><a href="https://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html" target="_blank" rel="noopener">Calendar javadoc</a></li>
+<li><a href="https://docs.oracle.com/javase/7/docs/api/java/util/Date.html" target="_blank" rel="noopener">Date javadoc</a></li>
+<li><a href="https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html" target="_blank" rel="noopener">SimpleDateFormat javadoc</a></li>
+</ul>
+<h4>Related Posts:</h4>
+<ol>
+<li><a href="../../../2017/10/java-time-in-milliseconds-format/index.html">Java &#8211; Display current time in Milliseconds format</a></li>
+<li><a href="../../../2017/10/java-display-time-in-12-hour-format-with-ampm/index.html">Java &#8211; Display time in 12 hour format with AM/PM</a></li>
+<li><a href="../java-date-string-conversion/index.html">Java &#8211; Convert Date to String</a></li>
+<li><a href="../../04/java-string-to-date-conversion/index.html">Java &#8211; Convert String to Date</a></li>
+<li><a href="../../../2017/10/java-add-days-to-date/index.html">Java &#8211; Add days to Date</a></li>
+</ol>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2495' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="2717e1abc7" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="229"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-27" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Date and Time</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../../../2017/10/java-date-time/index.html">Java Date Time</a></li>
+<li><a href="../../../2017/10/java-localdate/index.html">Java LocalDate</a></li>
+<li><a href="../../../2017/10/java-localtime/index.html">Java LocalTime</a></li>
+<li><a href="../../../2017/10/java-localdatetime/index.html">Java LocalDateTime</a></li>
+<li><a href="../../../2017/11/java-zoneddatetime/index.html">Java ZonedDateTime</a></li>
+<li><a href="../../../2017/11/java-datetimeformatter/index.html">Java DateTimeFormatter</a></li>
+<li><a href="index.html">current date time</a></li>
+</ul></div></div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/05/current-date-time-in-java/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:28:24 GMT -->
+</html>

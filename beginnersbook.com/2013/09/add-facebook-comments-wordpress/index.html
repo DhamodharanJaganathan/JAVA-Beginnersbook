@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/09/add-facebook-comments-wordpress/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:31:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to Add Facebook Comments to WordPress</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Facebook has provided several features for social sharing. We already shared few tutorials for WordPress users, such as adding Facebook like button and open graph meta tags for WordPress. In this post, we shared a step by step guide to add Facebook comments in WordPress. Related Post: Google+ comments for WordPress"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to Add Facebook Comments to WordPress" />
+<meta property="og:description" content="Facebook has provided several features for social sharing. We already shared few tutorials for WordPress users, such as adding Facebook like button and open graph meta tags for WordPress. In this post, we shared a step by step guide to add Facebook comments in WordPress. Related Post: Google+ comments for WordPress" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="Facebook" />
+<meta property="article:tag" content="Facebook Comments" />
+<meta property="article:tag" content="WordPress" />
+<meta property="article:section" content="WordPress" />
+<meta property="article:published_time" content="2013-09-23T18:33:34+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/09/fb-comment.png" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/09/fb-comment.png" />
+<meta property="og:image:width" content="483" />
+<meta property="og:image:height" content="622" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Facebook has provided several features for social sharing. We already shared few tutorials for WordPress users, such as adding Facebook like button and open graph meta tags for WordPress. In this post, we shared a step by step guide to add Facebook comments in WordPress. Related Post: Google+ comments for WordPress" />
+<meta name="twitter:title" content="How to Add Facebook Comments to WordPress" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2013/09/fb-comment.png" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; How to Add Facebook Comments to WordPress Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index6476.html?p=3439' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed00df.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F09%2Fadd-facebook-comments-wordpress%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedb2a7?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F09%2Fadd-facebook-comments-wordpress%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-3439 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-3439 post type-post status-publish format-standard has-post-thumbnail category-wordpress category-wordpress-plugins tag-facebook tag-facebook-comments tag-wordpress entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">How to Add Facebook Comments to WordPress</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/wordpress/index.html" rel="category tag">WordPress</a>, <a href="../../../category/wordpress/wordpress-plugins/index.html" rel="category tag">WordPress plugins</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Facebook has provided several features for social sharing. We already shared few tutorials for WordPress users, such as adding <a href="../add-facebook-like-button-website/index.html" target="_blank">Facebook like button</a> and <a href="../add-facebook-open-graph-meta-data-wordpress-themes/index.html" target="_blank">open graph meta tags for WordPress</a>. In this post, we shared a step by step guide to add Facebook comments in WordPress.</p>
+<p><strong>Related Post: </strong><a href="../add-google-plus-comments-wordpress/index.html" target="_blank">Google+ comments for WordPress</a></p>
+<p><strong>Why you should use Facebook comments in WordPress?</strong></p>
+<ol>
+<li>Most of the people have a Facebook account so using it will increase the number of comments on your blog.</li>
+<li>Improved Social sharing &#8211; Content would be shared frequently on the Facebook.</li>
+<li>Can build up a good community over Facebook which can later become a good source of traffic.</li>
+</ol>
+<p>Before we proceed with the process of adding it to a blog, <strong>let&#8217;s see how Facebook Comments it looks like on a blog</strong>.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-3440" style="border: 1px solid grey;" alt="Add Facebook Comments to WordPress" src="../../../wp-content/uploads/2013/09/fb-comment.png" width="483" height="622" srcset="https://beginnersbook.com/wp-content/uploads/2013/09/fb-comment.png 483w, https://beginnersbook.com/wp-content/uploads/2013/09/fb-comment-232x300.png 232w" sizes="(max-width: 483px) 100vw, 483px" /></p>
+<h2>How to Add Facebook Comments to WordPress blog</h2>
+<p>There are two ways of doing it &#8211;</p>
+<p>1) Using WordPress plugins &#8211; There are two popular WP plugins which does this task for you. They just require Facebook App ID, the step by step process of creating App ID is shared below.<br />
+2) Facebook comments for WordPress without plugin &#8211; Some folks prefer to do the things on their own, for theme I have shared the code and scripts, which can be added directly to your theme&#8217;s template in order to have the Facebook comments on your blog.</p>
+<h3>1) Using WordPress plugins</h3>
+<p>Here are the plugins which can add Facebook Comments into your WordPress blog.</p>
+<ul>
+<li><span style="text-decoration: underline;">Facebook comments plugin by Alex</span></li>
+<li><span style="text-decoration: underline;">Facebook comments for WordPress</span></li>
+</ul>
+<h4>Facebook Comments plugin by Alex</h4>
+<p>Step 1: Download the plugin from WordPress page: <a href="https://wordpress.org/plugins/facebook-comments-plugin/">http://wordpress.org/plugins/facebook-comments-plugin/</a>, install and Activate it on your blog.</p>
+<p>Step 2: Once you are done with step 1, go to WordPress<strong> » </strong>Settings<strong> » </strong>Facebook Comments and configure all the settings properly. This step would require a <strong>Facebook APP ID for activation</strong>.</p>
+<h4>How to create Facebook APP ID for Comments?</h4>
+<p>a) Go to <a href="https://developers.facebook.com/apps" target="_blank">Facebook Developers page</a> and click &#8220;<strong>Create New App</strong>&#8221;
+</p>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-3441" style="border: 1px solid grey;" alt="Create New Facebook App" src="../../../wp-content/uploads/2013/09/create-new-app.png" width="535" height="126" srcset="https://beginnersbook.com/wp-content/uploads/2013/09/create-new-app.png 535w, https://beginnersbook.com/wp-content/uploads/2013/09/create-new-app-300x70.png 300w" sizes="(max-width: 535px) 100vw, 535px" /></p>
+<p>b) A screen will pop up where you need to enter the App Name, App category and sub-category. Click Continue and enter the required captcha and hit continue.
+</p>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-3443" alt="Facebook App Screen" src="../../../wp-content/uploads/2013/09/app-name.png" width="620" height="195" srcset="https://beginnersbook.com/wp-content/uploads/2013/09/app-name.png 620w, https://beginnersbook.com/wp-content/uploads/2013/09/app-name-300x94.png 300w" sizes="(max-width: 620px) 100vw, 620px" /></p>
+<p>c) You would get a screen like the below one. Note down the App ID as shown below, this is the one which you would be needing for activating plugin to display <strong>Facebook comments for </strong><b>WordPress. </b>Enter your site&#8217;s url in the App Domains field and save the changes. That&#8217;s it you are done with creating new App ID.
+</p>
+<p style="text-align: center;"><img class="aligncenter  wp-image-3442" style="border: 1px solid grey;" alt="Website's info for Facebook App ID for comments " src="../../../wp-content/uploads/2013/09/app-id.png" width="580" height="295" srcset="https://beginnersbook.com/wp-content/uploads/2013/09/app-id.png 725w, https://beginnersbook.com/wp-content/uploads/2013/09/app-id-300x152.png 300w" sizes="(max-width: 580px) 100vw, 580px" /></p>
+<p>Step 3: Enter the FB App Id in the plugin&#8217;s setting page and save the settings. By the time, the Facebook comments should be displayed on your blog. If you see any issues then use <a href="https://developers.facebook.com/tools/debug" target="_blank">Facebook Debugger</a> to fix the issues. In the above screenshot, the Sandbox mode is enabled, however you may wish to disable it, in order to display the comments for all the users.</p>
+<h4>Comment Moderation Tool</h4>
+<p>Comment will be waiting in the moderation queue until unless you approve them. In order to moderate the comments visit the <a href="https://developers.facebook.com/tools/comments" target="_blank">Facebook comment moderation tool</a>. This is quite an advantage of having Facebook comment on your blog rather than Google+ comments as G+ comments doesn&#8217;t wait for the moderation, which ends up in a big headache of monitoring all the comments on daily basis. Hopefully, soon there would be a solution for Google+ comments moderation too.</p>
+<h4>Manual placement of Comments</h4>
+<p><strong>» </strong>Below code can be placed in your theme&#8217;s template to have a desired placement of Comment box.</p>
+<pre>echo do_shortcode('[fbcomments]');</pre>
+<p><strong>» </strong>The below code can be used while writing a post/page.</p>
+<pre>[fbcomments]</pre>
+<p><strong>» </strong>If you wish to stop comments from being displayed on certain post ids, such as: 222, 20, 447, 77 then use the below short code to remove comment box from them. For any other assistance you can visit author&#8217;s page: <a href="http://3doordigital.com/wordpress/plugins/facebook-comments/" target="_blank">Facebook Comments WordPress Plugin</a></p>
+<pre>if (!is_single(array(222,20,447,77))) {echo do_shortcode('[fbcomments]');</pre>
+<h4>Facebook comments for WordPress</h4>
+<p><strong>Note: </strong>This plugin has not been update from a very long time so I would suggest you to go with the above plugin. But still, if the above plugin is not compatible with your theme or creating a conflict with other plugin or there is any other issue with it then you can very well try this one. Steps are as follows &#8211;</p>
+<p>Step 1: Download the plugin from WordPress page: <a href="https://wordpress.org/plugins/facebook-comments-for-wordpress/" target="_blank">Facebook comments for WordPress</a> , upload, install and activate it similar to the above plugin.</p>
+<p>Step 2: In the settings page enter the Facebook App ID  and secret key(<strong>Steps for creating of Facebook App ID and Secret key are shared above</strong>) and save settings.</p>
+<p>That&#8217;s it!! The plugin should be working now on your blog.</p>
+<h3>2) Facebook comments for WordPress without plugin</h3>
+<p>Step 1: Add the below code in your theme&#8217;s files right after the opening of &lt;Body&gt; tag. You can have it in the <strong>single.php </strong>file for displaying the comment box on every single post.</p>
+<pre>&lt;div id="fb-root"&gt;&lt;/div&gt;
+&lt;script&gt;(function(d, s, id) {
+ var js, fjs = d.getElementsByTagName(s)[0];
+ if (d.getElementById(id)) return;
+ js = d.createElement(s); js.id = id;
+ js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=FB-APP-ID";
+ fjs.parentNode.insertBefore(js, fjs); }
+(document, 'script', 'facebook-jssdk'));
+&lt;/script&gt;</pre>
+<p>Replace the App ID in the above code</p>
+<pre>appId=FB-APP-ID</pre>
+<p>with your App Id (Steps are shared above for creating the new App ID)</p>
+<p>Step 2: Place the below code where you want to display the comment box. Adjust the width as per the need. You would prefer to include it in <strong>comments.php</strong> file of your theme.</p>
+<pre>&lt;div class="fb-comments" data-href="&lt;?php the_permalink() ?&gt;" data-width="470" &gt;
+&lt;/div&gt;</pre>
+<p>Step 3: Add the below piece of code in the header section of your entire website (within &lt;head&gt; &#8230; &lt;/head&gt; tags) by including it in the <strong>header.php</strong> file of your blog. Replace the FB-APP-ID with the actual ID in the below code.</p>
+<pre>&lt;meta property="fb:app_id" content="FB-APP-ID"/&gt;</pre>
+<p><strong>Reference: </strong><a href="https://developers.facebook.com/docs/reference/plugins/comments/" target="_blank">Comment Box &#8211; Facebook Developers</a></p>
+<h4>Conclusion</h4>
+<p>Adding Facebook comments to your WordPress blog is easy and hardly takes few minutes to set it up. If you have a good fan following on Facebook then having it on your blog can be good in terms of traffic and social sharing. Let me know if you face any issues while setting it up or in case of any questions. Do, let us know which comment box do you prefer: Google+ comments or Facebook comments.</p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../best-plugins-to-display-related-posts-with-thumbnails-in-wordpress/index.html" rel="bookmark" title="Link to Best Plugins to display Related Posts with Thumbnails in WordPress">Best Plugins to display Related Posts with Thumbnails in WordPress</a></li><li><a href="../../10/add-facebook-open-graph-yoast-wordpress-seo-plugin/index.html" rel="bookmark" title="Link to How to add Facebook Open Graph using Yoast WordPress SEO plugin">How to add Facebook Open Graph using Yoast WordPress SEO plugin</a></li><li><a href="../add-google-plus-badge-wordpress/index.html" rel="bookmark" title="Link to How to Add Google+ “Add to Circles” Badge to WordPress">How to Add Google+ “Add to Circles” Badge to WordPress</a></li><li><a href="../../01/how-to-cloak-affiliate-links/index.html" rel="bookmark" title="Link to How to cloak affiliate links">How to cloak affiliate links</a></li><li><a href="../../../2012/12/how-to-install-wordpress-plugins/index.html" rel="bookmark" title="Link to How to install WordPress plugins">How to install WordPress plugins</a></li><li><a href="../read-more-link-wordpress-excerpts/index.html" rel="bookmark" title="Link to How to Display a Read More link in WordPress Excerpts">How to Display a Read More link in WordPress Excerpts</a></li></ol></div><footer class="entry-footer"></footer></article>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='3439' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="c7bc97c421" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="80"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-49" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><h4 class="widget-title widgettitle">SEO</h4>
+<ul>
+<li><a href="../../../2012/11/how-to-write-seo-articles-with-keywords/index.html">Write SEO Articles</a></li>
+<li><a href="../../10/add-facebook-open-graph-yoast-wordpress-seo-plugin/index.html">Open Graph Meta Tags</a></li>
+<li><a href="../../01/seo-friendly-images-alt-tag/index.html">SEO Friendly Images</a></li>
+<li><a href="../seopressor-v5-review/index.html">SEOPressor Review</a></li>
+<li><a href="../../08/auto-interlink-posts-wordpress-seo-smart-links-seo-alrp/index.html">Auto Interlink Posts</a></li>
+</ul>
+
+<h4 class="widget-title widgettitle">WordPress</h4>
+<ul>
+<li><a href="../../10/5-free-plugins-adding-facebook-open-graph-meta-tags-wordpress/index.html">Free plugins to add Open Graph Tags</a></li>
+<li><a href="../../10/5-free-plugins-adding-captcha-wordpress-blog-comments/index.html">Free plugins to add Captcha</a></li>
+<li><a href="../set-default-thumbnail-featured-fallback-image-wordpress-automatically/index.html">Set thumbnails automatically</a></li>
+<li><a href="../display-related-posts-thumbnails-wordpress-plugin/index.html">Display related Posts WP</a></li>
+<li><a href="../change-post-excerpt-length-wordpress/index.html">Change Post excerpt length WP</a></li>
+</ul>
+
+<h4 class="widget-title widgettitle">Website</h4>
+<ul>
+<li><a href="../add-facebook-like-button-website/index.html">Add Facebook like button</a></li>
+<li><a href="../add-google-button-website/index.html">Add Google plus button</a></li>
+<li><a href="../add-twitter-button-website/index.html">Add Twitter button</a></li>
+<li><a href="../../10/create-a-free-website-on-blogspot/index.html">Create Free Website on blogspot</a></li>
+</ul></div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/09/add-facebook-comments-wordpress/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:31:15 GMT -->
+</html>

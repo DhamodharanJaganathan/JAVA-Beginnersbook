@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2015/04/json-tutorial/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:35:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JSON Tutorial: Learn JSON in 10 Minutes</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="JSON stands for JavaScript Object Notation. JSON objects are used for transferring data between server and client, XML serves the same purpose. However JSON objects have several advantages over XML and we are going to discuss them in this tutorial along with JSON concepts and its usages. Let’s have a look at the"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="JSON Tutorial: Learn JSON in 10 Minutes" />
+<meta property="og:description" content="JSON stands for JavaScript Object Notation. JSON objects are used for transferring data between server and client, XML serves the same purpose. However JSON objects have several advantages over XML and we are going to discuss them in this tutorial along with JSON concepts and its usages. Let’s have a look at the" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="JSON" />
+<meta property="article:published_time" content="2015-04-01T19:05:21+00:00" />
+<meta property="article:modified_time" content="2016-03-07T10:31:15+00:00" />
+<meta property="og:updated_time" content="2016-03-07T10:31:15+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="JSON stands for JavaScript Object Notation. JSON objects are used for transferring data between server and client, XML serves the same purpose. However JSON objects have several advantages over XML and we are going to discuss them in this tutorial along with JSON concepts and its usages. Let’s have a look at the" />
+<meta name="twitter:title" content="JSON Tutorial: Learn JSON in 10 Minutes" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; JSON Tutorial: Learn JSON in 10 Minutes Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index7f41.html?p=5880' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed3f38.json?url=https%3A%2F%2Fbeginnersbook.com%2F2015%2F04%2Fjson-tutorial%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedf50f?url=https%3A%2F%2Fbeginnersbook.com%2F2015%2F04%2Fjson-tutorial%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-5880 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-6242"><a href="index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-5880 post type-post status-publish format-standard category-json entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">JSON Tutorial: Learn JSON in 10 Minutes</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/json/index.html" rel="category tag">JSON</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>JSON stands for JavaScript Object Notation. JSON objects are used for transferring data between server and client, XML serves the same purpose. However JSON objects have several advantages over XML and we are going to discuss them in this tutorial along with JSON concepts and its usages.</p>
+<p>Let’s have a look at the piece of a JSON data: It basically has key-value pairs.</p>
+<pre>var chaitanya = {
+   "firstName" : "Chaitanya",
+   "lastName" : "Singh",
+   "age" :  "28"
+};</pre>
+<p><strong>Features of JSON</strong>:</p>
+<ul>
+<li>It is light-weight</li>
+<li>It is language independent</li>
+<li>Easy to read and write</li>
+<li>Text based, human readable data exchange format</li>
+</ul>
+<h2>Why use JSON?</h2>
+<p><strong>Standard Structure</strong>: As we have seen so far that JSON objects are having a standard structure that makes developers job easy to read and write code, because they know what to expect from JSON.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><strong>Light weight</strong>: When working with AJAX, it is important to load the data quickly and asynchronously without requesting the page re-load. Since JSON is light weighted, it becomes easier to get and load the requested data quickly.</p>
+<p><strong>Scalable</strong>: JSON is language independent, which means it can work well with most of the modern programming language. Let’s say if we need to change the server side language, in that case it would be easier for us to go ahead with that change as JSON structure is same for all the languages.</p>
+<h2>JSON vs. XML</h2>
+<p>Let see how JSON and XML look when we store the records of 4 students in a text based format so that we can retrieve it later when required.</p>
+<p><strong>JSON style</strong>:</p>
+<pre>{"students":[
+   {"name":"John", "age":"23", "city":"Agra"},
+   {"name":"Steve", "age":"28", "city":"Delhi"},
+   {"name":"Peter", "age":"32", "city":"Chennai"},
+   {"name":"Chaitanya", "age":"28", "city":"Bangalore"}
+]}</pre>
+<p><strong>XML style</strong>:</p>
+<pre>&lt;students&gt;
+  &lt;student&gt;
+    &lt;name&gt;John&lt;/name&gt; &lt;age&gt;23&lt;/age&gt; &lt;city&gt;Agra&lt;/city&gt;
+  &lt;/student&gt;
+  &lt;student&gt;
+    &lt;name&gt;Steve&lt;/name&gt; &lt;age&gt;28&lt;/age&gt; &lt;city&gt;Delhi&lt;/city&gt;
+  &lt;/student&gt;
+  &lt;student&gt;
+    &lt;name&gt;Peter&lt;/name&gt; &lt;age&gt;32&lt;/age&gt; &lt;city&gt;Chennai&lt;/city&gt;
+  &lt;/student&gt;
+  &lt;student&gt;
+    &lt;name&gt;Chaitanya&lt;/name&gt; &lt;age&gt;28&lt;/age&gt; &lt;city&gt;Bangalore&lt;/city&gt;
+  &lt;/student&gt;
+&lt;/students&gt;</pre>
+<p>As you can clearly see JSON is much more <strong>light-weight</strong> compared to XML. Also, in JSON we take advantage of arrays that is not available in XML.</p>
+<h2>JSON data structure types and how to read them:</h2>
+<ol>
+<li>JSON objects</li>
+<li>JSON objects in array</li>
+<li>Nesting of JSON objects</li>
+</ol>
+<h4>1) JSON objects:</h4>
+<pre>var chaitanya = {
+  "name" : "Chaitanya Singh",
+  "age" : "28",
+  "website" : "beginnersbook"
+};</pre>
+<p>The above text creates an object that we can access using the variable chaitanya. Inside an object we can have any number of key-value pairs like we have above. We can access the information out of a JSON object like this:</p>
+<pre>document.writeln("The name is:  " +chaitanya.name);
+document.writeln("his age is: " + chaitanya.age);
+document.writeln("his website is: "+ chaitanya.website);
+</pre>
+<h4>2) JSON objects in array</h4>
+<p>In the above example we have stored the information of one person in a JSON object suppose we want to store the information of more than one person; in that case we can have an array of objects.</p>
+<pre>var students = [{
+   "name" : "Steve",
+   "age" :  "29",
+   "gender" : "male"
+
+},
+{
+   "name" : "Peter",
+   "age" : "32",
+   "gender" : "male"
+
+},
+{
+   "name" : "Sophie",
+   "age" : "27",
+   "gender" : "female"
+}];</pre>
+<p>To access the information out of this array, we do write the code like this:</p>
+<pre>document.writeln(students[0].age); //output would be: 29
+document.writeln(students[2].name); //output: Sophie
+</pre>
+<p>You got the point, right? Let’s carry on with the next type.</p>
+<h4>3) Nesting of JSON objects:</h4>
+<p>Another way of doing the same thing that we have done above.</p>
+<pre>var students = {
+  "steve" : {
+  "name" : "Steve",
+  "age" :  "29",
+  "gender" : "male" 
+},
+
+"pete" : {
+  "name" : "Peter",
+  "age" : "32",
+  "gender" : "male"
+},
+
+"sop" : {
+  "name" : "Sophie",
+  "age" : "27",
+  "gender" : "female"
+}
+}</pre>
+<p>Do like this to access the info from above nested JSON objects:</p>
+<pre>document.writln(students.steve.age); //output: 29
+document.writeln(students.sop.gender); //output: female</pre>
+<h2>JSON &amp; JavaScript:</h2>
+<p>JSON is considered as a subset of JavaScript but that does not mean that JSON cannot be used with other languages. In fact it works well with PHP, Perl, Python, Ruby, Java, Ajax and many more.</p>
+<p>Just to demonstrate how JSON can be used along with JavaScript, here is an example:<br />
+If you have gone though the above tutorial, you are familiar with the JSON structures. A JSON file type is .json</p>
+<p><strong>How to read data from json file and convert it into a JavaScript object?</strong><br />
+We have two ways to do this.<br />
+1) Using eval function, but this is not suggested due to security reasons (malicious data can be sent from the server to the client and then eval in the client script with harmful effects).<br />
+2) Using JSON parser: No security issues plus it is faster than eval. Here is how to use it:</p>
+<pre>var chaitanya = {
+"name" : "Chaitanya Singh",
+"age" : "28",
+"website" : "beginnersbook"
+};</pre>
+<p>We are converting the above JSON object to javascript object using JSON parser:</p>
+<pre>var myJSObject = JSON.parse(chaitanya);</pre>
+<p><strong>How to convert JavaScript object to JSON text?</strong><br />
+By using method stringify</p>
+<pre>var jsonText= JSON.stringify(myJSObject);</pre>
+<p>I guess the 10 minutes are over. Bookmark this page as I will be adding more tutorials on JSON and will add the links to those tutorials here.</p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-32831">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/0505415ed52cbef0ce5603606a575654?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/0505415ed52cbef0ce5603606a575654?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Snehal Agrawal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-18T14:17:54+00:00" itemprop="datePublished"><a href="index.html#comment-32831" class="comment-time-link" itemprop="url">August 18, 2015 at 2:17 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Well explained and it is very easy to grasp. Thanks a lot.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-32831' onclick='return addComment.moveForm( "comment-32831", "32831", "respond", "5880" )' aria-label='Reply to Snehal Agrawal'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-54654">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1582bee4c9e74d8478c2cc3b206a1c9e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1582bee4c9e74d8478c2cc3b206a1c9e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">pratap</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-04T06:03:34+00:00" itemprop="datePublished"><a href="index.html#comment-54654" class="comment-time-link" itemprop="url">May 4, 2016 at 6:03 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Well explained  and easy to learn.Thanks a lot.it would be very useful for beginners</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-54654' onclick='return addComment.moveForm( "comment-54654", "54654", "respond", "5880" )' aria-label='Reply to pratap'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-37246">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/85513af00877187abf97a8f138f2736f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/85513af00877187abf97a8f138f2736f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mallikarjun Terdal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-29T15:39:55+00:00" itemprop="datePublished"><a href="index.html#comment-37246" class="comment-time-link" itemprop="url">September 29, 2015 at 3:39 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Good and simple examples. Very well demonstrated how JSON is light weight than XML</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-37246' onclick='return addComment.moveForm( "comment-37246", "37246", "respond", "5880" )' aria-label='Reply to Mallikarjun Terdal'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-53858">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d893d16a4a29c3b83a79621dc2d94479?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d893d16a4a29c3b83a79621dc2d94479?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Shiva</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-19T10:31:12+00:00" itemprop="datePublished"><a href="index.html#comment-53858" class="comment-time-link" itemprop="url">April 19, 2016 at 10:31 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Good example, it would be very useful for biginners</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53858' onclick='return addComment.moveForm( "comment-53858", "53858", "respond", "5880" )' aria-label='Reply to Shiva'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-47064">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/414b4851afed8b91163ed48c0567dd52?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/414b4851afed8b91163ed48c0567dd52?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sathish</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-24T09:02:57+00:00" itemprop="datePublished"><a href="index.html#comment-47064" class="comment-time-link" itemprop="url">December 24, 2015 at 9:02 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>As per my understanding, JSON key and value pairs are separated by colon (:). Please change it in you example. It should be<br />
+var chaitanya = {<br />
+&#8220;name&#8221; : &#8220;Chaitanya Singh&#8221;,<br />
+&#8220;age&#8221; : &#8220;28&#8221;,<br />
+&#8220;website&#8221; : &#8220;beginnersbook&#8221;<br />
+};</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-47064' onclick='return addComment.moveForm( "comment-47064", "47064", "respond", "5880" )' aria-label='Reply to Sathish'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-53204">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/20939c6428812a3d4c98bc3cad25c266?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/20939c6428812a3d4c98bc3cad25c266?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ajay</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-01T08:22:32+00:00" itemprop="datePublished"><a href="index.html#comment-53204" class="comment-time-link" itemprop="url">April 1, 2016 at 8:22 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>its already there, please check it carefully</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53204' onclick='return addComment.moveForm( "comment-53204", "53204", "respond", "5880" )' aria-label='Reply to Ajay'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-49062">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6860eb04a5449bfdd9710db21441b18b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6860eb04a5449bfdd9710db21441b18b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Beto Galvez</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-01-18T07:35:06+00:00" itemprop="datePublished"><a href="index.html#comment-49062" class="comment-time-link" itemprop="url">January 18, 2016 at 7:35 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I took off my space helmet; thinking I was going to learn rocket-science for ten minutes. It was clear and easy to understand, thank you!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-49062' onclick='return addComment.moveForm( "comment-49062", "49062", "respond", "5880" )' aria-label='Reply to Beto Galvez'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-52012">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b0ab99f0e670564a2019e7fe16580d05?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b0ab99f0e670564a2019e7fe16580d05?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Dheeraj</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-02T08:32:26+00:00" itemprop="datePublished"><a href="index.html#comment-52012" class="comment-time-link" itemprop="url">March 2, 2016 at 8:32 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hey chaitanya!Nice content!<br />
+ I am new to javascript and json.<br />
+I am creating a UI on bootstrap which displays all files of a particular folder when i click the icon..how do i do that using json?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52012' onclick='return addComment.moveForm( "comment-52012", "52012", "respond", "5880" )' aria-label='Reply to Dheeraj'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-53548">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3fbc8fa85f5cd45f78185d9fd874012f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3fbc8fa85f5cd45f78185d9fd874012f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Kiran</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-11T11:13:05+00:00" itemprop="datePublished"><a href="index.html#comment-53548" class="comment-time-link" itemprop="url">April 11, 2016 at 11:13 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>well explained boss</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53548' onclick='return addComment.moveForm( "comment-53548", "53548", "respond", "5880" )' aria-label='Reply to Kiran'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-55439">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a35bc68d1d4e053d81a5b46d5a0fd859?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a35bc68d1d4e053d81a5b46d5a0fd859?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Zaheer</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-20T09:28:44+00:00" itemprop="datePublished"><a href="index.html#comment-55439" class="comment-time-link" itemprop="url">May 20, 2016 at 9:28 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Short n Sweet .Superb!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-55439' onclick='return addComment.moveForm( "comment-55439", "55439", "respond", "5880" )' aria-label='Reply to Zaheer'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-55597">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/90e4f2a1386fdadeaa805d90e1375b99?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/90e4f2a1386fdadeaa805d90e1375b99?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Pradip</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-23T09:59:32+00:00" itemprop="datePublished"><a href="index.html#comment-55597" class="comment-time-link" itemprop="url">May 23, 2016 at 9:59 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Nice One.. :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-55597' onclick='return addComment.moveForm( "comment-55597", "55597", "respond", "5880" )' aria-label='Reply to Pradip'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-57960">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/969b1bb5337236ec0415779300edb243?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/969b1bb5337236ec0415779300edb243?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sionline</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-07-07T07:08:58+00:00" itemprop="datePublished"><a href="index.html#comment-57960" class="comment-time-link" itemprop="url">July 7, 2016 at 7:08 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Good Stuff. Thank You</p>
+<p>Keep posting please. Thanks</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57960' onclick='return addComment.moveForm( "comment-57960", "57960", "respond", "5880" )' aria-label='Reply to Sionline'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-57971">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/dc9ba631a1a698339ee2dd9a832633be?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/dc9ba631a1a698339ee2dd9a832633be?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">karan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-07-07T13:18:26+00:00" itemprop="datePublished"><a href="index.html#comment-57971" class="comment-time-link" itemprop="url">July 7, 2016 at 1:18 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>explained well and it is very easy to understand ..waiting for your next tutorial</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57971' onclick='return addComment.moveForm( "comment-57971", "57971", "respond", "5880" )' aria-label='Reply to karan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-58979">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6b9d7fbafab17a327f0baf93d1805240?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6b9d7fbafab17a327f0baf93d1805240?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Dhruvam</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-04T11:50:06+00:00" itemprop="datePublished"><a href="index.html#comment-58979" class="comment-time-link" itemprop="url">August 4, 2016 at 11:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Very comprehensive text and very user friendly. Just the basics i needed to cover. Thanks a ton. Hope to see more stuff from you.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-58979' onclick='return addComment.moveForm( "comment-58979", "58979", "respond", "5880" )' aria-label='Reply to Dhruvam'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-59387">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c06fb3ed5f4d8194fe6eda89987ca3d9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c06fb3ed5f4d8194fe6eda89987ca3d9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Muhammad Tughral Khan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-15T11:53:09+00:00" itemprop="datePublished"><a href="index.html#comment-59387" class="comment-time-link" itemprop="url">August 15, 2016 at 11:53 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Nice explained and it is so easy to understand. well carry on.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-59387' onclick='return addComment.moveForm( "comment-59387", "59387", "respond", "5880" )' aria-label='Reply to Muhammad Tughral Khan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-60527">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7150b24d084283ef36ba678a66205343?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7150b24d084283ef36ba678a66205343?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Joe</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-14T00:05:06+00:00" itemprop="datePublished"><a href="index.html#comment-60527" class="comment-time-link" itemprop="url">September 14, 2016 at 12:05 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Very nice content and nicely documented. Good job !!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-60527' onclick='return addComment.moveForm( "comment-60527", "60527", "respond", "5880" )' aria-label='Reply to Joe'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-64715">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4a09868366c2d4aaf65c25517f2bc1a0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/4a09868366c2d4aaf65c25517f2bc1a0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">veeresh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-12-18T18:40:13+00:00" itemprop="datePublished"><a href="index.html#comment-64715" class="comment-time-link" itemprop="url">December 18, 2016 at 6:40 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Awesome explanation&#8230;..Please add some more article on this.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-64715' onclick='return addComment.moveForm( "comment-64715", "64715", "respond", "5880" )' aria-label='Reply to veeresh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-64744">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e82bb2141573553c0d7746ad09302a6c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e82bb2141573553c0d7746ad09302a6c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Priya</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-12-19T12:34:36+00:00" itemprop="datePublished"><a href="index.html#comment-64744" class="comment-time-link" itemprop="url">December 19, 2016 at 12:34 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>So Precise &amp; crisp that makes it easy for beginners to grasp quickly.Do continue this great work Chaitanya.Thanks !</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-64744' onclick='return addComment.moveForm( "comment-64744", "64744", "respond", "5880" )' aria-label='Reply to Priya'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-66123">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3c635cd72736614bec1822748dab03f8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3c635cd72736614bec1822748dab03f8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Pavan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-17T19:50:30+00:00" itemprop="datePublished"><a href="index.html#comment-66123" class="comment-time-link" itemprop="url">January 17, 2017 at 7:50 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Very nice content for beginners. Great job (y)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-66123' onclick='return addComment.moveForm( "comment-66123", "66123", "respond", "5880" )' aria-label='Reply to Pavan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-68269">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e1c5c552fb39da83021d671f0b2823de?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e1c5c552fb39da83021d671f0b2823de?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Bob Green</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-09T10:00:57+00:00" itemprop="datePublished"><a href="index.html#comment-68269" class="comment-time-link" itemprop="url">March 9, 2017 at 10:00 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Simply brilliant! Clearly written and explained.  Looking forward to the next installment.  I would like to see how to extract a single key-value pair from an object or an array.  Also how to reference an individual array element.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-68269' onclick='return addComment.moveForm( "comment-68269", "68269", "respond", "5880" )' aria-label='Reply to Bob Green'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-68923">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/25f5168a61f2e3bfcc4d5f63f735d91b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/25f5168a61f2e3bfcc4d5f63f735d91b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Dilshad</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-26T05:58:15+00:00" itemprop="datePublished"><a href="index.html#comment-68923" class="comment-time-link" itemprop="url">March 26, 2017 at 5:58 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Nicely demonstrated in short duration :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-68923' onclick='return addComment.moveForm( "comment-68923", "68923", "respond", "5880" )' aria-label='Reply to Dilshad'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-69845">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/746d147b1126a02313832a6db22c2777?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/746d147b1126a02313832a6db22c2777?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">kajal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-23T18:02:58+00:00" itemprop="datePublished"><a href="index.html#comment-69845" class="comment-time-link" itemprop="url">April 23, 2017 at 6:02 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Each and every part is clearly explained and thanks for exploring your views</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69845' onclick='return addComment.moveForm( "comment-69845", "69845", "respond", "5880" )' aria-label='Reply to kajal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-72520">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1b862ca5ef783c5526746edb056bed2e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1b862ca5ef783c5526746edb056bed2e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">nocturnal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-07-23T17:51:02+00:00" itemprop="datePublished"><a href="index.html#comment-72520" class="comment-time-link" itemprop="url">July 23, 2017 at 5:51 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>GAINING My confidence back in coding :)<br />
+thank you so much , loved every bit of it &lt;3</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-72520' onclick='return addComment.moveForm( "comment-72520", "72520", "respond", "5880" )' aria-label='Reply to nocturnal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='5880' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="b3d39cb2ac" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="2"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2015/04/json-tutorial/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:35:51 GMT -->
+</html>

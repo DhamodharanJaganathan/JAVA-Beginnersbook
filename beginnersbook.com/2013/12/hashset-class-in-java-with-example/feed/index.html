@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: HashSet Class in Java with example</title>
+	<atom:link href="https://beginnersbook.com/2013/12/hashset-class-in-java-with-example/feed/" rel="self" type="application/rss+xml" />
+	<link>https://beginnersbook.com/2013/12/hashset-class-in-java-with-example/</link>
+	<description></description>
+	<lastBuildDate>Fri, 06 Apr 2018 04:50:05 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.5</generator>
+	<item>
+		<title>By: amin</title>
+		<link>https://beginnersbook.com/2013/12/hashset-class-in-java-with-example/#comment-80964</link>
+		<dc:creator><![CDATA[amin]]></dc:creator>
+		<pubDate>Fri, 15 Dec 2017 06:37:59 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4436#comment-80964</guid>
+		<description><![CDATA[thank you for the tutorial
+but the fact that &quot; If you try to add a duplicate element in HashSet, the old value would be overwritten.&quot; is not true.
+according to what it says on oracle website in this link (https://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html), it&#039;s the other way around (i.e. if element_to_be_added is a duplicate, it won&#039;t be added at all):
+
+
+public boolean add(E e)
+
+Adds the specified element to this set if it is not already present. More formally, adds the specified element e to this set if this set contains no element e2 such that (e==null ? e2==null : e.equals(e2)). If this set already contains the element, the call leaves the set unchanged and returns false.]]></description>
+		<content:encoded><![CDATA[<p>thank you for the tutorial<br />
+but the fact that &#8221; If you try to add a duplicate element in HashSet, the old value would be overwritten.&#8221; is not true.<br />
+according to what it says on oracle website in this link (<a href="https://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html" rel="nofollow">https://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html</a>), it&#8217;s the other way around (i.e. if element_to_be_added is a duplicate, it won&#8217;t be added at all):</p>
+<p>public boolean add(E e)</p>
+<p>Adds the specified element to this set if it is not already present. More formally, adds the specified element e to this set if this set contains no element e2 such that (e==null ? e2==null : e.equals(e2)). If this set already contains the element, the call leaves the set unchanged and returns false.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Naja</title>
+		<link>https://beginnersbook.com/2013/12/hashset-class-in-java-with-example/#comment-73132</link>
+		<dc:creator><![CDATA[Naja]]></dc:creator>
+		<pubDate>Fri, 11 Aug 2017 06:55:30 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4436#comment-73132</guid>
+		<description><![CDATA[can equal objects be added to hashset ? if yes then why it is not considered as duplicate ?]]></description>
+		<content:encoded><![CDATA[<p>can equal objects be added to hashset ? if yes then why it is not considered as duplicate ?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: shardul</title>
+		<link>https://beginnersbook.com/2013/12/hashset-class-in-java-with-example/#comment-63797</link>
+		<dc:creator><![CDATA[shardul]]></dc:creator>
+		<pubDate>Thu, 24 Nov 2016 10:29:19 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4436#comment-63797</guid>
+		<description><![CDATA[==================Hash List===================
+[null, Apple, Grapes, Fig, Mango, Orange]
+ hi, I tried your code but it gets the result in sorted format.]]></description>
+		<content:encoded><![CDATA[<p>==================Hash List===================<br />
+[null, Apple, Grapes, Fig, Mango, Orange]<br />
+ hi, I tried your code but it gets the result in sorted format.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Abhay Kumar Dash</title>
+		<link>https://beginnersbook.com/2013/12/hashset-class-in-java-with-example/#comment-59520</link>
+		<dc:creator><![CDATA[Abhay Kumar Dash]]></dc:creator>
+		<pubDate>Thu, 18 Aug 2016 20:42:13 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4436#comment-59520</guid>
+		<description><![CDATA[In Array List Dont follow default Sorting mechanism but In case Of Hash Set its possible and Insertion is not preserved in Hash set
+So the Collection Gives Facility for default sorting by using utility class &#039;Collections&#039;]]></description>
+		<content:encoded><![CDATA[<p>In Array List Dont follow default Sorting mechanism but In case Of Hash Set its possible and Insertion is not preserved in Hash set<br />
+So the Collection Gives Facility for default sorting by using utility class &#8216;Collections&#8217;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: manish gour</title>
+		<link>https://beginnersbook.com/2013/12/hashset-class-in-java-with-example/#comment-56154</link>
+		<dc:creator><![CDATA[manish gour]]></dc:creator>
+		<pubDate>Fri, 03 Jun 2016 13:07:41 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4436#comment-56154</guid>
+		<description><![CDATA[This tutorial is superb, I like it.
+
+and It think by - &quot;if HashSet has been modified after creation of iterator&quot;
+You mean this:
+
+HashSet hs = new HashSet();
+
+Song s1 = new Song(&quot;zzz&quot;, &quot;zaheer&quot;, &quot;23&quot;, &quot;343&quot;);
+Song s2 = new Song(&quot;xx&quot;, &quot;mosin&quot;, &quot;23&quot;, &quot;343&quot;);
+
+hs.add(s1);
+hs.add(s2);
+
+Iterator itr = hs.iterator();
+
+Song s6 = new Song(&quot;ooo&quot;, &quot;yakoob&quot;, &quot;23&quot;, &quot;343&quot;);
+hs.add(s6);
+
+while (itr.hasNext()) {
+     System.out.println(itr.next());
+}]]></description>
+		<content:encoded><![CDATA[<p>This tutorial is superb, I like it.</p>
+<p>and It think by &#8211; &#8220;if HashSet has been modified after creation of iterator&#8221;<br />
+You mean this:</p>
+<p>HashSet hs = new HashSet();</p>
+<p>Song s1 = new Song(&#8220;zzz&#8221;, &#8220;zaheer&#8221;, &#8220;23&#8221;, &#8220;343&#8221;);<br />
+Song s2 = new Song(&#8220;xx&#8221;, &#8220;mosin&#8221;, &#8220;23&#8221;, &#8220;343&#8221;);</p>
+<p>hs.add(s1);<br />
+hs.add(s2);</p>
+<p>Iterator itr = hs.iterator();</p>
+<p>Song s6 = new Song(&#8220;ooo&#8221;, &#8220;yakoob&#8221;, &#8220;23&#8221;, &#8220;343&#8221;);<br />
+hs.add(s6);</p>
+<p>while (itr.hasNext()) {<br />
+     System.out.println(itr.next());<br />
+}</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: ARNOLD</title>
+		<link>https://beginnersbook.com/2013/12/hashset-class-in-java-with-example/#comment-56075</link>
+		<dc:creator><![CDATA[ARNOLD]]></dc:creator>
+		<pubDate>Wed, 01 Jun 2016 08:44:17 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4436#comment-56075</guid>
+		<description><![CDATA[hello
+thanks for your site
+i have a Question
+how can 
+Writing program with Hashset that show me 
+Repetitive words ???]]></description>
+		<content:encoded><![CDATA[<p>hello<br />
+thanks for your site<br />
+i have a Question<br />
+how can<br />
+Writing program with Hashset that show me<br />
+Repetitive words ???</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: RAVI PRAKASH</title>
+		<link>https://beginnersbook.com/2013/12/hashset-class-in-java-with-example/#comment-51307</link>
+		<dc:creator><![CDATA[RAVI PRAKASH]]></dc:creator>
+		<pubDate>Thu, 18 Feb 2016 09:22:41 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4436#comment-51307</guid>
+		<description><![CDATA[Hash set can contains null value whereas array list cannot]]></description>
+		<content:encoded><![CDATA[<p>Hash set can contains null value whereas array list cannot</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Umesh</title>
+		<link>https://beginnersbook.com/2013/12/hashset-class-in-java-with-example/#comment-50894</link>
+		<dc:creator><![CDATA[Umesh]]></dc:creator>
+		<pubDate>Fri, 12 Feb 2016 09:28:22 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4436#comment-50894</guid>
+		<description><![CDATA[Array list is ordered collection and allowed duplicates where HashSet is not]]></description>
+		<content:encoded><![CDATA[<p>Array list is ordered collection and allowed duplicates where HashSet is not</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/11/jsp-implicit-object-pagecontext-with-examples/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:56:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>pageContext Implicit Object in JSP with examples</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="It is an instance of javax.servlet.jsp.PageContext. Using this object you can find attribute, get attribute, set attribute and remove attribute at any of the below levels – JSP Page – Scope: PAGE_CONTEXT HTTP Request – Scope: REQUEST_CONTEXT HTTP Session – Scope: SESSION_CONTEXT Application Level – Scope:"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="pageContext Implicit Object in JSP with examples" />
+<meta property="og:description" content="It is an instance of javax.servlet.jsp.PageContext. Using this object you can find attribute, get attribute, set attribute and remove attribute at any of the below levels – JSP Page – Scope: PAGE_CONTEXT HTTP Request – Scope: REQUEST_CONTEXT HTTP Session – Scope: SESSION_CONTEXT Application Level – Scope:" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="implicit object" />
+<meta property="article:tag" content="JSP" />
+<meta property="article:tag" content="pageContext" />
+<meta property="article:section" content="JSP tutorial" />
+<meta property="article:published_time" content="2013-11-20T06:15:14+00:00" />
+<meta property="article:modified_time" content="2013-11-20T06:18:11+00:00" />
+<meta property="og:updated_time" content="2013-11-20T06:18:11+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/11/pageContext3.png" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/11/pageContext3.png" />
+<meta property="og:image:width" content="643" />
+<meta property="og:image:height" content="286" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="It is an instance of javax.servlet.jsp.PageContext. Using this object you can find attribute, get attribute, set attribute and remove attribute at any of the below levels – JSP Page – Scope: PAGE_CONTEXT HTTP Request – Scope: REQUEST_CONTEXT HTTP Session – Scope: SESSION_CONTEXT Application Level – Scope:" />
+<meta name="twitter:title" content="pageContext Implicit Object in JSP with examples" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2013/11/pageContext3.png" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; pageContext Implicit Object in JSP with examples Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexe0f7.html?p=4010' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embede73a.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F11%2Fjsp-implicit-object-pagecontext-with-examples%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedd001?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F11%2Fjsp-implicit-object-pagecontext-with-examples%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-4010 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-4010 post type-post status-publish format-standard has-post-thumbnail category-jsp-tutorial tag-implicit-object tag-jsp tag-pagecontext entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">pageContext Implicit Object in JSP with examples</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/jsp-tutorial/index.html" rel="category tag">JSP tutorial</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>It is an instance of <strong>javax.servlet.jsp.PageContext</strong>. Using this object you can find attribute, get attribute, set attribute and remove attribute at any of the below levels –</p>
+<ol>
+<li>JSP Page – Scope: PAGE_CONTEXT</li>
+<li>HTTP Request – Scope: REQUEST_CONTEXT</li>
+<li>HTTP Session – Scope: SESSION_CONTEXT</li>
+<li>Application Level – Scope: APPLICATION_CONTEXT</li>
+</ol>
+<p><strong>Quick links:</strong></p>
+<ul>
+<li><a href="#example">pageContext implicit object complete example</a></li>
+<li><a href="#output">Screenshots of the example&#8217;s output</a></li>
+</ul>
+<h3>Methods of pageContext Implicit Object</h3>
+<ol>
+<li><b>Object findAttribute (String AttributeName):</b> This method searches for the specified attribute in all four levels in the following order – Page, Request, Session and Application. It returns NULL when no attribute found at any of the level.</li>
+<li><b>Object getAttribute (String AttributeName, int Scope): </b>It looks for an attribute in the specified scope. This method is similar to findAttribute method; the only difference is that findAttribute looks in all the four levels in a sequential order while getAttribute looks in a specified scope. For e.g. – In the below statement the getAttribute method would search for the attribute “BeginnersBook” in <b>Session scope (or Session level/layer). </b>If it finds the attribute it would assign it to Object obj else it would return Null.
+<pre>    Object obj = pageContext.getAttribute("BeginnersBook", PageContext.SESSION_CONTEXT);</pre>
+<p>Similarly the method can be used for other scopes too –</p>
+<pre>    Object obj = pageContext.getAttribute("BeginnersBook", PageContext. REQUEST_CONTEXT);
+    Object obj = pageContext.getAttribute("BeginnersBook", PageContext. PAGE_CONTEXT);
+    Object obj = pageContext.getAttribute("BeginnersBook", PageContext. APPLICATION_CONTEXT);</pre>
+</li>
+<li><b>void removeAttribute(String AttributeName, int Scope): </b>This method is used to remove an attribute from a given scope. For example – The below JSP statement would remove an Attribute “MyAttr” from page scope.
+<pre>    pageContext.removeAttribute(“MyAttr”, PageContext. PAGE_CONTEXT);</pre>
+</li>
+<li><b>void setAttribute(String AttributeName, Object AttributeValue, int Scope): </b>It writes an attribute in a given scope. Example – Below statement would store an Attribute “mydata” in application scope with the value “This is my data”.
+<pre>    pageContext.setAttribute(“mydata”, “This is my data”, PageContext. APPLICATION_CONTEXT);</pre>
+<p>Similarly this would create an attribute named attr1 in Request scope with value “Attr1 value”.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>    pageContext.setAttribute(“attr1”, “Attr1 value”, PageContext. REQUEST_CONTEXT);</pre>
+</li>
+</ol>
+<h3 id="example">pageContext Implicit Object Example</h3>
+<p><span style="text-decoration: underline;">index.html</span></p>
+<p>Here we are simply asking user to enter login details.</p>
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt; User Login Page – Enter details&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form action="validation.jsp"&gt;
+Enter User-Id: &lt;input type="text" name="uid"&gt;&lt;br&gt;
+Enter Password: &lt;input type="text" name="upass"&gt;&lt;br&gt;
+&lt;input type="submit" value="Login"&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p><span style="text-decoration: underline;">validation.jsp</span></p>
+<p>In this page we are storing user&#8217;s credentials using <strong>pageContext</strong> implicit object with the <strong>session scope</strong>, which means we will be able to access the details till the user&#8217;s session is active. We can also store the attribute using other scope parameters such as page, application and request.</p>
+<pre>&lt;html&gt;
+&lt;head&gt; &lt;title&gt; Validation JSP Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;% 
+String id=request.getParameter("uid");
+String pass=request.getParameter("upass");
+out.println("hello "+id);
+pageContext.setAttribute("UName", id, PageContext.SESSION_SCOPE);
+pageContext.setAttribute("UPassword", pass, PageContext.SESSION_SCOPE);
+%&gt;
+&lt;a href="display.jsp"&gt;Click here to see what you have entered &lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p><span style="text-decoration: underline;">display.jsp</span></p>
+<p>In this JSP page we are fetching the stored attributes using getAttribute method. The point to note here is that we have stored the attributes with session scope so we must need to specify scope as session in order to fetch those attribute&#8217;s value.</p>
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Displaying User Details&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;%
+String username= (String) pageContext.getAttribute("UName", PageContext.SESSION_SCOPE);
+String userpassword= (String) pageContext.getAttribute("UPassword", PageContext.SESSION_SCOPE);
+out.println("Hi "+username);
+out.println("Your Password is: "+userpassword);
+%&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p><strong id="output">Screenshots of the example&#8217;s output:</strong></p>
+<p>Login page where we are receiving User-Id and Password from user.</p>
+<p><img class="aligncenter  wp-image-4012" alt="pageContext1" src="../../../wp-content/uploads/2013/11/pageContext1.png" width="579" height="257" srcset="https://beginnersbook.com/wp-content/uploads/2013/11/pageContext1.png 643w, https://beginnersbook.com/wp-content/uploads/2013/11/pageContext1-300x133.png 300w" sizes="(max-width: 579px) 100vw, 579px" /><br />
+A page with details page link &#8211;</p>
+<p><img class="aligncenter  wp-image-4013" alt="pageContext2" src="../../../wp-content/uploads/2013/11/pageContext2.png" width="579" height="257" srcset="https://beginnersbook.com/wp-content/uploads/2013/11/pageContext2.png 643w, https://beginnersbook.com/wp-content/uploads/2013/11/pageContext2-300x133.png 300w" sizes="(max-width: 579px) 100vw, 579px" /><br />
+User Credentials display page which we have passed from login page to this page through <strong>pageContext</strong> instance.<br />
+<img class="aligncenter  wp-image-4014" alt="pageContext3" src="../../../wp-content/uploads/2013/11/pageContext3.png" width="579" height="257" srcset="https://beginnersbook.com/wp-content/uploads/2013/11/pageContext3.png 643w, https://beginnersbook.com/wp-content/uploads/2013/11/pageContext3-300x133.png 300w" sizes="(max-width: 579px) 100vw, 579px" /><br />
+If you have any questions regarding pageContext implicit object, feel free to ask by dropping a comment below. We will be more than happy to assist you!!</p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../12/jsp-include-directive-with-parameters-example/index.html" rel="bookmark" title="Link to JSP include directive with parameters example">JSP include directive with parameters example</a></li><li><a href="../jsp-implicit-object-out-with-examples/index.html" rel="bookmark" title="Link to OUT Implicit Object in JSP with examples">OUT Implicit Object in JSP with examples</a></li><li><a href="../../../2017/06/how-to-configure-apache-tomcat-server-in-eclipse-ide/index.html" rel="bookmark" title="Link to How to configure Apache Tomcat Server in Eclipse IDE">How to configure Apache Tomcat Server in Eclipse IDE</a></li><li><a href="../jsp-implicit-object-session-with-examples/index.html" rel="bookmark" title="Link to Session Implicit Object in JSP with examples">Session Implicit Object in JSP with examples</a></li><li><a href="../../../2014/01/jsp-custom-tags-with-example-jsp-tutorial/index.html" rel="bookmark" title="Link to JSP Custom tags with example &#8211; JSP Tutorial">JSP Custom tags with example &#8211; JSP Tutorial</a></li><li><a href="../../../2017/06/jsp-in-eclipse-ide-apache-tomcat-server/index.html" rel="bookmark" title="Link to How to run JSP in Eclipse IDE using Apache Tomcat Server">How to run JSP in Eclipse IDE using Apache Tomcat Server</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-2530">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/df40fb655601255830d9124d348f503e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/df40fb655601255830d9124d348f503e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Varun Tiwari</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-04T04:50:46+00:00" itemprop="datePublished"><a href="index.html#comment-2530" class="comment-time-link" itemprop="url">April 4, 2014 at 4:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Sir thanks a lot for your example of pageContext, I  tried many times but I had confusion about that, but after reading your example it is now clear to me.</p>
+<p>Thanks</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2530' onclick='return addComment.moveForm( "comment-2530", "2530", "respond", "4010" )' aria-label='Reply to Varun Tiwari'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-2611">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-06T15:13:17+00:00" itemprop="datePublished"><a href="index.html#comment-2611" class="comment-time-link" itemprop="url">April 6, 2014 at 3:13 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks Varun :)<br />
+I am happy that it helped you.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2611' onclick='return addComment.moveForm( "comment-2611", "2611", "respond", "4010" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-5190">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4c29dc28d0d793899a62b1c817c6c2a7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/4c29dc28d0d793899a62b1c817c6c2a7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">srinivas</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-07-15T17:54:23+00:00" itemprop="datePublished"><a href="index.html#comment-5190" class="comment-time-link" itemprop="url">July 15, 2014 at 5:54 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>good explanation..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5190' onclick='return addComment.moveForm( "comment-5190", "5190", "respond", "4010" )' aria-label='Reply to srinivas'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-9705">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bb0da600fbed6a733d54136a5007e3fd?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bb0da600fbed6a733d54136a5007e3fd?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">phani</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-10-21T16:07:23+00:00" itemprop="datePublished"><a href="index.html#comment-9705" class="comment-time-link" itemprop="url">October 21, 2014 at 4:07 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>thank you so much sir &#8230;&#8230;&#8230;it&#8217;s a good explanation &#8230;..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-9705' onclick='return addComment.moveForm( "comment-9705", "9705", "respond", "4010" )' aria-label='Reply to phani'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-18508">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/25aa1a7c5038a4dd407c904ceed091d7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/25aa1a7c5038a4dd407c904ceed091d7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Krishnakanth</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-21T04:05:57+00:00" itemprop="datePublished"><a href="index.html#comment-18508" class="comment-time-link" itemprop="url">November 21, 2014 at 4:05 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>What is the difference between pageContext and page&#8230;and I heard that that PageContext.SESSION_CONTEXT not SESSION_SCOPE</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-18508' onclick='return addComment.moveForm( "comment-18508", "18508", "respond", "4010" )' aria-label='Reply to Krishnakanth'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-23060">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/dddeec22a932ae9a189a9d07c0af332a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/dddeec22a932ae9a189a9d07c0af332a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mathan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-02-14T03:02:12+00:00" itemprop="datePublished"><a href="index.html#comment-23060" class="comment-time-link" itemprop="url">February 14, 2015 at 3:02 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Good Explanation sir, now my doubts got cleared thank u so much</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-23060' onclick='return addComment.moveForm( "comment-23060", "23060", "respond", "4010" )' aria-label='Reply to Mathan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-52008">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e7be573983f98357d14ff37faf860b7f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e7be573983f98357d14ff37faf860b7f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">SAI KUMAR REDDY</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-02T07:13:23+00:00" itemprop="datePublished"><a href="index.html#comment-52008" class="comment-time-link" itemprop="url">March 2, 2016 at 7:13 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>We already have request and session implicit object. But again why we are using  pagecontext implicit object</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52008' onclick='return addComment.moveForm( "comment-52008", "52008", "respond", "4010" )' aria-label='Reply to SAI KUMAR REDDY'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4010' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="a98971aa38" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="203"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-12" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">JSP Tutorial</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../05/jsp-tutorial-introduction/index.html">Basics of JSP</a></li>
+<li><a href="../../05/jsp-tutorial-life-cycle/index.html">Life cycle of JSP</a></li>
+<li><a href="../../../2017/06/jsp-in-eclipse-ide-apache-tomcat-server/index.html">JSP in Eclipse IDE</a></li>
+<li><a href="../jsp-declaration-tag/index.html">Declaration tag</a></li>
+<li><a href="../jsp-expression-tag/index.html">Expression tag</a></li>
+<li><a href="../../05/jsp-tutorial-scriptlets/index.html">Scriptlets</a></li>
+<li><a href="../../05/jsp-tutorial-directives/index.html">Directives</a></li>
+<li><a href="../jsp-include-directive/index.html">Include Directive</a></li>
+<li><a href="../../12/jsp-include-directive-with-parameters-example/index.html">Param Directive</a></li>
+<li><a href="../jsp-exception-handling/index.html">Exception handling</a></li>
+<li><a href="../../06/jsp-tutorial-actions/index.html">Action tags</a></li>
+<li><a href="../jsp-include-action-tag/index.html">Include action </a></li>
+<li><a href="../jsp-forward-action-tag/index.html">Forward action</a></li>
+<li><a href="../jsp-usebean-setproperty-getproperty-action-tags/index.html">useBean, setProperty & getProperty</a></li>
+<li><a href="../jsp-implicit-objects/index.html">Implicit Objects</a></li>
+<li><a href="../jsp-implicit-object-session-with-examples/index.html">Session implicit object</a></li>
+<li><a href="../../12/how-to-validate-and-invalidate-session-in-jsp/index.html">Validate session</a></li>
+<li><a href="../jsp-implicit-object-request-with-examples/index.html">Request implicit object</a></li>
+<li><a href="../jsp-implicit-object-response-with-examples/index.html">Response implicit object</a></li>
+<li><a href="../jsp-implicit-object-out-with-examples/index.html">Out implicit object</a></li>
+<li><a href="../jsp-implicit-object-application-with-examples/index.html">Application implicit object</a></li>
+<li><a href="../jsp-implicit-object-config-with-examples/index.html">Config implicit object</a></li>
+<li><a href="index.html">pageContext implicit object</a></li>
+<li><a href="../jsp-implicit-object-exception-with-examples/index.html">Exception implicit object</a></li>
+<li><a href="../jsp-expression-language-el/index.html">Expression language</a></li>
+<li><a href="../../../2014/01/jsp-custom-tags-with-example-jsp-tutorial/index.html">Custom Tags</a></li>
+<li><a href="../../../2014/01/how-to-access-body-of-custom-tags-in-jsp-tutorial/index.html">Custom tag example</a></li>
+<li><a href="../../../2015/03/jsp-interview-questions-and-answers/index.html">JSP Interview Q</a></li>
+</ul></div>
+		</div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/11/jsp-implicit-object-pagecontext-with-examples/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:56:13 GMT -->
+</html>

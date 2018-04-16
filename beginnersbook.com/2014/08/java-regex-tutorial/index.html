@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2014/08/java-regex-tutorial/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:42:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java Regular Expressions (java regex) Tutorial with examples</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Regular expressions are used for defining String patterns that can be used for searching, manipulating and editing a text. These expressions are also known as Regex (short form of Regular expressions). Lets take an example to understand it better: In the below example, the regular expression .*book.* is used for"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Java Regular Expressions (java regex) Tutorial with examples" />
+<meta property="og:description" content="Regular expressions are used for defining String patterns that can be used for searching, manipulating and editing a text. These expressions are also known as Regex (short form of Regular expressions). Lets take an example to understand it better: In the below example, the regular expression .*book.* is used for" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="Java Tutorials" />
+<meta property="article:published_time" content="2014-08-31T13:43:03+00:00" />
+<meta property="article:modified_time" content="2014-08-31T13:47:10+00:00" />
+<meta property="og:updated_time" content="2014-08-31T13:47:10+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Regular expressions are used for defining String patterns that can be used for searching, manipulating and editing a text. These expressions are also known as Regex (short form of Regular expressions). Lets take an example to understand it better: In the below example, the regular expression .*book.* is used for" />
+<meta name="twitter:title" content="Java Regular Expressions (java regex) Tutorial with examples" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Java Regular Expressions (java regex) Tutorial with examples Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexceaa.html?p=5623' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed9095.json?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F08%2Fjava-regex-tutorial%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedd250?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F08%2Fjava-regex-tutorial%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-5623 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-5623 post type-post status-publish format-standard category-java-tutorials entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Java Regular Expressions (java regex) Tutorial with examples</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/technology/java-guide/java-tutorials/index.html" rel="category tag">Java Tutorials</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p><strong>Regular expressions</strong> are used for defining String patterns that can be used for searching, manipulating and editing a text. These expressions are also known as <strong>Regex</strong> (short form of Regular expressions).</p>
+<h4>Lets take an example to understand it better:</h4>
+<p>In the below example, the regular expression <code>.*book.*</code> is used for searching the occurrence of string &#8220;book&#8221; in the text.</p>
+<pre>import java.util.regex.*;  
+class RegexExample1{  
+   public static void main(String args[]){  
+      String content = "This is Chaitanya " +
+	    "from Beginnersbook.com.";
+
+      String pattern = ".*book.*";
+
+      boolean isMatch = Pattern.matches(pattern, content);
+      System.out.println("The text contains 'book'? " + isMatch);
+   }
+}  
+</pre>
+<p>Output:</p>
+<pre>The text contains 'book'? true</pre>
+<p>In this tutorial we will learn how to define patterns and how to use them. The java.util.regex API (the package which we need to import while dealing with Regex) has two main classes:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>1) java.util.regex.Pattern &#8211; Used for defining patterns<br />
+2) java.util.regex.Matcher &#8211; Used for performing match operations on text using patterns</p>
+<h2>java.util.regex.Pattern class:</h2>
+<h4>1) Pattern.matches()</h4>
+<p>We have already seen the usage of this method in the above example where we performed the search for string &#8220;book&#8221; in a given text. This is one of simplest and easiest way of searching a String in a text using Regex.</p>
+<pre>String content = "This is a tutorial Website!";
+String patternString = ".*tutorial.*";
+boolean isMatch = Pattern.matches(patternString, content);
+System.out.println("The text contains 'tutorial'? " + isMatch);</pre>
+<p>As you can see we have used matches() method of Pattern class to search the pattern in the given text. The pattern <code>.*tutorial.*</code> allows zero or more characters at the beginning and end of the String &#8220;tutorial&#8221; (the expression <code>.*</code> is used for zero and more characters).</p>
+<p><strong>Limitations</strong>: This way we can search a single occurrence of a pattern in a text. For matching multiple occurrences you should use the Pattern.compile() method (discussed in the next section).</p>
+<h4>2) Pattern.compile()</h4>
+<p>In the above example we searched a string &#8220;tutorial&#8221; in the text, that is a case sensitive search, however if you want to do a CASE INSENSITIVE search or want to do search multiple occurrences then you may need to first compile the pattern using Pattern.compile() before searching it in text. This is how this method can be used for this case.</p>
+<pre>String content = "This is a tutorial Website!";
+String patternString = ".*tuToRiAl.";
+Pattern pattern = Pattern.compile(patternString, Pattern.CASE_INSENSITIVE);</pre>
+<p>Here we have used a flag Pattern.CASE_INSENSITIVE for case insensitive search, there are several other flags that can be used for different-2 purposes. To read more about such flags <a href="http://docs.oracle.com/javase/tutorial/essential/regex/pattern.html" target="_blank">refer this document</a>.</p>
+<p><strong>Now what</strong>: We have obtained a Pattern instance but how to match it? For that we would be needing a Matcher instance, which we can get using Pattern.matcher() method. Lets discuss it.</p>
+<h4>3) Pattern.matcher() method</h4>
+<p>In the above section we learnt how to get a Pattern instance using compile() method. Here we will learn How to get Matcher instance from Pattern instance by using matcher() method.</p>
+<pre>String content = "This is a tutorial Website!";
+String patternString = ".*tuToRiAl.*";
+Pattern pattern = Pattern.compile(patternString, Pattern.CASE_INSENSITIVE);
+Matcher matcher = pattern.matcher(content);
+boolean isMatched = matcher.matches();
+System.out.println("Is it a Match?" + isMatched);</pre>
+<p>Output:</p>
+<pre>Is it a Match?true</pre>
+<h4>4) Pattern.split()</h4>
+<p>To split a text into multiple strings based on a delimiter (Here delimiter would be specified using <strong>regex</strong>), we can use Pattern.split() method. This is how it can be done.</p>
+<pre>import java.util.regex.*;  
+class RegexExample2{  
+public static void main(String args[]){  
+	String text = "ThisIsChaitanya.ItISMyWebsite";
+    // Pattern for delimiter
+	String patternString = "is";
+	Pattern pattern = Pattern.compile(patternString, Pattern.CASE_INSENSITIVE);
+	String[] myStrings = pattern.split(text);
+	for(String temp: myStrings){
+	    System.out.println(temp);
+	}
+	System.out.println("Number of split strings: "+myStrings.length);
+}}</pre>
+<p>Output:</p>
+<pre>Th
+
+Chaitanya.It
+MyWebsite
+Number of split strings: 4</pre>
+<p>The second split String is null in the output.</p>
+<h2>java.util.regex.Matcher Class</h2>
+<p>We already discussed little bit about Matcher class above. Lets recall few things:</p>
+<h4>Creating a Matcher instance</h4>
+<pre>String content = "Some text";
+String patternString = ".*somestring.*";
+Pattern pattern = Pattern.compile(patternString);
+Matcher matcher = pattern.matcher(content);</pre>
+<h4>Main methods</h4>
+<p><strong>matches()</strong>: It matches the regular expression against the whole text passed to the Pattern.matcher() method while creating Matcher instance.</p>
+<pre>...
+Matcher matcher = pattern.matcher(content);
+boolean isMatch = matcher.matches();</pre>
+<p><strong>lookingAt()</strong>: Similar to matches() method except that it matches the regular expression only against the beginning of the text, while matches() search in the whole text.</p>
+<p><strong>find()</strong>: Searches the occurrences of of the regular expressions in the text. Mainly used when we are searching for multiple occurrences.</p>
+<p><strong>start() and end()</strong>: Both these methods are generally used along with the find() method. They are used for getting the start and end indexes of a match that is being found using find() method.</p>
+<h4>Lets take an example to find out the multiple occurrences using Matcher methods:</h4>
+<pre>package beginnersbook.com;
+import java.util.regex.*;  
+class RegexExampleMatcher{  
+public static void main(String args[]){  
+  String content = "ZZZ AA PP AA QQQ AAA ZZ";
+
+  String string = "AA";
+  Pattern pattern = Pattern.compile(string);
+  Matcher matcher = pattern.matcher(content);
+
+  while(matcher.find()) {
+     System.out.println("Found at: "+ matcher.start()
+    		+ 
+    		" - " + matcher.end());
+  }
+}
+}</pre>
+<p>Output:</p>
+<pre>Found at: 4 - 6
+Found at: 10 - 12
+Found at: 17 - 19</pre>
+<p>Now we are familiar with Pattern and Matcher class and the process of matching a regular expression against the text. Lets see what kind of various options we have to define a regular expression:</p>
+<h4>1) String Literals</h4>
+<p>Lets say you just want to search a particular string in the text for e.g. &#8220;abc&#8221; then we can simply write the code like this: Here text and regex both are same.<br />
+<code>Pattern.matches("abc", "abc")</code></p>
+<h4>2) Character Classes</h4>
+<p>A character class matches a single character in the input text against multiple allowed characters in the character class. For example [Cc]haitanya would match all the occurrences of String &#8220;chaitanya&#8221; with either lower case or upper case C&#8221;. Few more examples:<br />
+<code>Pattern.matches("[pqr]", "abcd");</code> It would give false as no p,q or r in the text<br />
+<code>Pattern.matches("[pqr]", "r");</code> Return true as r is found<br />
+<code>Pattern.matches("[pqr]", "pq");</code> Return false as any one of them can be in text not both.</p>
+<p>Here is the complete list of various character classes constructs:<br />
+<code>[abc]</code>: It would match with text if the text is having either one of them(a,b or c) and only once.<br />
+<code>[^abc]</code>:  Any single character except a, b, or c (^ denote negation)<br />
+<code>[a-zA-Z]</code>:  a through z, or A through Z, inclusive (range)<br />
+<code>[a-d[m-p]]</code>:  a through d, or m through p: [a-dm-p] (union)<br />
+<code>[a-z&amp;&amp;[def]]</code>:  Any one of them (d, e, or f)<br />
+<code>[a-z&amp;&amp;[^bc]]</code>: a through z, except for b and c: [ad-z] (subtraction)<br />
+<code>[a-z&amp;&amp;[^m-p]]</code>:  a through z, and not m through p: [a-lq-z] (subtraction)</p>
+<h4>Predefined Character Classes &#8211; Metacharacters</h4>
+<p>These are like short codes which you can use while writing regex.</p>
+<pre>Construct	Description
+.   -&gt;	Any character (may or may not match line terminators)
+\d  -&gt;	A digit: [0-9]
+\D  -&gt;	A non-digit: [^0-9]
+\s  -&gt;	A whitespace character: [ \t\n\x0B\f\r]
+\S  -&gt;	A non-whitespace character: [^\s]
+\w  -&gt;	A word character: [a-zA-Z_0-9]
+\W  -&gt;	A non-word character: [^\w]</pre>
+<p>For e.g.<br />
+<code>Pattern.matches("\\d", "1");</code> would return true<br />
+<code>Pattern.matches("\\D", "z");</code> return true<br />
+<code>Pattern.matches(".p", "qp");</code> return true, dot(.) represent any character</p>
+<h4>Boundary Matchers</h4>
+<pre>^	Matches the beginning of a line.
+$	Matches then end of a line.
+\b	Matches a word boundary.
+\B	Matches a non-word boundary.
+\A	Matches the beginning of the input text.
+\G	Matches the end of the previous match
+\Z	Matches the end of the input text except the final terminator if any.
+\z	Matches the end of the input text.</pre>
+<p>For e.g.<br />
+<code>Pattern.matches("^Hello$", "Hello")</code>: return true, Begins and ends with Hello<br />
+<code>Pattern.matches("^Hello$", "Namaste! Hello")</code>: return false, does not begin with Hello<br />
+<code>Pattern.matches("^Hello$", "Hello Namaste!")</code>: return false, Does not end with Hello</p>
+<h4>Quantifiers</h4>
+<pre>Greedy	Reluctant	Possessive	Matches
+X?	X??	X?+	Matches X once, or not at all (0 or 1 time).
+X*	X*?	X*+	Matches X zero or more times.
+X+	X+?	X++	Matches X one or more times.
+X{n}	X{n}?	X{n}+	Matches X exactly n times.
+X{n,}	X{n,}?	X{n,}+	Matches X at least n times.
+X{n, m)	X{n, m)? X{n, m)+	Matches X at least n time, but at most m times.</pre>
+<h4>Few examples</h4>
+<pre>import java.util.regex.*;  
+class RegexExample{  
+public static void main(String args[]){  
+   // It would return true if string matches exactly "tom"
+   System.out.println(
+     Pattern.matches("tom", "Tom")); //False
+	
+   /* returns true if the string matches exactly 
+    * "tom" or "Tom"
+    */
+   System.out.println(
+     Pattern.matches("[Tt]om", "Tom")); //True
+   System.out.println(
+     Pattern.matches("[Tt]om", "Tom")); //True
+	
+   /* Returns true if the string matches exactly "tim" 
+    * or "Tim" or "jin" or "Jin"
+    */
+   System.out.println(
+     Pattern.matches("[tT]im|[jJ]in", "Tim"));//True
+   System.out.println(
+     Pattern.matches("[tT]im|[jJ]in", "jin"));//True
+	
+   /* returns true if the string contains "abc" at 
+    * any place
+    */
+   System.out.println(
+     Pattern.matches(".*abc.*", "deabcpq"));//True
+	
+   /* returns true if the string does not have a 
+    * number at the beginning
+    */
+   System.out.println(
+     Pattern.matches("^[^\\d].*", "123abc")); //False
+   System.out.println(
+     Pattern.matches("^[^\\d].*", "abc123")); //True
+	
+   // returns true if the string contains of three letters
+   System.out.println(
+     Pattern.matches("[a-zA-Z][a-zA-Z][a-zA-Z]", "aPz"));//True
+   System.out.println(
+     Pattern.matches("[a-zA-Z][a-zA-Z][a-zA-Z]", "aAA"));//True
+   System.out.println(
+     Pattern.matches("[a-zA-Z][a-zA-Z][a-zA-Z]", "apZx"));//False
+	
+   // returns true if the string contains 0 or more non-digits
+   System.out.println(
+     Pattern.matches("\\D*", "abcde")); //True
+   System.out.println(
+     Pattern.matches("\\D*", "abcde123")); //False
+	
+   /* Boundary Matchers example
+    * ^ denotes start of the line
+    * $ denotes end of the line
+    */
+   System.out.println(
+     Pattern.matches("^This$", "This is Chaitanya")); //False
+   System.out.println(
+     Pattern.matches("^This$", "This")); //True
+   System.out.println(
+     Pattern.matches("^This$", "Is This Chaitanya")); //False
+}
+}</pre>
+<h4>Reference</h4>
+<p><a href="http://docs.oracle.com/javase/tutorial/essential/regex/" target="_blank">Regular expressions &#8211; Javadoc</a></p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../09/java-enum-examples/index.html" rel="bookmark" title="Link to Java Enum Tutorial with examples">Java Enum Tutorial with examples</a></li><li><a href="../../07/sort-an-array-in-descending-reverse-order-java/index.html" rel="bookmark" title="Link to Sort an Array in Descending (Reverse) Order &#8211; Java">Sort an Array in Descending (Reverse) Order &#8211; Java</a></li><li><a href="../../07/override-annotation-in-java/index.html" rel="bookmark" title="Link to @Override annotation in Java">@Override annotation in Java</a></li><li><a href="../../07/how-to-sort-an-array-in-java/index.html" rel="bookmark" title="Link to How to sort an Array in Java">How to sort an Array in Java</a></li><li><a href="../../07/sorting-float-array-in-java-example/index.html" rel="bookmark" title="Link to Sorting float array in Java example">Sorting float array in Java example</a></li><li><a href="../../07/java-finding-minimum-and-maximum-values-in-an-array/index.html" rel="bookmark" title="Link to Java &#8211; Finding minimum and maximum values in an array">Java &#8211; Finding minimum and maximum values in an array</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-60989">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2901ad0442a566909cb2bf9bdf46de14?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2901ad0442a566909cb2bf9bdf46de14?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">vissu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-25T04:51:59+00:00" itemprop="datePublished"><a href="index.html#comment-60989" class="comment-time-link" itemprop="url">September 25, 2016 at 4:51 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Chaitany,</p>
+<p>     Its good post. My question is if I want to find all the reg ex strings from a given text, whats the solution.</p>
+<p>Suppose, my reg ex is :  jom|pum|bap|hum|pab  and text is: humbapumpa jim</p>
+<p>I want to find all the matches of reg ex not a single match. How to do?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-60989' onclick='return addComment.moveForm( "comment-60989", "60989", "respond", "5623" )' aria-label='Reply to vissu'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='5623' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="58d9defa84" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="11"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../../../2013/05/java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../../../2013/05/jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../../../2013/05/first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../../../2013/04/oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../../2013/03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../../../2013/04/java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../../2013/03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../../../2013/05/java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../../../2013/05/aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../../../2013/05/association/index.html">Association</a></li>
+<li><a href="../../07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="../../../2013/05/method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="../../01/method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="../../01/difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../../2013/03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../../../2013/04/runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../../../2013/04/java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../../../2013/05/java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="../../../2013/05/java-interface/index.html">Interface</a></li>
+ 	<li><a href="../../../2013/05/abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../../../2013/05/encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../../2013/03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../../../2013/05/java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../../../2013/04/java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../../../2013/05/inner-class/index.html">Inner classes</a></li>
+<li><a href="../../../2013/05/java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../../../2013/05/static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../../../2013/05/java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../../2013/12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../../2013/04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../../2013/03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2014/08/java-regex-tutorial/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:42:12 GMT -->
+</html>

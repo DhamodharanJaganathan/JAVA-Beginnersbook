@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: C &#8211; Strings and String functions with examples</title>
+	<atom:link href="https://beginnersbook.com/2014/01/c-strings-string-functions/feed/" rel="self" type="application/rss+xml" />
+	<link>https://beginnersbook.com/2014/01/c-strings-string-functions/</link>
+	<description></description>
+	<lastBuildDate>Fri, 06 Apr 2018 04:50:05 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.5</generator>
+	<item>
+		<title>By: Marcello Missiroli</title>
+		<link>https://beginnersbook.com/2014/01/c-strings-string-functions/#comment-68677</link>
+		<dc:creator><![CDATA[Marcello Missiroli]]></dc:creator>
+		<pubDate>Tue, 21 Mar 2017 12:32:34 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4887#comment-68677</guid>
+		<description><![CDATA[The first program has an error. You should not call scanf with &#038;nickname as an argument, since nicknama is already an address. This is also pointed out by the compiler
+string.c:11:5: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char (*)[20]’ [-Wformat=]
+     scanf(&quot;%s&quot;, &#038;nickname);
+     ^
+Though it works, it is nevertheless a bad practice.]]></description>
+		<content:encoded><![CDATA[<p>The first program has an error. You should not call scanf with &amp;nickname as an argument, since nicknama is already an address. This is also pointed out by the compiler<br />
+string.c:11:5: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char (*)[20]’ [-Wformat=]<br />
+     scanf(&#8220;%s&#8221;, &amp;nickname);<br />
+     ^<br />
+Though it works, it is nevertheless a bad practice.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Prit Kaur</title>
+		<link>https://beginnersbook.com/2014/01/c-strings-string-functions/#comment-57512</link>
+		<dc:creator><![CDATA[Prit Kaur]]></dc:creator>
+		<pubDate>Mon, 27 Jun 2016 09:12:27 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4887#comment-57512</guid>
+		<description><![CDATA[Explanation of every function is very clear and described in a easy way. its very good for understanding practical examples for students /beginners.Its humble request to explain more string functions in the article.]]></description>
+		<content:encoded><![CDATA[<p>Explanation of every function is very clear and described in a easy way. its very good for understanding practical examples for students /beginners.Its humble request to explain more string functions in the article.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

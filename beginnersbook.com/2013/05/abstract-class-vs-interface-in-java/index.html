@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/05/abstract-class-vs-interface-in-java/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:40:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Difference Between Abstract Class and Interface in Java</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Abstract class vs Interface in Java: In this post we will discuss the difference between Abstract Class and Interface in Java with examples.."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Difference Between Abstract Class and Interface in Java" />
+<meta property="og:description" content="Abstract class vs Interface in Java: In this post we will discuss the difference between Abstract Class and Interface in Java with examples.." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="OOPs Concept" />
+<meta property="article:published_time" content="2013-05-08T20:11:13+00:00" />
+<meta property="article:modified_time" content="2017-09-13T09:55:41+00:00" />
+<meta property="og:updated_time" content="2017-09-13T09:55:41+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Abstract class vs Interface in Java: In this post we will discuss the difference between Abstract Class and Interface in Java with examples.." />
+<meta name="twitter:title" content="Difference Between Abstract Class and Interface in Java" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Difference Between Abstract Class and Interface in Java Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index65ff.html?p=2472' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embedf365.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fabstract-class-vs-interface-in-java%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed8dea?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fabstract-class-vs-interface-in-java%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2472 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2472 post type-post status-publish format-standard category-oops-concept entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Difference Between Abstract Class and Interface in Java</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/oops-concept/index.html" rel="category tag">OOPs Concept</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>In this article, we will discuss the <strong>difference between Abstract Class and Interface in Java with examples</strong>. I have covered the abstract class and interface in separate tutorials of <a href="../../04/oops-concepts/index.html">OOPs Concepts</a> so I would recommend you to read them first, before going though the differences.<br />
+1. <a href="../java-abstract-class-method/index.html">Abstract class in java</a><br />
+2. <a href="../java-interface/index.html">Interface in Java</a></p>
+<table border="1" cellspacing="0" cellpadding="0">
+<colgroup>
+<col width="32" />
+<col width="454" />
+<col width="370" /> </colgroup>
+<tbody>
+<tr>
+<td width="32"></td>
+<td width="454"><strong> Abstract Class</strong></td>
+<td width="370"><strong> Interface</strong></td>
+</tr>
+<tr>
+<td width="32">1</td>
+<td width="454"> An abstract class can extend only one class or one abstract class at a time</td>
+<td width="370"> An interface can extend any number of interfaces at a time</td>
+</tr>
+<tr>
+<td width="32">2</td>
+<td width="454">  An abstract class can extend another concrete (regular) class or abstract class</td>
+<td width="370"> An interface can only extend another interface</td>
+</tr>
+<tr>
+<td width="32">3</td>
+<td width="454"> An abstract class can have both abstract and concrete methods</td>
+<td width="370"> An interface can have only abstract methods</td>
+</tr>
+<tr>
+<td width="32">4</td>
+<td width="454"> In abstract class keyword &#8220;abstract&#8221; is mandatory to declare a method as an abstract</td>
+<td width="370"> In an interface keyword &#8220;abstract&#8221; is optional to declare a method as an abstract</td>
+</tr>
+<tr>
+<td width="32">5</td>
+<td width="454"> An abstract class can have protected and public abstract methods</td>
+<td width="370"> An interface can have only have public abstract methods</td>
+</tr>
+<tr>
+<td width="32">6</td>
+<td width="454"> An abstract class can have static, final or static final variable with any <a href="../java-access-modifiers/index.html">access specifier</a></td>
+<td width="370"> interface can only have public static final (constant) variable</td>
+</tr>
+</tbody>
+</table>
+<p>Each of the above mentioned points are explained with an example below:</p>
+<h2>Abstract class vs interface in Java</h2>
+<h3>Difference No.1: Abstract class can extend only one class or one abstract class at a time</h3>
+<pre>class Example1{
+   public void display1(){
+      System.out.println("display1 method");
+   }
+}
+abstract class Example2{
+   public void display2(){
+      System.out.println("display2 method");
+   }
+}
+abstract class Example3 extends Example1{
+   abstract void display3();
+}
+class Example4 extends Example3{
+   public void display3(){
+      System.out.println("display3 method");
+   }
+}
+class Demo{
+   public static void main(String args[]){
+       Example4 obj=new Example4();
+       obj.display3();
+   }
+}</pre>
+<p>Output:</p>
+<pre>display3 method</pre>
+<p><strong>Interface can extend any number of interfaces at a time</strong></p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>//first interface
+interface Example1{
+    public void display1();
+}
+//second interface
+interface Example2 {
+    public void display2();
+}
+//This interface is extending both the above interfaces
+interface Example3 extends Example1,Example2{
+}
+class Example4 implements Example3{
+    public void display1(){
+        System.out.println("display2 method");
+    }
+    public void display2(){
+        System.out.println("display3 method");
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        Example4 obj=new Example4();
+        obj.display1();
+    }
+}</pre>
+<p>Output:</p>
+<pre>display2 method</pre>
+<h3>Difference No.2: Abstract class can be extended(inherited) by a class or an abstract class</h3>
+<pre>class Example1{
+   public void display1(){
+      System.out.println("display1 method");
+   }
+}
+abstract class Example2{
+   public void display2(){
+       System.out.println("display2 method");
+   }
+}
+abstract class Example3 extends Example2{
+   abstract void display3();
+}
+class Example4 extends Example3{
+   public void display2(){
+       System.out.println("Example4-display2 method");
+   }
+   public void display3(){
+       System.out.println("display3 method");
+   }
+}
+class Demo{
+   public static void main(String args[]){
+       Example4 obj=new Example4();
+       obj.display2();
+   }
+}</pre>
+<p>Output:</p>
+<pre>Example4-display2 method</pre>
+<p><strong>Interfaces can be extended only by interfaces. Classes has to implement them instead of extend</strong></p>
+<pre>interface Example1{
+    public void display1();
+}
+interface Example2 extends Example1{
+}
+class Example3 implements Example2{
+   public void display1(){
+      System.out.println("display1 method");
+   }
+}
+class Demo{
+   public static void main(String args[]){
+      Example3 obj=new Example3();
+      obj.display1();
+   }
+}</pre>
+<p>Output:</p>
+<pre>display1 method</pre>
+<h3>Difference No.3: Abstract class can have both abstract and concrete methods</h3>
+<pre>abstract class Example1 {
+   abstract void display1();
+   public void display2(){
+     System.out.println("display2 method");
+   }
+}
+class Example2 extends Example1{
+   public void display1(){
+      System.out.println("display1 method");
+   }
+}
+class Demo{
+   public static void main(String args[]){
+     Example2 obj=new Example2();
+     obj.display1();
+   }
+}</pre>
+<p><strong>Interface can only have abstract methods, they cannot have concrete methods</strong></p>
+<pre>interface Example1{
+   public abstract void display1();
+}
+class Example2 implements Example1{
+   public void display1(){
+      System.out.println("display1 method");
+   }
+}
+class Demo{
+   public static void main(String args[]){
+      Example2 obj=new Example2();
+      obj.display1();
+   }
+}</pre>
+<p>Output:</p>
+<pre>display1 method</pre>
+<h3>Difference No.4: In abstract class, the keyword ‘abstract’ is mandatory to declare a method as an abstract</h3>
+<pre>abstract class Example1{
+   public abstract void display1();
+}
+
+class Example2 extends Example1{
+   public void display1(){
+      System.out.println("display1 method");
+   }
+   public void display2(){
+      System.out.println("display2 method");
+   }
+}
+class Demo{
+   public static void main(String args[]){ 
+       Example2 obj=new Example2(); 
+       obj.display1();
+   }
+}</pre>
+<p><strong>In interfaces, the keyword ‘abstract’ is optional to declare a method as an abstract because all the methods are abstract by default</strong></p>
+<pre>interface Example1{
+    public void display1();
+}
+class Example2 implements Example1{
+    public void display1(){
+        System.out.println("display1 method");
+    }
+    public void display2(){
+        System.out.println("display2 method");
+    } 
+}
+class Demo{
+   public static void main(String args[]){
+       Example2 obj=new Example2();
+       obj.display1();
+   }
+}</pre>
+<h3>Difference No.5: Abstract class can have protected and public abstract methods</h3>
+<pre>abstract class Example1{
+   protected abstract void display1();
+   public abstract void display2();
+   public abstract void display3();
+}
+class Example2 extends Example1{
+   public void display1(){
+       System.out.println("display1 method");
+   }
+   public void display2(){
+      System.out.println("display2 method");
+   }
+   public void display3(){
+      System.out.println("display3 method");
+   }
+}
+class Demo{
+   public static void main(String args[]){
+      Example2 obj=new Example2();
+      obj.display1();
+   }
+}</pre>
+<p><strong>Interface can have only public abstract methods</strong></p>
+<pre>interface Example1{
+   void display1();
+}
+class Example2 implements Example1{
+   public void display1(){
+      System.out.println("display1 method");
+   }
+   public void display2(){ 
+      System.out.println("display2 method");
+   }
+}
+class Demo{
+   public static void main(String args[]){
+       Example2 obj=new Example2();
+       obj.display1();
+   }
+}</pre>
+<h3>Difference No.6: Abstract class can have static, final or static final variables with any access specifier</h3>
+<pre>abstract class Example1{
+   private int numOne=10;
+   protected final int numTwo=20;
+   public static final int numThree=500;
+   public void display1(){
+      System.out.println("Num1="+numOne);
+   }
+}
+class Example2 extends Example1{
+   public void display2(){
+      System.out.println("Num2="+numTwo);
+      System.out.println("Num2="+numThree);
+   }
+}
+class Demo{
+   public static void main(String args[]){
+      Example2 obj=new Example2(); 
+      obj.display1();
+      obj.display2();
+   }
+}</pre>
+<p><strong>Interface can have only public static final (constant) variable</strong></p>
+<pre>interface Example1{
+   int numOne=10;
+}
+class Example2 implements Example1{
+   public void display1(){
+      System.out.println("Num1="+numOne);
+   }
+}
+class Demo{
+   public static void main(String args[]){
+      Example2 obj=new Example2();
+      obj.display1();
+   }
+}</pre>
+<div class="bb-nav"><a class="pretut" href="../java-interface/index.html">❮ Previous</a><a class="nexttut" href="../encapsulation-in-java/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-13311">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/574f980aa0de935d1dd215caac5c9cec?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/574f980aa0de935d1dd215caac5c9cec?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Pari</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-04T18:31:07+00:00" itemprop="datePublished"><a href="index.html#comment-13311" class="comment-time-link" itemprop="url">November 4, 2014 at 6:31 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I love your site. all the java tutorial is excellent and easy to understand , Good work Keep going</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-13311' onclick='return addComment.moveForm( "comment-13311", "13311", "respond", "2472" )' aria-label='Reply to Pari'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-19165">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7ee88301cc34b15d7bce6bb5dc2e20aa?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7ee88301cc34b15d7bce6bb5dc2e20aa?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">saravana</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-26T05:21:14+00:00" itemprop="datePublished"><a href="index.html#comment-19165" class="comment-time-link" itemprop="url">November 26, 2014 at 5:21 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank so much,i like all the tutorials keep rocking&#8230;&#8230;..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19165' onclick='return addComment.moveForm( "comment-19165", "19165", "respond", "2472" )' aria-label='Reply to saravana'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-23544">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/718631c241e421e15d915bbd20c4673b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/718631c241e421e15d915bbd20c4673b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">kanchana</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-02-25T14:35:34+00:00" itemprop="datePublished"><a href="index.html#comment-23544" class="comment-time-link" itemprop="url">February 25, 2015 at 2:35 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This website is really nice..i can easily understand the basic concept of java. thank u&#8230;..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-23544' onclick='return addComment.moveForm( "comment-23544", "23544", "respond", "2472" )' aria-label='Reply to kanchana'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-24809">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/dea035e2c6302a86eddef8efb05dbd50?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/dea035e2c6302a86eddef8efb05dbd50?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Utkal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-25T06:50:57+00:00" itemprop="datePublished"><a href="index.html#comment-24809" class="comment-time-link" itemprop="url">March 25, 2015 at 6:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Could you please provide one synario where we can go for abstract class<br />
+and we ll not go for it Interface</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24809' onclick='return addComment.moveForm( "comment-24809", "24809", "respond", "2472" )' aria-label='Reply to Utkal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-24877">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f1734fd1b13d5ffb5c4730b5a20b624e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f1734fd1b13d5ffb5c4730b5a20b624e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ivkaran Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-27T02:53:41+00:00" itemprop="datePublished"><a href="index.html#comment-24877" class="comment-time-link" itemprop="url">March 27, 2015 at 2:53 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Your website has done an excellent job explaining the Java features. Really easy to understand and follow, helping me a lot while preparing for interviews.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24877' onclick='return addComment.moveForm( "comment-24877", "24877", "respond", "2472" )' aria-label='Reply to Ivkaran Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-25062">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/203dc7a2ac9d20a686ccc76a353adc58?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/203dc7a2ac9d20a686ccc76a353adc58?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">jocie</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-30T16:57:25+00:00" itemprop="datePublished"><a href="index.html#comment-25062" class="comment-time-link" itemprop="url">March 30, 2015 at 4:57 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Really superb explanation&#8230; Very good material to use in class room</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-25062' onclick='return addComment.moveForm( "comment-25062", "25062", "respond", "2472" )' aria-label='Reply to jocie'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-26766">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/94db428066d118d6637aa4ac6fa8dc8f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/94db428066d118d6637aa4ac6fa8dc8f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">satyajit</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-05-07T19:58:57+00:00" itemprop="datePublished"><a href="index.html#comment-26766" class="comment-time-link" itemprop="url">May 7, 2015 at 7:58 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>please explain abstraction with a simple example</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-26766' onclick='return addComment.moveForm( "comment-26766", "26766", "respond", "2472" )' aria-label='Reply to satyajit'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-28539">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a63374183defb36d477f002d96cb68fd?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a63374183defb36d477f002d96cb68fd?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">BHUSHAN</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-22T18:27:26+00:00" itemprop="datePublished"><a href="index.html#comment-28539" class="comment-time-link" itemprop="url">June 22, 2015 at 6:27 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Awsome site!!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-28539' onclick='return addComment.moveForm( "comment-28539", "28539", "respond", "2472" )' aria-label='Reply to BHUSHAN'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-29858">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/57668e19b554c517e308972943c607f1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/57668e19b554c517e308972943c607f1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rupesh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-20T05:37:58+00:00" itemprop="datePublished"><a href="index.html#comment-29858" class="comment-time-link" itemprop="url">July 20, 2015 at 5:37 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Easy to understand. nice example short and sweet. Keep going..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-29858' onclick='return addComment.moveForm( "comment-29858", "29858", "respond", "2472" )' aria-label='Reply to Rupesh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-33715">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d03671d80401665b67d86c195568ec11?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d03671d80401665b67d86c195568ec11?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Divyanshu Ranjan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-27T21:07:22+00:00" itemprop="datePublished"><a href="index.html#comment-33715" class="comment-time-link" itemprop="url">August 27, 2015 at 9:07 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Love your site.. Too much easy and understandable language.. With short and very easy example..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-33715' onclick='return addComment.moveForm( "comment-33715", "33715", "respond", "2472" )' aria-label='Reply to Divyanshu Ranjan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-42806">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/877a4fa281d725b8ad332e13cda67710?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/877a4fa281d725b8ad332e13cda67710?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Manish</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-13T13:35:10+00:00" itemprop="datePublished"><a href="index.html#comment-42806" class="comment-time-link" itemprop="url">November 13, 2015 at 1:35 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello All,<br />
+Interface can have static method as well as method with default keyword</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-42806' onclick='return addComment.moveForm( "comment-42806", "42806", "respond", "2472" )' aria-label='Reply to Manish'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-43654">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/451213c98f2c4c87e8bd3651967bff99?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/451213c98f2c4c87e8bd3651967bff99?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">deepali</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-19T11:41:18+00:00" itemprop="datePublished"><a href="index.html#comment-43654" class="comment-time-link" itemprop="url">November 19, 2015 at 11:41 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Can abstract class implements interface?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-43654' onclick='return addComment.moveForm( "comment-43654", "43654", "respond", "2472" )' aria-label='Reply to deepali'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-45191">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/5cbff04be03a942a4afb45a0c2325b90?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/5cbff04be03a942a4afb45a0c2325b90?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tonoy</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-04T00:50:11+00:00" itemprop="datePublished"><a href="index.html#comment-45191" class="comment-time-link" itemprop="url">December 4, 2015 at 12:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Awesome site for learning, very much organized and nicely presented. Keep it up. cheers!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-45191' onclick='return addComment.moveForm( "comment-45191", "45191", "respond", "2472" )' aria-label='Reply to Tonoy'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-45700">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b6cda1201b50e050d581a4b98d478e02?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b6cda1201b50e050d581a4b98d478e02?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nadia khan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-10T04:01:34+00:00" itemprop="datePublished"><a href="index.html#comment-45700" class="comment-time-link" itemprop="url">December 10, 2015 at 4:01 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>superb material and easy to understand &#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-45700' onclick='return addComment.moveForm( "comment-45700", "45700", "respond", "2472" )' aria-label='Reply to Nadia khan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-52218">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/858f85b6ef47b22e2c33e05280c59cff?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/858f85b6ef47b22e2c33e05280c59cff?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">chandramohan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-07T10:14:22+00:00" itemprop="datePublished"><a href="index.html#comment-52218" class="comment-time-link" itemprop="url">March 7, 2016 at 10:14 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>i have a one doubt in long time&#8230;.that was why we are using a interface in java&#8230;what is the main reason&#8230;all the interface example programs are i will tried at same time i remove the interface in that program when the program will be run so fully confused&#8230;tell me please clearly..what is the main reason for using interface in java</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52218' onclick='return addComment.moveForm( "comment-52218", "52218", "respond", "2472" )' aria-label='Reply to chandramohan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-52563">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/96f904fb36659443689e19ab7a087187?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/96f904fb36659443689e19ab7a087187?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Xiu Chen</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-17T21:13:12+00:00" itemprop="datePublished"><a href="index.html#comment-52563" class="comment-time-link" itemprop="url">March 17, 2016 at 9:13 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Really like to read your website. Clear and easy~ thank your very much!!! ^_^</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52563' onclick='return addComment.moveForm( "comment-52563", "52563", "respond", "2472" )' aria-label='Reply to Xiu Chen'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-53150">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/03501473f4b6239ab6a16f54b07b1f10?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/03501473f4b6239ab6a16f54b07b1f10?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Kapil</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-30T13:07:02+00:00" itemprop="datePublished"><a href="index.html#comment-53150" class="comment-time-link" itemprop="url">March 30, 2016 at 1:07 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Can u pls explain with example when to use Abstract Class and Interface.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53150' onclick='return addComment.moveForm( "comment-53150", "53150", "respond", "2472" )' aria-label='Reply to Kapil'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-55656">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/864008eb17493ab508afb61c501f939a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/864008eb17493ab508afb61c501f939a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Trilok SIngh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-25T03:41:02+00:00" itemprop="datePublished"><a href="index.html#comment-55656" class="comment-time-link" itemprop="url">May 25, 2016 at 3:41 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>What is the main advantage of abstract class.. why we use this &#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-55656' onclick='return addComment.moveForm( "comment-55656", "55656", "respond", "2472" )' aria-label='Reply to Trilok SIngh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-57001">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/dc144bcd6d48c7d87133a0ea880a51c7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/dc144bcd6d48c7d87133a0ea880a51c7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Zia ur Rehman</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-16T23:13:18+00:00" itemprop="datePublished"><a href="index.html#comment-57001" class="comment-time-link" itemprop="url">June 16, 2016 at 11:13 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Awesome. Excellent &#8230; Nice and precious Tutorial.<br />
+Good job! keep it up.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57001' onclick='return addComment.moveForm( "comment-57001", "57001", "respond", "2472" )' aria-label='Reply to Zia ur Rehman'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-64036">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/cfb108e6b83131b031c57c27944bccb6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/cfb108e6b83131b031c57c27944bccb6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Luvnish Monga</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-30T12:05:35+00:00" itemprop="datePublished"><a href="index.html#comment-64036" class="comment-time-link" itemprop="url">November 30, 2016 at 12:05 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This tutorial is very good. Great Job (Y)  It clears all the concepts of Abstract Classes as well of Interface.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-64036' onclick='return addComment.moveForm( "comment-64036", "64036", "respond", "2472" )' aria-label='Reply to Luvnish Monga'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-66328">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/62c9a278689ffa11997e22c0999ba1f1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/62c9a278689ffa11997e22c0999ba1f1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Geetha</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-21T09:49:17+00:00" itemprop="datePublished"><a href="index.html#comment-66328" class="comment-time-link" itemprop="url">January 21, 2017 at 9:49 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>superb site, easy to understand&#8230;..thank u&#8230;.keep rocking!! :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-66328' onclick='return addComment.moveForm( "comment-66328", "66328", "respond", "2472" )' aria-label='Reply to Geetha'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2472' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="a938bf1d43" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="43"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../../04/oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../../04/java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../association/index.html">Association</a></li>
+<li><a href="../../../2014/07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="../method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="../../../2014/01/method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="../../../2014/01/difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../../04/runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../../04/java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="../java-interface/index.html">Interface</a></li>
+ 	<li><a href="index.html">Abstract class vs interface</a></li>
+<li><a href="../encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../../04/java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../inner-class/index.html">Inner classes</a></li>
+<li><a href="../java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/05/abstract-class-vs-interface-in-java/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:40:27 GMT -->
+</html>

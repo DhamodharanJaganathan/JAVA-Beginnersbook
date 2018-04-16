@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Java &#8211; private constructor example</title>
+	<atom:link href="https://beginnersbook.com/2013/12/java-private-constructor-example/feed/" rel="self" type="application/rss+xml" />
+	<link>https://beginnersbook.com/2013/12/java-private-constructor-example/</link>
+	<description></description>
+	<lastBuildDate>Fri, 06 Apr 2018 04:50:05 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.5</generator>
+	<item>
+		<title>By: Sandeep Saproo</title>
+		<link>https://beginnersbook.com/2013/12/java-private-constructor-example/#comment-73335</link>
+		<dc:creator><![CDATA[Sandeep Saproo]]></dc:creator>
+		<pubDate>Thu, 17 Aug 2017 13:46:58 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4512#comment-73335</guid>
+		<description><![CDATA[private Constructor is used to prevent object creation outside the class.
+We can  create more than one object in Singleton class.]]></description>
+		<content:encoded><![CDATA[<p>private Constructor is used to prevent object creation outside the class.<br />
+We can  create more than one object in Singleton class.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Pranav</title>
+		<link>https://beginnersbook.com/2013/12/java-private-constructor-example/#comment-72400</link>
+		<dc:creator><![CDATA[Pranav]]></dc:creator>
+		<pubDate>Thu, 20 Jul 2017 13:33:45 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4512#comment-72400</guid>
+		<description><![CDATA[i tried to make two objects at the same time, and i didn&#039;t face any issue, objects got created and methods could be called easily ... why so ??]]></description>
+		<content:encoded><![CDATA[<p>i tried to make two objects at the same time, and i didn&#8217;t face any issue, objects got created and methods could be called easily &#8230; why so ??</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: VallaDanger</title>
+		<link>https://beginnersbook.com/2013/12/java-private-constructor-example/#comment-59400</link>
+		<dc:creator><![CDATA[VallaDanger]]></dc:creator>
+		<pubDate>Mon, 15 Aug 2016 21:59:29 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4512#comment-59400</guid>
+		<description><![CDATA[Not thread-safe, violates singleton pattern. You either use Enum or double-check.]]></description>
+		<content:encoded><![CDATA[<p>Not thread-safe, violates singleton pattern. You either use Enum or double-check.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Hau Nguyen</title>
+		<link>https://beginnersbook.com/2013/12/java-private-constructor-example/#comment-59023</link>
+		<dc:creator><![CDATA[Hau Nguyen]]></dc:creator>
+		<pubDate>Fri, 05 Aug 2016 10:35:34 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4512#comment-59023</guid>
+		<description><![CDATA[private static SingleTonClass obj=null;
+↓
+１．private -&#062; only this SingleTonClass can use it.
+２．static -&#062; Because objectCreationMethod() use this variable &quot;obj&quot;. But, objectCreationMethod() is static method, so &quot;obj&quot; must be static.
+３．null -&#062;
+-  At the first time we call objectCreationMethod(), &quot;obj&quot; is null, then we create new object by this command:
+           obj= new SingleTonClass(); (*)
+
+-  The second time we call objectCreationMethod(), &quot;obj&quot; is NOT null because of above command (*). 
+So, do not create new object, reuse the object which is created at the first time we called objectCreationMethod().
+- The same logic for n time calling objectCreationMethod(). There is one and only one object of SingleTonClass is created at the first time.
+This is why it is called SingleTon.
+
+Hope this help.
+
+Thanks,
+Hau Nguyen]]></description>
+		<content:encoded><![CDATA[<p>private static SingleTonClass obj=null;<br />
+↓<br />
+１．private -&gt; only this SingleTonClass can use it.<br />
+２．static -&gt; Because objectCreationMethod() use this variable &#8220;obj&#8221;. But, objectCreationMethod() is static method, so &#8220;obj&#8221; must be static.<br />
+３．null -&gt;<br />
+&#8211;  At the first time we call objectCreationMethod(), &#8220;obj&#8221; is null, then we create new object by this command:<br />
+           obj= new SingleTonClass(); (*)</p>
+<p>&#8211;  The second time we call objectCreationMethod(), &#8220;obj&#8221; is NOT null because of above command (*).<br />
+So, do not create new object, reuse the object which is created at the first time we called objectCreationMethod().<br />
+&#8211; The same logic for n time calling objectCreationMethod(). There is one and only one object of SingleTonClass is created at the first time.<br />
+This is why it is called SingleTon.</p>
+<p>Hope this help.</p>
+<p>Thanks,<br />
+Hau Nguyen</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: swetha</title>
+		<link>https://beginnersbook.com/2013/12/java-private-constructor-example/#comment-55974</link>
+		<dc:creator><![CDATA[swetha]]></dc:creator>
+		<pubDate>Mon, 30 May 2016 14:23:14 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4512#comment-55974</guid>
+		<description><![CDATA[what if we declare more than one constructor as private.I mean parameterised constructor..still we can create more than one instance..please provide some more clarity on private constructor]]></description>
+		<content:encoded><![CDATA[<p>what if we declare more than one constructor as private.I mean parameterised constructor..still we can create more than one instance..please provide some more clarity on private constructor</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Hoan Nguyen</title>
+		<link>https://beginnersbook.com/2013/12/java-private-constructor-example/#comment-55335</link>
+		<dc:creator><![CDATA[Hoan Nguyen]]></dc:creator>
+		<pubDate>Tue, 17 May 2016 17:54:20 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4512#comment-55335</guid>
+		<description><![CDATA[Dear guys, 
+
+could you please explain to me the following code:
+
+&quot;  private static SingleTonClass obj=null; &quot;
+
+Thank you in advance,
+Hoan]]></description>
+		<content:encoded><![CDATA[<p>Dear guys, </p>
+<p>could you please explain to me the following code:</p>
+<p>&#8221;  private static SingleTonClass obj=null; &#8221;</p>
+<p>Thank you in advance,<br />
+Hoan</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Er.chandramohan</title>
+		<link>https://beginnersbook.com/2013/12/java-private-constructor-example/#comment-52927</link>
+		<dc:creator><![CDATA[Er.chandramohan]]></dc:creator>
+		<pubDate>Fri, 25 Mar 2016 06:22:33 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4512#comment-52927</guid>
+		<description><![CDATA[thank you sir but i need another best example for private constructor...i am using a private constructor in another class i can access a private constructor in main class]]></description>
+		<content:encoded><![CDATA[<p>thank you sir but i need another best example for private constructor&#8230;i am using a private constructor in another class i can access a private constructor in main class</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: omar</title>
+		<link>https://beginnersbook.com/2013/12/java-private-constructor-example/#comment-48500</link>
+		<dc:creator><![CDATA[omar]]></dc:creator>
+		<pubDate>Mon, 11 Jan 2016 09:45:08 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4512#comment-48500</guid>
+		<description><![CDATA[I was going to say that , thanks !]]></description>
+		<content:encoded><![CDATA[<p>I was going to say that , thanks !</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

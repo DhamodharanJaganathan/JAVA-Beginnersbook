@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2014/09/java-annotations/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:42:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java Annotations tutorial with examples</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Java Annotations allow us to add metadata information into our source code, although they are not a part of the program itself. Annotations were added to the java from JDK 5. Annotation has no direct effect on the operation of the code they annotate (i.e. it does not affect the execution of the program). In this"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Java Annotations tutorial with examples" />
+<meta property="og:description" content="Java Annotations allow us to add metadata information into our source code, although they are not a part of the program itself. Annotations were added to the java from JDK 5. Annotation has no direct effect on the operation of the code they annotate (i.e. it does not affect the execution of the program). In this" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="Java Tutorials" />
+<meta property="article:published_time" content="2014-09-01T23:42:16+00:00" />
+<meta property="article:modified_time" content="2014-09-01T23:47:00+00:00" />
+<meta property="og:updated_time" content="2014-09-01T23:47:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Java Annotations allow us to add metadata information into our source code, although they are not a part of the program itself. Annotations were added to the java from JDK 5. Annotation has no direct effect on the operation of the code they annotate (i.e. it does not affect the execution of the program). In this" />
+<meta name="twitter:title" content="Java Annotations tutorial with examples" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Java Annotations tutorial with examples Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index0142.html?p=5635' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed33ce.json?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F09%2Fjava-annotations%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedaae7?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F09%2Fjava-annotations%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-5635 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-5635 post type-post status-publish format-standard category-java-tutorials entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Java Annotations tutorial with examples</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/technology/java-guide/java-tutorials/index.html" rel="category tag">Java Tutorials</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p><a href="http://docs.oracle.com/javase/tutorial/java/annotations/index.html" target="_blank">Java Annotations</a> allow us to add metadata information into our source code, although they are not a part of the program itself. Annotations were added to the java from JDK 5. Annotation has no direct effect on the operation of the code they annotate (i.e. it does not affect the execution of the program).</p>
+<p>In this tutorial we are going to cover following topics: Usage of annotations, how to apply annotations, what predefined annotation types are available in the Java and how to create custom annotations.</p>
+<h2>What&#8217;s the use of Annotations?</h2>
+<p><strong>1) Instructions to the compiler</strong>: There are three built-in annotations available in Java (<code>@Deprecated</code>, <code>@Override</code> &amp; <code>@SuppressWarnings</code>) that can be used for giving certain instructions to the compiler. For example the @override annotation is used for instructing compiler that the annotated method is overriding the method. More about these built-in annotations with example is discussed in the next sections of this article.</p>
+<p><strong>2) Compile-time instructors</strong>: Annotations can provide compile-time instructions to the compiler that can be further used by sofware build tools for generating code, XML files etc.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><strong>3) Runtime instructions</strong>: We can define annotations to be available at runtime which we can access using <a href="http://docs.oracle.com/javase/tutorial/reflect/" target="_blank">java reflection</a> and can be used to give instructions to the program at runtime. We will discuss this with the help of an example, later in this same post.</p>
+<h2>Annotations basics</h2>
+<p>An annotation always starts with the symbol <code>@</code> followed by the annotation name. The symbol <code>@</code> indicates to the compiler that this is an annotation.</p>
+<p>For e.g. <code>@Override</code><br />
+Here @ symbol represents that this is an annotation and the Override is the name of this annotation.</p>
+<p><strong>Where we can use annotations?</strong><br />
+Annotations can be applied to the classes, interfaces, methods and fields. For example the below annotation is being applied to the method.</p>
+<pre>@Override
+void myMethod() { 
+    //Do something 
+}</pre>
+<p>What this annotation is exactly doing here is explained in the next section but to be brief it is instructing compiler that <code>myMethod()</code> is a overriding method which is overriding the method (myMethod()) of super class.</p>
+<h2>Built-in Annotations in Java</h2>
+<p>Java has three built-in annotations:</p>
+<ul>
+<li>@Override</li>
+<li>@Deprecated</li>
+<li>@SuppressWarnings</li>
+</ul>
+<h4>1) @Override:</h4>
+<p>While overriding a method in the child class, we should use this annotation to mark that method. This makes code readable and avoid maintenance issues, such as: while changing the method signature of parent class, you must change the signature in child classes (where this annotation is being used) otherwise compiler would throw compilation error. This is difficult to trace when you haven&#8217;t used this annotation.</p>
+<p>Example:</p>
+<pre>public class MyParentClass {
+
+    public void justaMethod() {
+        System.out.println("Parent class method");
+    }
+}
+
+
+public class MyChildClass extends MyParentClass {
+
+    @Override
+    public void justaMethod() {
+        System.out.println("Child class method");
+    }
+}</pre>
+<p>I believe the example is self explanatory. To read more about this annotation, refer this article: <a title="@Override annotation in Java" href="../../07/override-annotation-in-java/index.html" target="_blank">@Override built-in annotation</a>.</p>
+<h4>2) @Deprecated</h4>
+<p>@Deprecated annotation indicates that the marked element (class, method or field) is deprecated and should no longer be used. The compiler generates a warning whenever a program uses a method, class, or field that has already been marked with the @Deprecated annotation. When an element is deprecated, it should also be documented using the Javadoc @deprecated tag, as shown in the following example. Make a note of case difference with @Deprecated and @deprecated. @deprecated is used for documentation purpose.</p>
+<p>Example:</p>
+<pre>/**
+ * @deprecated
+ * reason for why it was deprecated
+ */
+@Deprecated
+public void anyMethodHere(){
+    // Do something
+}</pre>
+<p>Now, whenever any program would use this method, the compiler would generate a warning. To read more about this annotation, refer this article: <a title="@Deprecated annotation in java" href="../../07/deprecated-annotation-in-java/index.html" target="_blank">Java &#8211; @Deprecated annotation</a>.</p>
+<h4>3) @SuppressWarnings</h4>
+<p>This annotation instructs compiler to ignore specific warnings. For example in the below code, I am calling a deprecated method (lets assume that the method deprecatedMethod() is marked with @Deprecated annotation) so the compiler should generate a warning, however I am using @@SuppressWarnings annotation that would suppress that deprecation warning.</p>
+<pre>@SuppressWarnings("deprecation")
+    void myMethod() {
+        myObject.deprecatedMethod();
+}</pre>
+<h2>Creating Custom Annotations</h2>
+<ul>
+<li>Annotations are created by using @interface, followed by annotation name as shown in the below example.</li>
+<li>An annotation can have elements as well. They look like methods. For example in the below code, we have four elements. We should not provide implementation for these elements.</li>
+<li>All annotations extends java.lang.annotation.Annotation interface. Annotations cannot include any extends clause.</li>
+</ul>
+<pre>import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Inherited;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+ 
+@Documented
+@Target(ElementType.METHOD)
+@Inherited
+@Retention(RetentionPolicy.RUNTIME)
+public @interface MyCustomAnnotation{
+    int studentAge() default 18;
+    String studentName();
+    String stuAddress();
+    String stuStream() default "CSE";
+}</pre>
+<p>Note: All the elements that have default values set while creating annotations can be skipped while using annotation. For example if I&#8217;m applying the above annotation to a class then I would do it like this:</p>
+<pre>@MyCustomAnnotation(
+    studentName="Chaitanya",
+    stuAddress="Agra, India"
+)
+public class MyClass {
+...
+}</pre>
+<p>As you can see, we have not given any value to the <code>studentAge</code> and <code>stuStream</code> elements as it is optional to set the values of these elements (default values already been set in Annotation definition, but if you want you can assign new value while using annotation just the same way as we did for other elements). However we have to provide the values of other elements (the elements that do not have default values set) while using annotation.</p>
+<p><strong>Note</strong>: We can also have array elements in an annotation. This is how we can use them:<br />
+Annotation definition:</p>
+<pre>@interface MyCustomAnnotation {
+    int      count();
+    String[] books();
+}</pre>
+<p>Usage:</p>
+<pre>@MyCustomAnnotation(
+    count=3,
+    books={"C++", "Java"}
+)
+public class MyClass {
+
+}</pre>
+<p>Lets back to the topic again: In the custom annotation example we have used these four annotations: <code>@Documented</code>, <code>@Target</code>, <code>@Inherited</code> &amp; <code>@Retention</code>. Lets discuss them in detail.</p>
+<h4>@Documented</h4>
+<p>@Documented annotation indicates that elements using this annotation should be documented by JavaDoc. For example:</p>
+<pre>java.lang.annotation.Documented
+@Documented
+public @interface MyCustomAnnotation {
+  //Annotation body
+}</pre>
+<pre>@MyCustomAnnotation
+public class MyClass { 
+     //Class body
+}</pre>
+<p>While generating the javadoc for class <code>MyClass</code>, the annotation <code>@MyCustomAnnotation</code> would be included in that.</p>
+<h4>@Target</h4>
+<p>It specifies where we can use the annotation. For example: In the below code, we have defined the target type as METHOD which means the below annotation can only be used on methods.</p>
+<pre>import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+
+@Target({ElementType.METHOD})
+public @interface MyCustomAnnotation {
+
+}</pre>
+<pre>public class MyClass {
+   @MyCustomAnnotation
+   public void myMethod()
+   {
+       //Doing something
+   }
+}</pre>
+<p><strong>Note</strong>: 1) If you do not define any Target type that means annotation can be applied to any element.<br />
+2) Apart from ElementType.METHOD, an annotation can have following possible Target values.<br />
+ElementType.METHOD<br />
+ElementType.PACKAGE<br />
+ElementType.PARAMETER<br />
+ElementType.TYPE<br />
+ElementType.ANNOTATION_TYPE<br />
+ElementType.CONSTRUCTOR<br />
+ElementType.LOCAL_VARIABLE<br />
+ElementType.FIELD</p>
+<h4>@Inherited</h4>
+<p>The @Inherited annotation signals that a custom annotation used in a class should be inherited by all of its sub classes. For example:</p>
+<pre>java.lang.annotation.Inherited
+
+@Inherited
+public @interface MyCustomAnnotation {
+
+}</pre>
+<pre>@MyCustomAnnotation
+public class MyParentClass { 
+  ... 
+}</pre>
+<pre>public class MyChildClass extends MyParentClass { 
+   ... 
+}</pre>
+<p>Here the class <code>MyParentClass</code> is using annotation <code>@MyCustomAnnotation</code> which is marked with @inherited annotation. It means the sub class <code>MyChildClass</code> inherits the <code>@MyCustomAnnotation</code>.</p>
+<h4>@Retention</h4>
+<p>It indicates how long annotations with the annotated type are to be retained.</p>
+<pre>import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+@Retention(RetentionPolicy.RUNTIME)
+@interface MyCustomAnnotation {
+    
+}</pre>
+<p>Here we have used RetentionPolicy.RUNTIME. There are two other options as well. Lets see what do they mean:<br />
+<code>RetentionPolicy.RUNTIME</code>: The annotation should be available at runtime, for inspection via java reflection.<br />
+<code>RetentionPolicy.CLASS</code>: The annotation would be in the .class file but it would not be available at runtime.<br />
+<code>RetentionPolicy.SOURCE</code>: The annotation would be available in the source code of the program, it would neither be in the .class file nor be available at the runtime.</p>
+<p>That&#8217;s all for this topic &#8220;Java Annotation&#8221;. Should you have any questions, feel free to drop a line below.</p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../07/java-serialization/index.html" rel="bookmark" title="Link to Java Serialization">Java Serialization</a></li><li><a href="../../../2013/05/java-arrays/index.html" rel="bookmark" title="Link to Java Arrays">Java Arrays</a></li><li><a href="../../08/java-regex-tutorial/index.html" rel="bookmark" title="Link to Java Regular Expressions (java regex) Tutorial with examples">Java Regular Expressions (java regex) Tutorial with examples</a></li><li><a href="../../07/java-finding-minimum-and-maximum-values-in-an-array/index.html" rel="bookmark" title="Link to Java &#8211; Finding minimum and maximum values in an array">Java &#8211; Finding minimum and maximum values in an array</a></li><li><a href="../../07/sorting-char-array-in-java-example/index.html" rel="bookmark" title="Link to Sorting char array in Java example">Sorting char array in Java example</a></li><li><a href="../java-autoboxing-and-unboxing-with-examples/index.html" rel="bookmark" title="Link to Java Autoboxing and Unboxing with examples">Java Autoboxing and Unboxing with examples</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-36841">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/578453bf1ce8ab61fbb0bfb915bfcde2?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/578453bf1ce8ab61fbb0bfb915bfcde2?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Gagandeep Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-25T05:58:36+00:00" itemprop="datePublished"><a href="index.html#comment-36841" class="comment-time-link" itemprop="url">September 25, 2015 at 5:58 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>clear and concise<br />
+Nicely written&#8230; thanks !</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-36841' onclick='return addComment.moveForm( "comment-36841", "36841", "respond", "5635" )' aria-label='Reply to Gagandeep Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-44295">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/71560564393bad5db317e30ad81d9486?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/71560564393bad5db317e30ad81d9486?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tahar Bakir</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-25T15:25:03+00:00" itemprop="datePublished"><a href="index.html#comment-44295" class="comment-time-link" itemprop="url">November 25, 2015 at 3:25 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Correct me if i&#8217;m wrong bu since the target is set to method:<br />
+@Target(ElementType.METHOD)</p>
+<p>This is will not compile :<br />
+@MyCustomAnnotation(<br />
+    studentName=&#8221;Chaitanya&#8221;,<br />
+    stuAddress=&#8221;Agra, India&#8221;<br />
+)<br />
+public class MyClass { &#8230; }</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-44295' onclick='return addComment.moveForm( "comment-44295", "44295", "respond", "5635" )' aria-label='Reply to Tahar Bakir'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-53491">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/eb775d2cd2e2509cd1d6fc9083a1a73a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/eb775d2cd2e2509cd1d6fc9083a1a73a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Aditya Maurya</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-09T20:14:28+00:00" itemprop="datePublished"><a href="index.html#comment-53491" class="comment-time-link" itemprop="url">April 9, 2016 at 8:14 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Tahir,<br />
+You have define annotation  as @Target(ElementType.METHOD)<br />
+So you can not use this for class it is use only for any method.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53491' onclick='return addComment.moveForm( "comment-53491", "53491", "respond", "5635" )' aria-label='Reply to Aditya Maurya'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-58049">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b520a7d8aec0d4386ec638e87e44b809?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b520a7d8aec0d4386ec638e87e44b809?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Theon</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-07-09T22:57:02+00:00" itemprop="datePublished"><a href="index.html#comment-58049" class="comment-time-link" itemprop="url">July 9, 2016 at 10:57 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>awesome&#8230;. well explained&#8230; thanks a lot</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-58049' onclick='return addComment.moveForm( "comment-58049", "58049", "respond", "5635" )' aria-label='Reply to Theon'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-65048">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/08fda8e5daa6e173eec067bc2a0bd498?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/08fda8e5daa6e173eec067bc2a0bd498?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Richard Jessop</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-12-27T01:37:13+00:00" itemprop="datePublished"><a href="index.html#comment-65048" class="comment-time-link" itemprop="url">December 27, 2016 at 1:37 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Excellent introduction.  Brief and accurate.  Thanks!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-65048' onclick='return addComment.moveForm( "comment-65048", "65048", "respond", "5635" )' aria-label='Reply to Richard Jessop'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-72352">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/39208783ce2acc52357930e47a9ff973?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/39208783ce2acc52357930e47a9ff973?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Marie</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-07-19T05:34:50+00:00" itemprop="datePublished"><a href="index.html#comment-72352" class="comment-time-link" itemprop="url">July 19, 2017 at 5:34 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi,<br />
+I have a query can a Instance Variables or Try catch block be annotated or not?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-72352' onclick='return addComment.moveForm( "comment-72352", "72352", "respond", "5635" )' aria-label='Reply to Marie'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='5635' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="7faf7d1a30" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="91"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../../../2013/05/java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../../../2013/05/jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../../../2013/05/first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../../../2013/04/oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../../2013/03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../../../2013/04/java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../../2013/03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../../../2013/05/java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../../../2013/05/aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../../../2013/05/association/index.html">Association</a></li>
+<li><a href="../../07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="../../../2013/05/method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="../../01/method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="../../01/difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../../2013/03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../../../2013/04/runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../../../2013/04/java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../../../2013/05/java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="../../../2013/05/java-interface/index.html">Interface</a></li>
+ 	<li><a href="../../../2013/05/abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../../../2013/05/encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../../2013/03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../../../2013/05/java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../../../2013/04/java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../../../2013/05/inner-class/index.html">Inner classes</a></li>
+<li><a href="../../../2013/05/java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../../../2013/05/static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../../../2013/05/java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../../2013/12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../../2013/04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../../2013/03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2014/09/java-annotations/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:42:08 GMT -->
+</html>

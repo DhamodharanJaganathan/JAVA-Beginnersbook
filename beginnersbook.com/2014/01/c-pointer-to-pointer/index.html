@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2014/01/c-pointer-to-pointer/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:04:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>C - Pointer to Pointer (Double Pointer) with example</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="We already know that a pointer holds the address of another variable of same type. When a pointer holds the address of another pointer then such type of pointer is known as pointer-to-pointer or double pointer. In this guide, we will learn what is a double pointer, how to declare them and how to use them in C"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="C - Pointer to Pointer (Double Pointer) with example" />
+<meta property="og:description" content="We already know that a pointer holds the address of another variable of same type. When a pointer holds the address of another pointer then such type of pointer is known as pointer-to-pointer or double pointer. In this guide, we will learn what is a double pointer, how to declare them and how to use them in C" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="c-programming" />
+<meta property="article:published_time" content="2014-01-14T16:36:45+00:00" />
+<meta property="article:modified_time" content="2017-09-21T11:21:41+00:00" />
+<meta property="og:updated_time" content="2017-09-21T11:21:41+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2014/01/pointer-to-pointer.png" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2014/01/pointer-to-pointer.png" />
+<meta property="og:image:width" content="500" />
+<meta property="og:image:height" content="300" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="We already know that a pointer holds the address of another variable of same type. When a pointer holds the address of another pointer then such type of pointer is known as pointer-to-pointer or double pointer. In this guide, we will learn what is a double pointer, how to declare them and how to use them in C" />
+<meta name="twitter:title" content="C - Pointer to Pointer (Double Pointer) with example" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2014/01/pointer-to-pointer.png" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; C &#8211; Pointer to Pointer (Double Pointer) with example Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexfb1a.html?p=4942' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embede689.json?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fc-pointer-to-pointer%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embeda29b?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fc-pointer-to-pointer%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-4942 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-4942 post type-post status-publish format-standard has-post-thumbnail category-c-programming entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">C &#8211; Pointer to Pointer (Double Pointer) with example</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/c-programming/index.html" rel="category tag">c-programming</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>We already know that a pointer holds the address of another variable of same type. When a pointer holds the address of another pointer then such type of pointer is known as <strong>pointer-to-pointer</strong> or <strong>double pointer</strong>. In this guide, we will learn what is a double pointer, how to declare them and how to use them in C programming. To understand this concept, you should know the <a href="../c-pointers/index.html">basics of pointers</a>.</p>
+<h2>How to declare a Pointer to Pointer (Double Pointer) in C?</h2>
+<pre>int **pr;</pre>
+<p>Here pr is a double pointer. There must be two *&#8217;s in the declaration of double pointer.</p>
+<p>Let&#8217;s understand the concept of double pointers with the help of a diagram:<br />
+<img class="aligncenter size-full wp-image-4943" src="../../../wp-content/uploads/2014/01/pointer-to-pointer.png" alt="pointer-to-pointer or double pointer" width="500" height="300" srcset="https://beginnersbook.com/wp-content/uploads/2014/01/pointer-to-pointer.png 500w, https://beginnersbook.com/wp-content/uploads/2014/01/pointer-to-pointer-300x180.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></p>
+<p>As per the diagram, pr2 is a normal pointer that holds the address of an integer variable num. There is another pointer pr1 in the diagram that holds the address of another pointer pr2, the pointer pr1 here is a pointer-to-pointer (or double pointer).</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><strong>Values from above diagram:</strong></p>
+<pre>Variable num has address: XX771230
+Address of Pointer pr1 is: XX661111
+Address of Pointer pr2 is: 66X123X1</pre>
+<h2>Example of double Pointer</h2>
+<p>Lets write a C program based on the diagram that we have seen above.</p>
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+     int num=123;
+
+     //A normal pointer pr2
+     int *pr2;
+
+     //This pointer pr2 is a double pointer
+     int **pr1;
+
+     /* Assigning the address of variable num to the
+      * pointer pr2
+      */
+     pr2 = #
+
+     /* Assigning the address of pointer pr2 to the
+      * pointer-to-pointer pr1
+      */
+     pr1 = &amp;pr2;
+
+     /* Possible ways to find value of variable num*/
+     printf("\n Value of num is: %d", num);
+     printf("\n Value of num using pr2 is: %d", *pr2);
+     printf("\n Value of num using pr1 is: %d", **pr1);
+
+     /*Possible ways to find address of num*/
+     printf("\n Address of num is: %p", &amp;num);
+     printf("\n Address of num using pr2 is: %p", pr2);
+     printf("\n Address of num using pr1 is: %p", *pr1);
+
+     /*Find value of pointer*/
+     printf("\n Value of Pointer pr2 is: %p", pr2);
+     printf("\n Value of Pointer pr2 using pr1 is: %p", *pr1);
+
+     /*Ways to find address of pointer*/
+     printf("\n Address of Pointer pr2 is:%p",&amp;pr2);
+     printf("\n Address of Pointer pr2 using pr1 is:%p",pr1);
+
+     /*Double pointer value and address*/
+     printf("\n Value of Pointer pr1 is:%p",pr1);
+     printf("\n Address of Pointer pr1 is:%p",&amp;pr1);
+
+     return 0;
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>Value of num is: 123
+Value of num using pr2 is: 123
+Value of num using pr1 is: 123
+Address of num is: XX771230
+Address of num using pr2 is: XX771230
+Address of num using pr1 is: XX771230
+Value of Pointer pr2 is: XX771230
+Value of Pointer pr2 using pr1 is: XX771230
+Address of Pointer pr2 is: 66X123X1
+Address of Pointer pr2 using pr1 is: 66X123X1
+Value of Pointer pr1 is:  66X123X1
+Address of Pointer pr1 is: XX661111</pre>
+<blockquote><p>There are some confusions regarding the output of this program, when you run this program you would see the address similar to this: 0x7fff54da7c58. The reason I have given the address in different format is because I want you to relate this program with the diagram above. I have used the exact address values in the above diagram so that it would be easy for you to relate the output of this program with the above diagram.</p></blockquote>
+<p>You can also understand the program logic with these simple equations:</p>
+<pre>num == *pr2 == **pr1
+&amp;num == pr2 == *pr1
+&amp;pr2 == pr1</pre>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-39838">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3127ea183631cfa2c966f22fc142e7cf?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3127ea183631cfa2c966f22fc142e7cf?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Priyaranjan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-24T13:40:19+00:00" itemprop="datePublished"><a href="index.html#comment-39838" class="comment-time-link" itemprop="url">October 24, 2015 at 1:40 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Awesome explanation with figures!! My concept of pointers has never been so clear. I hope I won&#8217;t be confused any more in this field.<br />
+Thanks!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-39838' onclick='return addComment.moveForm( "comment-39838", "39838", "respond", "4942" )' aria-label='Reply to Priyaranjan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-40977">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7bf717859d6081f4c685a86437d7d04d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7bf717859d6081f4c685a86437d7d04d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Vinayak</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-31T21:14:18+00:00" itemprop="datePublished"><a href="index.html#comment-40977" class="comment-time-link" itemprop="url">October 31, 2015 at 9:14 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>It&#8217;s a great explanation. Thanks!!<br />
+I just have one query.<br />
+Should it not be :<br />
+printf(&#8220;\n Address of Pointer pr2 using pr1 is:%u&#8221;,pr1);</p>
+<p>instead of :<br />
+printf(&#8220;\n Address of Pointer pr2 using pr1 is:%u&#8221;,*pr1);</p>
+<p>Since *pr1 is the value of pr2 and not its address.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-40977' onclick='return addComment.moveForm( "comment-40977", "40977", "respond", "4942" )' aria-label='Reply to Vinayak'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-46293">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/386a3dae0fe296abd44394a66211e3d1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/386a3dae0fe296abd44394a66211e3d1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Jason Kinney</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-16T21:14:20+00:00" itemprop="datePublished"><a href="index.html#comment-46293" class="comment-time-link" itemprop="url">December 16, 2015 at 9:14 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Is there a typo in the code for the section &#8220;Ways to find address of pointer&#8221;?  The &#8220;*pr1&#8221; should be &#8220;pr1&#8221;, if &amp;pr2 == pr1, no?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-46293' onclick='return addComment.moveForm( "comment-46293", "46293", "respond", "4942" )' aria-label='Reply to Jason Kinney'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-69368">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/34a955680bd294c413e4f55e13de0ae8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/34a955680bd294c413e4f55e13de0ae8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">srl</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-07T14:38:22+00:00" itemprop="datePublished"><a href="index.html#comment-69368" class="comment-time-link" itemprop="url">April 7, 2017 at 2:38 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Wait a minute. The address of pr2 (&amp;pr2) is assigned to the pointer pr1.  But pr1&#8217;s OWN address is NOT &amp;pr2.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69368' onclick='return addComment.moveForm( "comment-69368", "69368", "respond", "4942" )' aria-label='Reply to srl'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-47946">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/03b3f7898d1b49558904190f3639900f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/03b3f7898d1b49558904190f3639900f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">vj</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-01-03T14:42:25+00:00" itemprop="datePublished"><a href="index.html#comment-47946" class="comment-time-link" itemprop="url">January 3, 2016 at 2:42 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Yeah jason&#8230;me oso thinking the same.<br />
+As per dat logic ..it should be &#8220;pr1&#8221;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-47946' onclick='return addComment.moveForm( "comment-47946", "47946", "respond", "4942" )' aria-label='Reply to vj'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-50992">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c853cf05a2e300ac2c04634467b8294c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c853cf05a2e300ac2c04634467b8294c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">LA Hattersley</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-13T19:35:49+00:00" itemprop="datePublished"><a href="index.html#comment-50992" class="comment-time-link" itemprop="url">February 13, 2016 at 7:35 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I think this code is wrong</p>
+<p>     /* I’m reading the address of variable num and<br />
+      * storing it in pointer pr2*/<br />
+     pr2 = #</p>
+<p>I used:<br />
+	pr2 = &amp;num;<br />
+To get it working</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-50992' onclick='return addComment.moveForm( "comment-50992", "50992", "respond", "4942" )' aria-label='Reply to LA Hattersley'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-63535">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/db983752749623a98b8fd543d39ed1f9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/db983752749623a98b8fd543d39ed1f9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Gajendra Thakre</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-17T13:22:35+00:00" itemprop="datePublished"><a href="index.html#comment-63535" class="comment-time-link" itemprop="url">November 17, 2016 at 1:22 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Pointer To Pointer Can Point To A Memory Locations Of A Variable Of Any Data Types.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63535' onclick='return addComment.moveForm( "comment-63535", "63535", "respond", "4942" )' aria-label='Reply to Gajendra Thakre'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-68594">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/02142ec4fc3b5588020989c80926be58?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/02142ec4fc3b5588020989c80926be58?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">JUH</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-19T07:18:45+00:00" itemprop="datePublished"><a href="index.html#comment-68594" class="comment-time-link" itemprop="url">March 19, 2017 at 7:18 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>it should be &#8220;pr1&#8221; instead of &#8220;pr1*&#8221;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-68594' onclick='return addComment.moveForm( "comment-68594", "68594", "respond", "4942" )' aria-label='Reply to JUH'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-68619">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d77e60b47a3756bc6dc18f5fe9a97902?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d77e60b47a3756bc6dc18f5fe9a97902?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nikhil</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-20T04:55:54+00:00" itemprop="datePublished"><a href="index.html#comment-68619" class="comment-time-link" itemprop="url">March 20, 2017 at 4:55 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I think there is some typo in 10th print line:<br />
+Address of Pointer pr2 using pr1 is:  XX771230 (correct) instead of<br />
+Address of Pointer pr2 using pr1 is: 66X123X1 (Wrong) according to the register you take.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-68619' onclick='return addComment.moveForm( "comment-68619", "68619", "respond", "4942" )' aria-label='Reply to Nikhil'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4942' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="cb6707d86a" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="239"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-21" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">C Programming Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../install-turbo-c/index.html">Turbo C++  installation</a></li>
+<li><a href="../c-program-structure/index.html">First C Program</a></li>
+<li><a href="../c-keywords-reserved-words/index.html">C - Keywords</a></li>
+<li><a href="../c-operator-precedence-table/index.html">Operator precedence</a></li>
+<li><a href="../c-if-statement/index.html">C - if statement</a></li>
+<li><a href="../c-if-else-statement-example/index.html">C - if..else</a></li>
+<li><a href="../c-for-loop/index.html">C - for loop</a></li>
+<li><a href="../c-while-loop/index.html">C - while loop</a></li>
+<li><a href="../c-dowhile-loop/index.html">C - do while loop</a></li>
+
+<li><a href="../c-continue-statement/index.html">C - continue</a></li>
+<li><a href="../c-break-statement/index.html">C - break statement</a></li>
+<li><a href="../switch-case-statements-in-c/index.html">C - switch..case</a></li>
+<li><a href="../c-goto-statement/index.html">C - goto statement</a></li>
+<li><a href="../c-arrays-example/index.html">C - Arrays</a></li>
+<li><a href="../2d-arrays-in-c-example/index.html">2 D array</a></li>
+<li><a href="../c-strings-string-functions/index.html">C - String</a></li>
+<li><a href="../c-functions-examples/index.html">C - functions</a></li>
+<li><a href="../c-function-call-by-reference-example/index.html">Function call by reference</a></li>
+<li><a href="../c-function-call-by-value-example/index.html">Function call by value</a></li>
+<li><a href="../c-passing-array-to-function-example/index.html">Array to function</a></li>
+<li><a href="../c-structures-examples/index.html">C - Structures</a></li>
+<li><a href="../c-pointers/index.html">C - Pointers</a></li>
+<li><a href="index.html">Pointer to Pointer</a></li>
+<li><a href="../c-passing-pointers-to-functions/index.html">Pointers to functions</a></li>
+<li><a href="../c-function-pointers/index.html">C - function pointers</a></li>
+<li><a href="../c-pointer-to-array-example/index.html">Pointer & Array</a></li>
+<li><a href="../c-file-io/index.html">C - File I/O</a></li>
+<li><a href="../../../2015/02/simple-c-programs/index.html">C Programming Examples</a></li>
+</ul></div></div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2014/01/c-pointer-to-pointer/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:04:11 GMT -->
+</html>

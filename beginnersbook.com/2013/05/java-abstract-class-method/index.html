@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/05/java-abstract-class-method/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:40:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Abstract Class in Java with example</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Abstract Class in Java: It is like a template, so you have to extend it and build on it before you can use it. We will discuss it with the help of examples."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Abstract Class in Java with example" />
+<meta property="og:description" content="Abstract Class in Java: It is like a template, so you have to extend it and build on it before you can use it. We will discuss it with the help of examples." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="OOPs Concept" />
+<meta property="article:published_time" content="2013-05-12T21:16:46+00:00" />
+<meta property="article:modified_time" content="2017-09-13T07:31:09+00:00" />
+<meta property="og:updated_time" content="2017-09-13T07:31:09+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Abstract Class in Java: It is like a template, so you have to extend it and build on it before you can use it. We will discuss it with the help of examples." />
+<meta name="twitter:title" content="Abstract Class in Java with example" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Abstract Class in Java with example Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index58f6.html?p=2545' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed9ca0.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fjava-abstract-class-method%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed3bb1?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fjava-abstract-class-method%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2545 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2545 post type-post status-publish format-standard category-oops-concept entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Abstract Class in Java with example</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/oops-concept/index.html" rel="category tag">OOPs Concept</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>A class that is declared using &#8220;<strong>abstract</strong>&#8221; keyword is known as abstract class. It can have abstract methods(methods without body) as well as concrete methods (regular methods with body). A normal class(non-abstract class) cannot have abstract methods. In this guide we will learn what is a abstract class, why we use it and what are the rules that we must remember while working with it in Java.</p>
+<blockquote><p>An abstract class can not be <strong>instantiated</strong>, which means you are not allowed to create an <strong>object</strong> of it. Why? We will discuss that later in this guide.</p></blockquote>
+<h2>Why we need an abstract class?</h2>
+<p>Lets say we have a class <code>Animal</code> that has a method <code>sound()</code> and the subclasses(see <a href="../../03/inheritance-in-java/index.html">inheritance</a>) of it like <code>Dog</code>, <code>Lion</code>, <code>Horse</code>, <code>Cat</code> etc. Since the animal sound differs from one animal to another, there is no point to implement this method in parent class. This is because every child class must override this method to give its own implementation details, like <code>Lion</code> class will say &#8220;Roar&#8221; in this method and <code>Dog</code> class will say &#8220;Woof&#8221;.</p>
+<p>So when we know that all the animal child classes will and should override this method, then there is no point to implement this method in parent class. Thus, making this method abstract would be the good choice as by making this method abstract we force all the sub classes to implement this method( otherwise you will get compilation error), also we need not to give any implementation to this method in parent class.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>Since the <code>Animal</code> class has an abstract method, you must need to declare this class abstract.</p>
+<p>Now each animal must have a sound, by making this method abstract we made it compulsory to the child class to give implementation details to this method. This way we ensures that every animal has a sound.</p>
+<h2>Abstract class Example</h2>
+<pre>//abstract parent class
+abstract class Animal{
+   //abstract method
+   public abstract void sound();
+}
+//Dog class extends Animal class
+public class Dog extends Animal{
+
+   public void sound(){
+	System.out.println("Woof");
+   }
+   public static void main(String args[]){
+	Animal obj = new Dog();
+	obj.sound();
+   }
+}</pre>
+<p>Output:</p>
+<pre>Woof</pre>
+<p>Hence for such kind of scenarios we generally declare the class as abstract and later <strong>concrete classes</strong> extend these classes and override the methods accordingly and can have their own methods as well.</p>
+<h2>Abstract class declaration</h2>
+<p>An abstract class outlines the methods but not necessarily implements all the methods.</p>
+<pre>//Declaration using abstract keyword
+abstract class A{
+   //This is abstract method
+   abstract void myMethod();
+
+   //This is concrete method with body
+   void anotherMethod(){
+      //Does something
+   }
+}</pre>
+<h2>Rules</h2>
+<p><strong>Note 1:</strong> As we seen in the above example, there are cases when it is difficult or often unnecessary to implement all the methods in parent class. In these cases, we can declare the parent class as abstract, which makes it a special class which is not complete on its own.</p>
+<p>A class derived from the abstract class must implement all those methods that are declared as abstract in the parent class.</p>
+<p><strong>Note 2:</strong> Abstract class cannot be instantiated which means you cannot create the object of it. To use this class, you need to create another class that extends this this class and provides the implementation of abstract methods, then you can use the object of that child class to call non-abstract methods of parent class as well as implemented methods(those that were abstract in parent but implemented in child class).</p>
+<p><strong>Note 3:</strong> If a child does not implement all the abstract methods of abstract parent class, then the child class must need to be declared abstract as well.</p>
+<blockquote><p><strong>Do you know?</strong> Since abstract class allows concrete methods as well, it does not provide 100% abstraction. You can say that it provides partial abstraction. Abstraction is a process where you show only &#8220;relevant&#8221; data and &#8220;hide&#8221; unnecessary details of an object from the user.</p>
+<p><a title="Interface in java with example programs" href="../java-interface/index.html">Interfaces</a> on the other hand are used for 100% abstraction (See more about <a href="../../03/oops-in-java-encapsulation-inheritance-polymorphism-abstraction/index.html">abstraction</a> here).<br />
+You may also want to read this: <a href="../abstract-class-vs-interface-in-java/index.html">Difference between abstract class and Interface in Java</a></p></blockquote>
+<h3>Why can&#8217;t we create the object of an abstract class?</h3>
+<p>Because these classes are incomplete, they have abstract methods that have no body so if java allows you to create object of this class then if someone calls the abstract method using that object then What would happen?There would be no actual implementation of the method to invoke.<br />
+Also because an object is concrete. An abstract class is like a template, so you have to extend it and build on it before you can use it.</p>
+<h3>Example to demonstrate that object creation of abstract class is not allowed</h3>
+<p>As discussed above, we cannot instantiate an abstract class. This program throws a compilation error.</p>
+<pre>abstract class AbstractDemo{
+   public void myMethod(){
+      System.out.println("Hello");
+   }
+   abstract public void anotherMethod();
+}
+public class Demo extends AbstractDemo{
+
+   public void anotherMethod() { 
+        System.out.print("Abstract method"); 
+   }
+   public static void main(String args[])
+   { 
+      //error: You can't create object of it
+      AbstractDemo obj = new AbstractDemo();
+      obj.anotherMethod();
+   }
+}
+</pre>
+<p>Output:</p>
+<pre>Unresolved compilation problem: Cannot instantiate the type AbstractDemo</pre>
+<p>Note: The class that extends the abstract class, have to implement all the abstract methods of it, else you have to declare that class abstract as well.</p>
+<h2>Abstract class vs Concrete class</h2>
+<p>A class which is not abstract is referred as <strong>Concrete class</strong>. In the above example that we have seen in the beginning of this guide, <code>Animal</code> is a abstract class and <code>Cat</code>, <code>Dog</code> &amp; <code>Lion</code> are concrete classes.</p>
+<p><strong>Key Points:</strong></p>
+<ol>
+<li>An abstract class has no use until unless it is extended by some other class.</li>
+<li>If you declare an <strong>abstract method</strong> in a class then you must declare the class abstract as well. you can&#8217;t have abstract method in a concrete class. It&#8217;s vice versa is not always true: If a class is not having any abstract method then also it can be marked as abstract.</li>
+<li>It can have non-abstract method (concrete) as well.</li>
+</ol>
+<p>I have covered the rules and examples of abstract methods in a separate tutorial, You can find the guide here: <a href="../../../2014/01/abstract-method-with-examples-in-java/index.html">Abstract method in Java</a><br />
+For now lets just see some basics and example of abstract method.<br />
+1) Abstract method has no body.<br />
+2) Always end the declaration with a <strong>semicolon</strong>(;).<br />
+3) It must be <a href="../../../2014/01/method-overriding-in-java-with-example/index.html" target="_blank" rel="noopener">overridden</a>. An abstract class must be extended and in a same way abstract method must be overridden.<br />
+4) A class has to be declared abstract to have abstract methods.</p>
+<p><strong>Note:</strong> The class which is extending abstract class must override all the abstract methods.</p>
+<h2>Example of Abstract class and method</h2>
+<pre>abstract class MyClass{
+   public void disp(){
+     System.out.println("Concrete method of parent class");
+   }
+   abstract public void disp2();
+}
+
+class Demo extends MyClass{
+   /* Must Override this method while extending
+    * MyClas
+    */
+   public void disp2()
+   {
+       System.out.println("overriding abstract method");
+   }
+   public static void main(String args[]){
+       Demo obj = new Demo();
+       obj.disp2();
+   }
+}
+</pre>
+<p>Output:</p>
+<pre>overriding abstract method
+</pre>
+<div class="bb-nav"><a class="pretut" href="../../04/java-static-dynamic-binding/index.html">❮ Previous</a><a class="nexttut" href="../../../2014/01/abstract-method-with-examples-in-java/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-1954">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/82dcc8233b52541301d1f2a4702fd0f8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/82dcc8233b52541301d1f2a4702fd0f8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">digbijay mohanty</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-03-11T18:08:55+00:00" itemprop="datePublished"><a href="index.html#comment-1954" class="comment-time-link" itemprop="url">March 11, 2014 at 6:08 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>still not clear what is the practical applicability of abstract method. please suggest me.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-1954' onclick='return addComment.moveForm( "comment-1954", "1954", "respond", "2545" )' aria-label='Reply to digbijay mohanty'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-2716">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b4f39719a9ac67b185a0b4d5ce0bb14c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b4f39719a9ac67b185a0b4d5ce0bb14c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">KV Iyer</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-10T15:01:39+00:00" itemprop="datePublished"><a href="index.html#comment-2716" class="comment-time-link" itemprop="url">April 10, 2014 at 3:01 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Digbijay,</p>
+<p>Abstract method is just a signature without any implementation block inside.Abstract method  must be overridden in the subclasses to make use for the object to invoke.<br />
+An Abstract Method is just a prototype for the method with the following attributes:-<br />
+1)  A return type<br />
+2) A name<br />
+3) A list of Parameters<br />
+4)  A throws clause which is optional</p>
+<p>Example:- public abstract int salary(int empNo)</p>
+<p>Hope this helps.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2716' onclick='return addComment.moveForm( "comment-2716", "2716", "respond", "2545" )' aria-label='Reply to KV Iyer'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-5571">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/07e3244172e995c1f8c7cdd6b4a4be3c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/07e3244172e995c1f8c7cdd6b4a4be3c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sunil</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-07-26T17:34:01+00:00" itemprop="datePublished"><a href="index.html#comment-5571" class="comment-time-link" itemprop="url">July 26, 2014 at 5:34 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Can a abstract class have a constructor ????<br />
+and if yes,  why ???<br />
+and if No, why ???</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5571' onclick='return addComment.moveForm( "comment-5571", "5571", "respond", "2545" )' aria-label='Reply to sunil'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-5771">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/5cd49fb76bc0318717fa9674ba30b386?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/5cd49fb76bc0318717fa9674ba30b386?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">hamid</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-01T07:04:16+00:00" itemprop="datePublished"><a href="index.html#comment-5771" class="comment-time-link" itemprop="url">August 1, 2014 at 7:04 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Dear Sunil ,</p>
+<p> No !! because constructor is called when the object is created . but abstact method does not have an instance so ,it is not possible to call a abstract constructor .</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5771' onclick='return addComment.moveForm( "comment-5771", "5771", "respond", "2545" )' aria-label='Reply to hamid'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-31929">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b8883036be4b7949c3e1b74185c994eb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b8883036be4b7949c3e1b74185c994eb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ankit Fulzele</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-07T08:41:18+00:00" itemprop="datePublished"><a href="index.html#comment-31929" class="comment-time-link" itemprop="url">August 7, 2015 at 8:41 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Dear Hamid, </p>
+<p>I guess you have mistaken the concept there need to make correction in our response . </p>
+<p>Abstract class can also have constructor. Even though we cannot instantiate abstract class the default constructor is always there. Either we can provide it explicitly or it is provided by Java. The reason why it is there because in the concept of inheritance you have to maintain class hierarchy, means if your class extends abstract class then the same abstract class will become super class for your extending class and remember when you have constructor of your class then first line of your constructor is always super class constructor and this is the time when your abstract class constructor get called</p>
+<p>hope you are clear now !</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-31929' onclick='return addComment.moveForm( "comment-31929", "31929", "respond", "2545" )' aria-label='Reply to Ankit Fulzele'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-4" id="comment-32986">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6c3a12479c7995546604bf441beff083?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6c3a12479c7995546604bf441beff083?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mark Anthony</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-20T07:16:17+00:00" itemprop="datePublished"><a href="index.html#comment-32986" class="comment-time-link" itemprop="url">August 20, 2015 at 7:16 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello Ankit Fulzele,</p>
+<p>Is it possible to instantiate an abstract class ?<br />
+For me, it is if the abstract class has derived a concrete class, which will be like this:<br />
+  identifier = new ;</p>
+<p>Am I right ?</p>
+<p>More thanks,<br />
+Mark</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-32986' onclick='return addComment.moveForm( "comment-32986", "32986", "respond", "2545" )' aria-label='Reply to Mark Anthony'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-4" id="comment-66809">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6a3ce2947b495fcbadb04a70820d36ee?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6a3ce2947b495fcbadb04a70820d36ee?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mayur</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-01T07:59:13+00:00" itemprop="datePublished"><a href="index.html#comment-66809" class="comment-time-link" itemprop="url">February 1, 2017 at 7:59 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Later when we create object of intended class it will implicitly call the constructor of abstract class.. when the constructor will be called does this mean object of that class have to be created?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-66809' onclick='return addComment.moveForm( "comment-66809", "66809", "respond", "2545" )' aria-label='Reply to Mayur'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-3" id="comment-45160">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f37d03a3e065954fd31fadd683252574?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f37d03a3e065954fd31fadd683252574?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Abhishek Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-03T14:23:31+00:00" itemprop="datePublished"><a href="index.html#comment-45160" class="comment-time-link" itemprop="url">December 3, 2015 at 2:23 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Dear Hamid! In abstract class can also have constructor because constructors are not used for creating object, constructors are used to initialize the data members of a class and Abstract class can also have data member and for initialize the data member of abstract class need a constructor if we did not provide the constructor then jvm supply the 0-param or default constructor for initializing the data member.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-45160' onclick='return addComment.moveForm( "comment-45160", "45160", "respond", "2545" )' aria-label='Reply to Abhishek Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-75414">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/91e46a965b2d2803ea2c93168704f602?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/91e46a965b2d2803ea2c93168704f602?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nishita Tiwary</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-09-24T04:49:54+00:00" itemprop="datePublished"><a href="index.html#comment-75414" class="comment-time-link" itemprop="url">September 24, 2017 at 4:49 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>abstract classes can have constructors..though abstract classes cannot be instantiated..that means..we cannot create objects of an abstract class..but still abstract class can have constructors..and this constructor can be called by a subclass(which inherits an abstract class) by using the super keyword.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-75414' onclick='return addComment.moveForm( "comment-75414", "75414", "respond", "2545" )' aria-label='Reply to Nishita Tiwary'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-53112">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f58a69e5115fc9a0f30a7f1dc7a7fd6e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f58a69e5115fc9a0f30a7f1dc7a7fd6e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Pradeep kumar Rajak</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-29T12:34:22+00:00" itemprop="datePublished"><a href="index.html#comment-53112" class="comment-time-link" itemprop="url">March 29, 2016 at 12:34 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>You can try to publish a book of your website after proper legal advising.<br />
+Contents are very good in your website.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53112' onclick='return addComment.moveForm( "comment-53112", "53112", "respond", "2545" )' aria-label='Reply to Pradeep kumar Rajak'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-57979">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/dc58aae44e162c114de8d5c154f8c82c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/dc58aae44e162c114de8d5c154f8c82c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Uday</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-07-07T17:14:42+00:00" itemprop="datePublished"><a href="index.html#comment-57979" class="comment-time-link" itemprop="url">July 7, 2016 at 5:14 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>how can you access concrete methods in abstract class if you cannot create an object of an abstract class. like in given example how will i run disp1 method? what changes should be done in the code?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57979' onclick='return addComment.moveForm( "comment-57979", "57979", "respond", "2545" )' aria-label='Reply to Uday'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-59513">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/de83db159ddc2ff5b799eef9f15a5cf3?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/de83db159ddc2ff5b799eef9f15a5cf3?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Aakash talreja</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-18T14:42:02+00:00" itemprop="datePublished"><a href="index.html#comment-59513" class="comment-time-link" itemprop="url">August 18, 2016 at 2:42 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Abstract class can have concrete method,&amp; yes we cannot create object,but if you extend ur abstract class by any other class so through inheritance child get all the method(concrete method also of parent class) here dynamic polymorphism is achieved by using reference of parent u can call that concrete method of parent class,&amp; if u dont want that parent method just override that concrete method of that parent class in child class.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-59513' onclick='return addComment.moveForm( "comment-59513", "59513", "respond", "2545" )' aria-label='Reply to Aakash talreja'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58256">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/30388d48c49113a6273b98a14226bcbf?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/30388d48c49113a6273b98a14226bcbf?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Alex</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-07-14T13:15:39+00:00" itemprop="datePublished"><a href="index.html#comment-58256" class="comment-time-link" itemprop="url">July 14, 2016 at 1:15 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Uday unfortunately you cannot access the concrete methods of an abstract class unless you extend the class. An abstract class is actually almost useless on their own. You can see an abstract class like a lazy student who has to be told to read his books; if he doesn&#8217;t get told, he won&#8217;t be able to read his books. Telling the student is now analogous to extending the abstract class and the student then reading his books is analogous to the execution of the concrete methods if you like.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-58256' onclick='return addComment.moveForm( "comment-58256", "58256", "respond", "2545" )' aria-label='Reply to Alex'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-63974">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2735ab7be58d9446c7ed24d6e2d9a2e1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2735ab7be58d9446c7ed24d6e2d9a2e1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Shawon Shurid</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-27T22:20:39+00:00" itemprop="datePublished"><a href="index.html#comment-63974" class="comment-time-link" itemprop="url">November 27, 2016 at 10:20 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Do we need type casting for Abstract class?<br />
+why protected constructors are used in Abstract class?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63974' onclick='return addComment.moveForm( "comment-63974", "63974", "respond", "2545" )' aria-label='Reply to Shawon Shurid'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-64424">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2b6be6136f74efdc642f9ae3ca498805?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2b6be6136f74efdc642f9ae3ca498805?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sham</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-12-13T21:16:30+00:00" itemprop="datePublished"><a href="index.html#comment-64424" class="comment-time-link" itemprop="url">December 13, 2016 at 9:16 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Why does one needs abstract class ?  Animal class example has been given here. But can someone , please give me  practical example where this is useful. If I am writing a java application, when should I stop writing all the logica in concrete class and start using the  abstract class concept</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-64424' onclick='return addComment.moveForm( "comment-64424", "64424", "respond", "2545" )' aria-label='Reply to sham'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2545' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="9460dc8434" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="187"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../../04/oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../../04/java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../association/index.html">Association</a></li>
+<li><a href="../../../2014/07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="../method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="../../../2014/01/method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="../../../2014/01/difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../../04/runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../../04/java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="index.html">Abstract class and methods</a></li>
+ 	<li><a href="../java-interface/index.html">Interface</a></li>
+ 	<li><a href="../abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../../04/java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../inner-class/index.html">Inner classes</a></li>
+<li><a href="../java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/05/java-abstract-class-method/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:40:17 GMT -->
+</html>

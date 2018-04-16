@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/09/set-default-thumbnail-featured-fallback-image-wordpress-automatically/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:18:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Set Default Thumbnail, Featured Image and Fallback Image in WordPress Automatically</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="There are several benefits of adding thumbnails to your posts. It helps in decreasing bounce rate, increases traffic, gets attention of visitors easily, makes your site look professional etc. When we start using WordPress, sometimes we don&#039;t add thumbnails or we forget to do so. In such scenarios below guides will"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Set Default Thumbnail, Featured Image and Fallback Image in WordPress Automatically" />
+<meta property="og:description" content="There are several benefits of adding thumbnails to your posts. It helps in decreasing bounce rate, increases traffic, gets attention of visitors easily, makes your site look professional etc. When we start using WordPress, sometimes we don&#039;t add thumbnails or we forget to do so. In such scenarios below guides will" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="Fallback Image" />
+<meta property="article:tag" content="Featured Image" />
+<meta property="article:tag" content="Thumbnails" />
+<meta property="article:tag" content="WordPress" />
+<meta property="article:section" content="WordPress" />
+<meta property="article:published_time" content="2013-09-14T10:02:49+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/09/def-thumb.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/09/def-thumb.jpg" />
+<meta property="og:image:width" content="652" />
+<meta property="og:image:height" content="1478" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="There are several benefits of adding thumbnails to your posts. It helps in decreasing bounce rate, increases traffic, gets attention of visitors easily, makes your site look professional etc. When we start using WordPress, sometimes we don&#039;t add thumbnails or we forget to do so. In such scenarios below guides will" />
+<meta name="twitter:title" content="Set Default Thumbnail, Featured Image and Fallback Image in WordPress Automatically" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2013/09/def-thumb.jpg" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Set Default Thumbnail, Featured Image and Fallback Image in WordPress Automatically Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index054d.html?p=3341' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed4bfa.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F09%2Fset-default-thumbnail-featured-fallback-image-wordpress-automatically%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedf840-2?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F09%2Fset-default-thumbnail-featured-fallback-image-wordpress-automatically%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-3341 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-3341 post type-post status-publish format-standard has-post-thumbnail category-wordpress tag-fallback-image tag-featured-image tag-thumbnails tag-wordpress entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Set Default Thumbnail, Featured Image and Fallback Image in WordPress Automatically</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/wordpress/index.html" rel="category tag">WordPress</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>There are several benefits of adding <span style="text-decoration: underline;">thumbnails</span> to your posts. It helps in decreasing bounce rate, increases traffic, gets attention of visitors easily, makes your site look professional etc.</p>
+<p>When we start using WordPress, sometimes we don&#8217;t add thumbnails or we forget to do so. In such scenarios below guides will definitely help you out. There are several topics covered using different-2 methods so use the below navigation to read the guide you want to refer.</p>
+<h4>Navigation links</h4>
+<p><a href="#heading1">How to set first post image as default fallback for WordPress thumbnails</a><br />
+<a href="#heading2">How to add a specific image as a default fallback (thumbnail)</a><br />
+<a href="#heading3">How to Set the First Post Image as a Featured Image (or Post thumbnail) Automatically</a><br />
+<a href="#heading4">WordPress Plugins to set default thumbnails</a></p>
+<h2 id="heading1">How to set first post image as default fallback for WordPress thumbnails</h2>
+<p>Generally, we use images in our post but we don&#8217;t add thumbnails or we forget to include them. In such scenarios the below code can be very useful as it fetches the very first image of the post and sets it as a thumbnail for that post. Consider a scenario wherein you have already published 100+ posts and later you want to have a thumbnail for each one of your post, in such case you must not prefer to edit each and every post just to <strong>add thumbnai</strong>l rather you can use the below code, which does this job pretty well for you.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><strong>Place to use it:</strong> Copy the below code in <strong>functions.php </strong>file.</p>
+<pre>function default_image() {
+$files = get_children('post_parent='.get_the_ID().'&amp;post_type=attachment
+&amp;post_mime_type=image&amp;order=desc');
+  if($files) :
+    $keys = array_reverse(array_keys($files));
+    $j=0;
+    $num = $keys[$j];
+    $image=wp_get_attachment_image($num, 'large', true);
+    $imagepieces = explode('"', $image);
+    $imagepath = $imagepieces[1];
+    $main=wp_get_attachment_url($num);
+		$template=get_template_directory();
+		$the_title=get_the_title();
+    print "&lt;img src='$main' alt='$the_title' class='frame' /&gt;";
+  endif;
+}</pre>
+<p>The above function would fetch the first image of every post.</p>
+<p>The second step is to have the below code in each and every file which is using the thumbnails, it calls the above function if there is no thumbnail found on any of the posts. Copy the below code in every template, which is displaying the thumbnails.</p>
+<p><strong>For example:</strong> If you are <a href="../display-related-posts-thumbnails-wordpress-plugin/index.html" target="_blank">displaying related posts thumbnails</a> on every single post, also, you are having thumbnails in excerpt at the home page then you would need to add the below code in <strong>single.php</strong> (for every post) and <strong>home.php</strong> (for home page). Similarly you can include the below code in other templates if you are displaying the thumbnails there.</p>
+<pre>&lt;?php if (  (function_exists('has_post_thumbnail')) &amp;&amp; (has_post_thumbnail())  ) {
+  echo get_the_post_thumbnail($post-&gt;ID);
+} else {
+   echo default_image();
+} ?&gt;</pre>
+<h2 id="heading2">How to add a specific image as a default fallback (thumbnail)</h2>
+<p>Above we saw a method to set first image as default thumbnail but what if there is no image being used in the post at all. There are always few posts, which doesn&#8217;t have any images, for such kind of posts you can have a <span style="text-decoration: underline;">default fallback image</span> which can work as a thumbnail for them. You can create an image for that, using your logo or site name etc.</p>
+<p>The method is pretty simple. Add the below code in your theme template files single.php, home.php, loop.php, archive.php etc. wherever necessary.</p>
+<pre>&lt;?php if ( has_post_thumbnail() ) {
+the_post_thumbnail();
+} else { ?&gt;
+&lt;img src="&lt;?php bloginfo('template_directory'); ?&gt;/images/default-thumb-img.png"
+alt="&lt;?php the_title(); ?&gt;" /&gt;
+&lt;?php } ?&gt;</pre>
+<h4>What the above code does?</h4>
+<p>It checks whether the post has thumbnails, if not it assigns the <strong>default-thumb-img.png (</strong> Change it to your image name) as thumbnail for that particular post.</p>
+<h2 id="heading3">How to Set the First Post Image as a Featured Image (or Post thumbnail) Automatically</h2>
+<p>Post thumbnail is also known as <span style="text-decoration: underline;">featured image</span>. The below piece of code can set featured image automatically for each of your post. There are cases when we publish number of posts with images but without featured images. In such cases, you may want to add the featured images for old posts. The below function not only sets the first image as a default featured image for old post but it does the same job for new posts too.</p>
+<p><strong>WordPress get post featured Image function</strong>: Copy the below code in functions.php file</p>
+<pre>/*function: generate featured image automatically*/
+function autogen_featured_img() {
+ global $post;
+if (!has_post_thumbnail($post-&gt;ID)) {
+ $attached_image =
+get_children( "post_parent=$post-&gt;ID&amp;post_type=attachment&amp;post_mime_type=image&amp;numberposts=1" );
+
+ if ($attached_image) {
+ foreach ($attached_image as $attachment_id =&gt; $attachment) {
+ set_post_thumbnail($post-&gt;ID, $attachment_id);
+ }
+ }
+ }
+}
+/*This line is used to generate featured images for all old
+posts. Remove this once the default images get generated
+for all of the old posts*/
+add_action('the_post', 'autogen_featured_img');
+/* For new upcoming posts, leave them permanently*/
+add_action('save_post', 'autogen_featured_img');
+add_action('draft_to_publish', 'autogen_featured_img');
+add_action('new_to_publish', 'autogen_featured_img');
+add_action('pending_to_publish', 'autogen_featured_img');
+add_action('future_to_publish', 'autogen_featured_img');</pre>
+<h4>What it does?</h4>
+<p>The function <strong>autogen_featured_img </strong>fetches the first post image and set it as a featured image if the post doesn&#8217;t have any already. The actions are to call this function on different conditions such as:</p>
+<p>add_action(&#8216;save_post&#8217;, &#8216;autogen_featured_img&#8217;) &#8211; It calls the function autogen_featured_img when the post is being saved as draft.<br />
+add_action(&#8216;draft_to_publish&#8217;, &#8216;autogen_featured_img&#8217;) &#8211; Calls when a draft post has been published.<br />
+add_action(&#8216;new_to_publish&#8217;, &#8216;autogen_featured_img&#8217;) &#8211; Calls when a newly written post is being published.<br />
+add_action(&#8216;pending_to_publish&#8217;, &#8216;autogen_featured_img&#8217;) &#8211; When pending post is published.</p>
+<h2 id="heading4">WordPress Plugins to set default thumbnails</h2>
+<p>All the above methods require to add the few lines of code to your theme files, however if you are not sure how to do that then you always have these plugins, which can do the same thing.</p>
+<p><strong>Plugin 1:</strong> <a href="https://wordpress.org/plugins/default-thumbnail-plus/" target="_blank">Default thumbnail plus</a></p>
+<p>Using this plugin, you can do the following things:</p>
+<p>1) Automatically display first post image as default thumbnail.<br />
+2) You can set a different post thumbnail for every category and tag.<br />
+3) Can add a custom field for thumbnail images.</p>
+<p>Here is how the configuration page looks like for the plugin. Setting it up is pretty simple.</p>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-3347" style="border: 2px solid grey;" alt="Set Default Thumbnail, Featured Image and Fallback Image in WordPress Automatically" src="../../../wp-content/uploads/2013/09/def-thumb.jpg" width="652" height="1478" srcset="https://beginnersbook.com/wp-content/uploads/2013/09/def-thumb.jpg 652w, https://beginnersbook.com/wp-content/uploads/2013/09/def-thumb-132x300.jpg 132w" sizes="(max-width: 652px) 100vw, 652px" /></p>
+<p><strong>Plugin 2:</strong> <a href="https://wordpress.org/plugins/easy-add-thumbnail/" target="_blank">Easy Add thumbnail</a></p>
+<p>This plugin has less features compared to the above plugin. It just sets post image as thumbnail (or featured image) for that post if there is not the one existing. Use it if you only want this feature alone, otherwise the above plugin can be a good option for you.</p>
+<h4>Why we shared the manual code if there are plugins to do the same task?</h4>
+<p>Plugin can be outdated but the code doesn&#8217;t, sometimes they are not compatible with your themes. Also, using more plugins can slow down your site and reduce your site performance.</p>
+<h4>Final Words</h4>
+<p>Let us know if you face any issue while setting up any of the above code on your site. Using them you can very well add default thumbnail (<strong>featured image</strong>) and <strong>fallback image</strong> to your websites in  WordPress.</p>
+<h4>Reference</h4>
+<p><a href="http://snipplr.com/view/45260/wordpress-post-thumbs-fallback/" target="_blank">Default WordPress fallback for thumbnails</a></p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../10/import-facebook-comments-wordpress-disqus/index.html" rel="bookmark" title="Link to How to Import Facebook Comments to WordPress or Disqus">How to Import Facebook Comments to WordPress or Disqus</a></li><li><a href="../add-facebook-likebox-fanbox-wordpress-website/index.html" rel="bookmark" title="Link to How to Add Facebook Like Box / Fan Box to a WordPress WebSite">How to Add Facebook Like Box / Fan Box to a WordPress WebSite</a></li><li><a href="../../01/seo-friendly-images-alt-tag/index.html" rel="bookmark" title="Link to SEO friendly images: How to use ALT tag for search engine optimization">SEO friendly images: How to use ALT tag for search engine optimization</a></li><li><a href="../../../2012/12/how-to-install-wordpress-plugins/index.html" rel="bookmark" title="Link to How to install WordPress plugins">How to install WordPress plugins</a></li><li><a href="../add-facebook-open-graph-meta-data-wordpress-themes/index.html" rel="bookmark" title="Link to How to Add Facebook Open Graph Meta Data in WordPress Themes">How to Add Facebook Open Graph Meta Data in WordPress Themes</a></li><li><a href="../../10/show-excerpt-recent-posts-widget/index.html" rel="bookmark" title="Link to How to show excerpt in Recent Posts Widget">How to show excerpt in Recent Posts Widget</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-6420">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c9fede2cd2352eb3497100adcb082a20?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c9fede2cd2352eb3497100adcb082a20?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Jeroen Akershoek</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-22T06:12:30+00:00" itemprop="datePublished"><a href="index.html#comment-6420" class="comment-time-link" itemprop="url">August 22, 2014 at 6:12 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks for this post, the code to &#8220;generate featured image automatically&#8221; was exactly what I was looking for :-)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6420' onclick='return addComment.moveForm( "comment-6420", "6420", "respond", "3341" )' aria-label='Reply to Jeroen Akershoek'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-6658">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/145960d9a391b4be13e3eb7fbc2a55ee?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/145960d9a391b4be13e3eb7fbc2a55ee?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">deejay</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-28T23:07:42+00:00" itemprop="datePublished"><a href="index.html#comment-6658" class="comment-time-link" itemprop="url">August 28, 2014 at 11:07 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I activated the plugin but its not working. I also paste the code you gave above, but none worked. Am using the Blog-o-Folio Theme.</p>
+<p>Did I Do Anything wrong?</p>
+<p>Where exacly in functions.php will I paste the code?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6658' onclick='return addComment.moveForm( "comment-6658", "6658", "respond", "3341" )' aria-label='Reply to deejay'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='3341' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8e86641cd8" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="1"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-49" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><h4 class="widget-title widgettitle">SEO</h4>
+<ul>
+<li><a href="../../../2012/11/how-to-write-seo-articles-with-keywords/index.html">Write SEO Articles</a></li>
+<li><a href="../../10/add-facebook-open-graph-yoast-wordpress-seo-plugin/index.html">Open Graph Meta Tags</a></li>
+<li><a href="../../01/seo-friendly-images-alt-tag/index.html">SEO Friendly Images</a></li>
+<li><a href="../seopressor-v5-review/index.html">SEOPressor Review</a></li>
+<li><a href="../../08/auto-interlink-posts-wordpress-seo-smart-links-seo-alrp/index.html">Auto Interlink Posts</a></li>
+</ul>
+
+<h4 class="widget-title widgettitle">WordPress</h4>
+<ul>
+<li><a href="../../10/5-free-plugins-adding-facebook-open-graph-meta-tags-wordpress/index.html">Free plugins to add Open Graph Tags</a></li>
+<li><a href="../../10/5-free-plugins-adding-captcha-wordpress-blog-comments/index.html">Free plugins to add Captcha</a></li>
+<li><a href="index.html">Set thumbnails automatically</a></li>
+<li><a href="../display-related-posts-thumbnails-wordpress-plugin/index.html">Display related Posts WP</a></li>
+<li><a href="../change-post-excerpt-length-wordpress/index.html">Change Post excerpt length WP</a></li>
+</ul>
+
+<h4 class="widget-title widgettitle">Website</h4>
+<ul>
+<li><a href="../add-facebook-like-button-website/index.html">Add Facebook like button</a></li>
+<li><a href="../add-google-button-website/index.html">Add Google plus button</a></li>
+<li><a href="../add-twitter-button-website/index.html">Add Twitter button</a></li>
+<li><a href="../../10/create-a-free-website-on-blogspot/index.html">Create Free Website on blogspot</a></li>
+</ul></div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/09/set-default-thumbnail-featured-fallback-image-wordpress-automatically/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:18:31 GMT -->
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: How to copy and add all list elements to ArrayList in Java</title>
+	<atom:link href="https://beginnersbook.com/2013/12/how-to-copy-and-add-all-list-elements-to-arraylist-in-java/feed/" rel="self" type="application/rss+xml" />
+	<link>https://beginnersbook.com/2013/12/how-to-copy-and-add-all-list-elements-to-arraylist-in-java/</link>
+	<description></description>
+	<lastBuildDate>Fri, 06 Apr 2018 04:50:05 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.5</generator>
+	<item>
+		<title>By: Anvesh</title>
+		<link>https://beginnersbook.com/2013/12/how-to-copy-and-add-all-list-elements-to-arraylist-in-java/#comment-63069</link>
+		<dc:creator><![CDATA[Anvesh]]></dc:creator>
+		<pubDate>Fri, 04 Nov 2016 07:20:11 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4394#comment-63069</guid>
+		<description><![CDATA[@ Himanshu,
+
+ArrayList never be a null, instead it is an empty when u create. if you want more clarity, execute the below code.
+
+List list = new ArrayList();
+List newList = new ArrayList();
+list.addAll(newList);
+System.out.println(list); // this works fine and creates a list with empty
+
+List list = null;
+List newList = null;
+list.addAll(newList);
+System.out.println(list); // this will give you NPE. since List is not initiated with any of its implemented class]]></description>
+		<content:encoded><![CDATA[<p>@ Himanshu,</p>
+<p>ArrayList never be a null, instead it is an empty when u create. if you want more clarity, execute the below code.</p>
+<p>List list = new ArrayList();<br />
+List newList = new ArrayList();<br />
+list.addAll(newList);<br />
+System.out.println(list); // this works fine and creates a list with empty</p>
+<p>List list = null;<br />
+List newList = null;<br />
+list.addAll(newList);<br />
+System.out.println(list); // this will give you NPE. since List is not initiated with any of its implemented class</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: himanhsu sharma</title>
+		<link>https://beginnersbook.com/2013/12/how-to-copy-and-add-all-list-elements-to-arraylist-in-java/#comment-59291</link>
+		<dc:creator><![CDATA[himanhsu sharma]]></dc:creator>
+		<pubDate>Fri, 12 Aug 2016 10:22:52 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4394#comment-59291</guid>
+		<description><![CDATA[addAll() method is not throwing nullpointerException.if the list is empty]]></description>
+		<content:encoded><![CDATA[<p>addAll() method is not throwing nullpointerException.if the list is empty</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

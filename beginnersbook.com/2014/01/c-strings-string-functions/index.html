@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2014/01/c-strings-string-functions/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:03:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>C - Strings and String functions with examples</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="C String and String functions with examples: String is an array of characters. Learn how to use strings in C programming along with string functions."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="C - Strings and String functions with examples" />
+<meta property="og:description" content="C String and String functions with examples: String is an array of characters. Learn how to use strings in C programming along with string functions." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="c-programming" />
+<meta property="article:published_time" content="2014-01-14T10:39:31+00:00" />
+<meta property="article:modified_time" content="2017-09-24T05:09:11+00:00" />
+<meta property="og:updated_time" content="2017-09-24T05:09:11+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2014/01/String-IO.png" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2014/01/String-IO.png" />
+<meta property="og:image:width" content="500" />
+<meta property="og:image:height" content="239" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="C String and String functions with examples: String is an array of characters. Learn how to use strings in C programming along with string functions." />
+<meta name="twitter:title" content="C - Strings and String functions with examples" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2014/01/String-IO.png" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; C &#8211; Strings and String functions with examples Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexbed2.html?p=4887' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed0deb.json?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fc-strings-string-functions%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed8fdd?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fc-strings-string-functions%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-4887 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-4887 post type-post status-publish format-standard has-post-thumbnail category-c-programming entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">C &#8211; Strings and String functions with examples</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/c-programming/index.html" rel="category tag">c-programming</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p><strong>String is an array of characters</strong>. In this guide, we learn how to declare strings, how to work with strings in C programming and how to use the pre-defined string handling functions.</p>
+<p>We will see how to compare two strings, concatenate strings, copy one string to another &amp; perform various string manipulation operations. We can perform such operations using the pre-defined functions of &#8220;string.h&#8221; header file. In order to use these string functions you must include string.h file in your C program.</p>
+<h2>String Declaration</h2>
+<p><img class="aligncenter size-full wp-image-4888" src="../../../wp-content/uploads/2014/01/string-C1.png" alt="string declaration in C" width="500" height="239" srcset="https://beginnersbook.com/wp-content/uploads/2014/01/string-C1.png 500w, https://beginnersbook.com/wp-content/uploads/2014/01/string-C1-300x143.png 300w" sizes="(max-width: 500px) 100vw, 500px" /><br />
+<strong>Method 1:</strong></p>
+<pre>char address[]={'T', 'E', 'X', 'A', 'S', '\0'};</pre>
+<p><strong>Method 2: The above string can also be defined as</strong> &#8211;</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>char address[]="TEXAS";</pre>
+<p>In the above declaration NULL character (\0) will automatically be inserted at the end of the string.</p>
+<p><strong>What is NULL Char &#8220;\0&#8221;?</strong><br />
+<code>'\0'</code> represents the end of the string. It is also referred as String terminator &amp; Null Character.</p>
+<h2>String I/O in C programming</h2>
+<p><img class="aligncenter size-full wp-image-4889" src="../../../wp-content/uploads/2014/01/String-IO.png" alt="C String-IO" width="500" height="239" srcset="https://beginnersbook.com/wp-content/uploads/2014/01/String-IO.png 500w, https://beginnersbook.com/wp-content/uploads/2014/01/String-IO-300x143.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></p>
+<h3>Read &amp; write Strings in C using Printf() and Scanf() functions</h3>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+    /* String Declaration*/
+    char nickname[20];
+
+    printf("Enter your Nick name:");
+
+    /* I am reading the input string and storing it in nickname
+     * Array name alone works as a base address of array so
+     * we can use nickname instead of &amp;nickname here
+     */
+    scanf("%s", nickname);
+
+    /*Displaying String*/
+    printf("%s",nickname);
+
+    return 0;
+}
+</pre>
+<p>Output:</p>
+<pre>Enter your Nick name:Negan
+Negan</pre>
+<p><strong>Note:</strong> %s format specifier is used for strings input/output</p>
+<h3>Read &amp; Write Strings in C using gets() and puts() functions</h3>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+    /* String Declaration*/
+    char nickname[20];
+
+    /* Console display using puts */
+    puts("Enter your Nick name:");
+
+    /*Input using gets*/
+    gets(nickname);
+
+    puts(nickname);
+
+    return 0;
+}</pre>
+<h2>C &#8211; String functions</h2>
+<p><img class="aligncenter size-full wp-image-4891" src="../../../wp-content/uploads/2014/01/string-functions.png" alt="C string-functions" width="571" height="529" srcset="https://beginnersbook.com/wp-content/uploads/2014/01/string-functions.png 571w, https://beginnersbook.com/wp-content/uploads/2014/01/string-functions-300x277.png 300w" sizes="(max-width: 571px) 100vw, 571px" /></p>
+<h3>C String function &#8211; strlen</h3>
+<p>Syntax:</p>
+<pre>size_t strlen(const char *str)</pre>
+<p><strong>size_t</strong> represents unsigned short<br />
+It returns the length of the string without including end character<strong> (terminating char ‘\0’)</strong>.</p>
+<p><strong>Example of strlen:</strong></p>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+     char str1[20] = "BeginnersBook";
+     printf("Length of string str1: %d", strlen(str1));
+     return 0;
+}</pre>
+<p>Output:</p>
+<pre>Length of string str1: 13</pre>
+<p><strong>strlen vs sizeof</strong><br />
+strlen returns you the length of the string stored in array, however sizeof returns the total allocated size assigned to the array. So if I consider the above example again then the following statements would return the below values.</p>
+<p><code>strlen(str1)</code> returned value 13.<br />
+<code>sizeof(str1)</code> would return value 20 as the array size is 20 (see the first statement in main function).</p>
+<h3>C String function &#8211; strnlen</h3>
+<p>Syntax:</p>
+<pre>size_t strnlen(const char *str, size_t maxlen)</pre>
+<p>size_t represents unsigned short<br />
+It returns length of the string if it is less than the value specified for maxlen (maximum length) otherwise it returns maxlen value.</p>
+<p><strong>Example of strnlen:</strong></p>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+     char str1[20] = "BeginnersBook";
+     printf("Length of string str1 when maxlen is 30: %d", strnlen(str1, 30));
+     printf("Length of string str1 when maxlen is 10: %d", strnlen(str1, 10));
+     return 0;
+}</pre>
+<p>Output:<br />
+Length of string str1 when maxlen is 30: 13<br />
+Length of string str1 when maxlen is 10: 10</p>
+<p>Have you noticed the output of second printf statement, even though the string length was 13 it returned only 10 because the maxlen was 10.</p>
+<h3>C String function &#8211; strcmp</h3>
+<pre>int strcmp(const char *str1, const char *str2)</pre>
+<p>It compares the two strings and returns an integer value. If both the strings are same (equal) then this function would return 0 otherwise it may return a negative or positive value based on the comparison.</p>
+<p><strong> If string1 &lt; string2 OR string1 is a substring of string2</strong> then it would result in a negative value. If string1 &gt; string2 then it would return positive value.<br />
+<strong>If string1 == string2</strong> then you would get 0(zero) when you use this function for compare strings.</p>
+<p><strong>Example of strcmp:</strong></p>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+     char s1[20] = "BeginnersBook";
+     char s2[20] = "BeginnersBook.COM";
+     if (strcmp(s1, s2) ==0)
+     {
+        printf("string 1 and string 2 are equal");
+     }else
+      {
+         printf("string 1 and 2 are different");
+      }
+     return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>string 1 and 2 are different</pre>
+<h3>C String function &#8211; strncmp</h3>
+<pre>int strncmp(const char *str1, const char *str2, size_t n)</pre>
+<p>size_t is for unassigned short<br />
+It compares both the string till n characters or in other words it compares first n characters of both the strings.</p>
+<p><strong>Example of strncmp:</strong></p>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+     char s1[20] = "BeginnersBook";
+     char s2[20] = "BeginnersBook.COM";
+     /* below it is comparing first 8 characters of s1 and s2*/
+     if (strncmp(s1, s2, 8) ==0)
+     {
+         printf("string 1 and string 2 are equal");
+     }else
+     {
+         printf("string 1 and 2 are different");
+     }
+     return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>string1 and string 2 are equal</pre>
+<h3>C String function &#8211; strcat</h3>
+<pre>char *strcat(char *str1, char *str2)</pre>
+<p>It concatenates two strings and returns the concatenated string.</p>
+<p><strong>Example of strcat:</strong></p>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+     char s1[10] = "Hello";
+     char s2[10] = "World";
+     strcat(s1,s2);
+     printf("Output string after concatenation: %s", s1);
+     return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Output string after concatenation: HelloWorld</pre>
+<h3>C String function &#8211; strncat</h3>
+<pre>char *strncat(char *str1, char *str2, int n)</pre>
+<p>It concatenates n characters of str2 to string str1. A terminator char (‘\0’) will always be appended at the end of the concatenated string.</p>
+<p><strong>Example of strncat:</strong></p>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+     char s1[10] = "Hello";
+     char s2[10] = "World";
+     strncat(s1,s2, 3);
+     printf("Concatenation using strncat: %s", s1);
+     return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Concatenation using strncat: HelloWor</pre>
+<h3>C String function &#8211; strcpy</h3>
+<pre>char *strcpy( char *str1, char *str2)</pre>
+<p>It copies the string str2 into string str1, including the end character (terminator char ‘\0’).</p>
+<p><strong>Example of strcpy:</strong></p>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+     char s1[30] = "string 1";
+     char s2[30] = "string 2 : I’m gonna copied into s1";
+     /* this function has copied s2 into s1*/
+     strcpy(s1,s2);
+     printf("String s1 is: %s", s1);
+     return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>String s1 is: string 2: I’m gonna copied into s1</pre>
+<h3>C String function &#8211; strncpy</h3>
+<p>char *strncpy( char *str1, char *str2, size_t n)<br />
+size_t is unassigned short and n is a number.<br />
+<strong>Case1:</strong> If length of str2 &gt; n then it just copies first n characters of str2 into str1.<br />
+<strong>Case2:</strong> If length of str2 &lt; n then it copies all the characters of str2 into str1 and appends several terminator chars(‘\0’) to accumulate the length of str1 to make it n.</p>
+<p><strong>Example of strncpy:</strong></p>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+     char first[30] = "string 1";
+     char second[30] = "string 2: I’m using strncpy now";
+     /* this function has copied first 10 chars of s2 into s1*/
+     strncpy(s1,s2, 12);
+     printf("String s1 is: %s", s1);
+     return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>String s1 is: string 2: I’m</pre>
+<h3>C String function &#8211; strchr</h3>
+<pre>char *strchr(char *str, int ch)</pre>
+<p>It searches string str for character ch (you may be wondering that in above definition I have given data type of ch as int, don’t worry I didn’t make any mistake it should be int only. The thing is when we give any character while using strchr then it internally gets converted into integer for better searching.</p>
+<p><strong> Example of strchr:</strong></p>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+     char mystr[30] = "I’m an example of function strchr";
+     printf ("%s", strchr(mystr, 'f'));
+     return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>f function strchr</pre>
+<h3>C String function &#8211; Strrchr</h3>
+<pre>char *strrchr(char *str, int ch)</pre>
+<p>It is similar to the function strchr, the only difference is that it searches the string in reverse order, now you would have understood why we have extra r in strrchr, yes you guessed it correct, it is for reverse only.</p>
+<p>Now let’s take the same above example:</p>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+     char mystr[30] = "I’m an example of function strchr";
+     printf ("%s", strrchr(mystr, 'f'));
+     return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>function strchr</pre>
+<p><strong>Why output is different than strchr?</strong> It is because it started searching from the end of the string and found the first ‘f’ in function instead of ‘of’.</p>
+<h3>C String function &#8211; strstr</h3>
+<pre>char *strstr(char *str, char *srch_term)</pre>
+<p>It is similar to strchr, except that it searches for string srch_term instead of a single char.</p>
+<p><strong>Example of strstr:</strong></p>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+     char inputstr[70] = "String Function in C at BeginnersBook.COM";
+     printf ("Output string is: %s", strstr(inputstr, 'Begi'));
+     return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Output string is: BeginnersBook.COM</pre>
+<p>You can also use this function in place of strchr as you are allowed to give single char also in place of search_term string.</p>
+<div class="bb-nav"><a class="pretut" href="../2d-arrays-in-c-example/index.html">❮ Previous</a><a class="nexttut" href="../c-functions-examples/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-57512">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/21e7bfecc5b0e22519fc3410bfb0ad43?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/21e7bfecc5b0e22519fc3410bfb0ad43?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Prit Kaur</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-27T09:12:27+00:00" itemprop="datePublished"><a href="index.html#comment-57512" class="comment-time-link" itemprop="url">June 27, 2016 at 9:12 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Explanation of every function is very clear and described in a easy way. its very good for understanding practical examples for students /beginners.Its humble request to explain more string functions in the article.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57512' onclick='return addComment.moveForm( "comment-57512", "57512", "respond", "4887" )' aria-label='Reply to Prit Kaur'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-68677">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/67d98ca9936cb2e5a1c436c7db45d5fe?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/67d98ca9936cb2e5a1c436c7db45d5fe?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Marcello Missiroli</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-21T12:32:34+00:00" itemprop="datePublished"><a href="index.html#comment-68677" class="comment-time-link" itemprop="url">March 21, 2017 at 12:32 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The first program has an error. You should not call scanf with &amp;nickname as an argument, since nicknama is already an address. This is also pointed out by the compiler<br />
+string.c:11:5: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char (*)[20]’ [-Wformat=]<br />
+     scanf(&#8220;%s&#8221;, &amp;nickname);<br />
+     ^<br />
+Though it works, it is nevertheless a bad practice.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-68677' onclick='return addComment.moveForm( "comment-68677", "68677", "respond", "4887" )' aria-label='Reply to Marcello Missiroli'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4887' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="01f50241da" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="160"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-21" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">C Programming Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../install-turbo-c/index.html">Turbo C++  installation</a></li>
+<li><a href="../c-program-structure/index.html">First C Program</a></li>
+<li><a href="../c-keywords-reserved-words/index.html">C - Keywords</a></li>
+<li><a href="../c-operator-precedence-table/index.html">Operator precedence</a></li>
+<li><a href="../c-if-statement/index.html">C - if statement</a></li>
+<li><a href="../c-if-else-statement-example/index.html">C - if..else</a></li>
+<li><a href="../c-for-loop/index.html">C - for loop</a></li>
+<li><a href="../c-while-loop/index.html">C - while loop</a></li>
+<li><a href="../c-dowhile-loop/index.html">C - do while loop</a></li>
+
+<li><a href="../c-continue-statement/index.html">C - continue</a></li>
+<li><a href="../c-break-statement/index.html">C - break statement</a></li>
+<li><a href="../switch-case-statements-in-c/index.html">C - switch..case</a></li>
+<li><a href="../c-goto-statement/index.html">C - goto statement</a></li>
+<li><a href="../c-arrays-example/index.html">C - Arrays</a></li>
+<li><a href="../2d-arrays-in-c-example/index.html">2 D array</a></li>
+<li><a href="index.html">C - String</a></li>
+<li><a href="../c-functions-examples/index.html">C - functions</a></li>
+<li><a href="../c-function-call-by-reference-example/index.html">Function call by reference</a></li>
+<li><a href="../c-function-call-by-value-example/index.html">Function call by value</a></li>
+<li><a href="../c-passing-array-to-function-example/index.html">Array to function</a></li>
+<li><a href="../c-structures-examples/index.html">C - Structures</a></li>
+<li><a href="../c-pointers/index.html">C - Pointers</a></li>
+<li><a href="../c-pointer-to-pointer/index.html">Pointer to Pointer</a></li>
+<li><a href="../c-passing-pointers-to-functions/index.html">Pointers to functions</a></li>
+<li><a href="../c-function-pointers/index.html">C - function pointers</a></li>
+<li><a href="../c-pointer-to-array-example/index.html">Pointer & Array</a></li>
+<li><a href="../c-file-io/index.html">C - File I/O</a></li>
+<li><a href="../../../2015/02/simple-c-programs/index.html">C Programming Examples</a></li>
+</ul></div></div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2014/01/c-strings-string-functions/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:03:45 GMT -->
+</html>

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2014/01/java-program-to-check-prime-number/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:44:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java program to check prime number</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="The number which is only divisible by itself and 1 is known as prime number, for example 7 is a prime number because it is only divisible by itself and 1. This program takes the number (entered by user) and then checks whether the input number is prime or not. The program then displays the result. If you are looking"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Java program to check prime number" />
+<meta property="og:description" content="The number which is only divisible by itself and 1 is known as prime number, for example 7 is a prime number because it is only divisible by itself and 1. This program takes the number (entered by user) and then checks whether the input number is prime or not. The program then displays the result. If you are looking" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="java program" />
+<meta property="article:tag" content="prime number" />
+<meta property="article:section" content="Java Examples" />
+<meta property="article:published_time" content="2014-01-18T14:46:26+00:00" />
+<meta property="article:modified_time" content="2017-09-07T06:28:05+00:00" />
+<meta property="og:updated_time" content="2017-09-07T06:28:05+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="The number which is only divisible by itself and 1 is known as prime number, for example 7 is a prime number because it is only divisible by itself and 1. This program takes the number (entered by user) and then checks whether the input number is prime or not. The program then displays the result. If you are looking" />
+<meta name="twitter:title" content="Java program to check prime number" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Java program to check prime number Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index2c33.html?p=4980' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embeda164.json?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fjava-program-to-check-prime-number%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedc94c?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fjava-program-to-check-prime-number%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-4980 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-4980 post type-post status-publish format-standard category-java-examples tag-java-program tag-prime-number entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Java program to check prime number</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/java-examples/index.html" rel="category tag">Java Examples</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>The number which is only divisible by itself and 1 is known as <strong>prime number</strong>, for example 7 is a prime number because it is only divisible by itself and 1.<br />
+This program takes the number (entered by user) and then checks whether the input number is prime or not. The program then displays the result. If you are looking for a program that displays the prime number between two intervals then see: <a href="../java-program-to-display-prime-numbers/index.html">Java program to display prime numbers between 1 to n</a>.</p>
+<h2>Example: Program to check whether input number is prime or not</h2>
+<p>To understand this program you should have the knowledge of <a href="../../../2015/03/for-loop-in-java-with-example/index.html">for loop</a>, <a href="../../../2017/08/if-else-statement-in-java/index.html">if-else statements</a> and <a href="../../../2017/08/java-break-statement/index.html">break statement</a>.</p>
+<pre>import java.util.Scanner;
+class PrimeCheck
+{
+   public static void main(String args[])
+   {		
+	int temp;
+	boolean isPrime=true;
+	Scanner scan= new Scanner(System.in);
+	System.out.println("Enter any number:");
+	//capture the input in an integer
+	int num=scan.nextInt();
+        scan.close();
+	for(int i=2;i&lt;=num/2;i++)
+	{
+           temp=num%i;
+	   if(temp==0)
+	   {
+	      isPrime=false;
+	      break;
+	   }
+	}
+	//If isPrime is true then the number is prime else not
+	if(isPrime)
+	   System.out.println(num + " is a Prime Number");
+	else
+	   System.out.println(num + " is not a Prime Number");
+   }
+}</pre>
+<p>Output:</p>
+<pre>Enter any number:
+19
+19 is a Prime Number</pre>
+<p>Output 2:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>Enter any number:
+6
+6 is not a Prime Number</pre>
+<p>You can also use <a href="../../../2015/03/while-loop-in-java-with-examples/index.html">while loop</a> to check the prime number:<br />
+Just replace this part of the code in above program:</p>
+<pre>for(int i=2;i&lt;=num/2;i++)
+{
+   temp=num%i;
+   if(temp==0)
+   {
+      isPrime=false;
+      break;
+   }
+}</pre>
+<p>with this:</p>
+<pre>int i=2;
+while(i&lt;= num/2)
+{
+   if(num % i == 0)
+   {
+	isPrime = false;
+	break;
+   }
+   i++;
+}</pre>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../04/java-program-for-linear-search-example/index.html" rel="bookmark" title="Link to Java program for linear search &#8211; Example">Java program for linear search &#8211; Example</a></li><li><a href="../../07/java-program-for-bubble-sort-in-ascending-descending-order/index.html" rel="bookmark" title="Link to Java program for bubble sort in Ascending &#038; descending order">Java program for bubble sort in Ascending &#038; descending order</a></li><li><a href="../../../2017/09/java-program-to-calculate-and-display-student-grades/index.html" rel="bookmark" title="Link to Java Program to calculate and display Student Grades">Java Program to calculate and display Student Grades</a></li><li><a href="../java-program-to-check-palindrome-string/index.html" rel="bookmark" title="Link to java program to check palindrome string using Stack, Queue, for or while loop">java program to check palindrome string using Stack, Queue, for or while loop</a></li><li><a href="../../../2017/09/java-program-to-find-the-smallest-of-three-numbers-using-ternary-operator/index.html" rel="bookmark" title="Link to Java Program to find the Smallest of three numbers using Ternary Operator">Java Program to find the Smallest of three numbers using Ternary Operator</a></li><li><a href="../java-program-to-find-factorial-of-a-given-number-using-recursion/index.html" rel="bookmark" title="Link to java program to find factorial of a given number using recursion">java program to find factorial of a given number using recursion</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-3294">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e1004a9eb3057df6c9b9496f04ba869c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e1004a9eb3057df6c9b9496f04ba869c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">venkata kalluri</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-05-01T20:19:26+00:00" itemprop="datePublished"><a href="index.html#comment-3294" class="comment-time-link" itemprop="url">May 1, 2014 at 8:19 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The program fails, when i provided the number &#8216; 893 &#8216; .  It is a prime number but the above program shows that it is not a prime. The following program gives the correct answer. However, The loop runs 8 times, irrespective of prime or not prime. In case of the above program, It exit the loop as soon as it is an even number but for odd numbers, the loop will run more number of times.</p>
+<p>Please provide me your feedback(pros/cons) on this program. </p>
+<p>public class PrimeNumber {<br />
+	public static void main(String args[]) {<br />
+		PrimeNumber p = new PrimeNumber();<br />
+		Scanner scan = new Scanner(System.in);<br />
+		System.out.println(&#8220;Enter a number for check in main method:&#8221;);<br />
+		int n = scan.nextInt();<br />
+		int count = 0;<br />
+		int number = 0;<br />
+		for (int i = 2; i &lt;= 9; i++) {<br />
+			if (n % i == 0) {<br />
+				System.out.println(&quot; count called when &quot; + i);<br />
+				count = count + 1;<br />
+			}<br />
+			number = number + 1;<br />
+			System.out.println(&quot; The loop called &quot;+number+&quot; times&quot;);<br />
+		}<br />
+		if (count == 0) {<br />
+			System.out.println(n + &quot; is a prime number &quot;);<br />
+		}<br />
+		System.out.println(&quot; ================================ &quot;);<br />
+		p.checkPrime();<br />
+	}<br />
+}</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3294' onclick='return addComment.moveForm( "comment-3294", "3294", "respond", "4980" )' aria-label='Reply to venkata kalluri'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-28325">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/20214fe7e51026b2711d97854dd37780?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/20214fe7e51026b2711d97854dd37780?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">lit-el Jon</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-17T01:52:40+00:00" itemprop="datePublished"><a href="index.html#comment-28325" class="comment-time-link" itemprop="url">June 17, 2015 at 1:52 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>893 is not a prime number it is divisible by 19&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-28325' onclick='return addComment.moveForm( "comment-28325", "28325", "respond", "4980" )' aria-label='Reply to lit-el Jon'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-62972">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bcd9ff7307f3f88f6c1847cb8e6d6cd0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bcd9ff7307f3f88f6c1847cb8e6d6cd0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sankar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-02T10:09:13+00:00" itemprop="datePublished"><a href="index.html#comment-62972" class="comment-time-link" itemprop="url">November 2, 2016 at 10:09 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi friend try this program and give a feedback please,</p>
+<p>public class PrimeNumber {<br />
+	public static void main(String args[]) {<br />
+		int num=0;<br />
+		int prime=0;<br />
+		Scanner sc=new Scanner(System.in);<br />
+		System.out.println(&#8220;Enter the numbe to check&#8221;);<br />
+		num=sc.nextInt();<br />
+		if(num%2==0 &amp;&amp; num&gt;=2)<br />
+		{<br />
+			prime=0;</p>
+<p>		}<br />
+		else<br />
+		{<br />
+			prime=1;<br />
+		}<br />
+	if(prime==0)<br />
+	{<br />
+		System.out.println(&#8221;  prime number&#8221;);<br />
+	}<br />
+	else<br />
+	{<br />
+		System.out.println(&#8221; not prime number&#8221;);<br />
+	}<br />
+	}</p>
+<p>}</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-62972' onclick='return addComment.moveForm( "comment-62972", "62972", "respond", "4980" )' aria-label='Reply to Sankar'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-4" id="comment-65150">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7642f16b2d680e145d52ab0dd8f3a11d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7642f16b2d680e145d52ab0dd8f3a11d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Siddhabrata Mohapatra</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-12-28T05:49:21+00:00" itemprop="datePublished"><a href="index.html#comment-65150" class="comment-time-link" itemprop="url">December 28, 2016 at 5:49 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Pls add &#8220;import java.util.*;&#8221; in the begening</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-65150' onclick='return addComment.moveForm( "comment-65150", "65150", "respond", "4980" )' aria-label='Reply to Siddhabrata Mohapatra'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-4" id="comment-65266">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/837220f576a8f211a4d7bf0af0c9fca5?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/837220f576a8f211a4d7bf0af0c9fca5?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">arun</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-12-30T18:39:21+00:00" itemprop="datePublished"><a href="index.html#comment-65266" class="comment-time-link" itemprop="url">December 30, 2016 at 6:39 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This program is wrong</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-65266' onclick='return addComment.moveForm( "comment-65266", "65266", "respond", "4980" )' aria-label='Reply to arun'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-52721">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/460c8d934fb9a47ec949a88468422078?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/460c8d934fb9a47ec949a88468422078?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sanjeev</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-21T13:38:39+00:00" itemprop="datePublished"><a href="index.html#comment-52721" class="comment-time-link" itemprop="url">March 21, 2016 at 1:38 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>sorry man 893 divided by 19 by 47 times</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52721' onclick='return addComment.moveForm( "comment-52721", "52721", "respond", "4980" )' aria-label='Reply to sanjeev'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-78517">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b4fa01fd22041824c379243d94de0e80?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b4fa01fd22041824c379243d94de0e80?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Devikaa Sharma</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-11-09T15:23:06+00:00" itemprop="datePublished"><a href="index.html#comment-78517" class="comment-time-link" itemprop="url">November 9, 2017 at 3:23 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Umm&#8230; actually, 893 is not a prime number mate. It is divisible by 19 at 47 times. So maybe that&#8217;s why you&#8217;re getting an error.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-78517' onclick='return addComment.moveForm( "comment-78517", "78517", "respond", "4980" )' aria-label='Reply to Devikaa Sharma'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3295">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e1004a9eb3057df6c9b9496f04ba869c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e1004a9eb3057df6c9b9496f04ba869c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">venkata kalluri</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-05-01T20:25:12+00:00" itemprop="datePublished"><a href="index.html#comment-3295" class="comment-time-link" itemprop="url">May 1, 2014 at 8:25 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I realized, my program has a bug in it. :-(</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3295' onclick='return addComment.moveForm( "comment-3295", "3295", "respond", "4980" )' aria-label='Reply to venkata kalluri'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-27032">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/0b30751e68b75dd10f9b9e74df171985?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/0b30751e68b75dd10f9b9e74df171985?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sayed Asad</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-05-14T16:24:41+00:00" itemprop="datePublished"><a href="index.html#comment-27032" class="comment-time-link" itemprop="url">May 14, 2015 at 4:24 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>your example is to complex lets simplify the example of prime </p>
+<p>public static void main(String args[]) {<br />
+        int num = new Scanner(System.in).nextInt();<br />
+        if (num % 2 == 0) {<br />
+            System.out.println(&#8220;not prime&#8221;);<br />
+        } else {<br />
+            System.out.println(&#8220;Prime&#8221;);<br />
+        }<br />
+    }</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-27032' onclick='return addComment.moveForm( "comment-27032", "27032", "respond", "4980" )' aria-label='Reply to Sayed Asad'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-62106">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/786ea1c503094b348bc0a907a558784d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/786ea1c503094b348bc0a907a558784d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Quack</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-10-15T13:54:21+00:00" itemprop="datePublished"><a href="index.html#comment-62106" class="comment-time-link" itemprop="url">October 15, 2016 at 1:54 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This only checks if the number is even, if you enter 2 which is a prime number, it will consider it as not a prime number..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-62106' onclick='return addComment.moveForm( "comment-62106", "62106", "respond", "4980" )' aria-label='Reply to Quack'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-32217">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f446914d55d7aba0d2cc5951368376f9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f446914d55d7aba0d2cc5951368376f9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ashved</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-11T06:41:56+00:00" itemprop="datePublished"><a href="index.html#comment-32217" class="comment-time-link" itemprop="url">August 11, 2015 at 6:41 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello i am new to java programming, can somebody explain me this code please ??</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-32217' onclick='return addComment.moveForm( "comment-32217", "32217", "respond", "4980" )' aria-label='Reply to Ashved'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-40585">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ccda3a871c03fa59c04fded368eab159?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ccda3a871c03fa59c04fded368eab159?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Hrishi Joshi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-29T09:59:31+00:00" itemprop="datePublished"><a href="index.html#comment-40585" class="comment-time-link" itemprop="url">October 29, 2015 at 9:59 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The program is perfect it runs and also no wrong o/p</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-40585' onclick='return addComment.moveForm( "comment-40585", "40585", "respond", "4980" )' aria-label='Reply to Hrishi Joshi'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-57127">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e8698246bc6d6e83c811bf1a08c4f861?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e8698246bc6d6e83c811bf1a08c4f861?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">harrisonthu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-19T01:29:04+00:00" itemprop="datePublished"><a href="index.html#comment-57127" class="comment-time-link" itemprop="url">June 19, 2016 at 1:29 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>No, I think it does not work if the input number is 1.  OP, you need to hardcode to fix the code. if the input is 1.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57127' onclick='return addComment.moveForm( "comment-57127", "57127", "respond", "4980" )' aria-label='Reply to harrisonthu'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-51317">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f227933cc36111942a3909d5a3295199?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f227933cc36111942a3909d5a3295199?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Guest</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-18T13:54:42+00:00" itemprop="datePublished"><a href="index.html#comment-51317" class="comment-time-link" itemprop="url">February 18, 2016 at 1:54 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Why do you iterate the for loop to num/2 ?<br />
+&#8220;for(int i=2;i&lt;=num/2;i++)&quot;<br />
+Should probably be Math.sqrt(num) instead.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51317' onclick='return addComment.moveForm( "comment-51317", "51317", "respond", "4980" )' aria-label='Reply to Guest'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-53331">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/129dfa3eab68d3388fb8a3a081b18c58?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/129dfa3eab68d3388fb8a3a081b18c58?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Guest</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-04T22:29:46+00:00" itemprop="datePublished"><a href="index.html#comment-53331" class="comment-time-link" itemprop="url">April 4, 2016 at 10:29 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>it is so the program doesn&#8217;t allow numbers bellow 4 to enter the for loop. testing the numbers 2 and 3 wouldn&#8217;t make sense, because they are prime. However this program allows 1 to be a prime number which is demonstrably false as per the definition of a prime number, so a change to the logic would benefit the people reading this. For example you can get around this by adding the following code:<br />
+if(isPrime == 1)<br />
+{<br />
+isPrime=false;<br />
+}<br />
+this code must be placed before the last if structure and after the for loop.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53331' onclick='return addComment.moveForm( "comment-53331", "53331", "respond", "4980" )' aria-label='Reply to Guest'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-56035">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/cb3f03ae0d2beb3ff5a17c99566962a9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/cb3f03ae0d2beb3ff5a17c99566962a9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">hitesh kumar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-31T19:16:06+00:00" itemprop="datePublished"><a href="index.html#comment-56035" class="comment-time-link" itemprop="url">May 31, 2016 at 7:16 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>what is the role of boolean function here ? please explain .thank you.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-56035' onclick='return addComment.moveForm( "comment-56035", "56035", "respond", "4980" )' aria-label='Reply to hitesh kumar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-56732">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/372508133e13ed3ab186f34aecb49860?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/372508133e13ed3ab186f34aecb49860?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Degaleesan Pugazhenthi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-11T14:45:42+00:00" itemprop="datePublished"><a href="index.html#comment-56732" class="comment-time-link" itemprop="url">June 11, 2016 at 2:45 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>How to identify the prime number count from 1 to 1000 without using the below code. (Required alternative method &#8211; should not go one by one and count it)</p>
+<p>int Count=0;<br />
+for(int i=1;i&lt;=1000;i++)<br />
+	{<br />
+           temp=num%i;<br />
+	   if(temp==0)<br />
+	   {<br />
+	      isPrime=false;<br />
+	      break;<br />
+	   }<br />
+	}<br />
+	//If isPrime is true then the number is prime else not<br />
+	if(isPrime){<br />
+	   System.out.println(num + &quot; is Prime Number&quot;);<br />
+           Count++;<br />
+       }</p>
+<p>Thanks in Advance<br />
+Degaleesan</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-56732' onclick='return addComment.moveForm( "comment-56732", "56732", "respond", "4980" )' aria-label='Reply to Degaleesan Pugazhenthi'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-69154">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/fd04aef21ad6148942c0db43e8e067bb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/fd04aef21ad6148942c0db43e8e067bb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">bharti mane</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-02T12:35:30+00:00" itemprop="datePublished"><a href="index.html#comment-69154" class="comment-time-link" itemprop="url">April 2, 2017 at 12:35 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>for (i=2;i&lt;=num/2;i++)<br />
+i just want yo know why this has been used?</p>
+<p>as per my understanding i=2 means prime has two factors that is 1 and itself.<br />
+i dont know about next part..sir can you please explain</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69154' onclick='return addComment.moveForm( "comment-69154", "69154", "respond", "4980" )' aria-label='Reply to bharti mane'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4980' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="ee955e6b80" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="59"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-22" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Programs</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../../../2015/02/simple-c-programs/index.html">C Programs</a></li>
+<li><a href="../../../2017/09/java-examples/index.html">Java Programs</a></li>
+</ul></div></div></section>
+<section id="custom_html-18" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Examples</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../../02/java-program-to-check-even-or-odd-number/index.html">Check Odd-even</a></li>
+<li><a href="../../04/java-program-for-linear-search-example/index.html">Linear Search</a></li>
+<li><a href="../../04/java-program-to-perform-binary-search/index.html">Binary Search</a></li>
+<li><a href="../../04/java-program-to-print-floyds-triangle-example/index.html">Floyd's Triangle</a></li>
+<li><a href="../java-program-to-reverse-a-number/index.html">Reverse number</a></li>
+<li><a href="../../04/java-program-to-generate-random-number-example/index.html">Random Number</a></li>
+<li><a href="../java-program-to-display-first-n-or-first-100-prime-numbers/index.html">first n prime numbers</a></li>
+<li><a href="../java-program-to-display-prime-numbers/index.html">Disp prime Numbers</a></li>
+<li><a href="index.html">Check Prime number</a></li>
+<li><a href="../java-program-to-check-palindrome-string-using-recursion/index.html">Palindrome String</a></li>
+<li><a href="../java-program-to-find-factorial-of-a-given-number-using-recursion/index.html">Find factorial</a></li>
+<li><a href="../java-program-to-sum-the-elements-of-an-array/index.html">Sum of elements of Array</a></li>
+<li><a href="../java-program-to-calculate-area-of-rectangle/index.html">Area of rectangle</a></li>
+<li><a href="../java-program-to-calculate-area-of-square/index.html">Area of Square</a></li>
+<li><a href="../java-program-to-calculate-area-of-triangle/index.html">Area of Triangle</a></li>
+<li><a href="../java-program-to-calculate-area-and-circumference-of-circle/index.html">Circle</a></li>
+</ul>
+<h4 class="widget-title">Tutorials</h4>
+<ul>
+<li><a href="../../../java-tutorial-for-beginners-with-examples/index.html">Java Tutorial</a></li>
+<li><a href="../../../2013/04/oops-concepts/index.html">OOPs Concepts</a></li>
+ 	<li><a href="../../../2013/12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../../2013/04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../../2013/03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../07/java-serialization/index.html">Java Serialization</a></li>
+	<li><a href="../../08/java-regex-tutorial/index.html">Java Regex</a></li>
+	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+<li><a href="../../09/java-enum-examples/index.html">Java Enum</a></li>
+<li><a href="../../09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2014/01/java-program-to-check-prime-number/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:44:21 GMT -->
+</html>

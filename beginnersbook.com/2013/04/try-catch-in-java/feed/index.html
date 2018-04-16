@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Try Catch in Java &#8211; Exception handling</title>
+	<atom:link href="https://beginnersbook.com/2013/04/try-catch-in-java/feed/" rel="self" type="application/rss+xml" />
+	<link>https://beginnersbook.com/2013/04/try-catch-in-java/</link>
+	<description></description>
+	<lastBuildDate>Fri, 06 Apr 2018 04:50:05 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.5</generator>
+	<item>
+		<title>By: Shilpa</title>
+		<link>https://beginnersbook.com/2013/04/try-catch-in-java/#comment-72130</link>
+		<dc:creator><![CDATA[Shilpa]]></dc:creator>
+		<pubDate>Mon, 10 Jul 2017 09:38:44 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=1905#comment-72130</guid>
+		<description><![CDATA[if you put the last catch block ( catch(Exception e)) at the first place, just after try block then in case of any exception this block will execute as it has theability to handle all exceptions. This catch block should be placed at the last to avoid such situations.
+It’s because if you want to catch a specific exception and may even write some statements in the block specific to that exception. You can do that with Exception class too. But, you won’t be able to identify the problem easily.
+“Exception” is the parent class and will be used to catch mostly generic or unexpected exceptions.]]></description>
+		<content:encoded><![CDATA[<p>if you put the last catch block ( catch(Exception e)) at the first place, just after try block then in case of any exception this block will execute as it has theability to handle all exceptions. This catch block should be placed at the last to avoid such situations.<br />
+It’s because if you want to catch a specific exception and may even write some statements in the block specific to that exception. You can do that with Exception class too. But, you won’t be able to identify the problem easily.<br />
+“Exception” is the parent class and will be used to catch mostly generic or unexpected exceptions.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Kalyan Reddy</title>
+		<link>https://beginnersbook.com/2013/04/try-catch-in-java/#comment-68082</link>
+		<dc:creator><![CDATA[Kalyan Reddy]]></dc:creator>
+		<pubDate>Sat, 04 Mar 2017 09:31:19 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=1905#comment-68082</guid>
+		<description><![CDATA[1. try..catch is to handle the exception at that place itself. Hence, program continues once the associated catch block code is executed. If not caught with associated, it looks for outer try..catch blocks. here, the code following try block will not be executed unless (only finally block is executed). This process continues until this is handled by some catch block and the last option is Java Run time handle, where it prints exception stack.
+2. Throws is where you expect some exceptions ( checked or unchecked), but not interested in handling them. So, when exception occurs, it looks for handler in outer try block or in calling method. 
+3. Throw - is used when User wants to through manually than the system. Suppose, Divide by zero can be caught by system or with try ..catch. In case, yourself want to verify the values of the divider for zero and then can throw your own or already defined exceptions with Throw.
+Correct me, if I anything is missing.]]></description>
+		<content:encoded><![CDATA[<p>1. try..catch is to handle the exception at that place itself. Hence, program continues once the associated catch block code is executed. If not caught with associated, it looks for outer try..catch blocks. here, the code following try block will not be executed unless (only finally block is executed). This process continues until this is handled by some catch block and the last option is Java Run time handle, where it prints exception stack.<br />
+2. Throws is where you expect some exceptions ( checked or unchecked), but not interested in handling them. So, when exception occurs, it looks for handler in outer try block or in calling method.<br />
+3. Throw &#8211; is used when User wants to through manually than the system. Suppose, Divide by zero can be caught by system or with try ..catch. In case, yourself want to verify the values of the divider for zero and then can throw your own or already defined exceptions with Throw.<br />
+Correct me, if I anything is missing.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: lavanya</title>
+		<link>https://beginnersbook.com/2013/04/try-catch-in-java/#comment-67933</link>
+		<dc:creator><![CDATA[lavanya]]></dc:creator>
+		<pubDate>Tue, 28 Feb 2017 06:24:29 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=1905#comment-67933</guid>
+		<description><![CDATA[In the example multiple catch blocks in java, the size of array is 7 right...............................  int a[]=new int[7];
+                                                           a[4]=30/0;
+a[4] means it is referring to index 4.....but why it is showing  ArrayIndexOutOfBoundsException]]></description>
+		<content:encoded><![CDATA[<p>In the example multiple catch blocks in java, the size of array is 7 right&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;.  int a[]=new int[7];<br />
+                                                           a[4]=30/0;<br />
+a[4] means it is referring to index 4&#8230;..but why it is showing  ArrayIndexOutOfBoundsException</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: shakir</title>
+		<link>https://beginnersbook.com/2013/04/try-catch-in-java/#comment-67682</link>
+		<dc:creator><![CDATA[shakir]]></dc:creator>
+		<pubDate>Tue, 21 Feb 2017 12:46:26 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=1905#comment-67682</guid>
+		<description><![CDATA[Here we are using catch block...what is the need and use of using finally block?]]></description>
+		<content:encoded><![CDATA[<p>Here we are using catch block&#8230;what is the need and use of using finally block?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Rajat</title>
+		<link>https://beginnersbook.com/2013/04/try-catch-in-java/#comment-67105</link>
+		<dc:creator><![CDATA[Rajat]]></dc:creator>
+		<pubDate>Tue, 07 Feb 2017 03:01:15 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=1905#comment-67105</guid>
+		<description><![CDATA[If you place Exception catch block first, then the other block(Arithmetic Exception one) will become unreachable and it will show this error &quot;Unreachable catch block for ArithmeticException. It is already handled by the catch block for Exception&quot;.
+
+If you place arithmetic exception catch block first, then it will get executed smoothly without any issue.]]></description>
+		<content:encoded><![CDATA[<p>If you place Exception catch block first, then the other block(Arithmetic Exception one) will become unreachable and it will show this error &#8220;Unreachable catch block for ArithmeticException. It is already handled by the catch block for Exception&#8221;.</p>
+<p>If you place arithmetic exception catch block first, then it will get executed smoothly without any issue.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Abhishek Wadhwa</title>
+		<link>https://beginnersbook.com/2013/04/try-catch-in-java/#comment-65802</link>
+		<dc:creator><![CDATA[Abhishek Wadhwa]]></dc:creator>
+		<pubDate>Wed, 11 Jan 2017 15:43:41 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=1905#comment-65802</guid>
+		<description><![CDATA[We use multiple catch block to take actions according to specific exception, Example: You might want to ignore ArithmeticException so you will write 
+catch(ArithmeticException e){
+       //Do nothing
+     }
+Now you want to take some action when there is ArrayIndexOutOfBoundsException so you will write  
+ catch(ArrayIndexOutOfBoundsException e){
+       Log(&quot;Index out of Bound Exception occur, look at the code&quot;);
+     }]]></description>
+		<content:encoded><![CDATA[<p>We use multiple catch block to take actions according to specific exception, Example: You might want to ignore ArithmeticException so you will write<br />
+catch(ArithmeticException e){<br />
+       //Do nothing<br />
+     }<br />
+Now you want to take some action when there is ArrayIndexOutOfBoundsException so you will write<br />
+ catch(ArrayIndexOutOfBoundsException e){<br />
+       Log(&#8220;Index out of Bound Exception occur, look at the code&#8221;);<br />
+     }</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Rohith</title>
+		<link>https://beginnersbook.com/2013/04/try-catch-in-java/#comment-65726</link>
+		<dc:creator><![CDATA[Rohith]]></dc:creator>
+		<pubDate>Mon, 09 Jan 2017 19:53:13 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=1905#comment-65726</guid>
+		<description><![CDATA[Yes. You can declare as many try blocks as you want. Just that each of them should have a catch or finally or both.
+They are all independent to each other and there can be multiple catch blocks for each of those &quot;try&quot; blocks.]]></description>
+		<content:encoded><![CDATA[<p>Yes. You can declare as many try blocks as you want. Just that each of them should have a catch or finally or both.<br />
+They are all independent to each other and there can be multiple catch blocks for each of those &#8220;try&#8221; blocks.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Rohith</title>
+		<link>https://beginnersbook.com/2013/04/try-catch-in-java/#comment-65725</link>
+		<dc:creator><![CDATA[Rohith]]></dc:creator>
+		<pubDate>Mon, 09 Jan 2017 19:49:10 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=1905#comment-65725</guid>
+		<description><![CDATA[It&#039;s because if you want to catch a specific exception and may even write some statements in the block specific to that exception. You can do that with Exception class too. But, you won&#039;t be able to identify the problem easily.
+&quot;Exception&quot; is the parent class and will be used to catch mostly generic or unexpected exceptions.]]></description>
+		<content:encoded><![CDATA[<p>It&#8217;s because if you want to catch a specific exception and may even write some statements in the block specific to that exception. You can do that with Exception class too. But, you won&#8217;t be able to identify the problem easily.<br />
+&#8220;Exception&#8221; is the parent class and will be used to catch mostly generic or unexpected exceptions.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

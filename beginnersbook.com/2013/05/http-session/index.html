@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/05/http-session/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:54:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HttpSession with example in Servlet</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="A session contains information specific to user across the whole web app. When a user enters into a website for the first time HttpSession is obtained."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HttpSession with example in Servlet" />
+<meta property="og:description" content="A session contains information specific to user across the whole web app. When a user enters into a website for the first time HttpSession is obtained." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="Java Servlet tutorial" />
+<meta property="article:published_time" content="2013-05-03T20:36:12+00:00" />
+<meta property="article:modified_time" content="2017-08-01T05:53:35+00:00" />
+<meta property="og:updated_time" content="2017-08-01T05:53:35+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/Session_Example_Output1.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/Session_Example_Output1.jpg" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/Session_Example_Output2.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/Session_Example_Output2.jpg" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/Session_Example_Output3.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/Session_Example_Output3.jpg" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="A session contains information specific to user across the whole web app. When a user enters into a website for the first time HttpSession is obtained." />
+<meta name="twitter:title" content="HttpSession with example in Servlet" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2013/05/Session_Example_Output1.jpg" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; HttpSession with example in Servlet Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index4203.html?p=2340' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed58be.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fhttp-session%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed74e1?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fhttp-session%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2340 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2340 post type-post status-publish format-standard category-java-servlet-tutorial entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">HttpSession with example in Servlet</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/technology/java-servlet-tutorial/index.html" rel="category tag">Java Servlet tutorial</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><div class="bb-nav"><a class="pretut" href="../servlet-response/index.html">❮ Previous</a><a class="nexttut" href="../servlet-cookies/index.html">Next ❯</a></div>
+<p>The <code>HttpSession</code> object is used for session management. A session contains information specific to a particular user across the whole application. When a user enters into a website (or an online application) for the first time HttpSession is obtained via request.getSession(), the user is given a unique ID to identify his session. This unique ID can be stored into a cookie or in a request parameter.</p>
+<p>The HttpSession stays alive until it has not been used for more than the timeout value specified in tag in deployment descriptor file( web.xml). The default timeout value is 30 minutes, this is used if you don&#8217;t specify the value in tag. This means that when the user doesn&#8217;t visit web application time specified, the session is destroyed by servlet container. The subsequent request will not be served from this session anymore, the servlet container will create a new session.</p>
+<p>This is how you create a HttpSession object.</p>
+<pre>protected void doPost(HttpServletRequest req,
+    HttpServletResponse res)
+    throws ServletException, IOException {
+        HttpSession session = req.getSession();
+}</pre>
+<p>You can store the user information into the session object by using setAttribute() method and later when needed this information can be fetched from the session. This is how you store info in session. Here we are storing username, emailid and userage in session with the attribute name uName, uemailId and uAge respectively.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>session.setAttribute("uName", "ChaitanyaSingh");
+session.setAttribute("uemailId", "<a href="../../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="a7cadec2cac6cecbcec3e7c0cac6cecb89c4c8ca">[email&#160;protected]</a>");
+session.setAttribute("uAge", "30");</pre>
+<p>This First parameter is the attribute name and second is the attribute value. For e.g. uName is the attribute name and ChaitanyaSingh is the attribute value in the code above.</p>
+<p>TO get the value from session we use the getAttribute() method of HttpSession interface. Here we are fetching the attribute values using attribute names.</p>
+<pre>String userName = (String) session.getAttribute("uName");
+String userEmailId = (String) session.getAttribute("uemailId");
+String userAge = (String) session.getAttribute("uAge");</pre>
+<h2>Methods of HttpSession</h2>
+<p><strong>public void setAttribute(String name, Object value)</strong>: Binds the object with a name and stores the name/value pair as an attribute of the HttpSession object. If an attribute already exists, then this method replaces the existing attributes.</p>
+<p><strong>public Object getAttribute(String name)</strong>: Returns the String object specified in the parameter, from the session object. If no object is found for the specified attribute, then the getAttribute() method returns null.</p>
+<p><strong>public Enumeration getAttributeNames()</strong>: Returns an Enumeration that contains the name of all the objects that are bound as attributes to the session object.</p>
+<p><strong>public void removeAttribute(String name)</strong>: Removes the given attribute from session.</p>
+<p><strong>setMaxInactiveInterval(int interval)</strong>: Sets the session inactivity time in seconds. This is the time in seconds that specifies how long a sessions remains active since last request received from client.</p>
+<p>For the complete list of methods, refer the <a href="http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSession.html" target="_blank" rel="noopener">official documentation</a>.</p>
+<h2>Session Example</h2>
+<p><span style="text-decoration: underline;">index.html</span></p>
+<pre>&lt;form action="login"&gt;
+  User Name:&lt;input type="text" name="userName"/&gt;&lt;br/&gt;
+  Password:&lt;input type="password" name="userPassword"/&gt;&lt;br/&gt;
+  &lt;input type="submit" value="submit"/&gt;
+&lt;/form&gt;</pre>
+<p><span style="text-decoration: underline;">MyServlet1.java</span></p>
+<pre>import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+public class MyServlet1 extends HttpServlet {
+   public void doGet(HttpServletRequest request, HttpServletResponse response){
+     try{
+      response.setContentType("text/html");
+      PrintWriter pwriter = response.getWriter();
+
+      String name = request.getParameter("userName");
+      String password = request.getParameter("userPassword");
+      pwriter.print("Hello "+name);
+      pwriter.print("Your Password is: "+password);
+      HttpSession session=request.getSession();
+      session.setAttribute("uname",name);
+      session.setAttribute("upass",password);
+      pwriter.print("&lt;a href='welcome'&gt;view details&lt;/a&gt;");
+      pwriter.close();
+    }catch(Exception exp){
+       System.out.println(exp);
+     }
+  }
+}</pre>
+<p><span style="text-decoration: underline;">MyServlet2.java</span></p>
+<pre>import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+public class MyServlet2 extends HttpServlet {
+  public void doGet(HttpServletRequest request, HttpServletResponse response){
+  try{
+      response.setContentType("text/html");
+      PrintWriter pwriter = response.getWriter();
+      HttpSession session=request.getSession(false);
+      String myName=(String)session.getAttribute("uname");
+      String myPass=(String)session.getAttribute("upass");
+      pwriter.print("Name: "+myName+" Pass: "+myPass);
+      pwriter.close();
+  }catch(Exception exp){
+      System.out.println(exp);
+   }
+  }
+}</pre>
+<p><span style="text-decoration: underline;">web.xml</span></p>
+<pre>&lt;web-app&gt;
+&lt;servlet&gt;
+   &lt;servlet-name&gt;Servlet1&lt;/servlet-name&gt;
+   &lt;servlet-class&gt;MyServlet1&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+   &lt;servlet-name&gt;Servlet1&lt;/servlet-name&gt;
+   &lt;url-pattern&gt;/login&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+&lt;servlet&gt;
+   &lt;servlet-name&gt;Servlet2&lt;/servlet-name&gt;
+   &lt;servlet-class&gt;MyServlet2&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+   &lt;servlet-name&gt;Servlet2&lt;/servlet-name&gt;
+   &lt;url-pattern&gt;/welcome&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+&lt;/web-app&gt;</pre>
+<p><strong>Output:</strong><br />
+<strong>First Screen:</strong><br />
+<img class="aligncenter size-full wp-image-6498" src="../../../wp-content/uploads/2013/05/Session_Example_Output1.jpg" alt="" width="700" height="137" srcset="https://beginnersbook.com/wp-content/uploads/2013/05/Session_Example_Output1.jpg 700w, https://beginnersbook.com/wp-content/uploads/2013/05/Session_Example_Output1-300x59.jpg 300w" sizes="(max-width: 700px) 100vw, 700px" /></p>
+<p><strong>After clicking Submit:</strong><br />
+<img class="aligncenter size-full wp-image-6499" src="../../../wp-content/uploads/2013/05/Session_Example_Output2.jpg" alt="" width="700" height="82" srcset="https://beginnersbook.com/wp-content/uploads/2013/05/Session_Example_Output2.jpg 700w, https://beginnersbook.com/wp-content/uploads/2013/05/Session_Example_Output2-300x35.jpg 300w" sizes="(max-width: 700px) 100vw, 700px" /></p>
+<p><strong>After clicking view details:</strong><br />
+<img class="aligncenter size-full wp-image-6500" src="../../../wp-content/uploads/2013/05/Session_Example_Output3.jpg" alt="" width="700" height="114" srcset="https://beginnersbook.com/wp-content/uploads/2013/05/Session_Example_Output3.jpg 700w, https://beginnersbook.com/wp-content/uploads/2013/05/Session_Example_Output3-300x49.jpg 300w" sizes="(max-width: 700px) 100vw, 700px" /></p>
+<div class="bb-nav"><a class="pretut" href="../servlet-response/index.html">❮ Previous</a><a class="nexttut" href="../servlet-cookies/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script data-cfasync="false" src="../../../cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2340' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="089ad12c4d" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="44"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-37" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Servlet Tutorial</h4>
+			<div class="textwidget"><ul>
+<li><a href="../servlet-tutorial/index.html">Servlet Introduction</a></li>
+<li><a href="../servlet-api/index.html">Servlet API</a></li>
+<li><a href="../../../2014/04/servlet-interface/index.html">Servlet Interface</a></li>
+<li><a href="../../../2014/04/genericservlet-class/index.html">Generic Servlet</a></li>
+<li><a href="../http-servlet/index.html">HttpServlet</a></li>
+<li><a href="../../../2017/07/how-to-create-and-run-servlet-in-eclipse-ide/index.html">Servlet in Eclipse</a></li>
+<li><a href="../servlet-life-cycle/index.html">Servlet Life cycle</a></li>
+<li><a href="../working-of-servlets/index.html">Working of Servlet</a></li>
+<li><a href="../../../2014/04/welcome-file-list-in-web-xml/index.html">Welcome-file-list</a></li>
+<li><a href="../../../2017/07/load-on-startup-tag-in-web-xml-file-with-example/index.html">load-on-startup tag</a></li>
+<li><a href="../servlet-request-interface/index.html">ServletRequest</a></li>
+<li><a href="../../../2017/07/requestdispatcher-methods-with-examples-in-servlet/index.html">RequestDispatcher</a></li>
+<li><a href="../../../2017/07/servletconfig-interface-with-example/index.html">ServletConfig</a></li>
+<li><a href="../servlet-context/index.html">ServletContext</a></li>
+<li><a href="../servlet-response/index.html">ServletResponse</a></li>
+<li><a href="index.html">HttpSession</a></li>
+<li><a href="../servlet-cookies/index.html">Cookies</a></li>
+<li><a href="../servlet-interview-questions/index.html">Servlet Interview Q</a></li>
+</ul>
+</div>
+		</div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/05/http-session/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:54:17 GMT -->
+</html>

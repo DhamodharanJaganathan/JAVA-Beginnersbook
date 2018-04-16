@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2015/03/for-loop-in-java-with-example/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:38:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>For loop in Java with example</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Loops are used to execute a set of statements repeatedly until a particular condition is satisfied. In Java we have three types of basic loops: for, while and do-while. In this tutorial we will learn how to use &quot;for loop&quot; in Java. Syntax of for loop: for(initialization; condition ; increment/decrement) {"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="For loop in Java with example" />
+<meta property="og:description" content="Loops are used to execute a set of statements repeatedly until a particular condition is satisfied. In Java we have three types of basic loops: for, while and do-while. In this tutorial we will learn how to use &quot;for loop&quot; in Java. Syntax of for loop: for(initialization; condition ; increment/decrement) {" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="Learn Java" />
+<meta property="article:published_time" content="2015-03-04T15:48:32+00:00" />
+<meta property="article:modified_time" content="2017-09-10T09:02:28+00:00" />
+<meta property="og:updated_time" content="2017-09-10T09:02:28+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2015/03/for_loop_Java.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2015/03/for_loop_Java.jpg" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Loops are used to execute a set of statements repeatedly until a particular condition is satisfied. In Java we have three types of basic loops: for, while and do-while. In this tutorial we will learn how to use &quot;for loop&quot; in Java. Syntax of for loop: for(initialization; condition ; increment/decrement) {" />
+<meta name="twitter:title" content="For loop in Java with example" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2015/03/for_loop_Java.jpg" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; For loop in Java with example Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index6498.html?p=5829' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed3acb.json?url=https%3A%2F%2Fbeginnersbook.com%2F2015%2F03%2Ffor-loop-in-java-with-example%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedf6e2?url=https%3A%2F%2Fbeginnersbook.com%2F2015%2F03%2Ffor-loop-in-java-with-example%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-5829 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-5829 post type-post status-publish format-standard category-learn-java entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">For loop in Java with example</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/learn-java/index.html" rel="category tag">Learn Java</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Loops are used to execute a set of statements repeatedly until a particular condition is satisfied. In Java we have three types of basic loops: for, while and do-while. In this tutorial we will learn how to use &#8220;<strong>for loop</strong>&#8221; in Java.</p>
+<h4>Syntax of for loop:</h4>
+<pre>for(initialization; condition ; increment/decrement)
+{
+   statement(s);
+}</pre>
+<h2>Flow of Execution of the for Loop</h2>
+<p>As a program executes, the interpreter always keeps track of which statement is about to be executed. We call this the control flow, or the flow of execution of the program.<br />
+<img class="aligncenter size-full wp-image-6550" src="../../../wp-content/uploads/2015/03/for_loop_Java.jpg" alt="for loop Java" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2015/03/for_loop_Java.jpg 400w, https://beginnersbook.com/wp-content/uploads/2015/03/for_loop_Java-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2015/03/for_loop_Java-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<p><strong>First step</strong>: In for loop, initialization happens first and only one time, which means that the initialization part of for loop only executes once.</p>
+<p><strong>Second step</strong>: Condition in for loop is evaluated on each iteration, if the condition is true then the statements inside for loop body gets executed. Once the condition returns false, the statements in for loop does not execute and the control gets transferred to the next statement in the program after for loop.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><strong>Third step</strong>: After every execution of for loop’s body, the increment/decrement part of for loop executes that updates the <strong>loop counter</strong>.</p>
+<p><strong>Fourth step</strong>: After third step, the control jumps to second step and condition is re-evaluated.</p>
+<h2>Example of Simple For loop</h2>
+<pre>class ForLoopExample {
+    public static void main(String args[]){
+         for(int i=10; i&gt;1; i--){
+              System.out.println("The value of i is: "+i);
+         }
+    }
+}</pre>
+<p>The output of this program is:</p>
+<pre>The value of i is: 10
+The value of i is: 9
+The value of i is: 8
+The value of i is: 7
+The value of i is: 6
+The value of i is: 5
+The value of i is: 4
+The value of i is: 3
+The value of i is: 2</pre>
+<p>In the above program:<br />
+int i=1 is initialization expression<br />
+i&gt;1 is condition(Boolean expression)<br />
+i&#8211; Decrement operation</p>
+<h2>Infinite for loop</h2>
+<p>The importance of Boolean expression and increment/decrement operation co-ordination:</p>
+<pre>class ForLoopExample2 {
+    public static void main(String args[]){
+         for(int i=1; i&gt;=1; i++){
+              System.out.println("The value of i is: "+i);
+         }
+    }
+}</pre>
+<p>This is an infinite loop as the condition would never return false. The initialization step is setting up the value of variable i to 1, since we are incrementing the value of i, it would always be greater than 1 (the Boolean expression: i&gt;1) so it would never return false. This would eventually lead to the infinite loop condition. Thus it is important to see the co-ordination between Boolean expression and increment/decrement operation to determine whether the loop would terminate at some point of time or not.</p>
+<p>Here is another example of infinite for loop:</p>
+<pre>// infinite loop
+for ( ; ; ) {
+    // statement(s)
+}</pre>
+<h2>For loop example to iterate an array:</h2>
+<p>Here we are iterating and displaying array elements using the for loop.</p>
+<pre>class ForLoopExample3 {
+    public static void main(String args[]){
+         int arr[]={2,11,45,9};
+         //i starts with 0 as array index starts with 0 too
+         for(int i=0; i&lt;arr.length; i++){
+              System.out.println(arr[i]);
+         }
+    }
+}</pre>
+<p>Output:</p>
+<pre>2
+11
+45
+9</pre>
+<h3>Enhanced For loop</h3>
+<p>Enhanced for loop is useful when you want to iterate Array/Collections, it is easy to write and understand.</p>
+<p>Let&#8217;s take the same example that we have written above and rewrite it using <strong>enhanced for loop</strong>.</p>
+<pre>class ForLoopExample3 {
+   public static void main(String args[]){
+      int arr[]={2,11,45,9};
+      for (int num : arr) {
+         System.out.println(num);
+      }
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>2
+11
+45
+9</pre>
+<p><strong>Note:</strong> In the above example, I have declared the num as int in the enhanced for loop. This will change depending on the data type of array. For example, the enhanced for loop for string type would look like this:</p>
+<pre>String arr[]={"hi","hello","bye"};
+for (String str : arr) {
+         System.out.println(str);
+}</pre>
+<p>Check out these <a href="../../../2017/09/java-examples/index.html">java programming examples</a> related to for loop:</p>
+<ol>
+<li><a href="../../../2017/09/java-program-to-find-sum-of-natural-numbers/index.html">Java Program to find sum of natural numbers using for loop</a></li>
+<li><a href="../../../2017/09/java-program-to-find-factorial-using-for-and-while-loop/index.html">Java Program to find factorial of a number using loops</a></li>
+<li><a href="../../../2017/09/java-program-to-display-fibonacci-series-using-loops/index.html">Java Program to print Fibonacci Series using for loop</a></li>
+</ol>
+<div class="bb-nav"><a class="pretut" href="../../../2017/08/java-switch-case/index.html">❮ Previous</a><a class="nexttut" href="../while-loop-in-java-with-examples/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-37008">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/99122c842609a0da8644b7d26bc79865?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/99122c842609a0da8644b7d26bc79865?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Harsh bhatnagar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-27T04:53:15+00:00" itemprop="datePublished"><a href="index.html#comment-37008" class="comment-time-link" itemprop="url">September 27, 2015 at 4:53 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I really appreciate and recommend this website to all the beginners and experienced as well. As i find it very ease in learning java, i&#8217;ve been in touch with the same for past 1yr but never been so comfortable with it. But after reading the few tutorials on this website i realized that, my concepts weren&#8217;t that much clear which i feel have been cleared after hitting these tutorials.<br />
+Thanks &#8211;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-37008' onclick='return addComment.moveForm( "comment-37008", "37008", "respond", "5829" )' aria-label='Reply to Harsh bhatnagar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-42579">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1098034344dbe5a842f9e75e28418d1b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1098034344dbe5a842f9e75e28418d1b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sasidhar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-12T07:11:58+00:00" itemprop="datePublished"><a href="index.html#comment-42579" class="comment-time-link" itemprop="url">November 12, 2015 at 7:11 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Very Helpful for beginners&#8230;As I am from a Non-IT background in my graduation, this site has helped me a lot&#8230;Add more sample &amp; simple programs so that we can know more.<br />
+Great going guys&#8230;keep it up :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-42579' onclick='return addComment.moveForm( "comment-42579", "42579", "respond", "5829" )' aria-label='Reply to Sasidhar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-57427">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2aa7fb7945f0d03e607d2c342b2786f1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2aa7fb7945f0d03e607d2c342b2786f1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">shashi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-25T15:52:03+00:00" itemprop="datePublished"><a href="index.html#comment-57427" class="comment-time-link" itemprop="url">June 25, 2016 at 3:52 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I think this array declaration is wrong.it can&#8217;t be like this.<br />
+int arr[4]={2,11,45,9};<br />
+It should be like this<br />
+int arr[]={2,11,45,9};</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57427' onclick='return addComment.moveForm( "comment-57427", "57427", "respond", "5829" )' aria-label='Reply to shashi'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-60094">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/fc61f839e2ca76d020cd3819b8d809f1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/fc61f839e2ca76d020cd3819b8d809f1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Syed Bilal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-02T19:19:35+00:00" itemprop="datePublished"><a href="index.html#comment-60094" class="comment-time-link" itemprop="url">September 2, 2016 at 7:19 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Both ways are correct. He declared and FIXED the size of array to 4 and if I come to your point, you can declare any number of members in your array!. Your concept is good for Multidimensional Array but for Single array.. Always declare the size of array!.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-60094' onclick='return addComment.moveForm( "comment-60094", "60094", "respond", "5829" )' aria-label='Reply to Syed Bilal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-63795">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7278d08f0c766b4db9302c938d27a2f7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7278d08f0c766b4db9302c938d27a2f7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Dragica</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-24T09:39:40+00:00" itemprop="datePublished"><a href="index.html#comment-63795" class="comment-time-link" itemprop="url">November 24, 2016 at 9:39 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>That&#8217;s right!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63795' onclick='return addComment.moveForm( "comment-63795", "63795", "respond", "5829" )' aria-label='Reply to Dragica'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-63936">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/924295e37278806d63ded7d0449be65e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/924295e37278806d63ded7d0449be65e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Wuu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-26T12:10:06+00:00" itemprop="datePublished"><a href="index.html#comment-63936" class="comment-time-link" itemprop="url">November 26, 2016 at 12:10 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>thanks, your comment is helping me a lot.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63936' onclick='return addComment.moveForm( "comment-63936", "63936", "respond", "5829" )' aria-label='Reply to Wuu'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-68639">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ce7751134334b81f8cb32769ea0e9e8a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ce7751134334b81f8cb32769ea0e9e8a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">king</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-20T18:36:56+00:00" itemprop="datePublished"><a href="index.html#comment-68639" class="comment-time-link" itemprop="url">March 20, 2017 at 6:36 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>i think first one was right .<br />
+You can right like this :<br />
+int [] array = new int[4];<br />
+array ={2,11,45,9};</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-68639' onclick='return addComment.moveForm( "comment-68639", "68639", "respond", "5829" )' aria-label='Reply to king'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-69040">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7f12e9a4ddfaaef1fa896ca354a39b0a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7f12e9a4ddfaaef1fa896ca354a39b0a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">azhar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-30T02:56:31+00:00" itemprop="datePublished"><a href="index.html#comment-69040" class="comment-time-link" itemprop="url">March 30, 2017 at 2:56 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I want a real life example. For all the loops can any one help me out</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69040' onclick='return addComment.moveForm( "comment-69040", "69040", "respond", "5829" )' aria-label='Reply to azhar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-71328">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/31fb4d01d83d99c403507b5227f6693f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/31fb4d01d83d99c403507b5227f6693f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Unknown</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-06-15T18:37:06+00:00" itemprop="datePublished"><a href="index.html#comment-71328" class="comment-time-link" itemprop="url">June 15, 2017 at 6:37 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This is one of the best sites for learning java. Concepts are made very clear and explained in such a simple way. Wonderful way of teaching. Thank you so much!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-71328' onclick='return addComment.moveForm( "comment-71328", "71328", "respond", "5829" )' aria-label='Reply to Unknown'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='5829' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="243c8372f7" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="164"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../../../2013/05/java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../../../2013/05/jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../../../2013/05/first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="index.html">Java For loop</a></li>
+ 	<li><a href="../while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../../../2013/04/oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../../2013/03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../../../2013/04/java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../../2013/03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../../../2013/05/java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../../../2013/05/aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../../../2013/05/association/index.html">Association</a></li>
+<li><a href="../../../2014/07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="../../../2013/05/method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="../../../2014/01/method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="../../../2014/01/difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../../2013/03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../../../2013/04/runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../../../2013/04/java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../../../2013/05/java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="../../../2013/05/java-interface/index.html">Interface</a></li>
+ 	<li><a href="../../../2013/05/abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../../../2013/05/encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../../2013/03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../../../2013/05/java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../../../2013/04/java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../../../2013/05/inner-class/index.html">Inner classes</a></li>
+<li><a href="../../../2013/05/java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../../../2013/05/static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../../../2013/05/java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../../2013/12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../../2013/04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../../2013/03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2015/03/for-loop-in-java-with-example/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:38:28 GMT -->
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/12/java-arraylist/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:41:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ArrayList in java with example programs - Collections Framework</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Arraylist class implements List interface. It is widely used because of the functionality and flexibility it offers. Most of the developers choose Arraylist over Array as it&#039;s a very good alternative of traditional java arrays. ArrayList is a resizable-array implementation of the List interface. It implements all"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="ArrayList in java with example programs - Collections Framework" />
+<meta property="og:description" content="Arraylist class implements List interface. It is widely used because of the functionality and flexibility it offers. Most of the developers choose Arraylist over Array as it&#039;s a very good alternative of traditional java arrays. ArrayList is a resizable-array implementation of the List interface. It implements all" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="ArrayList" />
+<meta property="article:section" content="Java Collections" />
+<meta property="article:published_time" content="2013-12-03T15:43:10+00:00" />
+<meta property="article:modified_time" content="2017-08-08T12:38:31+00:00" />
+<meta property="og:updated_time" content="2017-08-08T12:38:31+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Arraylist class implements List interface. It is widely used because of the functionality and flexibility it offers. Most of the developers choose Arraylist over Array as it&#039;s a very good alternative of traditional java arrays. ArrayList is a resizable-array implementation of the List interface. It implements all" />
+<meta name="twitter:title" content="ArrayList in java with example programs - Collections Framework" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; ArrayList in java with example programs &#8211; Collections Framework Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index5a34.html?p=4241' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embedaba3.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F12%2Fjava-arraylist%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed051e?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F12%2Fjava-arraylist%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-4241 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-4241 post type-post status-publish format-standard category-java-collections tag-arraylist entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">ArrayList in java with example programs &#8211; Collections Framework</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/java-collections/index.html" rel="category tag">Java Collections</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p><strong>Arraylist</strong> class implements List interface. It is widely used because of the functionality and flexibility it offers. Most of the developers <strong>choose Arraylist over Array</strong> as it&#8217;s a very good alternative of traditional java arrays. ArrayList is a resizable-array implementation of the <code>List</code> interface. It implements all optional list operations, and permits all elements, including <code>null</code>.</p>
+<p>The issue with arrays is that they are of fixed length so if it is full you cannot add any more elements to it, likewise if there are number of elements gets removed from it the memory consumption would be the same as it doesn&#8217;t shrink. On the other ArrayList can dynamically grow and shrink after addition and removal of elements. Apart from these benefits ArrayList class enables us to use predefined methods of it which makes our task easy. Let&#8217;s see the ArrayList example first then we will discuss it&#8217;s methods and their usage.</p>
+<blockquote><p>There is a list of several ArrayList tutorials at the end of this guide, refer it to understand ArrayList concept fully.</p></blockquote>
+<h3>ArrayList Example in Java</h3>
+<pre>import java.util.*;
+
+public class ArrayListExample {
+   public static void main(String args[]) {
+      /*Creation of ArrayList: I'm going to add String
+       *elements so I made it of string type */
+	  ArrayList&lt;String&gt; obj = new ArrayList&lt;String&gt;();
+
+	  /*This is how elements should be added to the array list*/
+	  obj.add("Ajeet");
+	  obj.add("Harry");
+	  obj.add("Chaitanya");
+	  obj.add("Steve");
+	  obj.add("Anuj");
+
+	  /* Displaying array list elements */
+	  System.out.println("Currently the array list has following elements:"+obj);
+
+	  /*Add element at the given index*/
+	  obj.add(0, "Rahul");
+	  obj.add(1, "Justin");
+
+	  /*Remove elements from array list like this*/
+	  obj.remove("Chaitanya");
+	  obj.remove("Harry");
+
+	  System.out.println("Current array list is:"+obj);
+
+	  /*Remove element from the given index*/
+	  obj.remove(1);
+
+	  System.out.println("Current array list is:"+obj);
+   }
+}</pre>
+<p>Output:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>Currently the array list has following elements:[Ajeet, Harry, Chaitanya, Steve, Anuj]
+Current array list is:[Rahul, Justin, Ajeet, Steve, Anuj]
+Current array list is:[Rahul, Ajeet, Steve, Anuj]</pre>
+<h3>Methods of ArrayList class</h3>
+<p>In the above example we have used methods such as add and remove. However there are number of methods available which can be used directly using object of ArrayList class. Let&#8217;s discuss few of the important methods.</p>
+<p>1) <strong>add( Object o)</strong>: This method adds an object o to the arraylist.</p>
+<pre>obj.add("hello");</pre>
+<p>This statement would add a string hello in the arraylist at last position.</p>
+<p>2) <strong>add(int index, Object o)</strong>: It adds the object o to the array list at the given index.</p>
+<pre>obj.add(2, "bye");</pre>
+<p>It will add the string bye to the 2nd index (3rd position as the array list starts with index 0) of array list.</p>
+<p>3) <strong>remove(Object o)</strong>: Removes the object o from the ArrayList.</p>
+<pre>obj.remove("Chaitanya");</pre>
+<p>This statement will remove the string &#8220;Chaitanya&#8221; from the ArrayList.</p>
+<p>4) <strong>remove(int index)</strong>: Removes element from a given index.</p>
+<pre>obj.remove(3);</pre>
+<p>It would remove the element of index 3 (4th element of the list &#8211; List starts with o).</p>
+<p>5) <strong>set(int index, Object o)</strong>: Used for updating an element. It replaces the element present at the specified index with the object o.</p>
+<pre>obj.set(2, "Tom");</pre>
+<p>It would replace the 3rd element (index =2 is 3rd element) with the value Tom.</p>
+<p>6)<strong> int indexOf(Object o)</strong>: Gives the index of the object o. If the element is not found in the list then this method returns the value -1.</p>
+<pre>int pos = obj.indexOf("Tom");</pre>
+<p>This would give the index (position) of the string Tom in the list.</p>
+<p>7) <strong>Object get(int index)</strong>: It returns the object of list which is present at the specified index.</p>
+<pre>String str= obj.get(2);</pre>
+<p>Function get would return the string stored at 3rd position (index 2) and would be assigned to the string &#8220;str&#8221;. We have stored the returned value in string variable because in our example we have defined the ArrayList is of String type. If you are having integer array list then the returned value should be stored in an integer variable.</p>
+<p>8) <strong>int size()</strong>: It gives the size of the ArrayList &#8211; Number of elements of the list.</p>
+<pre>int numberofitems = obj.size();</pre>
+<p>9) <strong>boolean contains(Object o)</strong>: It checks whether the given object o is present in the array list if its there then it returns true else it returns false.</p>
+<pre>obj.contains("Steve");</pre>
+<p>It would return true if the string &#8220;Steve&#8221; is present in the list else we would get false.</p>
+<p>10) <strong>clear():</strong> It is used for removing all the elements of the array list in one go. The below code will remove all the elements of ArrayList whose object is obj.</p>
+<pre>obj.clear();</pre>
+<h2>ArrayList Tutorials</h2>
+<p>Here is the list of <strong>ArrayList</strong> tutorials published on beginnersbook.com.</p>
+<h4>ArrayList Basics</h4>
+<ul>
+<li><a href="../how-to-initialize-an-arraylist/index.html">Initialize ArrayList</a></li>
+<li><a href="../how-to-loop-arraylist-in-java/index.html">Loop ArrayList</a></li>
+<li><a href="../how-to-find-length-of-arraylist-in-java/index.html">Find length of ArrayList</a></li>
+</ul>
+<h4>Sorting</h4>
+<ul>
+<li><a href="../how-to-sort-arraylist-in-java/index.html">Sort ArrayList</a></li>
+<li><a href="../sort-arraylist-in-descending-order-in-java/index.html">Sort ArrayList in Descending order</a></li>
+<li><a href="../java-arraylist-of-object-sort-example-comparable-and-comparator/index.html">Sort ArrayList of Objects using Comparable and Comparator</a></li>
+</ul>
+<h4>Add/Remove</h4>
+<ul>
+<li><a href="../java-arraylist-add-method-example/index.html">Add element to ArrayList</a></li>
+<li><a href="../java-arraylist-addint-index-e-element-example/index.html">Add element at particular index of ArrayList</a></li>
+<li><a href="../java-arraylist-addallcollection-c-method-example/index.html">Append Collection elements to ArrayList</a></li>
+<li><a href="../how-to-copy-and-add-all-list-elements-to-arraylist-in-java/index.html">Copy All List elements to ArrayList</a></li>
+<li><a href="../java-arraylist-addall-int-index-collection-c-method-example/index.html">Insert all the collection elements to the specified position in ArrayList</a></li>
+<li><a href="../java-arraylist-remove-method-example/index.html">Remove element from the specified index in ArrayList</a></li>
+<li><a href="../java-arraylist-removeobject-method-example/index.html">Remove specified element from ArrayList</a></li>
+</ul>
+<h4>Get/Search</h4>
+<ul>
+<li><a href="../how-to-get-sublist-of-an-arraylist-with-example/index.html">Get Sub List of ArrayList</a></li>
+<li><a href="../java-arraylist-lastindexofobject-0bj-method-example/index.html">Get the index of last occurrence of the element in the ArrayList</a></li>
+<li><a href="../java-arraylist-get-method-example/index.html">Get element from ArrayList</a></li>
+<li><a href="../java-arraylist-indexof-method-example/index.html">Get the index of  first occurrence of the element in the ArrayList</a></li>
+<li><a href="../java-arraylist-contains-method-example/index.html">Check whether element exists in ArrayList</a></li>
+</ul>
+<h4>Other Tutorials on ArrayList</h4>
+<ul>
+<li><a href="../how-to-compare-two-arraylist-in-java/index.html">Compare two ArrayList</a></li>
+<li><a href="../how-to-synchronize-arraylist-in-java-with-example/index.html">Synchronize ArrayList</a></li>
+<li><a href="../how-to-swap-two-elements-in-an-arraylist/index.html">Swap two elements in ArrayList</a></li>
+<li><a href="../how-to-override-tostring-method-for-arraylist-in-java/index.html">Override toString() method &#8211; ArrayList</a></li>
+<li><a href="../how-to-serialize-arraylist-in-java/index.html">Serialize ArrayList</a></li>
+<li><a href="../how-to-joincombine-two-arraylists-in-java/index.html">Join two ArrayList</a></li>
+<li><a href="../how-to-clone-an-arraylist-to-another-arraylist/index.html">Clone ArrayList to another ArrayList</a></li>
+<li><a href="../how-to-empty-an-arraylist-in-java/index.html">Make ArrayList Empty</a></li>
+<li><a href="../java-arraylist-isempty-method-example/index.html">Check whether ArrayList is empty or not</a></li>
+<li><a href="../java-arraylist-trimtosize-method-example/index.html">Trim the Size of ArrayList</a></li>
+<li><a href="../java-arraylist-set-method-example/index.html">Replace the value of existing element in ArrayList</a></li>
+<li><a href="../java-arraylist-ensurecapacity-method-example/index.html">Increase the capacity(size) of ArrayList</a></li>
+</ul>
+<h4>Conversions:</h4>
+<ul>
+<li><a href="../../../2014/07/java-convert-a-linkedlist-to-arraylist/index.html">Convert LinkedList to ArrayList</a></li>
+<li><a href="../../../2014/07/java-convert-vector-to-arraylist-example/index.html">Convert Vector to ArrayList</a></li>
+<li><a href="../how-to-convert-arraylist-to-string-array-in-java/index.html">Convert ArrayList to String Array</a></li>
+<li><a href="../how-to-convert-array-to-arraylist-in-java/index.html">Convert Array to ArrayList</a></li>
+<li><a href="../../../2014/08/convert-hashset-to-a-list-arraylist/index.html">Convert HashSet to ArrayList</a></li>
+</ul>
+<h4>Differences:</h4>
+<ul>
+<li><a href="../difference-between-arraylist-and-vector-in-java/index.html">ArrayList vs Vector</a></li>
+<li><a href="../difference-between-arraylist-and-hashmap-in-java/index.html">ArrayList vs HashMap</a></li>
+<li><a href="../difference-between-arraylist-and-linkedlist-in-java/index.html">ArrayList vs LinkedList</a></li>
+</ul>
+<h4>Reference</h4>
+<ul>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank" rel="noopener">ArrayList Documentation</a></li>
+</ul>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-16981">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a6566c2d639ae8e8dbcefd601a5cd97f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a6566c2d639ae8e8dbcefd601a5cd97f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">R Pantera</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-17T03:36:57+00:00" itemprop="datePublished"><a href="index.html#comment-16981" class="comment-time-link" itemprop="url">November 17, 2014 at 3:36 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you very much for your Beginner&#8217;s Book.  It is better than any other source I have found for a Java beginner.  The examples are especially helpful.  I wish you success.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-16981' onclick='return addComment.moveForm( "comment-16981", "16981", "respond", "4241" )' aria-label='Reply to R Pantera'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-17397">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-18T04:50:59+00:00" itemprop="datePublished"><a href="index.html#comment-17397" class="comment-time-link" itemprop="url">November 18, 2014 at 4:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks for the appreciation. Glad you liked it.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-17397' onclick='return addComment.moveForm( "comment-17397", "17397", "respond", "4241" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-30291">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ebb31d9ef08b1eb5980148e203b4a8e1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ebb31d9ef08b1eb5980148e203b4a8e1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">BabaG</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-26T01:24:48+00:00" itemprop="datePublished"><a href="index.html#comment-30291" class="comment-time-link" itemprop="url">July 26, 2015 at 1:24 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Please how do I get the pdf of your material. Thank a lot</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-30291' onclick='return addComment.moveForm( "comment-30291", "30291", "respond", "4241" )' aria-label='Reply to BabaG'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-21561">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/da85bda8536d2901d88210d58268f0eb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/da85bda8536d2901d88210d58268f0eb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Santosh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-09T09:52:38+00:00" itemprop="datePublished"><a href="index.html#comment-21561" class="comment-time-link" itemprop="url">January 9, 2015 at 9:52 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi ,<br />
+The examples and concepts are explained very nicely and well organized.<br />
+Thank you!!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-21561' onclick='return addComment.moveForm( "comment-21561", "21561", "respond", "4241" )' aria-label='Reply to Santosh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-24885">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/89b69817906279c0f0522a03e39b348e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/89b69817906279c0f0522a03e39b348e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Venkat</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-27T07:33:43+00:00" itemprop="datePublished"><a href="index.html#comment-24885" class="comment-time-link" itemprop="url">March 27, 2015 at 7:33 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi sir! ur way of explanation awesome.this site is best for the java beginners  .keep posting&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24885' onclick='return addComment.moveForm( "comment-24885", "24885", "respond", "4241" )' aria-label='Reply to Venkat'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-25088">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6ce2c0a2ad47d830fcfcae6b2eeb3db4?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6ce2c0a2ad47d830fcfcae6b2eeb3db4?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rahul Raaj Jamuar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-31T09:25:32+00:00" itemprop="datePublished"><a href="index.html#comment-25088" class="comment-time-link" itemprop="url">March 31, 2015 at 9:25 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you so much for posting these contents. The examples given here are best to understand any concept. Keep adding more examples. Thanks again :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-25088' onclick='return addComment.moveForm( "comment-25088", "25088", "respond", "4241" )' aria-label='Reply to Rahul Raaj Jamuar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-25481">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2c0859e39c7e57afed898165caaa9d32?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2c0859e39c7e57afed898165caaa9d32?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Abel</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-04-09T07:13:44+00:00" itemprop="datePublished"><a href="index.html#comment-25481" class="comment-time-link" itemprop="url">April 9, 2015 at 7:13 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Friend,I am not able to Command Array List showing me error: The type ArrayList is not generic; it cannot be parameterized with arguments </p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-25481' onclick='return addComment.moveForm( "comment-25481", "25481", "respond", "4241" )' aria-label='Reply to Abel'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-25549">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/39171f1e4917ebcf64db340f7e2396f1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/39171f1e4917ebcf64db340f7e2396f1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Priya</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-04-11T07:55:07+00:00" itemprop="datePublished"><a href="index.html#comment-25549" class="comment-time-link" itemprop="url">April 11, 2015 at 7:55 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I suspect you imported some different ArrayList class in your classpath.Try import java.util.ArrayList, and I&#8217;m sure it would certainly work.  Check your Java version as well, ArrayList is not a legacy class so it might support from JDK 1.5<br />
+Priya.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-25549' onclick='return addComment.moveForm( "comment-25549", "25549", "respond", "4241" )' aria-label='Reply to Priya'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-33126">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1a08b2e776b01c537f90e27fc260fc8e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1a08b2e776b01c537f90e27fc260fc8e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Jai</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-21T16:54:18+00:00" itemprop="datePublished"><a href="index.html#comment-33126" class="comment-time-link" itemprop="url">August 21, 2015 at 4:54 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Example are clear and easy to understand quickly.<br />
+The way of presentation is really very nice.<br />
+Thanks ?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-33126' onclick='return addComment.moveForm( "comment-33126", "33126", "respond", "4241" )' aria-label='Reply to Jai'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-37300">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/965d011f4e6021c55287f23f0b3d35b1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/965d011f4e6021c55287f23f0b3d35b1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">TOSYN</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-30T09:25:37+00:00" itemprop="datePublished"><a href="index.html#comment-37300" class="comment-time-link" itemprop="url">September 30, 2015 at 9:25 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>i just stumbled on your website on google, never knew this kind of well explanatory java website exist. Your topics are truly helpful for a java starter(Beginners). i will directed my beginners here.Thanks to you.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-37300' onclick='return addComment.moveForm( "comment-37300", "37300", "respond", "4241" )' aria-label='Reply to TOSYN'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-50249">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/fc34eb129711e1c98b866658e13aea42?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/fc34eb129711e1c98b866658e13aea42?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">veeresh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-02T03:52:09+00:00" itemprop="datePublished"><a href="index.html#comment-50249" class="comment-time-link" itemprop="url">February 2, 2016 at 3:52 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi, things here are very clear to understand. It is very good for the beginners like me.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-50249' onclick='return addComment.moveForm( "comment-50249", "50249", "respond", "4241" )' aria-label='Reply to veeresh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-53924">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bf49450f025e8bdc7d1ee92cadba09f8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bf49450f025e8bdc7d1ee92cadba09f8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Arun Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-21T03:20:57+00:00" itemprop="datePublished"><a href="index.html#comment-53924" class="comment-time-link" itemprop="url">April 21, 2016 at 3:20 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>why can&#8217;t we add elements outside of main() method?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53924' onclick='return addComment.moveForm( "comment-53924", "53924", "respond", "4241" )' aria-label='Reply to Arun Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-55441">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/0c00b750916a7810421bb912a97f9195?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/0c00b750916a7810421bb912a97f9195?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sid</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-20T11:00:09+00:00" itemprop="datePublished"><a href="index.html#comment-55441" class="comment-time-link" itemprop="url">May 20, 2016 at 11:00 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>say there are duplicate elements in the list. If I call the method remove(), then will it remove all the duplicate elements?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-55441' onclick='return addComment.moveForm( "comment-55441", "55441", "respond", "4241" )' aria-label='Reply to sid'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-56305">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bfe5beee2d0d1e1e6f8f7d2bf547e44d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bfe5beee2d0d1e1e6f8f7d2bf547e44d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">unu`</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-06T19:47:51+00:00" itemprop="datePublished"><a href="index.html#comment-56305" class="comment-time-link" itemprop="url">June 6, 2016 at 7:47 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I tried to do this and for example if you have it like this:</p>
+<p>If you have the ArrayList created let`s say like this:</p>
+<p>ArrayList list = new ArrayList();</p>
+<p>and you set it like this:</p>
+<p>position   0 &#8211; &#8220;John&#8221;<br />
+                  1 &#8211; &#8220;Michael&#8221;<br />
+                  2 &#8211; &#8220;Mitch&#8221;<br />
+                  3 &#8211; &#8220;Gus&#8221;<br />
+                  4 &#8211; &#8220;John&#8221;<br />
+                  5 &#8211; &#8220;Johnny&#8221;</p>
+<p>if you say: list.remove(&#8220;John&#8221;); then it will remove its first occurance.</p>
+<p>So, the new elements will be like this:</p>
+<p>                 0 &#8211; &#8220;Michael&#8221;<br />
+                 1 &#8211; &#8220;Mitch&#8221;<br />
+                 2 &#8211; &#8220;Gus&#8221;<br />
+                 3 &#8211; &#8220;John&#8221;<br />
+                 4 &#8211; &#8220;Johnny&#8221;</p>
+<p>I hope I was clear enough. :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-56305' onclick='return addComment.moveForm( "comment-56305", "56305", "respond", "4241" )' aria-label='Reply to unu`'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58952">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/cf7ec3564a1bc0a2919258237e1d2ded?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/cf7ec3564a1bc0a2919258237e1d2ded?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Archana</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-03T14:02:42+00:00" itemprop="datePublished"><a href="index.html#comment-58952" class="comment-time-link" itemprop="url">August 3, 2016 at 2:02 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>it&#8217;s really very helpful to understand within less Time..too Good :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-58952' onclick='return addComment.moveForm( "comment-58952", "58952", "respond", "4241" )' aria-label='Reply to Archana'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-67204">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d174b2ca2293845e84223fdfcde6d444?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d174b2ca2293845e84223fdfcde6d444?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">David</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-09T11:09:00+00:00" itemprop="datePublished"><a href="index.html#comment-67204" class="comment-time-link" itemprop="url">February 9, 2017 at 11:09 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>So glad i came here, please do you have learning Java as a whole in PDF format?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-67204' onclick='return addComment.moveForm( "comment-67204", "67204", "respond", "4241" )' aria-label='Reply to David'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-73916">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9e994e440d8cb984f0835ca226b8cfc9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9e994e440d8cb984f0835ca226b8cfc9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Hans Raj</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-08-31T04:53:51+00:00" itemprop="datePublished"><a href="index.html#comment-73916" class="comment-time-link" itemprop="url">August 31, 2017 at 4:53 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I want to compare arraylist with my string input  in if statement. if  condition becomes true then it return me the element or string which i compared in if statement.<br />
+Please help.<br />
+thanks in advance</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-73916' onclick='return addComment.moveForm( "comment-73916", "73916", "respond", "4241" )' aria-label='Reply to Hans Raj'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4241' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="c701f2ad50" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="31"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-4" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../../../java-tutorial-for-beginners-with-examples/index.html">Java Tutorial</a></li>
+<li><a href="../../04/oops-concepts/index.html">OOPs Concepts</a></li>
+</ul>
+<h2 class="widget-title">Java Collections</h2>
+<ul>
+<li><a href="index.html">ArrayList</a></li>
+<li><a href="../linkedlist-in-java-with-example/index.html">LinkedList</a></li>
+<li><a href="../difference-between-arraylist-and-linkedlist-in-java/index.html">ArrayList vs LinkedList</a></li>
+<li><a href="../vector-in-java/index.html">Vector</a></li>
+<li><a href="../difference-between-arraylist-and-vector-in-java/index.html">ArrayList vs Vector</a></li>
+<li><a href="../hashmap-in-java-with-example/index.html">HashMap</a></li>
+<li><a href="../treemap-in-java-with-example/index.html">TreeMap</a></li>
+<li><a href="../linkedhashmap-in-java/index.html">LinkedHashMap</a></li>
+<li><a href="../hashset-class-in-java-with-example/index.html">HashSet</a></li>
+<li><a href="../treeset-class-in-java-with-example/index.html">TreeSet</a></li>
+<li><a href="../linkedhashset-class-in-java-with-example/index.html">LinkedHashSet</a></li>
+<li><a href="../../../2014/07/hashtable-in-java-with-example/index.html">Hashtable</a></li>
+<li><a href="../../../2014/06/difference-between-hashmap-and-hashtable/index.html">HashMap vs Hashtable</a></li>
+<li><a href="../../../2017/08/queue-interface-in-java-collections/index.html">Queue</a></li>
+<li><a href="../../../2017/08/java-collections-priorityqueue-interface/index.html">PriorityQueue</a></li>
+<li><a href="../../../2017/08/java-collections-deque-interface/index.html">Deque & ArrayDeque</a></li>
+<li><a href="../../../2014/06/java-iterator-with-examples/index.html">Iterator</a></li>
+<li><a href="../../../2014/06/listiterator-in-java-with-examples/index.html">ListIterator</a></li>
+<li><a href="../../../2017/08/comparable-interface-in-java-with-example/index.html">Comparable Interface</a></li>
+<li><a href="../../../2017/08/comparator-interface-in-java/index.html">Comparator Interface</a></li>
+<li><a href="../../../2015/03/java-collections-interview-questions-and-answers/index.html">Java Collections Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/12/java-arraylist/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:41:08 GMT -->
+</html>

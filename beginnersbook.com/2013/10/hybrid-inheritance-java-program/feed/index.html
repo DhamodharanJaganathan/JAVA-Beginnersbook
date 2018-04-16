@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: hybrid inheritance in java with example program</title>
+	<atom:link href="https://beginnersbook.com/2013/10/hybrid-inheritance-java-program/feed/" rel="self" type="application/rss+xml" />
+	<link>https://beginnersbook.com/2013/10/hybrid-inheritance-java-program/</link>
+	<description></description>
+	<lastBuildDate>Fri, 06 Apr 2018 04:50:05 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.5</generator>
+	<item>
+		<title>By: Chaitanya Singh</title>
+		<link>https://beginnersbook.com/2013/10/hybrid-inheritance-java-program/#comment-74654</link>
+		<dc:creator><![CDATA[Chaitanya Singh]]></dc:creator>
+		<pubDate>Mon, 11 Sep 2017 08:23:10 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3770#comment-74654</guid>
+		<description><![CDATA[Absolutely correct Sachin, I think you got confused because of the diagram I have shown here. The diagram is just for the representation, since multiple inheritance is not possible in java. It is not correct to show that as a part of hybrid inheritance. I will update the diagram whenever I get the time. I will also post this as a note in the above post so that others don&#039;t get confused. Thanks for taking the time to post a comment here.]]></description>
+		<content:encoded><![CDATA[<p>Absolutely correct Sachin, I think you got confused because of the diagram I have shown here. The diagram is just for the representation, since multiple inheritance is not possible in java. It is not correct to show that as a part of hybrid inheritance. I will update the diagram whenever I get the time. I will also post this as a note in the above post so that others don&#8217;t get confused. Thanks for taking the time to post a comment here.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chaitanya Singh</title>
+		<link>https://beginnersbook.com/2013/10/hybrid-inheritance-java-program/#comment-74653</link>
+		<dc:creator><![CDATA[Chaitanya Singh]]></dc:creator>
+		<pubDate>Mon, 11 Sep 2017 08:19:39 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3770#comment-74653</guid>
+		<description><![CDATA[Nice Example Gaurav. Thanks for posting it here.]]></description>
+		<content:encoded><![CDATA[<p>Nice Example Gaurav. Thanks for posting it here.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Gaurav Kumar Garg</title>
+		<link>https://beginnersbook.com/2013/10/hybrid-inheritance-java-program/#comment-73274</link>
+		<dc:creator><![CDATA[Gaurav Kumar Garg]]></dc:creator>
+		<pubDate>Wed, 16 Aug 2017 09:58:57 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3770#comment-73274</guid>
+		<description><![CDATA[Hello Jeya Chitra,
+   It is possible, you can combine single inheritance and hierarchical inheritance.
+
+I am giving one example where test5, test6 class extending class test4, Then class test7 is extending test5.
+First we are applying hierarchical inheritance than we are implementing single inheritance.
+
+Please check below example and try to understand how it is possible.
+
+
+
+// Example of MultiLevel Inheritance
+class test4
+{
+	public void check()
+	{
+		System.out.println(&quot;Calling In Test2&quot;);
+	}
+}
+
+class test5 extends test4
+{
+	public void check2()
+	{
+		System.out.println(&quot;Calling In Test3&quot;);
+	}
+}
+
+class test6 extends test4
+{
+	public void check()
+	{
+		System.out.println(&quot;Calling In Test2&quot;);
+	}
+}
+
+class test7 extends test5
+{
+	public void check()
+	{
+		System.out.println(&quot;Calling In Test2&quot;);
+	}
+}
+
+
+class hybrid_inherit extends test3
+{
+	/**
+		Calling test1  &#038; test2 class method from Multiple inherit class creating object.
+	*/
+	public static void main(String...args){
+
+	multi_lvl_inherit sh = new multi_lvl_inherit();
+	sh.check2();
+	sh.check();
+	}
+}]]></description>
+		<content:encoded><![CDATA[<p>Hello Jeya Chitra,<br />
+   It is possible, you can combine single inheritance and hierarchical inheritance.</p>
+<p>I am giving one example where test5, test6 class extending class test4, Then class test7 is extending test5.<br />
+First we are applying hierarchical inheritance than we are implementing single inheritance.</p>
+<p>Please check below example and try to understand how it is possible.</p>
+<p>// Example of MultiLevel Inheritance<br />
+class test4<br />
+{<br />
+	public void check()<br />
+	{<br />
+		System.out.println(&#8220;Calling In Test2&#8221;);<br />
+	}<br />
+}</p>
+<p>class test5 extends test4<br />
+{<br />
+	public void check2()<br />
+	{<br />
+		System.out.println(&#8220;Calling In Test3&#8221;);<br />
+	}<br />
+}</p>
+<p>class test6 extends test4<br />
+{<br />
+	public void check()<br />
+	{<br />
+		System.out.println(&#8220;Calling In Test2&#8221;);<br />
+	}<br />
+}</p>
+<p>class test7 extends test5<br />
+{<br />
+	public void check()<br />
+	{<br />
+		System.out.println(&#8220;Calling In Test2&#8221;);<br />
+	}<br />
+}</p>
+<p>class hybrid_inherit extends test3<br />
+{<br />
+	/**<br />
+		Calling test1  &amp; test2 class method from Multiple inherit class creating object.<br />
+	*/<br />
+	public static void main(String&#8230;args){</p>
+<p>	multi_lvl_inherit sh = new multi_lvl_inherit();<br />
+	sh.check2();<br />
+	sh.check();<br />
+	}<br />
+}</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sachin</title>
+		<link>https://beginnersbook.com/2013/10/hybrid-inheritance-java-program/#comment-72504</link>
+		<dc:creator><![CDATA[Sachin]]></dc:creator>
+		<pubDate>Sun, 23 Jul 2017 03:04:10 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3770#comment-72504</guid>
+		<description><![CDATA[Brother hybrid inheritance is a combination of two type inheritances it is not necessary to take a single and a multiple inheritance we can also take other things like single and    Hierarchical inheritance etc. So Java does support Hybrid inheritance but there is a fact that there should not be a case where two classes are having the same child class.if I am wrong please let me know.]]></description>
+		<content:encoded><![CDATA[<p>Brother hybrid inheritance is a combination of two type inheritances it is not necessary to take a single and a multiple inheritance we can also take other things like single and    Hierarchical inheritance etc. So Java does support Hybrid inheritance but there is a fact that there should not be a case where two classes are having the same child class.if I am wrong please let me know.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sanyam Trehan</title>
+		<link>https://beginnersbook.com/2013/10/hybrid-inheritance-java-program/#comment-72036</link>
+		<dc:creator><![CDATA[Sanyam Trehan]]></dc:creator>
+		<pubDate>Wed, 05 Jul 2017 18:18:18 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3770#comment-72036</guid>
+		<description><![CDATA[These are just small examples to understand the concept of inheritance. When working on a live project like when implementing thread or runnable interfaces then code reusability is used.]]></description>
+		<content:encoded><![CDATA[<p>These are just small examples to understand the concept of inheritance. When working on a live project like when implementing thread or runnable interfaces then code reusability is used.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Anuj</title>
+		<link>https://beginnersbook.com/2013/10/hybrid-inheritance-java-program/#comment-67993</link>
+		<dc:creator><![CDATA[Anuj]]></dc:creator>
+		<pubDate>Thu, 02 Mar 2017 02:12:16 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3770#comment-67993</guid>
+		<description><![CDATA[In fact here in implemention you can implement more than 1 interface , as in you can implement as many as you want ,but extends only one class .]]></description>
+		<content:encoded><![CDATA[<p>In fact here in implemention you can implement more than 1 interface , as in you can implement as many as you want ,but extends only one class .</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Gagandeep Singh</title>
+		<link>https://beginnersbook.com/2013/10/hybrid-inheritance-java-program/#comment-64270</link>
+		<dc:creator><![CDATA[Gagandeep Singh]]></dc:creator>
+		<pubDate>Wed, 07 Dec 2016 16:48:19 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3770#comment-64270</guid>
+		<description><![CDATA[Where do u see a class extending any interface .. ?]]></description>
+		<content:encoded><![CDATA[<p>Where do u see a class extending any interface .. ?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chaitanya Singh</title>
+		<link>https://beginnersbook.com/2013/10/hybrid-inheritance-java-program/#comment-52215</link>
+		<dc:creator><![CDATA[Chaitanya Singh]]></dc:creator>
+		<pubDate>Mon, 07 Mar 2016 08:07:16 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=3770#comment-52215</guid>
+		<description><![CDATA[Dear Ram Narayan, The program you have mentioned would throw error because multiple inheritance is not allowed in java and I have already explained why its not allowed.]]></description>
+		<content:encoded><![CDATA[<p>Dear Ram Narayan, The program you have mentioned would throw error because multiple inheritance is not allowed in java and I have already explained why its not allowed.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

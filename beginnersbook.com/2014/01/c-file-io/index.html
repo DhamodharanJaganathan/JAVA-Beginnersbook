@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2014/01/c-file-io/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:04:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>File I/O in C programming with examples</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="File I/O in C programming with examples: Learn how to create, open, read, write and close a file in C programming language with examples.."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="File I/O in C programming with examples" />
+<meta property="og:description" content="File I/O in C programming with examples: Learn how to create, open, read, write and close a file in C programming language with examples.." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="c-programming" />
+<meta property="article:published_time" content="2014-01-14T12:01:19+00:00" />
+<meta property="article:modified_time" content="2017-09-24T05:32:55+00:00" />
+<meta property="og:updated_time" content="2017-09-24T05:32:55+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="File I/O in C programming with examples: Learn how to create, open, read, write and close a file in C programming language with examples.." />
+<meta name="twitter:title" content="File I/O in C programming with examples" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; File I/O in C programming with examples Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexd223.html?p=4900' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embeddc51.json?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fc-file-io%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed42f8?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fc-file-io%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-4900 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-4900 post type-post status-publish format-standard category-c-programming entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">File I/O in C programming with examples</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/c-programming/index.html" rel="category tag">c-programming</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>In this guide, we will learn how to perform input/output(I/O) operations on a file using <a href="../c-tutorial-for-beginners-with-examples/index.html">C programming</a> language.</p>
+<h2>C File I/O &#8211; Table of Contents</h2>
+<p>1. <a href="#1">Opening a File</a><br />
+2. <a href="#2">Reading a File</a><br />
+3. <a href="#3">Writing a File</a><br />
+4. <a href="#4">Closing a file</a><br />
+5. <a href="#5">Reading and writing strings to a file</a><br />
+6. <a href="#6">Reading and writing binary files in C</a></p>
+<p>Before we discuss each operation in detail, lets take a simple C program:</p>
+<h3>A Simple C Program to open, read and close the file</h3>
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+     /* Pointer to the file */
+     FILE *fp1;
+     /* Character variable to read the content of file */
+     char c;
+
+     /* Opening a file in r mode*/
+     fp1= fopen ("C:\\myfiles\\newfile.txt", "r");
+
+     /* Infinite loop –I have used break to come out of the loop*/
+     while(1)
+     {
+        c = fgetc(fp1);
+        if(c==EOF)
+            break;
+        else
+            printf("%c", c);
+     }
+     fclose(fp1);
+     return 0;
+}</pre>
+<p>In the above program, we are opening a file <code>newfile.txt</code> in <code>r</code> mode, reading the content of the file and displaying it on the console. lets understand the each operation in detail:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<h2 id="1">1. Opening a file</h2>
+<p><code>fopen()</code> function is used for opening a file.<br />
+<strong>Syntax:</strong></p>
+<pre>FILE pointer_name = fopen ("file_name", "Mode");</pre>
+<p><code>pointer_name</code> can be anything of your choice.<br />
+<code>file_name</code> is the name of the file, which you want to open. Specify the full path here like &#8220;C:\\myfiles\\newfile.txt&#8221;.</p>
+<p>While opening a file, you need to specify the mode. The mode that we use to read a file is &#8220;r&#8221; which is &#8220;read only mode&#8221;.<br />
+<strong>for example:</strong></p>
+<pre>FILE  *fp;
+fp = fopen("C:\\myfiles\\newfile.txt", "r");</pre>
+<p>The address of the first character is stored in <code>pointer fp</code>.</p>
+<p><strong>How to check whether the file has opened successfully?</strong><br />
+If file does not open successfully then the pointer will be assigned a NULL value, so you can write the logic like this:<br />
+This code will check whether the file has opened successfully or not. If the file does not open, this will display an error message to the user.</p>
+<pre>..
+FILE fpr;
+fpr = fopen("C:\\myfiles\\newfile.txt", "r");
+if (fpr == NULL)
+{
+    puts("Error while opening file");
+    exit();
+}</pre>
+<h3>Various File Opening Modes:</h3>
+<p>The file is opened using <code>fopen()</code> function, while opening you can use any of the following mode as per the requirement.<br />
+<strong>Mode &#8220;r&#8221;:</strong> It is a read only mode, which means if the file is opened in r mode, it won’t allow you to write and modify content of it. When <code>fopen()</code> opens a file successfully then it returns the address of first character of the file, otherwise it returns NULL.</p>
+<p><strong>Mode &#8220;w&#8221;:</strong> It is a write only mode. The <code>fopen()</code> function creates a new file when the specified file doesn’t exist and if it fails to open file then it returns NULL.</p>
+<p><strong>Mode &#8220;a&#8221;:</strong> Using this mode Content can be appended at the end of an existing file. Like Mode &#8220;w&#8221;, <code>fopen()</code> creates a new file if it file doesn’t exist. On unsuccessful open it returns NULL.<br />
+File Pointer points to: last character of the file.</p>
+<p><strong>Mode &#8220;r+&#8221;:</strong> This mode is same as mode “r”; however you can perform various operations on the file opened in this mode. You are allowed to read, write and modify the content of file opened in &#8220;r+&#8221; mode.<br />
+File Pointer points to: First character of the file.</p>
+<p><strong>Mode &#8220;w+&#8221;:</strong> Same as mode &#8220;w&#8221; apart from operations, which can be performed; the file can be read, write and modified in this mode.<br />
+<strong>Mode &#8220;a+&#8221;:</strong> Same as mode &#8220;a&#8221;; you can read and append the data in the file, however content modification is not allowed in this mode.</p>
+<h2 id="2">2. Reading a File</h2>
+<p>To read the file, we must open it first using any of the mode, for example if you only want to read the file then open it in &#8220;r&#8221; mode. Based on the mode selected during file opening, we are allowed to perform certain operations on the file.</p>
+<h3>C Program to read a file</h3>
+<p><strong>fgetc( ):</strong> This function reads the character from current pointer&#8217;s position and upon successful read moves the pointer to next character in the file. Once the pointers reaches to the end of the file, this function returns <strong>EOF (End of File)</strong>. We have used<strong> EOF</strong> in our program to determine the end of the file.</p>
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+     /* Pointer to the file */
+     FILE *fp1;
+     /* Character variable to read the content of file */
+     char c;
+
+     /* Opening a file in r mode*/
+     fp1= fopen ("C:\\myfiles\\newfile.txt", "r");
+
+     /* Infinite loop –I have used break to come out of the loop*/
+     while(1)
+     {
+        c = fgetc(fp1);
+        if(c==EOF)
+            break;
+        else
+            printf("%c", c);
+     }
+     fclose(fp1);
+     return 0;
+}</pre>
+<h2 id="3">3. Writing to a file</h2>
+<p>To write the file, we must open the file in a mode that supports writing. For example, if you open a file in &#8220;r&#8221; mode, you won&#8217;t be able to write the file as &#8220;r&#8221; is read only mode that only allows reading.</p>
+<h2>Example: C Program to write the file</h2>
+<p>This program asks the user to enter a character and writes that character at the end of the file. If the file doesn&#8217;t exist then this program will create a file with the specified name and writes the input character into the file.</p>
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+   char ch;
+   FILE *fpw;
+   fpw = fopen("C:\\newfile.txt","w");
+
+   if(fpw == NULL)
+   {
+      printf("Error");   
+      exit(1);             
+   }
+
+   printf("Enter any character: ");
+   scanf("%c",&amp;ch);
+
+   /* You can also use fputc(ch, fpw);*/
+   fprintf(fpw,"%c",ch);
+   fclose(fpw);
+
+   return 0;
+}</pre>
+<h2 id="4">4. Closing a file</h2>
+<pre>fclose(fp);</pre>
+<p>The <strong>fclose( )</strong> function is used for closing an opened file. As an argument you must provide a pointer to the file that you want to close.</p>
+<h3>An example to show Open, read, write and close operation in C</h3>
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+    char ch;
+
+    /* Pointer for both the file*/
+    FILE *fpr, *fpw;
+    /* Opening file FILE1.C in “r” mode for reading */
+    fpr = fopen("C:\\file1.txt", "r");
+
+    /* Ensure FILE1.C opened successfully*/
+    if (fpr == NULL)
+    {
+         puts("Input file cannot be opened");
+    }
+
+    /* Opening file FILE2.C in “w” mode for writing*/
+    fpw= fopen("C:\\file2.txt", "w");
+
+    /* Ensure FILE2.C opened successfully*/
+    if (fpw == NULL)
+    {
+       puts("Output file cannot be opened");
+    }
+
+    /*Read &amp; Write Logic*/
+    while(1)
+    {
+        ch = fgetc(fpr);
+        if (ch==EOF)
+            break;
+        else
+            fputc(ch, fpw);
+    }
+
+    /* Closing both the files */
+    fclose(fpr);
+    fclose(fpw);
+
+    return 0;
+}</pre>
+<h2 id="5">How to read/ write (I/O) Strings in Files – fgets &amp; fputs</h2>
+<p>Here we will discuss how to read and write strings into a file.</p>
+<pre>char *fgets(char *s, int rec_len, FILE *fpr)</pre>
+<p><strong>s</strong>: Array of characters to store strings.<br />
+<strong>rec_len</strong>: Length of the input record.<br />
+<strong>fpr</strong>: Pointer to the input file.<br />
+Lets take an example:</p>
+<h3>Example to read the strings from a file in C programming</h3>
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+    FILE *fpr;
+    /*Char array to store string */
+    char str[100];
+    /*Opening the file in "r" mode*/
+    fpr = fopen("C:\\mynewtextfile.txt", "r");
+
+    /*Error handling for file open*/
+    if (fpr == NULL)
+    {
+       puts("Issue in opening the input file");
+    }
+
+    /*Loop for reading the file till end*/
+    while(1)
+    {
+       if(fgets(str, 10, fpr) ==NULL)
+            break;
+       else
+            printf("%s", str);
+    }
+    /*Closing the input file after reading*/
+    fclose(fpr);
+    return 0;
+}</pre>
+<p>In the above example we have used fgets function like this:</p>
+<pre>fgets(str, 10, fpr)</pre>
+<p>Here <strong>str</strong> represents the string (array of char) in which you are storing the string after reading it from file.<br />
+<strong>10</strong> is the length of the string that needs to be read every time.<br />
+<strong>fpr</strong> is pointer to file, which is going to be read.</p>
+<p><strong>Why I used if(fgets(str, 10, fpr)==NULL as a logic to determine end of the file?</strong><br />
+In the above examples, we have used ch==EOF to get to know the end of the file. Here we have used this logic because fgets returns NULL when there is no more records are available to be read.</p>
+<h3>C Program &#8211; Writing string to a file</h3>
+<pre>int fputs ( const char * s, FILE * fpw );</pre>
+<p><code>char *s</code> – Array of char.<br />
+<code>FILE *fpw</code> – Pointer (of FILE type) to the file, which is going to be written.</p>
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+     FILE *fpw;
+
+     /*Char array to store strings */
+     char str[100];
+
+     /*Opening the file FILEW.TXT in "w" mode for writing*/
+     fpw = fopen("C:\\mynewtextfile2.txt", "w");
+
+     /*Error handling for output file*/
+     if (fpw== NULL)
+     {
+          puts("Issue in opening the Output file");
+     }
+
+     printf("Enter your string:");
+
+     /*Stored the input string into array – str*/
+     gets(str);
+
+     /* Copied the content of str into file – 
+      * mynewtextfile2.txt using pointer – fpw
+      */
+     fputs(str, fpw);
+
+     /*Closing the Output file after successful writing*/
+     fclose(fpw);
+     return 0;
+}</pre>
+<p><strong>fputs takes two arguments –</strong></p>
+<pre>fputs(str, fpw)</pre>
+<p><strong>str</strong> – str represents the array, in which string is stored.<br />
+<strong>fpw</strong> – FILE pointer to the output file, in which record needs to be written.</p>
+<p><strong>Point to note about fputs:</strong><br />
+fputs by default doesn&#8217;t add new line after writing each record, in order to do that manually – you can have the following statement after each write to the file.</p>
+<pre>fputs("\n", fpw);</pre>
+<h2 id="6">C FILE I/O for Binary files</h2>
+<p>So far, we have learned file operations on text files, what if the files are binary (such as .exe file). The above programs will not work for binary files, however there is a minor change in handling Binary files. The main difference is the <strong>file name &amp; modes. </strong>Lets understand this with the help of an example. Lets say I have two binary files bin1.exe &amp; bin2.exe &#8211; I want to copy content of bin1.exe to bin2.exe:</p>
+<h3>Example: Reading and Writing Binary Files in C</h3>
+<pre>#include &lt;stdio.h&gt;
+int main()
+{
+    char ch;
+
+    /* Pointers for both binary files*/
+    FILE *fpbr, *fpbw;
+
+    /* Open for bin1.exe file in rb mode */
+    fpbr = fopen("bin1.exe", "rb");
+
+    /* test logic for successful open*/
+    if (fpbr == NULL)
+    {
+        puts("Input Binary file is having issues while opening");
+    }
+
+    /* Opening file bin2.exe in “wb” mode for writing*/
+    fpbw= fopen("bin2.exe", "wb");
+
+    /* Ensure bin2.exe opened successfully*/
+    if (fpbw == NULL)
+    {
+       puts("Output binary file is having issues while opening");
+    }
+
+    /*Read &amp; Write Logic for binary files*/
+    while(1)
+    {
+        ch = fgetc(fpbr);
+        if (ch==EOF)
+             break;
+         else
+             fputc(ch, fpbw);
+     }
+
+     /* Closing both the binary files */
+     fclose(fpbr);
+     fclose(fpbw);
+
+     return 0;
+}</pre>
+<p><strong>Note: File opening modes are &#8220;rb&#8221; and &#8220;wb&#8221; instead of &#8220;r&#8221; &amp; &#8220;w&#8221;..</strong></p>
+<div class="bb-nav"><a class="pretut" href="../c-pointer-to-array-example/index.html">❮ Previous</a><a class="nexttut" href="../../../2015/02/simple-c-programs/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-65345">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c10782a14542176da054a29418ebd604?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c10782a14542176da054a29418ebd604?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mohd. Fayeem</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-12-31T19:53:39+00:00" itemprop="datePublished"><a href="index.html#comment-65345" class="comment-time-link" itemprop="url">December 31, 2016 at 7:53 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>if i write the following code for file opening,<br />
+main()<br />
+{<br />
+FILE *fp;<br />
+fp=fopen(&#8220;/tmp/test.txt&#8221;,&#8221;r&#8221;);<br />
+fclose(fp);<br />
+}<br />
+the file &#8220;test.txt&#8221; is not exist then will it creat a file named &#8220;test.txt&#8221; or not if so then where it will be created?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-65345' onclick='return addComment.moveForm( "comment-65345", "65345", "respond", "4900" )' aria-label='Reply to Mohd. Fayeem'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-70828">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e57571463b8690c6eeea986703efed93?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e57571463b8690c6eeea986703efed93?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Akshay</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-05-31T11:10:55+00:00" itemprop="datePublished"><a href="index.html#comment-70828" class="comment-time-link" itemprop="url">May 31, 2017 at 11:10 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>It won&#8217;t create &#8230;cz u r opening a file in read mode</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-70828' onclick='return addComment.moveForm( "comment-70828", "70828", "respond", "4900" )' aria-label='Reply to Akshay'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-70371">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f51142542a4a7f048beed996dcaad0d3?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f51142542a4a7f048beed996dcaad0d3?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nafis</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-05-14T19:07:19+00:00" itemprop="datePublished"><a href="index.html#comment-70371" class="comment-time-link" itemprop="url">May 14, 2017 at 7:07 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Will not be created. fopen () will return a null pointer instead.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-70371' onclick='return addComment.moveForm( "comment-70371", "70371", "respond", "4900" )' aria-label='Reply to Nafis'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-71207">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/27dad13e8b2b047281156f5239666f59?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/27dad13e8b2b047281156f5239666f59?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sarah Shahira</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-06-11T22:05:30+00:00" itemprop="datePublished"><a href="index.html#comment-71207" class="comment-time-link" itemprop="url">June 11, 2017 at 10:05 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>what is the purpose of &#8220;rb&#8221; in fopen() function used below in the code?<br />
+FILE *fp;<br />
+fp = fopen(&#8220;source.txt&#8221;, &#8220;rb&#8221;);</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-71207' onclick='return addComment.moveForm( "comment-71207", "71207", "respond", "4900" )' aria-label='Reply to Sarah Shahira'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-85267">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d7bc64b9ae3127fa05cdd9c95e3788ac?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d7bc64b9ae3127fa05cdd9c95e3788ac?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rohan Arora</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-02-03T12:58:33+00:00" itemprop="datePublished"><a href="index.html#comment-85267" class="comment-time-link" itemprop="url">February 3, 2018 at 12:58 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>With the help of &#8220;rb&#8221; option you can open file in read mode with binary which means if file contents are written in binary than you can read that file only with this option i.e. &#8220;rb&#8221; to read contents of file</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-85267' onclick='return addComment.moveForm( "comment-85267", "85267", "respond", "4900" )' aria-label='Reply to Rohan Arora'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4900' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="968d14234c" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="170"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-21" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">C Programming Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../install-turbo-c/index.html">Turbo C++  installation</a></li>
+<li><a href="../c-program-structure/index.html">First C Program</a></li>
+<li><a href="../c-keywords-reserved-words/index.html">C - Keywords</a></li>
+<li><a href="../c-operator-precedence-table/index.html">Operator precedence</a></li>
+<li><a href="../c-if-statement/index.html">C - if statement</a></li>
+<li><a href="../c-if-else-statement-example/index.html">C - if..else</a></li>
+<li><a href="../c-for-loop/index.html">C - for loop</a></li>
+<li><a href="../c-while-loop/index.html">C - while loop</a></li>
+<li><a href="../c-dowhile-loop/index.html">C - do while loop</a></li>
+
+<li><a href="../c-continue-statement/index.html">C - continue</a></li>
+<li><a href="../c-break-statement/index.html">C - break statement</a></li>
+<li><a href="../switch-case-statements-in-c/index.html">C - switch..case</a></li>
+<li><a href="../c-goto-statement/index.html">C - goto statement</a></li>
+<li><a href="../c-arrays-example/index.html">C - Arrays</a></li>
+<li><a href="../2d-arrays-in-c-example/index.html">2 D array</a></li>
+<li><a href="../c-strings-string-functions/index.html">C - String</a></li>
+<li><a href="../c-functions-examples/index.html">C - functions</a></li>
+<li><a href="../c-function-call-by-reference-example/index.html">Function call by reference</a></li>
+<li><a href="../c-function-call-by-value-example/index.html">Function call by value</a></li>
+<li><a href="../c-passing-array-to-function-example/index.html">Array to function</a></li>
+<li><a href="../c-structures-examples/index.html">C - Structures</a></li>
+<li><a href="../c-pointers/index.html">C - Pointers</a></li>
+<li><a href="../c-pointer-to-pointer/index.html">Pointer to Pointer</a></li>
+<li><a href="../c-passing-pointers-to-functions/index.html">Pointers to functions</a></li>
+<li><a href="../c-function-pointers/index.html">C - function pointers</a></li>
+<li><a href="../c-pointer-to-array-example/index.html">Pointer & Array</a></li>
+<li><a href="index.html">C - File I/O</a></li>
+<li><a href="../../../2015/02/simple-c-programs/index.html">C Programming Examples</a></li>
+</ul></div></div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2014/01/c-file-io/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:04:22 GMT -->
+</html>

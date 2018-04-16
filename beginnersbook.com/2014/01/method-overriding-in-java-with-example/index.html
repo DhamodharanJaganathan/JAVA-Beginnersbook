@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2014/01/method-overriding-in-java-with-example/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:39:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Method overriding in java with example</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Method overriding in java with example: Declaring a method in subclass which is already present in the parent class is known as method overriding.."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Method overriding in java with example" />
+<meta property="og:description" content="Method overriding in java with example: Declaring a method in subclass which is already present in the parent class is known as method overriding.." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="OOPs Concept" />
+<meta property="article:published_time" content="2014-01-05T09:32:47+00:00" />
+<meta property="article:modified_time" content="2017-09-12T14:58:20+00:00" />
+<meta property="og:updated_time" content="2017-09-12T14:58:20+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Method overriding in java with example: Declaring a method in subclass which is already present in the parent class is known as method overriding.." />
+<meta name="twitter:title" content="Method overriding in java with example" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Method overriding in java with example Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index309b.html?p=4712' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embedec37.json?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fmethod-overriding-in-java-with-example%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed033a?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fmethod-overriding-in-java-with-example%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-4712 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-4712 post type-post status-publish format-standard category-oops-concept entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Method overriding in java with example</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/oops-concept/index.html" rel="category tag">OOPs Concept</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Declaring a method in <strong>sub class</strong> which is already present in <strong>parent class</strong> is known as method overriding. Overriding is done so that a child class can give its own implementation to a method which is already provided by the parent class. In this case the method in parent class is called overridden method and the method in child class is called overriding method. In this guide, we will see what is method overriding in Java and why we use it.</p>
+<h2>Method Overriding Example</h2>
+<p>Lets take a simple example to understand this. We have two classes: A child class Boy and a parent class Human. The <code>Boy</code> class extends <code>Human</code> class. Both the classes have a common method <code>void eat()</code>. Boy class is giving its own implementation to the <code>eat()</code> method or in other words it is overriding the <code>eat()</code> method.</p>
+<p>The purpose of Method Overriding is clear here. Child class wants to give its own implementation so that when it calls this method, it prints Boy is eating instead of Human is eating.</p>
+<pre>class Human{
+   //Overridden method
+   public void eat()
+   {
+      System.out.println("Human is eating");
+   }
+}
+class Boy extends Human{
+   //Overriding method
+   public void eat(){
+      System.out.println("Boy is eating");
+   }
+   public static void main( String args[]) {
+      Boy obj = new Boy();
+      //This will call the child class version of eat()
+      obj.eat();
+   }
+}</pre>
+<p>Output:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>Boy is eating</pre>
+<h2>Advantage of method overriding</h2>
+<p>The main advantage of method overriding is that the class can give its own specific implementation to a inherited method <strong>without even modifying the parent class code</strong>.</p>
+<p>This is helpful when a class has several child classes, so if a child class needs to use the parent class method, it can use it and the other classes that want to have different implementation can use overriding feature to make changes without touching the parent class code.</p>
+<h2>Method Overriding and Dynamic Method Dispatch</h2>
+<p>Method Overriding is an example of <a href="../../../2013/04/runtime-compile-time-polymorphism/index.html">runtime polymorphism</a>. When a parent class reference points to the child class object then the call to the overridden method is determined at runtime, because during method call which method(parent class or child class) is to be executed is determined by the type of object. This process in which call to the overridden method is resolved at runtime is known as dynamic method dispatch. Lets see an example to understand this:</p>
+<pre>class ABC{
+   //Overridden method
+   public void disp()
+   {
+	System.out.println("disp() method of parent class");
+   }	   
+}
+class Demo extends ABC{
+   //Overriding method
+   public void disp(){
+	System.out.println("disp() method of Child class");
+   }
+   public void newMethod(){
+	System.out.println("new method of child class");
+   }
+   public static void main( String args[]) {
+	/* When Parent class reference refers to the parent class object
+	 * then in this case overridden method (the method of parent class)
+	 *  is called.
+	 */
+	ABC obj = new ABC();
+	obj.disp();
+
+	/* When parent class reference refers to the child class object
+	 * then the overriding method (method of child class) is called.
+	 * This is called dynamic method dispatch and runtime polymorphism
+	 */
+	ABC obj2 = new Demo();
+	obj2.disp();
+   }
+}</pre>
+<p>Output:</p>
+<pre>disp() method of parent class
+disp() method of Child class
+</pre>
+<p>In the above example the call to the disp() method using second object (obj2) is runtime polymorphism (or dynamic method dispatch).<br />
+<strong>Note</strong>: In dynamic method dispatch the object can call the overriding methods of child class and all the non-overridden methods of base class but it cannot call the methods which are newly declared in the child class. In the above example the object <code>obj2</code> is calling the <code>disp()</code>. However if you try to call the <code>newMethod()</code> method (which has been newly declared in Demo class) using obj2 then you would give compilation error with the following message:</p>
+<pre>Exception in thread "main" java.lang.Error: Unresolved compilation 
+problem: The method xyz() is undefined for the type ABC</pre>
+<h2>Rules of method overriding in Java</h2>
+<ol>
+<li>Argument list: The argument list of overriding method (method of child class) must match the Overridden method(the method of parent class). The data types of the arguments and their sequence should exactly match.</li>
+<li><a href="../../../2013/05/java-access-modifiers/index.html">Access Modifier</a> of the overriding method (method of subclass) cannot be more restrictive than the overridden method of parent class. For e.g. if the Access Modifier of parent class method is public then the overriding method (child class method ) cannot have private, protected and default Access modifier,because all of these three access modifiers are more restrictive than public.<br />
+For e.g. This is <strong>not allowed</strong> as child class disp method is more restrictive(protected) than base class(public)</p>
+<pre>class MyBaseClass{
+   public void disp()
+   {
+       System.out.println("Parent class method");
+   }
+}
+class MyChildClass extends MyBaseClass{
+   protected void disp(){
+      System.out.println("Child class method");
+   }
+   public static void main( String args[]) {
+      MyChildClass obj = new MyChildClass();
+      obj.disp();
+   }
+}</pre>
+<p>Output:</p>
+<pre>Exception in thread "main" java.lang.Error: Unresolved compilation 
+problem: Cannot reduce the visibility of the inherited method from MyBaseClass</pre>
+<p>However this is perfectly valid scenario as public is less restrictive than protected. Same access modifier is also a valid one.</p>
+<pre>class MyBaseClass{
+   protected void disp()
+   {
+       System.out.println("Parent class method");
+   }
+}
+class MyChildClass extends MyBaseClass{
+   public void disp(){
+      System.out.println("Child class method");
+   }
+   public static void main( String args[]) {
+      MyChildClass obj = new MyChildClass();
+      obj.disp();
+   }
+}</pre>
+<p>Output:</p>
+<pre>Child class method</pre>
+</li>
+<li>private, static and final methods cannot be overridden as they are local to the class. However static methods can be re-declared in the sub class, in this case the sub-class method would act differently and will have nothing to do with the same static method of parent class.</li>
+<li>Overriding method (method of child class) can throw <a href="../../../2013/04/java-checked-unchecked-exceptions-with-examples/index.html">unchecked exceptions</a>, regardless of whether the overridden method(method of parent class) throws any exception or not. However the overriding method should not throw <a href="../../../2013/04/java-checked-unchecked-exceptions-with-examples/index.html">checked exceptions</a> that are new or broader than the ones declared by the overridden method. We will discuss this in detail with example in the upcoming tutorial.</li>
+<li>Binding of overridden methods happen at runtime which is known as <a href="../../../2013/04/java-static-dynamic-binding/index.html">dynamic binding</a>.</li>
+<li>If a class is extending an <a href="../../../2013/05/java-abstract-class-method/index.html">abstract class</a> or implementing an <a href="../../../2013/05/java-interface/index.html">interface</a> then it has to override all the abstract methods unless the class itself is a abstract class.</li>
+</ol>
+<h2>Super keyword in Method Overriding</h2>
+<p>The <a href="../../07/super-keyword-in-java-with-example/index.html">super keyword</a> is used for calling the parent class method/constructor. <code>super.myMethod()</code> calls the myMethod() method of base class while <code>super()</code> calls the <a href="../../../2013/03/constructors-in-java/index.html">constructor</a> of base class. Let&#8217;s see the use of super in method Overriding.<br />
+As we know that we we override a method in child class, then call to the method using child class object calls the overridden method. By using super we can call the overridden method as shown in the example below:</p>
+<pre>class ABC{
+   public void myMethod()
+   {
+	System.out.println("Overridden method");
+   }	   
+}
+class Demo extends ABC{
+   public void myMethod(){
+	//This will call the myMethod() of parent class
+	super.myMethod();
+	System.out.println("Overriding method");
+   }
+   public static void main( String args[]) {
+	Demo obj = new Demo();
+	obj.myMethod();
+   }
+}</pre>
+<p>Output:</p>
+<pre>Class ABC: mymethod()
+Class Test: mymethod()</pre>
+<p>As you see using super keyword, we can access the overriden method.</p>
+<div class="bb-nav"><a class="pretut" href="../../../2013/05/method-overloading/index.html">❮ Previous</a><a class="nexttut" href="../../../2013/03/polymorphism-in-java/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-7119">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/313a7f3f048704e0adafbd7fe71bef8d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/313a7f3f048704e0adafbd7fe71bef8d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Furqan Hussain</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-09-10T05:52:02+00:00" itemprop="datePublished"><a href="index.html#comment-7119" class="comment-time-link" itemprop="url">September 10, 2014 at 5:52 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Dear,</p>
+<p>Although i have visited may sites to learn java programming but the concept and explanation giving by example on your side never seen anywhere else.</p>
+<p> I need you cooperation to learn java.</p>
+<p> Pls Help.<br />
+Thanks.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7119' onclick='return addComment.moveForm( "comment-7119", "7119", "respond", "4712" )' aria-label='Reply to Furqan Hussain'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-7355">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/5f24ec35a9c9756f8e4045aa8ffce19c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/5f24ec35a9c9756f8e4045aa8ffce19c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="../../../index.html" class="comment-author-link" rel="external nofollow" itemprop="url">tahir</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-09-16T10:50:17+00:00" itemprop="datePublished"><a href="index.html#comment-7355" class="comment-time-link" itemprop="url">September 16, 2014 at 10:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>can we call the non overridden methods of base class in dynamic method dispatch with the base class reference to which the child class object is assign?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7355' onclick='return addComment.moveForm( "comment-7355", "7355", "respond", "4712" )' aria-label='Reply to tahir'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-2" id="comment-7506">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-09-20T07:45:48+00:00" itemprop="datePublished"><a href="index.html#comment-7506" class="comment-time-link" itemprop="url">September 20, 2014 at 7:45 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Yes we can.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7506' onclick='return addComment.moveForm( "comment-7506", "7506", "respond", "4712" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-3" id="comment-20117">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a65713ae01d6f0b79dcd312ba3942871?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a65713ae01d6f0b79dcd312ba3942871?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Owais</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-12T15:57:10+00:00" itemprop="datePublished"><a href="index.html#comment-20117" class="comment-time-link" itemprop="url">December 12, 2014 at 3:57 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>nice work , i appriciate it.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-20117' onclick='return addComment.moveForm( "comment-20117", "20117", "respond", "4712" )' aria-label='Reply to Owais'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-15014">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/0f81ac7c5d766adbb0e5a75df03b6849?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/0f81ac7c5d766adbb0e5a75df03b6849?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Amit Gupta</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-12T11:27:13+00:00" itemprop="datePublished"><a href="index.html#comment-15014" class="comment-time-link" itemprop="url">November 12, 2014 at 11:27 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p><a href="index.html" rel="nofollow">https://beginnersbook.com/2014/01/method-overriding-in-java-with-example/</a></p>
+<p>Rules of method overriding in Java<br />
+Point 2 need to be corrected from Return Type to Access Modifier</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-15014' onclick='return addComment.moveForm( "comment-15014", "15014", "respond", "4712" )' aria-label='Reply to Amit Gupta'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-19325">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3e4914008e9f3a7c5d3d37349c1aee28?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3e4914008e9f3a7c5d3d37349c1aee28?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sachindra</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-28T09:46:24+00:00" itemprop="datePublished"><a href="index.html#comment-19325" class="comment-time-link" itemprop="url">November 28, 2014 at 9:46 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I called Newly created Method xyz() of child class,but its running perfectly..i does not give any error as you said it will throw<br />
+Exception in thread &#8220;main&#8221; java.lang.Error: Unresolved compilation<br />
+problem: The method xyz() is undefined for the type ABC</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19325' onclick='return addComment.moveForm( "comment-19325", "19325", "respond", "4712" )' aria-label='Reply to Sachindra'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-30982">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/0a4f9c7ee00d4d74908a3454f38cc35e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/0a4f9c7ee00d4d74908a3454f38cc35e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Dave</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-31T12:33:03+00:00" itemprop="datePublished"><a href="index.html#comment-30982" class="comment-time-link" itemprop="url">July 31, 2015 at 12:33 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Then you did something wrong, because it shouldn&#8217;t work. At compile time the object is static bound to the base class and it will not find a method xyz() in the base class.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-30982' onclick='return addComment.moveForm( "comment-30982", "30982", "respond", "4712" )' aria-label='Reply to Dave'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-25259">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/de2f243085e9d8be6cfeba2bc34d1a44?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/de2f243085e9d8be6cfeba2bc34d1a44?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">janardhan reddy</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-04-04T06:05:18+00:00" itemprop="datePublished"><a href="index.html#comment-25259" class="comment-time-link" itemprop="url">April 4, 2015 at 6:05 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I&#8217;ve visited so many sites but this site for learning java is exceptionally well<br />
+i hope everybody can understand and learn java easily.surly i need a help from your side is in depth about static keyword and object .how object stores memory and how method behaves on object</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-25259' onclick='return addComment.moveForm( "comment-25259", "25259", "respond", "4712" )' aria-label='Reply to janardhan reddy'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-34603">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/baec337e887108fa5299d7f98f62d206?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/baec337e887108fa5299d7f98f62d206?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sandhana lakshmi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-06T06:07:34+00:00" itemprop="datePublished"><a href="index.html#comment-34603" class="comment-time-link" itemprop="url">September 6, 2015 at 6:07 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>why we cannot override constructors?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-34603' onclick='return addComment.moveForm( "comment-34603", "34603", "respond", "4712" )' aria-label='Reply to sandhana lakshmi'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-45592">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/25f5206f4ef0733b4f1977110ed1fb38?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/25f5206f4ef0733b4f1977110ed1fb38?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Prakash</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-08T18:27:59+00:00" itemprop="datePublished"><a href="index.html#comment-45592" class="comment-time-link" itemprop="url">December 8, 2015 at 6:27 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>1) NO! A constructor belongs to the class in which it is declared. A sub class is a different class and must have its own constructor. So, constructors simply can&#8217;t be overridden.</p>
+<p>2) Yes, that&#8217;s done usually in case of singletons.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-45592' onclick='return addComment.moveForm( "comment-45592", "45592", "respond", "4712" )' aria-label='Reply to Prakash'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-52540">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/afc95e77bcf4c111a9232b3fb52d407b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/afc95e77bcf4c111a9232b3fb52d407b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">laxman</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-17T11:20:09+00:00" itemprop="datePublished"><a href="index.html#comment-52540" class="comment-time-link" itemprop="url">March 17, 2016 at 11:20 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>We can&#8217;t override s constructor because if we try to override the constructor in another class then it will be considered as a method in that class.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52540' onclick='return addComment.moveForm( "comment-52540", "52540", "respond", "4712" )' aria-label='Reply to laxman'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-44675">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f5c6d726b27cfab28239af0a7d375383?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f5c6d726b27cfab28239af0a7d375383?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Roman</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-29T11:28:51+00:00" itemprop="datePublished"><a href="index.html#comment-44675" class="comment-time-link" itemprop="url">November 29, 2015 at 11:28 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Can you explain this please?<br />
+ABC obj = new Test();<br />
+When I need construction like this if I can do:<br />
+Test obj = new Test();<br />
+To call all methods I want.Thank you!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-44675' onclick='return addComment.moveForm( "comment-44675", "44675", "respond", "4712" )' aria-label='Reply to Roman'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-56759">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f9e36e746e6dd7fe69c595c56796c5c3?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f9e36e746e6dd7fe69c595c56796c5c3?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">naveen</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-12T03:59:30+00:00" itemprop="datePublished"><a href="index.html#comment-56759" class="comment-time-link" itemprop="url">June 12, 2016 at 3:59 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>this is an upcasting</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-56759' onclick='return addComment.moveForm( "comment-56759", "56759", "respond", "4712" )' aria-label='Reply to naveen'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-48111">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b77ad7c3e9fc6eb3ecfaa54675b829a7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b77ad7c3e9fc6eb3ecfaa54675b829a7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Gayathri</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-01-05T15:16:16+00:00" itemprop="datePublished"><a href="index.html#comment-48111" class="comment-time-link" itemprop="url">January 5, 2016 at 3:16 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Nice work..clearly explained the nook and corner of the chapter..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-48111' onclick='return addComment.moveForm( "comment-48111", "48111", "respond", "4712" )' aria-label='Reply to Gayathri'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-53890">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/45df6a1ac6caf767a36963e85c1289cb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/45df6a1ac6caf767a36963e85c1289cb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Learner</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-20T05:37:33+00:00" itemprop="datePublished"><a href="index.html#comment-53890" class="comment-time-link" itemprop="url">April 20, 2016 at 5:37 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Can we change the return type while overriding a method ?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53890' onclick='return addComment.moveForm( "comment-53890", "53890", "respond", "4712" )' aria-label='Reply to Learner'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-59068">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/06bbfe846d434b2357a166e4dc45e5f7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/06bbfe846d434b2357a166e4dc45e5f7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ketan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-06T04:52:04+00:00" itemprop="datePublished"><a href="index.html#comment-59068" class="comment-time-link" itemprop="url">August 6, 2016 at 4:52 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Yes we can change but, return type can be either same or sub type of the super class method return type that is called as a covariance (introduced from java 1.5)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-59068' onclick='return addComment.moveForm( "comment-59068", "59068", "respond", "4712" )' aria-label='Reply to Ketan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-54937">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c0eac55e758d5984bcd4ce4414dd38f7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c0eac55e758d5984bcd4ce4414dd38f7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">maryam</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-10T06:05:24+00:00" itemprop="datePublished"><a href="index.html#comment-54937" class="comment-time-link" itemprop="url">May 10, 2016 at 6:05 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I called a new method of ChidClass (xyz())<br />
+but It Worked Perfectly and this Exception you said not happened<br />
+Exception in thread “main” java.lang.Error: Unresolved compilation<br />
+problem: The method xyz() is undefined for the type ABC</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-54937' onclick='return addComment.moveForm( "comment-54937", "54937", "respond", "4712" )' aria-label='Reply to maryam'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-63882">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ebe9cccd2a69cfed5afe2f6628cf5e8a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ebe9cccd2a69cfed5afe2f6628cf5e8a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">natwar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-25T05:57:44+00:00" itemprop="datePublished"><a href="index.html#comment-63882" class="comment-time-link" itemprop="url">November 25, 2016 at 5:57 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Examples illustrated are very simple and easy to understand and covers all the basic requirements.Please keep updating your posts.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63882' onclick='return addComment.moveForm( "comment-63882", "63882", "respond", "4712" )' aria-label='Reply to natwar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-65889">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/eb2daafea71941f25f396407c4287824?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/eb2daafea71941f25f396407c4287824?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Raju</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-13T04:45:18+00:00" itemprop="datePublished"><a href="index.html#comment-65889" class="comment-time-link" itemprop="url">January 13, 2017 at 4:45 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hey, lovee your work, but I would like to make a suggestion, please add a &#8216;next chapter&#8217; or next botton at the end so we can continue to the next article of this post or any post, it would be helpful</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-65889' onclick='return addComment.moveForm( "comment-65889", "65889", "respond", "4712" )' aria-label='Reply to Raju'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4712' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="0a322a0cc2" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="136"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../../../2013/05/java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../../../2013/05/jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../../../2013/05/first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../../../2013/04/oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../../2013/03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../../../2013/04/java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../../2013/03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../../../2013/05/java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../../../2013/05/aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../../../2013/05/association/index.html">Association</a></li>
+<li><a href="../../07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="../../../2013/05/method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="index.html">Method overriding</a></li>
+ 	<li><a href="../difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../../2013/03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../../../2013/04/runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../../../2013/04/java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../../../2013/05/java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="../../../2013/05/java-interface/index.html">Interface</a></li>
+ 	<li><a href="../../../2013/05/abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../../../2013/05/encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../../2013/03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../../../2013/05/java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../../../2013/04/java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../../../2013/05/inner-class/index.html">Inner classes</a></li>
+<li><a href="../../../2013/05/java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../../../2013/05/static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../../../2013/05/java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../../2013/12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../../2013/04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../../2013/03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2014/01/method-overriding-in-java-with-example/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:40:00 GMT -->
+</html>

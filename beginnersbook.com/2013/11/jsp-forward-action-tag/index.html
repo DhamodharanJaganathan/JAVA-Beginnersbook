@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/11/jsp-forward-action-tag/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:55:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JSP forward action tag - JSP Tutorial</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="JSP forward action tag is used for forwarding a request to the another resource (It can be a JSP, static page such as html or Servlet). Request can be forwarded with or without parameter. In this tutorial we will see examples of  &lt;jsp:forward&gt; action tag. Syntax:  1) Forwarding along with parameters."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="JSP forward action tag - JSP Tutorial" />
+<meta property="og:description" content="JSP forward action tag is used for forwarding a request to the another resource (It can be a JSP, static page such as html or Servlet). Request can be forwarded with or without parameter. In this tutorial we will see examples of  &lt;jsp:forward&gt; action tag. Syntax:  1) Forwarding along with parameters." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="forward" />
+<meta property="article:tag" content="JSP" />
+<meta property="article:tag" content="jsp action tag" />
+<meta property="article:section" content="JSP tutorial" />
+<meta property="article:published_time" content="2013-11-23T08:27:16+00:00" />
+<meta property="article:modified_time" content="2013-11-23T08:29:50+00:00" />
+<meta property="og:updated_time" content="2013-11-23T08:29:50+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/11/forward-param-output.png" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/11/forward-param-output.png" />
+<meta property="og:image:width" content="503" />
+<meta property="og:image:height" content="263" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="JSP forward action tag is used for forwarding a request to the another resource (It can be a JSP, static page such as html or Servlet). Request can be forwarded with or without parameter. In this tutorial we will see examples of  &lt;jsp:forward&gt; action tag. Syntax:  1) Forwarding along with parameters." />
+<meta name="twitter:title" content="JSP forward action tag - JSP Tutorial" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2013/11/forward-param-output.png" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; JSP forward  action tag &#8211; JSP Tutorial Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index42be.html?p=4051' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embedf902.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F11%2Fjsp-forward-action-tag%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedf10c?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F11%2Fjsp-forward-action-tag%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-4051 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-4051 post type-post status-publish format-standard has-post-thumbnail category-jsp-tutorial tag-forward tag-jsp tag-jsp-action-tag entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">JSP forward  action tag &#8211; JSP Tutorial</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/jsp-tutorial/index.html" rel="category tag">JSP tutorial</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>JSP forward action tag is used for forwarding a request to the another resource (It can be a JSP, static page such as html or Servlet). Request can be forwarded with or without parameter. In this tutorial we will see examples of  &lt;jsp:forward&gt; action tag.</p>
+<p><strong>Syntax: </strong></p>
+<p>1) Forwarding along with parameters.</p>
+<pre>&lt;jsp:forward page="display.jsp"&gt; 
+&lt;jsp:param ... /&gt; 
+&lt;jsp:param ... /&gt; 
+&lt;jsp:param ... /&gt; 
+...
+&lt;jsp:param ... /&gt; 
+&lt;/jsp:forward&gt;</pre>
+<p>2) Forwarding without parameters.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>&lt;jsp:forward page="Relative_URL_of_Page" /&gt;</pre>
+<p>Relative_URL_of_Page: If page is in the same directory where the main page resides then use page name itself as I did in the below examples.</p>
+<h3>JSP Forward Example 1 &#8211; without passing parameters</h3>
+<p>In this example we are having two JSP pages &#8211; index.jsp and display.jsp. We have used &lt;jsp:forward&gt; action tag in index.jsp for forwarding the request to display.jsp. Here we are not passing any parameters while using the action tag. In the next example we will pass the parameters as well to another resource.</p>
+<p><span style="text-decoration: underline;">index.jsp</span></p>
+<pre>&lt;html&gt; 
+&lt;head&gt;
+&lt;title&gt;JSP forward action tag example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt; 
+&lt;p align="center"&gt;My main JSP page&lt;/p&gt;
+&lt;jsp:forward page="display.jsp" /&gt; 
+&lt;/body&gt; 
+&lt;/html&gt;</pre>
+<p><span style="text-decoration: underline;">display.jsp</span></p>
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Display Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+Hello this is a display.jsp Page
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p><strong>Output:</strong></p>
+<p>Below is the output of above cpde. It is basically the content of display.jsp, which clearly shows that index.jsp didn&#8217;t display as it forwarded the request to the <strong>display.jsp</strong> page.</p>
+<p><img class="aligncenter size-full wp-image-4052" alt="JSPForward-Output" src="../../../wp-content/uploads/2013/11/JSPForward-Output.png" width="503" height="263" srcset="https://beginnersbook.com/wp-content/uploads/2013/11/JSPForward-Output.png 503w, https://beginnersbook.com/wp-content/uploads/2013/11/JSPForward-Output-300x156.png 300w" sizes="(max-width: 503px) 100vw, 503px" /></p>
+<h3>JSP Forward Example 2 &#8211; with parameters</h3>
+<p>Here we are passing the parameters along with forward request. For passing parameters we are using &lt;jsp:param&gt; action tag. In this example we are passing 4 parameters along with forward and later we are displaying them on the forwarded page. In order to fetch the parameters on display.jsp page we are using getParameter method of <a title="Request implicit object" href="../jsp-implicit-object-request-with-examples/index.html" target="_blank">request implicit object</a>.</p>
+<p><span style="text-decoration: underline;">index.jsp</span></p>
+<pre>&lt;html&gt; 
+&lt;head&gt;
+&lt;title&gt;JSP forward example with parameters&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt; 
+&lt;jsp:forward page="display.jsp"&gt; 
+&lt;jsp:param name="name" value="Chaitanya" /&gt; 
+&lt;jsp:param name="site" value="BeginnersBook.com" /&gt; 
+&lt;jsp:param name="tutorialname" value="jsp forward action" /&gt; 
+&lt;jsp:param name="reqcamefrom" value="index.jsp" /&gt; 
+&lt;/jsp:forward&gt; 
+&lt;/body&gt; 
+&lt;/html&gt;</pre>
+<p><span style="text-decoration: underline;">display.jsp</span></p>
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Display Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h2&gt;Hello this is a display.jsp Page&lt;/h2&gt;
+My name is: &lt;%=request.getParameter("name") %&gt;&lt;br&gt;
+Website: &lt;%=request.getParameter("site") %&gt;&lt;br&gt;
+Topic: &lt;%=request.getParameter("tutorialname") %&gt;&lt;br&gt;
+Forward Request came from the page: &lt;%=request.getParameter("reqcamefrom") %&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p><strong>Output:</strong></p>
+<p>Above code directly displayed display.jsp page, which is displaying the parameters passed from index.jsp page.</p>
+<p><img class="aligncenter size-full wp-image-4053" alt="forward-param-output" src="../../../wp-content/uploads/2013/11/forward-param-output.png" width="503" height="263" srcset="https://beginnersbook.com/wp-content/uploads/2013/11/forward-param-output.png 503w, https://beginnersbook.com/wp-content/uploads/2013/11/forward-param-output-300x156.png 300w" sizes="(max-width: 503px) 100vw, 503px" /></p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../05/jsp-tutorial-introduction/index.html" rel="bookmark" title="Link to Introduction to Java Server Pages &#8211; JSP Tutorial">Introduction to Java Server Pages &#8211; JSP Tutorial</a></li><li><a href="../../05/jsp-tutorial-scriptlets/index.html" rel="bookmark" title="Link to JSP Scriptlets">JSP Scriptlets</a></li><li><a href="../../05/jsp-tutorial-life-cycle/index.html" rel="bookmark" title="Link to Java Server Pages (JSP) Life Cycle">Java Server Pages (JSP) Life Cycle</a></li><li><a href="../../12/jsp-include-directive-with-parameters-example/index.html" rel="bookmark" title="Link to JSP include directive with parameters example">JSP include directive with parameters example</a></li><li><a href="../../../2014/01/how-to-access-body-of-custom-tags-in-jsp-tutorial/index.html" rel="bookmark" title="Link to How to access body of Custom tags in JSP tutorial">How to access body of Custom tags in JSP tutorial</a></li><li><a href="../jsp-declaration-tag/index.html" rel="bookmark" title="Link to JSP Declaration tag &#8211; JSP Tutorial">JSP Declaration tag &#8211; JSP Tutorial</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-25085">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a0a5ab4ce68dd7bb3e74731ede2bcd07?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a0a5ab4ce68dd7bb3e74731ede2bcd07?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Pankaj</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-31T07:05:09+00:00" itemprop="datePublished"><a href="index.html#comment-25085" class="comment-time-link" itemprop="url">March 31, 2015 at 7:05 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>can you explain the difference b/w include and forward action tag</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-25085' onclick='return addComment.moveForm( "comment-25085", "25085", "respond", "4051" )' aria-label='Reply to Pankaj'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-58704">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2756bcabf5d2dcb0c77e5ad0a558347e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2756bcabf5d2dcb0c77e5ad0a558347e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nikhil</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-07-27T11:21:48+00:00" itemprop="datePublished"><a href="index.html#comment-58704" class="comment-time-link" itemprop="url">July 27, 2016 at 11:21 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>include is like circular linked list and forward is like linear linked list.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-58704' onclick='return addComment.moveForm( "comment-58704", "58704", "respond", "4051" )' aria-label='Reply to Nikhil'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-63476">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/246f82aeac8efa5a92af4cb174863c09?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/246f82aeac8efa5a92af4cb174863c09?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">xywei</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-16T03:01:43+00:00" itemprop="datePublished"><a href="index.html#comment-63476" class="comment-time-link" itemprop="url">November 16, 2016 at 3:01 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>yeah. your opinion is good！</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63476' onclick='return addComment.moveForm( "comment-63476", "63476", "respond", "4051" )' aria-label='Reply to xywei'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-53062">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/63f312cdd4be70efaef79a9266cd3c97?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/63f312cdd4be70efaef79a9266cd3c97?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Jomy Joseph</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-28T07:56:43+00:00" itemprop="datePublished"><a href="index.html#comment-53062" class="comment-time-link" itemprop="url">March 28, 2016 at 7:56 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>how to redirect control from html page to jsp page using form action method</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53062' onclick='return addComment.moveForm( "comment-53062", "53062", "respond", "4051" )' aria-label='Reply to Jomy Joseph'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4051' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="61310f65e3" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="107"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-12" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">JSP Tutorial</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../05/jsp-tutorial-introduction/index.html">Basics of JSP</a></li>
+<li><a href="../../05/jsp-tutorial-life-cycle/index.html">Life cycle of JSP</a></li>
+<li><a href="../../../2017/06/jsp-in-eclipse-ide-apache-tomcat-server/index.html">JSP in Eclipse IDE</a></li>
+<li><a href="../jsp-declaration-tag/index.html">Declaration tag</a></li>
+<li><a href="../jsp-expression-tag/index.html">Expression tag</a></li>
+<li><a href="../../05/jsp-tutorial-scriptlets/index.html">Scriptlets</a></li>
+<li><a href="../../05/jsp-tutorial-directives/index.html">Directives</a></li>
+<li><a href="../jsp-include-directive/index.html">Include Directive</a></li>
+<li><a href="../../12/jsp-include-directive-with-parameters-example/index.html">Param Directive</a></li>
+<li><a href="../jsp-exception-handling/index.html">Exception handling</a></li>
+<li><a href="../../06/jsp-tutorial-actions/index.html">Action tags</a></li>
+<li><a href="../jsp-include-action-tag/index.html">Include action </a></li>
+<li><a href="index.html">Forward action</a></li>
+<li><a href="../jsp-usebean-setproperty-getproperty-action-tags/index.html">useBean, setProperty & getProperty</a></li>
+<li><a href="../jsp-implicit-objects/index.html">Implicit Objects</a></li>
+<li><a href="../jsp-implicit-object-session-with-examples/index.html">Session implicit object</a></li>
+<li><a href="../../12/how-to-validate-and-invalidate-session-in-jsp/index.html">Validate session</a></li>
+<li><a href="../jsp-implicit-object-request-with-examples/index.html">Request implicit object</a></li>
+<li><a href="../jsp-implicit-object-response-with-examples/index.html">Response implicit object</a></li>
+<li><a href="../jsp-implicit-object-out-with-examples/index.html">Out implicit object</a></li>
+<li><a href="../jsp-implicit-object-application-with-examples/index.html">Application implicit object</a></li>
+<li><a href="../jsp-implicit-object-config-with-examples/index.html">Config implicit object</a></li>
+<li><a href="../jsp-implicit-object-pagecontext-with-examples/index.html">pageContext implicit object</a></li>
+<li><a href="../jsp-implicit-object-exception-with-examples/index.html">Exception implicit object</a></li>
+<li><a href="../jsp-expression-language-el/index.html">Expression language</a></li>
+<li><a href="../../../2014/01/jsp-custom-tags-with-example-jsp-tutorial/index.html">Custom Tags</a></li>
+<li><a href="../../../2014/01/how-to-access-body-of-custom-tags-in-jsp-tutorial/index.html">Custom tag example</a></li>
+<li><a href="../../../2015/03/jsp-interview-questions-and-answers/index.html">JSP Interview Q</a></li>
+</ul></div>
+		</div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/11/jsp-forward-action-tag/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:55:09 GMT -->
+</html>

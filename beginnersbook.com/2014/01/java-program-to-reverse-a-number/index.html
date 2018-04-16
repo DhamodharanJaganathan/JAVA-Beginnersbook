@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2014/01/java-program-to-reverse-a-number/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:44:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java program to reverse a number using for, while and recursion</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="There are three ways to reverse a number in Java. 1) Using while loop 2) Using for loop 3) Using recursion 4) Reverse the number without user interaction Program 1: Reverse a number using while Loop The program will prompt user to input the number and then it will reverse the same number using while loop. import"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Java program to reverse a number using for, while and recursion" />
+<meta property="og:description" content="There are three ways to reverse a number in Java. 1) Using while loop 2) Using for loop 3) Using recursion 4) Reverse the number without user interaction Program 1: Reverse a number using while Loop The program will prompt user to input the number and then it will reverse the same number using while loop. import" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="for loop" />
+<meta property="article:tag" content="number" />
+<meta property="article:tag" content="recursion" />
+<meta property="article:tag" content="reverse" />
+<meta property="article:tag" content="while loop" />
+<meta property="article:section" content="Java Examples" />
+<meta property="article:published_time" content="2014-01-15T15:27:13+00:00" />
+<meta property="article:modified_time" content="2014-01-15T15:32:49+00:00" />
+<meta property="og:updated_time" content="2014-01-15T15:32:49+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="There are three ways to reverse a number in Java. 1) Using while loop 2) Using for loop 3) Using recursion 4) Reverse the number without user interaction Program 1: Reverse a number using while Loop The program will prompt user to input the number and then it will reverse the same number using while loop. import" />
+<meta name="twitter:title" content="Java program to reverse a number using for, while and recursion" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Java program to reverse a number using for, while and recursion Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexd7e0.html?p=4951' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embedb463.json?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fjava-program-to-reverse-a-number%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed92fd?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F01%2Fjava-program-to-reverse-a-number%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-4951 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-4951 post type-post status-publish format-standard category-java-examples tag-for-loop tag-number tag-recursion tag-reverse tag-while-loop entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Java program to reverse a number using for, while and recursion</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/java-examples/index.html" rel="category tag">Java Examples</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>There are three ways to reverse a number in Java.</p>
+<p>1) <a href="#using-while">Using while loop</a><br />
+2) <a href="#using-for">Using for loop</a><br />
+3) <a href="#using-recursion">Using recursion</a><br />
+4) <a href="#demo">Reverse the number without user interaction</a></p>
+<h3 id="using-while">Program 1: Reverse a number using while Loop</h3>
+<p>The program will prompt user to input the number and then it will reverse the same number using while loop.</p>
+<pre>import java.util.Scanner;
+class ReverseNumberWhile
+{
+   public static void main(String args[])
+   {
+      int num=0;
+      int reversenum =0;
+      System.out.println("Input your number and press enter: ");
+      //This statement will capture the user input
+      Scanner in = new Scanner(System.in);
+      //Captured input would be stored in number num
+      num = in.nextInt();
+      //While Loop: Logic to find out the reverse number
+      while( num != 0 )
+      {
+          reversenum = reversenum * 10;
+          reversenum = reversenum + num%10;
+          num = num/10;
+      }
+
+      System.out.println("Reverse of input number is: "+reversenum);
+   }
+}</pre>
+<p>Output:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>Input your number and press enter: 
+145689
+Reverse of input number is: 986541</pre>
+<h3 id="using-for">Program 2: Reverse a number using for Loop</h3>
+<pre>import java.util.Scanner;
+class ForLoopReverseDemo
+{
+   public static void main(String args[])
+   {
+      int num=0;
+      int reversenum =0;
+      System.out.println("Input your number and press enter: ");
+      //This statement will capture the user input
+      Scanner in = new Scanner(System.in);
+      //Captured input would be stored in number num
+      num = in.nextInt();
+      /* for loop: No initialization part as num is already
+       * initialized and no increment/decrement part as logic
+       * num = num/10 already decrements the value of num
+       */
+      for( ;num != 0; )
+      {
+          reversenum = reversenum * 10;
+          reversenum = reversenum + num%10;
+          num = num/10;
+      }
+
+      System.out.println("Reverse of specified number is: "+reversenum);
+   }
+}</pre>
+<p>Output:</p>
+<pre>Input your number and press enter: 
+56789111
+Reverse of specified number is: 11198765</pre>
+<h3 id="using-recursion">Program 3: Reverse a number using recursion</h3>
+<pre>import java.util.Scanner;
+class RecursionReverseDemo
+{
+   //A method for reverse
+   public static void reverseMethod(int number) {
+       if (number &lt; 10) {
+	   System.out.println(number);
+	   return;
+       }
+       else {
+           System.out.print(number % 10);
+           //Method is calling itself: recursion
+           reverseMethod(number/10);
+       }
+   }
+   public static void main(String args[])
+   {
+	int num=0;
+	System.out.println("Input your number and press enter: ");
+	Scanner in = new Scanner(System.in);
+	num = in.nextInt();
+	System.out.print("Reverse of the input number is:");
+	reverseMethod(num);
+	System.out.println();
+   }
+}</pre>
+<p>Output:</p>
+<pre>Input your number and press enter: 
+5678901
+Reverse of the input number is:1098765</pre>
+<p><strong id="demo">Example: Reverse an already initialized number</strong><br />
+In all the above programs we are prompting user for the input number, however if do not want the user interaction part and want to reverse an initialized number then this is how you can do it.</p>
+<pre>class ReverseNumberDemo
+{
+   public static void main(String args[])
+   {
+      int num=123456789;
+      int reversenum =0;
+      while( num != 0 )
+      {
+          reversenum = reversenum * 10;
+          reversenum = reversenum + num%10;
+          num = num/10;
+      }
+
+      System.out.println("Reverse of specified number is: "+reversenum);
+   }
+}</pre>
+<p>Output:</p>
+<pre>Reverse of specified number is: 987654321</pre>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../../2017/09/java-program-to-find-factorial-using-for-and-while-loop/index.html" rel="bookmark" title="Link to Java Program to Find Factorial using For and While loop">Java Program to Find Factorial using For and While loop</a></li><li><a href="../java-program-to-calculate-area-and-circumference-of-circle/index.html" rel="bookmark" title="Link to Java Program to calculate area and circumference of circle">Java Program to calculate area and circumference of circle</a></li><li><a href="../java-program-to-find-factorial-of-a-given-number-using-recursion/index.html" rel="bookmark" title="Link to java program to find factorial of a given number using recursion">java program to find factorial of a given number using recursion</a></li><li><a href="../java-program-to-check-palindrome-string/index.html" rel="bookmark" title="Link to java program to check palindrome string using Stack, Queue, for or while loop">java program to check palindrome string using Stack, Queue, for or while loop</a></li><li><a href="../../../2017/09/java-program-to-multiply-two-numbers/index.html" rel="bookmark" title="Link to Java Program to Multiply Two Numbers">Java Program to Multiply Two Numbers</a></li><li><a href="../java-program-to-check-palindrome-string-using-recursion/index.html" rel="bookmark" title="Link to java program to check palindrome string using recursion">java program to check palindrome string using recursion</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-3283">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/48a3a20783e96aeed6a6ff280e5e8ada?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/48a3a20783e96aeed6a6ff280e5e8ada?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sanket</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-05-01T07:40:27+00:00" itemprop="datePublished"><a href="index.html#comment-3283" class="comment-time-link" itemprop="url">May 1, 2014 at 7:40 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Reverse number i want explanation mean in layman term &#8230;.plz explain the concept of all logic that it happening in middle of program plz explain like u are not writing a program instead your are writing that all math sum in a paper &#8230;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3283' onclick='return addComment.moveForm( "comment-3283", "3283", "respond", "4951" )' aria-label='Reply to Sanket'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-7591">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/eb3601164df158c3c6c3a3978e3f66e4?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/eb3601164df158c3c6c3a3978e3f66e4?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Gabriel</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-09-23T15:37:13+00:00" itemprop="datePublished"><a href="index.html#comment-7591" class="comment-time-link" itemprop="url">September 23, 2014 at 3:37 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi what does it mean when &#8221; int num=0 &#8220;? Does that mean all integers start from 0?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7591' onclick='return addComment.moveForm( "comment-7591", "7591", "respond", "4951" )' aria-label='Reply to Gabriel'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-28154">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e4080cb820e1c53f2ff9985c48a29f46?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e4080cb820e1c53f2ff9985c48a29f46?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Pankaj</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-12T08:40:49+00:00" itemprop="datePublished"><a href="index.html#comment-28154" class="comment-time-link" itemprop="url">June 12, 2015 at 8:40 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>by int num=0; it says that not garbage velue(a value which affects the outcome of a result) will be stored in the variable num</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-28154' onclick='return addComment.moveForm( "comment-28154", "28154", "respond", "4951" )' aria-label='Reply to Pankaj'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-67768">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/04bb580a526901694ec7edba5bd6043c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/04bb580a526901694ec7edba5bd6043c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sooraj S</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-23T15:50:30+00:00" itemprop="datePublished"><a href="index.html#comment-67768" class="comment-time-link" itemprop="url">February 23, 2017 at 3:50 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>int num=0; means that the variable is initialized with the value zero(0).</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-67768' onclick='return addComment.moveForm( "comment-67768", "67768", "respond", "4951" )' aria-label='Reply to Sooraj S'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-72528">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/cbe41e5c3394b8d2687bbfd2fd7f36b9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/cbe41e5c3394b8d2687bbfd2fd7f36b9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Amankumar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-07-24T04:21:02+00:00" itemprop="datePublished"><a href="index.html#comment-72528" class="comment-time-link" itemprop="url">July 24, 2017 at 4:21 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>No&#8230;here num is a variable and it is assigned as value 0 which mean num has null value so that it can be used further</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-72528' onclick='return addComment.moveForm( "comment-72528", "72528", "respond", "4951" )' aria-label='Reply to Amankumar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-29228">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e10388eafbbd3d2aa2affeb3dcb19db0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e10388eafbbd3d2aa2affeb3dcb19db0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Kumar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-06T13:46:58+00:00" itemprop="datePublished"><a href="index.html#comment-29228" class="comment-time-link" itemprop="url">July 6, 2015 at 1:46 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>In Reverse a number using recursion method:<br />
+It is not suitable numbers. bez it is failed the test case at<br />
+Input as :: 1200 or zero has last digit.</p>
+<p>Please correct me if i am wrong.<br />
+Thanks<br />
+Praveen</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-29228' onclick='return addComment.moveForm( "comment-29228", "29228", "respond", "4951" )' aria-label='Reply to Kumar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-29450">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/5520edd184dd77fe983cf884635f7de1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/5520edd184dd77fe983cf884635f7de1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ashwin</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-11T08:03:15+00:00" itemprop="datePublished"><a href="index.html#comment-29450" class="comment-time-link" itemprop="url">July 11, 2015 at 8:03 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>How do i use reverse of a number concept in this palindrome program.. Please help me use it&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-29450' onclick='return addComment.moveForm( "comment-29450", "29450", "respond", "4951" )' aria-label='Reply to Ashwin'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-32305">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/cc62eb6770dd65f3ff8dad002e357770?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/cc62eb6770dd65f3ff8dad002e357770?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Minal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-12T05:01:59+00:00" itemprop="datePublished"><a href="index.html#comment-32305" class="comment-time-link" itemprop="url">August 12, 2015 at 5:01 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>@ Saket<br />
+Possible explanation is:<br />
+Let x=123, then ⌊log10x⌋=2. As ⌊x10−1⌋=⌊12.3⌋=12 and ⌊x10−2⌋=⌊1.23⌋=1, we have</p>
+<p>123×102−99(12×10+1×1)=123×100−99×121=12300−11979=321</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-32305' onclick='return addComment.moveForm( "comment-32305", "32305", "respond", "4951" )' aria-label='Reply to Minal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-33537">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/53fb8305b97620cc4d8fd130cda6dc61?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/53fb8305b97620cc4d8fd130cda6dc61?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">hema</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-25T14:27:26+00:00" itemprop="datePublished"><a href="index.html#comment-33537" class="comment-time-link" itemprop="url">August 25, 2015 at 2:27 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello<br />
+can anyone tell me how to reverse a number which starts with zero..like 0213,0334</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-33537' onclick='return addComment.moveForm( "comment-33537", "33537", "respond", "4951" )' aria-label='Reply to hema'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-36007">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/0a259cf5c9ab3355bfdf0366e3e28634?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/0a259cf5c9ab3355bfdf0366e3e28634?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">rufert</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-17T10:03:56+00:00" itemprop="datePublished"><a href="index.html#comment-36007" class="comment-time-link" itemprop="url">September 17, 2015 at 10:03 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Can someone please help me how to print this in outpu<br />
+987654321<br />
+87654321<br />
+7654321<br />
+654321<br />
+54321<br />
+4321<br />
+321<br />
+21<br />
+1</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-36007' onclick='return addComment.moveForm( "comment-36007", "36007", "respond", "4951" )' aria-label='Reply to rufert'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-52528">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4cb3650264d5d33768500a333563bc2c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/4cb3650264d5d33768500a333563bc2c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Liza</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-17T06:50:45+00:00" itemprop="datePublished"><a href="index.html#comment-52528" class="comment-time-link" itemprop="url">March 17, 2016 at 6:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>public static void printNumbers(int numbers)<br />
+    {<br />
+        String strNum = Integer.toString(numbers);<br />
+        for (int i = 0; i &lt; strNum.length(); i++)<br />
+        {<br />
+            System.out.println(strNum.substring(i));<br />
+        }<br />
+    }<br />
+ public static void main(String[] args)<br />
+    {</p>
+<p>        printNumbers(987654321);<br />
+}</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52528' onclick='return addComment.moveForm( "comment-52528", "52528", "respond", "4951" )' aria-label='Reply to Liza'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-48694">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/00848168cbdef0ec778ae8e24b29227d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/00848168cbdef0ec778ae8e24b29227d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">kiran</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-01-13T11:20:50+00:00" itemprop="datePublished"><a href="index.html#comment-48694" class="comment-time-link" itemprop="url">January 13, 2016 at 11:20 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>if you want to reverse a number which starts with zero,you should use string data type, as input of 0212 in int data type will takes as 212.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-48694' onclick='return addComment.moveForm( "comment-48694", "48694", "respond", "4951" )' aria-label='Reply to kiran'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-50286">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f99925d880c26e1fa4c4dd6122cfbfc0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f99925d880c26e1fa4c4dd6122cfbfc0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">P.Brooks</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-02T19:55:49+00:00" itemprop="datePublished"><a href="index.html#comment-50286" class="comment-time-link" itemprop="url">February 2, 2016 at 7:55 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>How do you add a max string length to the reverse number program? For example, the number must be positive and have a maximum of six digits.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-50286' onclick='return addComment.moveForm( "comment-50286", "50286", "respond", "4951" )' aria-label='Reply to P.Brooks'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-53223">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d55c8e3dde0ba2dae0fe4fa4a93b8a9e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d55c8e3dde0ba2dae0fe4fa4a93b8a9e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Balaji Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-01T17:30:10+00:00" itemprop="datePublished"><a href="index.html#comment-53223" class="comment-time-link" itemprop="url">April 1, 2016 at 5:30 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi,</p>
+<p>I need an help from you . </p>
+<p>Question is  below :</p>
+<p>Consider that you have two ArrayList  first ArrayList  takes only Strings , and second ArrayList  takes only Integer.</p>
+<p>Now I want this two Array list to added to HashMap and iterate it also .</p>
+<p>So how would you do ?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53223' onclick='return addComment.moveForm( "comment-53223", "53223", "respond", "4951" )' aria-label='Reply to Balaji Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-53224">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d55c8e3dde0ba2dae0fe4fa4a93b8a9e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d55c8e3dde0ba2dae0fe4fa4a93b8a9e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Balaji Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-01T17:31:01+00:00" itemprop="datePublished"><a href="index.html#comment-53224" class="comment-time-link" itemprop="url">April 1, 2016 at 5:31 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>And Thanks for all your Programs and concepts that you published.<br />
+Your concepts are very much good , informative and quite easy to understand.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53224' onclick='return addComment.moveForm( "comment-53224", "53224", "respond", "4951" )' aria-label='Reply to Balaji Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58676">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/33aa019e43b98d04b89b776bc73133f6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/33aa019e43b98d04b89b776bc73133f6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Avi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-07-26T14:33:21+00:00" itemprop="datePublished"><a href="index.html#comment-58676" class="comment-time-link" itemprop="url">July 26, 2016 at 2:33 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Really great website to start with! ^_^</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-58676' onclick='return addComment.moveForm( "comment-58676", "58676", "respond", "4951" )' aria-label='Reply to Avi'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-60098">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d8b5836222bd104048152ea3891a591c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d8b5836222bd104048152ea3891a591c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Kathryn</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-03T00:36:17+00:00" itemprop="datePublished"><a href="index.html#comment-60098" class="comment-time-link" itemprop="url">September 3, 2016 at 12:36 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Why is it that reversenum isn&#8217;t always zero? The way I&#8217;m reading, say we input 205. reversenum = 0 * 10<br />
+Reversenum= 0 + 5 = 5<br />
+num = 205/10 = 20</p>
+<p>So printing reversenum would just print 5? I don&#8217;t get that.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-60098' onclick='return addComment.moveForm( "comment-60098", "60098", "respond", "4951" )' aria-label='Reply to Kathryn'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-60134">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/89e738bca1212527fb37de0e9edb57d3?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/89e738bca1212527fb37de0e9edb57d3?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Issei</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-04T13:53:50+00:00" itemprop="datePublished"><a href="index.html#comment-60134" class="comment-time-link" itemprop="url">September 4, 2016 at 1:53 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello<br />
+i am having trouble understanding these lines of code.<br />
+Could please explain how it works?<br />
+{<br />
+          reversenum = reversenum * 10;<br />
+          reversenum = reversenum + num%10;<br />
+          num = num/10;<br />
+      }</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-60134' onclick='return addComment.moveForm( "comment-60134", "60134", "respond", "4951" )' aria-label='Reply to Issei'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-63315">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/5058cef6a8ae578ceaada2eee3bdfdaa?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/5058cef6a8ae578ceaada2eee3bdfdaa?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sipra Mallick</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-11T12:02:11+00:00" itemprop="datePublished"><a href="index.html#comment-63315" class="comment-time-link" itemprop="url">November 11, 2016 at 12:02 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Suppose u want to reverse a number 123.<br />
+As we have initialized reversenum=0<br />
+so,<br />
+reversenum = 0 * 10;<br />
+ reversenum = 0 + 123%10; [123%10=3. so reversenum becomes 3]<br />
+ num = 123/10;[num stores the value as 12]</p>
+<p>In the next iteration,<br />
+reversenum = 3* 10;<br />
+ reversenum = 30 + 12%10;[reversenum=30+2=32.]<br />
+ num = 12/10;[num stores the value 1]</p>
+<p>In the last iteration<br />
+reversenum = 32 * 10;<br />
+ reversenum = 320 + 1%10;[reversenum=320+1=321]<br />
+ num = 1/10;</p>
+<p>Here the looping stops and the result is printed as 321.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63315' onclick='return addComment.moveForm( "comment-63315", "63315", "respond", "4951" )' aria-label='Reply to Sipra Mallick'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-63944">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/924295e37278806d63ded7d0449be65e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/924295e37278806d63ded7d0449be65e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Wuu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-27T01:01:59+00:00" itemprop="datePublished"><a href="index.html#comment-63944" class="comment-time-link" itemprop="url">November 27, 2016 at 1:01 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>executes a block of statements repeatedly until the condition(Boolean expression) returns false, so we choose a number like 325</p>
+<p>int num=0;<br />
+int reversenum =0;<br />
+while( num != 0 )<br />
+      {<br />
+          reversenum = reversenum * 10;<br />
+          reversenum = reversenum + num%10;<br />
+          num = num/10;<br />
+      }</p>
+<p>the step<br />
+ 1. num =325 != 0<br />
+2. reversenum = 0*10=0<br />
+3. reversenum = 0+(325%10) = 0+5=5<br />
+4. num = 325/10 = 32<br />
+5. num =32 !=0<br />
+6. reversenum  = 5 *10 = 50<br />
+7. reversenum  = 50 + (32 % 10) = 50+2=52<br />
+8. num=32/10 = 3<br />
+9 num  = 3 != 0<br />
+10. reversenum = 52 *10 =520<br />
+11.  reversenum  = 520 + (3 % 10) = 520+3 = 523<br />
+12. num = 3/10 =0<br />
+final num =0 return false, so we get the reverse number 523.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63944' onclick='return addComment.moveForm( "comment-63944", "63944", "respond", "4951" )' aria-label='Reply to Wuu'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-65896">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7e02cbc24bfe4f8387f1c238cb32837f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7e02cbc24bfe4f8387f1c238cb32837f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">md raza</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-13T08:24:34+00:00" itemprop="datePublished"><a href="index.html#comment-65896" class="comment-time-link" itemprop="url">January 13, 2017 at 8:24 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Finally, Now i was able to understand  the concept</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-65896' onclick='return addComment.moveForm( "comment-65896", "65896", "respond", "4951" )' aria-label='Reply to md raza'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-67774">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c16159be2f68eb27af5f3d48866515ce?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c16159be2f68eb27af5f3d48866515ce?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ken Santos</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-24T00:20:07+00:00" itemprop="datePublished"><a href="index.html#comment-67774" class="comment-time-link" itemprop="url">February 24, 2017 at 12:20 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Can anyone write a program that will accept number and produces sequence number in alternate arrangement and reverse order. </p>
+<p>Enter number: 5<br />
+Output<br />
+5142332415</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-67774' onclick='return addComment.moveForm( "comment-67774", "67774", "respond", "4951" )' aria-label='Reply to Ken Santos'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-69856">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/62dfbe7a9d47b0456afe51bc5f63a0df?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/62dfbe7a9d47b0456afe51bc5f63a0df?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">GUL</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-24T06:11:40+00:00" itemprop="datePublished"><a href="index.html#comment-69856" class="comment-time-link" itemprop="url">April 24, 2017 at 6:11 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>why did you multiply  reversenum by 10</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69856' onclick='return addComment.moveForm( "comment-69856", "69856", "respond", "4951" )' aria-label='Reply to GUL'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-70156">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b9be84dea53f146920540354b6949958?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b9be84dea53f146920540354b6949958?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sabir</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-05-06T01:58:45+00:00" itemprop="datePublished"><a href="index.html#comment-70156" class="comment-time-link" itemprop="url">May 6, 2017 at 1:58 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>hello Sir I am facing a problem with the logic.The output of 012 is not coming as 210 only 21! Why?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-70156' onclick='return addComment.moveForm( "comment-70156", "70156", "respond", "4951" )' aria-label='Reply to Sabir'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4951' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="122e2251e8" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="143"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-22" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Programs</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../../../2015/02/simple-c-programs/index.html">C Programs</a></li>
+<li><a href="../../../2017/09/java-examples/index.html">Java Programs</a></li>
+</ul></div></div></section>
+<section id="custom_html-18" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Examples</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../../02/java-program-to-check-even-or-odd-number/index.html">Check Odd-even</a></li>
+<li><a href="../../04/java-program-for-linear-search-example/index.html">Linear Search</a></li>
+<li><a href="../../04/java-program-to-perform-binary-search/index.html">Binary Search</a></li>
+<li><a href="../../04/java-program-to-print-floyds-triangle-example/index.html">Floyd's Triangle</a></li>
+<li><a href="index.html">Reverse number</a></li>
+<li><a href="../../04/java-program-to-generate-random-number-example/index.html">Random Number</a></li>
+<li><a href="../java-program-to-display-first-n-or-first-100-prime-numbers/index.html">first n prime numbers</a></li>
+<li><a href="../java-program-to-display-prime-numbers/index.html">Disp prime Numbers</a></li>
+<li><a href="../java-program-to-check-prime-number/index.html">Check Prime number</a></li>
+<li><a href="../java-program-to-check-palindrome-string-using-recursion/index.html">Palindrome String</a></li>
+<li><a href="../java-program-to-find-factorial-of-a-given-number-using-recursion/index.html">Find factorial</a></li>
+<li><a href="../java-program-to-sum-the-elements-of-an-array/index.html">Sum of elements of Array</a></li>
+<li><a href="../java-program-to-calculate-area-of-rectangle/index.html">Area of rectangle</a></li>
+<li><a href="../java-program-to-calculate-area-of-square/index.html">Area of Square</a></li>
+<li><a href="../java-program-to-calculate-area-of-triangle/index.html">Area of Triangle</a></li>
+<li><a href="../java-program-to-calculate-area-and-circumference-of-circle/index.html">Circle</a></li>
+</ul>
+<h4 class="widget-title">Tutorials</h4>
+<ul>
+<li><a href="../../../java-tutorial-for-beginners-with-examples/index.html">Java Tutorial</a></li>
+<li><a href="../../../2013/04/oops-concepts/index.html">OOPs Concepts</a></li>
+ 	<li><a href="../../../2013/12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../../2013/04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../../2013/03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../07/java-serialization/index.html">Java Serialization</a></li>
+	<li><a href="../../08/java-regex-tutorial/index.html">Java Regex</a></li>
+	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+<li><a href="../../09/java-enum-examples/index.html">Java Enum</a></li>
+<li><a href="../../09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2014/01/java-program-to-reverse-a-number/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:44:10 GMT -->
+</html>

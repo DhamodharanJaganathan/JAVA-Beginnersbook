@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2014/09/htaccess-rewriterule-mod_rewrite-rewritecond-redirect-301/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:15:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>htaccess RewriteRule, mod_rewrite, RewriteCond &amp; Redirect 301</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Redirecting from a WWW Domain to a non-WWW Domain # 301 redirect(permanent redirect) from http://www.sample.com to http://sample.com RewriteEngine on Options +FollowSymLinks RewriteCond %{HTTP_HOST} ^www.sample.tld$ RewriteRule ^(.*)$ http://sample.com/$1 Redirecting from One Domain to Another Domain Suppose we want"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="htaccess RewriteRule, mod_rewrite, RewriteCond &amp; Redirect 301" />
+<meta property="og:description" content="Redirecting from a WWW Domain to a non-WWW Domain # 301 redirect(permanent redirect) from http://www.sample.com to http://sample.com RewriteEngine on Options +FollowSymLinks RewriteCond %{HTTP_HOST} ^www.sample.tld$ RewriteRule ^(.*)$ http://sample.com/$1 Redirecting from One Domain to Another Domain Suppose we want" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content=".htaccess" />
+<meta property="article:published_time" content="2014-09-25T10:24:05+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Redirecting from a WWW Domain to a non-WWW Domain # 301 redirect(permanent redirect) from http://www.sample.com to http://sample.com RewriteEngine on Options +FollowSymLinks RewriteCond %{HTTP_HOST} ^www.sample.tld$ RewriteRule ^(.*)$ http://sample.com/$1 Redirecting from One Domain to Another Domain Suppose we want" />
+<meta name="twitter:title" content="htaccess RewriteRule, mod_rewrite, RewriteCond &amp; Redirect 301" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; htaccess RewriteRule, mod_rewrite, RewriteCond &#038; Redirect 301 Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index6002.html?p=3005' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed2905.json?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F09%2Fhtaccess-rewriterule-mod_rewrite-rewritecond-redirect-301%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed334f?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F09%2Fhtaccess-rewriterule-mod_rewrite-rewritecond-redirect-301%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-3005 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-3005 post type-post status-publish format-standard category-htaccess entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">htaccess RewriteRule, mod_rewrite, RewriteCond &#038; Redirect 301</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/wordpress/htaccess/index.html" rel="category tag">.htaccess</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><h2>Redirecting from a WWW Domain to a non-WWW Domain</h2>
+<pre># 301 redirect(permanent redirect) from http://www.sample.com to http://sample.com
+RewriteEngine on
+Options +FollowSymLinks
+RewriteCond %{HTTP_HOST} ^www.sample.tld$ [NC]
+RewriteRule ^(.*)$ http://sample.com/$1 [R=301,L]</pre>
+<h2>Redirecting from One Domain to Another Domain</h2>
+<p>Suppose we want to redirect all the pages &amp; posts of <code>http://www.sample1.com</code> to <code>http://www.sample2.com</code>. To do this, you just have to place the below code in .htaccess file of <code>http://www.sample1.com</code>.</p>
+<pre># redirect from http://www.sample1.com to http://www.sample2.com
+RewriteEngine On
+RewriteRule ^(.*)$ http://www.sample2.com/$1 [R=301,L]</pre>
+<h2>Redirect 301</h2>
+<p><a href="https://support.google.com/webmasters/answer/93633?hl=en" target="_blank">301 redirect</a> is also known as permanent redirect. It redirects visitors to new page as well as it signals search engine bots that the page has been moved permanently to a new location.</p>
+<h4>Redirecting a page to a different location &#8211;</h4>
+<p>Here I am redirecting URL <code>http://sample.com/category1/page1.html</code> to <code>http://sample.com/category2/page2.html</code></p>
+<pre># 301 Redirect example
+Redirect 301 /category1/page1.html http://sample.com/category2/page2.html</pre>
+<p>It can also be written as &#8211;</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>Redirect permanent /category1/page1.html http://sample.com/category2/page2.html</pre>
+<p>In the above example we are setting up a redirection within the same site. If you are planning to setup a redirect between two different websites then RewriteRule is a better option.</p>
+<p>Example &#8211;<br />
+I&#8217;m using the same example of sample1 and sample2</p>
+<pre># RewriteRule
+RewriteRule http://www.sample1.com/firstpage.php http://www.sample2.com/secondpage.php
+RewriteRule http://www.sample1.com/category/ http://www.sample2.com/mynewcat/
+RewriteRule http://www.sample1.com/ http://www.sample2.com/</pre>
+<h4>Redirect whole website to a new Domain&#8217;s homepage</h4>
+<p>Say, the below code is placed in sample1&#8217;s .htaccess file, then any requested url for sample1 would be redirected to the sample2&#8217;s home page (i.e. <code>http://www.sample2.com/</code>)</p>
+<pre># permanent redirect for a whole site
+Redirect 301 / http://www.sample2.com</pre>
+<p>The above code can also be written as &#8211;</p>
+<pre>Redirect permanent / http://www.sample2.com</pre>
+<h2>Redirect if File doesn&#8217;t exist</h2>
+<p>If my file &#8211; http://sample.com/category/page.php doesn&#8217;t exist then redirect to http://sample.com/category2/subcat/. Lets write it in .htaccess file &#8211;</p>
+<pre># rewrite only if the file doesn't exist
+RewriteCond %{REQUEST_URI} ^/category/(.*)/page.php$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^category/(.*)/page.php$ category2/subcat/$1</pre>
+<h2>Redirect to SubDomain</h2>
+<p>For example, I want to redirect my visitors to <code>http://mysub.sample.com</code> from <code>http://sample.com</code> then you can write it as-</p>
+<pre># send visitors to a subdomain
+RewriteCond %{HTTP_HOST} !^$
+RewriteCond %{HTTP_HOST} !^subdomain.domain.com$ [NC]
+RewriteRule ^/(.*)$ http://mysub.sample.com/$1 [L,R=301]</pre>
+<h2>Fix duplicate content issue using rewrite</h2>
+<p>For example &#8211; my website www.sample.com has a webpage which would be displayed when user enters any of the below url in browser &#8211;<br />
+http://www.sample.com/mypage<br />
+http://www.sample.com/mypage?id=94</p>
+<p>If you consider the SEO then these pages may be treated as duplicate pages so to avoid such situation you can redirect the pages of second type to the first one.</p>
+<pre>RewriteCond %{THE_REQUEST} ^GET /.*;.* HTTP/
+RewriteCond %{QUERY_STRING} !^$
+RewriteRule .* http://www.sample.com%{REQUEST_URI}? [R=301,L]</pre>
+<p>After having the above code in .htaccess, when user enters the url &#8211; <code>http://www.sample.com/mypage?id=94</code>, it would be redirected to the &#8211; <code>http://www.sample.com/mypage</code></p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../../2013/08/redirecting-from-subdirectory-to-subdomain-using-htaccess/index.html" rel="bookmark" title="Link to Redirecting from subdirectory to subdomain using .htaccess">Redirecting from subdirectory to subdomain using .htaccess</a></li><li><a href="../../../2013/08/redirect-subdirectory-to-root-using-htaccess/index.html" rel="bookmark" title="Link to Redirect subdirectory to root using .htaccess">Redirect subdirectory to root using .htaccess</a></li><li><a href="../../../2013/08/how-to-create-htaccess-file-in-wordpress/index.html" rel="bookmark" title="Link to How to create .htaccess file in WordPress">How to create .htaccess file in WordPress</a></li><li><a href="../../../2013/08/how-to-edit-htaccess-file-in-wordpress/index.html" rel="bookmark" title="Link to How to edit .htaccess file in WordPress">How to edit .htaccess file in WordPress</a></li><li><a href="../../../2013/08/how-to-prevent-access-to-htaccess-make-it-more-secure/index.html" rel="bookmark" title="Link to How to prevent access to .htaccess &#8211; Make it more secure">How to prevent access to .htaccess &#8211; Make it more secure</a></li><li><a href="../../../2013/08/how-to-change-default-directory-page-using-htaccess-file/index.html" rel="bookmark" title="Link to How to change default directory page using .htaccess file">How to change default directory page using .htaccess file</a></li></ol></div><footer class="entry-footer"></footer></article>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='3005' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="72deca0002" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="6"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-49" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><h4 class="widget-title widgettitle">SEO</h4>
+<ul>
+<li><a href="../../../2012/11/how-to-write-seo-articles-with-keywords/index.html">Write SEO Articles</a></li>
+<li><a href="../../../2013/10/add-facebook-open-graph-yoast-wordpress-seo-plugin/index.html">Open Graph Meta Tags</a></li>
+<li><a href="../../../2013/01/seo-friendly-images-alt-tag/index.html">SEO Friendly Images</a></li>
+<li><a href="../../../2013/09/seopressor-v5-review/index.html">SEOPressor Review</a></li>
+<li><a href="../../../2013/08/auto-interlink-posts-wordpress-seo-smart-links-seo-alrp/index.html">Auto Interlink Posts</a></li>
+</ul>
+
+<h4 class="widget-title widgettitle">WordPress</h4>
+<ul>
+<li><a href="../../../2013/10/5-free-plugins-adding-facebook-open-graph-meta-tags-wordpress/index.html">Free plugins to add Open Graph Tags</a></li>
+<li><a href="../../../2013/10/5-free-plugins-adding-captcha-wordpress-blog-comments/index.html">Free plugins to add Captcha</a></li>
+<li><a href="../../../2013/09/set-default-thumbnail-featured-fallback-image-wordpress-automatically/index.html">Set thumbnails automatically</a></li>
+<li><a href="../../../2013/09/display-related-posts-thumbnails-wordpress-plugin/index.html">Display related Posts WP</a></li>
+<li><a href="../../../2013/09/change-post-excerpt-length-wordpress/index.html">Change Post excerpt length WP</a></li>
+</ul>
+
+<h4 class="widget-title widgettitle">Website</h4>
+<ul>
+<li><a href="../../../2013/09/add-facebook-like-button-website/index.html">Add Facebook like button</a></li>
+<li><a href="../../../2013/09/add-google-button-website/index.html">Add Google plus button</a></li>
+<li><a href="../../../2013/09/add-twitter-button-website/index.html">Add Twitter button</a></li>
+<li><a href="../../../2013/10/create-a-free-website-on-blogspot/index.html">Create Free Website on blogspot</a></li>
+</ul></div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2014/09/htaccess-rewriterule-mod_rewrite-rewritecond-redirect-301/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:16:00 GMT -->
+</html>

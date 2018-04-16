@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2014/07/super-keyword-in-java-with-example/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:39:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Super keyword in java with example</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="The super keyword in java refers to the objects of immediate parent class. In this guide we will see the use of super with variable, method and constructor."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Super keyword in java with example" />
+<meta property="og:description" content="The super keyword in java refers to the objects of immediate parent class. In this guide we will see the use of super with variable, method and constructor." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="OOPs Concept" />
+<meta property="article:published_time" content="2014-07-18T06:27:00+00:00" />
+<meta property="article:modified_time" content="2017-09-12T08:48:36+00:00" />
+<meta property="og:updated_time" content="2017-09-12T08:48:36+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="The super keyword in java refers to the objects of immediate parent class. In this guide we will see the use of super with variable, method and constructor." />
+<meta name="twitter:title" content="Super keyword in java with example" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Super keyword in java with example Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexf949.html?p=5390' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed60b7.json?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F07%2Fsuper-keyword-in-java-with-example%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embede57c?url=https%3A%2F%2Fbeginnersbook.com%2F2014%2F07%2Fsuper-keyword-in-java-with-example%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-5390 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-5390 post type-post status-publish format-standard category-oops-concept entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Super keyword in java with example</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/oops-concept/index.html" rel="category tag">OOPs Concept</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>The super keyword refers to the objects of immediate parent class. Before learning super keyword you must have the knowledge of <a href="../../../2013/03/inheritance-in-java/index.html">inheritance in Java</a> so that you can understand the examples given in this guide.</p>
+<h2>The use of super keyword</h2>
+<p>1) To access the data members of parent class when both parent and child class have member with same name<br />
+2) To explicitly call the no-arg and parameterized constructor of parent class<br />
+3) To access the method of parent class when child class has overridden that method.</p>
+<p><strong>Now lets discuss them in detail with the help of examples</strong>:</p>
+<h3>1) How to use super keyword to access the variables of parent class</h3>
+<p>When you have a variable in child class which is already present in the parent class then in order to access the variable of parent class, you need to use the super keyword.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>Lets take an example to understand this: In the following program, we have a data member <code>num</code> declared in the child class, the member with the same name is already present in the parent class. There is no way you can access the <code>num</code> variable of parent class without using super keyword. .</p>
+<pre>//Parent class or Superclass or base class
+class Superclass
+{
+   int num = 100;
+}
+//Child class or subclass or derived class
+class Subclass extends Superclass
+{
+   /* The same variable num is declared in the Subclass
+    * which is already present in the Superclass
+    */
+    int num = 110;
+    void printNumber(){
+	System.out.println(num);
+    }
+    public static void main(String args[]){
+	Subclass obj= new Subclass();
+	obj.printNumber();	
+    }
+}</pre>
+<p>Output:<br />
+110</p>
+<p><strong>Accessing the num variable of parent class:</strong><br />
+By calling a variable like this, we can access the variable of parent class if both the classes (parent and child) have same variable.</p>
+<pre>super.variable_name</pre>
+<p>Let&#8217;s take the same example that we have seen above, this time in print statement we are passing <code>super.num</code> instead of num.</p>
+<pre>class Superclass
+{
+   int num = 100;
+}
+class Subclass extends Superclass
+{
+   int num = 110;
+   void printNumber(){
+	/* Note that instead of writing num we are
+	 * writing super.num in the print statement
+	 * this refers to the num variable of Superclass
+	 */
+	System.out.println(super.num);
+   }
+   public static void main(String args[]){
+	Subclass obj= new Subclass();
+	obj.printNumber();	
+   }
+}</pre>
+<p>Output:<br />
+100<br />
+As you can see by using super.num we accessed the num variable of parent class.</p>
+<h3>2) Use of super keyword to invoke constructor of parent class</h3>
+<p>When we create the object of sub class, the new keyword invokes the <a title="Constructors in Java – A complete study!!" href="../../../2013/03/constructors-in-java/index.html">constructor</a> of child class, which implicitly invokes the constructor of parent class. So the order to execution when we create the object of child class is: parent class constructor is executed first and then the child class constructor is executed. It happens because compiler itself adds super()(this invokes the no-arg constructor of parent class) as the first statement in the constructor of child class.</p>
+<p>Let&#8217;s see an example to understand what I have explained above:</p>
+<pre>class Parentclass
+{
+   Parentclass(){
+	System.out.println("Constructor of parent class");
+   }
+}
+class Subclass extends Parentclass
+{
+   Subclass(){
+	/* Compile implicitly adds super() here as the
+	 *  first statement of this constructor.
+	 */
+	System.out.println("Constructor of child class");
+   }
+   Subclass(int num){
+	/* Even though it is a parameterized constructor.
+	 * The compiler still adds the no-arg super() here
+	 */
+	System.out.println("arg constructor of child class");
+   }
+   void display(){
+	System.out.println("Hello!");
+   }
+   public static void main(String args[]){
+	/* Creating object using default constructor. This 
+	 * will invoke child class constructor, which will 
+	 * invoke parent class constructor
+	 */
+	Subclass obj= new Subclass();
+	//Calling sub class method 
+	obj.display();
+	/* Creating second object using arg constructor
+	 * it will invoke arg constructor of child class which will
+	 * invoke no-arg constructor of parent class automatically 
+	 */
+	Subclass obj2= new Subclass(10);
+	obj2.display();
+   }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>Constructor of parent class
+Constructor of child class
+Hello!
+Constructor of parent class
+arg constructor of child class
+Hello!
+</pre>
+<h4>Parameterized super() call to invoke parameterized constructor of parent class</h4>
+<p>We can call super() explicitly in the constructor of child class, but it would not make any sense because it would be redundant. It&#8217;s like explicitly doing something which would be implicitly done otherwise.<br />
+However when we have a constructor in parent class that takes arguments then we can use parameterized super, like <code>super(100);</code> to invoke <a href="../../01/parameterized-constructor-in-java-example/index.html">parameterized constructor</a> of parent class from the constructor of child class.<br />
+Let&#8217;s see an example to understand this:</p>
+<pre>class Parentclass
+{
+   //no-arg constructor
+   Parentclass(){
+	System.out.println("no-arg constructor of parent class");
+   }
+   //arg or parameterized constructor
+   Parentclass(String str){
+	System.out.println("parameterized constructor of parent class");
+   }
+}
+class Subclass extends Parentclass
+{
+   Subclass(){
+       /* super() must be added to the first statement of constructor 
+	* otherwise you will get a compilation error. Another important 
+	* point to note is that when we explicitly use super in constructor
+	* the compiler doesn't invoke the parent constructor automatically.
+	*/
+	super("Hahaha");
+	System.out.println("Constructor of child class");
+
+   }
+   void display(){
+	System.out.println("Hello");
+   }
+   public static void main(String args[]){		
+	Subclass obj= new Subclass();
+	obj.display();	 
+   }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>parameterized constructor of parent class
+Constructor of child class
+Hello</pre>
+<p>There are few important points to note in this example:<br />
+1) super()(or parameterized super must be the first statement in constructor otherwise you will get the compilation error: &#8220;Constructor call must be the first statement in a constructor&#8221;<br />
+2) When we explicitly placed super in the constructor, the java compiler didn&#8217;t call the default no-arg constructor of parent class.</p>
+<h3>3) How to use super keyword in case of method overriding</h3>
+<p>When a child class declares a same method which is already present in the parent class then this is called <a href="../../01/method-overriding-in-java-with-example/index.html">method overriding</a>. We will learn method overriding in the next tutorials of this series. For now you just need to remember this: When a child class overrides a method of parent class, then the call to the method from child class object always call the child class version of the method. However by using super keyword like this: super.method_name you can call the method of parent class (the method which is overridden). In case of method overriding, these terminologies are used: Overridden method: The method of parent class Overriding method: The method of child class Lets take an example to understand this concept:</p>
+<pre>class Parentclass
+{
+   //Overridden method
+   void display(){
+	System.out.println("Parent class method");
+   }
+}
+class Subclass extends Parentclass
+{
+   //Overriding method
+   void display(){
+	System.out.println("Child class method");
+   }
+   void printMsg(){
+	//This would call Overriding method
+	display();
+	//This would call Overridden method
+	super.display();
+   }
+   public static void main(String args[]){		
+	Subclass obj= new Subclass();
+	obj.printMsg(); 
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Child class method
+Parent class method</pre>
+<h4>What if the child class is not overriding any method: No need of super</h4>
+<p>When child class doesn&#8217;t override the parent class method then we don&#8217;t need to use the super keyword to call the parent class method. This is because in this case we have only one version of each method and child class has access to the parent class methods so we can directly call the methods of parent class without using super.</p>
+<pre>class Parentclass
+{
+   void display(){
+	System.out.println("Parent class method");
+   }
+}
+class Subclass extends Parentclass
+{
+   void printMsg(){
+	/* This would call method of parent class,
+	 * no need to use super keyword because no other
+	 * method with the same name is present in this class
+	 */
+	display();
+   } 
+   public static void main(String args[]){
+		
+	Subclass obj= new Subclass();
+        obj.printMsg(); 
+   }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>Parent class method</pre>
+<div class="bb-nav"><a class="pretut" href="../../../2013/05/association/index.html">❮ Previous</a><a class="nexttut" href="../../../2013/05/method-overloading/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-45315">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/22cb3a396b865c7a400c5c969f0ba14f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/22cb3a396b865c7a400c5c969f0ba14f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Haider Rashid khan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-05T15:12:30+00:00" itemprop="datePublished"><a href="index.html#comment-45315" class="comment-time-link" itemprop="url">December 5, 2015 at 3:12 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This is excellent website for java programmers and  i have learned a lot from it             thanks</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-45315' onclick='return addComment.moveForm( "comment-45315", "45315", "respond", "5390" )' aria-label='Reply to Haider Rashid khan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-50183">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6d3fef77a5af8c59d82dc0e85326529c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6d3fef77a5af8c59d82dc0e85326529c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Satya Prakash pandey</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-01-31T20:41:28+00:00" itemprop="datePublished"><a href="index.html#comment-50183" class="comment-time-link" itemprop="url">January 31, 2016 at 8:41 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi,<br />
+I am new to the Java world and will truly appreciate if someone could help and guide me with the error and getting in the program below &#8211; </p>
+<p>public class A {<br />
+    public void f1()    {<br />
+        System.out.println(&#8220;A&#8212;&gt;f1&#8221;);}}</p>
+<p>public class B extends A{<br />
+public void f1(){<br />
+    System.out.println(&#8220;B&#8212;-&gt;f1&#8221;);}}</p>
+<p>public class Test {<br />
+    public static void main(String[] args) {<br />
+        A b = new B();<br />
+        B a1 = new A();<br />
+       b.f1();<br />
+       a1.f1();<br />
+       } }</p>
+<p>In the above program, the first object &#8216;b&#8217; of class type &#8216;A&#8217; is working fine. But the object &#8216;a1&#8217; of class type &#8216;B&#8217; is giving an error which says &#8211; &#8216;incompatible types: test.A cannot be converted to test.B&#8217;<br />
+Is there a way to make the object &#8216;a1&#8217; work?<br />
+Many Thanks<br />
+Satya</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-50183' onclick='return addComment.moveForm( "comment-50183", "50183", "respond", "5390" )' aria-label='Reply to Satya Prakash pandey'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-51038">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c8448a8bef76293ee26a5d88313861a0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c8448a8bef76293ee26a5d88313861a0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">umesh naik</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-14T10:56:55+00:00" itemprop="datePublished"><a href="index.html#comment-51038" class="comment-time-link" itemprop="url">February 14, 2016 at 10:56 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>in java we can have (declaration of superclass object)=(instanciation of subclass ) allowed but opposite to this not allowed</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51038' onclick='return addComment.moveForm( "comment-51038", "51038", "respond", "5390" )' aria-label='Reply to umesh naik'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-51908">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c50e80e23324c92d797dfa033b3a3b2e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c50e80e23324c92d797dfa033b3a3b2e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Bharath</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-29T17:07:02+00:00" itemprop="datePublished"><a href="index.html#comment-51908" class="comment-time-link" itemprop="url">February 29, 2016 at 5:07 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Yep u can do that by type casting</p>
+<p>B a1=(B) new A();</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51908' onclick='return addComment.moveForm( "comment-51908", "51908", "respond", "5390" )' aria-label='Reply to Bharath'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-60717">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1040b1e64558d6fbb3f02c0fffdaab60?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1040b1e64558d6fbb3f02c0fffdaab60?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Anil Bairagi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-20T06:36:18+00:00" itemprop="datePublished"><a href="index.html#comment-60717" class="comment-time-link" itemprop="url">September 20, 2016 at 6:36 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>your doing wrong declaration of B object..<br />
+A&#8217;s reference object can access member of B .but cant be vice versa of it..<br />
+if u want to use class B member Then create object of this.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-60717' onclick='return addComment.moveForm( "comment-60717", "60717", "respond", "5390" )' aria-label='Reply to Anil Bairagi'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-73600">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f5c1a6366eab9cdfcff45a9756c6dd07?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f5c1a6366eab9cdfcff45a9756c6dd07?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Hemanth Pawar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-08-23T16:39:27+00:00" itemprop="datePublished"><a href="index.html#comment-73600" class="comment-time-link" itemprop="url">August 23, 2017 at 4:39 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>You wrote the constructor calling wrong.<br />
+The class name must match with the constructor name.<br />
+Here is this how you wrote<br />
+A b = new B();<br />
+Here the constructor is B(); and it does not match with class A .<br />
+B a1= new A<br />
+Here the constructor is A(); and doesn&#8217;t match with the class B.<br />
+So finally the rule is you should write the class and constructor name same..</p>
+<p>Hope you understand..<br />
+Thank you&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-73600' onclick='return addComment.moveForm( "comment-73600", "73600", "respond", "5390" )' aria-label='Reply to Hemanth Pawar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-69088">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/32dd615f50cec9d5a85bf2ace501d1f9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/32dd615f50cec9d5a85bf2ace501d1f9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">qwerty</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-31T05:42:45+00:00" itemprop="datePublished"><a href="index.html#comment-69088" class="comment-time-link" itemprop="url">March 31, 2017 at 5:42 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Very clearly explained in simple terms. Superb website !!!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69088' onclick='return addComment.moveForm( "comment-69088", "69088", "respond", "5390" )' aria-label='Reply to qwerty'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='5390' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="32a22be5ca" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="27"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../../../2013/05/java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../../../2013/05/jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../../../2013/05/first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../../../2013/04/oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../../2013/03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../../../2013/04/java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../../2013/03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../../../2013/05/java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../../../2013/05/aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../../../2013/05/association/index.html">Association</a></li>
+<li><a href="index.html">Super Keyword</a></li>
+ 	<li><a href="../../../2013/05/method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="../../01/method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="../../01/difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../../2013/03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../../../2013/04/runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../../../2013/04/java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../../../2013/05/java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="../../../2013/05/java-interface/index.html">Interface</a></li>
+ 	<li><a href="../../../2013/05/abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../../../2013/05/encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../../2013/03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../../../2013/05/java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../../../2013/04/java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../../../2013/05/inner-class/index.html">Inner classes</a></li>
+<li><a href="../../../2013/05/java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../../../2013/05/static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../../../2013/05/java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../../2013/12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../../2013/04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../../2013/03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2014/07/super-keyword-in-java-with-example/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:39:52 GMT -->
+</html>

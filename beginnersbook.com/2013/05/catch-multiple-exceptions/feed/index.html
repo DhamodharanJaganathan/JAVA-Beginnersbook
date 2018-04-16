@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: How to Catch multiple exceptions</title>
+	<atom:link href="https://beginnersbook.com/2013/05/catch-multiple-exceptions/feed/" rel="self" type="application/rss+xml" />
+	<link>https://beginnersbook.com/2013/05/catch-multiple-exceptions/</link>
+	<description></description>
+	<lastBuildDate>Fri, 06 Apr 2018 04:50:05 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.5</generator>
+	<item>
+		<title>By: Mithilesh Naik</title>
+		<link>https://beginnersbook.com/2013/05/catch-multiple-exceptions/#comment-72519</link>
+		<dc:creator><![CDATA[Mithilesh Naik]]></dc:creator>
+		<pubDate>Sun, 23 Jul 2017 16:15:04 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2562#comment-72519</guid>
+		<description><![CDATA[Hi Abhishek,
+
+Answer o 1) usually you will see operations like these:
+
+classA.methodA calls classB.methodB which again calls classC.methodC
+
+class C returns something all the way to class A
+  (Only class A is allowed to interact to user)
+
+in this case if exception occurs in class C then you throw it using
+    throw new your-exception   //from code
+or add  &quot;throws ExpectedException&quot; in method signature of methodC
+
+MethodC will throw it to methodB this should also have throws declaration. MethodB will throw it to methodA.
+
+Method A will catch it in a catch block and do corresponding action
+
+**This answers Q2**
+
+Answer to 3)
+in case 10/0 you dont need to throw exception explicitly. However say, your operation cannot support divide by 5 (assume). in this case do following
+
+if (divisor ==5)
+  throw OperationNotSupported or throw ArithmeticException]]></description>
+		<content:encoded><![CDATA[<p>Hi Abhishek,</p>
+<p>Answer o 1) usually you will see operations like these:</p>
+<p>classA.methodA calls classB.methodB which again calls classC.methodC</p>
+<p>class C returns something all the way to class A<br />
+  (Only class A is allowed to interact to user)</p>
+<p>in this case if exception occurs in class C then you throw it using<br />
+    throw new your-exception   //from code<br />
+or add  &#8220;throws ExpectedException&#8221; in method signature of methodC</p>
+<p>MethodC will throw it to methodB this should also have throws declaration. MethodB will throw it to methodA.</p>
+<p>Method A will catch it in a catch block and do corresponding action</p>
+<p>**This answers Q2**</p>
+<p>Answer to 3)<br />
+in case 10/0 you dont need to throw exception explicitly. However say, your operation cannot support divide by 5 (assume). in this case do following</p>
+<p>if (divisor ==5)<br />
+  throw OperationNotSupported or throw ArithmeticException</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: raghu</title>
+		<link>https://beginnersbook.com/2013/05/catch-multiple-exceptions/#comment-70187</link>
+		<dc:creator><![CDATA[raghu]]></dc:creator>
+		<pubDate>Sun, 07 May 2017 03:44:16 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2562#comment-70187</guid>
+		<description><![CDATA[keyword throw is used to define pre-defined/user defined exceptions
+throws:
+Actually all the possible exceptions must be handled by using try and catch block if we are not interested to handle checked exceptions atleast we need to make JVM to handle the checked exceptions by using keyword &quot;throws&quot; otherwise jvm will rise compile time error
+throws is not exception handler it is an exception escaper.hence throws are not recommended in the industry programs which leads abnormal termination]]></description>
+		<content:encoded><![CDATA[<p>keyword throw is used to define pre-defined/user defined exceptions<br />
+throws:<br />
+Actually all the possible exceptions must be handled by using try and catch block if we are not interested to handle checked exceptions atleast we need to make JVM to handle the checked exceptions by using keyword &#8220;throws&#8221; otherwise jvm will rise compile time error<br />
+throws is not exception handler it is an exception escaper.hence throws are not recommended in the industry programs which leads abnormal termination</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Abhishek Bharat Parab</title>
+		<link>https://beginnersbook.com/2013/05/catch-multiple-exceptions/#comment-68900</link>
+		<dc:creator><![CDATA[Abhishek Bharat Parab]]></dc:creator>
+		<pubDate>Sat, 25 Mar 2017 10:50:44 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2562#comment-68900</guid>
+		<description><![CDATA[Confusion about above example. If ArithmeticException, NullPointerException ArrayIndexOutOfBoundsException exception class are child of RuntimeExecption parent class, and these class is useful to handle runtime exception then why should it be followed by method declaration using throws keyword. since throws keyword is used to handle compile time exception.
+
+Requesting your assistance for following queries :
+
+1. If we can handle exceptions(checked/unchecked) using try/catch block, then why should we use throw or throws keyword in program with real time example?
+
+2. Please tell me a situation where throw or throws keyword has to be used in program. please explain with an example 
+
+3. public void myMethod() throws ArithmeticException {
+       int division = 10/0 ;
+   step 1:    new throw ArithmeticException(&quot;cannot be divided by zero&quot;);
+     
+}
+
+In this example, If arithmeticException class is used to handle runtime exception, so why do we use it followed by throws keyword in method declaration? 
+does step 1 not sufficient to handle &quot;divided by zero&quot; exception?
+
+I would be awaiting for your response respect to my queries]]></description>
+		<content:encoded><![CDATA[<p>Confusion about above example. If ArithmeticException, NullPointerException ArrayIndexOutOfBoundsException exception class are child of RuntimeExecption parent class, and these class is useful to handle runtime exception then why should it be followed by method declaration using throws keyword. since throws keyword is used to handle compile time exception.</p>
+<p>Requesting your assistance for following queries :</p>
+<p>1. If we can handle exceptions(checked/unchecked) using try/catch block, then why should we use throw or throws keyword in program with real time example?</p>
+<p>2. Please tell me a situation where throw or throws keyword has to be used in program. please explain with an example </p>
+<p>3. public void myMethod() throws ArithmeticException {<br />
+       int division = 10/0 ;<br />
+   step 1:    new throw ArithmeticException(&#8220;cannot be divided by zero&#8221;);</p>
+<p>}</p>
+<p>In this example, If arithmeticException class is used to handle runtime exception, so why do we use it followed by throws keyword in method declaration?<br />
+does step 1 not sufficient to handle &#8220;divided by zero&#8221; exception?</p>
+<p>I would be awaiting for your response respect to my queries</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

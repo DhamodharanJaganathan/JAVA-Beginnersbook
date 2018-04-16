@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/05/http-servlet/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:53:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HttpServlet class with example</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="While creating Http Servlet, you would always prefer Http Servlet over Generic Servlet, why? We will discuss this and working of http servlet with example."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HttpServlet class with example" />
+<meta property="og:description" content="While creating Http Servlet, you would always prefer Http Servlet over Generic Servlet, why? We will discuss this and working of http servlet with example." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="Java Servlet tutorial" />
+<meta property="article:published_time" content="2013-05-22T18:05:28+00:00" />
+<meta property="article:modified_time" content="2017-07-22T05:50:15+00:00" />
+<meta property="og:updated_time" content="2017-07-22T05:50:15+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/Http_Servlet.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/Http_Servlet.jpg" />
+<meta property="og:image" content="../../../wp-content/uploads/2014/04/Generic_Servlet_Project_Structure.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2014/04/Generic_Servlet_Project_Structure.jpg" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/Http_Servlet_Output1-1024x159.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/Http_Servlet_Output1-1024x159.jpg" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/Http_Servlet_Output2-1024x226.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/Http_Servlet_Output2-1024x226.jpg" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="While creating Http Servlet, you would always prefer Http Servlet over Generic Servlet, why? We will discuss this and working of http servlet with example." />
+<meta name="twitter:title" content="HttpServlet class with example" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2013/05/Http_Servlet.jpg" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; HttpServlet class with example Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index048d.html?p=2656' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embedd0a6.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fhttp-servlet%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedfe5b?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fhttp-servlet%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2656 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2656 post type-post status-publish format-standard category-java-servlet-tutorial entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">HttpServlet class with example</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/technology/java-servlet-tutorial/index.html" rel="category tag">Java Servlet tutorial</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><div class="bb-nav"><a class="pretut" href="../../../2014/04/genericservlet-class/index.html">❮ Previous</a><a class="nexttut" href="../../../2017/07/how-to-create-and-run-servlet-in-eclipse-ide/index.html">Next ❯</a></div>
+<p>In <a href="../servlet-api/index.html">Servlet API</a>, I have discussed little bit about Http Servlet. In this article, I will discuss Http Servlet in detail.</p>
+<p>Unlike Generic Servlet, the HTTP Servlet doesn’t override the service() method. Instead it overrides the doGet() method or doPost() method or both. The doGet() method is used for getting the information from server while the doPost() method is used for sending information to the server.</p>
+<p>In Http Servlet there is no need to override the service() method because this method dispatches the Http Requests to the correct method handler, for example if it receives HTTP GET Request it dispatches the request to the doGet() method.</p>
+<h2>How Http Servlet works?</h2>
+<p>As you can see in the diagram below that client (user&#8217;s browser) make requests. These requests can be of any type, for example &#8211; Get Request, Post Request, Head Request etc. Server dispatches these requests to the servlet&#8217;s service() method, this method dispatches these requests to the correct handler for example if it receives Get requests it dispatches it to the doGet() method.<br />
+<img class="aligncenter size-full wp-image-6406" src="../../../wp-content/uploads/2013/05/Http_Servlet.jpg" alt="Http Servlet" width="500" height="300" srcset="https://beginnersbook.com/wp-content/uploads/2013/05/Http_Servlet.jpg 500w, https://beginnersbook.com/wp-content/uploads/2013/05/Http_Servlet-300x180.jpg 300w" sizes="(max-width: 500px) 100vw, 500px" /></p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<h2>Hierarchy of Http Servlet</h2>
+<pre>java.lang.Object
+	|_extended byjavax.servlet.GenericServlet
+         	 |_extended byjavax.servlet.http.HttpServlet</pre>
+<p>I have already discussed in the <a href="../../../2014/04/genericservlet-class/index.html">Generic Servlet article</a> that you should always use HttpServlet instead of the GenericServlet. HttpServlet is easier to work with, and has more methods to work with than GenericServlet.</p>
+<h2>Http Servlet example</h2>
+<p>I am using Eclipse IDE for this example. Create New “Dynamic Web Project” from the Eclipse file menu.</p>
+<blockquote><p>I have explained all the steps for creating Servlet in Eclipse IDE, however if you are unfamiliar with Eclipse and don&#8217;t have it installed on your system then refer this guide: <a href="../../../2017/07/how-to-create-and-run-servlet-in-eclipse-ide/index.html">How to Install Eclipse, configure tomcat and run your First Servlet Application using Eclipse</a>.</p></blockquote>
+<p>Project structure (or you can hierarchy) would look like this, once you are done creating all the following files in IDE.<br />
+<img class="aligncenter size-full wp-image-6412" src="../../../wp-content/uploads/2014/04/Generic_Servlet_Project_Structure.jpg" alt="Http Servlet Project Structure" width="650" height="554" srcset="https://beginnersbook.com/wp-content/uploads/2014/04/Generic_Servlet_Project_Structure.jpg 650w, https://beginnersbook.com/wp-content/uploads/2014/04/Generic_Servlet_Project_Structure-300x256.jpg 300w" sizes="(max-width: 650px) 100vw, 650px" /></p>
+<p><strong>index.html</strong><br />
+We are creating an html file that would call the servlet once we click on the link on web page. Create this file in WebContent folder. The path of the file should look like this: WebContent/index.html</p>
+<pre>index&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Http Servlet Demo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;a href="welcome"&gt;Click to call Servlet&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p><strong>ExampleHttpServlet.java</strong><br />
+Now, we are creating a Http Servlet by extending HttpServlet class. Right click on the src folder and create a new class file, name the file as ExampleHttpServlet. The file path should look like this: Java Resources/src/default package/ExampleHttpServlet.java</p>
+<pre>import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+// Creating Http Servlet by Extending HttpServlet class
+public class ExampleHttpServlet extends HttpServlet 
+{    
+    private String mymsg;
+    public void init() throws ServletException 
+    {      
+       mymsg = "Http Servlet Demo";   
+    }
+    public void doGet(HttpServletRequest request, 
+        HttpServletResponse response) throws ServletException, 
+        IOException 
+    {            
+        // Setting up the content type of web page      
+        response.setContentType("text/html");
+        // Writing the message on the web page      
+        PrintWriter out = response.getWriter();      
+        out.println("&lt;h1&gt;" + mymsg + "&lt;/h1&gt;");      
+        out.println("&lt;p&gt;" + "Hello Friends!" + "&lt;/p&gt;");   
+    }
+    public void destroy() 
+    {      
+       // Leaving empty. Use this if you want to perform  
+       //something at the end of Servlet life cycle.   
+    }
+}</pre>
+<p><strong>web.xml</strong><br />
+This file can be found at this path WebContent/WEB-INF/web.xml. In this file we will map the Servlet with the specific URL. Since we are calling welcome page upon clicking the link on index.html page so we are mapping the welcome page to the Servlet class we created above.</p>
+<pre>&lt;web-app&gt;
+&lt;display-name&gt;BeginnersBookServlet&lt;/display-name&gt;
+&lt;welcome-file-list&gt;
+&lt;welcome-file&gt;index.html&lt;/welcome-file&gt;
+&lt;welcome-file&gt;index.htm&lt;/welcome-file&gt;
+&lt;welcome-file&gt;index.jsp&lt;/welcome-file&gt;
+&lt;welcome-file&gt;default.html&lt;/welcome-file&gt;
+&lt;welcome-file&gt;default.htm&lt;/welcome-file&gt;
+&lt;welcome-file&gt;default.jsp&lt;/welcome-file&gt;
+&lt;/welcome-file-list&gt;
+
+&lt;servlet&gt;
+&lt;servlet-name&gt;MyHttpServlet&lt;/servlet-name&gt;
+&lt;servlet-class&gt;ExampleHttpServlet&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+
+&lt;servlet-mapping&gt;
+&lt;servlet-name&gt;MyHttpServlet&lt;/servlet-name&gt;
+&lt;url-pattern&gt;/welcome&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+
+&lt;/web-app&gt;
+</pre>
+<p><strong>Run the project:</strong><br />
+Right click on the index.html, run on server.</p>
+<p><strong>Output:</strong><br />
+<img class="aligncenter size-large wp-image-6422" src="../../../wp-content/uploads/2013/05/Http_Servlet_Output1-1024x159.jpg" alt="Http Servlet Output1" width="1024" height="159" srcset="https://beginnersbook.com/wp-content/uploads/2013/05/Http_Servlet_Output1-1024x159.jpg 1024w, https://beginnersbook.com/wp-content/uploads/2013/05/Http_Servlet_Output1-300x47.jpg 300w, https://beginnersbook.com/wp-content/uploads/2013/05/Http_Servlet_Output1-768x119.jpg 768w, https://beginnersbook.com/wp-content/uploads/2013/05/Http_Servlet_Output1.jpg 1496w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>Upon clicking the link you would get this screen:<br />
+<img class="aligncenter size-large wp-image-6423" src="../../../wp-content/uploads/2013/05/Http_Servlet_Output2-1024x226.jpg" alt="Http Servlet Output2" width="1024" height="226" srcset="https://beginnersbook.com/wp-content/uploads/2013/05/Http_Servlet_Output2-1024x226.jpg 1024w, https://beginnersbook.com/wp-content/uploads/2013/05/Http_Servlet_Output2-300x66.jpg 300w, https://beginnersbook.com/wp-content/uploads/2013/05/Http_Servlet_Output2-768x169.jpg 768w, https://beginnersbook.com/wp-content/uploads/2013/05/Http_Servlet_Output2.jpg 1380w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<h2>Methods of HttpServlet class</h2>
+<p>1. <strong>protected void doGet(HttpServletRequest req, HttpServletResponse resp)</strong>: This method is called by servlet service method to handle the HTTP GET request from client. When overriding this method, read the request data, write the response headers, get the response&#8217;s writer or output stream object, and finally, write the response data.</p>
+<p>2. <strong>protected long getLastModified(HttpServletRequest req)</strong>: Returns a long integer specifying the time the HttpServletRequest object was last modified, in milliseconds since midnight, January 1, 1970 GMT, or -1 if the time is not known</p>
+<p>3. <strong>protected void doHead(HttpServletRequest req, HttpServletResponse resp)</strong>: This method is called by servlet service method to handle the HTTP HEAD request from client. The client sends a HEAD request when it wants to see only the headers of a response, such as Content-Type or Content-Length</p>
+<p>4. <strong>protected void doPost(HttpServletRequest req, HttpServletResponse resp)</strong>: This method is called by servlet service method to handle the POST request from client. The HTTP POST method allows the client to send data of unlimited length to the Web server a single time and is useful when posting information to the server. Unlike, doGet where we get information from the sever this method is used when we are transferring information from client to the server.</p>
+<p>5. <strong>protected void doPut(HttpServletRequest req, HttpServletResponse resp)</strong>: This method is called by servlet service method to handle the PUT request from client. This method is similar to doPost method but unlike doPost method where we send information to the server, this method sends file to the server, this is similar to the FTP operation from client to server.</p>
+<p>6. <strong>protected void doDelete(HttpServletRequest req, HttpServletResponse resp)</strong>: Called by servlet service() method to handle the DELETE request from client that allows a client to delete a document, webpage or information from the server.</p>
+<p>7. <strong>protected void doOptions(HttpServletRequest req, HttpServletResponse resp)</strong>: Called by the service method to allow a servlet to handle a OPTIONS request. The OPTIONS request determines which HTTP methods the server supports and returns an appropriate header.</p>
+<p>8. <strong>protected void doTrace(HttpServletRequest req, HttpServletResponse resp)</strong>: This method is called by service() method for handling TRACE request. Used for debugging purposes.</p>
+<p>9. <strong>protected void service(HttpServletRequest req, HttpServletResponse resp)</strong>: There is no need to override this method, this method receives the HTTP request from client and forwards them to the corresponding doXXX methods such as doGet(), doPost(), doHEAD() etc.</p>
+<p>10. <strong>public void service(ServletRequest req, ServletResponse res)</strong>: Forwards client request to the protected service method. There&#8217;s no need to override this method as well.</p>
+<p><strong>Reference:</strong> <a href="http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.html" target="_blank" rel="noopener">Http Servlet Official Documentation</a></p>
+<div class="bb-nav"><a class="pretut" href="../../../2014/04/genericservlet-class/index.html">❮ Previous</a><a class="nexttut" href="../../../2017/07/how-to-create-and-run-servlet-in-eclipse-ide/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2656' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="5879c08e75" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="206"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-37" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Servlet Tutorial</h4>
+			<div class="textwidget"><ul>
+<li><a href="../servlet-tutorial/index.html">Servlet Introduction</a></li>
+<li><a href="../servlet-api/index.html">Servlet API</a></li>
+<li><a href="../../../2014/04/servlet-interface/index.html">Servlet Interface</a></li>
+<li><a href="../../../2014/04/genericservlet-class/index.html">Generic Servlet</a></li>
+<li><a href="index.html">HttpServlet</a></li>
+<li><a href="../../../2017/07/how-to-create-and-run-servlet-in-eclipse-ide/index.html">Servlet in Eclipse</a></li>
+<li><a href="../servlet-life-cycle/index.html">Servlet Life cycle</a></li>
+<li><a href="../working-of-servlets/index.html">Working of Servlet</a></li>
+<li><a href="../../../2014/04/welcome-file-list-in-web-xml/index.html">Welcome-file-list</a></li>
+<li><a href="../../../2017/07/load-on-startup-tag-in-web-xml-file-with-example/index.html">load-on-startup tag</a></li>
+<li><a href="../servlet-request-interface/index.html">ServletRequest</a></li>
+<li><a href="../../../2017/07/requestdispatcher-methods-with-examples-in-servlet/index.html">RequestDispatcher</a></li>
+<li><a href="../../../2017/07/servletconfig-interface-with-example/index.html">ServletConfig</a></li>
+<li><a href="../servlet-context/index.html">ServletContext</a></li>
+<li><a href="../servlet-response/index.html">ServletResponse</a></li>
+<li><a href="../http-session/index.html">HttpSession</a></li>
+<li><a href="../servlet-cookies/index.html">Cookies</a></li>
+<li><a href="../servlet-interview-questions/index.html">Servlet Interview Q</a></li>
+</ul>
+</div>
+		</div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/05/http-servlet/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:53:21 GMT -->
+</html>

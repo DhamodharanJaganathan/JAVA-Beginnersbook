@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/04/difference-between-throw-and-throws-in-java/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:22:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Difference between throw and throws in java</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="In this guide, we will discuss the difference between throw and throws keywords. Before going though the difference, refer my previous tutorials about throw and throws. Throw vs Throws in java 1. Throws clause is used to declare an exception, which means it works similar to the try-catch block. On the other hand"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Difference between throw and throws in java" />
+<meta property="og:description" content="In this guide, we will discuss the difference between throw and throws keywords. Before going though the difference, refer my previous tutorials about throw and throws. Throw vs Throws in java 1. Throws clause is used to declare an exception, which means it works similar to the try-catch block. On the other hand" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="Exception Handling" />
+<meta property="article:published_time" content="2013-04-10T15:53:21+00:00" />
+<meta property="article:modified_time" content="2017-09-06T16:45:36+00:00" />
+<meta property="og:updated_time" content="2017-09-06T16:45:36+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="In this guide, we will discuss the difference between throw and throws keywords. Before going though the difference, refer my previous tutorials about throw and throws. Throw vs Throws in java 1. Throws clause is used to declare an exception, which means it works similar to the try-catch block. On the other hand" />
+<meta name="twitter:title" content="Difference between throw and throws in java" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Difference between throw and throws in java Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index1053.html?p=1994' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed8c2e.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F04%2Fdifference-between-throw-and-throws-in-java%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedc42d?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F04%2Fdifference-between-throw-and-throws-in-java%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-1994 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-1994 post type-post status-publish format-standard category-exception-handling entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Difference between throw and throws in java</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/technology/java-guide/exception-handling/index.html" rel="category tag">Exception Handling</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>In this guide, we will discuss the difference between throw and throws keywords. Before going though the difference, refer my previous tutorials about <a href="../throw-in-java/index.html">throw</a> and <a href="../java-throws/index.html">throws</a>.</p>
+<h2>Throw vs Throws in java</h2>
+<p>1. <strong>Throws clause</strong> is used to declare an exception, which means it works similar to the try-catch block. On the other hand <strong>throw</strong> keyword is used to throw an exception explicitly.</p>
+<p>2. If we see syntax wise than <strong>throw</strong> is followed by an instance of Exception class and <strong>throws</strong> is followed by exception class names.<br />
+For example:</p>
+<pre>throw new ArithmeticException("Arithmetic Exception");</pre>
+<p>and</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>throws ArithmeticException;</pre>
+<p>3. Throw keyword is used in the method body to throw an exception, while throws is used in method signature to declare the exceptions that can occur in the statements present in the method.</p>
+<p>For example:<br />
+<strong>Throw:</strong></p>
+<pre>...
+void myMethod() {
+   try {
+      //throwing arithmetic exception using throw
+      throw new ArithmeticException("Something went wrong!!");
+   } 
+   catch (Exception exp) {
+      System.out.println("Error: "+exp.getMessage());
+   }
+}
+...</pre>
+<p><strong>Throws:</strong></p>
+<pre>...
+//Declaring arithmetic exception using throws
+void sample() throws ArithmeticException{
+   //Statements
+}
+...
+</pre>
+<p>4. You can throw one exception at a time but you can handle multiple exceptions by declaring them using throws keyword.<br />
+For example:<br />
+<strong>Throw:</strong></p>
+<pre>void myMethod() {
+   //Throwing single exception using throw
+   throw new ArithmeticException("An integer should not be divided by zero!!");
+}
+..
+</pre>
+<p><strong>Throws:</strong></p>
+<pre>//Declaring multiple exceptions using throws
+void myMethod() throws ArithmeticException, NullPointerException{
+   //Statements where exception might occur
+}</pre>
+<p>These were the main <strong>differences between throw and throws in Java</strong>. Lets see complete examples of throw and throws keywords.</p>
+<h2>Throw Example</h2>
+<p>To understand this example you should know what is throw keyword and how it works, refer this guide: <a href="../throw-in-java/index.html">throw keyword in java</a>.</p>
+<pre>public class Example1{  
+   void checkAge(int age){  
+	if(age&lt;18)  
+	   throw new ArithmeticException("Not Eligible for voting");  
+	else  
+	   System.out.println("Eligible for voting");  
+   }  
+   public static void main(String args[]){  
+	Example1 obj = new Example1();
+	obj.checkAge(13);  
+	System.out.println("End Of Program");  
+   }  
+}</pre>
+<p>Output:</p>
+<pre>Exception in thread "main" java.lang.ArithmeticException: 
+Not Eligible for voting
+at Example1.checkAge(Example1.java:4)
+at Example1.main(Example1.java:10)
+</pre>
+<h2>Throws Example</h2>
+<p>To understand this example you should know what is throws clause and how it is used in method declaration for exception handling, refer this guide: <a href="../java-throws/index.html">throws in java</a>.</p>
+<pre>public class Example1{  
+   int division(int a, int b) throws ArithmeticException{  
+	int t = a/b;
+	return t;
+   }  
+   public static void main(String args[]){  
+	Example1 obj = new Example1();
+	try{
+	   System.out.println(obj.division(15,0));  
+	}
+	catch(ArithmeticException e){
+	   System.out.println("You shouldn't divide number by zero");
+	}
+   }  
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>You shouldn't divide number by zero</pre>
+<div class="bb-nav"><a class="pretut" href="../java-throws/index.html">❮ Previous</a><a class="nexttut" href="../user-defined-exception-in-java/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-957">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8dc3e391268994151d5dfccd2a0f5b61?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8dc3e391268994151d5dfccd2a0f5b61?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">prahalad</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-01-12T07:06:56+00:00" itemprop="datePublished"><a href="index.html#comment-957" class="comment-time-link" itemprop="url">January 12, 2014 at 7:06 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>i m not understand the difference between throw and throws..plz  help me..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-957' onclick='return addComment.moveForm( "comment-957", "957", "respond", "1994" )' aria-label='Reply to prahalad'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-2618">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-06T15:51:15+00:00" itemprop="datePublished"><a href="index.html#comment-2618" class="comment-time-link" itemprop="url">April 6, 2014 at 3:51 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Prahalad, Could you please let me know in which part you faced difficulties to understand? Try to go through the separate articles of throw keyword and throws clause and then go through the differences, you will be able to understand better then. Thanks!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2618' onclick='return addComment.moveForm( "comment-2618", "2618", "respond", "1994" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-22678">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bd1a4a4fee4265542dcc8a101b010071?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bd1a4a4fee4265542dcc8a101b010071?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Hemanth Kumar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-02-05T12:42:02+00:00" itemprop="datePublished"><a href="index.html#comment-22678" class="comment-time-link" itemprop="url">February 5, 2015 at 12:42 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>By using Throw keyword in java you cannot throw more than one exception but using throws you can declare multiple exceptions.<br />
+I hope this solves your confusion.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-22678' onclick='return addComment.moveForm( "comment-22678", "22678", "respond", "1994" )' aria-label='Reply to Hemanth Kumar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1112">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/00e173ddf6213ca7a59ef44d3283889b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/00e173ddf6213ca7a59ef44d3283889b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Jagadeesh Verri</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-01-22T02:16:13+00:00" itemprop="datePublished"><a href="index.html#comment-1112" class="comment-time-link" itemprop="url">January 22, 2014 at 2:16 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>You should have explained the flow of execution when any program is given as a supporting  example, that would make things easier and comfortable</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-1112' onclick='return addComment.moveForm( "comment-1112", "1112", "respond", "1994" )' aria-label='Reply to Jagadeesh Verri'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-1356">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/82f5b37ca24da8c9890b8fa96819ebb4?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/82f5b37ca24da8c9890b8fa96819ebb4?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">fazeela</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-02-08T11:06:30+00:00" itemprop="datePublished"><a href="index.html#comment-1356" class="comment-time-link" itemprop="url">February 8, 2014 at 11:06 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>perfect explanation<br />
+just what i was looking for<br />
+Thank you</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-1356' onclick='return addComment.moveForm( "comment-1356", "1356", "respond", "1994" )' aria-label='Reply to fazeela'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2897">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/95a365515a3c67aea270c13b63ad3b8d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/95a365515a3c67aea270c13b63ad3b8d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">chandan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-16T16:55:33+00:00" itemprop="datePublished"><a href="index.html#comment-2897" class="comment-time-link" itemprop="url">April 16, 2014 at 4:55 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Sir, If we have only one Exception then which one better option to use (throw or throws)&#8230;&#8230;.?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2897' onclick='return addComment.moveForm( "comment-2897", "2897", "respond", "1994" )' aria-label='Reply to chandan'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-3193">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8e9f46be4990e6651e3be795869426e4?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8e9f46be4990e6651e3be795869426e4?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Jamil</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-28T05:52:24+00:00" itemprop="datePublished"><a href="index.html#comment-3193" class="comment-time-link" itemprop="url">April 28, 2014 at 5:52 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Single exception = Throw<br />
+Multiple Exceptions = Throws</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3193' onclick='return addComment.moveForm( "comment-3193", "3193", "respond", "1994" )' aria-label='Reply to Jamil'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-6077">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-11T04:03:12+00:00" itemprop="datePublished"><a href="index.html#comment-6077" class="comment-time-link" itemprop="url">August 11, 2014 at 4:03 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Actually the usage of throw and throws is completely different. It depends whether you are throwing an exception or handling it. To throw an exception we use throw keyword while to handle (catch) an exception we use throws clause.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6077' onclick='return addComment.moveForm( "comment-6077", "6077", "respond", "1994" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-32737">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2fb23254f8b6e31939ecddd45d1d86e6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2fb23254f8b6e31939ecddd45d1d86e6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">gajanan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-17T07:58:27+00:00" itemprop="datePublished"><a href="index.html#comment-32737" class="comment-time-link" itemprop="url">August 17, 2015 at 7:58 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Give with example how to handle exception with throws keyword</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-32737' onclick='return addComment.moveForm( "comment-32737", "32737", "respond", "1994" )' aria-label='Reply to gajanan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-3" id="comment-64496">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/310ba95cff40215e09cf7bbfaac29172?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/310ba95cff40215e09cf7bbfaac29172?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nurseyit</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-12-15T02:16:31+00:00" itemprop="datePublished"><a href="index.html#comment-64496" class="comment-time-link" itemprop="url">December 15, 2016 at 2:16 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>yes you are right!!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-64496' onclick='return addComment.moveForm( "comment-64496", "64496", "respond", "1994" )' aria-label='Reply to Nurseyit'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-22447">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/47fec921f3419aec74037d8e5444e0d9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/47fec921f3419aec74037d8e5444e0d9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Kartik Sagar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-30T16:29:18+00:00" itemprop="datePublished"><a href="index.html#comment-22447" class="comment-time-link" itemprop="url">January 30, 2015 at 4:29 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Actually Throws keyword is used to throw the checked exceptions which a programmer doesn&#8217;t want to handle it so a programmer throws these exception so that compiler did not give an error but throw keyword is used to throw an built-in-exception or user defined exception explicitly so both concepts are different so go through these concepts separately and then read these differences then you will did not get any confusion.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-22447' onclick='return addComment.moveForm( "comment-22447", "22447", "respond", "1994" )' aria-label='Reply to Kartik Sagar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-52287">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7022a004c93f23f0fd695845af56229d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7022a004c93f23f0fd695845af56229d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sanjay</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-09T06:07:55+00:00" itemprop="datePublished"><a href="index.html#comment-52287" class="comment-time-link" itemprop="url">March 9, 2016 at 6:07 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>throws is best for both single and multiple exceptions.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52287' onclick='return addComment.moveForm( "comment-52287", "52287", "respond", "1994" )' aria-label='Reply to Sanjay'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-3010">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/44b0a3edd4c8c23f72735ffe296911db?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/44b0a3edd4c8c23f72735ffe296911db?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mayur</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-21T04:51:03+00:00" itemprop="datePublished"><a href="index.html#comment-3010" class="comment-time-link" itemprop="url">April 21, 2014 at 4:51 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank You for the useful info .</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3010' onclick='return addComment.moveForm( "comment-3010", "3010", "respond", "1994" )' aria-label='Reply to Mayur'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3437">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/15a67e793322091524fe8009e275a8cc?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/15a67e793322091524fe8009e275a8cc?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">phally</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-05-07T06:34:04+00:00" itemprop="datePublished"><a href="index.html#comment-3437" class="comment-time-link" itemprop="url">May 7, 2014 at 6:34 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>how many types of exception ?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3437' onclick='return addComment.moveForm( "comment-3437", "3437", "respond", "1994" )' aria-label='Reply to phally'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-2" id="comment-6074">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-11T03:52:05+00:00" itemprop="datePublished"><a href="index.html#comment-6074" class="comment-time-link" itemprop="url">August 11, 2014 at 3:52 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>There are two types of exception: checked and unchecked. You can refer this article: <a href="../java-checked-unchecked-exceptions-with-examples/index.html" rel="nofollow">https://beginnersbook.com/2013/04/java-checked-unchecked-exceptions-with-examples/</a></p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6074' onclick='return addComment.moveForm( "comment-6074", "6074", "respond", "1994" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-3627">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/24a3aec9fdd9d82d393b7d5af25eb564?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/24a3aec9fdd9d82d393b7d5af25eb564?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Dharam Jaswal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-05-15T08:43:41+00:00" itemprop="datePublished"><a href="index.html#comment-3627" class="comment-time-link" itemprop="url">May 15, 2014 at 8:43 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Realy very&#8230;..nice tutorial by you<br />
+Thanks</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3627' onclick='return addComment.moveForm( "comment-3627", "3627", "respond", "1994" )' aria-label='Reply to Dharam Jaswal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-5940">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/86648871fa6a587c4ad688c32f4677f1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/86648871fa6a587c4ad688c32f4677f1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sarika</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-06T09:10:28+00:00" itemprop="datePublished"><a href="index.html#comment-5940" class="comment-time-link" itemprop="url">August 6, 2014 at 9:10 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Iam not getting why we use new keyword with throw&#8230;&#8230;why there is need for this declaration?<br />
+can any1 explain me?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5940' onclick='return addComment.moveForm( "comment-5940", "5940", "respond", "1994" )' aria-label='Reply to sarika'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-6076">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-11T03:57:56+00:00" itemprop="datePublished"><a href="index.html#comment-6076" class="comment-time-link" itemprop="url">August 11, 2014 at 3:57 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Refer the reply to Priya&#8217;s comment.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6076' onclick='return addComment.moveForm( "comment-6076", "6076", "respond", "1994" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-6011">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/869254c295c1d422a7deb235c1675382?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/869254c295c1d422a7deb235c1675382?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">priya</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-08T12:58:29+00:00" itemprop="datePublished"><a href="index.html#comment-6011" class="comment-time-link" itemprop="url">August 8, 2014 at 12:58 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>why we declare -throw new exception? </p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6011' onclick='return addComment.moveForm( "comment-6011", "6011", "respond", "1994" )' aria-label='Reply to priya'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-6075">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-11T03:56:27+00:00" itemprop="datePublished"><a href="index.html#comment-6075" class="comment-time-link" itemprop="url">August 11, 2014 at 3:56 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>@Sarika and @Priya: the statement throw new Exception(&#8220;Something went wrong!!&#8221;); in the above program is throwing a custom exception with our own defined message &#8220;Something went wrong!!&#8221;. It is just an example to show that the code in try block is actually throwing an exception. Refer this article to learn more about throwing a custom exception: <a href="../user-defined-exception-in-java/index.html" rel="nofollow">https://beginnersbook.com/2013/04/user-defined-exception-in-java/</a></p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6075' onclick='return addComment.moveForm( "comment-6075", "6075", "respond", "1994" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-6053">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e368bbde3a1fd66c6bb3546a270bcd4a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e368bbde3a1fd66c6bb3546a270bcd4a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Amit</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-10T04:32:39+00:00" itemprop="datePublished"><a href="index.html#comment-6053" class="comment-time-link" itemprop="url">August 10, 2014 at 4:32 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>What happens if you don&#8217;t call wait and notify from synchronized block?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6053' onclick='return addComment.moveForm( "comment-6053", "6053", "respond", "1994" )' aria-label='Reply to Amit'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-6300">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/60ea8e56f22e8392ccd257d42039653c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/60ea8e56f22e8392ccd257d42039653c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">ashfaq</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-18T11:26:21+00:00" itemprop="datePublished"><a href="index.html#comment-6300" class="comment-time-link" itemprop="url">August 18, 2014 at 11:26 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>sir , if we can handle all the exception by mentioning THROWS key word in main() method, then whats the use of throw, or why should we go individually to all the methods.?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6300' onclick='return addComment.moveForm( "comment-6300", "6300", "respond", "1994" )' aria-label='Reply to ashfaq'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-6392">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/62d302d36d1e9a3002404679f84c2a28?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/62d302d36d1e9a3002404679f84c2a28?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">rupali</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-21T09:02:37+00:00" itemprop="datePublished"><a href="index.html#comment-6392" class="comment-time-link" itemprop="url">August 21, 2014 at 9:02 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>in  above comment  u  r  saying  &#8220;To throw an exception we use throw keyword while to handle (catch) an exception we use throws clause.&#8221;,but  can u explain me  1 doubt ,although throw is an explicit creator,but still we have to handle that exception or that method  using try catch where in that  method we write  throw new any &#8230;exception.</p>
+<p>and when we using throws clause that time also we have to handle that exception or method throwing an exception.</p>
+<p>that means in BOTH cases we  are  HANDLING the exception,is it right or not?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6392' onclick='return addComment.moveForm( "comment-6392", "6392", "respond", "1994" )' aria-label='Reply to rupali'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-6677">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c442428826ab3f29cf2ef4fdc9c6e6ce?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c442428826ab3f29cf2ef4fdc9c6e6ce?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">ramesh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-29T03:39:36+00:00" itemprop="datePublished"><a href="index.html#comment-6677" class="comment-time-link" itemprop="url">August 29, 2014 at 3:39 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>how can we handle the exceptions without using catch,throw, and throws clause.<br />
+I faced this question in one interview. kindly reply me&#8230;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6677' onclick='return addComment.moveForm( "comment-6677", "6677", "respond", "1994" )' aria-label='Reply to ramesh'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-14970">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b56ade24d409585b72bee6b32658b2ee?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b56ade24d409585b72bee6b32658b2ee?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Vinodha g</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-12T04:59:19+00:00" itemprop="datePublished"><a href="index.html#comment-14970" class="comment-time-link" itemprop="url">November 12, 2014 at 4:59 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>@ramesh.. If u get the answer Please answer me to this question.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14970' onclick='return addComment.moveForm( "comment-14970", "14970", "respond", "1994" )' aria-label='Reply to Vinodha g'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-3" id="comment-29879">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/982f1c225387de206b87a5281c7c560a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/982f1c225387de206b87a5281c7c560a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">shalini Gupta</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-20T12:26:47+00:00" itemprop="datePublished"><a href="index.html#comment-29879" class="comment-time-link" itemprop="url">July 20, 2015 at 12:26 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>by using try and finally only, we can handle an exception without using catch throw and throws.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-29879' onclick='return addComment.moveForm( "comment-29879", "29879", "respond", "1994" )' aria-label='Reply to shalini Gupta'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-7726">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/88bcc0d657dd9a4d8fe7e8b3d25b8819?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/88bcc0d657dd9a4d8fe7e8b3d25b8819?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Deepa</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-09-26T14:40:30+00:00" itemprop="datePublished"><a href="index.html#comment-7726" class="comment-time-link" itemprop="url">September 26, 2014 at 2:40 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This is very useful. Good job on documenting these differences so well.! Thanks.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7726' onclick='return addComment.moveForm( "comment-7726", "7726", "respond", "1994" )' aria-label='Reply to Deepa'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-9712">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/03080e2df35749d2b3586e0256c46ee6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/03080e2df35749d2b3586e0256c46ee6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">chandrakanth.B</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-10-21T17:22:16+00:00" itemprop="datePublished"><a href="index.html#comment-9712" class="comment-time-link" itemprop="url">October 21, 2014 at 5:22 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>hi sir, can u send still more java interview questions so that we will easy to face the any interviews.thanq&#8230;&#8230;&#8230;&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-9712' onclick='return addComment.moveForm( "comment-9712", "9712", "respond", "1994" )' aria-label='Reply to chandrakanth.B'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-2" id="comment-10010">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-10-23T05:38:12+00:00" itemprop="datePublished"><a href="index.html#comment-10010" class="comment-time-link" itemprop="url">October 23, 2014 at 5:38 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello chandrakanth.B, Refer this article: <a href="../../05/java-interview-questions/index.html" rel="nofollow">https://beginnersbook.com/2013/05/java-interview-questions/</a></p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-10010' onclick='return addComment.moveForm( "comment-10010", "10010", "respond", "1994" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-10028">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7b04856d0019a7a19530ba0647a26818?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7b04856d0019a7a19530ba0647a26818?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">bindhu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-10-23T07:22:59+00:00" itemprop="datePublished"><a href="index.html#comment-10028" class="comment-time-link" itemprop="url">October 23, 2014 at 7:22 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>i understood the throw and throws difference. i want what is what and simple explanation.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-10028' onclick='return addComment.moveForm( "comment-10028", "10028", "respond", "1994" )' aria-label='Reply to bindhu'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-2" id="comment-16174">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-15T08:34:17+00:00" itemprop="datePublished"><a href="index.html#comment-16174" class="comment-time-link" itemprop="url">November 15, 2014 at 8:34 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I have provided the links of the detailed articles of throw and throws keyword at the beginning of this post. Please refer them and let me know if you have any questions.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-16174' onclick='return addComment.moveForm( "comment-16174", "16174", "respond", "1994" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-10274">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/dbe134c92d903f829350db439a8a28f3?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/dbe134c92d903f829350db439a8a28f3?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sindhuja</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-10-24T08:47:12+00:00" itemprop="datePublished"><a href="index.html#comment-10274" class="comment-time-link" itemprop="url">October 24, 2014 at 8:47 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>what is the difference between exception and error?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-10274' onclick='return addComment.moveForm( "comment-10274", "10274", "respond", "1994" )' aria-label='Reply to sindhuja'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-14969">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/67218f48aa2b001604e2ac2c40fc78f2?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/67218f48aa2b001604e2ac2c40fc78f2?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Vinodha g</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-12T04:56:46+00:00" itemprop="datePublished"><a href="index.html#comment-14969" class="comment-time-link" itemprop="url">November 12, 2014 at 4:56 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Error is a compile time error it may be syntax error or else.. But exception occurs during the execution time it cannot get identified by compiler.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14969' onclick='return addComment.moveForm( "comment-14969", "14969", "respond", "1994" )' aria-label='Reply to Vinodha g'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-19719">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/298992bfb9f6d773aa415de70e2804ae?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/298992bfb9f6d773aa415de70e2804ae?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">shradha patel</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-05T06:21:14+00:00" itemprop="datePublished"><a href="index.html#comment-19719" class="comment-time-link" itemprop="url">December 5, 2014 at 6:21 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Does throw use for checked or unchecked exceptions&#8230;&#8230;&#8230;????<br />
+Please let me know I am so confused.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19719' onclick='return addComment.moveForm( "comment-19719", "19719", "respond", "1994" )' aria-label='Reply to shradha patel'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-20105">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/561c3624ac3da239e2d72065b4c86573?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/561c3624ac3da239e2d72065b4c86573?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">hemavathi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-12T10:51:19+00:00" itemprop="datePublished"><a href="index.html#comment-20105" class="comment-time-link" itemprop="url">December 12, 2014 at 10:51 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>class A{<br />
+public void add()throws IOException<br />
+{<br />
+&#8230;&#8230;.<br />
+}<br />
+class B extends A<br />
+{<br />
+public void add()throws Exception<br />
+{<br />
+&#8230;&#8230;&#8230;&#8230;.<br />
+}<br />
+}<br />
+can we take like this?<br />
+please explain me if we take like this what happen I faced this question in one interview.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-20105' onclick='return addComment.moveForm( "comment-20105", "20105", "respond", "1994" )' aria-label='Reply to hemavathi'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-60246">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/78f4e3585b7130d73b2cfa87ff76d727?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/78f4e3585b7130d73b2cfa87ff76d727?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Prashant</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-07T17:47:20+00:00" itemprop="datePublished"><a href="index.html#comment-60246" class="comment-time-link" itemprop="url">September 7, 2016 at 5:47 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>@Hemavati, The program you written above is not possible because<br />
+in ur prgrm the  add() method is overrided right&#8230; Then overrided method should not change its declaration in any sub classes.. der Add() method id declared with the diff exception classes so it cannot possible&#8230;(throws different Exception ).</p>
+<p>But&#8230;<br />
+We can declare different Exception with method body&#8230; only when Superclass method is having super Exception class and subclass  has subclass of exception,,</p>
+<p>in your program Exception is super class and the IOexception is Sub class of Exception&#8230; hence Your program can rewritten like&#8230; </p>
+<p>class A{<br />
+public void add()throws Exception<br />
+{<br />
+…….<br />
+}<br />
+class B extends A<br />
+{<br />
+public void add()throws IOException<br />
+{<br />
+………….<br />
+}<br />
+}</p>
+<p>          Hope you got my msg&#8230;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-60246' onclick='return addComment.moveForm( "comment-60246", "60246", "respond", "1994" )' aria-label='Reply to Prashant'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-23679">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e91ec2777b8b8c45f93a143a96326d9d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e91ec2777b8b8c45f93a143a96326d9d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Arvind singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-02-28T18:53:38+00:00" itemprop="datePublished"><a href="index.html#comment-23679" class="comment-time-link" itemprop="url">February 28, 2015 at 6:53 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Is it possible to handle the exception without using try-catch block and throws?..i am so confused bz this question was asked by interviewer&#8230;.please help me.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-23679' onclick='return addComment.moveForm( "comment-23679", "23679", "respond", "1994" )' aria-label='Reply to Arvind singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-23680">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e91ec2777b8b8c45f93a143a96326d9d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e91ec2777b8b8c45f93a143a96326d9d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Arvind singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-02-28T18:58:34+00:00" itemprop="datePublished"><a href="index.html#comment-23680" class="comment-time-link" itemprop="url">February 28, 2015 at 6:58 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>One more difference between throws and throw?<br />
+Throw is associated with try-catch block whereas throws is declared with method declaration..<br />
+if there is any mistakes&#8230;please respond me..thanks</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-23680' onclick='return addComment.moveForm( "comment-23680", "23680", "respond", "1994" )' aria-label='Reply to Arvind singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-24016">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ee689b92450466d0d4bf48c256913ae3?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ee689b92450466d0d4bf48c256913ae3?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">dheer</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-07T20:13:49+00:00" itemprop="datePublished"><a href="index.html#comment-24016" class="comment-time-link" itemprop="url">March 7, 2015 at 8:13 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I have a confusion, which of these two (throw and throws) are used to trigger any exception.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24016' onclick='return addComment.moveForm( "comment-24016", "24016", "respond", "1994" )' aria-label='Reply to dheer'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-25139">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2fb4c337c4fc8726ba669cef8edd2765?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2fb4c337c4fc8726ba669cef8edd2765?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Durgesh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-04-01T08:53:45+00:00" itemprop="datePublished"><a href="index.html#comment-25139" class="comment-time-link" itemprop="url">April 1, 2015 at 8:53 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>when use to throw and throws ..?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-25139' onclick='return addComment.moveForm( "comment-25139", "25139", "respond", "1994" )' aria-label='Reply to Durgesh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-28554">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/03edf0152adf0c48438631291d4ecfe6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/03edf0152adf0c48438631291d4ecfe6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tarang</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-23T07:04:51+00:00" itemprop="datePublished"><a href="index.html#comment-28554" class="comment-time-link" itemprop="url">June 23, 2015 at 7:04 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>using throw one can handle custom exception</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-28554' onclick='return addComment.moveForm( "comment-28554", "28554", "respond", "1994" )' aria-label='Reply to Tarang'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-37926">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ea3d2403b7e7f5409116ba19db7eb2e7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ea3d2403b7e7f5409116ba19db7eb2e7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">rajesh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-07T18:06:36+00:00" itemprop="datePublished"><a href="index.html#comment-37926" class="comment-time-link" itemprop="url">October 7, 2015 at 6:06 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>if there is a catch block to handle the exceptions then what is the need of throws block</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-37926' onclick='return addComment.moveForm( "comment-37926", "37926", "respond", "1994" )' aria-label='Reply to rajesh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-51241">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/46cf0f7fcd9acc0c12d4a7557cd7ea11?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/46cf0f7fcd9acc0c12d4a7557cd7ea11?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nawal Sah</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-17T07:06:18+00:00" itemprop="datePublished"><a href="index.html#comment-51241" class="comment-time-link" itemprop="url">February 17, 2016 at 7:06 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I want to execute a few stmts (lets say stmt1,stmt2) which raise a checked exception(lets say BadException1). I want to execute stmt3,stmt4 no matter whether stmt1 and stmt2 fail or not. Also stmt3,stmt4 throws checked exception BadException2. Write a code block to demonstrate how you will ensure this.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51241' onclick='return addComment.moveForm( "comment-51241", "51241", "respond", "1994" )' aria-label='Reply to Nawal Sah'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-55249">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f1dda85e47c9efef9629a3d49d33c46f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f1dda85e47c9efef9629a3d49d33c46f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Shubham</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-16T02:36:02+00:00" itemprop="datePublished"><a href="index.html#comment-55249" class="comment-time-link" itemprop="url">May 16, 2016 at 2:36 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Is there any way to convert checked exception into unchecked ?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-55249' onclick='return addComment.moveForm( "comment-55249", "55249", "respond", "1994" )' aria-label='Reply to Shubham'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-59459">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b797aeae15700af6d7ed5536ae2aecf9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b797aeae15700af6d7ed5536ae2aecf9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Farhana</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-17T08:06:53+00:00" itemprop="datePublished"><a href="index.html#comment-59459" class="comment-time-link" itemprop="url">August 17, 2016 at 8:06 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>when writing IO programs it forces to handle IOException at that time best way is to use throws clause.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-59459' onclick='return addComment.moveForm( "comment-59459", "59459", "respond", "1994" )' aria-label='Reply to Farhana'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1994' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="dbeb77998d" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="4"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-17" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Exception Handling</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../java-exception-handling/index.html">Exception handling</a></li> 
+<li><a href="../try-catch-in-java/index.html">try-catch block</a></li>
+<li><a href="../../05/catch-multiple-exceptions/index.html">Multiple catch blocks</a></li>
+<li><a href="../nested-try-catch/index.html">nested try-catch</a></li> 
+<li><a href="../java-finally-block/index.html">finally block</a></li> 
+<li><a href="../../05/flow-in-try-catch-finally/index.html">Flow Control in try-catch-finally</a></li>
+<li><a href="../throw-in-java/index.html">throw keyword</a></li> 
+<li><a href="../java-throws/index.html">throws clause</a></li> 
+<li><a href="index.html">throw vs throws</a></li>  
+ <li><a href="../user-defined-exception-in-java/index.html">Custom Exception</a></li> 
+<li><a href="../java-checked-unchecked-exceptions-with-examples/index.html">Checked and Unchecked Exceptions</a></li> 
+<li><a href="../exception-handling-examples/index.html">Exception Examples</a></li> 
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+<li><a href="../../../java-tutorial-for-beginners-with-examples/index.html">Java Tutorial</a></li>
+<li><a href="../oops-concepts/index.html">OOPs Concepts</a></li>
+ 	<li><a href="../../12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/04/difference-between-throw-and-throws-in-java/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:22:16 GMT -->
+</html>

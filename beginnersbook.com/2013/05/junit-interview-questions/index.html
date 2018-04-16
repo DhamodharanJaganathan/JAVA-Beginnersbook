@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/05/junit-interview-questions/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:25:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JUnit (Java Unit Testing) interview questions</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="This is Part 2 of Q&amp;A. Read first part here - JUnit (Java Unit Testing) interview questions and answers - Part1. Question1: What is Junit? Answer: Java + unit testing = Junit Junit is open source testing framework developed for unit testing java code and is now the default framework for testing Java development."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="JUnit (Java Unit Testing) interview questions" />
+<meta property="og:description" content="This is Part 2 of Q&amp;A. Read first part here - JUnit (Java Unit Testing) interview questions and answers - Part1. Question1: What is Junit? Answer: Java + unit testing = Junit Junit is open source testing framework developed for unit testing java code and is now the default framework for testing Java development." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="Java Q&amp;A" />
+<meta property="article:published_time" content="2013-05-21T21:14:22+00:00" />
+<meta property="article:modified_time" content="2013-11-22T06:40:58+00:00" />
+<meta property="og:updated_time" content="2013-11-22T06:40:58+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="This is Part 2 of Q&amp;A. Read first part here - JUnit (Java Unit Testing) interview questions and answers - Part1. Question1: What is Junit? Answer: Java + unit testing = Junit Junit is open source testing framework developed for unit testing java code and is now the default framework for testing Java development." />
+<meta name="twitter:title" content="JUnit (Java Unit Testing) interview questions" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; JUnit (Java Unit Testing) interview questions Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexd80c.html?p=2699' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embedd29e.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fjunit-interview-questions%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedc27d?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fjunit-interview-questions%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2699 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2699 post type-post status-publish format-standard category-java-qa entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">JUnit (Java Unit Testing) interview questions</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/technology/java-guide/java-qa/index.html" rel="category tag">Java Q&amp;A</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>This is Part 2 of Q&amp;A. Read first part here &#8211; <a title="Part1 of Q&amp;A" href="../../10/junit-interview-questions-answers/index.html" target="_blank">JUnit (Java Unit Testing) interview questions and answers &#8211; Part1</a>.<br />
+<b>Question1: What is Junit?</b></p>
+<p><b>Answer:</b> Java + unit testing = Junit</p>
+<ol>
+<li>Junit is open source testing framework developed for unit testing java code and is now the default framework for testing Java development.</li>
+<li>It has been developed by Erich Gamma and Kent Beck.</li>
+<li>It is an application programming interface for developing test cases in java which is part of the XUnit Family.</li>
+<li>It helps the developer to write and execute repeatable automated tests.</li>
+<li><strong>Eclipse IDE</strong> comes with both Junit and it&#8217;s plug-in for working with Junit.</li>
+<li>Junit also has been ported to various other languages like PHP, Python, C++ etc.</li>
+</ol>
+<p><b>Question2:  Who should use Junit, developers or testers? </b></p>
+<p><b>Answer:</b> Used by developers to implement unit tests in Java.  Junit is designed for unit testing, which is really a coding process, not a testing process. But many testers or QA engineers are also required to use Junit for unit testing.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><b>Question3:  Why do you use Junit to test your code?</b></p>
+<p><b>Answer:</b> Junit provides a framework to achieve all the following-:</p>
+<ol>
+<li>Test early and often automated testing.</li>
+<li>Junit tests can be integrated with the build so regression testing can be done at unit level.</li>
+<li>Test Code reusage.</li>
+<li>Also when there is a transfer Junit tests act as a document for the unit tests.</li>
+</ol>
+<p><b>Question4:  How do you install Junit?</b></p>
+<p><b>Answer:</b> Let’s see the installation of Junit on windows platform:</p>
+<p>1. Download the latest version of Junit from <a href="http://download.sourceforge.net/junit/" target="_blank">http://download.sourceforge.net/junit/</a></p>
+<p>2. Uncompress the zip to a directory of your choice.</p>
+<p>3. Add JUnit to the classpath:</p>
+<pre>set CLASSPATH=%CLASSPATH%;%JUNIT_HOME%junit.jar</pre>
+<p>4. Test the installation by running the sample tests that come along with Junit located in the installation directory. Therefore, make sure that the JUnit installation directory is on your CLASSPATH. Then simply type:</p>
+<p>java org.junit.runner.JUnitCore org.junit.tests.AllTests</p>
+<p>All the tests should pass with an &#8220;OK&#8221; message. If the tests don&#8217;t pass, verify that junit.jar is in the CLASSPATH.</p>
+<p><b>Question5: What are unit tests?</b></p>
+<p><b>Answer:</b> A unit test is nothing more than the code wrapper around the application code that can be executed to view pass – fail results.</p>
+<p><b>Question6:  When are Unit Tests written in Development Cycle? </b></p>
+<p><b>Answer:</b> Tests are written before the code during development in order to help coders write the best code. Test-driven development is the ideal way to create a bug free code. When all tests pass, you know you are done! Whenever a test fails or a bug is reported, we must  first write the necessary unit test(s) to expose the bug(s), and then fix them. This makes it almost impossible for that particular bug to resurface later. <b></b></p>
+<p><b>Question7:  How to write a simple Junit test class? </b></p>
+<p><b>Answer:</b> To write a test case, follow these steps:</p>
+<ol>
+<li>Define a subclass of TestCase.</li>
+<li>Override the setUp() method to initialize object(s) under test.</li>
+<li>Optionally override the tearDown() method to release object(s) under test.</li>
+</ol>
+<p>Define one or more public testXYZ() methods that exercise the object(s) under test and assert expected results.</p>
+<p><b>Question8:  What Is Junit TestCase?</b></p>
+<p><b>Answer:</b> JUnit TestCase is the base class, junit.framework.TestCase, that allows you to create a test case. (Although, TestCase class is no longer supported in JUnit 4.4.)</p>
+<p>A test case defines the fixture to run multiple tests. To define a test case</p>
+<p>-Implement a subclass of TestCase</p>
+<p>-Define instance variables that store the state of the fixture</p>
+<p>-Initialize the fixture state by overriding setUp</p>
+<p>-Clean-up after a test by overriding tearDown</p>
+<p>Each test runs in its own fixture so there can be no side effects among test runs.</p>
+<p><b>Question9: What Is Junit TestSuite? </b></p>
+<p><b>Answer:</b> JUnit TestSuite is a container class under package junit.framework.TestSuite. It allows us to group multiple test cases into a collection and run them together. (JUnit 4.4 does not support TestSuite class now).</p>
+<p><b>Question10: What is Junit Test Fixture? </b></p>
+<p><b>Answer:</b> A test fixture is a fixed state of a set of objects used as a baseline for running tests. Their purpose is to ensure that there is a well known and fixed environment in which tests are run so that results are repeatable. Examples of fixtures:</p>
+<ul>
+<li>Loading a database with a specific, known set of data</li>
+<li>Copying a specific known set of files</li>
+<li>Preparation of input data and setup/creation of fake or mock objects</li>
+</ul>
+<p>If a group of tests shares the same fixtures, you should write a separate setup code to create the common test fixture. If a group of tests requires different test fixtures, you can write code inside the test method to create its own test fixture.</p>
+<p><b>Question11:  What happens if a Junit test method is declared as &#8220;private&#8221;? </b></p>
+<p><b>Answer:</b> If a Junit test method is declared as &#8220;private&#8221;, the compilation will pass ok. But the execution will fail. This is because Junit requires that all test methods must be declared as &#8220;public&#8221;.</p>
+<p><b>Question12:  What happens If a Junit test method Is declared to return &#8220;String&#8221;? </b></p>
+<p><b>Answer:</b> If a Junit test method is declared to return &#8220;String&#8221;, the compilation will pass ok. But the execution will fail. This is because Junit requires that all test methods must be declared to return &#8220;void&#8221;.</p>
+<p><b>Question13:  Why not just use system.out.println () for Unit Testing?</b></p>
+<p><b>Answer:</b> Debugging the code using system.out.println() will lead to manual scanning of the whole output every time the program is run to ensure the code is doing the expected operations. Moreover, in the long run, it takes lesser time to code Junit methods and test them on our files.</p>
+<p><b>Question14:  The methods Get () and Set () should be tested for which conditions? </b></p>
+<p><b>Answer:</b> Unit tests performed on java code should be designed to target areas that might break. Since the set() and get() methods on simple data types are unlikely to break, there is no need to test them explicitly. On the other hand, set() and get() methods on complex data types are vulnerable to break. So they should be tested.</p>
+<p><b>Question15: For which conditions, the methods Get () and Set () can be left out for testing? </b></p>
+<p><b>Answer:</b> You should do this test to check if a property has already been set (in the constructor) at the point you wish to call getX(). In this case you must test the constructor, and not the getX() method. This kind of test is especially useful if you have multiple constructors.</p>
+<p><b>Question16: Do you need to write a test class for every class that needs to be tested?</b></p>
+<p><b>Answer:</b> No. We need not write an independent test class for every class that needs to be tested. If there is a small group of tests sharing a common test fixture, you may move those tests to a new test class. If you have two groups of tests that you think you&#8217;d like to execute separately from one another, it is wise to place them in separate test classes.</p>
+<p><b>Question17: How do you test a &#8220;protected&#8221; method?</b></p>
+<p><b>Answer:</b> A protected method can only be accessed within the same package where the class is defined. So, testing a protected method of a target class means we need to define your test class in the same package as the target class.</p>
+<p><b>Question18: How do you test a &#8220;private&#8221; method? </b></p>
+<p><b>Answer:</b> A private method only be accessed within the same class. So there is no way to test a &#8220;private&#8221; method of a target class from any test class. A way out is that you can perform unit testing manually or can change your method from &#8220;private&#8221; to &#8220;protected&#8221;.</p>
+<p><b>Question19: Do you need to write a main () method compulsorily in a Junit test case class?</b></p>
+<p><b>Answer:</b> No. But still developers write the main() method in a JUnit test case class to call a JUnit test runner to run all tests defined in this class like:</p>
+<pre>public static void main(String[] args) {
+   junit.textui.TestRunner.run(Calculator.class);
+}</pre>
+<p>Since you can call a JUnit runner to run a test case class as a system command, explicit main() for a Junit test case is not recommended. junit.textui.TestRunner.run() method takes the test class name as its argument. This method automatically finds all class methods whose name starts with test. Thus it will result in below mentioned findings:</p>
+<ol>
+<li>testCreateLogFile()</li>
+<li>testExists()</li>
+<li>testGetChildList()</li>
+</ol>
+<p>It will execute each of the 3 methods in unpredictable sequence (hence test case methods should be independent of each other) and give the result in console.</p>
+<p><b>Question20:  What happens if a test method throws an exception?</b></p>
+<p><b>Answer:</b> If you write a test method that throws an exception by itself or by the method being tested, the JUnit runner will declare that test as fail.</p>
+<p>The example test below is designed to let the test fail by throwing the uncaught IndexOutOfBoundsException exception:</p>
+<pre>import org.junit.*;
+import java.util.*;
+public class UnexpectedExceptionTest2 {
+// throw any unexpected exception
+@Test public void testGet() throws Exception {
+      ArrayList emptyList = new ArrayList();
+      Exception anyException = null; // don't catch any exception
+      Object o = emptyList.get(1); }
+}</pre>
+<p>If you run this test, it will fail:</p>
+<p>OUTPUT:<br />
+There was 1 failure:</p>
+<p><i> testGet(UnexpectedExceptionTest2)</i></p>
+<p><i>java.lang.IndexOutOfBoundsException: Index: 1, Size: 0</i></p>
+<p><i> at java.util.ArrayList.RangeCheck(ArrayList.java:547)</i></p>
+<p><i> at java.util.ArrayList.get(ArrayList.java:322)</i></p>
+<p><i> at UnexpectedExceptionTest2.testGet(UnexpectedExceptionTest2.ja</i></p>
+<p><i> at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</i></p>
+<p><i> at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAcce</i></p>
+<p><i> at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMe</i></p>
+<p><i> at java.lang.reflect.Method.invoke(Method.java:597)</i></p>
+<p><i> at org.junit.internal.runners.TestMethod.invoke(TestMethod.java</i></p>
+<p><i> at org.junit.internal.runners.MethodRoadie.runTestMethod(Method</i></p>
+<p><i> at org.junit.internal.runners.MethodRoadie$2.run(MethodRoadie.j</i></p>
+<p><i> at org.junit.internal.runners.MethodRoadie.runBeforesThenTestTh</i></p>
+<p><i> at org.junit.internal.runners.MethodRoadie.runTest(MethodRoadie</i></p>
+<p><i> at org.junit.internal.runners.MethodRoadie.run(MethodRoadie.jav</i></p>
+<p><i> at org.junit.internal.runners.JUnit4ClassRunner.invokeTestMetho</i></p>
+<p><i> at org.junit.internal.runners.JUnit4ClassRunner.runMethods(JUni</i></p>
+<p><i> at org.junit.internal.runners.JUnit4ClassRunner$1.run(JUnit4Cla</i></p>
+<p><i> at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassR</i></p>
+<p><i> at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoa</i></p>
+<p><i> at org.junit.internal.runners.JUnit4ClassRunner.run(JUnit4Class</i></p>
+<p><i> at org.junit.internal.runners.CompositeRunner.runChildren(Compo</i></p>
+<p><i> at org.junit.internal.runners.CompositeRunner.run(CompositeRunn</i></p>
+<p><i> at org.junit.runner.JUnitCore.run(JUnitCore.java:130)</i></p>
+<p><i> at org.junit.runner.JUnitCore.run(JUnitCore.java:109)</i></p>
+<p><i> at org.junit.runner.JUnitCore.run(JUnitCore.java:100)</i></p>
+<p><i> at org.junit.runner.JUnitCore.runMain(JUnitCore.java:81)</i></p>
+<p><i> at org.junit.runner.JUnitCore.main(JUnitCore.java:44)</i></p>
+<p><i>FAILURES!!!</i></p>
+<p><i>Tests run: 1,  Failures: 1</i></p>
+<p><b>Question21:  When objects are garbage collected after a test is executed?</b></p>
+<p><b>Answer:</b> By design, the tree of Test instances is built in one pass. Then the tests are executed in a second pass. The test runner holds strong references to all Test instances for the duration of the test execution. This means that for a very long test run with many Test instances, none of the tests may be garbage collected until the end of the entire test run. Therefore, if you allocate external or limited resources in a test, you are responsible for freeing those resources. Explicitly setting an object to null in the tearDown() method, for example, allows it to be garbage collected before the end of the entire test run.</p>
+<p><b>Question22: What is Java &#8220;assert&#8221; statement? </b></p>
+<p><b>Answer:</b> Java assertions allow the developer to put &#8220;assert&#8221; statements in Java source code to help unit testing and debugging.</p>
+<p>An &#8220;assert&#8221; statement has the following format:</p>
+<pre>assert boolean_expression : string_expression;</pre>
+<p>When this statement is executed:</p>
+<ul>
+<li>If boolean_expression evaluates to true, the statement will pass normally.</li>
+<li>If boolean_expression evaluates to false, the statement will fail with an &#8220;AssertionError&#8221; exception.</li>
+</ul>
+<p>Helper methods which help to determine if the methods being tested are performing correctly or not</p>
+<ul>
+<li><strong>assertEquals([String message], expected, actual)</strong> –any kind of object can be used for testing equality –native types and objects, also specify tolerance when checking for equality in case of floating point numbers.</li>
+<li><strong>assertNull([String message], java.lang.Objectobject)</strong> –asserts that a given object is null</li>
+<li><strong>assertNotNull([String message], java.lang.Objectobject)</strong> –asserts that a given object isnotnull</li>
+<li><strong>assertTrue([String message], Boolean condition)</strong> –Asserts that the given Boolean condition is true</li>
+<li><strong>assertFalse([String message], Boolean condition)</strong> –Asserts that the given Boolean condition is false</li>
+<li><strong>fail([String message])</strong> –Fails the test immediately with the optional message<b> </b></li>
+</ul>
+<p><b>Example-:</b></p>
+<pre> public void testSum() {
+   int num1 = 15;
+   int num2 = 50;
+   int total = 35;
+   int sum = 0;
+   sum = num1 + num2;
+   assertEquals(sum, total);
+ }</pre>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../../2015/03/java-collections-interview-questions-and-answers/index.html" rel="bookmark" title="Link to Java Collections Interview Questions and Answers">Java Collections Interview Questions and Answers</a></li><li><a href="../../10/junit-interview-questions-answers/index.html" rel="bookmark" title="Link to JUnit (Java Unit Testing) interview questions and answers">JUnit (Java Unit Testing) interview questions and answers</a></li><li><a href="../java-interview-questions/index.html" rel="bookmark" title="Link to 100+ Core Java Interview Questions">100+ Core Java Interview Questions</a></li><li><a href="../jdbc-interview-questions/index.html" rel="bookmark" title="Link to JDBC(Java Database Connectivity) interview questions">JDBC(Java Database Connectivity) interview questions</a></li><li><a href="../servlet-interview-questions/index.html" rel="bookmark" title="Link to Servlet interview questions and answers">Servlet interview questions and answers</a></li><li><a href="../../../2015/03/java-multithreading-interview-questions-and-answers/index.html" rel="bookmark" title="Link to Java Multithreading Interview Questions and  Answers">Java Multithreading Interview Questions and  Answers</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-2413">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/600de8fa49d028ddbeba19ba6534fb60?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/600de8fa49d028ddbeba19ba6534fb60?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Raju</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-03-31T14:49:01+00:00" itemprop="datePublished"><a href="index.html#comment-2413" class="comment-time-link" itemprop="url">March 31, 2014 at 2:49 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Excellent&#8230;&#8230;.</p>
+<p>Can u please post some programming or code based questions&#8230;&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2413' onclick='return addComment.moveForm( "comment-2413", "2413", "respond", "2699" )' aria-label='Reply to Raju'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2699' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="9f2d3692fb" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="207"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/05/junit-interview-questions/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:25:34 GMT -->
+</html>

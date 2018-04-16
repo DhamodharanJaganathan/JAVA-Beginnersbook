@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/05/static-constructor/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:20:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java static constructor - Is it really Possible to have them in Java?</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Have you heard of static constructor in Java? I guess yes but the fact is that they are not allowed in Java. A constructor can not be marked as static in Java.  Before I explain the reason let&#039;s have a look at the following piece of code: public class StaticTest { /* See below - I have marked the constructor as"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Java static constructor - Is it really Possible to have them in Java?" />
+<meta property="og:description" content="Have you heard of static constructor in Java? I guess yes but the fact is that they are not allowed in Java. A constructor can not be marked as static in Java.  Before I explain the reason let&#039;s have a look at the following piece of code: public class StaticTest { /* See below - I have marked the constructor as" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="constructor" />
+<meta property="article:tag" content="static" />
+<meta property="article:section" content="OOPs Concept" />
+<meta property="article:published_time" content="2013-05-11T19:48:00+00:00" />
+<meta property="article:modified_time" content="2017-08-18T15:07:58+00:00" />
+<meta property="og:updated_time" content="2017-08-18T15:07:58+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/StaticConstructorExample.png" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/StaticConstructorExample.png" />
+<meta property="og:image:width" content="507" />
+<meta property="og:image:height" content="458" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Have you heard of static constructor in Java? I guess yes but the fact is that they are not allowed in Java. A constructor can not be marked as static in Java.  Before I explain the reason let&#039;s have a look at the following piece of code: public class StaticTest { /* See below - I have marked the constructor as" />
+<meta name="twitter:title" content="Java static constructor - Is it really Possible to have them in Java?" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2013/05/StaticConstructorExample.png" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Java static constructor &#8211; Is it really Possible to have them in Java? Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index207c.html?p=2528' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embeddbd6.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fstatic-constructor%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed4c5c?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fstatic-constructor%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2528 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2528 post type-post status-publish format-standard has-post-thumbnail category-oops-concept tag-constructor tag-static entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Java static constructor &#8211; Is it really Possible to have them in Java?</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/oops-concept/index.html" rel="category tag">OOPs Concept</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Have you heard of <strong>static constructor in Java</strong>? I guess yes but the fact is that they are not allowed in Java. A constructor can not be marked as static in Java.  Before I explain the reason let&#8217;s have a look at the following piece of code:</p>
+<pre>public class StaticTest
+{
+     /* See below - I have marked the constructor as static */
+     public static StaticTest()
+     {
+         System.out.println("Static Constructor of the class");
+     }
+     public static void main(String args[])
+     {
+         /*Below: I'm trying to create an object of the class
+          *that should invoke the constructor
+          */
+         StaticTest obj = new StaticTest();
+     }
+}</pre>
+<p><strong>Output:</strong> You would get the following error message when you try to run the above java code.<br />
+<strong>&#8220;modifier static not allowed here&#8221;</strong></p>
+<h3>Why java doesn&#8217;t support static constructor?</h3>
+<p>It&#8217;s actually pretty simple to understand &#8211; Everything that is marked static belongs to the class only, for example <strong>static method cannot be inherited in the sub class because they belong to the class in which they have been declared. Refer <a title="Java – Static Class, Block, Methods and Variables" href="../../04/java-static-class-block-methods-variables/index.html" target="_blank" rel="noopener">static keyword</a>.</strong><br />
+Lets back to the point, since each constructor is being called by its subclass during creation of the object of its subclass, so if you mark constructor as static the subclass will not be able to access the constructor of its parent class because it is marked static and thus belong to the class only. This will violate the whole purpose of inheritance concept and that is reason why a constructor cannot be static.</p>
+<p>Let&#8217;s understand this with the help of an example &#8211;</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><img class="aligncenter size-full wp-image-3944" src="../../../wp-content/uploads/2013/05/StaticConstructorExample.png" alt="StaticConstructorExample" width="507" height="458" srcset="https://beginnersbook.com/wp-content/uploads/2013/05/StaticConstructorExample.png 507w, https://beginnersbook.com/wp-content/uploads/2013/05/StaticConstructorExample-300x271.png 300w" sizes="(max-width: 507px) 100vw, 507px" /></p>
+<pre>public class StaticDemo
+{
+     public StaticDemo()
+     {
+         /*Constructor of this class*/
+         System.out.println("StaticDemo");
+     }
+}
+public class StaticDemoChild extends StaticDemo
+{
+     public StaticDemoChild()
+     {
+          /*By default super() is hidden here */
+          System.out.println("StaticDemoChild");
+     }
+     public void display()
+     {
+          System.out.println("Just a method of child class");
+     }
+     public static void main(String args[])
+     {
+          StaticDemoChild obj = new StaticDemoChild();
+          obj.display();
+     }
+}</pre>
+<p><strong>Output:</strong><br />
+StaticDemo<br />
+StaticDemoChild<br />
+Just a method of child class</p>
+<p><strong>Did you notice? </strong>When we created the object of child class, it first invoked the constructor of parent class and then the constructor of it&#8217;s own class. It happened because the new keyword creates the object and then invokes the constructor for initialization, since every <strong>child class constructor by default has super()</strong> as first statement which calls it&#8217;s parent class&#8217;s constructor. The statement super() is used to call the parent class(base class) constructor.</p>
+<p>This is the reason why constructor cannot be static &#8211; Because if we make them static they cannot be called from child class thus object of child class cannot be created.</p>
+<blockquote><p>Another good point mentioned by Prashanth in the comment section: Constructor definition should not be static because constructor will be called each and every time when object is created. If you made constructor as static then the constructor will be called before object creation same like main method.</p></blockquote>
+<h3>Static Constructor Alternative &#8211; Static Blocks</h3>
+<p>Java has static blocks which can be treated as static constructor. Let&#8217;s consider the below program &#8211;</p>
+<p><img class="aligncenter size-full wp-image-3943" src="../../../wp-content/uploads/2013/05/Static-Block-Example.png" alt="Static-Block-Example" width="563" height="556" srcset="https://beginnersbook.com/wp-content/uploads/2013/05/Static-Block-Example.png 563w, https://beginnersbook.com/wp-content/uploads/2013/05/Static-Block-Example-300x296.png 300w, https://beginnersbook.com/wp-content/uploads/2013/05/Static-Block-Example-110x110.png 110w" sizes="(max-width: 563px) 100vw, 563px" /></p>
+<pre>public class StaticDemo{
+    static{
+        System.out.println("static block of parent class");
+    }
+}
+public class StaticDemoChild extends StaticDemo{
+    static{
+        System.out.println("static block of child class");
+    }
+    public void display()
+    {
+        System.out.println("Just a method of child class");
+    }
+    public static void main(String args[])
+    {
+        StaticDemoChild obj = new StaticDemoChild();
+        obj.display();
+    }
+}</pre>
+<p><strong>Output:</strong><br />
+static block of parent class<br />
+static block of child class<br />
+Just a method of child class</p>
+<p>In the above example we have used static blocks in both the classes which worked perfectly. We cannot use static constructor so it&#8217;s a good alternative if we want to perform a static task during object creation.</p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../03/inheritance-in-java/index.html" rel="bookmark" title="Link to Inheritance in Java Programming with examples">Inheritance in Java Programming with examples</a></li><li><a href="../../../2016/03/nested-or-inner-interfaces-in-java/index.html" rel="bookmark" title="Link to Nested or Inner interfaces in Java">Nested or Inner interfaces in Java</a></li><li><a href="../../12/multilevel-inheritance-in-java-with-example/index.html" rel="bookmark" title="Link to Multilevel inheritance in java with example">Multilevel inheritance in java with example</a></li><li><a href="../../04/oops-concepts/index.html" rel="bookmark" title="Link to OOPs concepts in Java">OOPs concepts in Java</a></li><li><a href="../../04/java-static-class-block-methods-variables/index.html" rel="bookmark" title="Link to Java &#8211; Static Class, Block, Methods and Variables">Java &#8211; Static Class, Block, Methods and Variables</a></li><li><a href="../../03/packages-in-java/index.html" rel="bookmark" title="Link to Packages in java and how to use them">Packages in java and how to use them</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-2205">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2c0866c43e83f9b19f8d4bc87b92eba2?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2c0866c43e83f9b19f8d4bc87b92eba2?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Pravat</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-03-24T07:26:50+00:00" itemprop="datePublished"><a href="index.html#comment-2205" class="comment-time-link" itemprop="url">March 24, 2014 at 7:26 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi,<br />
+Static method cannot be inherited in the sub class. Would you please give me one example.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2205' onclick='return addComment.moveForm( "comment-2205", "2205", "respond", "2528" )' aria-label='Reply to Pravat'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-2616">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-06T15:47:41+00:00" itemprop="datePublished"><a href="index.html#comment-2616" class="comment-time-link" itemprop="url">April 6, 2014 at 3:47 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Pravat, You can overload a static method but you can&#8217;t override a static method. Actually you can rewrite a static method in subclasses but this is not called a override because override should be related to polymorphism and dynamic binding. The static method belongs to the class so has nothing to do with those concepts. The rewrite of static method is more like a shadowing.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2616' onclick='return addComment.moveForm( "comment-2616", "2616", "respond", "2528" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-71802">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1129a6018756884c74f8355a8a004dbc?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1129a6018756884c74f8355a8a004dbc?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tushar Chaurasia</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-06-26T20:08:02+00:00" itemprop="datePublished"><a href="index.html#comment-71802" class="comment-time-link" itemprop="url">June 26, 2017 at 8:08 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>static member can be inherited but cannot be overridded by subclass.</p>
+<p>class Parent {</p>
+<p>	static int i = 10;</p>
+<p>	public static void method()<br />
+	{</p>
+<p>	System.out.println(i);</p>
+<p>	}<br />
+}</p>
+<p>class Child extends Parent {</p>
+<p>	public  void abc ()<br />
+	{</p>
+<p>		method(); // child class is inheriting static method </p>
+<p>	}</p>
+<p>	public static void main (String args[])<br />
+	{<br />
+		Modifier m = new Modifier();</p>
+<p>		m.abc();</p>
+<p>	}<br />
+}</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-71802' onclick='return addComment.moveForm( "comment-71802", "71802", "respond", "2528" )' aria-label='Reply to Tushar Chaurasia'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3987">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/04d737d3693a3658985237eb3f5135ff?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/04d737d3693a3658985237eb3f5135ff?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Siva</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-06-01T09:02:24+00:00" itemprop="datePublished"><a href="index.html#comment-3987" class="comment-time-link" itemprop="url">June 1, 2014 at 9:02 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi,</p>
+<p>You have mentioned as &#8220;It’s actually pretty simple to understand &#8211; static method cannot be inherited in the sub class. &#8221;  Shouldn&#8217;t it be &#8220;static constructor cannot be inherited in the subclass&#8221;. Please correct me if I am wrong.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3987' onclick='return addComment.moveForm( "comment-3987", "3987", "respond", "2528" )' aria-label='Reply to Siva'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-2" id="comment-16158">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-15T07:50:45+00:00" itemprop="datePublished"><a href="index.html#comment-16158" class="comment-time-link" itemprop="url">November 15, 2014 at 7:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>That is just an example to demonstrate the purpose of static keyword. I have edited the post to make it more clear. I hope its clear now. let me know I you have any other questions.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-16158' onclick='return addComment.moveForm( "comment-16158", "16158", "respond", "2528" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-7417">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b02e3a1f27c83418ab2f5c2a6e2479c1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b02e3a1f27c83418ab2f5c2a6e2479c1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sougato</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-09-17T19:01:34+00:00" itemprop="datePublished"><a href="index.html#comment-7417" class="comment-time-link" itemprop="url">September 17, 2014 at 7:01 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Very useful and abstract example .. thanks for this explanation</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7417' onclick='return addComment.moveForm( "comment-7417", "7417", "respond", "2528" )' aria-label='Reply to Sougato'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-8223">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/64e9b5ab8fdc32f2fa0ef49fec39e454?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/64e9b5ab8fdc32f2fa0ef49fec39e454?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">vaibhav sharma</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-10-10T05:12:13+00:00" itemprop="datePublished"><a href="index.html#comment-8223" class="comment-time-link" itemprop="url">October 10, 2014 at 5:12 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I was searching this concept on [Stackoverflow] and in-between i lied up here.Very good explanation.Can you tell me the use of Method hiding ?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-8223' onclick='return addComment.moveForm( "comment-8223", "8223", "respond", "2528" )' aria-label='Reply to vaibhav sharma'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-14814">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/15416094ec9155df9b8ac9cdfaeec78f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/15416094ec9155df9b8ac9cdfaeec78f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Avraham Hamu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-11T18:22:17+00:00" itemprop="datePublished"><a href="index.html#comment-14814" class="comment-time-link" itemprop="url">November 11, 2014 at 6:22 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>thanks a lot for this example i have been asked about it during an interview&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14814' onclick='return addComment.moveForm( "comment-14814", "14814", "respond", "2528" )' aria-label='Reply to Avraham Hamu'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-15029">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/15416094ec9155df9b8ac9cdfaeec78f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/15416094ec9155df9b8ac9cdfaeec78f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Avraham Hamu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-12T14:16:24+00:00" itemprop="datePublished"><a href="index.html#comment-15029" class="comment-time-link" itemprop="url">November 12, 2014 at 2:16 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I never saw a such thing in production code.<br />
+Does someone can tell me if it&#8217;s really useful?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-15029' onclick='return addComment.moveForm( "comment-15029", "15029", "respond", "2528" )' aria-label='Reply to Avraham Hamu'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-16156">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-15T07:48:23+00:00" itemprop="datePublished"><a href="index.html#comment-16156" class="comment-time-link" itemprop="url">November 15, 2014 at 7:48 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>You would never find it in the production code or anywhere else because static constructors are not allowed in java and this post is to discuss the reason of it. This is the most common question that is asked during interview so here we are discuss why something is not allowed in java.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-16156' onclick='return addComment.moveForm( "comment-16156", "16156", "respond", "2528" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-15715">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/0301ad7c53e1d3ee7cc4ed9080d7a3fd?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/0301ad7c53e1d3ee7cc4ed9080d7a3fd?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">deepak</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-14T12:21:56+00:00" itemprop="datePublished"><a href="index.html#comment-15715" class="comment-time-link" itemprop="url">November 14, 2014 at 12:21 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>this explanation is not right.<br />
+First constructors are not inherited at all does not matter static or non-static.<br />
+Second if we even go by your concept &amp; treat constructors as methods so the constructors have default(package-private) access specifier.It means it won&#8217;t be available in the child class.</p>
+<p>Constructors are not static coz they violate the basic meaning of static. Static means something which is the property of a class while constructors are something which are property of an object so the reason is &#8220;concept of static constructor is basic design violation&#8221;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-15715' onclick='return addComment.moveForm( "comment-15715", "15715", "respond", "2528" )' aria-label='Reply to deepak'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-16155">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-15T07:44:52+00:00" itemprop="datePublished"><a href="index.html#comment-16155" class="comment-time-link" itemprop="url">November 15, 2014 at 7:44 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Deepak,</p>
+<p>The points you mentioned are correct. However I did not mention anywhere in the article that constructors are inherited. I just pointed out that they are being invoked during object creation of sub class, that&#8217;s all. Also, constructors are not methods because they do not have a return type. I think you got confused because of an ambiguous statement mentioned in the post. I just added more details to the post to make it easy to understand. I hope its clear now.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-16155' onclick='return addComment.moveForm( "comment-16155", "16155", "respond", "2528" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-23102">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d0f53255944bfcd62d2a7507a422a5cb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d0f53255944bfcd62d2a7507a422a5cb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Arkya</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-02-15T01:50:45+00:00" itemprop="datePublished"><a href="index.html#comment-23102" class="comment-time-link" itemprop="url">February 15, 2015 at 1:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Chaitanya. I just wanted to know what exactly is the use of a static block?<br />
+Thanks in advance.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-23102' onclick='return addComment.moveForm( "comment-23102", "23102", "respond", "2528" )' aria-label='Reply to Arkya'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-52217">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/62407d95afc65f8d512b6c77ad4b1461?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/62407d95afc65f8d512b6c77ad4b1461?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">RAm</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-07T09:16:46+00:00" itemprop="datePublished"><a href="index.html#comment-52217" class="comment-time-link" itemprop="url">March 7, 2016 at 9:16 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Arkya,<br />
+If you want to make something happen before your object has created. Say you want to read a file and then decide which object you want to create. it happens in real time. In that case it is useful&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52217' onclick='return addComment.moveForm( "comment-52217", "52217", "respond", "2528" )' aria-label='Reply to RAm'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-23730">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8d44042d4f071ff4a00efc9eb7702c85?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8d44042d4f071ff4a00efc9eb7702c85?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">E.T.</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-01T23:21:14+00:00" itemprop="datePublished"><a href="index.html#comment-23730" class="comment-time-link" itemprop="url">March 1, 2015 at 11:21 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>You probably want to underline that static block is only called only before the first instance of the class is created.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-23730' onclick='return addComment.moveForm( "comment-23730", "23730", "respond", "2528" )' aria-label='Reply to E.T.'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-28061">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2a8994ba2735f5e5da8d4d4d1b2094ef?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2a8994ba2735f5e5da8d4d4d1b2094ef?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">goldbalaji</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-10T12:53:41+00:00" itemprop="datePublished"><a href="index.html#comment-28061" class="comment-time-link" itemprop="url">June 10, 2015 at 12:53 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Actually one can have static constructor by marking their class final</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-28061' onclick='return addComment.moveForm( "comment-28061", "28061", "respond", "2528" )' aria-label='Reply to goldbalaji'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-39616">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/92d44e82a4cb9f7277667789c9a6c462?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/92d44e82a4cb9f7277667789c9a6c462?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Manoj Pathak</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-22T04:59:45+00:00" itemprop="datePublished"><a href="index.html#comment-39616" class="comment-time-link" itemprop="url">October 22, 2015 at 4:59 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>TO add one more point that constructor is static create static method in class and create object of that class in that staic method ie<br />
+class myclass{<br />
+ myclass(){<br />
+sysout(&#8220;constructor of class&#8221;)<br />
+}<br />
+static myclass getObject{<br />
+return new myclass();<br />
+}<br />
+}<br />
+Think how we are able to access constructor from static method give</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-39616' onclick='return addComment.moveForm( "comment-39616", "39616", "respond", "2528" )' aria-label='Reply to Manoj Pathak'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-53346">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e2091a377f8818f4eb073fe764610848?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e2091a377f8818f4eb073fe764610848?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ihor</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-05T08:45:39+00:00" itemprop="datePublished"><a href="index.html#comment-53346" class="comment-time-link" itemprop="url">April 5, 2016 at 8:45 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>probably you have a mistake in comment to code<br />
+/*By default this() is hidden here */<br />
+here should be &#8220;super&#8221; not &#8220;this&#8221;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53346' onclick='return addComment.moveForm( "comment-53346", "53346", "respond", "2528" )' aria-label='Reply to Ihor'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-2" id="comment-73387">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-08-18T15:00:53+00:00" itemprop="datePublished"><a href="index.html#comment-73387" class="comment-time-link" itemprop="url">August 18, 2017 at 3:00 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks for pointing it out. I have corrected it.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-73387' onclick='return addComment.moveForm( "comment-73387", "73387", "respond", "2528" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-65063">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c345940dd9d89a6f5fe2c644056d216f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c345940dd9d89a6f5fe2c644056d216f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Abhilash</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-12-27T04:47:35+00:00" itemprop="datePublished"><a href="index.html#comment-65063" class="comment-time-link" itemprop="url">December 27, 2016 at 4:47 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>if cant mark constructor as static, why can we mark a method as a static and inherit in child class</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-65063' onclick='return addComment.moveForm( "comment-65063", "65063", "respond", "2528" )' aria-label='Reply to Abhilash'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-67795">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3b52cf5163b19f15dff928a77a71c456?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3b52cf5163b19f15dff928a77a71c456?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Prashanth</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-24T18:42:39+00:00" itemprop="datePublished"><a href="index.html#comment-67795" class="comment-time-link" itemprop="url">February 24, 2017 at 6:42 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Constructor definition should not be static because constructor will be called each and every time when object is created. If you made constructor as static then the constructor will be called before object creation same like main method.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-67795' onclick='return addComment.moveForm( "comment-67795", "67795", "respond", "2528" )' aria-label='Reply to Prashanth'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-73386">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-08-18T14:59:42+00:00" itemprop="datePublished"><a href="index.html#comment-73386" class="comment-time-link" itemprop="url">August 18, 2017 at 2:59 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Good point Prashanth.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-73386' onclick='return addComment.moveForm( "comment-73386", "73386", "respond", "2528" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2528' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="3551aada4b" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="111"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../../04/oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../../04/java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../association/index.html">Association</a></li>
+<li><a href="../../../2014/07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="../method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="../../../2014/01/method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="../../../2014/01/difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../../04/runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../../04/java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="../java-interface/index.html">Interface</a></li>
+ 	<li><a href="../abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../../04/java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../inner-class/index.html">Inner classes</a></li>
+<li><a href="../java-static-import/index.html">Static import</a></li>
+ 	<li><a href="index.html">Static constructor</a></li>
+ 	<li><a href="../java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/05/static-constructor/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:20:46 GMT -->
+</html>

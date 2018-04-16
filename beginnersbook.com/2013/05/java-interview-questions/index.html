@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/05/java-interview-questions/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:20:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>100+ Core Java Interview Questions</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Hi Friends, In this article, we have shared 100+ java interview questions for both beginners and experienced folks. Table of Contents Basic Questions OOPs interview Questions Exception handling interview Questions Java Multithreading interview Questions Serialization interview Questions String Interview Questions"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="100+ Core Java Interview Questions" />
+<meta property="og:description" content="Hi Friends, In this article, we have shared 100+ java interview questions for both beginners and experienced folks. Table of Contents Basic Questions OOPs interview Questions Exception handling interview Questions Java Multithreading interview Questions Serialization interview Questions String Interview Questions" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="Interview questions" />
+<meta property="article:tag" content="java" />
+<meta property="article:tag" content="questions" />
+<meta property="article:section" content="Java Q&amp;A" />
+<meta property="article:published_time" content="2013-05-30T20:36:20+00:00" />
+<meta property="article:modified_time" content="2014-08-02T10:06:24+00:00" />
+<meta property="og:updated_time" content="2014-08-02T10:06:24+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Hi Friends, In this article, we have shared 100+ java interview questions for both beginners and experienced folks. Table of Contents Basic Questions OOPs interview Questions Exception handling interview Questions Java Multithreading interview Questions Serialization interview Questions String Interview Questions" />
+<meta name="twitter:title" content="100+ Core Java Interview Questions" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; 100+ Core Java Interview Questions Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexe793.html?p=2803' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed4d6d.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fjava-interview-questions%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedd178?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fjava-interview-questions%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2803 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2803 post type-post status-publish format-standard category-java-qa tag-interview-questions tag-java tag-questions entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">100+ Core Java Interview Questions</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/technology/java-guide/java-qa/index.html" rel="category tag">Java Q&amp;A</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Hi Friends, In this article, we have shared 100+ <strong>java interview questions</strong> for both beginners and experienced folks.</p>
+<h4>Table of Contents</h4>
+<ol>
+<li><a href="#h1">Basic Questions</a></li>
+<li><a href="#h2">OOPs interview Questions</a></li>
+<li><a href="#h3">Exception handling interview Questions</a></li>
+<li><a href="#h4">Java Multithreading interview Questions</a></li>
+<li><a href="#h5">Serialization interview Questions</a></li>
+<li><a href="#h6">String Interview Questions</a></li>
+<li><a href="#h7">Java Collections interview Questions</a></li>
+<li><a href="#h8">Applet interview Questions</a></li>
+</ol>
+<h3 id="h1">Basic Questions</h3>
+<p><strong>Q) Is Java platform independent?</strong><br />
+Yes. Java is a platform independent language. We can write java code on one platform and run it on another platform. For e.g. we can write and compile the code on windows and can run it on Linux or any other supported platform. This is one of the main features of java.</p>
+<p><strong>Q) What all memory areas are allocated by JVM?</strong><br />
+Heap, Stack, Program Counter Register and Native Method Stack</p>
+<p><strong>Q) Java vs. C ++?</strong><br />
+The following features of java make it different from the C++:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<ul>
+<li>Simple</li>
+<li>Multi-threaded</li>
+<li>Distributed Application</li>
+<li>Robust</li>
+<li>Security</li>
+<li>Complexities are removed (Pointers, Operator overloading, <a href="../java-multiple-inheritance/index.html" target="_blank">Multiple inheritance</a>).</li>
+</ul>
+<p><strong>Q) What is javac ?</strong><br />
+It produces the java byte code from *.java file. It is the intermediate representation of your source code that contains instructions.</p>
+<p><strong>Q) What is class?</strong><br />
+Class is nothing but a template that describes the data and behavior associated with instances of that class</p>
+<p><strong>Q) What is the base class of all classes?</strong><br />
+<code>java.lang.Object</code></p>
+<p><strong>Q) Path and ClassPath</strong><br />
+Path specifies the location of .exe files while classpath is used for specifying the location of .class files.</p>
+<p><strong>Q) Different Data types in Java.</strong></p>
+<ul>
+<li>byte &#8211; 8 bit (are esp. useful when working with a stream of data from a network or a file).</li>
+<li>short &#8211; 16 bit</li>
+<li>char &#8211; 16 bit Unicode</li>
+<li>int &#8211; 32 bit (whole number)</li>
+<li>float &#8211; 32 bit (real number)</li>
+<li>long &#8211; 64 bit (Single precision)</li>
+<li>double &#8211; 64 bit (double precision)</li>
+</ul>
+<p><strong>Note: </strong>Any time you have an integer expression involving bytes, shorts, ints and literal numbers, the entire expression is promoted to int before the calculation is done.</p>
+<p><strong>Q) What is Unicode?</strong><br />
+Java uses Unicode to represent the characters. Unicode defines a fully international character set that can represent all of the characters found in human languages.</p>
+<p><strong>Q) What are Literals?</strong><br />
+A literal is a value that may be assigned to a primitive or string variable or passed as an argument to a method.</p>
+<p><strong>Q) Dynamic Initialization?</strong><br />
+Java allows variables to be initialized dynamically, using any expression valid at the time the variable is declared.</p>
+<p><strong>Q) What is Type casting in Java?</strong><br />
+To create a conversion between two incompatible types, we must use a cast. There are two types of casting in java: automatic casting (done automatically) and explicit casting (done by programmer).</p>
+<p><strong>Q) Arrays?</strong><br />
+An array is a group of fixed number of same type values. Read more about Arrays here.</p>
+<p><strong>Q) What is BREAK statement in java?</strong><br />
+It is also referred as terminator. In Java, the break statement can be used in following two cases:</p>
+<ul>
+<li>It terminates a statement sequence in a switch-case statement.</li>
+<li>It can be used to come out of a loop</li>
+</ul>
+<p><strong>Q) Why can&#8217;t I do myArray.length () ? Arrays are just objects, right?</strong><br />
+Yes, the specification says that arrays are object references just like classes are. You can even invoke the methods of Object such as toString () and hashCode () on an array. However, length is a data item of an array and not a method. So you have to use myArray.length.</p>
+<p><strong>Q) How can I put all my classes and resources into one file and run it?</strong><br />
+Use a JAR file. Put all the files in a JAR, then run the app like this:</p>
+<p><code>Java -jar [-options] jarfile [args...]</code></p>
+<p><strong>Q) Can I declare a data type inside loop in java?</strong><br />
+Any Data type declaration should not be inside the loop.</p>
+<p><strong>Q) Advantage over jdk 1.0 vs. jdk 1.1 ?</strong><br />
+Jdk1.1 release consists of Java Unicode character to support the multiple language fonts, along with Event Handling, Java security, Java Beans, RMI, SQL are the major feature provided.</p>
+<p><strong>Q) java.lang.* get imported by default. For using String and Exception classes, you don’t need to explicitly import this package. The major classes inside this package are</strong></p>
+<ul>
+<li>Object class</li>
+<li>Data type wrapper classes</li>
+<li>Math class</li>
+<li>String class</li>
+<li>System and Runtime classes</li>
+<li>Thread classes</li>
+<li>Exception classes</li>
+<li>Process classes</li>
+<li>Class classes</li>
+</ul>
+<p><strong>Q) Arrays can be defined in different ways. Write them down.</strong></p>
+<pre>int arr[] = null;
+int arr[][] = new int arr[][];
+int [][] arr = new arr [][];
+int [] arr [] = new arr[][];</pre>
+<h3 id="h2">OOPs Interview Questions</h3>
+<p><strong>Q) Four main principles of OOPS language?</strong></p>
+<ul>
+<li>Inheritance</li>
+<li>Polymorphism</li>
+<li>Data Encapsulation</li>
+<li>Abstraction</li>
+</ul>
+<p><strong>Q) What is inheritance?</strong><br />
+The process by which one class acquires the properties and functionalities of another class. Inheritance brings reusability of code in a java application. <a title="What is Inheritance in Java Programming?" href="../../03/inheritance-in-java/index.html" target="_blank">Read more here</a>.</p>
+<p><strong>Q) Does Java support Multiple Inheritances?</strong><br />
+When a class extends more than one classes then it is called multiple inheritance. Java doesn&#8217;t support multiple inheritance whereas C++ supports it, this is one of the difference between java and C++.  Refer this: <a title="Does Java support Multiple inheritance?" href="../java-multiple-inheritance/index.html" target="_blank">Why java doesn&#8217;t support multiple inheritance?</a></p>
+<p><strong>Q) What is Polymorphism and what are the types of it?</strong><br />
+Polymorphism is the ability of an object to take many forms. The most common use of polymorphism in OOPs is to have more than one method with the same name in a single class. There are two types of polymorphism: static polymorphism and dynamic polymorphism, <a title="Types of polymorphism in java- Runtime and Compile time polymorphism" href="../../04/runtime-compile-time-polymorphism/index.html" target="_blank">read them in detail here</a>.</p>
+<p><strong>Q) What is the method overriding?</strong><br />
+It is a feature using which a child class overrides the method of parent class. It is only applicable when the method in child class has the signature same as parent class. Read more <a title="Method overriding in java with example" href="../../../2014/01/method-overriding-in-java-with-example/index.html" target="_blank">about method overriding here</a>.</p>
+<p><strong>Q) Can we override a static method?</strong><br />
+No, we cannot override a static method.</p>
+<p><strong>Q) What is method overloading?</strong><br />
+Having more than one method with the same name but different number, sequence or types of arguments is known is method overloading. <a title="Method Overloading in Java with examples" href="../method-overloading/index.html" target="_blank">Read more about it here</a>.</p>
+<p><strong>Q) Does Java support operator overloading?</strong><br />
+Operator overloading is not supported in Java.</p>
+<p><strong>Q) Can we overload a method by just changing the return type and without changing the signature of method?</strong><br />
+No, We cannot do this.</p>
+<p><strong>Q) Is it possible to overload main() method of a class?</strong><br />
+Yes, we can overload main() method as well.</p>
+<p><strong>Q) What is the difference between method overloading and method overriding?</strong><br />
+There are several differences; You can read them here: <a title="Difference between method Overloading and Overriding in java" href="../../../2014/01/difference-between-method-overloading-and-overriding-in-java/index.html" target="_blank">Overloading Vs Overriding</a>.</p>
+<p><strong>Q) What is static and dynamic binding?</strong><br />
+Binding refers to the linking of method call to its body. A binding that happens at compile time is known as static binding while binding at runtime is known as dynamic binding.</p>
+<p><strong>Q) What is Encapsulation?</strong><br />
+Encapsulation means the localization of the information or knowledge within an object.<br />
+Encapsulation is also called as “Information Hiding”. <a title="Encapsulation in Java with example" href="../encapsulation-in-java/index.html" target="_blank">Read it here in detail</a>.</p>
+<p><strong>Q) Abstract class?</strong><br />
+An abstract class is a class which can&#8217;t be instantiated (we cannot create the object of abstract class), we can only extend such classes. It provides the generalized form that will be shared by all of its subclasses, leaving it to each subclass to fill in the details. We can achieve partial abstraction using abstract classes, to achieve full abstraction we use interfaces.</p>
+<p><strong>Q) What is Interface in java?</strong><br />
+An interface is a collection of abstract methods. A class implements an interface, thereby inheriting the abstract methods of the interface. <a title="Interface in java with example programs" href="../java-interface/index.html" target="_blank">Read more about interface here</a>.</p>
+<p><strong>Q) What is the difference between abstract class and interface?</strong><br />
+1) abstract class can have abstract and non-abstract methods. An interface can only have abstract methods.<br />
+2) An abstract class can have static methods but an interface cannot have static methods.<br />
+3) abstract class can have constructors but an interface cannot have constructors.</p>
+<p><strong>Q) Which access modifiers can be applied to the inner classes?</strong><br />
+public ,private , abstract, final, protected.</p>
+<p><strong>Q) What are Constructors?</strong><br />
+Constructors are used for creating an instance of a class, they are invoked when an instance of class gets created. Constructor name and class name should be same and it doesn’t have a return type. <a title="Constructors in Java – A complete study!!" href="../../03/constructors-in-java/index.html" target="_blank">Read more about constructors here</a>.</p>
+<p><strong>Q) Can we inherit the constructors?</strong><br />
+No, we cannot inherit constructors.</p>
+<p><strong>Q) Can we mark constructors final?</strong><br />
+No, Constructor cannot be declared final.</p>
+<p><strong>Q) What is default and parameterized constructors?</strong><br />
+Default: Constructors with no arguments are known as default constructors, when you don’t declare any constructor in a class, compiler creates a default one automatically.</p>
+<p>Parameterized: Constructor with arguments are known as parameterized constructors.</p>
+<p><strong>Q) Can a constructor call another constructor?</strong><br />
+Yes. A constructor can call the another constructor of same class using this keyword. For e.g. this() calls the default constructor.<br />
+Note: this() must be the first statement in the calling constructor.</p>
+<p><strong>Q) Can a constructor call the constructor of parent class?</strong><br />
+Yes. In fact it happens by default. A child class constructor always calls the parent class constructor. However we can still call it using super keyword. For e.g. super() can be used for calling super class default constructor.</p>
+<p>Note: super() must be the first statement in a constructor.</p>
+<p><strong>Q)THIS keyword?</strong><br />
+The THIS keyword is a reference to the current object.</p>
+<p><strong>Q) Can this keyword be assigned null value?</strong><br />
+No, this keyword cannot have null values assigned to it.</p>
+<p><strong>Q) Explain ways to pass the arguments in Java?</strong><br />
+In java, arguments can be passed in 2 ways,</p>
+<p>Pass by value – Changes made to the parameter of the subroutines have no effect on the argument used to call it.<br />
+Pass by reference – Changes made to the parameter will affect the argument used to call the subroutine.</p>
+<p><strong>Q) What is static variable in java?</strong><br />
+Static variables are also known as class level variables. A static variable is same for all the objects of that particular class in which it is declared.</p>
+<p><strong>Q) What is static block?</strong><br />
+A static block gets executed at the time of class loading. They are used for initializing static variables.</p>
+<p><strong>Q) What is a static method?</strong><br />
+Static methods can be called directly without creating the instance (Object) of the class. A static method can access all the static variables of a class directly but it cannot access non-static variables without creating instance of class.</p>
+<p><strong>Q) Explain super keyword in Java?</strong><br />
+<a title="Super keyword in java with example" href="../../../2014/07/super-keyword-in-java-with-example/index.html" target="_blank">super keyword</a> references to the parent class. There are several uses of super keyword:</p>
+<ul>
+<li>It can be used to call the superclass(Parent class) constructor.</li>
+<li>It can be used to access a method of the superclass that has been hidden by subclass (Calling parent class version, In case of method overriding).</li>
+<li>To call the constructor of parent class.</li>
+</ul>
+<p><strong>Q) Use of final keyword in Java?</strong><br />
+<strong>Final methods</strong> &#8211; These methods cannot be overridden by any other method.<br />
+<strong>Final variable</strong> – Constants, the value of these variable can’t be changed, its fixed.<br />
+<strong>Final class</strong> – Such classes cannot be inherited by other classes. These type of classes will be used when application required security or someone don’t want that particular class. <a title="Final Keyword In Java – Final variable, Method and Class" href="../../../2014/07/final-keyword-java-final-variable-method-class/index.html" target="_blank">More details</a>.</p>
+<p><strong>Q) What is a Object class?</strong><br />
+This is a special class defined by java; all other classes are subclasses of object class. Object class is superclass of all other classes. Object class has the following methods</p>
+<ul>
+<li>objectClone () – to creates a new object that is same as the object being cloned.</li>
+<li>boolean equals(Object obj) – determines whether one object is equal to another.</li>
+<li>finalize() – Called by the garbage collector on an object when garbage collection determines that there are no more references to the object. A subclass overrides the finalize method to dispose of system resources or to perform other cleanup.</li>
+<li>toString () – Returns a string representation of the object.</li>
+</ul>
+<p><strong>Q) What are Packages? </strong><br />
+A Package can be defined as a grouping of related types (classes, interfaces, enumerations and annotations )</p>
+<p><strong>Q)What is the difference between import java.util.Date and java.util.* ?</strong><br />
+The star form (java.util.* ) includes all the classes of that package and that may increase the compilation time – especially if you import several packages. However it doesn&#8217;t have any effect run-time performance.</p>
+<p><strong>Q) What is static import?</strong><br />
+<a title="Java static import with example – It can save time &amp; typing efforts" href="../java-static-import/index.html" target="_blank">Read it here</a>.</p>
+<p><strong>Q) Garbage collection in java?</strong><br />
+Since objects are dynamically allocated by using the new operator, java handles the de-allocation of the memory automatically when no references to an object exist for a long time is called <a href="../../04/java-garbage-collection/index.html" target="_blank">garbage collection</a>. The whole purpose of Garbage collection is efficient memory management.</p>
+<p><strong>Q) Use of finalize() method in java?</strong><br />
+finalize() method is used to free the allocated resource.</p>
+<p><strong>Q) How many times does the garbage collector calls the finalize() method for an object?</strong><br />
+The <a href="../../04/java-garbage-collection/index.html" target="_blank">garbage collector</a> calls the finalize() method Only once for an object.</p>
+<p><strong>Q) What are two different ways to call garbage collector?</strong><br />
+<code>System.gc()</code> OR <code>Runtime.getRuntime().gc()</code>.</p>
+<p><strong>Q) Can the Garbage Collection be forced by any means?</strong><br />
+No, its not possible. you cannot force garbage collection. you can call system.gc() methods for garbage collection but it does not guarantee that garbage collection would be done.</p>
+<h3 id="h3">Exception handling Interview Questions</h3>
+<p><strong>Q) What is an exception?</strong><br />
+Exceptions are abnormal conditions that arise during execution of the program. It may occur due to wrong user input or wrong logic written by programmer.</p>
+<p><strong>Q) Exceptions are defined in which java package? OR which package has definitions for all the exception classes?</strong><br />
+<code>Java.lang.Exception</code><br />
+This package contains definitions for Exceptions.</p>
+<p><strong>Q) What are the types of exceptions?</strong><br />
+There are two types of exceptions: <a title="Checked and unchecked exceptions in java with examples" href="../../04/java-checked-unchecked-exceptions-with-examples/index.html" target="_blank">checked and unchecked exceptions</a>.<br />
+Checked exceptions: These exceptions must be handled by programmer otherwise the program would throw a compilation error.<br />
+Unchecked exceptions: It is up to the programmer to write the code in such a way to avoid unchecked exceptions. You would not get a compilation error if you do not handle these exceptions. These exceptions occur at runtime.</p>
+<p><strong>Q) What is the difference between Error and Exception?</strong><br />
+Error: Mostly a system issue. It always occur at run time and must be resolved in order to proceed further.<br />
+Exception: Mostly an input data issue or wrong logic in code. Can occur at compile time or run time.</p>
+<p><strong>Q) What is throw keyword in exception handling?</strong><br />
+The throw keyword is used for throwing user defined or pre-defined exception.</p>
+<p><strong>Q) What is throws keyword?</strong><br />
+If a method does not handle a checked exception, the method must declare it using the throwskeyword. The throws keyword appears at the end of a method&#8217;s signature.</p>
+<p><strong>Q) Difference between throw and throws in Java</strong><br />
+Read the difference here: Java – <a title="Difference between throw and throws in java" href="../../04/difference-between-throw-and-throws-in-java/index.html" target="_blank">throw vs throws</a>.</p>
+<p><strong>Q) Can static block throw exception?</strong><br />
+Yes, A static block can throw exceptions. It has its own limitations: It can throw only Runtime exception (Unchecked exceptions), In order to throw checked exceptions you can use a try-catch block inside it.</p>
+<p><strong>Q) What is finally block?</strong><br />
+<a title="Java Finally block – Exception handling" href="../../04/java-finally-block/index.html" target="_blank">Finally block</a> is a block of code that always executes, whether an exception occurs or not. Finally block follows try block or try-catch block.</p>
+<p>Q) ClassNotFoundException vs NoClassDefFoundError?<br />
+1) ClassNotFoundException occurs when loader could not find the required class in class path.<br />
+2) NoClassDefFoundError occurs when class is loaded in classpath, but one or more of the class which are required by other class, are removed or failed to load by compiler.</p>
+<p><strong>Q) Can we have a try block without catch or finally block?</strong><br />
+No, we cannot have a try block without catch or finally block. We must have either one of them or both.</p>
+<p><strong>Q) Can we have multiple catch blocks following a single try block?</strong><br />
+Yes we can have <a title="How to Catch multiple exceptions" href="../catch-multiple-exceptions/index.html" target="_blank">multiple catch blocks</a> in order to handle more than one exception.</p>
+<p><strong> Q) Is it possible to have finally block without catch block?</strong><br />
+Yes, we can have try block followed by finally block without even using catch blocks in between.</p>
+<p><strong>When a finally block does not get executed?</strong><br />
+The only time finally won&#8217;t be called is if you call System.exit() or if the JVM crashes first.</p>
+<p><strong>Q) Can we handle more than one exception in a single catch block?</strong><br />
+Yes we can do that using if-else statement but it is not considered as a good practice. We should have one catch block for one exception.</p>
+<p><strong>Q) What is a Java Bean?</strong><br />
+A JavaBean is a Java class that follows some simple conventions including conventions on the names of certain methods to get and set state called Introspection. Because it follows conventions, it can easily be processed by a software tool that connects Beans together at runtime. JavaBeans are reusable software components.</p>
+<h3 id="h4">Java Multithreading Interview Questions</h3>
+<p><strong>Q) What is Multithreading?</strong><br />
+It is a process of executing two or more part of a program simultaneously. Each of these parts is known as threads. In short the process of executing multiple threads simultaneously is known as multithreading.</p>
+<p><strong>Q) What is the main purpose of having multithread environment?</strong><br />
+Maximizing CPU usage and reducing CPU idle time</p>
+<p><strong> Q) What are the main differences between Process and thread? Explain in brief.</strong><br />
+1)  One process can have multiple threads. A thread is a smaller part of a process.<br />
+2)  Every process has its own memory space, executable code and a unique process identifier (PID) while every thread has its own stack in Java but it uses process main memory and shares it with other threads.<br />
+3) Threads of same process can communicate with each other using keyword like wait and notify etc. This process is known as inter process communication.</p>
+<p><strong>Q) How can we create a thread in java?</strong><br />
+There are following two ways of creating a thread:<br />
+1)  By Implementing Runnable interface.<br />
+2)  By Extending Thread class.</p>
+<p><strong>Q) Explain yield and sleep?</strong><br />
+yield() – It causes the currently executing thread object to temporarily pause and allow other threads to execute.</p>
+<p>sleep() &#8211; It causes the current thread to suspend execution for a specified period. When a thread goes into sleep state it doesn&#8217;t release the lock.</p>
+<p><strong>Q) What is the difference between sleep() and wait()?</strong><br />
+sleep() &#8211; It causes the current thread to suspend execution for a specified period. When a thread goes into sleep state it doesn&#8217;t release the lock</p>
+<p>wait() &#8211; It causes current thread to wait until either another thread invokes the notify() method or the notifyAll() method for this object, or a specified amount of time has elapsed.</p>
+<p><strong>Q) What is a daemon thread?</strong><br />
+A daemon thread is a thread, that does not prevent the JVM from exiting when the program finishes but the thread is still running. An example for a daemon thread is the garbage collection.</p>
+<p><strong>Q) What does join( ) method do?</strong><br />
+if you use join() ,it makes sure that as soon as a thread calls join,the current thread(yes,currently running thread) will not execute unless the thread you have called join is finished.</p>
+<p><strong>Q) Preemptive scheduling vs. time slicing?</strong><br />
+1) The preemptive scheduling is prioritized. The highest priority process should always be the process that is currently utilized.<br />
+2) Time slicing means task executes for a defined slice/ period of time and then enter in the pool of ready state. The scheduler then determines which task execute next based on priority or other factor.</p>
+<p><strong>Q) Can we call run() method of a Thread class?</strong><br />
+Yes, we can call run() method of a Thread class but then it will behave like a normal method. To actually execute it in a Thread, you should call Thread.start() method to start it.</p>
+<p><strong>Q) What is Starvation?</strong><br />
+Starvation describes a situation where a thread is unable to gain regular access to shared resources and is unable to make progress. This happens when shared resources are made unavailable for long periods by &#8220;greedy&#8221; threads. For example, suppose an object provides a synchronized method that often takes a long time to return. If one thread invokes this method frequently, other threads that also need frequent synchronized access to the same object will often be blocked.</p>
+<p><strong>Q) What is deadlock?</strong><br />
+Deadlock describes a situation where two or more threads are blocked forever, waiting for each other.</p>
+<h3 id="h5">Serialization interview Questions</h3>
+<p><strong>Q: What is Serialization and de-serialization? </strong><br />
+Serialization is a process of converting an object and its attributes to the stream of bytes. De-serialization is recreating the object from stream of bytes; it is just a reverse process of serialization. To know more about serialization with example program, <a title="Java Serialization" href="../../../2014/07/java-serialization/index.html" target="_blank">refer this article</a>.</p>
+<p><strong>Q) Do we need to implement any method of Serializable interface to make an object serializable?</strong><br />
+No. In order to make an object serializable we just need to implement the interface Serializable. We don’t need to implement any methods.</p>
+<p><strong>Q) What is a transient variable?</strong><br />
+1) transient variables are not included in the process of serialization.<br />
+2) They are not the part of the object’s serialized state.<br />
+3) Variables which we don’t want to include in serialization are declared as transient.</p>
+<h3 id="h6">String interview questions</h3>
+<p><strong>Q) A string class is immutable or mutable?</strong><br />
+String class is immutable that’s the reason once its object gets created, it cannot be changed further.</p>
+<p><strong>Q) Difference between StringBuffer and StringBuilder class?</strong><br />
+1) StringBuffer is thread-safe but StringBuilder is not thread safe.<br />
+2) StringBuilder is faster than StringBuffer.<br />
+3) StringBuffer is synchronized whereas StringBuilder is not synchronized.</p>
+<p><strong>Q) What is toString() method in Java?</strong><br />
+The toString() method returns the string representation of any object.</p>
+<h3 id="h7">Java collections interview questions</h3>
+<p><strong>Q) What is List?</strong><br />
+Elements can be inserted or accessed by their position in the list, using a zero-based index.<br />
+A list may contain duplicate elements.</p>
+<p><strong>Q) What is Map?</strong><br />
+Map interface maps unique keys to values. A key is an object that we use to retrieve a value later. A map cannot contain duplicate keys: Each key can map to at most one value.</p>
+<p><strong>Q) What is Set?</strong><br />
+A Set is a Collection that cannot contain duplicate elements.</p>
+<p><strong>Q) Why ArrayList is better than Arrays?</strong><br />
+Array can hold fixed number of elements. ArrayList can grow dynamically.</p>
+<p><strong>Q) What is the difference between ArrayList and LinkedList?</strong><br />
+1) LinkedList store elements within a doubly-linked list data structure. ArrayList store elements within a dynamically resizing array.<br />
+2) LinkedList is preferred for add and update operations while ArrayList is a good choice for search operations. <a title="Difference between ArrayList and LinkedList in Java" href="../../12/difference-between-arraylist-and-linkedlist-in-java/index.html" target="_blank">Read more here</a>.</p>
+<p><strong>Q) For addition and deletion. Which one is most preferred: ArrayList or LinkedList?</strong><br />
+LinkedList. Because deleting or adding a node in LinkedList is faster than ArrayList.</p>
+<p><strong>Q) For searches. Which one is most preferred: ArrayList or LinkedList?</strong><br />
+ArrayList. Searching an element is faster in ArrayList compared to LinkedList.</p>
+<p><strong>Q) What is the difference between ArrayList and Vector?</strong><br />
+1) Vector is synchronized while ArrayList is not synchronized.<br />
+2) By default, Vector doubles the size of its array when it is re-sized internally. ArrayList increases by half of its size when it is re-sized. <a title="Difference between ArrayList and Vector In java" href="../../12/difference-between-arraylist-and-vector-in-java/index.html" target="_blank">More details</a>.</p>
+<p><strong>Q) What is the difference between Iterator and ListIterator?</strong><br />
+Following are the major differences between them:<br />
+1) Iterator can be used for traversing Set, List and Map. ListIterator can only be used for traversing a List.<br />
+2) We can traverse only in forward direction using Iterator. ListIterator can be used for traversing in both the directions(forward and backward). Read more at: <a title="Difference between Iterator and ListIterator in java" href="../../../2014/06/difference-between-iterator-and-listiterator-in-java/index.html" target="_blank">ListIterator vs Iterator</a>.</p>
+<p><strong>Q) Difference between TreeSet and SortedSet?</strong><br />
+TreeSet implements SortedSet interface.</p>
+<p><strong>Q) What is the difference between HashMap and Hashtable?</strong><br />
+1) Hashtable is synchronized. HashMap is not synchronized.<br />
+2) Hashtable does not allow null keys or values. HashMap allows one null key and any number of null values. <a title="Difference between HashMap and Hashtable" href="../../../2014/06/difference-between-hashmap-and-hashtable/index.html" target="_blank">Read more here</a>.</p>
+<p><strong>Q) What is the difference between Iterator and Enumeration?</strong><br />
+1) Iterator allows to remove elements from the underlying collection during the iteration using its remove() method. We cannot add/remove elements from a collection when using enumerator.<br />
+2) Iterator has improved method names.<br />
+Enumeration.hasMoreElement() -&gt; Iterator.hasNext()<br />
+Enumeration.nextElement() -&gt; Iterator.next().</p>
+<h3 id="h8">Applet Interview Questions</h3>
+<p><strong>Q) How do you do file I/O from an applet?</strong><br />
+Unsigned applets are simply not allowed to read or write files on the local file system .</p>
+<p>Unsigned applets can, however, read (but not write) non-class files bundled with your applet on the server, called resource files</p>
+<p><strong>Q) What is container ?</strong><br />
+A component capable of holding another component is called as container.<br />
+Container<br />
+Panel<br />
+Applet<br />
+Window<br />
+Frame<br />
+Dialog</p>
+<p><strong>Learning)</strong></p>
+<ol>
+<li>Flow Layout is default for panel.</li>
+<li>Border Layout is default for Frames.</li>
+</ol>
+<p><strong>Q) On Windows, generally frames are invisible, how to make it visible. ? </strong></p>
+<pre>Frame f = new Frame();
+f.setSize(300,200);  //height and width
+f.setVisible(true) ;  // Frames appears</pre>
+<p><strong>Q) JFC – Java Foundation Class</strong><br />
+Swing<br />
+AWT<br />
+Java2D<br />
+Drag and Drop<br />
+Accessibility</p>
+<p><strong>Learning)</strong> Listeners and Methods?<br />
+ActionListerner &#8211; actionPerformed();<br />
+ItemListerner &#8211; itemStateChanged();<br />
+TextListener &#8211; textValueChanged();<br />
+FocusListener &#8211; focusLost(); &amp; FocusGained();</p>
+<p>WindowListener &#8211; windowActified(); windowDEactified(); windowIconified(); windowDeiconified(); windowClosed(); windowClosing(); windowOpened();</p>
+<p>MouseMotionListener &#8211; mouseDragged(); &amp; mouseMoved();</p>
+<p>MouseListener &#8211; mousePressed(); mouseReleased(); mouseEntered(); mouseExited(); mouseClicked();</p>
+<p><strong>Learnings)</strong><br />
+<strong>parseInt</strong> – to convert string to int.<br />
+<strong>getBytes</strong> – string to byte array</p>
+<p><strong>Q) Applet Life cycle?</strong><br />
+Following stage of any applets life cycle, starts with init(), start(), paint(), stop() and destroy().</p>
+<p><strong>Q) showStatus()</strong> ?–<br />
+To display the message at the bottom of the browser when applet is started.</p>
+<p><strong>Q) What is the Event handling?</strong><br />
+Is irrespective of any component, if any action performed/done on Frame, Panel or on window, handling those actions are called Event Handling.</p>
+<p><strong>Q) What is Adapter class?</strong><br />
+Adapter class is an abstract class.</p>
+<p>Advantage of adapter: To perform any window listener, we need to include all the methods used by the window listener whether we use those methods are not in our class like Interfaces whereas with adapter class, its sufficient to include only the methods required to override. Straight opposite to Interface.</p>
+<p><strong>Further readings:</strong><br />
+If you have finished reading above interview questions then you can go through the below tutorials to sharpen your knowledge in java. We will keep adding new question and answers to the above list.</p>
+<p>1) <a title="Java Collections Framework Tutorials" href="../../../java-collections-tutorials/index.html" target="_blank">Java Collection tutorial</a><br />
+2) <a title="Java tutorial for beginners with examples" href="../../../java-tutorial-for-beginners-with-examples/index.html" target="_blank">Core Java concepts</a><br />
+3) <a title="OOPs concepts in Java" href="../../04/oops-concepts/index.html" target="_blank">OOPs concepts</a><br />
+4) <a title="Multithreading in java with examples" href="../../03/multithreading-in-java/index.html" target="_blank">Java Multithreading</a><br />
+5) <a title="Java – String Class and its methods" href="../../12/java-strings/index.html" target="_blank">String class and its methods</a><br />
+6) <a title="Exception handling in java with example programs" href="../../04/java-exception-handling/index.html" target="_blank">Java Exception handling</a></p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../../2015/03/java-collections-interview-questions-and-answers/index.html" rel="bookmark" title="Link to Java Collections Interview Questions and Answers">Java Collections Interview Questions and Answers</a></li><li><a href="../jdbc-interview-questions/index.html" rel="bookmark" title="Link to JDBC(Java Database Connectivity) interview questions">JDBC(Java Database Connectivity) interview questions</a></li><li><a href="../../../2015/03/java-multithreading-interview-questions-and-answers/index.html" rel="bookmark" title="Link to Java Multithreading Interview Questions and  Answers">Java Multithreading Interview Questions and  Answers</a></li><li><a href="../../10/junit-interview-questions-answers/index.html" rel="bookmark" title="Link to JUnit (Java Unit Testing) interview questions and answers">JUnit (Java Unit Testing) interview questions and answers</a></li><li><a href="../servlet-interview-questions/index.html" rel="bookmark" title="Link to Servlet interview questions and answers">Servlet interview questions and answers</a></li><li><a href="../junit-interview-questions/index.html" rel="bookmark" title="Link to JUnit (Java Unit Testing) interview questions">JUnit (Java Unit Testing) interview questions</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-97">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3a582ffe24e378a6f64e2543cc53c2b6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3a582ffe24e378a6f64e2543cc53c2b6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">shubham</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2013-07-04T12:41:12+00:00" itemprop="datePublished"><a href="index.html#comment-97" class="comment-time-link" itemprop="url">July 4, 2013 at 12:41 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>good</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-97' onclick='return addComment.moveForm( "comment-97", "97", "respond", "2803" )' aria-label='Reply to shubham'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-5936">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/fb6e2cffd58860a24bc1ccc3cd957c5d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/fb6e2cffd58860a24bc1ccc3cd957c5d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">abi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-06T06:39:56+00:00" itemprop="datePublished"><a href="index.html#comment-5936" class="comment-time-link" itemprop="url">August 6, 2014 at 6:39 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>good</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5936' onclick='return addComment.moveForm( "comment-5936", "5936", "respond", "2803" )' aria-label='Reply to abi'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-14408">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9b528b1dc0067da7fda8e4e1a49b0e7a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9b528b1dc0067da7fda8e4e1a49b0e7a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">marimuthu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-10T02:14:17+00:00" itemprop="datePublished"><a href="index.html#comment-14408" class="comment-time-link" itemprop="url">November 10, 2014 at 2:14 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thaank you so much it is very very usefull</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14408' onclick='return addComment.moveForm( "comment-14408", "14408", "respond", "2803" )' aria-label='Reply to marimuthu'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-20365">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/07ad10686232cceacb1116ed807ae832?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/07ad10686232cceacb1116ed807ae832?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Divya Sahu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-17T14:14:46+00:00" itemprop="datePublished"><a href="index.html#comment-20365" class="comment-time-link" itemprop="url">December 17, 2014 at 2:14 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Very Useful.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-20365' onclick='return addComment.moveForm( "comment-20365", "20365", "respond", "2803" )' aria-label='Reply to Divya Sahu'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-21547">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ac731329c2bed8488efe1ef1adf27564?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ac731329c2bed8488efe1ef1adf27564?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">David V.</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-08T22:06:04+00:00" itemprop="datePublished"><a href="index.html#comment-21547" class="comment-time-link" itemprop="url">January 8, 2015 at 10:06 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>hello and thanks, it is very useful.</p>
+<p>but question like this&gt;<br />
+&#8220;Q) For searches. Which one is most preferred: ArrayList or LinkedList?<br />
+ArrayList. Searching an element is faster in ArrayList compared to LinkedList.&#8221;</p>
+<p>The answer for this question is not complete. In interview is necessary explain why it is faster, you should know how linkedlist works, what O(x) time it takes add, search, del, &#8230; etc</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-21547' onclick='return addComment.moveForm( "comment-21547", "21547", "respond", "2803" )' aria-label='Reply to David V.'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-22298">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2463ef5069d18efa936b49eba772c5f8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2463ef5069d18efa936b49eba772c5f8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sanjeevakumar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-27T09:42:53+00:00" itemprop="datePublished"><a href="index.html#comment-22298" class="comment-time-link" itemprop="url">January 27, 2015 at 9:42 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Wow!Exellent, Its really usefull for the beginners.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-22298' onclick='return addComment.moveForm( "comment-22298", "22298", "respond", "2803" )' aria-label='Reply to sanjeevakumar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-24250">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/af159e50ba6cfe77bc54ebf6ddca55d5?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/af159e50ba6cfe77bc54ebf6ddca55d5?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nishant Sharma</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-12T12:38:29+00:00" itemprop="datePublished"><a href="index.html#comment-24250" class="comment-time-link" itemprop="url">March 12, 2015 at 12:38 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>A question on this page:<br />
+Q. Can we override a static method?<br />
+No, we cannot override a static method.</p>
+<p>&#8230;.I had tried overriding a static method and the compiler doesn&#8217;t give error. We can also override main() method (which is static).</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24250' onclick='return addComment.moveForm( "comment-24250", "24250", "respond", "2803" )' aria-label='Reply to Nishant Sharma'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-25606">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b4a392575171ef7f55ec489d0ad6c079?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b4a392575171ef7f55ec489d0ad6c079?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">lalit barskar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-04-13T07:35:10+00:00" itemprop="datePublished"><a href="index.html#comment-25606" class="comment-time-link" itemprop="url">April 13, 2015 at 7:35 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>static method cant be overridden , it it is done then it is method hiding not overriding in case of   static method</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-25606' onclick='return addComment.moveForm( "comment-25606", "25606", "respond", "2803" )' aria-label='Reply to lalit barskar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-28144">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6f4d815d7c62702f28088abf380176e3?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6f4d815d7c62702f28088abf380176e3?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">kapil chaudhary</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-12T06:12:49+00:00" itemprop="datePublished"><a href="index.html#comment-28144" class="comment-time-link" itemprop="url">June 12, 2015 at 6:12 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>change the return type of ur program.<br />
+replace-&gt;  static void a() &#8212;&#8212; static int(or any return type whtevr u want)</p>
+<p>it will show u missing return statement&#8230;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-28144' onclick='return addComment.moveForm( "comment-28144", "28144", "respond", "2803" )' aria-label='Reply to kapil chaudhary'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-28501">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bfa54c1507bec6fd220653bf01adc5b2?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bfa54c1507bec6fd220653bf01adc5b2?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nevill Kwa</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-21T19:20:27+00:00" itemprop="datePublished"><a href="index.html#comment-28501" class="comment-time-link" itemprop="url">June 21, 2015 at 7:20 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Excellent Java Interview questions, it help me to prepare my interview.  Do you have these question in PDF format to download?</p>
+<p>Thanks,<br />
+Neville</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-28501' onclick='return addComment.moveForm( "comment-28501", "28501", "respond", "2803" )' aria-label='Reply to Nevill Kwa'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-32595">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c67ef4d625cbee539c0935b451d9ea69?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c67ef4d625cbee539c0935b451d9ea69?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">kalaivani</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-15T19:41:10+00:00" itemprop="datePublished"><a href="index.html#comment-32595" class="comment-time-link" itemprop="url">August 15, 2015 at 7:41 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Really this site is very useful&#8230;<br />
+then Could u say the answer for how HashMap works internally?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-32595' onclick='return addComment.moveForm( "comment-32595", "32595", "respond", "2803" )' aria-label='Reply to kalaivani'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2803' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="4b003bfdf2" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="99"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/05/java-interview-questions/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:20:51 GMT -->
+</html>

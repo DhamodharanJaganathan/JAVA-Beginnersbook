@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Difference between HashSet and TreeSet</title>
+	<atom:link href="https://beginnersbook.com/2014/08/difference-between-hashset-and-treeset/feed/" rel="self" type="application/rss+xml" />
+	<link>https://beginnersbook.com/2014/08/difference-between-hashset-and-treeset/</link>
+	<description></description>
+	<lastBuildDate>Fri, 06 Apr 2018 04:50:05 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.5</generator>
+	<item>
+		<title>By: Pranjali</title>
+		<link>https://beginnersbook.com/2014/08/difference-between-hashset-and-treeset/#comment-72684</link>
+		<dc:creator><![CDATA[Pranjali]]></dc:creator>
+		<pubDate>Fri, 28 Jul 2017 09:35:03 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=5569#comment-72684</guid>
+		<description><![CDATA[Because HashSet gives better performance (faster) than TreeSet for the operations like add, remove, contains, size etc. HashSet offers constant time cost while TreeSet offers log(n) time cost for such operations.]]></description>
+		<content:encoded><![CDATA[<p>Because HashSet gives better performance (faster) than TreeSet for the operations like add, remove, contains, size etc. HashSet offers constant time cost while TreeSet offers log(n) time cost for such operations.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Prutha</title>
+		<link>https://beginnersbook.com/2014/08/difference-between-hashset-and-treeset/#comment-68489</link>
+		<dc:creator><![CDATA[Prutha]]></dc:creator>
+		<pubDate>Wed, 15 Mar 2017 15:45:08 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=5569#comment-68489</guid>
+		<description><![CDATA[2) If you want a sorted Set then it is better to add elements to HashSet and then convert it into TreeSet rather than creating a TreeSet and adding elements to it.
+
+why?]]></description>
+		<content:encoded><![CDATA[<p>2) If you want a sorted Set then it is better to add elements to HashSet and then convert it into TreeSet rather than creating a TreeSet and adding elements to it.</p>
+<p>why?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Anshul</title>
+		<link>https://beginnersbook.com/2014/08/difference-between-hashset-and-treeset/#comment-61785</link>
+		<dc:creator><![CDATA[Anshul]]></dc:creator>
+		<pubDate>Sat, 08 Oct 2016 18:17:56 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=5569#comment-61785</guid>
+		<description><![CDATA[Sorry for the confusion for my post . I understood now that treeset sorts the data in ascending order.]]></description>
+		<content:encoded><![CDATA[<p>Sorry for the confusion for my post . I understood now that treeset sorts the data in ascending order.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Anshul</title>
+		<link>https://beginnersbook.com/2014/08/difference-between-hashset-and-treeset/#comment-61784</link>
+		<dc:creator><![CDATA[Anshul]]></dc:creator>
+		<pubDate>Sat, 08 Oct 2016 18:14:55 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=5569#comment-61784</guid>
+		<description><![CDATA[Hi Chaitanya 
+
+I don&#039;t think that your 2nd point for similarity is correct. I have created the Hashset and added some items into it and then converted it to Treeset the result was unsorted list.Below is the code let me know if i am wrong 
+
+ public static void main(String[] args) {
+     // Create a HashSet
+     HashSet hset = new HashSet();
+ 
+     //add elements to HashSet
+     hset.add(&quot;Steve&quot;);
+     hset.add(&quot;Matt&quot;);
+     hset.add(&quot;Govinda&quot;);
+     hset.add(&quot;John&quot;);
+     hset.add(&quot;Tommy&quot;);
+ 
+     // Displaying HashSet elements
+     System.out.println(&quot;HashSet contains: &quot;+ hset);
+ 
+     // Creating a List of Treeset elements
+     TreeSet list = new TreeSet(hset);
+ 
+     // Displaying ArrayList elements
+     System.out.println(&quot;TreeSet contains: &quot;+ list);
+  }
+
+
+THE OUT PUT IS 
+
+HashSet contains: [Tommy, Matt, Steve, Govinda, John]
+TreeSet contains: [Govinda, John, Matt, Steve, Tommy]]]></description>
+		<content:encoded><![CDATA[<p>Hi Chaitanya </p>
+<p>I don&#8217;t think that your 2nd point for similarity is correct. I have created the Hashset and added some items into it and then converted it to Treeset the result was unsorted list.Below is the code let me know if i am wrong </p>
+<p> public static void main(String[] args) {<br />
+     // Create a HashSet<br />
+     HashSet hset = new HashSet();</p>
+<p>     //add elements to HashSet<br />
+     hset.add(&#8220;Steve&#8221;);<br />
+     hset.add(&#8220;Matt&#8221;);<br />
+     hset.add(&#8220;Govinda&#8221;);<br />
+     hset.add(&#8220;John&#8221;);<br />
+     hset.add(&#8220;Tommy&#8221;);</p>
+<p>     // Displaying HashSet elements<br />
+     System.out.println(&#8220;HashSet contains: &#8220;+ hset);</p>
+<p>     // Creating a List of Treeset elements<br />
+     TreeSet list = new TreeSet(hset);</p>
+<p>     // Displaying ArrayList elements<br />
+     System.out.println(&#8220;TreeSet contains: &#8220;+ list);<br />
+  }</p>
+<p>THE OUT PUT IS </p>
+<p>HashSet contains: [Tommy, Matt, Steve, Govinda, John]<br />
+TreeSet contains: [Govinda, John, Matt, Steve, Tommy]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Anil Kumar Veluru</title>
+		<link>https://beginnersbook.com/2014/08/difference-between-hashset-and-treeset/#comment-60643</link>
+		<dc:creator><![CDATA[Anil Kumar Veluru]]></dc:creator>
+		<pubDate>Sat, 17 Sep 2016 17:04:00 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=5569#comment-60643</guid>
+		<description><![CDATA[One more important difference is that HashSet allows null object but TreeSet doesn&#039;t allow null Object and throw NullPointerException, Why, because TreeSet uses compareTo() method to compare keys and compareTo() will throw java.lang.NullPointerException.]]></description>
+		<content:encoded><![CDATA[<p>One more important difference is that HashSet allows null object but TreeSet doesn&#8217;t allow null Object and throw NullPointerException, Why, because TreeSet uses compareTo() method to compare keys and compareTo() will throw java.lang.NullPointerException.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

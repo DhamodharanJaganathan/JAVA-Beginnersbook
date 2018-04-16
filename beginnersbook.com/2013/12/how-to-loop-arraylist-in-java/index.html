@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/12/how-to-loop-arraylist-in-java/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:46:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to loop ArrayList in Java</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Earlier we shared ArrayList example and how to initialize ArrayList in Java. In this post we are sharing how to iterate (loop) ArrayList in Java. There are four ways to loop ArrayList: For Loop Advanced for loop While Loop Iterator Lets have a look at the below example - I have used all of the mentioned methods for"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to loop ArrayList in Java" />
+<meta property="og:description" content="Earlier we shared ArrayList example and how to initialize ArrayList in Java. In this post we are sharing how to iterate (loop) ArrayList in Java. There are four ways to loop ArrayList: For Loop Advanced for loop While Loop Iterator Lets have a look at the below example - I have used all of the mentioned methods for" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="ArrayList" />
+<meta property="article:section" content="Java Collections" />
+<meta property="article:published_time" content="2013-12-03T18:10:44+00:00" />
+<meta property="article:modified_time" content="2014-11-18T04:44:26+00:00" />
+<meta property="og:updated_time" content="2014-11-18T04:44:26+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Earlier we shared ArrayList example and how to initialize ArrayList in Java. In this post we are sharing how to iterate (loop) ArrayList in Java. There are four ways to loop ArrayList: For Loop Advanced for loop While Loop Iterator Lets have a look at the below example - I have used all of the mentioned methods for" />
+<meta name="twitter:title" content="How to loop ArrayList in Java" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; How to loop ArrayList in Java Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index2080.html?p=4258' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed057c.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F12%2Fhow-to-loop-arraylist-in-java%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed8361?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F12%2Fhow-to-loop-arraylist-in-java%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-4258 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-4258 post type-post status-publish format-standard category-java-collections tag-arraylist entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">How to loop ArrayList in Java</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/java-collections/index.html" rel="category tag">Java Collections</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Earlier we shared <a href="../java-arraylist/index.html" target="_blank">ArrayList example</a> and <a href="../how-to-initialize-an-arraylist/index.html" target="_blank">how to initialize ArrayList in Java</a>. In this post we are sharing how to<strong> iterate (loop) ArrayList in Java</strong>.</p>
+<p>There are four ways to loop ArrayList:</p>
+<ol>
+<li>For Loop</li>
+<li>Advanced for loop</li>
+<li>While Loop</li>
+<li>Iterator</li>
+</ol>
+<p>Lets have a look at the below example &#8211; I have used all of the mentioned methods for iterating list.</p>
+<pre>import java.util.*;
+public class LoopExample {
+   public static void main(String[] args) {
+
+      ArrayList&lt;Integer&gt; arrlist = new ArrayList&lt;Integer&gt;();
+      arrlist.add(14);
+      arrlist.add(7);
+      arrlist.add(39);
+      arrlist.add(40);
+
+      /* For Loop for iterating ArrayList */
+      System.out.println("For Loop");
+      for (int counter = 0; counter &lt; arrlist.size(); counter++) { 		      
+          System.out.println(arrlist.get(counter)); 		
+      }   		
+
+      /* Advanced For Loop*/ 		
+      System.out.println("Advanced For Loop"); 		
+      for (Integer num : arrlist) { 		      
+           System.out.println(num); 		
+      }
+
+      /* While Loop for iterating ArrayList*/ 		
+      System.out.println("While Loop"); 		
+      int count = 0; 		
+      while (arrlist.size() &gt; count) {
+	 System.out.println(arrlist.get(count));
+         count++;
+      }
+
+      /*Looping Array List using Iterator*/
+      System.out.println("Iterator");
+      Iterator iter = arrlist.iterator();
+      while (iter.hasNext()) {
+         System.out.println(iter.next());
+      }
+   }
+}</pre>
+<p>Output:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>For Loop
+14
+7
+39
+40
+Advanced For Loop
+14
+7
+39
+40
+While Loop
+14
+7
+39
+40
+Iterator
+14
+7
+39
+40</pre>
+<p>In the comment section below, Govardhan asked a question: He asked, how to iterate an ArrayList using <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Enumeration.html" target="_blank">Enumeration</a>. Govardhan here is the code:</p>
+<h3>How to iterate arraylist elements using Enumeration interface</h3>
+<pre>import java.util.Enumeration;
+import java.util.ArrayList;
+import java.util.Collections;
+ 
+public class EnumExample {
+ 
+   public static void main(String[] args) {
+      //create an ArrayList object
+      ArrayList&lt;String&gt; arrayList = new ArrayList&lt;String&gt;();
+ 
+      //Add elements to ArrayList
+      arrayList.add("C");
+      arrayList.add("C++");
+      arrayList.add("Java");
+      arrayList.add("DotNet");
+      arrayList.add("Perl");
+ 
+      // Get the Enumeration object
+      Enumeration&lt;String&gt; e = Collections.enumeration(arrayList);
+ 
+      // Enumerate through the ArrayList elements
+      System.out.println("ArrayList elements: ");
+      while(e.hasMoreElements())
+      System.out.println(e.nextElement());
+   }
+}</pre>
+<p>Output:</p>
+<pre>ArrayList elements: 
+C
+C++
+Java
+DotNet
+Perl</pre>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../../2014/07/java-hashmap-iterator-example/index.html" rel="bookmark" title="Link to Java &#8211; HashMap Iterator example">Java &#8211; HashMap Iterator example</a></li><li><a href="../../../2014/07/java-check-if-a-particular-key-exists-in-hashmap-example/index.html" rel="bookmark" title="Link to Java &#8211; Check if a particular key exists in HashMap example">Java &#8211; Check if a particular key exists in HashMap example</a></li><li><a href="../linkedlist-in-java-with-example/index.html" rel="bookmark" title="Link to LinkedList in Java with Example">LinkedList in Java with Example</a></li><li><a href="../java-arraylist-lastindexofobject-0bj-method-example/index.html" rel="bookmark" title="Link to Java ArrayList lastIndexOf(Object 0bj) Method example">Java ArrayList lastIndexOf(Object 0bj) Method example</a></li><li><a href="../java-arraylist-contains-method-example/index.html" rel="bookmark" title="Link to Java ArrayList contains() Method example">Java ArrayList contains() Method example</a></li><li><a href="../../../2014/07/java-remove-specific-elements-from-linkedlist-example/index.html" rel="bookmark" title="Link to Java &#8211; Remove specific elements from LinkedList example">Java &#8211; Remove specific elements from LinkedList example</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-16594">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/677625d222584590a013f9ce7814e780?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/677625d222584590a013f9ce7814e780?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Govardhan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-16T05:42:35+00:00" itemprop="datePublished"><a href="index.html#comment-16594" class="comment-time-link" itemprop="url">November 16, 2014 at 5:42 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>sir how to iterate arraylist elements using Enumeration interface</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-16594' onclick='return addComment.moveForm( "comment-16594", "16594", "respond", "4258" )' aria-label='Reply to Govardhan'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-17395">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-18T04:48:50+00:00" itemprop="datePublished"><a href="index.html#comment-17395" class="comment-time-link" itemprop="url">November 18, 2014 at 4:48 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Govardhan,</p>
+<p>I have updated the post and added the code. You can find your answer above in the post. Let me know if you have any further question.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-17395' onclick='return addComment.moveForm( "comment-17395", "17395", "respond", "4258" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-19745">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/677625d222584590a013f9ce7814e780?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/677625d222584590a013f9ce7814e780?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Govardhan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-05T15:14:52+00:00" itemprop="datePublished"><a href="index.html#comment-19745" class="comment-time-link" itemprop="url">December 5, 2014 at 3:14 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>sir I have one more question:=<br />
+1.How to find middle value of a linked list by single pass</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19745' onclick='return addComment.moveForm( "comment-19745", "19745", "respond", "4258" )' aria-label='Reply to Govardhan'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-4" id="comment-20479">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2dc9e4d80c1d59c8e9d7d1079cbefc2?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a2dc9e4d80c1d59c8e9d7d1079cbefc2?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">srinath</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-20T02:35:54+00:00" itemprop="datePublished"><a href="index.html#comment-20479" class="comment-time-link" itemprop="url">December 20, 2014 at 2:35 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Use two variable, lets call them fastVariable and slowVariable.</p>
+<p>Move the fastVariable twice the speed of slowVariable.</p>
+<p>By the time fastVariable reach end of the list slowVariable will be at middle of the list.</p>
+<p>Thanks.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-20479' onclick='return addComment.moveForm( "comment-20479", "20479", "respond", "4258" )' aria-label='Reply to srinath'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-19480">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7251d0ba0bcfe678fb420c5c78aedac9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7251d0ba0bcfe678fb420c5c78aedac9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">David tolu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-30T19:25:28+00:00" itemprop="datePublished"><a href="index.html#comment-19480" class="comment-time-link" itemprop="url">November 30, 2014 at 7:25 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>how to detect duplicate values in an arrayList?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19480' onclick='return addComment.moveForm( "comment-19480", "19480", "respond", "4258" )' aria-label='Reply to David tolu'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4258' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="3629f40a15" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="118"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-4" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../../../java-tutorial-for-beginners-with-examples/index.html">Java Tutorial</a></li>
+<li><a href="../../04/oops-concepts/index.html">OOPs Concepts</a></li>
+</ul>
+<h2 class="widget-title">Java Collections</h2>
+<ul>
+<li><a href="../java-arraylist/index.html">ArrayList</a></li>
+<li><a href="../linkedlist-in-java-with-example/index.html">LinkedList</a></li>
+<li><a href="../difference-between-arraylist-and-linkedlist-in-java/index.html">ArrayList vs LinkedList</a></li>
+<li><a href="../vector-in-java/index.html">Vector</a></li>
+<li><a href="../difference-between-arraylist-and-vector-in-java/index.html">ArrayList vs Vector</a></li>
+<li><a href="../hashmap-in-java-with-example/index.html">HashMap</a></li>
+<li><a href="../treemap-in-java-with-example/index.html">TreeMap</a></li>
+<li><a href="../linkedhashmap-in-java/index.html">LinkedHashMap</a></li>
+<li><a href="../hashset-class-in-java-with-example/index.html">HashSet</a></li>
+<li><a href="../treeset-class-in-java-with-example/index.html">TreeSet</a></li>
+<li><a href="../linkedhashset-class-in-java-with-example/index.html">LinkedHashSet</a></li>
+<li><a href="../../../2014/07/hashtable-in-java-with-example/index.html">Hashtable</a></li>
+<li><a href="../../../2014/06/difference-between-hashmap-and-hashtable/index.html">HashMap vs Hashtable</a></li>
+<li><a href="../../../2017/08/queue-interface-in-java-collections/index.html">Queue</a></li>
+<li><a href="../../../2017/08/java-collections-priorityqueue-interface/index.html">PriorityQueue</a></li>
+<li><a href="../../../2017/08/java-collections-deque-interface/index.html">Deque & ArrayDeque</a></li>
+<li><a href="../../../2014/06/java-iterator-with-examples/index.html">Iterator</a></li>
+<li><a href="../../../2014/06/listiterator-in-java-with-examples/index.html">ListIterator</a></li>
+<li><a href="../../../2017/08/comparable-interface-in-java-with-example/index.html">Comparable Interface</a></li>
+<li><a href="../../../2017/08/comparator-interface-in-java/index.html">Comparator Interface</a></li>
+<li><a href="../../../2015/03/java-collections-interview-questions-and-answers/index.html">Java Collections Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/12/how-to-loop-arraylist-in-java/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:46:51 GMT -->
+</html>

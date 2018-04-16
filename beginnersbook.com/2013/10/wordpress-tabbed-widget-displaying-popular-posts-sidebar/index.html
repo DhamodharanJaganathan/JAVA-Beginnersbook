@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/10/wordpress-tabbed-widget-displaying-popular-posts-sidebar/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:16:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WordPress tabbed widgets for displaying Popular Posts, Recent Posts and Tags in Sidebar</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Having tabbed Widget in your WordPress blog&#039;s sidebar not only makes it look attractive, it also has following advantages - What are the advantages of adding tabbed Widget in WordPress Sidebar? Saves Space in Sidebar for other widgets and advertisement. Improves SEO, CTR and traffic, if configured properly. It makes"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="WordPress tabbed widgets for displaying Popular Posts, Recent Posts and Tags in Sidebar" />
+<meta property="og:description" content="Having tabbed Widget in your WordPress blog&#039;s sidebar not only makes it look attractive, it also has following advantages - What are the advantages of adding tabbed Widget in WordPress Sidebar? Saves Space in Sidebar for other widgets and advertisement. Improves SEO, CTR and traffic, if configured properly. It makes" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="WordPress plugins" />
+<meta property="article:published_time" content="2013-10-19T17:39:17+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/10/Comments-in-Sidebar.png" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/10/Comments-in-Sidebar.png" />
+<meta property="og:image:width" content="276" />
+<meta property="og:image:height" content="253" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Having tabbed Widget in your WordPress blog&#039;s sidebar not only makes it look attractive, it also has following advantages - What are the advantages of adding tabbed Widget in WordPress Sidebar? Saves Space in Sidebar for other widgets and advertisement. Improves SEO, CTR and traffic, if configured properly. It makes" />
+<meta name="twitter:title" content="WordPress tabbed widgets for displaying Popular Posts, Recent Posts and Tags in Sidebar" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2013/10/Comments-in-Sidebar.png" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; WordPress tabbed widgets for displaying Popular Posts, Recent Posts and Tags in Sidebar Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index3fae.html?p=3710' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embedd302.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F10%2Fwordpress-tabbed-widget-displaying-popular-posts-sidebar%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embeddd96?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F10%2Fwordpress-tabbed-widget-displaying-popular-posts-sidebar%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-3710 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-3710 post type-post status-publish format-standard has-post-thumbnail category-wordpress-plugins entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">WordPress tabbed widgets for displaying Popular Posts, Recent Posts and Tags in Sidebar</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/wordpress/wordpress-plugins/index.html" rel="category tag">WordPress plugins</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Having tabbed Widget in your WordPress blog&#8217;s sidebar not only makes it look attractive, it also has following advantages &#8211;</p>
+<h3>What are the advantages of adding tabbed Widget in WordPress Sidebar?</h3>
+<ol>
+<li>Saves Space in Sidebar for other widgets and advertisement.</li>
+<li>Improves SEO, CTR and traffic, if configured properly.</li>
+<li>It makes your blog, look professional and attractive.</li>
+</ol>
+<h4>what you should check before choosing and tabbed widget Plugin for your blog?</h4>
+<ol>
+<li><strong>Site&#8217;s Performance:</strong> Check whether it&#8217;s affecting the website&#8217;s loading speed, if it&#8217;s making your site load slow then it&#8217;s definitely not a good choice for your blog.</li>
+<li><strong>Browser compatibility: </strong>Ensure that the widget is displaying content as expected on all the popular browsers. Test you website in different-2 browsers after implementing the tabbed widget in sidebar.</li>
+</ol>
+<h2>5 Most popular Tabbed Widget Plugins for WordPress</h2>
+<h4>1) <a href="https://wordpress.org/plugins/popular-widget/" target="_blank">Popular Widget</a></h4>
+<p><a class="button1" href="https://wordpress.org/plugins/popular-widget/" target="_blank">Download Popular Widget</a></p>
+<p>This plugin provides lots of options to customize the widget and tabs to make it suitable for your blog. Most of the options can be configured through the widget itself, which can be found in <strong>Appearance &gt;&gt; Widget</strong> section. Here is how it looks &#8211;</p>
+<p><img class="aligncenter size-full wp-image-3714" alt="Popular-Widget-Settings" src="../../../wp-content/uploads/2013/10/Popular-Widget-Settings.png" width="343" height="422" srcset="https://beginnersbook.com/wp-content/uploads/2013/10/Popular-Widget-Settings.png 343w, https://beginnersbook.com/wp-content/uploads/2013/10/Popular-Widget-Settings-243x300.png 243w" sizes="(max-width: 343px) 100vw, 343px" /></p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>The below configuration screen allows you to arrange, disable and rename tabs in your sidebar. This is very useful when you do not want to have 3 tabs. If you are displaying corresponding tags at the end of your posts then you can disable the tags tab in the widget.</p>
+<p><img class="aligncenter size-full wp-image-3713" alt="Tabs" src="../../../wp-content/uploads/2013/10/Tabs.png" width="338" height="348" srcset="https://beginnersbook.com/wp-content/uploads/2013/10/Tabs.png 338w, https://beginnersbook.com/wp-content/uploads/2013/10/Tabs-291x300.png 291w" sizes="(max-width: 338px) 100vw, 338px" /></p>
+<p>It supports thumbnails too. You can display comments, most commented post&#8217;s link, recently viewed posts and tags in your sidebar along with the attractive thumbnails.</p>
+<p><img class="aligncenter size-full wp-image-3712" alt="Comments-in-Sidebar" src="../../../wp-content/uploads/2013/10/Comments-in-Sidebar.png" width="276" height="253" /></p>
+<p>This is how it looks in your blog&#8217;s sidebar for recent posts, most viewed articles and tags.</p>
+<p><img class="aligncenter size-full wp-image-3711" alt="Most-viewed-posts-recent-tags" src="../../../wp-content/uploads/2013/10/Most-viewed-posts-recent-tags.png" width="273" height="324" srcset="https://beginnersbook.com/wp-content/uploads/2013/10/Most-viewed-posts-recent-tags.png 273w, https://beginnersbook.com/wp-content/uploads/2013/10/Most-viewed-posts-recent-tags-252x300.png 252w" sizes="(max-width: 273px) 100vw, 273px" /></p>
+<h4>2) <a href="https://wordpress.org/plugins/popular-posts-tab-widget-for-jetpack/" target="_blank">Popular Posts Tabbed Widget for Jetpack</a></h4>
+<p><a class="button1" href="https://wordpress.org/plugins/popular-posts-tab-widget-for-jetpack/" target="_blank">Get the Plugin</a></p>
+<p>This plugin displays popular posts, comments and latest posts by using <a href="https://wordpress.org/plugins/jetpack/" target="_blank">Jetpack</a> stats. If you do not have jetpack plugin enabled then you must need it to make this plugin work as expected. It supports thumbnails which makes the widget eye catchy and attractive.</p>
+<p><a class="button1" href="https://wordpress.org/plugins/jetpack/" target="_blank">Download JetPack</a></p>
+<p><img class="aligncenter size-full wp-image-3716" alt="jetpack" src="../../../wp-content/uploads/2013/10/jetpack.png" width="249" height="467" /></p>
+<p><strong>Other Plugins to checkout &#8211;</strong></p>
+<p><strong>3) Tabber Widget &#8211; </strong>You can add upto 10 tabs in a widget but the less tabs would be recommend as more number of tabs can break the frame. The only downside I see with this plugin is that it has not been updated in last few years, which would soon make it incompatible with the upcoming WordPress updates.</p>
+<p><a class="button1" href="https://wordpress.org/extend/plugins/tabber-widget/" target="_blank">Download Tabber Widget</a></p>
+<p><strong>4) WP Tabber Widget &#8211; </strong>Maximum two tabs are allowed in this widget. You can add post&#8217;s links into them. It can be used for displaying featured and reviews posts.</p>
+<p><a class="button1" href="https://wordpress.org/extend/plugins/wp-tabber-widget/" target="_blank">Download WP tabber Widget</a></p>
+<p><strong>5) Tabber Tabs Widget &#8211; </strong>It is very useful if you wanna add more than one widgets in the tabs. Install and activate this plugin and then drag and drop the widgets as a tab in the widget section. Quite useful when you already have widgets and just want to add them in the tabs.</p>
+<p><a class="button1" href="https://wordpress.org/extend/plugins/tabber-tabs-widget/" target="_blank">Download Tabber Tabs Widget</a></p>
+<p>Let us know which plugin you are using and which one you like the most. Also, share you thoughts via comments on this plugin list. If you believe that there is any other free plugin available, which does the same job then please let others know by saying it below.</p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../09/related-posts-plugin-yarpp-wordpress/index.html" rel="bookmark" title="Link to Yet Another Related Posts Plugin (YARPP) for WordPress">Yet Another Related Posts Plugin (YARPP) for WordPress</a></li><li><a href="../wordpress-image-widget-banner-sidebar/index.html" rel="bookmark" title="Link to WordPress Image widget to display images, banner ads in Sidebar">WordPress Image widget to display images, banner ads in Sidebar</a></li><li><a href="../add-facebook-open-graph-yoast-wordpress-seo-plugin/index.html" rel="bookmark" title="Link to How to add Facebook Open Graph using Yoast WordPress SEO plugin">How to add Facebook Open Graph using Yoast WordPress SEO plugin</a></li><li><a href="../automatically-generate-post-thumbnail-featured-image/index.html" rel="bookmark" title="Link to How to Automatically generate the Post Thumbnail (Featured Image) from the first image in post">How to Automatically generate the Post Thumbnail (Featured Image) from the first image in post</a></li><li><a href="../growmap-anti-spambot-plugin-gasp/index.html" rel="bookmark" title="Link to Growmap Anti Spambot Plugin(GASP) &#8211; Get rid of annoying CAPTCHA">Growmap Anti Spambot Plugin(GASP) &#8211; Get rid of annoying CAPTCHA</a></li><li><a href="../../01/w3-total-cache-plugin-settings-speed-up-website/index.html" rel="bookmark" title="Link to W3 total cache plugin settings to speed up website">W3 total cache plugin settings to speed up website</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-2186">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8f290b66c8e204cd656b62f0b1aa7f19?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8f290b66c8e204cd656b62f0b1aa7f19?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Madiha</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-03-23T10:20:52+00:00" itemprop="datePublished"><a href="index.html#comment-2186" class="comment-time-link" itemprop="url">March 23, 2014 at 10:20 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>this one is simple yet incredible plugin.. thanks for sharing it with the community</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2186' onclick='return addComment.moveForm( "comment-2186", "2186", "respond", "3710" )' aria-label='Reply to Madiha'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2522">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4fc039e25ded2c04ba4be7c608f4b318?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/4fc039e25ded2c04ba4be7c608f4b318?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://www.momsavenues.com/" class="comment-author-link" rel="external nofollow" itemprop="url">Moms Avenue</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-03T22:59:35+00:00" itemprop="datePublished"><a href="index.html#comment-2522" class="comment-time-link" itemprop="url">April 3, 2014 at 10:59 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I like the popular post tab by jetpack.. it sufficient for my needs.. furthermore, it has the support i need..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2522' onclick='return addComment.moveForm( "comment-2522", "2522", "respond", "3710" )' aria-label='Reply to Moms Avenue'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-3279">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/994e2d462a7b42029cf4592c25ec9d7d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/994e2d462a7b42029cf4592c25ec9d7d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">agnes</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-05-01T04:55:33+00:00" itemprop="datePublished"><a href="index.html#comment-3279" class="comment-time-link" itemprop="url">May 1, 2014 at 4:55 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>can I ask you, is there any widget  in wordpress for doing like this (my blogspot template) ?<br />
+<a href="../../../../i57.tinypic.com/2lmxrb8.png" rel="nofollow">http://i57.tinypic.com/2lmxrb8.png</a></p>
+<p>I want to have more tabs like :<br />
+top commentators<br />
+top download (my blog is giving free script and people can download it)<br />
+commented post ( I want only posts with certain tags or category (in blogspot, we call it label) will be in the list)<br />
+viewed post ( I want only posts with certain tags or category (in blogspot, we call it label) will be in the list)<br />
+and I want the main body (i dont know hwo to call it in wp) will show only the certain tags or category article</p>
+<p>is there  widget  in wp fro this needs ?<br />
+thank you</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3279' onclick='return addComment.moveForm( "comment-3279", "3279", "respond", "3710" )' aria-label='Reply to agnes'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4706">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9b26f71fc90f5e15f71711d54f087308?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9b26f71fc90f5e15f71711d54f087308?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://www.aimfosys.com/" class="comment-author-link" rel="external nofollow" itemprop="url">Jiwan Tamang</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-06-30T17:46:23+00:00" itemprop="datePublished"><a href="index.html#comment-4706" class="comment-time-link" itemprop="url">June 30, 2014 at 5:46 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Really works</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-4706' onclick='return addComment.moveForm( "comment-4706", "4706", "respond", "3710" )' aria-label='Reply to Jiwan Tamang'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-4979">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/831ed2ce512b67d8884bf07c0dcd6ec9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/831ed2ce512b67d8884bf07c0dcd6ec9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://www.wpmore.de/" class="comment-author-link" rel="external nofollow" itemprop="url">Alex</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-07-08T17:51:04+00:00" itemprop="datePublished"><a href="index.html#comment-4979" class="comment-time-link" itemprop="url">July 8, 2014 at 5:51 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Nice collection! I use the popular widget. But the Jetpack widget also looks great</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-4979' onclick='return addComment.moveForm( "comment-4979", "4979", "respond", "3710" )' aria-label='Reply to Alex'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-14537">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f3fd2685fb1fd5b486003d39212ebaf0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f3fd2685fb1fd5b486003d39212ebaf0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">chub</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-10T18:01:30+00:00" itemprop="datePublished"><a href="index.html#comment-14537" class="comment-time-link" itemprop="url">November 10, 2014 at 6:01 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I tried jetpack plugin tabs and its not working, keeps loading and loading.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14537' onclick='return addComment.moveForm( "comment-14537", "14537", "respond", "3710" )' aria-label='Reply to chub'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='3710' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="0eeceb0bd4" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="34"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-49" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><h4 class="widget-title widgettitle">SEO</h4>
+<ul>
+<li><a href="../../../2012/11/how-to-write-seo-articles-with-keywords/index.html">Write SEO Articles</a></li>
+<li><a href="../add-facebook-open-graph-yoast-wordpress-seo-plugin/index.html">Open Graph Meta Tags</a></li>
+<li><a href="../../01/seo-friendly-images-alt-tag/index.html">SEO Friendly Images</a></li>
+<li><a href="../../09/seopressor-v5-review/index.html">SEOPressor Review</a></li>
+<li><a href="../../08/auto-interlink-posts-wordpress-seo-smart-links-seo-alrp/index.html">Auto Interlink Posts</a></li>
+</ul>
+
+<h4 class="widget-title widgettitle">WordPress</h4>
+<ul>
+<li><a href="../5-free-plugins-adding-facebook-open-graph-meta-tags-wordpress/index.html">Free plugins to add Open Graph Tags</a></li>
+<li><a href="../5-free-plugins-adding-captcha-wordpress-blog-comments/index.html">Free plugins to add Captcha</a></li>
+<li><a href="../../09/set-default-thumbnail-featured-fallback-image-wordpress-automatically/index.html">Set thumbnails automatically</a></li>
+<li><a href="../../09/display-related-posts-thumbnails-wordpress-plugin/index.html">Display related Posts WP</a></li>
+<li><a href="../../09/change-post-excerpt-length-wordpress/index.html">Change Post excerpt length WP</a></li>
+</ul>
+
+<h4 class="widget-title widgettitle">Website</h4>
+<ul>
+<li><a href="../../09/add-facebook-like-button-website/index.html">Add Facebook like button</a></li>
+<li><a href="../../09/add-google-button-website/index.html">Add Google plus button</a></li>
+<li><a href="../../09/add-twitter-button-website/index.html">Add Twitter button</a></li>
+<li><a href="../create-a-free-website-on-blogspot/index.html">Create Free Website on blogspot</a></li>
+</ul></div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/10/wordpress-tabbed-widget-displaying-popular-posts-sidebar/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:16:42 GMT -->
+</html>

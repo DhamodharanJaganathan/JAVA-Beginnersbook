@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/09/add-facebook-open-graph-meta-data-wordpress-themes/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:32:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to Add Facebook Open Graph Meta Data in WordPress Themes</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="We discussed a little bit about Facebook open graph protocol in the last tutorial of how to add Facebook like button to website. This post is to discuss about what are open graph meta data and how to add them into your WordPress theme easily. Before we share the steps of implementing Open graph tags into WordPress,"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to Add Facebook Open Graph Meta Data in WordPress Themes" />
+<meta property="og:description" content="We discussed a little bit about Facebook open graph protocol in the last tutorial of how to add Facebook like button to website. This post is to discuss about what are open graph meta data and how to add them into your WordPress theme easily. Before we share the steps of implementing Open graph tags into WordPress," />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="Facebook" />
+<meta property="article:tag" content="meta data" />
+<meta property="article:tag" content="meta tags" />
+<meta property="article:tag" content="open graph" />
+<meta property="article:tag" content="WordPress" />
+<meta property="article:section" content="Social Media" />
+<meta property="article:published_time" content="2013-09-15T10:32:01+00:00" />
+<meta property="article:modified_time" content="2017-09-22T03:57:22+00:00" />
+<meta property="og:updated_time" content="2017-09-22T03:57:22+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/09/Facebook.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/09/Facebook.jpg" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/09/opengraph-demo.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/09/opengraph-demo.jpg" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/09/opengraph.png" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/09/opengraph.png" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/09/seop-opengraph.png" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/09/seop-opengraph.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="We discussed a little bit about Facebook open graph protocol in the last tutorial of how to add Facebook like button to website. This post is to discuss about what are open graph meta data and how to add them into your WordPress theme easily. Before we share the steps of implementing Open graph tags into WordPress," />
+<meta name="twitter:title" content="How to Add Facebook Open Graph Meta Data in WordPress Themes" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2013/10/facebook-thumbnail.jpg" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; How to Add Facebook Open Graph Meta Data in WordPress Themes Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index471e.html?p=3368' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed0fdc.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F09%2Fadd-facebook-open-graph-meta-data-wordpress-themes%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed3298?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F09%2Fadd-facebook-open-graph-meta-data-wordpress-themes%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-3368 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-3368 post type-post status-publish format-standard has-post-thumbnail category-social-media category-wordpress tag-facebook tag-meta-data tag-meta-tags tag-open-graph tag-wordpress entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">How to Add Facebook Open Graph Meta Data in WordPress Themes</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/social-media/index.html" rel="category tag">Social Media</a>, <a href="../../../category/wordpress/index.html" rel="category tag">WordPress</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>We discussed a little bit about <strong>Facebook open graph</strong> protocol in the last tutorial of how to add <a href="../add-facebook-like-button-website/index.html" target="_blank" rel="noopener">Facebook like button</a> to website. This post is to discuss about what are <a href="https://developers.facebook.com/docs/opengraph/" target="_blank" rel="noopener">open graph</a> <a href="https://developers.facebook.com/blog/post/2013/06/19/platform-updates--new-open-graph-tags-for-media-publishers-and-more/" target="_blank" rel="noopener">meta data</a> and how to add them into your WordPress theme easily.</p>
+<div id="attachment_3584" style="width: 510px" class="wp-caption aligncenter"><img class="size-full wp-image-3584" src="../../../wp-content/uploads/2013/09/Facebook.jpg" alt="Facebook" width="500" height="328" srcset="https://beginnersbook.com/wp-content/uploads/2013/09/Facebook.jpg 500w, https://beginnersbook.com/wp-content/uploads/2013/09/Facebook-300x196.jpg 300w" sizes="(max-width: 500px) 100vw, 500px" /><p class="wp-caption-text">Image credit: http://www.flickr.com/</p></div>
+<p>Before we share the steps of implementing Open graph tags into WordPress, lets have a look at the below snapshot. It&#8217;s a Facebook share and It has author information, publisher site, post&#8217;s URL, title, perfect description and a best fit image, which makes it look attractive. Such kind of shares definitely increases content sharing and brings traffic to your site. The below share happened to be like this only because of the open graph meta tags.</p>
+<p style="text-align: center;"><img class="aligncenter wp-image-3374" style="border: 1px solid grey;" src="../../../wp-content/uploads/2013/09/opengraph-demo.jpg" alt="Facebook open graph meta tags" width="640" height="324" srcset="https://beginnersbook.com/wp-content/uploads/2013/09/opengraph-demo.jpg 800w, https://beginnersbook.com/wp-content/uploads/2013/09/opengraph-demo-300x151.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /></p>
+<h4>How they look like?</h4>
+<p>They can be viewed in a source code of a web page and this is how they look: The below snippets being taken from one of my previous articles at this site.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>&lt;meta property="og:type" content="article" /&gt;
+&lt;meta property="og:url" content=
+"https://beginnersbook.com/2013/09/add-facebook-like-button-website/" /&gt;
+&lt;meta property="article:author" content="" /&gt;
+&lt;meta property="article:publisher" content="https://www.facebook.com/es2bw" /&gt;
+&lt;meta property="og:title" content="How to add facebook like button to website" /&gt;
+&lt;meta property="og:description" content="Adding a Facebook like button to the
+website is an easy task, however you may need to have an eye on few other performance
+related issue which may occur while a(...)" /&gt;
+&lt;meta property="og:image" content=
+"https://beginnersbook.com/wp-content/uploads/2013/09/fblike1-150x150.jpg" /&gt;</pre>
+<h2>How to Add Facebook Open Graph Meta Data tags into your WordPress Theme</h2>
+<p>There are two methods of doing it:</p>
+<ul>
+<li><a href="#manual">Manual method &#8211; Requires to add code to your theme&#8217;s template manually</a></li>
+<li><a href="#plugins">WordPress Plugins to add open graph meta data</a></li>
+</ul>
+<p><strong>Recommended readings:</strong></p>
+<ol>
+<li><a title="Open Graph Debugger" href="../../10/facebook-debugger-tool-fix-open-graph-meta-tags-issues/index.html" target="_blank" rel="noopener">Facebook open graph debugger tool</a> &#8211; For fixing the issues which may occur while implementing Open graph in WordPress themes.</li>
+<li><a title="Free plugins to add open graph in WordPress" href="../../10/5-free-plugins-adding-facebook-open-graph-meta-tags-wordpress/index.html" target="_blank" rel="noopener">5 Free plugins to add Facebook open graph in WordPress</a> &#8211; Collection of free and popular WordPress plugins for adding Open graph in WordPress.</li>
+<li><a title="Yoast's plugin for adding OG meta tags" href="../../10/add-facebook-open-graph-yoast-wordpress-seo-plugin/index.html" target="_blank" rel="noopener">How to add Facebook open graph meta tags using Yoast&#8217;s Plugin</a> &#8211; Step by Step guide for adding Open graph meta tags in WordPress using WordPress SEO by Yoast plugin.</li>
+</ol>
+<h4 id="manual">Manual method:</h4>
+<p>Open <em>functions.php</em> file and paste the below 4 functions in it.</p>
+<p><strong>function 1:</strong> It is to add Facebook and open graph name-servers into your website&#8217;s header so that the browser can expect the <span style="text-decoration: underline;">facebook open graph meta</span> information.</p>
+<pre>//Facebook and Open Graph nameservers
+function add_opengraph_nameser( $output ) {
+ return $output . '
+xmlns:og="http://opengraphprotocol.org/schema/"
+xmlns:fb="http://www.facebook.com/2008/fbml"';
+ }
+add_filter('language_attributes', 'add_opengraph_nameser');</pre>
+<p><strong>function 2</strong>: It is the main one, which adds the open graph meta data information to your site dynamically. If you see the code, you would notice that it is calling two custom functions, one for image and other one for excerpt.</p>
+<pre>// Facebook Open Graph
+add_action('wp_head', 'fb_opengraph_meta');
+function fb_opengraph_meta() {
+ if (is_single()) {
+ global $post;
+ if(get_the_post_thumbnail($post-&gt;ID, 'thumbnail')) {
+ $thumbnail_id = get_post_thumbnail_id($post-&gt;ID);
+ $thumbnail_object = get_post($thumbnail_id);
+ $image = $thumbnail_object-&gt;guid;
+ } else {
+ $image = ''; // Change this to the URL of the logo you want beside your links shown on Facebook
+ }
+ //$description = get_bloginfo('description');
+ $description = my_excerpt( $post-&gt;post_content, $post-&gt;post_excerpt );
+ $description = strip_tags($description);
+ $description = str_replace(""", """, $description);
+?&gt;
+&lt;meta property="og:title" content="&lt;?php the_title(); ?&gt;" /&gt;
+&lt;meta property="og:type" content="article" /&gt;
+&lt;meta property="og:image" content="&lt;?php echo get_opengraph_image(); ?&gt;" /&gt;
+&lt;meta property="og:url" content="&lt;?php the_permalink(); ?&gt;" /&gt;
+&lt;meta property="og:description" content="&lt;?php echo $description ?&gt;" /&gt;
+&lt;meta property="og:site_name" content="&lt;?php echo get_bloginfo('name'); ?&gt;" /&gt;
+&lt;?php }
+}</pre>
+<p><strong>function 3</strong>: It would include a 60 words excerpt for <em>og:description</em> into the post. If you want to modify the excerpt length then change the value 60 in the below to an integer number of your choice.</p>
+<pre>function my_excerpt($text, $excerpt){
+ if ($excerpt) return $excerpt;
+$text = strip_shortcodes( $text );
+$text = apply_filters('the_content', $text);
+ $text = str_replace(']]&gt;', ']]&amp;gt;', $text);
+ $text = strip_tags($text);
+ $excerpt_length = apply_filters('excerpt_length', 60);
+ $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+ $words = preg_split("/[n
+ ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+ if ( count($words) &gt; $excerpt_length ) {
+ array_pop($words);
+ $text = implode(' ', $words);
+ $text = $text . $excerpt_more;
+ } else {
+ $text = implode(' ', $words);
+ }
+return apply_filters('wp_trim_excerpt', $text, $raw_excerpt);
+}</pre>
+<p><strong>function 4</strong>: Our main function calls this function for <em>og:image</em> meta tag. The image fetched by below code would be displayed when someone shares or likes your content on Facebook.</p>
+<p><strong>What this function does?</strong> It selects the featured image for open graph if available. If it doesn&#8217;t find any featured image then it looks for the image used in the post, if no image is being used in the post then it uses the default image set within the code. Replace <em>http://example-domain.com/default-image.jpg</em> with your default image URL.</p>
+<pre>function get_opengraph_image() {
+ $src = wp_get_attachment_image_src( get_post_thumbnail_id($post-&gt;ID), '', '' );
+ if ( has_post_thumbnail($post-&gt;ID) ) {
+ $ogimage = $src[0];
+ } else {
+ global $post, $posts;
+ $ogimage = '';
+ $output = preg_match_all('/&lt;img.+src=['"]([^'"]+)['"].*&gt;/i',
+ $post-&gt;post_content, $matches);
+ $ogimage = $matches [1] [0];
+ }
+ if(empty($ogimage)) {
+ $ogimage = "http://example-domain.com/default-image.jpg";
+ }
+ return $ogimage;
+}</pre>
+<h4 id="plugins">WordPress Plugins to add open graph meta data</h4>
+<p><strong>1) WP Facebook Open Graph Protocol Plugin (free!!)</strong></p>
+<p>The above method requires little bit coding but if you want to get it done using plugin then <a href="https://wordpress.org/plugins/wp-facebook-open-graph-protocol/" target="_blank" rel="noopener">WP Facebook open graph protocol plugin</a> is  a better option. Download it from <a href="https://wordpress.org/plugins/wp-facebook-open-graph-protocol/" target="_blank" rel="noopener">here</a>.</p>
+<p><strong>Configuration:</strong> This is how the settings screen would look like for this plugin &#8211;</p>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-3372" style="border: 1px solid grey;" src="../../../wp-content/uploads/2013/09/opengraph.png" alt="Add Facebook Open Graph Meta Data in WordPress Themes" width="600" height="380" srcset="https://beginnersbook.com/wp-content/uploads/2013/09/opengraph.png 600w, https://beginnersbook.com/wp-content/uploads/2013/09/opengraph-300x190.png 300w" sizes="(max-width: 600px) 100vw, 600px" /></p>
+<p><strong>2) Yoast WordPress SEO plugin (Free!!)</strong></p>
+<p>This plugin is one of the best free plugin for Search engine optimization. Using it, you can now add open graph tags while writing the post. I believe you must be using it, if not then download it from <a href="https://yoast.com/wordpress/seo/" target="_blank" rel="noopener">here</a>.</p>
+<p><strong>3) SEOPressor v5 (Premium!!)</strong></p>
+<p>It is a premium plugin but the features it provides are worth of the money, it costs. It provides a panel just below the post editor, to add Facebook open graph tags (see the below screenshot). If you are planning to buy it then read <a href="../seopressor-v5-review/index.html" target="_blank" rel="noopener">my review of SEOPressor 5</a>.</p>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-3375" style="border: 2px solid grey;" src="../../../wp-content/uploads/2013/09/seop-opengraph.png" alt="seop-opengraph" width="642" height="470" srcset="https://beginnersbook.com/wp-content/uploads/2013/09/seop-opengraph.png 642w, https://beginnersbook.com/wp-content/uploads/2013/09/seop-opengraph-300x219.png 300w" sizes="(max-width: 642px) 100vw, 642px" /></p>
+<p>Let us know if you have any questions regarding this or in case you face any issue while setting up the manual code for Facebook open graph meta data.</p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../add-google-plus-comments-wordpress/index.html" rel="bookmark" title="Link to How to Add Google+ Comments in WordPress">How to Add Google+ Comments in WordPress</a></li><li><a href="../../../2012/12/how-to-install-wordpress-on-hostgator/index.html" rel="bookmark" title="Link to How to install WordPress on hostgator">How to install WordPress on hostgator</a></li><li><a href="../add-google-button-website/index.html" rel="bookmark" title="Link to How to Add Google Plus Button to Website">How to Add Google Plus Button to Website</a></li><li><a href="../add-facebook-comments-wordpress/index.html" rel="bookmark" title="Link to How to Add Facebook Comments to WordPress">How to Add Facebook Comments to WordPress</a></li><li><a href="../add-video-thumbnails-wordpress-automatically-plugin/index.html" rel="bookmark" title="Link to How to Add Video Thumbnails in WordPress Automatically using Plugin">How to Add Video Thumbnails in WordPress Automatically using Plugin</a></li><li><a href="../post-excerpts-wordpress-themes/index.html" rel="bookmark" title="Link to How to Display Post Excerpts(Summary) in WordPress Themes">How to Display Post Excerpts(Summary) in WordPress Themes</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-66665">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a15fcd366d2a764f98c4ded0e4a9a5c9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a15fcd366d2a764f98c4ded0e4a9a5c9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">pgz</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-29T12:34:47+00:00" itemprop="datePublished"><a href="index.html#comment-66665" class="comment-time-link" itemprop="url">January 29, 2017 at 12:34 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>hello,</p>
+<p>old post, but I have not found a solution&#8230; Is there a way to add function to check if article is a .gif image and set og:url to path for image and og:type set for video:other?</p>
+<p>Regards</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-66665' onclick='return addComment.moveForm( "comment-66665", "66665", "respond", "3368" )' aria-label='Reply to pgz'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='3368' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="4e3c61b088" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="48"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-49" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><h4 class="widget-title widgettitle">SEO</h4>
+<ul>
+<li><a href="../../../2012/11/how-to-write-seo-articles-with-keywords/index.html">Write SEO Articles</a></li>
+<li><a href="../../10/add-facebook-open-graph-yoast-wordpress-seo-plugin/index.html">Open Graph Meta Tags</a></li>
+<li><a href="../../01/seo-friendly-images-alt-tag/index.html">SEO Friendly Images</a></li>
+<li><a href="../seopressor-v5-review/index.html">SEOPressor Review</a></li>
+<li><a href="../../08/auto-interlink-posts-wordpress-seo-smart-links-seo-alrp/index.html">Auto Interlink Posts</a></li>
+</ul>
+
+<h4 class="widget-title widgettitle">WordPress</h4>
+<ul>
+<li><a href="../../10/5-free-plugins-adding-facebook-open-graph-meta-tags-wordpress/index.html">Free plugins to add Open Graph Tags</a></li>
+<li><a href="../../10/5-free-plugins-adding-captcha-wordpress-blog-comments/index.html">Free plugins to add Captcha</a></li>
+<li><a href="../set-default-thumbnail-featured-fallback-image-wordpress-automatically/index.html">Set thumbnails automatically</a></li>
+<li><a href="../display-related-posts-thumbnails-wordpress-plugin/index.html">Display related Posts WP</a></li>
+<li><a href="../change-post-excerpt-length-wordpress/index.html">Change Post excerpt length WP</a></li>
+</ul>
+
+<h4 class="widget-title widgettitle">Website</h4>
+<ul>
+<li><a href="../add-facebook-like-button-website/index.html">Add Facebook like button</a></li>
+<li><a href="../add-google-button-website/index.html">Add Google plus button</a></li>
+<li><a href="../add-twitter-button-website/index.html">Add Twitter button</a></li>
+<li><a href="../../10/create-a-free-website-on-blogspot/index.html">Create Free Website on blogspot</a></li>
+</ul></div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/09/add-facebook-open-graph-meta-data-wordpress-themes/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:32:37 GMT -->
+</html>

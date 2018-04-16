@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/05/constructor-overloading/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:21:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Constructor Overloading in Java with examples</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Like methods, constructors can also be overloaded. In this guide we will see Constructor overloading with the help of examples. Before we proceed further let&#039;s understand what is constructor overloading and why we do it. Constructor overloading is a concept of having more than one constructor with different"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Constructor Overloading in Java with examples" />
+<meta property="og:description" content="Like methods, constructors can also be overloaded. In this guide we will see Constructor overloading with the help of examples. Before we proceed further let&#039;s understand what is constructor overloading and why we do it. Constructor overloading is a concept of having more than one constructor with different" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="constructor" />
+<meta property="article:tag" content="example" />
+<meta property="article:tag" content="java" />
+<meta property="article:tag" content="overloading" />
+<meta property="article:section" content="OOPs Concept" />
+<meta property="article:published_time" content="2013-05-28T19:44:15+00:00" />
+<meta property="article:modified_time" content="2017-08-18T14:40:36+00:00" />
+<meta property="og:updated_time" content="2017-08-18T14:40:36+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/constructor_overloading.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/constructor_overloading.jpg" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Like methods, constructors can also be overloaded. In this guide we will see Constructor overloading with the help of examples. Before we proceed further let&#039;s understand what is constructor overloading and why we do it. Constructor overloading is a concept of having more than one constructor with different" />
+<meta name="twitter:title" content="Constructor Overloading in Java with examples" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2013/05/constructor_overloading.jpg" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Constructor Overloading in Java with examples Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index21a3.html?p=2785' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed0a6f.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fconstructor-overloading%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed7396?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fconstructor-overloading%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2785 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2785 post type-post status-publish format-standard category-oops-concept tag-constructor tag-example tag-java tag-overloading entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Constructor Overloading in Java with examples</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/oops-concept/index.html" rel="category tag">OOPs Concept</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Like methods, <a href="../../03/constructors-in-java/index.html">constructors</a> can also be overloaded. In this guide we will see Constructor overloading with the help of examples. Before we proceed further let&#8217;s understand what is constructor overloading and why we do it.</p>
+<p>Constructor overloading is a concept of having more than one constructor with different parameters list, in such a way so that each constructor performs a different task. For e.g. <code>Vector</code> class has 4 types of constructors. If you do not want to specify the initial capacity and capacity increment then you can simply use default constructor of <a href="../../12/vector-in-java/index.html">Vector class</a> like this <code>Vector v = new Vector();</code> however if you need to specify the capacity and increment then you call the parameterized constructor of Vector class with two int arguments like this: <code>Vector v= new Vector(10, 5);</code></p>
+<p><img class="aligncenter size-full wp-image-6643" src="../../../wp-content/uploads/2013/05/constructor_overloading.jpg" alt="constructor overloading" width="500" height="300" srcset="https://beginnersbook.com/wp-content/uploads/2013/05/constructor_overloading.jpg 500w, https://beginnersbook.com/wp-content/uploads/2013/05/constructor_overloading-300x180.jpg 300w" sizes="(max-width: 500px) 100vw, 500px" /><br />
+You must have understood the purpose of constructor overloading. Lets see how to overload a constructor with the help of following java program.</p>
+<h2>Constructor Overloading Example</h2>
+<p>Here we are creating two objects of class <code>StudentData</code>. One is with default constructor and another one using parameterized constructor. Both the constructors have different initialization code, similarly you can create any number of constructors with different-2 initialization codes for different-2 purposes.<br />
+<strong>StudentData.java</strong></p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>class StudentData
+{
+   private int stuID;
+   private String stuName;
+   private int stuAge;
+   StudentData()
+   {
+       //Default constructor
+       stuID = 100;
+       stuName = "New Student";
+       stuAge = 18;
+   }
+   StudentData(int num1, String str, int num2)
+   {
+       //Parameterized constructor
+       stuID = num1;
+       stuName = str;
+       stuAge = num2;
+   }
+   //Getter and setter methods
+   public int getStuID() {
+       return stuID;
+   }
+   public void setStuID(int stuID) {
+       this.stuID = stuID;
+   }
+   public String getStuName() {
+       return stuName;
+   }
+   public void setStuName(String stuName) {
+       this.stuName = stuName;
+   }
+   public int getStuAge() {
+       return stuAge;
+   }
+   public void setStuAge(int stuAge) {
+       this.stuAge = stuAge;
+   }
+
+   public static void main(String args[])
+   {
+       //This object creation would call the default constructor
+       StudentData myobj = new StudentData();
+       System.out.println("Student Name is: "+myobj.getStuName());
+       System.out.println("Student Age is: "+myobj.getStuAge());
+       System.out.println("Student ID is: "+myobj.getStuID());
+
+       /*This object creation would call the parameterized
+        * constructor StudentData(int, String, int)*/
+       StudentData myobj2 = new StudentData(555, "Chaitanya", 25);
+       System.out.println("Student Name is: "+myobj2.getStuName());
+       System.out.println("Student Age is: "+myobj2.getStuAge());
+       System.out.println("Student ID is: "+myobj2.getStuID()); 
+  }
+}</pre>
+<p>Output:</p>
+<pre>Student Name is: New Student
+Student Age is: 18
+Student ID is: 100
+Student Name is: Chaitanya
+Student Age is: 25
+Student ID is: 555</pre>
+<h2>Let&#8217;s understand the role of this () in constructor overloading</h2>
+<pre>public class OverloadingExample2
+{
+   private int rollNum;
+   OverloadingExample2()
+   {
+      rollNum =100;
+   }
+   OverloadingExample2(int rnum)
+   {
+      this();
+      /*this() is used for calling the default  
+       * constructor from parameterized constructor.
+       * It should always be the first statement 
+       * inside constructor body.
+       */
+      rollNum = rollNum+ rnum;
+   }
+   public int getRollNum() {
+	  return rollNum;
+   }
+   public void setRollNum(int rollNum) {
+	  this.rollNum = rollNum;
+   }
+   public static void main(String args[])
+   {
+	   OverloadingExample2 obj = new OverloadingExample2(12);
+       System.out.println(obj.getRollNum());
+    }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>112</pre>
+<p>As you can see in the above program that we called the parameterized constructor during object creation. Since we have this() placed in parameterized constructor, the default constructor got invoked from it and initialized the variable <code>rollNum</code>.</p>
+<p><strong>Test your skills – Guess the output of the following program</strong></p>
+<pre>public class OverloadingExample2
+{
+   private int rollNum;
+   OverloadingExample2()
+   {
+      rollNum =100;
+   }
+   OverloadingExample2(int rnum)
+   {
+     
+      rollNum = rollNum+ rnum;
+      this();
+   }
+   public int getRollNum() {
+      return rollNum;
+   }
+   public void setRollNum(int rollNum) {
+      this.rollNum = rollNum;
+   }
+   public static void main(String args[])
+   {
+       OverloadingExample2 obj = new OverloadingExample2(12);
+       System.out.println(obj.getRollNum());
+    }
+}
+</pre>
+<p>Output:</p>
+<pre>Exception in thread "main" java.lang.Error: Unresolved compilation 
+problem:Constructor call must be the first statement in a constructor</pre>
+<blockquote><p>Program gave a compilation error. <strong>Reason</strong>: this() should be the first statement inside a constructor.</p></blockquote>
+<h2>Another Constructor overloading Example</h2>
+<p><strong>Another important point</strong> to note while overloading a constructor is: When we don&#8217;t implement any constructor, the java compiler inserts the default constructor into our code during compilation, however if we implement any constructor then compiler doesn&#8217;t do it. See the example below.</p>
+<pre>public class Demo
+{
+   private int rollNum;
+   //We are not defining a no-arg constructor here
+
+   Demo(int rnum)
+   {
+      rollNum = rollNum+ rnum;
+   }
+   //Getter and Setter methods
+
+   public static void main(String args[])
+   {
+      //This statement would invoke no-arg constructor
+      Demo obj = new Demo();
+   }
+}</pre>
+<p>Output:</p>
+<pre>Exception in thread "main" java.lang.Error: Unresolved compilation 
+problem:The constructor Demo() is undefined</pre>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../12/java-private-constructor-example/index.html" rel="bookmark" title="Link to Java &#8211; private constructor example">Java &#8211; private constructor example</a></li><li><a href="../../12/java-constructor-in-interface/index.html" rel="bookmark" title="Link to Java &#8211; Constructor in Interface?">Java &#8211; Constructor in Interface?</a></li><li><a href="../java-abstract-class-method/index.html" rel="bookmark" title="Link to Abstract Class in Java with example">Abstract Class in Java with example</a></li><li><a href="../java-multiple-inheritance/index.html" rel="bookmark" title="Link to Does Java support Multiple inheritance?">Does Java support Multiple inheritance?</a></li><li><a href="../static-constructor/index.html" rel="bookmark" title="Link to Java static constructor &#8211; Is it really Possible to have them in Java?">Java static constructor &#8211; Is it really Possible to have them in Java?</a></li><li><a href="../../../2014/07/final-method-parameters-in-java/index.html" rel="bookmark" title="Link to Final method parameters in java">Final method parameters in java</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-2236">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/af810fa91c72f0e54ed27f944e372bd7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/af810fa91c72f0e54ed27f944e372bd7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">vikashini</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-03-25T16:55:26+00:00" itemprop="datePublished"><a href="index.html#comment-2236" class="comment-time-link" itemprop="url">March 25, 2014 at 4:55 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>very useful&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2236' onclick='return addComment.moveForm( "comment-2236", "2236", "respond", "2785" )' aria-label='Reply to vikashini'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3256">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/67c59f39126aa6406d001b62c0d2cfcc?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/67c59f39126aa6406d001b62c0d2cfcc?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">jayaram</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-30T07:17:08+00:00" itemprop="datePublished"><a href="index.html#comment-3256" class="comment-time-link" itemprop="url">April 30, 2014 at 7:17 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Really good example for constructor overloading.</p>
+<p>Thanks<br />
+Jayaram</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3256' onclick='return addComment.moveForm( "comment-3256", "3256", "respond", "2785" )' aria-label='Reply to jayaram'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-6303">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ab2fa1567ce65fa9d9e42e2735c01548?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ab2fa1567ce65fa9d9e42e2735c01548?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Suhas</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-18T14:52:28+00:00" itemprop="datePublished"><a href="index.html#comment-6303" class="comment-time-link" itemprop="url">August 18, 2014 at 2:52 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Good explanation with examples. Thanks</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6303' onclick='return addComment.moveForm( "comment-6303", "6303", "respond", "2785" )' aria-label='Reply to Suhas'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-19254">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b309fffe3011673342fcb3f0a9746c7a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b309fffe3011673342fcb3f0a9746c7a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sudheer</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-27T09:10:07+00:00" itemprop="datePublished"><a href="index.html#comment-19254" class="comment-time-link" itemprop="url">November 27, 2014 at 9:10 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This is so clear</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19254' onclick='return addComment.moveForm( "comment-19254", "19254", "respond", "2785" )' aria-label='Reply to Sudheer'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-26261">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/21d7a3caba00b0b235e46d91daafe6ec?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/21d7a3caba00b0b235e46d91daafe6ec?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Agus</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-04-27T04:09:10+00:00" itemprop="datePublished"><a href="index.html#comment-26261" class="comment-time-link" itemprop="url">April 27, 2015 at 4:09 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Wow.. this is really helpful for me on my java class. Thanks so much :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-26261' onclick='return addComment.moveForm( "comment-26261", "26261", "respond", "2785" )' aria-label='Reply to Agus'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-28907">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bd8923b5faa6d40150e9dd35264ceaad?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bd8923b5faa6d40150e9dd35264ceaad?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rajesh Kumar Dash</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-29T07:54:26+00:00" itemprop="datePublished"><a href="index.html#comment-28907" class="comment-time-link" itemprop="url">June 29, 2015 at 7:54 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Its on of the best website for java reference. All the concepts are so clearly explained. Uts truely value its name as Beginner&#8217;s Book. I am really thanks to the author and all the people working behind the team.No need to open 4-3 sites simultaneously. The contains are enough to build your fundamentals and to clear your doubt.<br />
+The page is so simple and effective. Great UI and great design of the page too. I really appriciate your hard work. Keep it up.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-28907' onclick='return addComment.moveForm( "comment-28907", "28907", "respond", "2785" )' aria-label='Reply to Rajesh Kumar Dash'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-45937">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/35b2d653b96492ca132cc3609c6d2f82?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/35b2d653b96492ca132cc3609c6d2f82?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">ramya</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-13T03:51:11+00:00" itemprop="datePublished"><a href="index.html#comment-45937" class="comment-time-link" itemprop="url">December 13, 2015 at 3:51 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>thanks a lotttttt.<br />
+It is very helpful your explanation for each n every concept is so good.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-45937' onclick='return addComment.moveForm( "comment-45937", "45937", "respond", "2785" )' aria-label='Reply to ramya'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-47296">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9eb93792d53bf688581d4251e8600187?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9eb93792d53bf688581d4251e8600187?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">parvin</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-26T19:39:43+00:00" itemprop="datePublished"><a href="index.html#comment-47296" class="comment-time-link" itemprop="url">December 26, 2015 at 7:39 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi&#8230;the explanation is very simple and useful.<br />
+I have few questions.</p>
+<p>1.What if child class&#8217;s constructor is being called and it&#8217;s parent class does not a default constructor(which is expected to be called implicitly)? Will complier throw error?</p>
+<p>2.if child class&#8217;s default constructor is being called,where first statement is this(parameter);<br />
+Will this call parent&#8217;s default constructor first and then will invoke parametrized constructor of current object?</p>
+<p>3.if in child&#8217;s default constructor which is being called first statement is super(); and second is this();<br />
+Will this work in anyway?if yes then how?<br />
+Or then it will throw compilation error as both the statement&#8217;s requirement is to be first statement.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-47296' onclick='return addComment.moveForm( "comment-47296", "47296", "respond", "2785" )' aria-label='Reply to parvin'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-50440">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2a63d10c924177e5f8fadf4529620468?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2a63d10c924177e5f8fadf4529620468?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">anu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-05T13:02:52+00:00" itemprop="datePublished"><a href="index.html#comment-50440" class="comment-time-link" itemprop="url">February 5, 2016 at 1:02 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>What&#8217;s the use of getter and setter method here while we could pass the values in object</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-50440' onclick='return addComment.moveForm( "comment-50440", "50440", "respond", "2785" )' aria-label='Reply to anu'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-63024">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/76f117d147b799da207756106b10cf32?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/76f117d147b799da207756106b10cf32?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rana Chakraborty</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-03T07:31:04+00:00" itemprop="datePublished"><a href="index.html#comment-63024" class="comment-time-link" itemprop="url">November 3, 2016 at 7:31 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This is a quite useful example, and very well explained. </p>
+<p>This site is very helpful for those who wants to learn JAVA.</p>
+<p>Best regards and good wishes !!!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63024' onclick='return addComment.moveForm( "comment-63024", "63024", "respond", "2785" )' aria-label='Reply to Rana Chakraborty'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-67965">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2ae0ab078c9b2efdebed3f06cec4095f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2ae0ab078c9b2efdebed3f06cec4095f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chirag H G</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-01T05:20:42+00:00" itemprop="datePublished"><a href="index.html#comment-67965" class="comment-time-link" itemprop="url">March 1, 2017 at 5:20 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi, In the 2nd example. In the comment section, you have written &#8221; this() is used for calling the default  constructor from parameterized constructor.&#8221; </p>
+<p>I believe,  this() is used to call no-argument constructor from parameterized constructor.</p>
+<p>Correct me, if i am wrong!!!!. </p>
+<p>This is one of the best website i found to learn java effectively. Keep up the good work!!.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-67965' onclick='return addComment.moveForm( "comment-67965", "67965", "respond", "2785" )' aria-label='Reply to Chirag H G'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2785' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="d7c44174b4" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="9"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../../04/oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../../04/java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../association/index.html">Association</a></li>
+<li><a href="../../../2014/07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="../method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="../../../2014/01/method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="../../../2014/01/difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../../04/runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../../04/java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="../java-interface/index.html">Interface</a></li>
+ 	<li><a href="../abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../../04/java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../inner-class/index.html">Inner classes</a></li>
+<li><a href="../java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/05/constructor-overloading/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:21:05 GMT -->
+</html>

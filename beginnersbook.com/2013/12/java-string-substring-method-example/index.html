@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/12/java-string-substring-method-example/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:59:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java - String substring() Method example</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Method substring() is used for getting a substring of a particular String. There are two variants of this method: String substring(int beginIndex): Returns the substring starting from the specified index(beginIndex) till the end of the string. For e.g. &quot;Chaitanya&quot;.substring(2) would return &quot;aitanya&quot;. This method"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Java - String substring() Method example" />
+<meta property="og:description" content="Method substring() is used for getting a substring of a particular String. There are two variants of this method: String substring(int beginIndex): Returns the substring starting from the specified index(beginIndex) till the end of the string. For e.g. &quot;Chaitanya&quot;.substring(2) would return &quot;aitanya&quot;. This method" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="example" />
+<meta property="article:tag" content="java" />
+<meta property="article:tag" content="method" />
+<meta property="article:tag" content="String" />
+<meta property="article:tag" content="substring" />
+<meta property="article:section" content="String handling" />
+<meta property="article:published_time" content="2013-12-28T05:35:01+00:00" />
+<meta property="article:modified_time" content="2013-12-28T05:36:25+00:00" />
+<meta property="og:updated_time" content="2013-12-28T05:36:25+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Method substring() is used for getting a substring of a particular String. There are two variants of this method: String substring(int beginIndex): Returns the substring starting from the specified index(beginIndex) till the end of the string. For e.g. &quot;Chaitanya&quot;.substring(2) would return &quot;aitanya&quot;. This method" />
+<meta name="twitter:title" content="Java - String substring() Method example" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Java &#8211; String substring() Method example Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexd8dc.html?p=4585' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embedaf8a.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F12%2Fjava-string-substring-method-example%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embede275?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F12%2Fjava-string-substring-method-example%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-4585 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-4585 post type-post status-publish format-standard category-string-handling tag-example tag-java tag-method tag-string tag-substring entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Java &#8211; String substring() Method example</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/string-handling/index.html" rel="category tag">String handling</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Method <code>substring()</code> is used for getting a substring of a particular String. There are two variants of this method:</p>
+<p><code>String substring(int beginIndex)</code>: Returns the substring starting from the specified index(beginIndex) till the end of the string. For e.g. <code>"Chaitanya".substring(2)</code> would return <code>"aitanya"</code>. This method throws <code>IndexOutOfBoundsException</code> If the beginIndex is less than zero or greater than the length of String (beginIndex&lt;0||&gt; length of String).</p>
+<p><code>String substring(int beginIndex, int endIndex)</code>: Returns the substring starting from the given index(beginIndex) till the specified index(endIndex). For e.g. <code>"Chaitanya".substring(2,5)</code> would return <code>"ait"</code>. It throws <code>IndexOutOfBoundsException</code> If the <code>beginIndex</code> is less than zero OR <code>beginIndex &gt; endIndex</code> OR <code>endIndex</code> is greater than the length of String.</p>
+<h3>Example: substring()</h3>
+<pre>public class SubStringExample{
+   public static void main(String args[]) {
+       String str= new String("quick brown fox jumps over the lazy dog");
+       System.out.println("Substring starting from index 15:");
+       System.out.println(str.substring(15));
+       System.out.println("Substring starting from index 15 and ending at 20:");
+       System.out.println(str.substring(15, 20));
+   }
+}</pre>
+<p>Output:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>Substring starting from index 15:
+ jumps over the lazy dog
+Substring starting from index 15 and ending at 20:
+ jump</pre>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../java-string-trim-and-hashcode-methods/index.html" rel="bookmark" title="Link to Java &#8211; String trim() and hashCode() Methods">Java &#8211; String trim() and hashCode() Methods</a></li><li><a href="../java-string-indexof-method-example/index.html" rel="bookmark" title="Link to Java &#8211; String indexOf() Method example">Java &#8211; String indexOf() Method example</a></li><li><a href="../how-to-convert-inputstream-to-string-in-java/index.html" rel="bookmark" title="Link to How To Convert InputStream To String In Java">How To Convert InputStream To String In Java</a></li><li><a href="../java-string-tolowercase-method-example/index.html" rel="bookmark" title="Link to Java &#8211; String toLowerCase() and toUpperCase()  Methods">Java &#8211; String toLowerCase() and toUpperCase()  Methods</a></li><li><a href="../java-string-copyvalueof-method-example/index.html" rel="bookmark" title="Link to Java &#8211; String copyValueOf() Method example">Java &#8211; String copyValueOf() Method example</a></li><li><a href="../../../2017/10/java-string-valueof-method/index.html" rel="bookmark" title="Link to Java String valueOf() method explained with examples">Java String valueOf() method explained with examples</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-52271">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d8bdd8b0cce47f32946f3ec371942a29?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d8bdd8b0cce47f32946f3ec371942a29?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">David</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-08T16:50:18+00:00" itemprop="datePublished"><a href="index.html#comment-52271" class="comment-time-link" itemprop="url">March 8, 2016 at 4:50 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I think the second result is &#8220;jumps&#8221;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52271' onclick='return addComment.moveForm( "comment-52271", "52271", "respond", "4585" )' aria-label='Reply to David'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-61124">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2ab64abae20d83e9b2d00ea418ba1d56?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2ab64abae20d83e9b2d00ea418ba1d56?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Laila</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-28T16:42:11+00:00" itemprop="datePublished"><a href="index.html#comment-61124" class="comment-time-link" itemprop="url">September 28, 2016 at 4:42 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I thought it would be &#8221; jump&#8221;  if we consider the space before the word &#8220;jumps&#8221; as a character.<br />
+As its explained above the example , &#8220;chaitanya&#8221;.substring(2,5) and the result is &#8220;a(2)i(3)t(4)&#8221;, so the fifth character isn&#8217;t taken ?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-61124' onclick='return addComment.moveForm( "comment-61124", "61124", "respond", "4585" )' aria-label='Reply to Laila'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-62808">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4d4f79c8a42111b793c4fa6c9a8da714?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/4d4f79c8a42111b793c4fa6c9a8da714?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rana Imran</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-10-30T12:37:29+00:00" itemprop="datePublished"><a href="index.html#comment-62808" class="comment-time-link" itemprop="url">October 30, 2016 at 12:37 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>also count space ,secondly 20 end at &#8220;s&#8221;,so java show less one character.so result is jump.<br />
+Example:<br />
+abc<br />
+012<br />
+(0,1) show just a exclusive end point.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-62808' onclick='return addComment.moveForm( "comment-62808", "62808", "respond", "4585" )' aria-label='Reply to Rana Imran'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-63156">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/066d76818c6ac84aeabfd7c51c634090?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/066d76818c6ac84aeabfd7c51c634090?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Cyril</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-07T14:00:57+00:00" itemprop="datePublished"><a href="index.html#comment-63156" class="comment-time-link" itemprop="url">November 7, 2016 at 2:00 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>No it&#8217;s correct the result is &#8221; jump&#8221; with a space before</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63156' onclick='return addComment.moveForm( "comment-63156", "63156", "respond", "4585" )' aria-label='Reply to Cyril'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-64941">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bb2068383dd92fe02cd12f230497b70e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bb2068383dd92fe02cd12f230497b70e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">gorge</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-12-24T15:33:14+00:00" itemprop="datePublished"><a href="index.html#comment-64941" class="comment-time-link" itemprop="url">December 24, 2016 at 3:33 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>bad example =(<br />
+the space just so hard to see, such misleading</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-64941' onclick='return addComment.moveForm( "comment-64941", "64941", "respond", "4585" )' aria-label='Reply to gorge'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-66704">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b1bf4fc821293e40965df11207fda276?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b1bf4fc821293e40965df11207fda276?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Abhinabo</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-30T14:16:18+00:00" itemprop="datePublished"><a href="index.html#comment-66704" class="comment-time-link" itemprop="url">January 30, 2017 at 2:16 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>had forgotten the concept<br />
+the example helped alot, thanks!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-66704' onclick='return addComment.moveForm( "comment-66704", "66704", "respond", "4585" )' aria-label='Reply to Abhinabo'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4585' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="7b5bf5cb52" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="130"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-25" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java String</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../java-strings/index.html">Java String</a></li>
+</ul>
+<h4 class="widget-title">Java String Methods</h4>
+<ul>
+<li><a href="../java-string-charat-method-example/index.html">String charAt()</a></li>
+<li><a href="../../../2017/10/java-string-contains-method/index.html">String contains()</a></li>
+<li><a href="../java-string-compareto-method-example/index.html">String compareTo()</a></li>
+<li><a href="../java-string-concat-method-example/index.html">String concat()</a></li>
+<li><a href="index.html">substring</a></li>
+<li><a href="../../../2017/10/java-string-valueof-method/index.html">String valueOf()</a></li>
+<li><a href="../java-string-comparetoignorecase-method-example/index.html" >String compareToIgnoreCase()</a></li>
+<li><a href="../java-string-startswith-method-example/index.html">String startsWith()</a></li>
+<li><a href="../java-string-equals-and-equalsignorecase-methods-example/index.html" >String equals()</a></li>
+<li><a href="../../../2017/10/java-string-format-method/index.html">String format()</a></li>
+<li><a href="../java-string-endswith-method-example/index.html">String endsWith()</a></li>
+<li><a href="../java-string-indexof-method-example/index.html">String indexOf()</a></li>
+<li><a href="../java-string-lastindexof-method-example/index.html">String lastIndexOf()</a></li>
+<li><a href="../java-string-length-method-example/index.html">String length()</a></li>
+<li><a href="../java-string-replace-replacefirst-replaceall-method-examples/index.html" >String replace()</a></li>
+<li><a href="../java-string-split-method-example/index.html">String split()</a></li>
+<li><a href="../java-string-trim-and-hashcode-methods/index.html">String trim()</a></li>
+<li><a href="../../../2017/10/java-string-intern-method/index.html">String intern()</a></li>
+<li><a href="../../../2017/10/java-string-isempty-method-with-example/index.html">String isEmpty()</a></li>
+<li><a href="../java-string-matches-method-example/index.html">String matches()</a></li>
+<li><a href="../java-string-regionmatches-method-example/index.html">String regionMatches()</a></li>
+<li><a href="../java-string-contentequals-method-example/index.html">String contentEquals()</a></li>
+<li><a href="../java-string-tochararray-method-example/index.html">String toCharArray()</a></li>
+<li><a href="../java-string-getbytes-method-example/index.html">String getBytes()</a></li>
+<li><a href="../../../2017/10/java-string-join-method/index.html">String join()</a></li>
+<li><a href="../java-string-getchars-method-example/index.html">String getChars()</a></li>
+<li><a href="../java-string-copyvalueof-method-example/index.html">String copyValueOf()</a></li>
+</ul></div></div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/12/java-string-substring-method-example/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:59:34 GMT -->
+</html>

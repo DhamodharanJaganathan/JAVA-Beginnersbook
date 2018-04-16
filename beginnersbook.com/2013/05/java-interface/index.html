@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/05/java-interface/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:40:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Interface in java with example programs</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Interface in Java: Interface is used for achieving full abstraction in java. An interface is like a template that we can use in our classes.."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Interface in java with example programs" />
+<meta property="og:description" content="Interface in Java: Interface is used for achieving full abstraction in java. An interface is like a template that we can use in our classes.." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="OOPs Concept" />
+<meta property="article:published_time" content="2013-05-13T10:44:40+00:00" />
+<meta property="article:modified_time" content="2017-09-22T13:36:48+00:00" />
+<meta property="og:updated_time" content="2017-09-22T13:36:48+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Interface in Java: Interface is used for achieving full abstraction in java. An interface is like a template that we can use in our classes.." />
+<meta name="twitter:title" content="Interface in java with example programs" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Interface in java with example programs Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index9f3f.html?p=2554' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed383b.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fjava-interface%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed410b?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fjava-interface%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2554 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2554 post type-post status-publish format-standard category-oops-concept entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Interface in java with example programs</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/oops-concept/index.html" rel="category tag">OOPs Concept</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>In the last tutorial we discussed <a href="../java-abstract-class-method/index.html">abstract class</a> which is used for achieving partial abstraction. Unlike abstract class an interface is used for full abstraction. Abstraction is a process where you show only &#8220;relevant&#8221; data and &#8220;hide&#8221; unnecessary details of an object from the user(See: <a href="../../03/oops-in-java-encapsulation-inheritance-polymorphism-abstraction/index.html">Abstraction</a>). In this guide, we will cover <strong>what is an interface in java</strong>, why we use it and what are rules that we must follow while using interfaces in <a href="../../../java-tutorial-for-beginners-with-examples/index.html">Java Programming</a>.</p>
+<h2>What is an interface in Java?</h2>
+<p>Interface looks like a class but it is not a class. An interface can have methods and variables just like the class but the methods declared in interface are by default abstract (only method signature, no body, see: <a href="../../../2014/01/abstract-method-with-examples-in-java/index.html">Java abstract method</a>). Also, the variables declared in an interface are public, static &amp; final by default. We will cover this in detail, later in this guide.</p>
+<h2>What is the use of interface in Java?</h2>
+<p>As mentioned above they are used for full abstraction. Since methods in interfaces do not have body, they have to be implemented by the class before you can access them. The class that implements interface must implement all the methods of that interface. Also, java programming language does not allow you to extend more than one class, However you can implement more than one interfaces in your class.</p>
+<p><strong>Syntax:</strong><br />
+Interfaces are declared by specifying a keyword &#8220;interface&#8221;. E.g.:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>interface MyInterface
+{
+   /* All the methods are public abstract by default
+    * As you see they have no body
+    */
+   public void method1();
+   public void method2();
+}</pre>
+<h2>Example of an Interface in Java</h2>
+<p>This is how a class implements an interface. It has to provide the body of all the methods that are declared in interface or in other words you can say that class has to implement all the methods of interface.</p>
+<blockquote><p><strong>Do you know?</strong> class <code>implements</code> interface but an interface <code>extends</code> another interface.</p></blockquote>
+<pre>interface MyInterface
+{
+   /* compiler will treat them as: 
+    * public abstract void method1();
+    * public abstract void method2();
+    */
+   public void method1();
+   public void method2();
+}
+class Demo implements MyInterface
+{
+   /* This class must have to implement both the abstract methods
+    * else you will get compilation error
+    */
+   public void method1()
+   {
+	System.out.println("implementation of method1");
+   }
+   public void method2()
+   {
+	System.out.println("implementation of method2");
+   }
+   public static void main(String arg[])
+   {
+	MyInterface obj = new Demo();
+	obj.method1();
+   }
+}
+</pre>
+<p>Output:</p>
+<pre>implementation of method1</pre>
+<p><strong>You may also like to read:</strong> <a href="../abstract-class-vs-interface-in-java/index.html">Difference between abstract class and interface</a></p>
+<h2>Interface and Inheritance</h2>
+<p>As discussed above, an interface can not implement another interface. It has to extend the other interface. See the below example where we have two interfaces Inf1 and Inf2. Inf2 extends Inf1 so If class implements the Inf2 it has to provide implementation of all the methods of interfaces Inf2 as well as Inf1.</p>
+<blockquote><p>Learn more about inheritance here: <a href="../../03/inheritance-in-java/index.html">Java Inheritance</a></p></blockquote>
+<pre>interface Inf1{
+   public void method1();
+}
+interface Inf2 extends Inf1 {
+   public void method2();
+}
+public class Demo implements Inf2{
+   /* Even though this class is only implementing the
+    * interface Inf2, it has to implement all the methods 
+    * of Inf1 as well because the interface Inf2 extends Inf1
+    */
+    public void method1(){
+	System.out.println("method1");
+    }
+    public void method2(){
+	System.out.println("method2");
+    }
+    public static void main(String args[]){
+	Inf2 obj = new Demo();
+	obj.method2();
+    }
+}
+</pre>
+<p>In this program, the class <code>Demo</code> only implements interface <code>Inf2</code>, however it has to provide the implementation of all the methods of interface <code>Inf1</code> as well, because interface Inf2 extends Inf1.</p>
+<h2>Tag or Marker interface in Java</h2>
+<p>An empty interface is known as tag or marker interface. For example Serializable, EventListener, Remote(java.rmi.Remote) are tag interfaces. These interfaces do not have any field and methods in it. Read more about it <a href="../../../2016/03/tag-or-marker-interfaces-in-java/index.html">here</a>.</p>
+<h3>Nested interfaces</h3>
+<p>An interface which is declared inside another interface or class is called <a href="../../../2016/03/nested-or-inner-interfaces-in-java/index.html">nested</a> interface. They are also known as inner interface. For example Entry interface in collections framework is declared inside Map interface, that&#8217;s why we don&#8217; use it directly, rather we use it like this: <code>Map.Entry</code>.</p>
+<p><strong>Key points:</strong> Here are the key points to remember about interfaces:<br />
+1) We can&#8217;t instantiate an interface in java. That means we cannot create the object of an interface</p>
+<p>2) Interface provides full abstraction as none of its methods have body. On the other hand abstract class provides partial abstraction as it can have abstract and concrete(methods with body) methods both.</p>
+<p>3) <code>implements</code> keyword is used by classes to implement an interface.</p>
+<p>4) While providing implementation in class of any method of an interface, it needs to be mentioned as public.</p>
+<p>5) Class that implements any interface must implement all the methods of that interface, else the class should be declared abstract.</p>
+<p>6) Interface cannot be declared as private, protected or transient.</p>
+<p>7) All the interface methods are by default <strong>abstract and public</strong>.</p>
+<p>8) Variables declared in interface are <strong>public, static and final</strong> by default.</p>
+<pre>interface Try
+{
+   int a=10;
+   public int a=10;
+   public static final int a=10;
+   final int a=10;
+   static int a=0;
+}</pre>
+<p>All of the above statements are identical.</p>
+<p>9) Interface variables must be initialized at the time of declaration otherwise compiler will throw an error.</p>
+<pre>interface Try
+{
+      int x;//Compile-time error
+}</pre>
+<p>Above code will throw a compile time error as the value of the variable x is not initialized at the time of declaration.</p>
+<p>10) Inside any implementation class, you cannot change the variables declared in interface because by default, they are public, static and final. Here we are implementing the interface &#8220;Try&#8221; which has a variable x. When we tried to set the value for variable x we got compilation error as the variable x is public static <strong>final</strong> by default and final variables can not be re-initialized.</p>
+<pre>class Sample implements Try
+{
+  public static void main(String args[])
+  {
+     x=20; //compile time error
+  }
+}</pre>
+<p>11) An interface can extend any interface but cannot implement it. Class implements interface and interface extends interface.</p>
+<p>12) A <strong>class</strong> can implement any <strong>number of interfaces</strong>.</p>
+<p>13) If there are <strong>two or more same methods</strong> in two interfaces and a class implements both interfaces, implementation of the method once is enough.</p>
+<pre>interface A
+{
+   public void aaa();
+}
+interface B
+{
+   public void aaa();
+}
+class Central implements A,B
+{
+   public void aaa()
+   {
+        //Any Code here
+   }
+   public static void main(String args[])
+   {
+        //Statements
+    }
+}</pre>
+<p>14) A class cannot implement two interfaces that have methods with same name but different return type.</p>
+<pre>interface A
+{
+   public void aaa();
+}
+interface B
+{
+   public int aaa();
+}
+
+class Central implements A,B
+{
+
+   public void aaa() // error
+   {
+   }
+   public int aaa() // error
+   {
+   }
+   public static void main(String args[])
+   {
+
+   }
+}</pre>
+<p>15) Variable names conflicts can be resolved by interface name.</p>
+<pre>interface A
+{
+    int x=10;
+}
+interface B
+{
+    int x=100;
+}
+class Hello implements A,B
+{
+    public static void Main(String args[])
+    {
+       /* reference to x is ambiguous both variables are x
+        * so we are using interface name to resolve the 
+        * variable
+        */
+       System.out.println(x); 
+       System.out.println(A.x);
+       System.out.println(B.x);
+    }
+}</pre>
+<h2>Advantages of interface in java:</h2>
+<p>Advantages of using interfaces are as follows:</p>
+<ol>
+<li>Without bothering about the implementation part, we can achieve the security of implementation</li>
+<li>In java, <a href="../java-multiple-inheritance/index.html"><strong>multiple inheritance</strong></a> is not allowed, however you can use interface to make use of it as you can implement more than one interface.</li>
+</ol>
+<div class="bb-nav"><a class="pretut" href="../../../2014/01/abstract-method-with-examples-in-java/index.html">❮ Previous</a><a class="nexttut" href="../encapsulation-in-java/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-4727">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1a4a9f2ce3a9e2bf683b0d175a32885e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1a4a9f2ce3a9e2bf683b0d175a32885e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chetan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-07-01T09:05:56+00:00" itemprop="datePublished"><a href="index.html#comment-4727" class="comment-time-link" itemprop="url">July 1, 2014 at 9:05 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi i gone through whole java tutorial and found all the concepts describe pretty good&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;..You have done good job&#8230;&#8230;&#8230;..keep it&#8230;&#8230;&#8230;&#8230;&#8230;<br />
+Regards:<br />
+Chetan</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-4727' onclick='return addComment.moveForm( "comment-4727", "4727", "respond", "2554" )' aria-label='Reply to Chetan'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-60153">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f5ecf95dee31481b910f6d8fefcb92dd?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f5ecf95dee31481b910f6d8fefcb92dd?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Pankaj Dangar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-05T05:27:02+00:00" itemprop="datePublished"><a href="index.html#comment-60153" class="comment-time-link" itemprop="url">September 5, 2016 at 5:27 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>These tutorial is very useful for the Fresher so you have done good job&#8230;tq so much&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-60153' onclick='return addComment.moveForm( "comment-60153", "60153", "respond", "2554" )' aria-label='Reply to Pankaj Dangar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-14122">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/5bf28bcd059f640d31052130ae54dc6e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/5bf28bcd059f640d31052130ae54dc6e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">C Nageswara Reddy</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-08T10:21:25+00:00" itemprop="datePublished"><a href="index.html#comment-14122" class="comment-time-link" itemprop="url">November 8, 2014 at 10:21 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi,<br />
+I am learning from this tutorial. This is very good for beginners. You explained lot. Thanks.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14122' onclick='return addComment.moveForm( "comment-14122", "14122", "respond", "2554" )' aria-label='Reply to C Nageswara Reddy'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-19025">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c9bc7f222f2d2e8b6541c681b4564d1e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c9bc7f222f2d2e8b6541c681b4564d1e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">suman singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-23T15:48:29+00:00" itemprop="datePublished"><a href="index.html#comment-19025" class="comment-time-link" itemprop="url">November 23, 2014 at 3:48 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi first of all Thanks &amp; you have done a good job.I want some definition and explanation of proxies,object class,Event handling,swing concepts.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19025' onclick='return addComment.moveForm( "comment-19025", "19025", "respond", "2554" )' aria-label='Reply to suman singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-19946">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d00951f070479a3fc3309ca7b1c353de?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d00951f070479a3fc3309ca7b1c353de?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mohamed</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-09T05:38:25+00:00" itemprop="datePublished"><a href="index.html#comment-19946" class="comment-time-link" itemprop="url">December 9, 2014 at 5:38 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Bro,<br />
+Your 14 points has to be change.we can access Methods with same signature but different return type in two or more interfaces.</p>
+<p>Thank you.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19946' onclick='return addComment.moveForm( "comment-19946", "19946", "respond", "2554" )' aria-label='Reply to Mohamed'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-21295">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9a89a1195ddd48dfe5ff593840019560?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9a89a1195ddd48dfe5ff593840019560?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">kavyashri</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-02T06:32:04+00:00" itemprop="datePublished"><a href="index.html#comment-21295" class="comment-time-link" itemprop="url">January 2, 2015 at 6:32 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>the above content was very useful in understanding some basic concepts about interface in java.thanks a lot&#8230;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-21295' onclick='return addComment.moveForm( "comment-21295", "21295", "respond", "2554" )' aria-label='Reply to kavyashri'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-22287">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a4fc92653359d59e88d1289a80b6c875?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a4fc92653359d59e88d1289a80b6c875?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Raghav</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-27T05:20:28+00:00" itemprop="datePublished"><a href="index.html#comment-22287" class="comment-time-link" itemprop="url">January 27, 2015 at 5:20 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Chaitanya,<br />
+Your articles and examples are very informative and useful.<br />
+I am following a lot of these topics for understanding OOPS.<br />
+It has been very useful.<br />
+Thanks a lot.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-22287' onclick='return addComment.moveForm( "comment-22287", "22287", "respond", "2554" )' aria-label='Reply to Raghav'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-22659">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3adde1b091ff632c90dc43d5f9372c0f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3adde1b091ff632c90dc43d5f9372c0f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sanjaya Fernando</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-02-04T23:29:05+00:00" itemprop="datePublished"><a href="index.html#comment-22659" class="comment-time-link" itemprop="url">February 4, 2015 at 11:29 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This is a wonderful article. It gives all the details in short and sweet. Thank you very much. Well done guys.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-22659' onclick='return addComment.moveForm( "comment-22659", "22659", "respond", "2554" )' aria-label='Reply to Sanjaya Fernando'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-22936">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ebac18903162b92e66632964b8e6885a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ebac18903162b92e66632964b8e6885a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Harsha</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-02-11T16:07:02+00:00" itemprop="datePublished"><a href="index.html#comment-22936" class="comment-time-link" itemprop="url">February 11, 2015 at 4:07 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>All the interface methods are by default abstract and public and Variables declared in interface are public, static and final by default why??<br />
+Is there any particular reason for making them implicit,variable as final and static and methods as public and abstract.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-22936' onclick='return addComment.moveForm( "comment-22936", "22936", "respond", "2554" )' aria-label='Reply to Harsha'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-39100">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-18T10:10:22+00:00" itemprop="datePublished"><a href="index.html#comment-39100" class="comment-time-link" itemprop="url">October 18, 2015 at 10:10 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello Harsha,</p>
+<p>Here are the answers to your questions:<br />
+Why interface variables are public, static and final? Since interface does not have a direct object,  the only way to access them is by using a class/interface. That is why if interface variable exists, it should be static otherwise it wont be accessible at all to outside world. Now since it is static, it can hold only one value and any class that extends it can change the value, so to ensure that it holds a constant value, it has been made final. These are the reasons interface variables are static and final and obviously public.</p>
+<p>Why interface methods are public and abstract? Interfaces are meant to define the public API of a type &#8211; and only that, not its implementation. So any method you define in an interface is by definition public and abstract.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-39100' onclick='return addComment.moveForm( "comment-39100", "39100", "respond", "2554" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-43936">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e6d26fe38fee17df888e4e365f560168?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e6d26fe38fee17df888e4e365f560168?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">bernadette</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-22T04:29:41+00:00" itemprop="datePublished"><a href="index.html#comment-43936" class="comment-time-link" itemprop="url">November 22, 2015 at 4:29 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>can you give atleast 5 importance of user interface in java programs</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-43936' onclick='return addComment.moveForm( "comment-43936", "43936", "respond", "2554" )' aria-label='Reply to bernadette'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-4" id="comment-47472">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/0a1e68c44338bd534a885f29ae28b81c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/0a1e68c44338bd534a885f29ae28b81c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Teja</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-29T09:51:59+00:00" itemprop="datePublished"><a href="index.html#comment-47472" class="comment-time-link" itemprop="url">December 29, 2015 at 9:51 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi, bernadette  , the interface in java and the USER INTERFACE (UI) is completely different. Interface is a concept in java. Whereas , UI is a technology. I hope you got that!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-47472' onclick='return addComment.moveForm( "comment-47472", "47472", "respond", "2554" )' aria-label='Reply to Teja'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-24470">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e391b45649a72d84bdd39c3a1f3dd394?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e391b45649a72d84bdd39c3a1f3dd394?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">surbhi sood</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-16T18:18:13+00:00" itemprop="datePublished"><a href="index.html#comment-24470" class="comment-time-link" itemprop="url">March 16, 2015 at 6:18 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>can anyone please tell me the basic&#8230;  first we have to make class in notepad?with .class extension<br />
+and then we have to write code for interface in different file?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24470' onclick='return addComment.moveForm( "comment-24470", "24470", "respond", "2554" )' aria-label='Reply to surbhi sood'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-35297">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/0642c072e59c6a5789d2e520100751d2?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/0642c072e59c6a5789d2e520100751d2?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">kaushal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-11T10:21:38+00:00" itemprop="datePublished"><a href="index.html#comment-35297" class="comment-time-link" itemprop="url">September 11, 2015 at 10:21 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>write the code in notepad and save it as .java extension.<br />
+And u can write the class and interface in the same code.<br />
+then run your program using cmd . :-)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-35297' onclick='return addComment.moveForm( "comment-35297", "35297", "respond", "2554" )' aria-label='Reply to kaushal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-26480">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b610eb8fa0c9a1ae60a3cbf0a90bc2e4?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b610eb8fa0c9a1ae60a3cbf0a90bc2e4?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">kiran</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-05-02T10:02:39+00:00" itemprop="datePublished"><a href="index.html#comment-26480" class="comment-time-link" itemprop="url">May 2, 2015 at 10:02 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I think point number 10 is incorrect..am able to change the variable in implementation class..Its not showing any errors..Plz reply me</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-26480' onclick='return addComment.moveForm( "comment-26480", "26480", "respond", "2554" )' aria-label='Reply to kiran'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-56139">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/83772e24bfae4895374c7a06d0e781d7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/83772e24bfae4895374c7a06d0e781d7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Oshin Bakshi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-03T07:45:23+00:00" itemprop="datePublished"><a href="index.html#comment-56139" class="comment-time-link" itemprop="url">June 3, 2016 at 7:45 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Kiran,</p>
+<p>Point 10 is correct see i give you an example:</p>
+<p>interface i1<br />
+{<br />
+	int x =10;</p>
+<p>}<br />
+class xyz implements i1<br />
+{<br />
+	int x =40;<br />
+	void show()<br />
+	{<br />
+	int y = i1.x=60; // wrong because fields in interface is final<br />
+	System.out.println(i1.x);<br />
+}<br />
+}<br />
+(i1.x=60)This is wrong because the variable x in interface i1 is final so if we change that value error will occur, try to run this and you will get to know.<br />
+I think you have wrote in other  class  x =60 and not  i1.x ,former (x=60) will not give u any error but later (i1.x) will definetly give. That is what the 10th point is all about.<br />
+Hope u got it :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-56139' onclick='return addComment.moveForm( "comment-56139", "56139", "respond", "2554" )' aria-label='Reply to Oshin Bakshi'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-28917">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a0fc0a1d5299c2b133549ac1be3ac0ef?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a0fc0a1d5299c2b133549ac1be3ac0ef?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Shifar Shifz</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-29T09:52:42+00:00" itemprop="datePublished"><a href="index.html#comment-28917" class="comment-time-link" itemprop="url">June 29, 2015 at 9:52 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Nice and simple article. but I&#8217;ve a doubt. You said &#8220;Methods with same signature but different return type can’t be implemented at a time for two or more interfaces.&#8221;. but I can do that without any compilation error.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-28917' onclick='return addComment.moveForm( "comment-28917", "28917", "respond", "2554" )' aria-label='Reply to Shifar Shifz'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29335">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/5a824129e0bdd5db71d0b2a06f99bab9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/5a824129e0bdd5db71d0b2a06f99bab9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Akshay</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-09T08:35:53+00:00" itemprop="datePublished"><a href="index.html#comment-29335" class="comment-time-link" itemprop="url">July 9, 2015 at 8:35 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>As you mentioned<br />
+We can’t instantiate an interface in java.<br />
+ But In first example :<br />
+MyInterface obj = new XYZ();<br />
+      obj. method1();</p>
+<p>Please correct if I am wrong</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-29335' onclick='return addComment.moveForm( "comment-29335", "29335", "respond", "2554" )' aria-label='Reply to Akshay'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-29640">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/94c769988b7275d5123eaf7411a20b8e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/94c769988b7275d5123eaf7411a20b8e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Vetrivel</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-15T11:56:49+00:00" itemprop="datePublished"><a href="index.html#comment-29640" class="comment-time-link" itemprop="url">July 15, 2015 at 11:56 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>MyInterface obj = new XYZ();<br />
+obj. method1();</p>
+<p>Here the class XYZ is instantiated not the interface.<br />
+Please do correct if i m wrong.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-29640' onclick='return addComment.moveForm( "comment-29640", "29640", "respond", "2554" )' aria-label='Reply to Vetrivel'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-30324">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b563a0da30da2539dcbeff23af3650ab?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/b563a0da30da2539dcbeff23af3650ab?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sanjay</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-26T13:43:59+00:00" itemprop="datePublished"><a href="index.html#comment-30324" class="comment-time-link" itemprop="url">July 26, 2015 at 1:43 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This is not the object of interface but here object of XYZ class is created &#8212;- new XYZ().<br />
+and giving the object reference of XYZ class to interface Myinterface.<br />
+so finally<br />
+MyInterface obj = new XYZ();<br />
+obj. method1();</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-30324' onclick='return addComment.moveForm( "comment-30324", "30324", "respond", "2554" )' aria-label='Reply to sanjay'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-35185">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/430c94559fdf3fe00bc7f160d7806404?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/430c94559fdf3fe00bc7f160d7806404?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Venki</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-10T14:22:19+00:00" itemprop="datePublished"><a href="index.html#comment-35185" class="comment-time-link" itemprop="url">September 10, 2015 at 2:22 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>We can&#8217;t create Object for an interface, and abstract classes but we can create an reference variable of the interface and abstract class and we can perform Upcasting i.e,<br />
+MyInterface obj; /*here reference variable obj of Interface is created.*/</p>
+<p>obj = new XYZ(); /*here Object of XYZ class is created and reference is stored in reference variable obj of Interface.*/   I hope u understand..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-35185' onclick='return addComment.moveForm( "comment-35185", "35185", "respond", "2554" )' aria-label='Reply to Venki'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-29767">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6240d14b121c39b5fbb01e4b888e4a44?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6240d14b121c39b5fbb01e4b888e4a44?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ram</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-18T15:46:46+00:00" itemprop="datePublished"><a href="index.html#comment-29767" class="comment-time-link" itemprop="url">July 18, 2015 at 3:46 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The point No. 9 is wrong.<br />
+/*<br />
+9) Interface variables must be initialized at the time of declaration otherwise compiler will through an error.<br />
+*/</p>
+<p>this code is working:<br />
+interface a<br />
+{<br />
+   int x;<br />
+}</p>
+<p>class my implements a<br />
+{<br />
+}</p>
+<p>class JAP{</p>
+<p>    public static void main(String ar[])<br />
+    {<br />
+        my obj=new my();<br />
+        System.out.println(&#8220;The value of x is :&#8221;+obj.x);<br />
+    }<br />
+}</p>
+<p>//The output is:<br />
+//The value of x is :0</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-29767' onclick='return addComment.moveForm( "comment-29767", "29767", "respond", "2554" )' aria-label='Reply to Ram'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-2" id="comment-39101">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-18T10:32:35+00:00" itemprop="datePublished"><a href="index.html#comment-39101" class="comment-time-link" itemprop="url">October 18, 2015 at 10:32 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Dude, Your code is throwing compilation error: Exception in thread &#8220;main&#8221; java.lang.Error: Unresolved compilation problem: The blank final field x may not have been initialized. Since interface variables are by default final, they must be initialized at the time of declaration.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-39101' onclick='return addComment.moveForm( "comment-39101", "39101", "respond", "2554" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-30190">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/5b98a07083480000d95f6bd3f4d3848c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/5b98a07083480000d95f6bd3f4d3848c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Maruthi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-24T11:19:37+00:00" itemprop="datePublished"><a href="index.html#comment-30190" class="comment-time-link" itemprop="url">July 24, 2015 at 11:19 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>In an interface we can create class or only abstract methods only&#8230;..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-30190' onclick='return addComment.moveForm( "comment-30190", "30190", "respond", "2554" )' aria-label='Reply to Maruthi'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-34148">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8e321e58f540f03af57574cf73ba2f50?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8e321e58f540f03af57574cf73ba2f50?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">karim mirazul</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-01T16:53:59+00:00" itemprop="datePublished"><a href="index.html#comment-34148" class="comment-time-link" itemprop="url">September 1, 2015 at 4:53 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>well done !!! Keep it up&#8230;.</p>
+<p>good work</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-34148' onclick='return addComment.moveForm( "comment-34148", "34148", "respond", "2554" )' aria-label='Reply to karim mirazul'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-34474">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/cd4e37718e9508be0b7336a727dd0ddf?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/cd4e37718e9508be0b7336a727dd0ddf?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Raviteja</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-04T13:19:06+00:00" itemprop="datePublished"><a href="index.html#comment-34474" class="comment-time-link" itemprop="url">September 4, 2015 at 1:19 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Can u explain about Upcasting and Downcasting in interface and sub interface.can u please help me.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-34474' onclick='return addComment.moveForm( "comment-34474", "34474", "respond", "2554" )' aria-label='Reply to Raviteja'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-35625">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/432490b1209c6216c594456076467277?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/432490b1209c6216c594456076467277?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">yogita</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-14T14:32:39+00:00" itemprop="datePublished"><a href="index.html#comment-35625" class="comment-time-link" itemprop="url">September 14, 2015 at 2:32 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>this is very helpful for us .. ty</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-35625' onclick='return addComment.moveForm( "comment-35625", "35625", "respond", "2554" )' aria-label='Reply to yogita'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-36593">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/df88468be693968e580edb89f68352be?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/df88468be693968e580edb89f68352be?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Devarati Tripathi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-22T18:18:30+00:00" itemprop="datePublished"><a href="index.html#comment-36593" class="comment-time-link" itemprop="url">September 22, 2015 at 6:18 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Your Java tutorials are wonderful. So much so that did not even have to thing about surfing through youtube. :p</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-36593' onclick='return addComment.moveForm( "comment-36593", "36593", "respond", "2554" )' aria-label='Reply to Devarati Tripathi'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-40062">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/014ad89c175a22c47790f103448d1cc0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/014ad89c175a22c47790f103448d1cc0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">meera</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-26T10:32:01+00:00" itemprop="datePublished"><a href="index.html#comment-40062" class="comment-time-link" itemprop="url">October 26, 2015 at 10:32 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Multiple Inheritance done by Interface&#8230; except any other main advantages in interface than abstract??</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-40062' onclick='return addComment.moveForm( "comment-40062", "40062", "respond", "2554" )' aria-label='Reply to meera'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-50013">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/fcd88baa64121233cb7cc841e67709f6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/fcd88baa64121233cb7cc841e67709f6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Naresh Kumar Davuluri</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-01-29T06:53:41+00:00" itemprop="datePublished"><a href="index.html#comment-50013" class="comment-time-link" itemprop="url">January 29, 2016 at 6:53 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Team,<br />
+I think Concrete methods also can exist inside an interface when they are declared as &#8220;Static&#8221;. Could you please explain why and include the same in the tutorial.<br />
+Thanks,<br />
+Naresh.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-50013' onclick='return addComment.moveForm( "comment-50013", "50013", "respond", "2554" )' aria-label='Reply to Naresh Kumar Davuluri'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-51797">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e70335fbc18ce070c52f16a6340041b0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e70335fbc18ce070c52f16a6340041b0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Shubham Tayal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-27T16:05:29+00:00" itemprop="datePublished"><a href="index.html#comment-51797" class="comment-time-link" itemprop="url">February 27, 2016 at 4:05 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Really, this site is awesome.<br />
+content of this site is very useful to understand a particular topic.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51797' onclick='return addComment.moveForm( "comment-51797", "51797", "respond", "2554" )' aria-label='Reply to Shubham Tayal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-52312">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/393c31f2087df92b504dc444ec3b6b2d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/393c31f2087df92b504dc444ec3b6b2d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sherry</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-10T06:26:31+00:00" itemprop="datePublished"><a href="index.html#comment-52312" class="comment-time-link" itemprop="url">March 10, 2016 at 6:26 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I just feel confuse, why we need interface? it looks like a framework, all the method we should implement again? then why we need the interface? we can implement the method in our class with out the interface!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52312' onclick='return addComment.moveForm( "comment-52312", "52312", "respond", "2554" )' aria-label='Reply to sherry'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-53857">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/42fd9b1866a3657939ce80eead633ac8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/42fd9b1866a3657939ce80eead633ac8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="index.html" class="comment-author-link" rel="external nofollow" itemprop="url">Preena</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-19T10:30:00+00:00" itemprop="datePublished"><a href="index.html#comment-53857" class="comment-time-link" itemprop="url">April 19, 2016 at 10:30 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>@Sherry &#8211; Thats the whole point, providing a framework! While inherited classes implement those methods for interface, we follow the rule of having same method signature.</p>
+<p>For e.g., Imagine there are 3 members coding 3 different classes for the same project say for e.g., interface Shape, classes &#8211; Circle, Rect, Triangle, each of these classes should calculate area and the formulas are diff (impl different) for each class, one may give getArea(), other fetchArea(), may be retrieveArea() as well, but if we define this in interface, all 3 would be bound to use common method signature say, would stick to getArea(). This improves readability, provides some standardization. Same scenario just imagine with say 30 classes or so&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53857' onclick='return addComment.moveForm( "comment-53857", "53857", "respond", "2554" )' aria-label='Reply to Preena'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-54733">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/007dfee409b4dcc17a5286e56ef81680?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/007dfee409b4dcc17a5286e56ef81680?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sadik</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-05T08:46:51+00:00" itemprop="datePublished"><a href="index.html#comment-54733" class="comment-time-link" itemprop="url">May 5, 2016 at 8:46 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Preena,<br />
+Very thanks for the info. Is there any other advantage besides that ?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-54733' onclick='return addComment.moveForm( "comment-54733", "54733", "respond", "2554" )' aria-label='Reply to sadik'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-55422">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/03edf0152adf0c48438631291d4ecfe6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/03edf0152adf0c48438631291d4ecfe6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">tarang sachdev</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-20T05:34:21+00:00" itemprop="datePublished"><a href="index.html#comment-55422" class="comment-time-link" itemprop="url">May 20, 2016 at 5:34 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>it is a super explanation about interface .</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-55422' onclick='return addComment.moveForm( "comment-55422", "55422", "respond", "2554" )' aria-label='Reply to tarang sachdev'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-55843">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/523df4ed72ec9ab8649930b703e456af?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/523df4ed72ec9ab8649930b703e456af?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">avanica</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-28T07:18:20+00:00" itemprop="datePublished"><a href="index.html#comment-55843" class="comment-time-link" itemprop="url">May 28, 2016 at 7:18 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi,<br />
+  Can u please exaplain how the interface provide security ?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-55843' onclick='return addComment.moveForm( "comment-55843", "55843", "respond", "2554" )' aria-label='Reply to avanica'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-56135">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/83772e24bfae4895374c7a06d0e781d7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/83772e24bfae4895374c7a06d0e781d7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Oshin Bakshi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-03T07:26:42+00:00" itemprop="datePublished"><a href="index.html#comment-56135" class="comment-time-link" itemprop="url">June 3, 2016 at 7:26 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Really, appreciated. What a way to explain the topic , the best thing is in one page everything has been covered and I got my concepts more cleared.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-56135' onclick='return addComment.moveForm( "comment-56135", "56135", "respond", "2554" )' aria-label='Reply to Oshin Bakshi'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-57109">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3a3a0de7bc1528caecda699dc4a67aae?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3a3a0de7bc1528caecda699dc4a67aae?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Archana Chauhan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-18T18:42:28+00:00" itemprop="datePublished"><a href="index.html#comment-57109" class="comment-time-link" itemprop="url">June 18, 2016 at 6:42 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>(default methods are not supported in -source 1.8) This error occurs in Java when i compile default method in interface. Can someone help me?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57109' onclick='return addComment.moveForm( "comment-57109", "57109", "respond", "2554" )' aria-label='Reply to Archana Chauhan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-57688">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7ab3474da209f647a640311462d973ae?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7ab3474da209f647a640311462d973ae?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sateesh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-07-01T09:40:26+00:00" itemprop="datePublished"><a href="index.html#comment-57688" class="comment-time-link" itemprop="url">July 1, 2016 at 9:40 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I got confused about this plz help,<br />
+Using interface write a program on polymorphism.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57688' onclick='return addComment.moveForm( "comment-57688", "57688", "respond", "2554" )' aria-label='Reply to sateesh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-69733">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8b349117540cf1eacaeffa3fd04a8c40?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8b349117540cf1eacaeffa3fd04a8c40?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">vishnu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-20T11:57:59+00:00" itemprop="datePublished"><a href="index.html#comment-69733" class="comment-time-link" itemprop="url">April 20, 2017 at 11:57 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>hii i have confusion about nested interface, why are using &#8216;.&#8217; and why are not accessing outer interface method.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69733' onclick='return addComment.moveForm( "comment-69733", "69733", "respond", "2554" )' aria-label='Reply to vishnu'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-77974">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/0b25bdff554312d1e3dddafa5e00688d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/0b25bdff554312d1e3dddafa5e00688d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Song</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-11-02T13:18:20+00:00" itemprop="datePublished"><a href="index.html#comment-77974" class="comment-time-link" itemprop="url">November 2, 2017 at 1:18 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Since java 8, interface can have default and static methods. If that means interface does not provide full abstraction any more. And also, the class that implements interface must implement all the abstract methods of that interface, not all the methods.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-77974' onclick='return addComment.moveForm( "comment-77974", "77974", "respond", "2554" )' aria-label='Reply to Song'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-78101">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-11-04T10:46:35+00:00" itemprop="datePublished"><a href="index.html#comment-78101" class="comment-time-link" itemprop="url">November 4, 2017 at 10:46 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Yes you are right, I have already covered that here: <a href="../../../2017/10/java-8-interface-changes-default-method-and-static-method/index.html">Java 8 interface changes</a></p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-78101' onclick='return addComment.moveForm( "comment-78101", "78101", "respond", "2554" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2554' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="9e28eda654" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="110"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../../04/oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../../04/java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../association/index.html">Association</a></li>
+<li><a href="../../../2014/07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="../method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="../../../2014/01/method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="../../../2014/01/difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../../04/runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../../04/java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="index.html">Interface</a></li>
+ 	<li><a href="../abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../../04/java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../inner-class/index.html">Inner classes</a></li>
+<li><a href="../java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/05/java-interface/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:40:23 GMT -->
+</html>

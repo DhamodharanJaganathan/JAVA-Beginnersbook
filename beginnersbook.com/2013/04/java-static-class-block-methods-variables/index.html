@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/04/java-static-class-block-methods-variables/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:39:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java - Static Class, Block, Methods and Variables</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Static Keyword in Java: Static keyword can be used with class, variable, method and block. Static members belong to the class instead of a specific instance"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Java - Static Class, Block, Methods and Variables" />
+<meta property="og:description" content="Static Keyword in Java: Static keyword can be used with class, variable, method and block. Static members belong to the class instead of a specific instance" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="OOPs Concept" />
+<meta property="article:published_time" content="2013-04-14T16:28:25+00:00" />
+<meta property="article:modified_time" content="2017-09-10T18:36:53+00:00" />
+<meta property="og:updated_time" content="2017-09-10T18:36:53+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Static Keyword in Java: Static keyword can be used with class, variable, method and block. Static members belong to the class instead of a specific instance" />
+<meta name="twitter:title" content="Java - Static Class, Block, Methods and Variables" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Java &#8211; Static Class, Block, Methods and Variables Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index9d44.html?p=2051' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed3b8a.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F04%2Fjava-static-class-block-methods-variables%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedd91c?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F04%2Fjava-static-class-block-methods-variables%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2051 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2051 post type-post status-publish format-standard category-oops-concept entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Java &#8211; Static Class, Block, Methods and Variables</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/oops-concept/index.html" rel="category tag">OOPs Concept</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Static keyword can be used with class, variable, method and block. Static members belong to the class instead of a specific instance, this means if you make a member static, you can access it without object. Let&#8217;s take an example to understand this:</p>
+<p>Here we have a static method <code>myMethod()</code>, we can call this method without any object because when we make a member static it becomes class level. If we remove the static keyword and make it non-static then we must need to create an object of the class in order to call it.</p>
+<blockquote><p>Static members are common for all the instances(objects) of the class but non-static members are separate for each instance of class.</p></blockquote>
+<pre>class SimpleStaticExample
+{
+    // This is a static method
+    static void myMethod()
+    {
+        System.out.println("myMethod");
+    }
+ 
+    public static void main(String[] args)
+    {
+          /* You can see that we are calling this
+           * method without creating any object. 
+           */
+           myMethod();
+    }
+}</pre>
+<p>Output:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>myMethod</pre>
+<h2>Static Block</h2>
+<p>Static block is used for initializing the static variables.This block gets executed when the class is loaded in the memory. A class can have multiple Static blocks, which will execute in the same sequence in which they have been written into the program.</p>
+<h3>Example 1: Single static block</h3>
+<p>As you can see that both the static variables were intialized before we accessed them in the main method.</p>
+<pre>class JavaExample{
+   static int num;
+   static String mystr;
+   static{
+      num = 97;
+      mystr = "Static keyword in Java";
+   }
+   public static void main(String args[])
+   {
+      System.out.println("Value of num: "+num);
+      System.out.println("Value of mystr: "+mystr);
+   }
+}
+</pre>
+<p>Output:</p>
+<pre>Value of num: 97
+Value of mystr: Static keyword in Java
+</pre>
+<h3>Example 2: Multiple Static blocks</h3>
+<p>Lets see how multiple static blocks work in Java. They execute in the given order which means the first static block executes before second static block. That&#8217;s the reason, values initialized by first block are overwritten by second block.</p>
+<pre>class JavaExample2{
+   static int num;
+   static String mystr;
+   //First Static block
+   static{
+      System.out.println("Static Block 1");
+      num = 68;
+      mystr = "Block1";
+  } 
+  //Second static block
+  static{
+      System.out.println("Static Block 2");
+      num = 98;
+      mystr = "Block2";
+  }
+  public static void main(String args[])
+  {
+      System.out.println("Value of num: "+num);
+      System.out.println("Value of mystr: "+mystr);
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Static Block 1
+Static Block 2
+Value of num: 98
+Value of mystr: Block2
+</pre>
+<h2>Java Static Variables</h2>
+<p>A static variable is common to all the instances (or objects) of the class because it is a class level variable. In other words you can say that only a single copy of static variable is created and shared among all the instances of the class. Memory allocation for such variables only happens once when the class is loaded in the memory.<br />
+Few Important Points:</p>
+<ul>
+<li>Static variables are also known as Class Variables.</li>
+<li>Unlike <strong>non-static variables</strong>, such variables can be accessed directly in static and non-static methods.</li>
+</ul>
+<h3>Example 1: Static variables can be accessed directly in Static method</h3>
+<p>Here we have a static method <code>disp()</code> and two static variables <code>var1</code> and <code>var2</code>. Both the variables are accessed directly in the static method.</p>
+<pre>class JavaExample3{
+  static int var1;
+  static String var2;
+  //This is a Static Method
+  static void disp(){
+      System.out.println("Var1 is: "+var1);
+      System.out.println("Var2 is: "+var2);
+  }
+  public static void main(String args[]) 
+  {
+      disp();
+  }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Var1 is: 0
+Var2 is: null
+</pre>
+<h3>Example 2: Static variables are shared among all the instances of class</h3>
+<p>In this example, String variable is non-static and integer variable is Static. As you can see in the output that the non-static variable is different for both the objects but the static variable is shared among them, thats the reason the changes made to the static variable by object <code>ob2</code> reflects in both the objects.</p>
+<pre>class JavaExample{
+   //Static integer variable
+   static int var1=77; 
+   //non-static string variable
+   String var2;
+
+   public static void main(String args[])
+   {
+	JavaExample ob1 = new JavaExample();
+	JavaExample ob2 = new JavaExample();
+	/* static variables can be accessed directly without
+	 * any instances. Just to demonstrate that static variables
+	 * are shared, I am accessing them using objects so that 
+	 * we can check that the changes made to static variables
+	 * by one object, reflects when we access them using other
+	 * objects
+	 */
+        //Assigning the value to static variable using object ob1
+	ob1.var1=88;
+	ob1.var2="I'm Object1";
+        /* This will overwrite the value of var1 because var1 has a single 
+         * copy shared among both the objects.
+         */
+        ob2.var1=99;
+	ob2.var2="I'm Object2";
+	System.out.println("ob1 integer:"+ob1.var1);
+	System.out.println("ob1 String:"+ob1.var2);
+	System.out.println("ob2 integer:"+ob2.var1);
+	System.out.println("ob2 STring:"+ob2.var2);
+   }
+}</pre>
+<p>Output:</p>
+<pre>ob1 integer:99
+ob1 String:I'm Object1
+ob2 integer:99
+ob2 STring:I'm Object2
+</pre>
+<p>For more details on refer: <a href="../../05/static-variable/index.html">Java &#8211; static variable</a></p>
+<h2>Java Static Methods</h2>
+<p>Static Methods can access class variables(static variables) without using object(instance) of the class, however non-static methods and non-static variables can only be accessed using objects.<br />
+Static methods can be accessed directly in static and non-static methods.<br />
+<strong>Syntax:</strong><br />
+Static keyword followed by return type, followed by method name.</p>
+<pre>static return_type method_name();</pre>
+<h3>Example 1: static method main is accessing static variables without object</h3>
+<pre>class JavaExample{
+   static int i = 10;
+   static String s = "Beginnersbook";
+   //This is a static method
+   public static void main(String args[]) 
+   {
+       System.out.println("i:"+i);
+       System.out.println("s:"+s);
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>i:10
+s:Beginnersbook
+</pre>
+<h3>Example 2: Static method accessed directly in static and non-static method</h3>
+<pre>class JavaExample{
+  static int i = 100;
+  static String s = "Beginnersbook";
+  //Static method
+  static void display()
+  {
+     System.out.println("i:"+i);
+     System.out.println("i:"+s);
+  }
+
+  //non-static method
+  void funcn()
+  {
+      //Static method called in non-static method
+      display();
+  }
+  //static method
+  public static void main(String args[])
+  {
+	  JavaExample obj = new JavaExample();
+	  //You need to have object to call this non-static method
+	  obj.funcn();
+	  
+      //Static method called in another static method
+      display();
+   }
+}
+</pre>
+<p>Output:</p>
+<pre>i:100
+i:Beginnersbook
+i:100
+i:Beginnersbook
+</pre>
+<p>Read more: <a href="../../05/static-vs-non-static-methods/index.html">Static Method vs non-static Method in Java</a></p>
+<h2>Static Class</h2>
+<p>A class can be made <strong>static</strong> only if it is a nested class.</p>
+<ol>
+<li>Nested static class doesn’t need reference of Outer class</li>
+<li>A static class cannot access non-static members of the Outer class</li>
+</ol>
+<p>We will see these two points with the help of an example:</p>
+<h3>Static class Example</h3>
+<pre>class JavaExample{
+   private static String str = "BeginnersBook";
+
+   //Static class
+   static class MyNestedClass{
+	//non-static method
+	public void disp() {
+
+	   /* If you make the str variable of outer class
+	    * non-static then you will get compilation error
+	    * because: a nested static class cannot access non-
+	    * static members of the outer class.
+	    */
+	   System.out.println(str); 
+	}
+
+   }
+   public static void main(String args[])
+   {
+       /* To create instance of nested class we didn't need the outer
+	* class instance but for a regular nested class you would need 
+	* to create an instance of outer class first
+        */
+	JavaExample.MyNestedClass obj = new JavaExample.MyNestedClass();
+	obj.disp();
+   }
+}</pre>
+<p>Output:</p>
+<pre>BeginnersBook</pre>
+<div class="bb-nav"><a class="pretut" href="../../03/constructors-in-java/index.html">❮ Previous</a><a class="nexttut" href="../../03/inheritance-in-java/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-52310">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8700ce652cd004251c94dbb4abdebad6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8700ce652cd004251c94dbb4abdebad6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">dolly</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-10T04:43:16+00:00" itemprop="datePublished"><a href="index.html#comment-52310" class="comment-time-link" itemprop="url">March 10, 2016 at 4:43 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>very clearly explanation of these all topic &#8230;&#8230;..so lots of thank u&#8230;&#8230;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52310' onclick='return addComment.moveForm( "comment-52310", "52310", "respond", "2051" )' aria-label='Reply to dolly'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-53441">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/fbd97a25a6a2f0bc94ef108122908549?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/fbd97a25a6a2f0bc94ef108122908549?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ojas Kale</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-08T17:18:57+00:00" itemprop="datePublished"><a href="index.html#comment-53441" class="comment-time-link" itemprop="url">April 8, 2016 at 5:18 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks a lot. Your work has been really helpful for my interview. Simple yet thorough.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53441' onclick='return addComment.moveForm( "comment-53441", "53441", "respond", "2051" )' aria-label='Reply to Ojas Kale'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-56227">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1d85be277e452e40e1e7674745be8e83?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1d85be277e452e40e1e7674745be8e83?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Piyush</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-05T05:47:36+00:00" itemprop="datePublished"><a href="index.html#comment-56227" class="comment-time-link" itemprop="url">June 5, 2016 at 5:47 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I&#8217;ve been trying a lot of tutorials/lectures but this is so easy and comprehensible. Thank you</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-56227' onclick='return addComment.moveForm( "comment-56227", "56227", "respond", "2051" )' aria-label='Reply to Piyush'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58836">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bc0c640d202b164f415b3e48eee07ef1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bc0c640d202b164f415b3e48eee07ef1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ranjit Biswal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-07-31T06:05:54+00:00" itemprop="datePublished"><a href="index.html#comment-58836" class="comment-time-link" itemprop="url">July 31, 2016 at 6:05 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Chaitanya,</p>
+<p>Thanks for the tutorial.</p>
+<p>I have a doubt when we can access the class variable via class also why we need to create an object to access it. can you please explain in details.</p>
+<p>Thanks<br />
+Ranjit</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-58836' onclick='return addComment.moveForm( "comment-58836", "58836", "respond", "2051" )' aria-label='Reply to Ranjit Biswal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-67149">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/16ea08967eda2a2c689a2297a0575d96?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/16ea08967eda2a2c689a2297a0575d96?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Anshu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-08T04:49:28+00:00" itemprop="datePublished"><a href="index.html#comment-67149" class="comment-time-link" itemprop="url">February 8, 2017 at 4:49 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I&#8217;ve been following all your tutorials and they are actually a beginner&#8217;s guide for their simplicity :)</p>
+<p>I would like to mention a correction in the above post:<br />
+In Example 1 under static methods, you have created static variables and then using class object to access them. I think the commented line should instead be &#8220;Static variables accessed without using class object&#8221; and following lines should be:<br />
+ System.out.println(Example5.i);<br />
+ System.out.println(Example5.s);</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-67149' onclick='return addComment.moveForm( "comment-67149", "67149", "respond", "2051" )' aria-label='Reply to Anshu'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-68844">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2d175bc1db3c4f17f041ff8b04a530b7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2d175bc1db3c4f17f041ff8b04a530b7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">ontim apon</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-24T09:37:31+00:00" itemprop="datePublished"><a href="index.html#comment-68844" class="comment-time-link" itemprop="url">March 24, 2017 at 9:37 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>in your multiple static block example why could not show the first static block&#8217;s value?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-68844' onclick='return addComment.moveForm( "comment-68844", "68844", "respond", "2051" )' aria-label='Reply to ontim apon'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-69218">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3fda9a951a4052cc56b6e45d28f8393a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3fda9a951a4052cc56b6e45d28f8393a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">rishabh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-04T01:53:47+00:00" itemprop="datePublished"><a href="index.html#comment-69218" class="comment-time-link" itemprop="url">April 4, 2017 at 1:53 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>when a class loaded by JVM then static block executed or class been called in any program then static block executed ?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69218' onclick='return addComment.moveForm( "comment-69218", "69218", "respond", "2051" )' aria-label='Reply to rishabh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2051' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="b72fa7c0b6" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="215"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../../05/java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../../05/jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../../05/first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="index.html">Static keyword</a></li>
+<li><a href="../../03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../../05/java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../../05/aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../../05/association/index.html">Association</a></li>
+<li><a href="../../../2014/07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="../../05/method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="../../../2014/01/method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="../../../2014/01/difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="../java-static-dynamic-binding/index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../../05/java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="../../05/java-interface/index.html">Interface</a></li>
+ 	<li><a href="../../05/abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../../05/encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../../05/java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../../05/inner-class/index.html">Inner classes</a></li>
+<li><a href="../../05/java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../../05/static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../../05/java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/04/java-static-class-block-methods-variables/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:39:17 GMT -->
+</html>

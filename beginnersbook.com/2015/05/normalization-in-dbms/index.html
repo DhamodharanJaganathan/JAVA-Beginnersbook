@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2015/05/normalization-in-dbms/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:12:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Normalization in DBMS: 1NF, 2NF, 3NF and BCNF in Database</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Normalization is a process of organizing the data in database to avoid data redundancy, insertion anomaly, update anomaly &amp; deletion anomaly. Let’s discuss about anomalies first then we will discuss normal forms with examples. Anomalies in DBMS There are three types of anomalies that occur when the database is"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Normalization in DBMS: 1NF, 2NF, 3NF and BCNF in Database" />
+<meta property="og:description" content="Normalization is a process of organizing the data in database to avoid data redundancy, insertion anomaly, update anomaly &amp; deletion anomaly. Let’s discuss about anomalies first then we will discuss normal forms with examples. Anomalies in DBMS There are three types of anomalies that occur when the database is" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="DBMS" />
+<meta property="article:published_time" content="2015-05-02T05:58:05+00:00" />
+<meta property="article:modified_time" content="2015-05-02T05:58:27+00:00" />
+<meta property="og:updated_time" content="2015-05-02T05:58:27+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Normalization is a process of organizing the data in database to avoid data redundancy, insertion anomaly, update anomaly &amp; deletion anomaly. Let’s discuss about anomalies first then we will discuss normal forms with examples. Anomalies in DBMS There are three types of anomalies that occur when the database is" />
+<meta name="twitter:title" content="Normalization in DBMS: 1NF, 2NF, 3NF and BCNF in Database" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Normalization in DBMS: 1NF, 2NF, 3NF and BCNF in Database Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index2e52.html?p=6015' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed1325.json?url=https%3A%2F%2Fbeginnersbook.com%2F2015%2F05%2Fnormalization-in-dbms%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embedf06d?url=https%3A%2F%2Fbeginnersbook.com%2F2015%2F05%2Fnormalization-in-dbms%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-6015 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../../2013/04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../../2013/05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-6015 post type-post status-publish format-standard category-dbms entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Normalization in DBMS: 1NF, 2NF, 3NF and BCNF in Database</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/dbms/index.html" rel="category tag">DBMS</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p><strong>Normalization</strong> is a process of organizing the data in database to avoid data redundancy, insertion anomaly, update anomaly &amp; deletion anomaly. Let’s discuss about anomalies first then we will discuss normal forms with examples.</p>
+<h2>Anomalies in DBMS</h2>
+<p>There are three types of anomalies that occur when the database is not normalized. These are – Insertion, update and deletion anomaly. Let’s take an example to understand this.</p>
+<p><strong>Example</strong>: Suppose a manufacturing company stores the employee details in a table named employee that has four attributes: emp_id for storing employee’s id, emp_name for storing employee’s name, emp_address for storing employee’s address and emp_dept for storing the department details in which the employee works. At some point of time the table looks like this:</p>
+<table style="text-align: left;" border="1">
+<tbody>
+<tr>
+<td>emp_id</td>
+<td>emp_name</td>
+<td>emp_address</td>
+<td>emp_dept</td>
+</tr>
+<tr>
+<td>101</td>
+<td>Rick</td>
+<td>Delhi</td>
+<td>D001</td>
+</tr>
+<tr>
+<td>101</td>
+<td>Rick</td>
+<td>Delhi</td>
+<td>D002</td>
+</tr>
+<tr>
+<td>123</td>
+<td>Maggie</td>
+<td>Agra</td>
+<td>D890</td>
+</tr>
+<tr>
+<td>166</td>
+<td>Glenn</td>
+<td>Chennai</td>
+<td>D900</td>
+</tr>
+<tr>
+<td>166</td>
+<td>Glenn</td>
+<td>Chennai</td>
+<td>D004</td>
+</tr>
+</tbody>
+</table>
+<p>The above table is not normalized. We will see the problems that we face when a table is not normalized.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><strong>Update anomaly</strong>: In the above table we have two rows for employee Rick as he belongs to two departments of the company. If we want to update the address of Rick then we have to update the same in two rows or the data will become inconsistent. If somehow, the correct address gets updated in one department but not in other then as per the database, Rick would be having two different addresses, which is not correct and would lead to inconsistent data.</p>
+<p><strong>Insert anomaly</strong>: Suppose a new employee joins the company, who is under training and currently not assigned to any department then we would not be able to insert the data into the table if emp_dept field doesn’t allow nulls.</p>
+<p><strong>Delete anomaly</strong>: Suppose, if at a point of time the company closes the department D890 then deleting the rows that are having emp_dept as D890 would also delete the information of employee Maggie since she is assigned only to this department.</p>
+<p>To overcome these anomalies we need to normalize the data. In the next section we will discuss about normalization.</p>
+<h2>Normalization</h2>
+<p>Here are the most commonly used normal forms:</p>
+<ul>
+<li>First normal form(1NF)</li>
+<li>Second normal form(2NF)</li>
+<li>Third normal form(3NF)</li>
+<li>Boyce &amp; Codd normal form (BCNF)</li>
+</ul>
+<h2>First normal form (1NF)</h2>
+<p>As per the rule of first normal form, an attribute (column) of a table cannot hold multiple values. It should hold only atomic values.</p>
+<p><strong>Example</strong>: Suppose a company wants to store the names and contact details of its employees. It creates a table that looks like this:</p>
+<table style="text-align: left;" border="1">
+<tbody>
+<tr>
+<td>emp_id</td>
+<td>emp_name</td>
+<td>emp_address</td>
+<td>emp_mobile</td>
+</tr>
+<tr>
+<td>101</td>
+<td>Herschel</td>
+<td>New Delhi</td>
+<td>8912312390</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Jon</td>
+<td>Kanpur</td>
+<td>8812121212</p>
+<p>9900012222</td>
+</tr>
+<tr>
+<td>103</td>
+<td>Ron</td>
+<td>Chennai</td>
+<td>7778881212</td>
+</tr>
+<tr>
+<td>104</td>
+<td>Lester</td>
+<td>Bangalore</td>
+<td>9990000123</p>
+<p>8123450987</td>
+</tr>
+</tbody>
+</table>
+<p>Two employees (Jon &amp; Lester) are having two mobile numbers so the company stored them in the same field as you can see in the table above.</p>
+<p>This table is <strong>not in 1NF </strong>as the rule says “each attribute of a table must have atomic (single) values”, the emp_mobile values for employees Jon &amp; Lester violates that rule.</p>
+<p>To make the table complies with 1NF we should have the data like this:</p>
+<table style="text-align: left;" border="1">
+<tbody>
+<tr>
+<td>emp_id</td>
+<td>emp_name</td>
+<td>emp_address</td>
+<td>emp_mobile</td>
+</tr>
+<tr>
+<td>101</td>
+<td>Herschel</td>
+<td>New Delhi</td>
+<td>8912312390</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Jon</td>
+<td>Kanpur</td>
+<td>8812121212</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Jon</td>
+<td>Kanpur</td>
+<td>9900012222</td>
+</tr>
+<tr>
+<td>103</td>
+<td>Ron</td>
+<td>Chennai</td>
+<td>7778881212</td>
+</tr>
+<tr>
+<td>104</td>
+<td>Lester</td>
+<td>Bangalore</td>
+<td>9990000123</td>
+</tr>
+<tr>
+<td>104</td>
+<td>Lester</td>
+<td>Bangalore</td>
+<td>8123450987</td>
+</tr>
+</tbody>
+</table>
+<h2>Second normal form (2NF)</h2>
+<p>A table is said to be in 2NF if both the following conditions hold:</p>
+<ul>
+<li>Table is in 1NF (First normal form)</li>
+<li>No non-prime attribute is dependent on the proper subset of any candidate key of table.</li>
+</ul>
+<p>An attribute that is not part of any candidate key is known as non-prime attribute.</p>
+<p><strong>Example</strong>: Suppose a school wants to store the data of teachers and the subjects they teach. They create a table that looks like this: Since a teacher can teach more than one subjects, the table can have multiple rows for a same teacher.</p>
+<table style="text-align: left;" border="1">
+<tbody>
+<tr>
+<td>teacher_id</td>
+<td>subject</td>
+<td>teacher_age</td>
+</tr>
+<tr>
+<td>111</td>
+<td>Maths</td>
+<td>38</td>
+</tr>
+<tr>
+<td>111</td>
+<td>Physics</td>
+<td>38</td>
+</tr>
+<tr>
+<td>222</td>
+<td>Biology</td>
+<td>38</td>
+</tr>
+<tr>
+<td>333</td>
+<td>Physics</td>
+<td>40</td>
+</tr>
+<tr>
+<td>333</td>
+<td>Chemistry</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Candidate Keys</strong>: {teacher_id, subject}<br />
+<strong>Non prime attribute</strong>: teacher_age</p>
+<p>The table is in 1 NF because each attribute has atomic values. However, it is not in 2NF because non prime attribute teacher_age is dependent on teacher_id alone which is a proper subset of candidate key. This violates the rule for 2NF as the rule says &#8220;<strong>no</strong> non-prime attribute is dependent on the proper subset of any candidate key of the table&#8221;.</p>
+<p>To make the table complies with 2NF we can break it in two tables like this:<br />
+<strong>teacher_details table:</strong></p>
+<table style="text-align: left;" border="1">
+<tbody>
+<tr>
+<td>teacher_id</td>
+<td>teacher_age</td>
+</tr>
+<tr>
+<td>111</td>
+<td>38</td>
+</tr>
+<tr>
+<td>222</td>
+<td>38</td>
+</tr>
+<tr>
+<td>333</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+<p><strong>teacher_subject table:</strong></p>
+<table style="text-align: left;" border="1">
+<tbody>
+<tr>
+<td>teacher_id</td>
+<td>subject</td>
+</tr>
+<tr>
+<td>111</td>
+<td>Maths</td>
+</tr>
+<tr>
+<td>111</td>
+<td>Physics</td>
+</tr>
+<tr>
+<td>222</td>
+<td>Biology</td>
+</tr>
+<tr>
+<td>333</td>
+<td>Physics</td>
+</tr>
+<tr>
+<td>333</td>
+<td>Chemistry</td>
+</tr>
+</tbody>
+</table>
+<p>Now the tables comply with Second normal form (2NF).</p>
+<h2>Third Normal form (3NF)</h2>
+<p>A table design is said to be in 3NF if both the following conditions hold:</p>
+<ul>
+<li>Table must be in 2NF</li>
+<li><a href="../../04/transitive-dependency-in-dbms/index.html" target="_blank">Transitive functional dependency</a> of non-prime attribute on any super key should be removed.</li>
+</ul>
+<p>An attribute that is not part of any <a href="../../04/candidate-key-in-dbms/index.html" target="_blank">candidate key</a> is known as non-prime attribute.</p>
+<p>In other words 3NF can be explained like this: A table is in 3NF if it is in 2NF and for each functional dependency X-&gt; Y at least one of the following conditions hold:</p>
+<ul>
+<li>X is a <a href="../../04/super-key-in-dbms/index.html" target="_blank">super key</a> of table</li>
+<li>Y is a prime attribute of table</li>
+</ul>
+<p>An attribute that is a part of one of the candidate keys is known as prime attribute.</p>
+<p><strong>Example</strong>: Suppose a company wants to store the complete address of each employee, they create a table named employee_details that looks like this:</p>
+<table style="text-align: left;" border="1">
+<tbody>
+<tr>
+<td>emp_id</td>
+<td>emp_name</td>
+<td>emp_zip</td>
+<td>emp_state</td>
+<td>emp_city</td>
+<td>emp_district</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>John</td>
+<td>282005</td>
+<td>UP</td>
+<td>Agra</td>
+<td>Dayal Bagh</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>Ajeet</td>
+<td>222008</td>
+<td>TN</td>
+<td>Chennai</td>
+<td>M-City</td>
+</tr>
+<tr>
+<td>1006</td>
+<td>Lora</td>
+<td>282007</td>
+<td>TN</td>
+<td>Chennai</td>
+<td>Urrapakkam</td>
+</tr>
+<tr>
+<td>1101</td>
+<td>Lilly</td>
+<td>292008</td>
+<td>UK</td>
+<td>Pauri</td>
+<td>Bhagwan</td>
+</tr>
+<tr>
+<td>1201</td>
+<td>Steve</td>
+<td>222999</td>
+<td>MP</td>
+<td>Gwalior</td>
+<td>Ratan</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>Super keys</strong>: {emp_id}, {emp_id, emp_name}, {emp_id, emp_name, emp_zip}…so on<br />
+<strong>Candidate Keys</strong>: {emp_id}<br />
+<strong>Non-prime attributes</strong>: all attributes except emp_id are non-prime as they are not part of any candidate keys.</p>
+<p>Here, emp_state, emp_city &amp; emp_district dependent on emp_zip. And, emp_zip is dependent on emp_id that makes non-prime attributes (emp_state, emp_city &amp; emp_district) transitively dependent on super key (emp_id). This violates the rule of 3NF.</p>
+<p>To make this table complies with 3NF we have to break the table into two tables to remove the transitive dependency:</p>
+<p><strong>employee table:</strong></p>
+<table style="text-align: left;" border="1">
+<tbody>
+<tr>
+<td>emp_id</td>
+<td>emp_name</td>
+<td>emp_zip</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>John</td>
+<td>282005</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>Ajeet</td>
+<td>222008</td>
+</tr>
+<tr>
+<td>1006</td>
+<td>Lora</td>
+<td>282007</td>
+</tr>
+<tr>
+<td>1101</td>
+<td>Lilly</td>
+<td>292008</td>
+</tr>
+<tr>
+<td>1201</td>
+<td>Steve</td>
+<td>222999</td>
+</tr>
+</tbody>
+</table>
+<p><strong>employee_zip table:</strong></p>
+<table style="text-align: left;" border="1">
+<tbody>
+<tr>
+<td>emp_zip</td>
+<td>emp_state</td>
+<td>emp_city</td>
+<td>emp_district</td>
+</tr>
+<tr>
+<td>282005</td>
+<td>UP</td>
+<td>Agra</td>
+<td>Dayal Bagh</td>
+</tr>
+<tr>
+<td>222008</td>
+<td>TN</td>
+<td>Chennai</td>
+<td>M-City</td>
+</tr>
+<tr>
+<td>282007</td>
+<td>TN</td>
+<td>Chennai</td>
+<td>Urrapakkam</td>
+</tr>
+<tr>
+<td>292008</td>
+<td>UK</td>
+<td>Pauri</td>
+<td>Bhagwan</td>
+</tr>
+<tr>
+<td>222999</td>
+<td>MP</td>
+<td>Gwalior</td>
+<td>Ratan</td>
+</tr>
+</tbody>
+</table>
+<h2>Boyce Codd normal form (BCNF)</h2>
+<p>It is an advance version of 3NF that’s why it is also referred as 3.5NF. BCNF is stricter than 3NF. A table complies with BCNF if it is in 3NF and for every <a href="../../04/functional-dependency-in-dbms/index.html" target="_blank">functional dependency</a> X-&gt;Y, X should be the super key of the table.</p>
+<p><strong>Example</strong>: Suppose there is a company wherein employees work in <strong>more than one department</strong>. They store the data like this:</p>
+<table style="text-align: left;" border="1">
+<tbody>
+<tr>
+<td>emp_id</td>
+<td>emp_nationality</td>
+<td>emp_dept</td>
+<td>dept_type</td>
+<td>dept_no_of_emp</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Austrian</td>
+<td>Production and planning</td>
+<td>D001</td>
+<td>200</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Austrian</td>
+<td>stores</td>
+<td>D001</td>
+<td>250</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>American</td>
+<td>design and technical support</td>
+<td>D134</td>
+<td>100</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>American</td>
+<td>Purchasing department</td>
+<td>D134</td>
+<td>600</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Functional dependencies in the table above</strong>:<br />
+emp_id -&gt; emp_nationality<br />
+emp_dept -&gt; {dept_type, dept_no_of_emp}</p>
+<p><strong>Candidate key</strong>: {emp_id, emp_dept}</p>
+<p>The table is not in BCNF as neither emp_id nor emp_dept alone are keys.</p>
+<p>To make the table comply with BCNF we can break the table in three tables like this:<br />
+<strong>emp_nationality table:</strong></p>
+<table style="text-align: left;" border="1">
+<tbody>
+<tr>
+<td>emp_id</td>
+<td>emp_nationality</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Austrian</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>American</td>
+</tr>
+</tbody>
+</table>
+<p><strong>emp_dept table:</strong></p>
+<table style="text-align: left;" border="1">
+<tbody>
+<tr>
+<td>emp_dept</td>
+<td>dept_type</td>
+<td>dept_no_of_emp</td>
+</tr>
+<tr>
+<td>Production and planning</td>
+<td>D001</td>
+<td>200</td>
+</tr>
+<tr>
+<td>stores</td>
+<td>D001</td>
+<td>250</td>
+</tr>
+<tr>
+<td>design and technical support</td>
+<td>D134</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Purchasing department</td>
+<td>D134</td>
+<td>600</td>
+</tr>
+</tbody>
+</table>
+<p><strong>emp_dept_mapping table:</strong></p>
+<table style="text-align: left;" border="1">
+<tbody>
+<tr>
+<td>emp_id</td>
+<td>emp_dept</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Production and planning</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>stores</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>design and technical support</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>Purchasing department</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Functional dependencies</strong>:<br />
+emp_id -&gt; emp_nationality<br />
+emp_dept -&gt; {dept_type, dept_no_of_emp}</p>
+<p><strong>Candidate keys</strong>:<br />
+For first table: emp_id<br />
+For second table: emp_dept<br />
+For third table: {emp_id, emp_dept}</p>
+<p>This is now in BCNF as in both the functional dependencies left side part is a key.</p>
+</div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../04/dbms-tutorial/index.html" rel="bookmark" title="Link to DBMS Tutorial &#8211; Database Management System notes">DBMS Tutorial &#8211; Database Management System notes</a></li><li><a href="../../04/domain-constraints-in-dbms/index.html" rel="bookmark" title="Link to Domain constraints in DBMS">Domain constraints in DBMS</a></li><li><a href="../../04/mapping-constraints-in-dbms/index.html" rel="bookmark" title="Link to Mapping constraints in DBMS">Mapping constraints in DBMS</a></li><li><a href="../../04/instance-and-schema-in-dbms/index.html" rel="bookmark" title="Link to Instance and schema in DBMS">Instance and schema in DBMS</a></li><li><a href="../../04/dbms-vs-file-system/index.html" rel="bookmark" title="Link to Advantages of DBMS over file system">Advantages of DBMS over file system</a></li><li><a href="../../04/composite-key-in-dbms/index.html" rel="bookmark" title="Link to Composite key in DBMS">Composite key in DBMS</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-43326">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8f094e18c3ab66bad0b0ba7af8323554?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8f094e18c3ab66bad0b0ba7af8323554?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mahak</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-17T08:14:33+00:00" itemprop="datePublished"><a href="index.html#comment-43326" class="comment-time-link" itemprop="url">November 17, 2015 at 8:14 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Are you sure, that the example you given for Third Normal form (3NF) is correct. I have doubt, In the employee table and employee_zip table you relate ZIP in both tables but what If two employes having the same zip which record will be fetched from the employee_zip table ??</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-43326' onclick='return addComment.moveForm( "comment-43326", "43326", "respond", "6015" )' aria-label='Reply to Mahak'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-45454">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c6832f1b375e0b38576371e3fc941ff9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c6832f1b375e0b38576371e3fc941ff9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Robert Luse</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-07T03:04:56+00:00" itemprop="datePublished"><a href="index.html#comment-45454" class="comment-time-link" itemprop="url">December 7, 2015 at 3:04 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>If two employees have the same zip, they will share the row in the zip table.  There does not need to be two rows in the zip table and indeed, there should not be two rows in the zip table.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-45454' onclick='return addComment.moveForm( "comment-45454", "45454", "respond", "6015" )' aria-label='Reply to Robert Luse'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-69303">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bcda96faea068106ced8b36baaea2420?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bcda96faea068106ced8b36baaea2420?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">harshal davane</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-05T18:51:07+00:00" itemprop="datePublished"><a href="index.html#comment-69303" class="comment-time-link" itemprop="url">April 5, 2017 at 6:51 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>WRONG IF WE CREATE NEW ZIP TABLE THEN WE CAN SEARCH THERE  ZIP BYE NAME ALSO ..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69303' onclick='return addComment.moveForm( "comment-69303", "69303", "respond", "6015" )' aria-label='Reply to harshal davane'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-4" id="comment-69814">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ed1fcd84f7b684b35848489b9deb7cc7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ed1fcd84f7b684b35848489b9deb7cc7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">amit</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-22T20:13:17+00:00" itemprop="datePublished"><a href="index.html#comment-69814" class="comment-time-link" itemprop="url">April 22, 2017 at 8:13 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>name is not a prime attribute because multiple students can have same name and each student may have a different zip<br />
+sagar -441124<br />
+sagar -345632</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69814' onclick='return addComment.moveForm( "comment-69814", "69814", "respond", "6015" )' aria-label='Reply to amit'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-45781">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e33c36ac0df536715bff3a2b886ab4ee?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e33c36ac0df536715bff3a2b886ab4ee?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">MUDASSIR AHMED</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-11T06:47:29+00:00" itemprop="datePublished"><a href="index.html#comment-45781" class="comment-time-link" itemprop="url">December 11, 2015 at 6:47 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>In employee table there will be 2 employees with same zip code but in employee_zip table there will be 1 record related to that zip code.The tables are related by zip code.So only 1 record will be fetched from employee_zip table. Hope you get the answer.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-45781' onclick='return addComment.moveForm( "comment-45781", "45781", "respond", "6015" )' aria-label='Reply to MUDASSIR AHMED'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-46068">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/96d7c9a1fe75f93c7e805e8502330b75?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/96d7c9a1fe75f93c7e805e8502330b75?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Gulfam</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-14T10:41:11+00:00" itemprop="datePublished"><a href="index.html#comment-46068" class="comment-time-link" itemprop="url">December 14, 2015 at 10:41 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hey Mahak, there is only one record for every ZIP. </p>
+<p>ZIP in itself the complete address.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-46068' onclick='return addComment.moveForm( "comment-46068", "46068", "respond", "6015" )' aria-label='Reply to Gulfam'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-46294">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6c2e2428d24b8dc179d0b35616ea53d9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6c2e2428d24b8dc179d0b35616ea53d9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Steve</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-16T22:30:09+00:00" itemprop="datePublished"><a href="index.html#comment-46294" class="comment-time-link" itemprop="url">December 16, 2015 at 10:30 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Mahak,  That is the point they are trying to make is that many employees could be related to 1 Zip record.  There would only be 1 entry in the Zip table per zip, since that&#8217;s the key.  That is the point of 3NF, is to denormalize the duplicate data in the Employee table.  Good luck!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-46294' onclick='return addComment.moveForm( "comment-46294", "46294", "respond", "6015" )' aria-label='Reply to Steve'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-62800">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/726b008c300aaf5a94f2c4ad7f7deeda?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/726b008c300aaf5a94f2c4ad7f7deeda?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">DeepeshChaudhari</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-10-30T06:52:11+00:00" itemprop="datePublished"><a href="index.html#comment-62800" class="comment-time-link" itemprop="url">October 30, 2016 at 6:52 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I think there is no issue related to emp_zip&#8230;&#8230;<br />
+becouse if any two employee have same emp_zip then it it means that both employee live&#8217;s in same area and so then in employee_zip table there is one row of that zip&#8230;&#8230;..<br />
+and data will be fetched from single row&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-62800' onclick='return addComment.moveForm( "comment-62800", "62800", "respond", "6015" )' aria-label='Reply to DeepeshChaudhari'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-45455">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c6832f1b375e0b38576371e3fc941ff9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c6832f1b375e0b38576371e3fc941ff9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Robert Luse</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-07T03:08:06+00:00" itemprop="datePublished"><a href="index.html#comment-45455" class="comment-time-link" itemprop="url">December 7, 2015 at 3:08 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>As part of Normalization, there will be only one row for the the zip, not two.  If two employees have the same zip, they will both use the information for that zip in the zip table.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-45455' onclick='return addComment.moveForm( "comment-45455", "45455", "respond", "6015" )' aria-label='Reply to Robert Luse'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-69957">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f6149c7325b1dca9e6d37f10f1afdb57?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f6149c7325b1dca9e6d37f10f1afdb57?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Omenesa</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-28T13:04:59+00:00" itemprop="datePublished"><a href="index.html#comment-69957" class="comment-time-link" itemprop="url">April 28, 2017 at 1:04 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>We should imagine a case scenario where two employees have the same zip code but different emp  districts or emp city, which record will be fetched in such a scenario.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69957' onclick='return addComment.moveForm( "comment-69957", "69957", "respond", "6015" )' aria-label='Reply to Omenesa'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-45779">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e33c36ac0df536715bff3a2b886ab4ee?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e33c36ac0df536715bff3a2b886ab4ee?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">MUDASSIR AHMED</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-11T06:40:36+00:00" itemprop="datePublished"><a href="index.html#comment-45779" class="comment-time-link" itemprop="url">December 11, 2015 at 6:40 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>In BCNF &#8220;dept_no_of_emp&#8221; is also candidate key.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-45779' onclick='return addComment.moveForm( "comment-45779", "45779", "respond", "6015" )' aria-label='Reply to MUDASSIR AHMED'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-52288">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1d6635aafd2eb69c8f3a11bdd51eff8d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1d6635aafd2eb69c8f3a11bdd51eff8d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Kalpesh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-09T06:40:50+00:00" itemprop="datePublished"><a href="index.html#comment-52288" class="comment-time-link" itemprop="url">March 9, 2016 at 6:40 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi there,</p>
+<p>I have read whole article of Normalization and I must say, it a best explanation with examples.<br />
+Examples are very useful for better understating the concept. I am really very thankful to you for the blog.<br />
+Thank you.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52288' onclick='return addComment.moveForm( "comment-52288", "52288", "respond", "6015" )' aria-label='Reply to Kalpesh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-54732">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/edf6ffa7f73aee9d98e0af09a2d8f334?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/edf6ffa7f73aee9d98e0af09a2d8f334?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Pushpa</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-05T07:48:32+00:00" itemprop="datePublished"><a href="index.html#comment-54732" class="comment-time-link" itemprop="url">May 5, 2016 at 7:48 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Chaitanya,</p>
+<p>The concept of normalization with example explained is very helpful. It helped me to understand it clearly.<br />
+Thanks for sharing.</p>
+<p>Best Wishes,<br />
+Pushpa</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-54732' onclick='return addComment.moveForm( "comment-54732", "54732", "respond", "6015" )' aria-label='Reply to Pushpa'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-55821">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3d180f3b90c6d669781d17c6ed7a383c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3d180f3b90c6d669781d17c6ed7a383c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">aman</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-27T19:18:31+00:00" itemprop="datePublished"><a href="index.html#comment-55821" class="comment-time-link" itemprop="url">May 27, 2016 at 7:18 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This topic was not understandable from book .after reading this I finally got it. Thank u.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-55821' onclick='return addComment.moveForm( "comment-55821", "55821", "respond", "6015" )' aria-label='Reply to aman'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-57479">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/145c4455bfb55250a148d4c1b1ce3353?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/145c4455bfb55250a148d4c1b1ce3353?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sid</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-26T17:42:36+00:00" itemprop="datePublished"><a href="index.html#comment-57479" class="comment-time-link" itemprop="url">June 26, 2016 at 5:42 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>How is teacher_I&#8217;d, subject be the candidate key? Subject is redundant and only teacher I&#8217;d shld be sufficient.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57479' onclick='return addComment.moveForm( "comment-57479", "57479", "respond", "6015" )' aria-label='Reply to Sid'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-58258">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/dc5ea27cdb2a0908e6ee71c1af73b5e4?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/dc5ea27cdb2a0908e6ee71c1af73b5e4?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Harsh Rohila</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-07-14T15:43:34+00:00" itemprop="datePublished"><a href="index.html#comment-58258" class="comment-time-link" itemprop="url">July 14, 2016 at 3:43 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Consider teacher_id 111, it is having two different subjects maths and physics. So only teacher_id cannot determine the complete row. Therefore subject is also required.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-58258' onclick='return addComment.moveForm( "comment-58258", "58258", "respond", "6015" )' aria-label='Reply to Harsh Rohila'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-63348">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/64895741d6a21fefc21d133673fec1a0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/64895741d6a21fefc21d133673fec1a0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Jaswinder</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-12T06:52:57+00:00" itemprop="datePublished"><a href="index.html#comment-63348" class="comment-time-link" itemprop="url">November 12, 2016 at 6:52 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Teacher I&#8217;d alone cannot be the Candidate key because there will be many entries for a particular teacher as teacher can teach multiple subjects .And to fulfill criteria of becoming candidate key there should be unique values.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63348' onclick='return addComment.moveForm( "comment-63348", "63348", "respond", "6015" )' aria-label='Reply to Jaswinder'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-63998">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e4119103a46d09c9db1894c6e4cc902d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e4119103a46d09c9db1894c6e4cc902d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Richard Kidd</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-28T19:51:08+00:00" itemprop="datePublished"><a href="index.html#comment-63998" class="comment-time-link" itemprop="url">November 28, 2016 at 7:51 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>A candidate key should be able to UNIQUELY IDENTIFY a row in a table. In the case of the teacher table, their are two rows in the table that can be identified with the teacher_id 111. If we are given teacher_id 111, we cannot discern if we need the record for subject &#8216;Maths&#8217; or the record for subject &#8216;physics&#8217;. Therefore, teacher_id is not sufficient to uniquely identify a row. Likewise, as there are two rows with the teacher_id 111 and the teacher_age 38, these are also insufficient. The only minimal combination of attributes that uniquely identify a given row is {teacher_id, subject}.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63998' onclick='return addComment.moveForm( "comment-63998", "63998", "respond", "6015" )' aria-label='Reply to Richard Kidd'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-58659">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7ddb02c752d53534232c05649e21de5c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7ddb02c752d53534232c05649e21de5c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tharun Kumar Sunku</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-07-26T05:48:59+00:00" itemprop="datePublished"><a href="index.html#comment-58659" class="comment-time-link" itemprop="url">July 26, 2016 at 5:48 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Superb explanation, Thank you for this valuable information</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-58659' onclick='return addComment.moveForm( "comment-58659", "58659", "respond", "6015" )' aria-label='Reply to Tharun Kumar Sunku'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-59995">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3944ff88c780d92ecb802800e14758c2?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3944ff88c780d92ecb802800e14758c2?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sandeep</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-30T11:49:53+00:00" itemprop="datePublished"><a href="index.html#comment-59995" class="comment-time-link" itemprop="url">August 30, 2016 at 11:49 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>hi chaitanya,<br />
+you explained in a  single table to partition into different tables so it is easy to understand but my doubt is to how to partition those tables so please provide some information about how to partition a table<br />
+And also one thing before using those keys it is better to briefly explain about the keys so it is easy to understand</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-59995' onclick='return addComment.moveForm( "comment-59995", "59995", "respond", "6015" )' aria-label='Reply to sandeep'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-61814">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9353fc0d99e976b182f2eaea0d633beb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9353fc0d99e976b182f2eaea0d633beb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Seunfunmi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-10-09T12:22:36+00:00" itemprop="datePublished"><a href="index.html#comment-61814" class="comment-time-link" itemprop="url">October 9, 2016 at 12:22 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Very useful information. Thank you for this article. I read the textbook but did not understand. Now I understand 1NF and 2NF. I&#8217;m still not fully clear with the 3NF and the BCNF though. Pls anyone with more detailed information?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-61814' onclick='return addComment.moveForm( "comment-61814", "61814", "respond", "6015" )' aria-label='Reply to Seunfunmi'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-62778">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/726b008c300aaf5a94f2c4ad7f7deeda?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/726b008c300aaf5a94f2c4ad7f7deeda?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">deepesh chaudhari</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-10-29T19:14:43+00:00" itemprop="datePublished"><a href="index.html#comment-62778" class="comment-time-link" itemprop="url">October 29, 2016 at 7:14 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>best notes of dbms forever&#8230;&#8230;love it</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-62778' onclick='return addComment.moveForm( "comment-62778", "62778", "respond", "6015" )' aria-label='Reply to deepesh chaudhari'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-63786">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a9b513758fbde2ff2e894996c8a94bdd?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a9b513758fbde2ff2e894996c8a94bdd?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Keynan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-24T07:16:37+00:00" itemprop="datePublished"><a href="index.html#comment-63786" class="comment-time-link" itemprop="url">November 24, 2016 at 7:16 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi<br />
+Very good explanation.<br />
+I have one question: dosen&#8217;t the example you gave on the BCNF(before the BCNF solution) also break the second rule? because non prime attributes depends on only subset of the candidate key? for an example: the dept_type and dept_no_of_emp are only depended on a subset of the candidate key which is emp_dept<br />
+Thanks</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63786' onclick='return addComment.moveForm( "comment-63786", "63786", "respond", "6015" )' aria-label='Reply to Keynan'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-69815">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ed1fcd84f7b684b35848489b9deb7cc7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ed1fcd84f7b684b35848489b9deb7cc7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">amit</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-22T20:29:08+00:00" itemprop="datePublished"><a href="index.html#comment-69815" class="comment-time-link" itemprop="url">April 22, 2017 at 8:29 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>In first table they are dependent, that is the violation of the 3NF. That&#8217;s why we decomposed the table and in second table Emp_dept is super key or candidate key not a subset of candidate key<br />
+just like foreign key concept</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69815' onclick='return addComment.moveForm( "comment-69815", "69815", "respond", "6015" )' aria-label='Reply to amit'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-65318">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4ab260f2772d9f8041919d3262901afd?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/4ab260f2772d9f8041919d3262901afd?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="../../../index.html" class="comment-author-link" rel="external nofollow" itemprop="url">Anugya</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-12-31T10:19:19+00:00" itemprop="datePublished"><a href="index.html#comment-65318" class="comment-time-link" itemprop="url">December 31, 2016 at 10:19 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>thnku for the making me understand the concept of normalization.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-65318' onclick='return addComment.moveForm( "comment-65318", "65318", "respond", "6015" )' aria-label='Reply to Anugya'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-66090">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/74a8062b6143778214f5d7dbccf42b5f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/74a8062b6143778214f5d7dbccf42b5f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rajiv Rai</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-17T05:23:58+00:00" itemprop="datePublished"><a href="index.html#comment-66090" class="comment-time-link" itemprop="url">January 17, 2017 at 5:23 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Isn&#8217;t the attribute emp_zip also a candidate key(3NF example)? If yes then wouldnt it violate the 3NF rule in the next table?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-66090' onclick='return addComment.moveForm( "comment-66090", "66090", "respond", "6015" )' aria-label='Reply to Rajiv Rai'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-67169">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8d29f0b8ae1d119cffa7653aad40c4e6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8d29f0b8ae1d119cffa7653aad40c4e6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">PuddiMan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-08T12:47:30+00:00" itemprop="datePublished"><a href="index.html#comment-67169" class="comment-time-link" itemprop="url">February 8, 2017 at 12:47 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I don&#8217;t understand the example in BCNF. There are 2 primary keys, emp_id and emp_dept. This violates 2NF rules, emp_nationality can be determined by only emp_id. So in the first place, it is not in 2nf, why proceed to bcnf process?</p>
+<p>Someone care to explain/correct me please(if i&#8217;m wrong)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-67169' onclick='return addComment.moveForm( "comment-67169", "67169", "respond", "6015" )' aria-label='Reply to PuddiMan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-67345">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1b701ebabb8f46eed6715dcc836cc2a0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1b701ebabb8f46eed6715dcc836cc2a0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ninja</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-12T09:08:46+00:00" itemprop="datePublished"><a href="index.html#comment-67345" class="comment-time-link" itemprop="url">February 12, 2017 at 9:08 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks a lot &#8230; 2morrow is my exam and this post really helped me..  Thanks a lot&#8230;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-67345' onclick='return addComment.moveForm( "comment-67345", "67345", "respond", "6015" )' aria-label='Reply to Ninja'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-69862">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e4ca250ff6edbc145fb28a19de425fc4?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e4ca250ff6edbc145fb28a19de425fc4?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Yegon francis</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-24T09:15:53+00:00" itemprop="datePublished"><a href="index.html#comment-69862" class="comment-time-link" itemprop="url">April 24, 2017 at 9:15 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Is it allowed to use two primary keys in a relationship table?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69862' onclick='return addComment.moveForm( "comment-69862", "69862", "respond", "6015" )' aria-label='Reply to Yegon francis'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-72173">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bb2a90a1cf24d6be253327861a8e5c96?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bb2a90a1cf24d6be253327861a8e5c96?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">rahul</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-07-12T10:12:31+00:00" itemprop="datePublished"><a href="index.html#comment-72173" class="comment-time-link" itemprop="url">July 12, 2017 at 10:12 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>you should more explain ,candidate key ,and super key.<br />
+it is very difficult to find</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-72173' onclick='return addComment.moveForm( "comment-72173", "72173", "respond", "6015" )' aria-label='Reply to rahul'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='6015' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="a1d1a8ec9b" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="63"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-69" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">DBMS Index</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../04/dbms-tutorial/index.html">DBMS Tutorial</a></li>
+<li><a href="../../04/dbms-introduction/index.html">DBMS Introduction</a></li>
+<li><a href="../../04/database-applications/index.html">Database Applications</a></li>
+<li><a href="../../04/dbms-vs-file-system/index.html">DBMS vs File System</a></li>
+<li><a href="../../04/view-in-dbms/index.html">View in DBMS</a></li>
+<li><a href="../../04/levels-of-abstraction-in-dbms/index.html">Abstraction</a></li>
+<li><a href="../../04/instance-and-schema-in-dbms/index.html">Instance & Schema</a></li>
+<li><a href="../../04/keys-in-dbms/index.html">Keys Index</a></li>
+<li><a href="../../04/primary-key-in-dbms/index.html">Primary Key</a></li>
+<li><a href="../../04/super-key-in-dbms/index.html">Super Key</a></li>
+<li><a href="../../04/foreign-key-in-dbms/index.html">Foreign Key</a></li>
+<li><a href="../../04/candidate-key-in-dbms/index.html">Candidate Key</a></li>
+<li><a href="../../04/composite-key-in-dbms/index.html">Composite Key</a></li>
+<li><a href="../../04/alternate-key-in-dbms/index.html">Alternate Key</a></li>
+<li><a href="index.html">Normalization</a></li>
+<li><a href="../../04/data-models-in-dbms/index.html">Data Models</a></li>
+<li><a href="../../04/e-r-model-in-dbms/index.html">E-R Model</a></li>
+<li><a href="../../04/relational-model-in-dbms/index.html">Relational Model</a></li>
+<li><a href="../../04/hierarchical-model-in-dbms/index.html">Hierarchical Model</a></li>
+<li><a href="../../04/dbms-languages/index.html">DBMS languages</a></li>
+<li><a href="../../04/functional-dependency-in-dbms/index.html">Functional dependency</a></li>
+<li><a href="../../04/rdbms-concepts/index.html">RDBMS concepts</a></li>
+<li><a href="../../04/cardinality-in-dbms/index.html">Cardinality</a></li>
+<li><a href="../../../2017/09/transaction-management-in-dbms/index.html">Transaction Management</a></li>
+<li><a href="../../04/acid-properties-in-dbms/index.html">ACID properties</a></li>
+<li><a href="../../04/constraints-in-dbms/index.html">Constraints</a></li>
+<li><a href="../../../2017/09/concurrency-control-in-dbms/index.html">Concurrency Control</a></li>
+<li><a href="../../04/deadlock-in-dbms/index.html">Deadlock</a></li>
+</ul></div>
+		</div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2015/05/normalization-in-dbms/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 05:12:23 GMT -->
+</html>

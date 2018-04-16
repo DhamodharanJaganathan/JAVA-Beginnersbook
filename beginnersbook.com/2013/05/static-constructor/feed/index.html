@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Java static constructor &#8211; Is it really Possible to have them in Java?</title>
+	<atom:link href="https://beginnersbook.com/2013/05/static-constructor/feed/" rel="self" type="application/rss+xml" />
+	<link>https://beginnersbook.com/2013/05/static-constructor/</link>
+	<description></description>
+	<lastBuildDate>Fri, 06 Apr 2018 04:50:05 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.5</generator>
+	<item>
+		<title>By: Chaitanya Singh</title>
+		<link>https://beginnersbook.com/2013/05/static-constructor/#comment-73387</link>
+		<dc:creator><![CDATA[Chaitanya Singh]]></dc:creator>
+		<pubDate>Fri, 18 Aug 2017 15:00:53 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2528#comment-73387</guid>
+		<description><![CDATA[Thanks for pointing it out. I have corrected it.]]></description>
+		<content:encoded><![CDATA[<p>Thanks for pointing it out. I have corrected it.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chaitanya Singh</title>
+		<link>https://beginnersbook.com/2013/05/static-constructor/#comment-73386</link>
+		<dc:creator><![CDATA[Chaitanya Singh]]></dc:creator>
+		<pubDate>Fri, 18 Aug 2017 14:59:42 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2528#comment-73386</guid>
+		<description><![CDATA[Good point Prashanth.]]></description>
+		<content:encoded><![CDATA[<p>Good point Prashanth.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Tushar Chaurasia</title>
+		<link>https://beginnersbook.com/2013/05/static-constructor/#comment-71802</link>
+		<dc:creator><![CDATA[Tushar Chaurasia]]></dc:creator>
+		<pubDate>Mon, 26 Jun 2017 20:08:02 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2528#comment-71802</guid>
+		<description><![CDATA[static member can be inherited but cannot be overridded by subclass.
+
+class Parent {
+	
+	static int i = 10;
+
+	
+	public static void method()
+	{
+		
+	System.out.println(i);
+		
+	}
+}
+
+
+
+
+class Child extends Parent {
+	
+	
+	public  void abc ()
+	{
+		
+		method(); // child class is inheriting static method 
+
+	}
+	
+	
+	public static void main (String args[])
+	{
+		Modifier m = new Modifier();
+		
+		m.abc();
+
+	}
+}]]></description>
+		<content:encoded><![CDATA[<p>static member can be inherited but cannot be overridded by subclass.</p>
+<p>class Parent {</p>
+<p>	static int i = 10;</p>
+<p>	public static void method()<br />
+	{</p>
+<p>	System.out.println(i);</p>
+<p>	}<br />
+}</p>
+<p>class Child extends Parent {</p>
+<p>	public  void abc ()<br />
+	{</p>
+<p>		method(); // child class is inheriting static method </p>
+<p>	}</p>
+<p>	public static void main (String args[])<br />
+	{<br />
+		Modifier m = new Modifier();</p>
+<p>		m.abc();</p>
+<p>	}<br />
+}</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Prashanth</title>
+		<link>https://beginnersbook.com/2013/05/static-constructor/#comment-67795</link>
+		<dc:creator><![CDATA[Prashanth]]></dc:creator>
+		<pubDate>Fri, 24 Feb 2017 18:42:39 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2528#comment-67795</guid>
+		<description><![CDATA[Constructor definition should not be static because constructor will be called each and every time when object is created. If you made constructor as static then the constructor will be called before object creation same like main method.]]></description>
+		<content:encoded><![CDATA[<p>Constructor definition should not be static because constructor will be called each and every time when object is created. If you made constructor as static then the constructor will be called before object creation same like main method.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Abhilash</title>
+		<link>https://beginnersbook.com/2013/05/static-constructor/#comment-65063</link>
+		<dc:creator><![CDATA[Abhilash]]></dc:creator>
+		<pubDate>Tue, 27 Dec 2016 04:47:35 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2528#comment-65063</guid>
+		<description><![CDATA[if cant mark constructor as static, why can we mark a method as a static and inherit in child class]]></description>
+		<content:encoded><![CDATA[<p>if cant mark constructor as static, why can we mark a method as a static and inherit in child class</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ihor</title>
+		<link>https://beginnersbook.com/2013/05/static-constructor/#comment-53346</link>
+		<dc:creator><![CDATA[Ihor]]></dc:creator>
+		<pubDate>Tue, 05 Apr 2016 08:45:39 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2528#comment-53346</guid>
+		<description><![CDATA[probably you have a mistake in comment to code
+/*By default this() is hidden here */
+here should be &quot;super&quot; not &quot;this&quot;.]]></description>
+		<content:encoded><![CDATA[<p>probably you have a mistake in comment to code<br />
+/*By default this() is hidden here */<br />
+here should be &#8220;super&#8221; not &#8220;this&#8221;.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: RAm</title>
+		<link>https://beginnersbook.com/2013/05/static-constructor/#comment-52217</link>
+		<dc:creator><![CDATA[RAm]]></dc:creator>
+		<pubDate>Mon, 07 Mar 2016 09:16:46 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2528#comment-52217</guid>
+		<description><![CDATA[Hi Arkya,
+If you want to make something happen before your object has created. Say you want to read a file and then decide which object you want to create. it happens in real time. In that case it is useful...]]></description>
+		<content:encoded><![CDATA[<p>Hi Arkya,<br />
+If you want to make something happen before your object has created. Say you want to read a file and then decide which object you want to create. it happens in real time. In that case it is useful&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Manoj Pathak</title>
+		<link>https://beginnersbook.com/2013/05/static-constructor/#comment-39616</link>
+		<dc:creator><![CDATA[Manoj Pathak]]></dc:creator>
+		<pubDate>Thu, 22 Oct 2015 04:59:45 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=2528#comment-39616</guid>
+		<description><![CDATA[TO add one more point that constructor is static create static method in class and create object of that class in that staic method ie
+class myclass{
+ myclass(){
+sysout(&quot;constructor of class&quot;)
+}
+static myclass getObject{
+return new myclass();
+}
+}
+Think how we are able to access constructor from static method give]]></description>
+		<content:encoded><![CDATA[<p>TO add one more point that constructor is static create static method in class and create object of that class in that staic method ie<br />
+class myclass{<br />
+ myclass(){<br />
+sysout(&#8220;constructor of class&#8221;)<br />
+}<br />
+static myclass getObject{<br />
+return new myclass();<br />
+}<br />
+}<br />
+Think how we are able to access constructor from static method give</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

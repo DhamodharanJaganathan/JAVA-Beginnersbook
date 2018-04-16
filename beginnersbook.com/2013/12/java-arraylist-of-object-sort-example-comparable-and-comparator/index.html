@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:47:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java ArrayList of Object Sort Example (Comparable And Comparator)</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="In this tutorial we will see how to sort an ArrayList of Objects by property using comparable and comparator interface. If you are looking for sorting a simple ArrayList of String or Integer then you can refer the following tutorials - Sorting of ArrayList&lt;String&gt; and ArrayList&lt;Integer&gt; Sorting of"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Java ArrayList of Object Sort Example (Comparable And Comparator)" />
+<meta property="og:description" content="In this tutorial we will see how to sort an ArrayList of Objects by property using comparable and comparator interface. If you are looking for sorting a simple ArrayList of String or Integer then you can refer the following tutorials - Sorting of ArrayList&lt;String&gt; and ArrayList&lt;Integer&gt; Sorting of" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="ArrayList" />
+<meta property="article:tag" content="comparable" />
+<meta property="article:tag" content="comparator" />
+<meta property="article:section" content="Java Collections" />
+<meta property="article:published_time" content="2013-12-06T16:21:53+00:00" />
+<meta property="article:modified_time" content="2017-09-20T15:53:37+00:00" />
+<meta property="og:updated_time" content="2017-09-20T15:53:37+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="In this tutorial we will see how to sort an ArrayList of Objects by property using comparable and comparator interface. If you are looking for sorting a simple ArrayList of String or Integer then you can refer the following tutorials - Sorting of ArrayList&lt;String&gt; and ArrayList&lt;Integer&gt; Sorting of" />
+<meta name="twitter:title" content="Java ArrayList of Object Sort Example (Comparable And Comparator)" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Java ArrayList of Object Sort Example (Comparable And Comparator) Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index94bb.html?p=4282' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embeda31f.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F12%2Fjava-arraylist-of-object-sort-example-comparable-and-comparator%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embeda268?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F12%2Fjava-arraylist-of-object-sort-example-comparable-and-comparator%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-4282 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-4282 post type-post status-publish format-standard category-java-collections tag-arraylist tag-comparable tag-comparator entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Java ArrayList of Object Sort Example (Comparable And Comparator)</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/java-collections/index.html" rel="category tag">Java Collections</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>In this tutorial we will see how to <strong>sort an ArrayList of Objects by property</strong> using <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Comparable.html" target="_blank" rel="&quot;noopener">comparable</a> and <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Comparator.html" target="_blank" rel="noopener">comparator</a> interface. If you are looking for sorting a simple <code>ArrayList</code> of String or Integer then you can refer the following tutorials &#8211;</p>
+<ul>
+<li><a href="../how-to-sort-arraylist-in-java/index.html" target="_blank" rel="noopener">Sorting of ArrayList&lt;String&gt; and ArrayList&lt;Integer&gt;</a></li>
+<li><a href="../sort-arraylist-in-descending-order-in-java/index.html" target="_blank" rel="noopener">Sorting of ArrayList in descending order</a></li>
+</ul>
+<p>We generally use <code>Collections.sort()</code> method to sort a simple array list. However if the ArrayList is of <strong>custom object</strong> type then in such case you have two options for sorting- <strong>comparable and comparator</strong> interfaces. Before going through the example of them, let&#8217;s see what&#8217;s the output when we try to sort arraylist of Objects without implementing any of these interfaces.</p>
+<h2>What&#8217;s the need of comparable and comparator?</h2>
+<p>Consider the below example &#8211; I have a Student class which has properties like Student name, roll no and student age.</p>
+<pre>public class Student  {
+    private String studentname;
+    private int rollno;
+    private int studentage;
+
+    public Student(int rollno, String studentname, int studentage) {
+         this.rollno = rollno;
+         this.studentname = studentname;
+         this.studentage = studentage;
+    }
+
+    public String getStudentname() {
+         return studentname;
+    }
+    public void setStudentname(String studentname) {
+	this.studentname = studentname;
+    }
+    public int getRollno() {
+	return rollno;
+    }
+    public void setRollno(int rollno) {
+	this.rollno = rollno;
+    }
+    public int getStudentage() {
+	return studentage;
+    }
+    public void setStudentage(int studentage) {
+ 	this.studentage = studentage;
+    }	
+}</pre>
+<p>And I want to have an ArrayList of Student Object. We do it like this &#8211;</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>import java.util.*;
+public class ArrayListSorting  {
+
+     public static void main(String args[]){
+	   ArrayList&lt;Student&gt; arraylist = new ArrayList&lt;Student&gt;();
+	   arraylist.add(new Student(223, "Chaitanya", 26));
+	   arraylist.add(new Student(245, "Rahul", 24));
+	   arraylist.add(new Student(209, "Ajeet", 32));
+
+	   Collections.sort(arraylist);
+
+	   for(Student str: arraylist){
+			System.out.println(str);
+	   }
+     }
+}</pre>
+<p>I tried to call the <code>Collections.sort()</code> on the List of Objects and boom! I got the the error message like this &#8211;<br />
+Exception in thread &#8220;main&#8221; java.lang.Error: Unresolved compilation problem:<br />
+<code>Bound mismatch: The generic method sort(List) of type Collections is not applicable for the arguments (ArrayList). The inferred type Student is not a valid substitute for the bounded parameter &gt; at beginnersbook.com.Details.main(Details.java:11)</code></p>
+<p>Reason: I Just called the sort method on an ArrayList of Objects which actually doesn&#8217;t work until unless we use interfaces like <code>Comparable</code> and <code>Comparator</code>.</p>
+<p>Now you must have understood the importance of these interfaces. Let&#8217;s see how to use them to get the sorting done in our way.</p>
+<h2>Sorting of ArrayList&lt;Object&gt; with Comparable</h2>
+<p>Let&#8217;s say we need to sort the ArrayList&lt;Student&gt; based on the student Age property. This is how it can be done &#8211; First implement <code>Comparable</code> interface and then Override the <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Comparable.html#compareTo(T)" target="_blank" rel="noopener"><code>compareTo</code></a> method.</p>
+<pre>package beginnersbook.com;
+
+public class Student implements Comparable {
+    private String studentname;
+    private int rollno;
+    private int studentage;
+
+    public Student(int rollno, String studentname, int studentage) {
+        this.rollno = rollno;
+        this.studentname = studentname;
+        this.studentage = studentage;
+    }
+    ...
+    //getter and setter methods same as the above example 
+    ...
+    @Override
+    public int compareTo(Student comparestu) {
+        int compareage=((Student)comparestu).getStudentage();
+        /* For Ascending order*/
+        return this.studentage-compareage;
+
+        /* For Descending order do like this */
+        //return compareage-this.studentage;
+    }
+
+    @Override
+    public String toString() {
+        return "[ rollno=" + rollno + ", name=" + studentname + ", age=" + studentage + "]";
+    }
+
+}</pre>
+<p>Now we can very well call Collections.sort on ArrayList</p>
+<pre>import java.util.*;
+public class ArrayListSorting  {
+
+	public static void main(String args[]){
+	   ArrayList&lt;Student&gt; arraylist = new ArrayList&lt;Student&gt;();
+	   arraylist.add(new Student(223, "Chaitanya", 26));
+	   arraylist.add(new Student(245, "Rahul", 24));
+	   arraylist.add(new Student(209, "Ajeet", 32));
+
+	   Collections.sort(arraylist);
+
+	   for(Student str: arraylist){
+			System.out.println(str);
+	   }
+	}
+}</pre>
+<p>Output:</p>
+<pre>[ rollno=245, name=Rahul, age=24]
+[ rollno=223, name=Chaitanya, age=26]
+[ rollno=209, name=Ajeet, age=32]</pre>
+<p><strong>Comparable did our job why do we need Comparator anymore?</strong><br />
+Since Comparable is implemented by the same class whose objects are sorted so it binds you with that sorting logic which is ok in most of the cases but in case you want to have more than way of sorting your class objects you should use comparators. Read more about them here:</p>
+<ol>
+<li><a href="../../../2017/08/comparable-interface-in-java-with-example/index.html">Comparable in Java</a></li>
+<li><a href="../../../2017/08/comparator-interface-in-java/index.html">Comparator in Java</a></li>
+</ol>
+<h2>Sorting ArrayList&lt;Object&gt; multiple properties with Comparator</h2>
+<p>We are overriding <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Comparator.html#compare(T, T)" target="_blank" rel="noopener"><code>compare</code></a> method of <code>Comparator</code> for sorting.</p>
+<pre>package beginnersbook.com;
+import java.util.Comparator;
+public class Student  {
+    private String studentname;
+    private int rollno;
+    private int studentage;
+
+    public Student(int rollno, String studentname, int studentage) {
+        this.rollno = rollno;
+        this.studentname = studentname;
+        this.studentage = studentage;
+    }
+    ...
+    //Getter and setter methods same as the above examples
+    ...
+    /*Comparator for sorting the list by Student Name*/
+    public static Comparator&lt;Student&gt; StuNameComparator = new Comparator&lt;Student&gt;() {
+
+	public int compare(Student s1, Student s2) {
+	   String StudentName1 = s1.getStudentname().toUpperCase();
+	   String StudentName2 = s2.getStudentname().toUpperCase();
+
+	   //ascending order
+	   return StudentName1.compareTo(StudentName2);
+
+	   //descending order
+	   //return StudentName2.compareTo(StudentName1);
+    }};
+
+    /*Comparator for sorting the list by roll no*/
+    public static Comparator&lt;Student&gt; StuRollno = new Comparator&lt;Student&gt;() {
+
+	public int compare(Student s1, Student s2) {
+
+	   int rollno1 = s1.getRollno();
+	   int rollno2 = s2.getRollno();
+
+	   /*For ascending order*/
+	   return rollno1-rollno2;
+
+	   /*For descending order*/
+	   //rollno2-rollno1;
+   }};
+    @Override
+    public String toString() {
+        return "[ rollno=" + rollno + ", name=" + studentname + ", age=" + studentage + "]";
+    }
+
+}</pre>
+<p>ArrayList class:</p>
+<pre>package beginnersbook.com;
+import java.util.*;
+public class Details  {
+
+	public static void main(String args[]){
+	   ArrayList&lt;Student&gt; arraylist = new ArrayList&lt;Student&gt;();
+	   arraylist.add(new Student(101, "Zues", 26));
+	   arraylist.add(new Student(505, "Abey", 24));
+	   arraylist.add(new Student(809, "Vignesh", 32));
+
+	   /*Sorting based on Student Name*/
+	   System.out.println("Student Name Sorting:");
+	   Collections.sort(arraylist, Student.StuNameComparator);
+
+	   for(Student str: arraylist){
+			System.out.println(str);
+	   }
+
+	   /* Sorting on Rollno property*/
+	   System.out.println("RollNum Sorting:");
+	   Collections.sort(arraylist, Student.StuRollno);
+	   for(Student str: arraylist){
+			System.out.println(str);
+	   }
+	}
+}</pre>
+<p>Output:</p>
+<pre>Student Name Sorting:
+[ rollno=505, name=Abey, age=24]
+[ rollno=809, name=Vignesh, age=32]
+[ rollno=101, name=Zues, age=26]
+RollNum Sorting:
+[ rollno=101, name=Zues, age=26]
+[ rollno=505, name=Abey, age=24]
+[ rollno=809, name=Vignesh, age=32]</pre>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../java-arraylist-ensurecapacity-method-example/index.html" rel="bookmark" title="Link to Java ArrayList ensureCapacity() Method example">Java ArrayList ensureCapacity() Method example</a></li><li><a href="../java-arraylist-add-method-example/index.html" rel="bookmark" title="Link to Java ArrayList add() Method Example">Java ArrayList add() Method Example</a></li><li><a href="../java-arraylist-remove-method-example/index.html" rel="bookmark" title="Link to Java ArrayList remove(int index) Method example">Java ArrayList remove(int index) Method example</a></li><li><a href="../../../2014/06/java-iterator-with-examples/index.html" rel="bookmark" title="Link to Java Iterator with examples">Java Iterator with examples</a></li><li><a href="../../../2014/07/how-to-get-the-sub-map-from-treemap-example-java/index.html" rel="bookmark" title="Link to How to get the Sub Map from TreeMap example &#8211; Java">How to get the Sub Map from TreeMap example &#8211; Java</a></li><li><a href="../../../2014/07/java-remove-element-from-a-specific-index-in-linkedlist-example/index.html" rel="bookmark" title="Link to Java &#8211; Remove element from a specific index in LinkedList example">Java &#8211; Remove element from a specific index in LinkedList example</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-4354">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/019caa2cf3087d7f8d7fe9d2deaddf01?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/019caa2cf3087d7f8d7fe9d2deaddf01?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Francis</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-06-17T12:10:41+00:00" itemprop="datePublished"><a href="index.html#comment-4354" class="comment-time-link" itemprop="url">June 17, 2014 at 12:10 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>nice tutorial</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-4354' onclick='return addComment.moveForm( "comment-4354", "4354", "respond", "4282" )' aria-label='Reply to Francis'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5424">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1c917ea832593ade483878803deac943?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1c917ea832593ade483878803deac943?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Kirjsten</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-07-21T17:43:19+00:00" itemprop="datePublished"><a href="index.html#comment-5424" class="comment-time-link" itemprop="url">July 21, 2014 at 5:43 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This was awesome!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5424' onclick='return addComment.moveForm( "comment-5424", "5424", "respond", "4282" )' aria-label='Reply to Kirjsten'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-14487">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/44295552a029ad579aea95bdf5ed09f9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/44295552a029ad579aea95bdf5ed09f9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Joseph Tran</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-10T13:21:42+00:00" itemprop="datePublished"><a href="index.html#comment-14487" class="comment-time-link" itemprop="url">November 10, 2014 at 1:21 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hey sir. Why my netbeans says that student is not an abstract class and doesn&#8217;t override the methods from Comparator even i used same codes with yours</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14487' onclick='return addComment.moveForm( "comment-14487", "14487", "respond", "4282" )' aria-label='Reply to Joseph Tran'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-15714">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a9201b5ffd1975cc4ca92285e17ea440?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a9201b5ffd1975cc4ca92285e17ea440?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Asmaa Hassan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-14T12:20:22+00:00" itemprop="datePublished"><a href="index.html#comment-15714" class="comment-time-link" itemprop="url">November 14, 2014 at 12:20 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>i had error when override the compareto method &#8220;method doesnot override or implement a method from a supertype&#8221; when i replace(object o )with (Student comparestu)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-15714' onclick='return addComment.moveForm( "comment-15714", "15714", "respond", "4282" )' aria-label='Reply to Asmaa Hassan'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-55242">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3e266542e6ac55ffe949a12af04df56a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3e266542e6ac55ffe949a12af04df56a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Amit</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-15T19:56:54+00:00" itemprop="datePublished"><a href="index.html#comment-55242" class="comment-time-link" itemprop="url">May 15, 2016 at 7:56 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I am also facing the same error, even after i copy paste this same syntax. There is some problem with the way we are overriding the method.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-55242' onclick='return addComment.moveForm( "comment-55242", "55242", "respond", "4282" )' aria-label='Reply to Amit'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-19130">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/5c0d1720bb69e4a63ededa90ddd37ebc?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/5c0d1720bb69e4a63ededa90ddd37ebc?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Joseph MBOGBA</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-25T13:25:26+00:00" itemprop="datePublished"><a href="index.html#comment-19130" class="comment-time-link" itemprop="url">November 25, 2014 at 1:25 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Dear Joseph &amp; Asmaa,<br />
+I have just faced the same issue and I realize that Comparable interface assume Object as parameter by default.<br />
+Therefore, we should use (Object comparestu) as parameter when overriding compareTo method. However, we then need to make sure comparestu is of type Student,by casting:(Student)comparestu, to be able to access getStudentage method.<br />
+This hassle can be avoided by specifying the parameter of Comparable interface when implemented: Comparable in our case. (Student comparestu)will be compareTo parameter, with no need to cast at this line: int compareage=comparestu.getStudentage();</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19130' onclick='return addComment.moveForm( "comment-19130", "19130", "respond", "4282" )' aria-label='Reply to Joseph MBOGBA'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-20098">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6fdf8bdaaf78f78f9afdf742482ee2e8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6fdf8bdaaf78f78f9afdf742482ee2e8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">HarishKumar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-12T07:39:01+00:00" itemprop="datePublished"><a href="index.html#comment-20098" class="comment-time-link" itemprop="url">December 12, 2014 at 7:39 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Simply superb examples and great explanation&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-20098' onclick='return addComment.moveForm( "comment-20098", "20098", "respond", "4282" )' aria-label='Reply to HarishKumar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-21406">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c945f6200e1a27ed70b66212ce68010c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c945f6200e1a27ed70b66212ce68010c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Andrey</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-05T08:33:42+00:00" itemprop="datePublished"><a href="index.html#comment-21406" class="comment-time-link" itemprop="url">January 5, 2015 at 8:33 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>In your first example you forgot to specify the type&#8230;<br />
+implements Comparable</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-21406' onclick='return addComment.moveForm( "comment-21406", "21406", "respond", "4282" )' aria-label='Reply to Andrey'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-69214">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/db0b09ebe03f9634ba98809b8b60719c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/db0b09ebe03f9634ba98809b8b60719c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Saby</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-03T23:17:46+00:00" itemprop="datePublished"><a href="index.html#comment-69214" class="comment-time-link" itemprop="url">April 3, 2017 at 11:17 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>yeah and once the type is mentioned, he doesn&#8217;t need to typecase inside the compareTo method coz he&#8217;s already getting the argument as Student.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69214' onclick='return addComment.moveForm( "comment-69214", "69214", "respond", "4282" )' aria-label='Reply to Saby'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-22588">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/96a2753f8ce6eff173a0cfc16a4040fc?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/96a2753f8ce6eff173a0cfc16a4040fc?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Michelle</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-02-03T01:50:19+00:00" itemprop="datePublished"><a href="index.html#comment-22588" class="comment-time-link" itemprop="url">February 3, 2015 at 1:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>GREAT explanation!<br />
+I have a question, how do you print out an object with the highest value of one of their properties.<br />
+Lets say, I want to print out the name of the student with the highest age from an array list of 100 students. how do you do that?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-22588' onclick='return addComment.moveForm( "comment-22588", "22588", "respond", "4282" )' aria-label='Reply to Michelle'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-22947">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f6554b9a345738f6721e3ff6fa0060d3?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f6554b9a345738f6721e3ff6fa0060d3?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Dan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-02-11T22:00:56+00:00" itemprop="datePublished"><a href="index.html#comment-22947" class="comment-time-link" itemprop="url">February 11, 2015 at 10:00 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This is great for sorting by one field in a custom object. Can you advise on how to sort by multiple criteria?  </p>
+<p>for example, sort by age then sort by name then&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-22947' onclick='return addComment.moveForm( "comment-22947", "22947", "respond", "4282" )' aria-label='Reply to Dan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-23306">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c875d54a9281d79ee65b73a5106c2380?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c875d54a9281d79ee65b73a5106c2380?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Zain</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-02-20T03:03:33+00:00" itemprop="datePublished"><a href="index.html#comment-23306" class="comment-time-link" itemprop="url">February 20, 2015 at 3:03 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks a lot for Joseph MBOGBA for the clarification!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-23306' onclick='return addComment.moveForm( "comment-23306", "23306", "respond", "4282" )' aria-label='Reply to Zain'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-24284">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/24d8c3971031f3fffc1b4128724c04f8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/24d8c3971031f3fffc1b4128724c04f8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nilesh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-13T08:16:11+00:00" itemprop="datePublished"><a href="index.html#comment-24284" class="comment-time-link" itemprop="url">March 13, 2015 at 8:16 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>good tutorial<br />
+its cleared ma comparable nd comparator concepts</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24284' onclick='return addComment.moveForm( "comment-24284", "24284", "respond", "4282" )' aria-label='Reply to Nilesh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-38676">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/08535c5d91cd3099a84d83752d58a6c9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/08535c5d91cd3099a84d83752d58a6c9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mehroz Munir</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-14T05:34:44+00:00" itemprop="datePublished"><a href="index.html#comment-38676" class="comment-time-link" itemprop="url">October 14, 2015 at 5:34 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>@Dan and others who want to sort for multiple values like first by age then by name they could use this<br />
+suppose you have list of some objects , call these mehtods of sorting in order in which you want to sort the list<br />
+Collections.sort(list, new Comparator() {<br />
+                            @Override<br />
+                            public int compare(Campain lhs, Campain rhs) {<br />
+                                Date lhsDate = new Date();<br />
+                                Date rhsDate = new Date();<br />
+                                SimpleDateFormat dateFormat = new SimpleDateFormat(&#8220;yyyy-MM-dd hh:mm:ss&#8221;);<br />
+                                try {<br />
+                                    lhsDate = dateFormat.parse(lhs.getDatetime());<br />
+                                    rhsDate = dateFormat.parse(rhs.getDatetime());<br />
+                                } catch (ParseException e) {<br />
+                                    e.printStackTrace();<br />
+                                }<br />
+                                //return lhsDate.getTime() &lt;= rhsDate.getTime() ? -1 : 1;<br />
+                                //  if (rhsDate.getTime() == lhsDate.getTime())<br />
+                                //     return 0;<br />
+                                //  return rhsDate.getTime() &lt; lhsDate.getTime() ? -1 : 1;<br />
+                                return rhsDate.compareTo(lhsDate);<br />
+                            }<br />
+                        });<br />
+then calll this method again for sorting</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-38676' onclick='return addComment.moveForm( "comment-38676", "38676", "respond", "4282" )' aria-label='Reply to Mehroz Munir'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-41850">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ca7844d6094011e8a633eec5ddd0f2a8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ca7844d6094011e8a633eec5ddd0f2a8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rajan Chauhan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-06T10:04:20+00:00" itemprop="datePublished"><a href="index.html#comment-41850" class="comment-time-link" itemprop="url">November 6, 2015 at 10:04 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi thanks for the awesome description. I want to ask something 1. Is comparable used only for sorting based on an integer property ?? because in other threads it can be used to sort string and other type as well and its working.</p>
+<p>2. The code for the comparbles compareTO()method here is taking Student object as parameter, and its not working when i tried, although when passing only base Object type and than casting student from it works well.</p>
+<p>public int compareTo(Object obj){<br />
+Student st=(Student)obj;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-41850' onclick='return addComment.moveForm( "comment-41850", "41850", "respond", "4282" )' aria-label='Reply to Rajan Chauhan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-42941">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/57d8f3f9e50be657fea966150d72fa20?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/57d8f3f9e50be657fea966150d72fa20?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Minh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-14T11:27:42+00:00" itemprop="datePublished"><a href="index.html#comment-42941" class="comment-time-link" itemprop="url">November 14, 2015 at 11:27 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Very helpful, awesome thread. Thank you very much.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-42941' onclick='return addComment.moveForm( "comment-42941", "42941", "respond", "4282" )' aria-label='Reply to Minh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-48013">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3fda9a951a4052cc56b6e45d28f8393a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3fda9a951a4052cc56b6e45d28f8393a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rishabh Tripathi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-01-04T09:07:48+00:00" itemprop="datePublished"><a href="index.html#comment-48013" class="comment-time-link" itemprop="url">January 4, 2016 at 9:07 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>what if there 2 student with SAME NAME but different Roll no and want to sort according to name and then roll no ?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-48013' onclick='return addComment.moveForm( "comment-48013", "48013", "respond", "4282" )' aria-label='Reply to Rishabh Tripathi'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-51962">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ddf07f40e19931a07205ddaa34f61066?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ddf07f40e19931a07205ddaa34f61066?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Gaurav</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-01T09:39:23+00:00" itemprop="datePublished"><a href="index.html#comment-51962" class="comment-time-link" itemprop="url">March 1, 2016 at 9:39 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>still the program ArrayListSorting will give an error :-<br />
+Student is not abstract and does not override the abstract method compareTo(Object) in Comparable.<br />
+so to remove this error change the line<br />
+public int compareTo(Student comparestu) {<br />
+ from the Comparable program as :-<br />
+public int compareTo(Object comparestu) {</p>
+<p>this will make program execute. and output will come.<br />
+[ rollno=245, name=Rahul, age=24]<br />
+[ rollno=223, name=Chaitanya, age=26]<br />
+[ rollno=209, name=Ajeet, age=32]</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51962' onclick='return addComment.moveForm( "comment-51962", "51962", "respond", "4282" )' aria-label='Reply to Gaurav'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-53195">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f63ba8671816fe8086a5340d767b6e02?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f63ba8671816fe8086a5340d767b6e02?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Akaash Trivedi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-31T20:18:21+00:00" itemprop="datePublished"><a href="index.html#comment-53195" class="comment-time-link" itemprop="url">March 31, 2016 at 8:18 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you so much.<br />
+I was trying to solve same problem since many day finally I did change accordingly your then it got executed.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53195' onclick='return addComment.moveForm( "comment-53195", "53195", "respond", "4282" )' aria-label='Reply to Akaash Trivedi'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-53450">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/0179eef7a1c65364eef533910715f913?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/0179eef7a1c65364eef533910715f913?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sunilj</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-09T04:01:50+00:00" itemprop="datePublished"><a href="index.html#comment-53450" class="comment-time-link" itemprop="url">April 9, 2016 at 4:01 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks for sharing good tutorial.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53450' onclick='return addComment.moveForm( "comment-53450", "53450", "respond", "4282" )' aria-label='Reply to sunilj'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-60202">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a98c967418732266576f2719cb322743?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a98c967418732266576f2719cb322743?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">iCommentr</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-06T15:18:28+00:00" itemprop="datePublished"><a href="index.html#comment-60202" class="comment-time-link" itemprop="url">September 6, 2016 at 3:18 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>You can also sort String type using Comparable.</p>
+<p>public int compareTo(Student st) {<br />
+	return this.name.compareTo(st.name);<br />
+}</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-60202' onclick='return addComment.moveForm( "comment-60202", "60202", "respond", "4282" )' aria-label='Reply to iCommentr'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-66927">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6078371db35da55b186e6ea824f937e5?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6078371db35da55b186e6ea824f937e5?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ratik Singha;</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-03T18:05:34+00:00" itemprop="datePublished"><a href="index.html#comment-66927" class="comment-time-link" itemprop="url">February 3, 2017 at 6:05 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>By Using Comparable interface .. You can sort on any field like name or tag etc&#8230; other than integer.</p>
+<p>Just change the implementation of compareTo method like</p>
+<p>@Override<br />
+	public int compareTo(Student  st) {<br />
+		Student  student = st;<br />
+		return studentname.compareTo(student.getStudentName());<br />
+	}</p>
+<p>and from main method you can call</p>
+<p>Collections.sort(Student);</p>
+<p>..</p>
+<p>So what is main requirement of Comparator interface&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-66927' onclick='return addComment.moveForm( "comment-66927", "66927", "respond", "4282" )' aria-label='Reply to Ratik Singha;'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-69001">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9459341b0c775499ccbaf3a49aea0d63?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9459341b0c775499ccbaf3a49aea0d63?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chandra Mauli Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-28T15:09:01+00:00" itemprop="datePublished"><a href="index.html#comment-69001" class="comment-time-link" itemprop="url">March 28, 2017 at 3:09 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks for explaining the topic. Just a little correction, As you highlighted, Using Comparable we can sort custom object only based on integer type. This is not correct, We can sort custom object on String  base also, Like you shared Student Object above, having roll no, name and age, Let me show compareTo method performing sort based on String:</p>
+<p>	public int compareTo(Student compareStudent) {<br />
+		return this.name.compareTo(compareStudent.name);<br />
+	}</p>
+<p>Above piece of code will sort Student object based on name (String Type).</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-69001' onclick='return addComment.moveForm( "comment-69001", "69001", "respond", "4282" )' aria-label='Reply to Chandra Mauli Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4282' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="d8d814aee9" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="32"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-4" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+<li><a href="../../../java-tutorial-for-beginners-with-examples/index.html">Java Tutorial</a></li>
+<li><a href="../../04/oops-concepts/index.html">OOPs Concepts</a></li>
+</ul>
+<h2 class="widget-title">Java Collections</h2>
+<ul>
+<li><a href="../java-arraylist/index.html">ArrayList</a></li>
+<li><a href="../linkedlist-in-java-with-example/index.html">LinkedList</a></li>
+<li><a href="../difference-between-arraylist-and-linkedlist-in-java/index.html">ArrayList vs LinkedList</a></li>
+<li><a href="../vector-in-java/index.html">Vector</a></li>
+<li><a href="../difference-between-arraylist-and-vector-in-java/index.html">ArrayList vs Vector</a></li>
+<li><a href="../hashmap-in-java-with-example/index.html">HashMap</a></li>
+<li><a href="../treemap-in-java-with-example/index.html">TreeMap</a></li>
+<li><a href="../linkedhashmap-in-java/index.html">LinkedHashMap</a></li>
+<li><a href="../hashset-class-in-java-with-example/index.html">HashSet</a></li>
+<li><a href="../treeset-class-in-java-with-example/index.html">TreeSet</a></li>
+<li><a href="../linkedhashset-class-in-java-with-example/index.html">LinkedHashSet</a></li>
+<li><a href="../../../2014/07/hashtable-in-java-with-example/index.html">Hashtable</a></li>
+<li><a href="../../../2014/06/difference-between-hashmap-and-hashtable/index.html">HashMap vs Hashtable</a></li>
+<li><a href="../../../2017/08/queue-interface-in-java-collections/index.html">Queue</a></li>
+<li><a href="../../../2017/08/java-collections-priorityqueue-interface/index.html">PriorityQueue</a></li>
+<li><a href="../../../2017/08/java-collections-deque-interface/index.html">Deque & ArrayDeque</a></li>
+<li><a href="../../../2014/06/java-iterator-with-examples/index.html">Iterator</a></li>
+<li><a href="../../../2014/06/listiterator-in-java-with-examples/index.html">ListIterator</a></li>
+<li><a href="../../../2017/08/comparable-interface-in-java-with-example/index.html">Comparable Interface</a></li>
+<li><a href="../../../2017/08/comparator-interface-in-java/index.html">Comparator Interface</a></li>
+<li><a href="../../../2015/03/java-collections-interview-questions-and-answers/index.html">Java Collections Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../java-strings/index.html">Java String</a></li>
+ 	<li><a href="../../04/java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:47:07 GMT -->
+</html>

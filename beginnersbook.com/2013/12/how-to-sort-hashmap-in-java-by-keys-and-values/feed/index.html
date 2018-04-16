@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: How to sort HashMap in Java by Keys and Values</title>
+	<atom:link href="https://beginnersbook.com/2013/12/how-to-sort-hashmap-in-java-by-keys-and-values/feed/" rel="self" type="application/rss+xml" />
+	<link>https://beginnersbook.com/2013/12/how-to-sort-hashmap-in-java-by-keys-and-values/</link>
+	<description></description>
+	<lastBuildDate>Fri, 06 Apr 2018 04:50:05 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.5</generator>
+	<item>
+		<title>By: Rohit</title>
+		<link>https://beginnersbook.com/2013/12/how-to-sort-hashmap-in-java-by-keys-and-values/#comment-71850</link>
+		<dc:creator><![CDATA[Rohit]]></dc:creator>
+		<pubDate>Wed, 28 Jun 2017 01:31:58 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4451#comment-71850</guid>
+		<description><![CDATA[The guy was asking for key based sorting. Read the question at least.]]></description>
+		<content:encoded><![CDATA[<p>The guy was asking for key based sorting. Read the question at least.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Nick</title>
+		<link>https://beginnersbook.com/2013/12/how-to-sort-hashmap-in-java-by-keys-and-values/#comment-63087</link>
+		<dc:creator><![CDATA[Nick]]></dc:creator>
+		<pubDate>Fri, 04 Nov 2016 21:13:40 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4451#comment-63087</guid>
+		<description><![CDATA[To switch the sort order from ascending to descending, simply make the following change to the Comparator (swaps the order in which the objects are compared, the only change being 02.getValue is called before 01.getValue).
+
+Collections.sort(list, new Comparator() {
+            public int compare(Object o1, Object o2) {
+               return ((Comparable) ((Map.Entry) (o2)).getValue())
+                  .compareTo(((Map.Entry) (o1)).getValue());
+            }]]></description>
+		<content:encoded><![CDATA[<p>To switch the sort order from ascending to descending, simply make the following change to the Comparator (swaps the order in which the objects are compared, the only change being 02.getValue is called before 01.getValue).</p>
+<p>Collections.sort(list, new Comparator() {<br />
+            public int compare(Object o1, Object o2) {<br />
+               return ((Comparable) ((Map.Entry) (o2)).getValue())<br />
+                  .compareTo(((Map.Entry) (o1)).getValue());<br />
+            }</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: John</title>
+		<link>https://beginnersbook.com/2013/12/how-to-sort-hashmap-in-java-by-keys-and-values/#comment-47029</link>
+		<dc:creator><![CDATA[John]]></dc:creator>
+		<pubDate>Wed, 23 Dec 2015 19:14:48 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4451#comment-47029</guid>
+		<description><![CDATA[Hello,
+
+Sorting by Keys sorted ascending, how can I sort descending?
+could you pls send a example?
+I usually visit your site, thank you]]></description>
+		<content:encoded><![CDATA[<p>Hello,</p>
+<p>Sorting by Keys sorted ascending, how can I sort descending?<br />
+could you pls send a example?<br />
+I usually visit your site, thank you</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Grupojrc</title>
+		<link>https://beginnersbook.com/2013/12/how-to-sort-hashmap-in-java-by-keys-and-values/#comment-35193</link>
+		<dc:creator><![CDATA[Grupojrc]]></dc:creator>
+		<pubDate>Thu, 10 Sep 2015 15:44:37 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4451#comment-35193</guid>
+		<description><![CDATA[Hello at &quot;HashMap Sorting by Values&quot; if you add:
+hmap.put(900, &quot;Ó&quot;);
+hmap.put(9, &quot;é&quot;);
+
+The result is:
+After Sorting:
+5: A
+11: C
+66: Q
+0: R
+77: Y
+4: Z
+900: Ó
+9: é
+
+Is not correct.]]></description>
+		<content:encoded><![CDATA[<p>Hello at &#8220;HashMap Sorting by Values&#8221; if you add:<br />
+hmap.put(900, &#8220;Ó&#8221;);<br />
+hmap.put(9, &#8220;é&#8221;);</p>
+<p>The result is:<br />
+After Sorting:<br />
+5: A<br />
+11: C<br />
+66: Q<br />
+0: R<br />
+77: Y<br />
+4: Z<br />
+900: Ó<br />
+9: é</p>
+<p>Is not correct.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Naresh</title>
+		<link>https://beginnersbook.com/2013/12/how-to-sort-hashmap-in-java-by-keys-and-values/#comment-26327</link>
+		<dc:creator><![CDATA[Naresh]]></dc:creator>
+		<pubDate>Tue, 28 Apr 2015 14:43:31 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4451#comment-26327</guid>
+		<description><![CDATA[Note: below program will work, no need to worry about generics.
+import java.util.*;
+
+public class SortHashMapValues{
+	public static void main(String []args){
+		Map map=new HashMap();
+		map.put(&quot;one&quot;,1);
+		map.put(&quot;ten&quot;,10);
+		map.put(&quot;three&quot;,3);
+		map.put(&quot;two&quot;,2);
+
+		List list=new ArrayList(map.entrySet());
+				
+		Collections.sort(list,new Comparator(){
+			public int compare(Object obj1, Object obj2){
+			return ((Comparable)((Map.Entry)(obj1)).getValue
+
+()).compareTo(((Map.Entry)(obj2)).getValue());	
+			}
+		});
+		System.out.println(list);
+	}
+}]]></description>
+		<content:encoded><![CDATA[<p>Note: below program will work, no need to worry about generics.<br />
+import java.util.*;</p>
+<p>public class SortHashMapValues{<br />
+	public static void main(String []args){<br />
+		Map map=new HashMap();<br />
+		map.put(&#8220;one&#8221;,1);<br />
+		map.put(&#8220;ten&#8221;,10);<br />
+		map.put(&#8220;three&#8221;,3);<br />
+		map.put(&#8220;two&#8221;,2);</p>
+<p>		List list=new ArrayList(map.entrySet());</p>
+<p>		Collections.sort(list,new Comparator(){<br />
+			public int compare(Object obj1, Object obj2){<br />
+			return ((Comparable)((Map.Entry)(obj1)).getValue</p>
+<p>()).compareTo(((Map.Entry)(obj2)).getValue());<br />
+			}<br />
+		});<br />
+		System.out.println(list);<br />
+	}<br />
+}</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

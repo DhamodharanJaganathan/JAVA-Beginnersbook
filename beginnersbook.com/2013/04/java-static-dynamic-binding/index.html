@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/04/java-static-dynamic-binding/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:40:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Static and dynamic binding in java</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Association of method call to the method body is known as binding. There are two types of binding in Java: Static Binding and Dynamic Binding."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Static and dynamic binding in java" />
+<meta property="og:description" content="Association of method call to the method body is known as binding. There are two types of binding in Java: Static Binding and Dynamic Binding." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="OOPs Concept" />
+<meta property="article:published_time" content="2013-04-11T19:40:52+00:00" />
+<meta property="article:modified_time" content="2017-09-13T02:37:33+00:00" />
+<meta property="og:updated_time" content="2017-09-13T02:37:33+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Association of method call to the method body is known as binding. There are two types of binding in Java: Static Binding and Dynamic Binding." />
+<meta name="twitter:title" content="Static and dynamic binding in java" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Static and dynamic binding in java Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index5b4f.html?p=2026' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embedccb9.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F04%2Fjava-static-dynamic-binding%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embeda6d8?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F04%2Fjava-static-dynamic-binding%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2026 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2026 post type-post status-publish format-standard category-oops-concept entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Static and dynamic binding in java</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/oops-concept/index.html" rel="category tag">OOPs Concept</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Association of method call to the method body is known as binding. There are two types of binding: <strong>Static Binding</strong> that happens at compile time and <strong>Dynamic Binding</strong> that happens at runtime. Before I explain static and dynamic binding in java, lets see few terms that will help you understand this concept better.</p>
+<h2>What is reference and object?</h2>
+<pre>class Human{
+....
+}
+class Boy extends Human{
+   public static void main( String args[]) {
+       /*This statement simply creates an object of class
+        *Boy and assigns a reference of Boy to it*/  
+       Boy obj1 = new Boy();
+
+       /* Since Boy extends Human class. The object creation
+        * can be done in this way. Parent class reference 
+        * can have child class reference assigned to it
+        */
+       Human obj2 = new Boy();
+   }
+}</pre>
+<h2>Static and Dynamic Binding in Java</h2>
+<p>As mentioned above, association of method definition to the method call is known as binding. There are two types of binding: Static binding and dynamic binding. Lets discuss them.</p>
+<h3>Static Binding or Early Binding</h3>
+<p>The binding which can be resolved at compile time by compiler is known as static or early binding. The binding of static, private and final methods is <a href="../runtime-compile-time-polymorphism/index.html">compile-time</a>. <strong>Why?</strong> The reason is that the these method cannot be overridden and the type of the class is determined at the compile time. Lets see an example to understand this:</p>
+<h3>Static binding example</h3>
+<p>Here we have two classes Human and Boy. Both the classes have same method walk() but the method is static, which means it cannot be overriden so even though I have used the object of Boy class while creating object obj, the parent class method is called by it. Because the reference is of Human type (parent class). So whenever a binding of static, private and final methods happen, type of the class is determined by the compiler at compile time and the binding happens then and there.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<pre>class Human{
+   public static void walk()
+   {
+       System.out.println("Human walks");
+   }
+}
+class Boy extends Human{
+   public static void walk(){
+       System.out.println("Boy walks");
+   }
+   public static void main( String args[]) {
+       /* Reference is of Human type and object is
+        * Boy type
+        */
+       Human obj = new Boy();
+       /* Reference is of HUman type and object is
+        * of Human type.
+        */
+       Human obj2 = new Human();
+       obj.walk();
+       obj2.walk();
+   }
+}</pre>
+<p>Output:</p>
+<pre>Human walks
+Human walks</pre>
+<h3>Dynamic Binding or Late Binding</h3>
+<p>When compiler is not able to resolve the call/binding at compile time, such binding is known as Dynamic or late Binding. <a href="../../../2014/01/method-overriding-in-java-with-example/index.html">Method Overriding</a> is a perfect example of dynamic binding as in overriding both parent and child classes have same method and in this case the <strong>type of the object</strong> determines which method is to be executed. The type of object is determined at the run time so this is known as dynamic binding.</p>
+<h3>Dynamic binding example</h3>
+<p>This is the same example that we have seen above. The only difference here is that in this example, overriding is actually happening since these methods are <strong>not</strong> static, private and final. In case of overriding the call to the overriden method is determined at runtime by the type of object thus late binding happens. Lets see an example to understand this:</p>
+<pre>class Human{
+   //Overridden Method
+   public void walk()
+   {
+       System.out.println("Human walks");
+   }
+}
+class Demo extends Human{
+   //Overriding Method
+   public void walk(){
+       System.out.println("Boy walks");
+   }
+   public static void main( String args[]) {
+       /* Reference is of Human type and object is
+        * Boy type
+        */
+       Human obj = new Demo();
+       /* Reference is of HUman type and object is
+        * of Human type.
+        */
+       Human obj2 = new Human();
+       obj.walk();
+       obj2.walk();
+   }
+}</pre>
+<p>Output:</p>
+<pre>Boy walks
+Human walks
+</pre>
+<p>As you can see that the output is different than what we saw in the static binding example, because in this case while creation of object obj the type of the object is determined as a Boy type so method of Boy class is called. Remember the type of the object is determined at the runtime.</p>
+<h2>Static Binding vs Dynamic Binding</h2>
+<p>Lets discuss the <strong>difference between static and dynamic binding in Java</strong>.</p>
+<ol>
+<li>Static binding happens at compile-time while dynamic binding happens at runtime.</li>
+<li>Binding of private, static and final methods always happen at compile time since these methods cannot be overridden. When the method overriding is actually happening and the reference of parent type is assigned to the object of child class type then such binding is resolved during runtime.</li>
+<li>The binding of <a href="../../05/method-overloading/index.html">overloaded methods</a> is static and the binding of overridden methods is dynamic.</li>
+</ol>
+<div class="bb-nav"><a class="pretut" href="../runtime-compile-time-polymorphism/index.html">❮ Previous</a><a class="nexttut" href="../../05/java-abstract-class-method/index.html">Next ❯</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-91">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8c6ee00fc73fe42b763a0c21378c790b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8c6ee00fc73fe42b763a0c21378c790b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ashish</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2013-05-30T19:24:39+00:00" itemprop="datePublished"><a href="index.html#comment-91" class="comment-time-link" itemprop="url">May 30, 2013 at 7:24 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I was searching for static vs dynamic binding and found this, very helpful for me. Thank you so much for explaining these concepts with examples</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-91' onclick='return addComment.moveForm( "comment-91", "91", "respond", "2026" )' aria-label='Reply to Ashish'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-93">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="../../../index.html" class="comment-author-link" rel="external nofollow" itemprop="url">Chaitanya Singh</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2013-05-30T19:38:38+00:00" itemprop="datePublished"><a href="index.html#comment-93" class="comment-time-link" itemprop="url">May 30, 2013 at 7:38 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I am glad that you liked it. let me know if you have any question regarding binding in java, I would be happy to help you out.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-93' onclick='return addComment.moveForm( "comment-93", "93", "respond", "2026" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-92">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8c6ee00fc73fe42b763a0c21378c790b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8c6ee00fc73fe42b763a0c21378c790b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Harry</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2013-05-30T19:33:16+00:00" itemprop="datePublished"><a href="index.html#comment-92" class="comment-time-link" itemprop="url">May 30, 2013 at 7:33 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I understood the above points about early and late binding, however can you please explain binding in terms of references? It would be really helpful for me.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-92' onclick='return addComment.moveForm( "comment-92", "92", "respond", "2026" )' aria-label='Reply to Harry'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-94">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="../../../index.html" class="comment-author-link" rel="external nofollow" itemprop="url">Chaitanya Singh</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2013-05-30T19:45:57+00:00" itemprop="datePublished"><a href="index.html#comment-94" class="comment-time-link" itemprop="url">May 30, 2013 at 7:45 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Harry &#8211; let me explain your doubt with the help of few examples &#8211;<br />
+<strong>Static binding: </strong><br />
+it means that the references are resolved during compile time by compiler<br />
+lets say &#8211;</p>
+<p><code>Car obj = new Car();<br />
+obj.drive();</code></p>
+<p>Compiler won&#8217;t face any difficulty while resolving the conflict during compilation.</p>
+<p><strong>Dynamic Binding:</strong><br />
+<strong>Another example &#8211;</strong></p>
+<p><code>public void myMethod(Object obj){<br />
+((Car)obj).drive();<br />
+}</code><br />
+In this case compiler can&#8217;t resolve the object reference during compilation. Hence this can be resolved during run time only. This is called dynamic binding.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-94' onclick='return addComment.moveForm( "comment-94", "94", "respond", "2026" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-696">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/cef657da50e30f37b649d0ad3b1cfa5b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/cef657da50e30f37b649d0ad3b1cfa5b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">praveen</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2013-12-23T04:10:20+00:00" itemprop="datePublished"><a href="index.html#comment-696" class="comment-time-link" itemprop="url">December 23, 2013 at 4:10 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Iamnot clear with the explaination actually do you mean dynamic polymorphism and dynamic binding are same</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-696' onclick='return addComment.moveForm( "comment-696", "696", "respond", "2026" )' aria-label='Reply to praveen'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2425">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7e28e936294df5f55608cff1e9d5f80e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7e28e936294df5f55608cff1e9d5f80e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Akshay Hendre</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-01T06:18:16+00:00" itemprop="datePublished"><a href="index.html#comment-2425" class="comment-time-link" itemprop="url">April 1, 2014 at 6:18 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Chaitanya, as you say in dynamic binding that, compiler gets confused while choosing method either from parent class or from child class. But how does it make right choice?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2425' onclick='return addComment.moveForm( "comment-2425", "2425", "respond", "2026" )' aria-label='Reply to Akshay Hendre'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-2" id="comment-2612">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-06T15:31:24+00:00" itemprop="datePublished"><a href="index.html#comment-2612" class="comment-time-link" itemprop="url">April 6, 2014 at 3:31 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Akshay, References can only be resolved at runtime. Lets take the above example to understand this:</p>
+<pre>Human myobj = new Boy();</pre>
+<p>The fact that myobj is refers to the object of its child class Boy is resolved at runtime only. Hence, at compile time the compiler can&#8217;t be sure if the call to the method &#8216;walk()&#8217; on these references actually refer to which version of the method &#8211; the super class version or the sub class version. That&#8217;s the reason such type of binding happens at runtime and known as dynamic binding.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2612' onclick='return addComment.moveForm( "comment-2612", "2612", "respond", "2026" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-3" id="comment-22303">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8aca2a5532ba8b7c724f0e4aa29e17df?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8aca2a5532ba8b7c724f0e4aa29e17df?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Saddam Khan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-27T13:00:30+00:00" itemprop="datePublished"><a href="index.html#comment-22303" class="comment-time-link" itemprop="url">January 27, 2015 at 1:00 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>If the references variables are resolved at runtime then what will you call this below:</p>
+<p>A ob = new ob():<br />
+ob.Show();</p>
+<p>so here there is nothing ambiguous, so what should we call it early or late binding?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-22303' onclick='return addComment.moveForm( "comment-22303", "22303", "respond", "2026" )' aria-label='Reply to Saddam Khan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-3092">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9b8e4a6b822a52081678310856bc6e8d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9b8e4a6b822a52081678310856bc6e8d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rajani</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-04-24T09:58:39+00:00" itemprop="datePublished"><a href="index.html#comment-3092" class="comment-time-link" itemprop="url">April 24, 2014 at 9:58 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>hi  Chaitanya , your tutorial was very nice. Thank you so much for woderful explanation with examples.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3092' onclick='return addComment.moveForm( "comment-3092", "3092", "respond", "2026" )' aria-label='Reply to Rajani'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3640">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/19e0da2bc5238e6c206585c95261a587?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/19e0da2bc5238e6c206585c95261a587?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Deeraj</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-05-16T09:35:28+00:00" itemprop="datePublished"><a href="index.html#comment-3640" class="comment-time-link" itemprop="url">May 16, 2014 at 9:35 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Very neatly explained, Thanks :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3640' onclick='return addComment.moveForm( "comment-3640", "3640", "respond", "2026" )' aria-label='Reply to Deeraj'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-4248">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1a9dd794a955158d3094f02e28f6dfc9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1a9dd794a955158d3094f02e28f6dfc9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ahmad soory</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-06-12T15:34:23+00:00" itemprop="datePublished"><a href="index.html#comment-4248" class="comment-time-link" itemprop="url">June 12, 2014 at 3:34 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi<br />
+Thanks for this article<br />
+I have a question. What&#8217;s mean method binding??</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-4248' onclick='return addComment.moveForm( "comment-4248", "4248", "respond", "2026" )' aria-label='Reply to Ahmad soory'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4282">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d68aba4e318a46d0cacc4abb78c14681?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d68aba4e318a46d0cacc4abb78c14681?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Shahrukh Dilshad</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-06-14T18:30:22+00:00" itemprop="datePublished"><a href="index.html#comment-4282" class="comment-time-link" itemprop="url">June 14, 2014 at 6:30 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>It is really helpful Thanks..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-4282' onclick='return addComment.moveForm( "comment-4282", "4282", "respond", "2026" )' aria-label='Reply to Shahrukh Dilshad'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-4356">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/291773683ebbd2d270c5ffe77152595c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/291773683ebbd2d270c5ffe77152595c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">anshu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-06-17T17:35:06+00:00" itemprop="datePublished"><a href="index.html#comment-4356" class="comment-time-link" itemprop="url">June 17, 2014 at 5:35 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>this is helpful</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-4356' onclick='return addComment.moveForm( "comment-4356", "4356", "respond", "2026" )' aria-label='Reply to anshu'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4502">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4c29dc28d0d793899a62b1c817c6c2a7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/4c29dc28d0d793899a62b1c817c6c2a7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">srinivas</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-06-24T02:01:51+00:00" itemprop="datePublished"><a href="index.html#comment-4502" class="comment-time-link" itemprop="url">June 24, 2014 at 2:01 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>very good example and content</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-4502' onclick='return addComment.moveForm( "comment-4502", "4502", "respond", "2026" )' aria-label='Reply to srinivas'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-6682">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/624b8344f5666d5d323ea5007d7997f2?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/624b8344f5666d5d323ea5007d7997f2?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Poonam</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-08-29T05:42:54+00:00" itemprop="datePublished"><a href="index.html#comment-6682" class="comment-time-link" itemprop="url">August 29, 2014 at 5:42 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Very well explained with examples.<br />
+Very helpful , informative and to the point answer.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6682' onclick='return addComment.moveForm( "comment-6682", "6682", "respond", "2026" )' aria-label='Reply to Poonam'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-9693">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d314898e7fa7480eebb809f3bea571e6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d314898e7fa7480eebb809f3bea571e6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ameya</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-10-21T14:15:29+00:00" itemprop="datePublished"><a href="index.html#comment-9693" class="comment-time-link" itemprop="url">October 21, 2014 at 2:15 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Just the thing I was looking for&#8230; Thanks a lot!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-9693' onclick='return addComment.moveForm( "comment-9693", "9693", "respond", "2026" )' aria-label='Reply to Ameya'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-13010">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/af32b78c9a00b5f3a6c100af971aab7a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/af32b78c9a00b5f3a6c100af971aab7a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Faezeh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-03T09:39:36+00:00" itemprop="datePublished"><a href="index.html#comment-13010" class="comment-time-link" itemprop="url">November 3, 2014 at 9:39 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi,<br />
+Thank you for the explanation. I wrote a private method in my super class and I was able to override it in my subclass. I also, wrote a static method in my super class and I was able to override it in my subclass. Could you please tell me what do you mean by saying that static and private methods cannot be overridden?</p>
+<p>Thanks</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-13010' onclick='return addComment.moveForm( "comment-13010", "13010", "respond", "2026" )' aria-label='Reply to Faezeh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-14656">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e4288dacdd8deac00d871ea92c7cf7c1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e4288dacdd8deac00d871ea92c7cf7c1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">vikas</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-11T05:32:46+00:00" itemprop="datePublished"><a href="index.html#comment-14656" class="comment-time-link" itemprop="url">November 11, 2014 at 5:32 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>i can say only one thing &#8230;&#8230;&#8230;&#8230;.. Entire Site is &#8220;AWESOME&#8221;.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14656' onclick='return addComment.moveForm( "comment-14656", "14656", "respond", "2026" )' aria-label='Reply to vikas'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-16364">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d21315d43a6afe61f6766b4e138321bf?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d21315d43a6afe61f6766b4e138321bf?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Cam</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-15T20:23:20+00:00" itemprop="datePublished"><a href="index.html#comment-16364" class="comment-time-link" itemprop="url">November 15, 2014 at 8:23 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>It is a wonderfully clear explanation!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-16364' onclick='return addComment.moveForm( "comment-16364", "16364", "respond", "2026" )' aria-label='Reply to Cam'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-19608">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6c1908f667f4a433db8215d2ab4b33e5?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6c1908f667f4a433db8215d2ab4b33e5?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nandhakumar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-03T00:11:43+00:00" itemprop="datePublished"><a href="index.html#comment-19608" class="comment-time-link" itemprop="url">December 3, 2014 at 12:11 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi </p>
+<p>I have been confused for long time,after found this article i came to conclusion about binding..Super job ..tx a lot.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19608' onclick='return addComment.moveForm( "comment-19608", "19608", "respond", "2026" )' aria-label='Reply to Nandhakumar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-19924">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/68aeba9456bed48732303e6e6bc77fc1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/68aeba9456bed48732303e6e6bc77fc1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">vikas</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-08T22:05:28+00:00" itemprop="datePublished"><a href="index.html#comment-19924" class="comment-time-link" itemprop="url">December 8, 2014 at 10:05 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi,<br />
+So am I right if I say &#8211; binding of non-private instance method is done at runtime. Is there any Java spec which confirms the same.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19924' onclick='return addComment.moveForm( "comment-19924", "19924", "respond", "2026" )' aria-label='Reply to vikas'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-20904">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4e8c6de84b6910045aebb95c5d2a413f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/4e8c6de84b6910045aebb95c5d2a413f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Subhadeep Das</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-26T07:26:06+00:00" itemprop="datePublished"><a href="index.html#comment-20904" class="comment-time-link" itemprop="url">December 26, 2014 at 7:26 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>It&#8217;s said that Java uses static binding for overloaded methods. Please give an example to make it a bit clearer to me..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-20904' onclick='return addComment.moveForm( "comment-20904", "20904", "respond", "2026" )' aria-label='Reply to Subhadeep Das'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-22302">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8aca2a5532ba8b7c724f0e4aa29e17df?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/8aca2a5532ba8b7c724f0e4aa29e17df?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Saddam Khan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-27T12:57:21+00:00" itemprop="datePublished"><a href="index.html#comment-22302" class="comment-time-link" itemprop="url">January 27, 2015 at 12:57 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I read your short article it is written quite nicely,<br />
+I want to ask what will you call the overloaded methods?<br />
+static binding or late binding?<br />
+according to you static binding comes where there is no ambiguity that which method to call, but in overriding a parent class variable is ambiguous to receive an object from which child class.<br />
+Don&#8217;t you think similarly in overloaded method its also ambiguous untill unless an argument is passed in runtime and certain method gets called,</p>
+<p>Then why overloading is attributed as static binding? early binding?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-22302' onclick='return addComment.moveForm( "comment-22302", "22302", "respond", "2026" )' aria-label='Reply to Saddam Khan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-22837">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/20cc595fd82e9c982f86ab55264526c7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/20cc595fd82e9c982f86ab55264526c7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">veron</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-02-09T06:55:46+00:00" itemprop="datePublished"><a href="index.html#comment-22837" class="comment-time-link" itemprop="url">February 9, 2015 at 6:55 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I wasn&#8217;t getting a clear understanding of static and dynamic binding but after this article I&#8217;ve gotten a clear understanding of binding. tanx a lot</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-22837' onclick='return addComment.moveForm( "comment-22837", "22837", "respond", "2026" )' aria-label='Reply to veron'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-24290">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/862cb69cfe53882c1e0df9417cfdd6e9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/862cb69cfe53882c1e0df9417cfdd6e9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">tanuja jain</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-13T13:31:30+00:00" itemprop="datePublished"><a href="index.html#comment-24290" class="comment-time-link" itemprop="url">March 13, 2015 at 1:31 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Is there any way in java through which we can find the debugging process of a program. I really need to know the compilation process about what get&#8217;s compiled first and what after that. Someboby please help me!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24290' onclick='return addComment.moveForm( "comment-24290", "24290", "respond", "2026" )' aria-label='Reply to tanuja jain'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-24743">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2c47b5e473588b6887c55c65f757a8f7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/2c47b5e473588b6887c55c65f757a8f7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">chandu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-23T12:44:29+00:00" itemprop="datePublished"><a href="index.html#comment-24743" class="comment-time-link" itemprop="url">March 23, 2015 at 12:44 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello,<br />
+Its a nice artice.Have a question regarding resolving references.<br />
+I would like know what made the run time resolve the reference which compiler couldn&#8217;t do it.<br />
+I mean why does compiler is able to resolve the reference for<br />
+Dog d = new Dog()</p>
+<p>and compiler cant resolve the reference for<br />
+Animal d = new Dog().<br />
+And why at run time references are resolved&gt;Is it because of object creation?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24743' onclick='return addComment.moveForm( "comment-24743", "24743", "respond", "2026" )' aria-label='Reply to chandu'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-24955">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bae64e3480bfbfdf0ff327d03ae89794?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bae64e3480bfbfdf0ff327d03ae89794?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">luis</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-30T05:34:26+00:00" itemprop="datePublished"><a href="index.html#comment-24955" class="comment-time-link" itemprop="url">March 30, 2015 at 5:34 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks for the explanation.</p>
+<p>I have one question. If at the compile time, the compiler doesn&#8217;t know if the walk method is of Human or Boy, how does it know at runtime? Or if the compiler doesn&#8217;t know then who knows?</p>
+<p>Thanks a lot!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24955' onclick='return addComment.moveForm( "comment-24955", "24955", "respond", "2026" )' aria-label='Reply to luis'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-24956">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bae64e3480bfbfdf0ff327d03ae89794?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bae64e3480bfbfdf0ff327d03ae89794?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">luis</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-30T05:44:55+00:00" itemprop="datePublished"><a href="index.html#comment-24956" class="comment-time-link" itemprop="url">March 30, 2015 at 5:44 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This article on cpp binding will provide extra insights into binding. It helped me understand better.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24956' onclick='return addComment.moveForm( "comment-24956", "24956", "respond", "2026" )' aria-label='Reply to luis'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-25183">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4caee5f7d4086acbf0531bcdffa51b0e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/4caee5f7d4086acbf0531bcdffa51b0e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ravindra</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-04-02T04:30:12+00:00" itemprop="datePublished"><a href="index.html#comment-25183" class="comment-time-link" itemprop="url">April 2, 2015 at 4:30 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>what is the benefit of dynamic binding over static one.. if we want to access the methods of sub class then we can make an object of the same with reference variable of sub class type&#8230;.  what is the benefit if we want to call a method of sub class and using reference variable of super class type?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-25183' onclick='return addComment.moveForm( "comment-25183", "25183", "respond", "2026" )' aria-label='Reply to Ravindra'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-26147">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/131fcd25dec333e3f889d4f3eba2069e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/131fcd25dec333e3f889d4f3eba2069e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Aks</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-04-24T06:53:02+00:00" itemprop="datePublished"><a href="index.html#comment-26147" class="comment-time-link" itemprop="url">April 24, 2015 at 6:53 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Chaitanya,<br />
+Thanks for your tutorial. In the example you have given<br />
+Human myobj = new Boy();<br />
+       myobj.walk();<br />
+and the output will be Boy walks i.e walk method of Boy class is called. What if we want to call walk method of Human class ? How will we call a parent class method in a child class?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-26147' onclick='return addComment.moveForm( "comment-26147", "26147", "respond", "2026" )' aria-label='Reply to Aks'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-27415">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/daaeef31cc3960e299af57bb37ce4f5c?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/daaeef31cc3960e299af57bb37ce4f5c?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">java</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-05-25T07:50:55+00:00" itemprop="datePublished"><a href="index.html#comment-27415" class="comment-time-link" itemprop="url">May 25, 2015 at 7:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>u can call it with the help of super keyword</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-27415' onclick='return addComment.moveForm( "comment-27415", "27415", "respond", "2026" )' aria-label='Reply to java'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-28072">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/fe18da0bf75d55aff4b276f3561ec775?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/fe18da0bf75d55aff4b276f3561ec775?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Praveen Chukkapalli</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-10T17:10:57+00:00" itemprop="datePublished"><a href="index.html#comment-28072" class="comment-time-link" itemprop="url">June 10, 2015 at 5:10 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I am very new to programming languages and I barely have knowledge about these. I&#8217;m just following your tutorial and able to understand very clearly.  Thank you so much for this explanations&#8230;.,</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-28072' onclick='return addComment.moveForm( "comment-28072", "28072", "respond", "2026" )' aria-label='Reply to Praveen Chukkapalli'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-34060">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e106ef4f0e62d15d8b314ac3902152d1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/e106ef4f0e62d15d8b314ac3902152d1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">budy</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-31T17:39:50+00:00" itemprop="datePublished"><a href="index.html#comment-34060" class="comment-time-link" itemprop="url">August 31, 2015 at 5:39 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>one of the best tutor of Java&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-34060' onclick='return addComment.moveForm( "comment-34060", "34060", "respond", "2026" )' aria-label='Reply to budy'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-42510">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/96c1032a379b25fb3a2b95d23f5e6ce7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/96c1032a379b25fb3a2b95d23f5e6ce7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Neeraj</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-11T19:11:00+00:00" itemprop="datePublished"><a href="index.html#comment-42510" class="comment-time-link" itemprop="url">November 11, 2015 at 7:11 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks Chaitanya, i have just started learning java, I got lot of my queries resolved by reading here.<br />
+Keep it up&#8230;<br />
+Thanks.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-42510' onclick='return addComment.moveForm( "comment-42510", "42510", "respond", "2026" )' aria-label='Reply to Neeraj'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-45758">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/368d4e2d452e5f6b7b468993973ebff1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/368d4e2d452e5f6b7b468993973ebff1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Dhivya</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-11T02:19:27+00:00" itemprop="datePublished"><a href="index.html#comment-45758" class="comment-time-link" itemprop="url">December 11, 2015 at 2:19 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>public void myMethod(Object obj){<br />
+((Car)obj).drive();<br />
+}</p>
+<p>What is meant by passing the object at runtime, in the above example, the object is passed at runtime , but it is possible only in method-overriding and not in method-overloading? pl do give a reply</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-45758' onclick='return addComment.moveForm( "comment-45758", "45758", "respond", "2026" )' aria-label='Reply to Dhivya'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-55009">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/671a890d482cad4b697077b5539493ac?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/671a890d482cad4b697077b5539493ac?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nithesh Reddy</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-11T10:56:28+00:00" itemprop="datePublished"><a href="index.html#comment-55009" class="comment-time-link" itemprop="url">May 11, 2016 at 10:56 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I am getting confused at overriding of static method. will they come under static polymorphism?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-55009' onclick='return addComment.moveForm( "comment-55009", "55009", "respond", "2026" )' aria-label='Reply to Nithesh Reddy'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-57599">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/bb24b253592fefdad345087161bf9b7e?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/bb24b253592fefdad345087161bf9b7e?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">shefali</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-29T06:36:23+00:00" itemprop="datePublished"><a href="index.html#comment-57599" class="comment-time-link" itemprop="url">June 29, 2016 at 6:36 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>static and dynamic binding is explained v nicely!!!<br />
+Thanks!!!!!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57599' onclick='return addComment.moveForm( "comment-57599", "57599", "respond", "2026" )' aria-label='Reply to shefali'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-59607">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a6e4ff257e2e9a8e4b3d6794d3e312ac?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a6e4ff257e2e9a8e4b3d6794d3e312ac?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rishika</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-20T11:56:07+00:00" itemprop="datePublished"><a href="index.html#comment-59607" class="comment-time-link" itemprop="url">August 20, 2016 at 11:56 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>you have called the method as<br />
+Human myobj = new Boy();</p>
+<p>why can&#8217;t i have<br />
+Boy myobj = new Boy();<br />
+why wouldn&#8217;t the compiler know that i am trying to access the child class. what is the exact need for dynamic binding?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-59607' onclick='return addComment.moveForm( "comment-59607", "59607", "respond", "2026" )' aria-label='Reply to Rishika'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-65494">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/5185279b5e2bfb882e7dd4e0805258d6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/5185279b5e2bfb882e7dd4e0805258d6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sebastian</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-03T08:48:09+00:00" itemprop="datePublished"><a href="index.html#comment-65494" class="comment-time-link" itemprop="url">January 3, 2017 at 8:48 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks!<br />
+Perfectly explained! :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-65494' onclick='return addComment.moveForm( "comment-65494", "65494", "respond", "2026" )' aria-label='Reply to Sebastian'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-67740">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9d05a5b7796e6eedc2d118177572edd7?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9d05a5b7796e6eedc2d118177572edd7?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mano</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-22T20:34:35+00:00" itemprop="datePublished"><a href="index.html#comment-67740" class="comment-time-link" itemprop="url">February 22, 2017 at 8:34 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Never mind . My bad. Got it.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-67740' onclick='return addComment.moveForm( "comment-67740", "67740", "respond", "2026" )' aria-label='Reply to Mano'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-73361">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ddf53f5d331c2d36df7bb02a964d77b9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ddf53f5d331c2d36df7bb02a964d77b9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sarvesh Gupta</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-08-18T06:58:31+00:00" itemprop="datePublished"><a href="index.html#comment-73361" class="comment-time-link" itemprop="url">August 18, 2017 at 6:58 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>class A{</p>
+<p>}<br />
+class B extends A{</p>
+<p>	public void func(){<br />
+		System.out.println(&#8220;Funtion in B&#8221;);<br />
+	}</p>
+<p>	public static void main(String[] g){<br />
+		B b=new B();<br />
+		b.func();<br />
+		A a=new B();<br />
+		a.func();</p>
+<p>	}<br />
+}</p>
+<p>Author, please explain why compiler gives error here over Var type A.<br />
+I mean if the virtual methods(here func()) are bonded at runtime why is there an error here.<br />
+Its completely okay it func() was static or final or private but why with virtual func().<br />
+That might sound a silly question but I am confused.<br />
+Please help!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-73361' onclick='return addComment.moveForm( "comment-73361", "73361", "respond", "2026" )' aria-label='Reply to Sarvesh Gupta'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor odd alt depth-2" id="comment-73368">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-08-18T08:43:23+00:00" itemprop="datePublished"><a href="index.html#comment-73368" class="comment-time-link" itemprop="url">August 18, 2017 at 8:43 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello Sarvesh,<br />
+For this to work you must have func() method in parent class(class A) as well, otherwise it will throw compilation error as method func() is undefined for the class A.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-73368' onclick='return addComment.moveForm( "comment-73368", "73368", "respond", "2026" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2026' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="7e8d1236ef" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="212"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="custom_html-19" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h4 class="widget-title widgettitle">Java Tutorial</h4>
+<div class="textwidget custom-html-widget"><ul>
+ 	<li><a href="../../05/java-introduction/index.html">Java Introduction</a></li>
+ 	<li><a href="../../05/jvm/index.html">JVM - Java Virtual Machine</a></li>
+ 	<li><a href="../../05/first-java-program/index.html">First Java Program</a></li>
+ 	<li><a href="../../../2017/08/variables-in-java/index.html">Variables</a></li>
+ 	<li><a href="../../../2017/08/data-types-in-java/index.html">Data Types</a></li>
+ 	<li><a href="../../../2017/08/operators-in-java/index.html">Operators</a></li>
+ 	<li><a href="../../../2017/08/if-else-statement-in-java/index.html">Java If-else</a></li>
+ 	<li><a href="../../../2017/08/java-switch-case/index.html">Java Switch-Case</a></li>
+ 	<li><a href="../../../2015/03/for-loop-in-java-with-example/index.html">Java For loop</a></li>
+ 	<li><a href="../../../2015/03/while-loop-in-java-with-examples/index.html">Java while loop</a></li>
+ 	<li><a href="../../../2015/03/do-while-loop-in-java-with-example/index.html">Java do-while loop</a></li>
+ 	<li><a href="../../../2017/08/java-continue-statement/index.html">Continue statement</a></li>
+ 	<li><a href="../../../2017/08/java-break-statement/index.html">break statement</a></li>
+</ul>
+<h4 class="widget-title">OOPs Concepts</h4>
+<ul>
+<li><a href="../oops-concepts/index.html">OOPs Concepts</a></li>
+<li><a href="../../03/constructors-in-java/index.html">Constructor</a></li>
+<li><a href="../java-static-class-block-methods-variables/index.html">Static keyword</a></li>
+<li><a href="../../03/inheritance-in-java/index.html">Inheritance</a></li>
+ 	<li><a href="../../05/java-inheritance-types/index.html">Types of inheritance</a></li>
+<li><a href="../../05/aggregation/index.html">Aggregation</a></li>
+ 	<li><a href="../../05/association/index.html">Association</a></li>
+<li><a href="../../../2014/07/super-keyword-in-java-with-example/index.html">Super Keyword</a></li>
+ 	<li><a href="../../05/method-overloading/index.html">Method overloading</a></li>
+ 	<li><a href="../../../2014/01/method-overriding-in-java-with-example/index.html">Method overriding</a></li>
+ 	<li><a href="../../../2014/01/difference-between-method-overloading-and-overriding-in-java/index.html">Overloading vs Overriding</a></li>
+ 	<li><a href="../../03/polymorphism-in-java/index.html">Polymorphism</a></li>
+ 	<li><a href="../runtime-compile-time-polymorphism/index.html">Types of polymorphism</a></li>
+<li><a href="index.html">Static and dynamic binding</a></li>
+ 	<li><a href="../../05/java-abstract-class-method/index.html">Abstract class and methods</a></li>
+ 	<li><a href="../../05/java-interface/index.html">Interface</a></li>
+ 	<li><a href="../../05/abstract-class-vs-interface-in-java/index.html">Abstract class vs interface</a></li>
+<li><a href="../../05/encapsulation-in-java/index.html">Encapsulation</a></li>
+ 	<li><a href="../../03/packages-in-java/index.html">Packages</a></li>
+<li><a href="../../05/java-access-modifiers/index.html">Access modifiers</a></li>
+<li><a href="../java-garbage-collection/index.html">Garbage Collection</a></li>
+<li><a href="../../05/inner-class/index.html">Inner classes</a></li>
+<li><a href="../../05/java-static-import/index.html">Static import</a></li>
+ 	<li><a href="../../05/static-constructor/index.html">Static constructor</a></li>
+ 	<li><a href="../../05/java-interview-questions/index.html">Java Interview Q</a></li>
+</ul>
+<h4 class="widget-title">MORE ...</h4>
+<ul>
+ 	<li><a href="../../12/java-strings/index.html">Java String</a></li>
+ 	<li><a href="../java-exception-handling/index.html">Exception handling</a></li>
+ 	<li><a href="../../03/multithreading-in-java/index.html">Java Multithreading</a></li>
+ 	<li><a href="../../../java-io-tutorial-with-examples/index.html">Java I/O</a></li>
+ 	<li><a href="../../../2014/07/java-serialization/index.html">Java Serialization</a></li>
+ 	<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regex</a></li>
+ 	<li><a href="../../../2015/06/java-awt-tutorial/index.html">Java AWT</a></li>
+ 	<li><a href="../../../2015/07/java-swing-tutorial/index.html">Java Swing</a></li>
+ 	<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum</a></li>
+ 	<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations</a></li>
+</ul></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/04/java-static-dynamic-binding/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:40:14 GMT -->
+</html>

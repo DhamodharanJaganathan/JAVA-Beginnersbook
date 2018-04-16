@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Difference between ArrayList and LinkedList in Java</title>
+	<atom:link href="https://beginnersbook.com/2013/12/difference-between-arraylist-and-linkedlist-in-java/feed/" rel="self" type="application/rss+xml" />
+	<link>https://beginnersbook.com/2013/12/difference-between-arraylist-and-linkedlist-in-java/</link>
+	<description></description>
+	<lastBuildDate>Fri, 06 Apr 2018 04:50:05 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.5</generator>
+	<item>
+		<title>By: Anonymous007</title>
+		<link>https://beginnersbook.com/2013/12/difference-between-arraylist-and-linkedlist-in-java/#comment-71483</link>
+		<dc:creator><![CDATA[Anonymous007]]></dc:creator>
+		<pubDate>Tue, 20 Jun 2017 05:33:02 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4368#comment-71483</guid>
+		<description><![CDATA[An arrayList stores data at contiguous memory locations, so when deletion  operation is performed it creates an empty space in arrayList. This empty space has to be occupied again by performing large number of shift operations. And hence DELETION from arrayList does not give O(1).]]></description>
+		<content:encoded><![CDATA[<p>An arrayList stores data at contiguous memory locations, so when deletion  operation is performed it creates an empty space in arrayList. This empty space has to be occupied again by performing large number of shift operations. And hence DELETION from arrayList does not give O(1).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Prince Abhijeet</title>
+		<link>https://beginnersbook.com/2013/12/difference-between-arraylist-and-linkedlist-in-java/#comment-67645</link>
+		<dc:creator><![CDATA[Prince Abhijeet]]></dc:creator>
+		<pubDate>Mon, 20 Feb 2017 17:00:50 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4368#comment-67645</guid>
+		<description><![CDATA[You see: ArrayList has indexes and LinkedList has pointer to next node. So deleting an item of ArrayList will cause next items to shift left so shifting takes  more time. Whereas in case of LinkedList when an item is deleted there is no need to shift left the next items, only thing is needed is to point the pointer to the next node.]]></description>
+		<content:encoded><![CDATA[<p>You see: ArrayList has indexes and LinkedList has pointer to next node. So deleting an item of ArrayList will cause next items to shift left so shifting takes  more time. Whereas in case of LinkedList when an item is deleted there is no need to shift left the next items, only thing is needed is to point the pointer to the next node.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ilia</title>
+		<link>https://beginnersbook.com/2013/12/difference-between-arraylist-and-linkedlist-in-java/#comment-58741</link>
+		<dc:creator><![CDATA[Ilia]]></dc:creator>
+		<pubDate>Thu, 28 Jul 2016 11:24:51 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4368#comment-58741</guid>
+		<description><![CDATA[Great, thanks! And what about editing the data? Which one is better if you  change it a lot? Like if the type is integer and you constantly increase the values of the items. Sorry, if the question is stupid.]]></description>
+		<content:encoded><![CDATA[<p>Great, thanks! And what about editing the data? Which one is better if you  change it a lot? Like if the type is integer and you constantly increase the values of the items. Sorry, if the question is stupid.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Wasim</title>
+		<link>https://beginnersbook.com/2013/12/difference-between-arraylist-and-linkedlist-in-java/#comment-57892</link>
+		<dc:creator><![CDATA[Wasim]]></dc:creator>
+		<pubDate>Tue, 05 Jul 2016 13:03:16 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4368#comment-57892</guid>
+		<description><![CDATA[Superb explanation :)]]></description>
+		<content:encoded><![CDATA[<p>Superb explanation :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Paras Mehta</title>
+		<link>https://beginnersbook.com/2013/12/difference-between-arraylist-and-linkedlist-in-java/#comment-45043</link>
+		<dc:creator><![CDATA[Paras Mehta]]></dc:creator>
+		<pubDate>Wed, 02 Dec 2015 13:19:55 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4368#comment-45043</guid>
+		<description><![CDATA[Isn&#039;t array list add is O(1) as it adds element at the end. Insertion order is maintained. So add should be O(1) only....]]></description>
+		<content:encoded><![CDATA[<p>Isn&#8217;t array list add is O(1) as it adds element at the end. Insertion order is maintained. So add should be O(1) only&#8230;.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Michael</title>
+		<link>https://beginnersbook.com/2013/12/difference-between-arraylist-and-linkedlist-in-java/#comment-44175</link>
+		<dc:creator><![CDATA[Michael]]></dc:creator>
+		<pubDate>Tue, 24 Nov 2015 08:16:43 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4368#comment-44175</guid>
+		<description><![CDATA[Dear Robert, this is what I asked myself, too. I looked into the code and remove has O(n). If you use iterator for remove or add, then you have O(1).
+
+See Stackoverflow: http://stackoverflow.com/questions/322715/when-to-use-linkedlist-over-arraylist]]></description>
+		<content:encoded><![CDATA[<p>Dear Robert, this is what I asked myself, too. I looked into the code and remove has O(n). If you use iterator for remove or add, then you have O(1).</p>
+<p>See Stackoverflow: <a href="http://stackoverflow.com/questions/322715/when-to-use-linkedlist-over-arraylist" rel="nofollow">http://stackoverflow.com/questions/322715/when-to-use-linkedlist-over-arraylist</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: robert</title>
+		<link>https://beginnersbook.com/2013/12/difference-between-arraylist-and-linkedlist-in-java/#comment-32010</link>
+		<dc:creator><![CDATA[robert]]></dc:creator>
+		<pubDate>Sat, 08 Aug 2015 10:17:41 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4368#comment-32010</guid>
+		<description><![CDATA[why isn&#039;t array list implemented to insert an item to the end -&#062; so no reindexing would be needed and the insert operation would be O(1) ? If I wanted to delete an item from linked list, wouldn&#039;t it be needed to search for the item firstly (so it would be O(n) ) ?]]></description>
+		<content:encoded><![CDATA[<p>why isn&#8217;t array list implemented to insert an item to the end -&gt; so no reindexing would be needed and the insert operation would be O(1) ? If I wanted to delete an item from linked list, wouldn&#8217;t it be needed to search for the item firstly (so it would be O(n) ) ?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Mfily</title>
+		<link>https://beginnersbook.com/2013/12/difference-between-arraylist-and-linkedlist-in-java/#comment-28748</link>
+		<dc:creator><![CDATA[Mfily]]></dc:creator>
+		<pubDate>Thu, 25 Jun 2015 21:52:34 +0000</pubDate>
+		<guid isPermaLink="false">http://beginnersbook.com/?p=4368#comment-28748</guid>
+		<description><![CDATA[It&#039;s really a nice post but i want to know the definition of array list and linked list  I can&#039;t get the definition.]]></description>
+		<content:encoded><![CDATA[<p>It&#8217;s really a nice post but i want to know the definition of array list and linked list  I can&#8217;t get the definition.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

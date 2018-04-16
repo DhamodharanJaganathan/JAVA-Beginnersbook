@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/05/servlet-cookies/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:54:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cookies in Servlet with example</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="The Servlet container sets a Cookie in the header of the HTTP response with cookie name and the unique session ID as its value. Cookie is stored in browser."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Cookies in Servlet with example" />
+<meta property="og:description" content="The Servlet container sets a Cookie in the header of the HTTP response with cookie name and the unique session ID as its value. Cookie is stored in browser." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:section" content="Java Servlet tutorial" />
+<meta property="article:published_time" content="2013-05-09T19:57:04+00:00" />
+<meta property="article:modified_time" content="2017-08-01T07:12:46+00:00" />
+<meta property="og:updated_time" content="2017-08-01T07:12:46+00:00" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/Cookie_Output1.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/Cookie_Output1.jpg" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/Cookie_Output2.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/Cookie_Output2.jpg" />
+<meta property="og:image" content="../../../wp-content/uploads/2013/05/Cookie_Output3.jpg" />
+<meta property="og:image:secure_url" content="../../../wp-content/uploads/2013/05/Cookie_Output3.jpg" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="The Servlet container sets a Cookie in the header of the HTTP response with cookie name and the unique session ID as its value. Cookie is stored in browser." />
+<meta name="twitter:title" content="Cookies in Servlet with example" />
+<meta name="twitter:image" content="../../../wp-content/uploads/2013/05/Cookie_Output1.jpg" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Cookies in Servlet with example Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../indexdbfd.html?p=2488' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed508c.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fservlet-cookies%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed1c47?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F05%2Fservlet-cookies%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-2488 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-2488 post type-post status-publish format-standard category-java-servlet-tutorial entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Cookies in Servlet with example</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/technology/java-servlet-tutorial/index.html" rel="category tag">Java Servlet tutorial</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><div class="bb-nav"><a class="pretut" href="../http-session/index.html">❮ Previous</a></div>
+<p>In the last guide, I have covered <a href="../http-session/index.html">Sessions in Servlet</a>. Here we will discuss Cookies which is also used for session management. Let&#8217;s recall few things here from last tutorial so that we can relate sessions and cookies. When a user visits web application first time, the servlet container crates new HttpSession object by calling request.getSession(). A unique Id is assigned to the session. The <strong>Servlet container also sets a Cookie in the header of the HTTP response with cookie name and the unique session ID as its value.</strong></p>
+<p>The cookie is stored in the user browser, the client (user&#8217;s browser) sends this cookie back to the server for all the subsequent requests until the cookie is valid. <strong>The Servlet container checks the request header for cookies and get the session information from the cookie and use the associated session from the server memory.</strong></p>
+<p>The session remains active for the time specified in tag in web.xml. If tag in not set in web.xml then the session remains active for 30 minutes. <strong>Cookie remains active as long as the user&#8217;s browser is running</strong>, as soon as the browser is closed, the cookie and associated session info is destroyed. So when the user opens the browser again and sends request to web server, the new session is being created.</p>
+<h2>Types of Cookies</h2>
+<p>We can classify the cookie based on their expiry time:</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<ol>
+<li>Session</li>
+<li>Persistent</li>
+</ol>
+<p><strong>1) SessionCookies:</strong><br />
+Session cookies do not have expiration time. It lives in the browser memory. As soon as the web browser is closed this cookie gets destroyed.</p>
+<p><strong>2) Persistent Cookies:</strong><br />
+Unlike Session cookies they have expiration time, they are stored in the user hard drive and gets destroyed based on the expiry time.</p>
+<h2>How to send Cookies to the Client</h2>
+<p>Here are steps for sending cookie to the client:</p>
+<ol>
+<li>Create a Cookie object.</li>
+<li>Set the maximum Age.</li>
+<li>Place the Cookie in HTTP response header.</li>
+</ol>
+<h4>1) Create a Cookie object:</h4>
+<pre>Cookie c = new Cookie("userName","Chaitanya");
+</pre>
+<h4>2) Set the maximum Age:</h4>
+<p>By using <strong>setMaxAge ()</strong> method we can set the maximum age for the particular cookie in seconds.</p>
+<pre>c.setMaxAge(1800);
+</pre>
+<h4>3) Place the Cookie in HTTP response header:</h4>
+<p>We can send the cookie to the client browser through <code>response.addCookie()</code> method.</p>
+<pre>response.addCookie(c);
+</pre>
+<h2>How to read cookies</h2>
+<pre>Cookie c[]=request.getCookies(); 
+//c.length gives the cookie count 
+for(int i=0;i&lt;c.length;i++){  
+ out.print("Name: "+c[i].getName()+" &amp; Value: "+c[i].getValue());
+}</pre>
+<h2>Example of Cookies in java servlet</h2>
+<p><b>index.html</b></p>
+<pre>&lt;form action="login"&gt;
+ User Name:&lt;input type="text" name="userName"/&gt;&lt;br/&gt;
+ Password:&lt;input type="password" name="userPassword"/&gt;&lt;br/&gt;
+ &lt;input type="submit" value="submit"/&gt;
+&lt;/form&gt;
+</pre>
+<p><b>MyServlet1.java</b></p>
+<pre>import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+public class MyServlet1 extends HttpServlet 
+{
+   public void doGet(HttpServletRequest request, 
+      HttpServletResponse response) {
+      try{
+          response.setContentType("text/html");
+          PrintWriter pwriter = response.getWriter();
+
+          String name = request.getParameter("userName");
+          String password = request.getParameter("userPassword");
+          pwriter.print("Hello "+name);
+          pwriter.print("Your Password is: "+password);
+
+          //Creating two cookies
+          Cookie c1=new Cookie("userName",name);
+          Cookie c2=new Cookie("userPassword",password);
+
+          //Adding the cookies to response header
+          response.addCookie(c1);
+          response.addCookie(c2);
+          pwriter.print("&lt;br&gt;&lt;a href='welcome'&gt;View Details&lt;/a&gt;");
+          pwriter.close();
+   }catch(Exception exp){
+       System.out.println(exp);
+    }
+  }
+}</pre>
+<p><b>MyServlet2.java</b></p>
+<pre>import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+public class MyServlet2 extends HttpServlet {
+ public void doGet(HttpServletRequest request, 
+    HttpServletResponse response){
+    try{
+       response.setContentType("text/html");
+       PrintWriter pwriter = response.getWriter();
+ 
+       //Reading cookies
+       Cookie c[]=request.getCookies(); 
+       //Displaying User name value from cookie
+       pwriter.print("Name: "+c[1].getValue()); 
+       //Displaying user password value from cookie
+       pwriter.print("Password: "+c[2].getValue());
+ 
+       pwriter.close();
+    }catch(Exception exp){
+       System.out.println(exp);
+     }
+  }
+}</pre>
+<p><b>web.xml</b></p>
+<pre>&lt;web-app&gt;
+&lt;display-name&gt;BeginnersBookDemo&lt;/display-name&gt;
+ &lt;welcome-file-list&gt;
+ &lt;welcome-file&gt;index.html&lt;/welcome-file&gt;
+ &lt;/welcome-file-list&gt;
+&lt;servlet&gt;
+ &lt;servlet-name&gt;Servlet1&lt;/servlet-name&gt;
+ &lt;servlet-class&gt;MyServlet1&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+ &lt;servlet-name&gt;Servlet1&lt;/servlet-name&gt;
+ &lt;url-pattern&gt;/login&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+&lt;servlet&gt;
+ &lt;servlet-name&gt;Servlet2&lt;/servlet-name&gt;
+ &lt;servlet-class&gt;MyServlet2&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+ &lt;servlet-name&gt;Servlet2&lt;/servlet-name&gt;
+ &lt;url-pattern&gt;/welcome&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
+</pre>
+<p><strong>Output:</strong><br />
+<strong>Welcome Screen:</strong><br />
+<img class="aligncenter size-full wp-image-6502" src="../../../wp-content/uploads/2013/05/Cookie_Output1.jpg" alt="" width="700" height="137" srcset="https://beginnersbook.com/wp-content/uploads/2013/05/Cookie_Output1.jpg 700w, https://beginnersbook.com/wp-content/uploads/2013/05/Cookie_Output1-300x59.jpg 300w" sizes="(max-width: 700px) 100vw, 700px" /></p>
+<p><strong>After clicking Submit:</strong><br />
+<img class="aligncenter size-full wp-image-6503" src="../../../wp-content/uploads/2013/05/Cookie_Output2.jpg" alt="" width="700" height="109" srcset="https://beginnersbook.com/wp-content/uploads/2013/05/Cookie_Output2.jpg 700w, https://beginnersbook.com/wp-content/uploads/2013/05/Cookie_Output2-300x47.jpg 300w" sizes="(max-width: 700px) 100vw, 700px" /></p>
+<p><strong>After clicking View Details:</strong><br />
+<img class="aligncenter size-full wp-image-6504" src="../../../wp-content/uploads/2013/05/Cookie_Output3.jpg" alt="" width="700" height="99" srcset="https://beginnersbook.com/wp-content/uploads/2013/05/Cookie_Output3.jpg 700w, https://beginnersbook.com/wp-content/uploads/2013/05/Cookie_Output3-300x42.jpg 300w" sizes="(max-width: 700px) 100vw, 700px" /></p>
+<h2>Methods of Cookie class</h2>
+<p><strong>public void setComment(String purpose)</strong>: This method is used for setting up comments in the cookie. This is basically used for describing the purpose of the cookie.</p>
+<p><strong>public String getComment()</strong>: Returns the comment describing the purpose of this cookie, or null if the cookie has no comment.</p>
+<p><strong>public void setMaxAge(int expiry)</strong>: Sets the maximum age of the cookie in seconds.</p>
+<p><strong>public int getMaxAge()</strong>: Gets the maximum age in seconds of this Cookie.<br />
+By default, -1 is returned, which indicates that the cookie will persist until browser shutdown.</p>
+<p><strong>public String getName()</strong>: Returns the name of the cookie. The name cannot be changed after creation.</p>
+<p><strong>public void setValue(String newValue)</strong>: Assigns a new value to this Cookie.</p>
+<p><strong>public String getValue()</strong>: Gets the current value of this Cookie.</p>
+<p>The list above has only commonly used methods. To get the complete list of methods of Cookie class refer <a href="http://docs.oracle.com/javaee/7/api/javax/servlet/http/Cookie.html" target="_blank" rel="noopener">official documentation</a>.</p>
+<div class="bb-nav"><a class="pretut" href="../http-session/index.html">❮ Previous</a></div>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-16526">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/553beb364258f9d82a4cdc4cf169f822?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/553beb364258f9d82a4cdc4cf169f822?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ashrumochan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-16T01:38:00+00:00" itemprop="datePublished"><a href="index.html#comment-16526" class="comment-time-link" itemprop="url">November 16, 2014 at 1:38 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>We can call the Session Cookies as &#8220;IN-Memory Cookies&#8221; as it lives in the memory.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-16526' onclick='return addComment.moveForm( "comment-16526", "16526", "respond", "2488" )' aria-label='Reply to Ashrumochan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2488' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="5ecc819ea6" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="112"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-37" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Servlet Tutorial</h4>
+			<div class="textwidget"><ul>
+<li><a href="../servlet-tutorial/index.html">Servlet Introduction</a></li>
+<li><a href="../servlet-api/index.html">Servlet API</a></li>
+<li><a href="../../../2014/04/servlet-interface/index.html">Servlet Interface</a></li>
+<li><a href="../../../2014/04/genericservlet-class/index.html">Generic Servlet</a></li>
+<li><a href="../http-servlet/index.html">HttpServlet</a></li>
+<li><a href="../../../2017/07/how-to-create-and-run-servlet-in-eclipse-ide/index.html">Servlet in Eclipse</a></li>
+<li><a href="../servlet-life-cycle/index.html">Servlet Life cycle</a></li>
+<li><a href="../working-of-servlets/index.html">Working of Servlet</a></li>
+<li><a href="../../../2014/04/welcome-file-list-in-web-xml/index.html">Welcome-file-list</a></li>
+<li><a href="../../../2017/07/load-on-startup-tag-in-web-xml-file-with-example/index.html">load-on-startup tag</a></li>
+<li><a href="../servlet-request-interface/index.html">ServletRequest</a></li>
+<li><a href="../../../2017/07/requestdispatcher-methods-with-examples-in-servlet/index.html">RequestDispatcher</a></li>
+<li><a href="../../../2017/07/servletconfig-interface-with-example/index.html">ServletConfig</a></li>
+<li><a href="../servlet-context/index.html">ServletContext</a></li>
+<li><a href="../servlet-response/index.html">ServletResponse</a></li>
+<li><a href="../http-session/index.html">HttpSession</a></li>
+<li><a href="index.html">Cookies</a></li>
+<li><a href="../servlet-interview-questions/index.html">Servlet Interview Q</a></li>
+</ul>
+</div>
+		</div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/05/servlet-cookies/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:54:21 GMT -->
+</html>

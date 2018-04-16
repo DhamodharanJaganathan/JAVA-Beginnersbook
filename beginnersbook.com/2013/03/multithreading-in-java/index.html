@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from beginnersbook.com/2013/03/multithreading-in-java/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:42:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multithreading in java with examples</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Before we talk about multithreading, let&#039;s discuss threads. A thread is a light-weight smallest part of a process that can run concurrently with the other parts(other threads) of the same process. Threads are independent because they all have separate path of execution that&#039;s the reason if an exception occurs in one"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Multithreading in java with examples" />
+<meta property="og:description" content="Before we talk about multithreading, let&#039;s discuss threads. A thread is a light-weight smallest part of a process that can run concurrently with the other parts(other threads) of the same process. Threads are independent because they all have separate path of execution that&#039;s the reason if an exception occurs in one" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="beginnersbook.com" />
+<meta property="article:tag" content="Java Basics" />
+<meta property="article:tag" content="multithreading" />
+<meta property="article:tag" content="runnable" />
+<meta property="article:tag" content="synchronization" />
+<meta property="article:tag" content="threads" />
+<meta property="article:section" content="Multithreading" />
+<meta property="article:published_time" content="2013-03-29T01:20:47+00:00" />
+<meta property="article:modified_time" content="2016-04-13T06:42:33+00:00" />
+<meta property="og:updated_time" content="2016-04-13T06:42:33+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Before we talk about multithreading, let&#039;s discuss threads. A thread is a light-weight smallest part of a process that can run concurrently with the other parts(other threads) of the same process. Threads are independent because they all have separate path of execution that&#039;s the reason if an exception occurs in one" />
+<meta name="twitter:title" content="Multithreading in java with examples" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Feed" href="https://feeds.feedburner.com/BeginnersBookFeed" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Comments Feed" href="../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="beginnersbook.com &raquo; Multithreading in java with examples Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='news-pro-theme-css'  href='../../../wp-content/themes/news-pro/style3c43.css?ver=3.0.31' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://beginnersbook.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/news-pro/js/responsive-menu8a54.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.5" />
+<link rel='shortlink' href='../../../index9b2c.html?p=1659' />
+<link rel="alternate" type="application/json+oembed" href="../../../wp-json/oembed/1.0/embed2822.json?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F03%2Fmultithreading-in-java%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../wp-json/oembed/1.0/embed9f35?url=https%3A%2F%2Fbeginnersbook.com%2F2013%2F03%2Fmultithreading-in-java%2F&amp;format=xml" />
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1952308982289269",
+    enable_page_level_ads: true
+  });
+</script><style type="text/css">.site-title a { background: url(../../../wp-content/uploads/2017/02/cropped-bbook_logo_17.png) no-repeat !important; }</style>
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="32x32" />
+<link rel="icon" href="../../../wp-content/uploads/2016/03/favicon2.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../wp-content/uploads/2016/03/favicon2.png" />
+<meta name="msapplication-TileImage" content="https://beginnersbook.com/wp-content/uploads/2016/03/favicon2.png" />
+</head>
+<body class="post-template-default single single-post postid-1659 single-format-standard custom-header header-image header-full-width sidebar-content-sidebar news-pro-green" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-6105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6105"><a href="../../../index.html" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="../../../java-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">Core Java</span></a></li>
+<li id="menu-item-5682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5682"><a href="../../04/oops-concepts/index.html" itemprop="url"><span itemprop="name">OOPs</span></a></li>
+<li id="menu-item-6236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6236"><a href="../../../java-collections-tutorials/index.html" itemprop="url"><span itemprop="name">Collections</span></a></li>
+<li id="menu-item-6237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6237"><a href="../../../java-io-tutorial-with-examples/index.html" itemprop="url"><span itemprop="name">Java I/O</span></a></li>
+<li id="menu-item-6242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6242"><a href="../../../2015/04/json-tutorial/index.html" itemprop="url"><span itemprop="name">JSON</span></a></li>
+<li id="menu-item-5679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5679"><a href="../../../jsp-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">JSP</span></a></li>
+<li id="menu-item-6235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6235"><a href="../../../jsp-jstl-tutorial-jstl-functions-and-core-tags/index.html" itemprop="url"><span itemprop="name">JSTL</span></a></li>
+<li id="menu-item-7076" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-7076"><a href="../../05/servlet-tutorial/index.html" itemprop="url"><span itemprop="name">Servlet</span></a></li>
+<li id="menu-item-6239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6239"><a href="../../../2014/01/c-tutorial-for-beginners-with-examples/index.html" itemprop="url"><span itemprop="name">C Tutorial</span></a></li>
+<li id="menu-item-6241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6241"><a href="../../../2015/04/dbms-tutorial/index.html" itemprop="url"><span itemprop="name">DBMS</span></a></li>
+<li id="menu-item-6243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6243"><a href="../../../2017/02/perl-tutorial-for-beginners/index.html" itemprop="url"><span itemprop="name">Perl</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-1659 post type-post status-publish format-standard category-multithreading tag-java-basics tag-multithreading-2 tag-runnable tag-synchronization tag-threads entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Multithreading in java with examples</h1>
+<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="../../../category/technology/java-guide/multithreading/index.html" rel="category tag">Multithreading</a></span> </p><style type="text/css">
+.bbook_responsive_top { display: block; width: 320px; height: 100px; margin: 15px auto; }
+@media(min-width: 500px) { .bbook_responsive_top {  width: 300px; height: 250px; margin: 15px auto; } }
+@media(min-width: 800px) { .bbook_responsive_top { margin: 15px auto; width: 728px; height: 90px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_top_center -->
+<ins class="adsbygoogle bbook_responsive_top"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="3105487525"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</header><div class="entry-content" itemprop="text"><p>Before we talk about <strong>multithreading</strong>, let&#8217;s discuss threads. A thread is a light-weight smallest part of a process that can run concurrently with the other parts(other threads) of the same process. Threads are independent because they all have separate path of execution that&#8217;s the reason if an exception occurs in one thread, it doesn&#8217;t affect the execution of other threads. All threads of a process share the common memory. <strong>The process of executing multiple threads simultaneously is known as multithreading.</strong></p>
+<p>Let&#8217;s summarize the discussion in points:<br />
+1. The main purpose of multithreading is to provide simultaneous execution of two or more parts of a program to maximum utilize the CPU time. A multithreaded program contains two or more parts that can run concurrently. Each such part of a program called thread.</p>
+<p>2. Threads are lightweight sub-processes, they share the common memory space. In Multithreaded environment, programs that are benefited from multithreading, utilize the maximum CPU time so that the idle time can be kept to minimum.</p>
+<p>3. A thread can be in one of the following states:<br />
+NEW &#8211; A thread that has not yet started is in this state.<br />
+RUNNABLE &#8211; A thread executing in the Java virtual machine is in this state.<br />
+BLOCKED &#8211; A thread that is blocked waiting for a monitor lock is in this state.<br />
+WAITING &#8211; A thread that is waiting indefinitely for another thread to perform a particular action is in this state.<br />
+TIMED_WAITING &#8211; A thread that is waiting for another thread to perform an action for up to a specified waiting time is in this state.<br />
+TERMINATED &#8211; A thread that has exited is in this state.<br />
+A thread can be in only one state at a given point in time.</p><div class="googlead"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="7043774673"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><strong>Read more about thread states at this link</strong>: <a href="../thread-life-cycle-in-java/index.html" target="_blank">Life cycle of threads</a></p>
+<h2>Multitasking vs Multithreading vs Multiprocessing vs parallel processing</h2>
+<p>If you are new to java you may get confused among these terms as they are used quite frequently when we discuss multithreading. Let&#8217;s talk about them in brief.</p>
+<p><strong>Multitasking: </strong>Ability to execute more than one task at the same time is known as multitasking.</p>
+<p><strong>Multithreading: </strong>We already discussed about it. It is a process of executing multiple threads simultaneously. Multithreading is also known as Thread-based Multitasking.</p>
+<p><strong>Multiprocessing:</strong> It is same as multitasking, however in multiprocessing more than one CPUs are involved. On the other hand one CPU is involved in multitasking.</p>
+<p><strong>Parallel Processing:</strong> It refers to the utilization of multiple CPUs in a single computer system.</p>
+<h2>Creating a thread in Java</h2>
+<p>There are two ways to create a thread in Java:<br />
+1) By extending Thread class.<br />
+2) By implementing Runnable interface.</p>
+<p>Before we begin with the programs(code) of creating threads, let&#8217;s have a look at these methods of Thread class. We have used few of these methods in the example below.</p>
+<ul>
+<li><code>getName()</code>: It is used for Obtaining a thread’s name</li>
+<li><code>getPriority()</code>: Obtain a thread’s priority</li>
+<li><code>isAlive()</code>: Determine if a thread is still running</li>
+<li><code>join()</code>: Wait for a thread to terminate</li>
+<li><code>run()</code>: Entry point for the thread</li>
+<li><code>sleep()</code>: suspend a thread for a period of time</li>
+<li><code>start()</code>: start a thread by calling its run() method</li>
+</ul>
+<h3>Method 1: Thread creation by extending Thread class</h3>
+<p><strong>Example 1:</strong></p>
+<pre>class MultithreadingDemo extends Thread{  
+  public void run(){  
+    System.out.println("My thread is in running state.");  
+  }   
+  public static void main(String args[]){  
+     MultithreadingDemo obj=new MultithreadingDemo();   
+     obj.start();  
+  }  
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>My thread is in running state.</pre>
+<p><strong>Example 2:</strong></p>
+<pre>class Count extends Thread
+{
+   Count()
+   {
+     super("my extending thread");
+     System.out.println("my thread created" + this);
+     start();
+   }
+   public void run()
+   {
+     try
+     {
+        for (int i=0 ;i&lt;10;i++)
+        {
+           System.out.println("Printing the count " + i);
+           Thread.sleep(1000);
+        }
+     }
+     catch(InterruptedException e)
+     {
+        System.out.println("my thread interrupted");
+     }
+     System.out.println("My thread run is over" );
+   }
+}
+class ExtendingExample
+{
+   public static void main(String args[])
+   {
+      Count cnt = new Count();
+      try
+      {
+         while(cnt.isAlive())
+         {
+           System.out.println("Main thread will be alive till the child thread is live");
+           Thread.sleep(1500);
+         }
+      }
+      catch(InterruptedException e)
+      {
+        System.out.println("Main thread interrupted");
+      }
+      System.out.println("Main thread's run is over" );
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>my thread createdThread[my runnable thread,5,main]
+Main thread will be alive till the child thread is live
+Printing the count 0
+Printing the count 1
+Main thread will be alive till the child thread is live
+Printing the count 2
+Main thread will be alive till the child thread is live
+Printing the count 3
+Printing the count 4
+Main thread will be alive till the child thread is live
+Printing the count 5
+Main thread will be alive till the child thread is live
+Printing the count 6
+Printing the count 7
+Main thread will be alive till the child thread is live
+Printing the count 8
+Main thread will be alive till the child thread is live
+Printing the count 9
+mythread run is over
+Main thread run is over</pre>
+<h3>Method 2: Thread creation by implementing Runnable Interface</h3>
+<p><b>A Simple Example</b></p>
+<pre>class MultithreadingDemo implements Runnable{  
+  public void run(){  
+    System.out.println("My thread is in running state.");  
+  }   
+  public static void main(String args[]){  
+     MultithreadingDemo obj=new MultithreadingDemo();  
+     Thread tobj =new Thread(obj);  
+     tobj.start();  
+ }  
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>My thread is in running state.</pre>
+<p><b>Example Program 2:</b><br />
+Observe the output of this program and try to understand what is happening in this program. If you have understood the usage of each thread method then you should not face any issue, understanding this example.</p>
+<pre>class Count implements Runnable
+{
+   Thread mythread ;
+   Count()
+   { 
+      mythread = new Thread(this, "my runnable thread");
+      System.out.println("my thread created" + mythread);
+      mythread.start();
+   }
+   public void run()
+   {
+      try
+      {
+        for (int i=0 ;i&lt;10;i++)
+        {
+          System.out.println("Printing the count " + i);
+          Thread.sleep(1000);
+        }
+     }
+     catch(InterruptedException e)
+     {
+        System.out.println("my thread interrupted");
+     }
+     System.out.println("mythread run is over" );
+   }
+}
+class RunnableExample
+{
+    public static void main(String args[])
+    {
+       Count cnt = new Count();
+       try
+       {
+          while(cnt.mythread.isAlive())
+          {
+            System.out.println("Main thread will be alive till the child thread is live"); 
+            Thread.sleep(1500);
+          }
+       }
+       catch(InterruptedException e)
+       {
+          System.out.println("Main thread interrupted");
+       }
+       System.out.println("Main thread run is over" );
+    }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>my thread createdThread[my runnable thread,5,main]
+Main thread will be alive till the child thread is live
+Printing the count 0
+Printing the count 1
+Main thread will be alive till the child thread is live
+Printing the count 2
+Main thread will be alive till the child thread is live
+Printing the count 3
+Printing the count 4
+Main thread will be alive till the child thread is live
+Printing the count 5
+Main thread will be alive till the child thread is live
+Printing the count 6
+Printing the count 7
+Main thread will be alive till the child thread is live
+Printing the count 8
+Main thread will be alive till the child thread is live
+Printing the count 9
+mythread run is over
+Main thread run is over</pre>
+<h2>Thread priorities</h2>
+<ul>
+<li>Thread priorities are the integers which decide how one thread should be treated with respect to the others.</li>
+<li>Thread priority decides when to switch from one running thread to another, process is called context switching</li>
+<li>A thread can voluntarily release control and the highest priority thread that is ready to run is given the CPU.</li>
+<li>A thread can be preempted by a higher priority thread no matter what the lower priority thread is doing. Whenever a higher priority thread wants to run it does.</li>
+<li>To set the priority of the thread <code>setPriority()</code> method is used which is a method of the class <code>Thread</code> Class.</li>
+<li>In place of defining the priority in integers, we can use <code>MIN_PRIORITY</code>, <code>NORM_PRIORITY</code> or <code>MAX_PRIORITY</code>.</li>
+</ul>
+<h2>Methods: isAlive() and join()</h2>
+<ul>
+<li>In all the practical situations main thread should finish last else other threads which have spawned from the main thread will also finish.</li>
+<li>To know whether the thread has finished we can call <code>isAlive()</code> on the thread which returns true if the thread is not finished.</li>
+<li>Another way to achieve this by using <code>join()</code> method, this method when called from the parent thread makes parent thread wait till child thread terminates.</li>
+<li>These methods are defined in the <code>Thread</code> class.</li>
+<li>We have used isAlive() method in the above examples too.</li>
+</ul>
+<h2>Synchronization</h2>
+<ul>
+<li>Multithreading introduces asynchronous behavior to the programs. If a thread is writing some data another thread may be reading the same data at that time. This may bring inconsistency.</li>
+<li>When two or more threads need access to a shared resource there should be some way that the resource will be used only by one resource at a time. The process to achieve this is called synchronization.</li>
+<li>To implement the synchronous behavior java has synchronous method. Once a thread is inside a synchronized method, no other thread can call any other synchronized method on the same object. All the other threads then wait until the first thread come out of the synchronized block.</li>
+<li>When we want to synchronize access to objects of a class which was not designed for the multithreaded access and the code of the method which needs to be accessed synchronously is not available with us, in this case we cannot add the synchronized to the appropriate methods. In java we have the solution for this, put the calls to the methods (which needs to be synchronized) defined by this class inside a synchronized block in following manner.</li>
+</ul>
+<pre>Synchronized(object)
+{
+    // statement to be synchronized
+}</pre>
+<h2>Inter-thread Communication</h2>
+<p>We have few methods through which java threads can communicate with each other. These methods are <code>wait()</code>, <code>notify()</code>, <code>notifyAll()</code>. All these methods can only be called from within a synchronized method.<br />
+1) To understand synchronization java has a concept of monitor. Monitor can be thought of as a box which can hold only one thread. Once a thread enters the monitor all the other threads have to wait until that thread exits the monitor.<br />
+2) <code>wait()</code>  tells the calling thread to give up the monitor and go to sleep until some other thread enters the same monitor and calls <code>notify()</code>.<br />
+3) <code>notify()</code> wakes up the first thread that called <code>wait()</code> on the same object.<br />
+<code>notifyAll()</code> wakes up all the threads that called wait() on the same object. The highest priority thread will run first.</p>
+<p><b>References</b></p>
+<ul>
+<li>The Complete Reference Java 2 by Herbert Schildt</li>
+</ul>
+</p></div><style>
+.bbook_responsive_bottom { display: block; width: 300px; height: 250px; margin: 15px auto; }
+@media(min-width: 800px) { .bbook_responsive_bottom { margin: 15px auto; width: 336px; height: 280px; margin-left: 0; } }
+</style>
+<script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_bottom_center -->
+<ins class="adsbygoogle bbook_responsive_bottom"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="6278445773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="related-posts"><h3 class="related-title">Enjoyed this post? Try these related posts</h3><ol style="margin-left: 20px;"><li><a href="../../../2015/03/why-dont-we-call-run-method-directly-why-call-start-method/index.html" rel="bookmark" title="Link to Why don’t we call run() method directly, why call start() method?">Why don’t we call run() method directly, why call start() method?</a></li><li><a href="../../../2015/01/daemon-thread-in-java-with-example/index.html" rel="bookmark" title="Link to Daemon thread in Java with example">Daemon thread in Java with example</a></li><li><a href="../../../2015/03/thread-join-method-in-java-with-example/index.html" rel="bookmark" title="Link to Thread join() method in Java with example">Thread join() method in Java with example</a></li><li><a href="../../../2015/01/what-is-the-difference-between-a-process-and-a-thread-in-java/index.html" rel="bookmark" title="Link to What is the difference between a process and a thread in Java?">What is the difference between a process and a thread in Java?</a></li><li><a href="../java-threads/index.html" rel="bookmark" title="Link to Basics: All about Java threads">Basics: All about Java threads</a></li><li><a href="../../../2015/03/can-we-start-a-thread-twice-in-java/index.html" rel="bookmark" title="Link to Can we start a Thread twice in Java?">Can we start a Thread twice in Java?</a></li></ol></div><footer class="entry-footer"></footer></article><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-5154">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/eb403e0e40da0ecba5b5b3b4fbeb43e6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/eb403e0e40da0ecba5b5b3b4fbeb43e6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">vinod</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-07-14T15:18:35+00:00" itemprop="datePublished"><a href="index.html#comment-5154" class="comment-time-link" itemprop="url">July 14, 2014 at 3:18 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>hi<br />
+i am not understanding the concept of Example program 2.<br />
+can you please explain about this.</p>
+<p>thank you</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5154' onclick='return addComment.moveForm( "comment-5154", "5154", "respond", "1659" )' aria-label='Reply to vinod'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-5707">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/13c4c63b316a49b386b32070565bf0ab?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/13c4c63b316a49b386b32070565bf0ab?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="https://joshitechnologysolution.blogspot.in/" class="comment-author-link" rel="external nofollow" itemprop="url">jugal</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-07-30T14:59:21+00:00" itemprop="datePublished"><a href="index.html#comment-5707" class="comment-time-link" itemprop="url">July 30, 2014 at 2:59 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>in second example :  thread is creating  by extend the thread keyword. This will create new thread class .Now your Count class working as thread  as in above.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5707' onclick='return addComment.moveForm( "comment-5707", "5707", "respond", "1659" )' aria-label='Reply to jugal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-40268">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3d04bb8420d2a04584de50f80665dfca?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/3d04bb8420d2a04584de50f80665dfca?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">maha</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-27T20:27:46+00:00" itemprop="datePublished"><a href="index.html#comment-40268" class="comment-time-link" itemprop="url">October 27, 2015 at 8:27 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>plz explain this line of code :<br />
+ super(&#8220;my extending thread&#8221;);<br />
+plz explain in detail why the super keyword is doing here ????????????</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-40268' onclick='return addComment.moveForm( "comment-40268", "40268", "respond", "1659" )' aria-label='Reply to maha'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-3" id="comment-49524">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1108b6d61657e2d6b6567648cda7d9d4?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1108b6d61657e2d6b6567648cda7d9d4?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Aki</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-01-23T11:43:18+00:00" itemprop="datePublished"><a href="index.html#comment-49524" class="comment-time-link" itemprop="url">January 23, 2016 at 11:43 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>because it is use to differentiate the base class method from child class method :)</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-49524' onclick='return addComment.moveForm( "comment-49524", "49524", "respond", "1659" )' aria-label='Reply to Aki'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-4" id="comment-63784">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/d97d31fadac22af4827ead673da2320f?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/d97d31fadac22af4827ead673da2320f?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Gaurav</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-24T06:36:58+00:00" itemprop="datePublished"><a href="index.html#comment-63784" class="comment-time-link" itemprop="url">November 24, 2016 at 6:36 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Basically super keyword refer to the Base class. super always will give priority to the base class.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63784' onclick='return addComment.moveForm( "comment-63784", "63784", "respond", "1659" )' aria-label='Reply to Gaurav'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-3" id="comment-59957">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a26725c55bf3953e1ded5c60154607d4?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/a26725c55bf3953e1ded5c60154607d4?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Yaser</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-29T11:10:53+00:00" itemprop="datePublished"><a href="index.html#comment-59957" class="comment-time-link" itemprop="url">August 29, 2016 at 11:10 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>super(“my extending thread”); will call the superclass&#8217;s constructor from extending class. So it invokes Thread(“my extending thread”);</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-59957' onclick='return addComment.moveForm( "comment-59957", "59957", "respond", "1659" )' aria-label='Reply to Yaser'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-3" id="comment-61893">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/dace5fe63e0a05fb3428d1a426f37198?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/dace5fe63e0a05fb3428d1a426f37198?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rohith</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-10-12T06:58:06+00:00" itemprop="datePublished"><a href="index.html#comment-61893" class="comment-time-link" itemprop="url">October 12, 2016 at 6:58 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>We are calling base class constructor with parameter &#8220;my extending thread&#8221; in the super class</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-61893' onclick='return addComment.moveForm( "comment-61893", "61893", "respond", "1659" )' aria-label='Reply to Rohith'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5706">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/13c4c63b316a49b386b32070565bf0ab?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/13c4c63b316a49b386b32070565bf0ab?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="https://joshitechnologysolution.blogspot.in/" class="comment-author-link" rel="external nofollow" itemprop="url">jugal</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-07-30T14:35:43+00:00" itemprop="datePublished"><a href="index.html#comment-5706" class="comment-time-link" itemprop="url">July 30, 2014 at 2:35 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>see proper concept.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5706' onclick='return addComment.moveForm( "comment-5706", "5706", "respond", "1659" )' aria-label='Reply to jugal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-7053">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/aece3b0893aac8768b3f0fc48c852468?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/aece3b0893aac8768b3f0fc48c852468?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Stephen</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-09-08T06:26:18+00:00" itemprop="datePublished"><a href="index.html#comment-7053" class="comment-time-link" itemprop="url">September 8, 2014 at 6:26 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I can&#8217;t understand the concept of  run() and start() method.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7053' onclick='return addComment.moveForm( "comment-7053", "7053", "respond", "1659" )' aria-label='Reply to Stephen'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-33755">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/29a0a393f036e1ad87d3ea6ddfe6ebff?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/29a0a393f036e1ad87d3ea6ddfe6ebff?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">DArshit</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-28T09:42:40+00:00" itemprop="datePublished"><a href="index.html#comment-33755" class="comment-time-link" itemprop="url">August 28, 2015 at 9:42 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hey Stephen whenever you will start thread by .start() method it will then first execute its run() method of that thread .</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-33755' onclick='return addComment.moveForm( "comment-33755", "33755", "respond", "1659" )' aria-label='Reply to DArshit'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-66883">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1265cbf3e95fc609a1d4f7d236ceafb8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1265cbf3e95fc609a1d4f7d236ceafb8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">abhay</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-02-03T00:28:54+00:00" itemprop="datePublished"><a href="index.html#comment-66883" class="comment-time-link" itemprop="url">February 3, 2017 at 12:28 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Basically run is a method in thread class.<br />
+And whenever we call .star() it will override the run() from thread class</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-66883' onclick='return addComment.moveForm( "comment-66883", "66883", "respond", "1659" )' aria-label='Reply to abhay'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-58942">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/93afd7336aa490d4108d49a197e0596d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/93afd7336aa490d4108d49a197e0596d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Sunita</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-03T05:31:48+00:00" itemprop="datePublished"><a href="index.html#comment-58942" class="comment-time-link" itemprop="url">August 3, 2016 at 5:31 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>start() is used to start the execution of the code written in run(). If you will omit start() the code inside run() will not be executed.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-58942' onclick='return addComment.moveForm( "comment-58942", "58942", "respond", "1659" )' aria-label='Reply to Sunita'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-70076">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c3a9e2f2aeacd4b22aefbf87f4bb208b?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c3a9e2f2aeacd4b22aefbf87f4bb208b?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rajneesh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-05-03T11:54:49+00:00" itemprop="datePublished"><a href="index.html#comment-70076" class="comment-time-link" itemprop="url">May 3, 2017 at 11:54 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>if you create a thread and you simply use run() method then it will run on the main thread but if you do use start() then the thread will not run in the main thread.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-70076' onclick='return addComment.moveForm( "comment-70076", "70076", "respond", "1659" )' aria-label='Reply to Rajneesh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-14074">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/442a98b359bea6674bc8526e1e73fc79?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/442a98b359bea6674bc8526e1e73fc79?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">anu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-08T04:58:17+00:00" itemprop="datePublished"><a href="index.html#comment-14074" class="comment-time-link" itemprop="url">November 8, 2014 at 4:58 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I cant get what is the difference between creating thread class &amp; implementating runnable interface?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14074' onclick='return addComment.moveForm( "comment-14074", "14074", "respond", "1659" )' aria-label='Reply to anu'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-cpsingh bypostauthor even depth-2" id="comment-16165">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/6589689a49b9fc28b4ab1aee34ba1acb?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chaitanya Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-11-15T08:09:45+00:00" itemprop="datePublished"><a href="index.html#comment-16165" class="comment-time-link" itemprop="url">November 15, 2014 at 8:09 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>There is no difference. It all depends on the need and requirements. Let me explain this to you with an example.<br />
+Java doesn&#8217;t support multiple inheritance, which means you can only extend (inherit) one class so once you extend the Thread class you cannot extend or inherit another class in Java. As per <a href="../../04/oops-concepts/index.html" title="OOPs concepts in Java" target="_blank" rel="nofollow">object oriented programing(OOPs), </a>the whole purpose of inheritance is to add new functionality, modifying or improving behaviors by overriding methods of parent class. If we are not making any modification on Thread then using Runnable interface should be your choice instead of extending Thread class. There are few more things to discuss regarding this. I will cover them in detail in a separate post. I hope this makes sense now.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-16165' onclick='return addComment.moveForm( "comment-16165", "16165", "respond", "1659" )' aria-label='Reply to Chaitanya Singh'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-3" id="comment-21475">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/82ca67fbd2eeac12db56605f013641c6?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/82ca67fbd2eeac12db56605f013641c6?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Smith</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-06T20:39:21+00:00" itemprop="datePublished"><a href="index.html#comment-21475" class="comment-time-link" itemprop="url">January 6, 2015 at 8:39 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks I will love to be a friend</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-21475' onclick='return addComment.moveForm( "comment-21475", "21475", "respond", "1659" )' aria-label='Reply to Smith'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-22293">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f13493798f4b5cb80d6cc2c83c7b1ab0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/f13493798f4b5cb80d6cc2c83c7b1ab0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Bhushan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-27T07:20:23+00:00" itemprop="datePublished"><a href="index.html#comment-22293" class="comment-time-link" itemprop="url">January 27, 2015 at 7:20 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>how can we execute multiple threads in parallel? if i want to access two/more files at the same time to minimize execution time ?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-22293' onclick='return addComment.moveForm( "comment-22293", "22293", "respond", "1659" )' aria-label='Reply to Bhushan'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-25674">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/67f6ff9fedf2f62e1a43dd454e7031c1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/67f6ff9fedf2f62e1a43dd454e7031c1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Roshan Singh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-04-15T06:40:17+00:00" itemprop="datePublished"><a href="index.html#comment-25674" class="comment-time-link" itemprop="url">April 15, 2015 at 6:40 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Threads do not run absolute concurrent way but they overlap to minimize CPU wastage&#8230;..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-25674' onclick='return addComment.moveForm( "comment-25674", "25674", "respond", "1659" )' aria-label='Reply to Roshan Singh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-30183">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c992784efafbcd45e87f25cb991a177a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/c992784efafbcd45e87f25cb991a177a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">moni</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-24T08:34:41+00:00" itemprop="datePublished"><a href="index.html#comment-30183" class="comment-time-link" itemprop="url">July 24, 2015 at 8:34 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>i want to know the types of multithreading in java send it my email <a href="../../../cdn-cgi/l/email-protection.html#90fdfffef9f3f1fdf1e2e9a2a8a9a5d0f7fdf1f9fcbef3fffd"><span class="__cf_email__" data-cfemail="375a58595e54565a56454e050f0e0277505a565e5b1954585a">[email&#160;protected]</span></a></p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-30183' onclick='return addComment.moveForm( "comment-30183", "30183", "respond", "1659" )' aria-label='Reply to moni'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-30577">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/0e5e539d62cfda394d672577354937bf?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/0e5e539d62cfda394d672577354937bf?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">vinoth</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-07-28T16:21:27+00:00" itemprop="datePublished"><a href="index.html#comment-30577" class="comment-time-link" itemprop="url">July 28, 2015 at 4:21 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Can any one explain me about Thread Pool concept?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-30577' onclick='return addComment.moveForm( "comment-30577", "30577", "respond", "1659" )' aria-label='Reply to vinoth'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-38522">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9555680c292500ad385eaa9b31653ea0?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/9555680c292500ad385eaa9b31653ea0?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Joe</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-12T16:56:32+00:00" itemprop="datePublished"><a href="index.html#comment-38522" class="comment-time-link" itemprop="url">October 12, 2015 at 4:56 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Take a look at: <a href="https://stackoverflow.com/questions/8767527/how-to-use-thread-pool-concept-in-java" rel="nofollow">http://stackoverflow.com/questions/8767527/how-to-use-thread-pool-concept-in-java</a></p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-38522' onclick='return addComment.moveForm( "comment-38522", "38522", "respond", "1659" )' aria-label='Reply to Joe'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-38787">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/992d129ae077d9e67df3936c8cfe9f90?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/992d129ae077d9e67df3936c8cfe9f90?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">sai</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-10-15T07:47:23+00:00" itemprop="datePublished"><a href="index.html#comment-38787" class="comment-time-link" itemprop="url">October 15, 2015 at 7:47 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Java Thread pool represents a group of worker threads that are waiting for the job and reuse many times.<br />
+In case of thread pool, a group of fixed size threads are created. A thread from the thread pool is pulled out and assigned a job by the service provider. After completion of the job, thread is contained in the thread pool again.<br />
+Advantage of Java Thread Pool:<br />
+Better performance It saves time because there is no need to create new thread.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-38787' onclick='return addComment.moveForm( "comment-38787", "38787", "respond", "1659" )' aria-label='Reply to sai'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-43348">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ca54686d6c88760c1cfc0f4965edb54a?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/ca54686d6c88760c1cfc0f4965edb54a?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">shahid malik</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-17T10:50:42+00:00" itemprop="datePublished"><a href="index.html#comment-43348" class="comment-time-link" itemprop="url">November 17, 2015 at 10:50 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Suppose there are two files in the system containing some textual data, your program should read<br />
+these files concurrently and merge them into one file using JAVA threads. The file should be merged<br />
+in such a way that it contains one line of first file and one line of second file.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-43348' onclick='return addComment.moveForm( "comment-43348", "43348", "respond", "1659" )' aria-label='Reply to shahid malik'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-45564">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/017d00fb3539d472b2607d7a838a71b8?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/017d00fb3539d472b2607d7a838a71b8?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Philip Fasan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-12-08T08:42:32+00:00" itemprop="datePublished"><a href="index.html#comment-45564" class="comment-time-link" itemprop="url">December 8, 2015 at 8:42 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Do you offer pdf versions of this material? This can help when the network is not performing.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-45564' onclick='return addComment.moveForm( "comment-45564", "45564", "respond", "1659" )' aria-label='Reply to Philip Fasan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-50446">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4712eb3b3c36e04654a17e82853c3640?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/4712eb3b3c36e04654a17e82853c3640?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">ujwala</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-05T14:24:35+00:00" itemprop="datePublished"><a href="index.html#comment-50446" class="comment-time-link" itemprop="url">February 5, 2016 at 2:24 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>i want know the thread class and runable class</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-50446' onclick='return addComment.moveForm( "comment-50446", "50446", "respond", "1659" )' aria-label='Reply to ujwala'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-51076">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/005fbe5d46931b10a6ffc872aee0eab4?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/005fbe5d46931b10a6ffc872aee0eab4?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Lalit Kumar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-15T05:07:35+00:00" itemprop="datePublished"><a href="index.html#comment-51076" class="comment-time-link" itemprop="url">February 15, 2016 at 5:07 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi brother, I have been going though all your post. From my point of view this the best website to learn anything from zero. Keep posting new stuffs.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51076' onclick='return addComment.moveForm( "comment-51076", "51076", "respond", "1659" )' aria-label='Reply to Lalit Kumar'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-51951">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7abb1bed08c4f31dae13146d122c9975?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/7abb1bed08c4f31dae13146d122c9975?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mitul Thesiya</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-01T06:22:14+00:00" itemprop="datePublished"><a href="index.html#comment-51951" class="comment-time-link" itemprop="url">March 1, 2016 at 6:22 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I&#8217;m running TestNG mechanism to run parallel thread for executing my testcases. Here, i.e. for 3 parallel threads, if suppose 2nd thread is caught by any error and need to suspend till execution of remaining 2 parallel threads, could you guide how can I achieve to facilitate and support TestNG valid mechanism for parallel testing in this case?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51951' onclick='return addComment.moveForm( "comment-51951", "51951", "respond", "1659" )' aria-label='Reply to Mitul Thesiya'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-53609">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/69efafb66212b243afad250caecc5ff9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/69efafb66212b243afad250caecc5ff9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ravindra Patle</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-13T07:24:50+00:00" itemprop="datePublished"><a href="index.html#comment-53609" class="comment-time-link" itemprop="url">April 13, 2016 at 7:24 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>C:\Program Files\Java\jdk1.8.0_66\bin&gt;javac threadaction.java<br />
+threadaction.java:3: error: error while writing A: A.class (Access is denied)<br />
+class A extends Thread<br />
+^<br />
+Note: threadaction.java uses or overrides a deprecated API.<br />
+Note: Recompile with -Xlint:deprecation for details.<br />
+1 error</p>
+<p>Why this error is showing ? Please help me&#8230;<br />
+Thanks in Advance..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-53609' onclick='return addComment.moveForm( "comment-53609", "53609", "respond", "1659" )' aria-label='Reply to Ravindra Patle'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-55128">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/244bb824db511cc1263af1ccb612aab9?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/244bb824db511cc1263af1ccb612aab9?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Utsav Oza</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-13T14:34:00+00:00" itemprop="datePublished"><a href="index.html#comment-55128" class="comment-time-link" itemprop="url">May 13, 2016 at 2:34 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Where can I use Multi-Threading in my java based social networking Project.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-55128' onclick='return addComment.moveForm( "comment-55128", "55128", "respond", "1659" )' aria-label='Reply to Utsav Oza'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-57076">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/469a211b1936762fe81a2839b7351c6d?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/469a211b1936762fe81a2839b7351c6d?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Himani rajput</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-18T02:45:30+00:00" itemprop="datePublished"><a href="index.html#comment-57076" class="comment-time-link" itemprop="url">June 18, 2016 at 2:45 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Give the different example of synchronized method of thread</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-57076' onclick='return addComment.moveForm( "comment-57076", "57076", "respond", "1659" )' aria-label='Reply to Himani rajput'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-61269">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1bd3fdd4b5ade949df08e8cc9a15e875?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1bd3fdd4b5ade949df08e8cc9a15e875?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">lastav</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-10-02T10:45:29+00:00" itemprop="datePublished"><a href="index.html#comment-61269" class="comment-time-link" itemprop="url">October 2, 2016 at 10:45 AM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>its better to use lambda expressions (JDK 1.8 only)<br />
+makes code easier to understand</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-61269' onclick='return addComment.moveForm( "comment-61269", "61269", "respond", "1659" )' aria-label='Reply to lastav'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-63162">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1f46253c71c92eec3a62b137096e14f1?s=48&amp;d=monsterid&amp;r=g' srcset='https://secure.gravatar.com/avatar/1f46253c71c92eec3a62b137096e14f1?s=96&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Anand Pandey</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-07T15:59:40+00:00" itemprop="datePublished"><a href="index.html#comment-63162" class="comment-time-link" itemprop="url">November 7, 2016 at 3:59 PM</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Best example of Multi Threading and Multi Tasking :</p>
+<p>Suppose you have open two browser google chrome and Mozilla Firefox inside the chrome you have 4 tabs so you have two programs those are running simultaneously is multi processing but inside one program i.e. chrome you have 4 tabs that is multi threading.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-63162' onclick='return addComment.moveForm( "comment-63162", "63162", "respond", "1659" )' aria-label='Reply to Anand Pandey'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://beginnersbook.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1659' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="1c89dd2076" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="148"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-2" class="widget widget_search"><div class="widget-wrap"><form class="search-form" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" method="get" action="https://beginnersbook.com/" role="search"><meta itemprop="target" content="../../../index1f8a.html?s={s}"/><input itemprop="query-input" type="search" name="s" placeholder="Search this website &#x2026;" /><input type="submit" value="Search"  /></form></div></section>
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script data-cfasync="false" src="../../../cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- BB_Top_Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="1008192093"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><script async src="../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- bbook_right_sidebar_responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1952308982289269"
+     data-ad-slot="5732385980"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></section>
+<section id="custom_html-31" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+<section id="custom_html-29" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="160x600" data-zone="ros" ></div></div></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="text-70" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Multithreading</h4>
+			<div class="textwidget"><ul>
+<li><a href="index.html">Multithreading</a></li>
+<li><a href="../../../2015/01/what-is-the-difference-between-a-process-and-a-thread-in-java/index.html">Process vs Thread</a></li>
+<li><a href="../thread-life-cycle-in-java/index.html">Thread Life Cycle</a></li>
+<li><a href="../../../2015/01/daemon-thread-in-java-with-example/index.html">Daemon thread</a></li>
+<li><a href="../../../2015/03/thread-join-method-in-java-with-example/index.html">thread join()</a></li>
+<li><a href="../../../2015/03/why-dont-we-call-run-method-directly-why-call-start-method/index.html">Why call start()</a></li>
+<li><a href="../../../2015/03/can-we-start-a-thread-twice-in-java/index.html">Thread starting twice?</a></li>
+<li><a href="../../../2015/03/java-multithreading-interview-questions-and-answers/index.html">Multithreading Interview Q</a></li>
+</ul></div>
+		</div></section>
+<section id="text-63" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recently Added..</h4>
+			<div class="textwidget"><ul>
+<li><a href="../../../2015/04/json-tutorial/index.html">JSON Tutorial</a></li>
+<li><a href="../../../2014/08/java-regex-tutorial/index.html">Java Regular Expressions Tutorial</a></li>
+<li><a href="../../../2014/09/java-enum-examples/index.html">Java Enum Tutorial</a></li>
+<li><a href="../../../2014/09/java-annotations/index.html">Java Annotations Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>Copyright © 2012 – 2018 BeginnersBook - All Rights Reserved || <a href="../../../sitemap_index.xml" title="Sitemap">Sitemap</a></p></div></footer></div><script type="text/javascript" src="../../../highlighter/prettify.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($) {
+       $('pre').addClass("prettyprint");
+       prettyPrint();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35249844-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type='text/javascript'>
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.html'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.html'); setTimeout(_dmFollowup, 2000); })();
+</script><script type='text/javascript' src='../../../wp-includes/js/comment-reply.min55fe.js?ver=4.9.5'></script>
+<script type='text/javascript' src='../../../wp-includes/js/wp-embed.min55fe.js?ver=4.9.5'></script>
+<script async="async" type='text/javascript' src='../../../wp-content/plugins/akismet/_inc/formfa0c.js?ver=4.0.3'></script>
+</body>
+<!-- Mirrored from beginnersbook.com/2013/03/multithreading-in-java/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Apr 2018 04:42:16 GMT -->
+</html>
